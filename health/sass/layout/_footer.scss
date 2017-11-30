@@ -1,0 +1,36 @@
+.footer {
+  &__navigation {
+    .block {
+      @extend .col-md-3;
+    }
+  }
+  &__logo {
+    max-width: 157px;
+    float: left;
+  }
+  &__attribution {
+    margin-left: 180px;
+    display: block;
+  }
+  &__back-to-top {
+    text-align: right;
+    padding-bottom: 20px;
+  }
+  h3.block__title {
+    margin-bottom: 0;
+    @extend .uikit-display-2;
+    font-weight: 700;
+  }
+  ul > li {
+    margin-left: 0;
+  }
+  .footer__navigation {
+    p:last-of-type {
+      margin: uikit-space(.5) 0;
+    }
+  }
+  
+  .field-name-field-link-to {
+    margin-top: uikit-space(.5);
+  }
+}

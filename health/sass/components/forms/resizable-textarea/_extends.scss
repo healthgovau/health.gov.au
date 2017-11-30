@@ -1,0 +1,13 @@
+//
+// Drupal selectors.
+//
+
+.resizable-textarea {
+  textarea {
+    @extend %uikit-resizable-textarea;
+  }
+
+  .grippie {
+    @extend %uikit-resizable-textarea__grippie;
+  }
+}

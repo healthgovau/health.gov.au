@@ -1,0 +1,59 @@
+@mixin opacity( $opacity ) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+
+/**
+ * Create media queries and wraps the @content code inside of it
+ *
+ * @param  {keywords} $breakpoint - Either one of the following keywords: xs, sm, md, lg
+ *
+ * @return {string}               - The code passed in via @content wrapped inside a media query
+ */
+@mixin media-max( $breakpoint ) {
+  @if type-of( $breakpoint ) != 'string' {
+    @error "Captain I’m giving it all she’s got but; the uikit-media mixin only takes a string!";
+  }
+
+  @if $breakpoint != 'xs' and $breakpoint != 'sm' and $breakpoint != 'md' and $breakpoint != 'lg' {
+    @error "There’s no crying in baseball; the uikit-media mixin only takes the following breakpoint strings: xs, sm, md, lg";
+  }
+
+  @if( $breakpoint == "xs" ) {
+    @media (max-width: $uikit-media-xs) {
+      @content;
+    }
+  }
+
+  @if( $breakpoint == "sm" ) {
+    @media (max-width: $uikit-media-sm) {
+      @content;
+    }
+  }
+
+  @if( $breakpoint == "md" ) {
+    @media (max-width: $uikit-media-md) {
+      @content;
+    }
+  }
+
+  @if( $breakpoint == "lg" ) {
+    @media (max-width: $uikit-media-lg) {
+      @content;
+    }
+  }
+}
+
+@mixin link-pullout($border-width: 10px, $border-color: $uikit-colour-Border, $pad: 20px){
+  border-left: $border-width solid $border-color;
+  padding-left: $pad;
+  padding-top: 8px;
+}

@@ -1,0 +1,16 @@
+// Simple tile defaults
+.tile {
+    padding: 0;
+    // Danny - consider moving these and creating mixin
+    @extend .col-xs-12;
+    @extend .col-sm-6;
+    @extend .col-md-3;
+}
+.tile__title {
+    @extend .uikit-display-2;
+}
+.tile__desc {
+    //
+}
+
+// Mixin to generate width

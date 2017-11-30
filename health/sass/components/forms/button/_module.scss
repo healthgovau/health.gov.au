@@ -1,0 +1,28 @@
+// Button
+//
+// In addition to the default styling of `<button>` and
+// `<input type="submit|image|reset|button">` elements, the `.button` class and
+// its variants can apply buttons styles to various elements (like an `<a>`
+// link).
+//
+// :hover  - Hover styling.
+// :active - Depressed button styling.
+//
+// Markup: button.twig
+//
+// Style guide: forms.button
+
+// 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+//    controls in Android 4.
+// 2. Correct the inability to style clickable types in iOS and Safari.
+
+.uikit-btn-large {
+	@extend .uikit-btn;
+	@extend .uikit-btn--block;
+  @extend .uikit-btn--tertiary;
+  margin-bottom: uikit-space(0.5);
+}
+
+.bean-large-button .field-name-field-link-to a {
+  @extend .uikit-btn-large;
+}

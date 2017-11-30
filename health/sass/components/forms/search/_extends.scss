@@ -1,0 +1,13 @@
+//--------------------------------------------------------------
+// Search styles
+// Extending the UI kits search styles into the base
+//
+//------------------------------------------------------------
+
+#search-block-form {
+  @extend .uikit-search;
+}
+
+.uikit-header #search-block-form {
+  @extend %uikit-search;
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="86px" height="70px" viewBox="0 0 86 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>health-topics</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="health-topics" transform="translate(2.000000, 2.000000)" stroke="#222829" stroke-width="2.6666666">
+            <polyline id="path6902" transform="translate(40.999999, 30.666666) scale(-1, 1) rotate(-180.000000) translate(-40.999999, -30.666666) " points="32.9999993 0 5 0 5 61.3333318 35.6666659 61.3333318 40.9999991 55.9999986 46.3333323 61.3333318 76.9999982 61.3333318 76.9999982 0 48.9999989 0"></polyline>
+            <path d="M77.3333314,66.3333318 L82.6666646,66.3333318 L82.6666646,5 L45.3333322,5 L45.3333322,8.9999999 C45.3333322,11.2079998 43.5413322,12.9999998 41.3333323,12.9999998 C39.1253324,12.9999998 37.3333324,11.2079998 37.3333324,8.9999999 L37.3333324,5 L-7.10542736e-15,5 L-7.10542736e-15,66.3333318 L5.3333332,66.3333318" id="path6906" transform="translate(41.333332, 35.666666) scale(-1, 1) rotate(-180.000000) translate(-41.333332, -35.666666) "></path>
+            <path d="M18.9999998,24.9999999 C18.9999998,22.792 17.2079998,21 14.9999999,21 C12.792,21 11,22.792 11,24.9999999 C11,27.2079998 12.792,28.9999998 14.9999999,28.9999998 C17.2079998,28.9999998 18.9999998,27.2079998 18.9999998,24.9999999 Z" id="path6910" transform="translate(15.000000, 25.000000) scale(-1, 1) rotate(-180.000000) translate(-15.000000, -25.000000) "></path>
+            <path d="M34.9999998,24.9999999 C34.9999998,22.792 33.2079998,21 30.9999999,21 C28.792,21 27,22.792 27,24.9999999 C27,27.2079998 28.792,28.9999998 30.9999999,28.9999998 C33.2079998,28.9999998 34.9999998,27.2079998 34.9999998,24.9999999 Z" id="path6914" transform="translate(31.000000, 25.000000) scale(-1, 1) rotate(-180.000000) translate(-31.000000, -25.000000) "></path>
+            <path d="M26.9999998,11.9999999 C26.9999998,9.79199996 25.2079998,8 22.9999999,8 C20.792,8 19,9.79199996 19,11.9999999 C19,14.2079998 20.792,15.9999998 22.9999999,15.9999998 C25.2079998,15.9999998 26.9999998,14.2079998 26.9999998,11.9999999 Z" id="path6918" transform="translate(23.000000, 12.000000) scale(-1, 1) rotate(-180.000000) translate(-23.000000, -12.000000) "></path>
+            <path d="M47,7 L73.666666,7" id="path6922" transform="translate(60.333333, 7.666667) scale(-1, 1) rotate(-180.000000) translate(-60.333333, -7.666667) "></path>
+            <path d="M47,12 L73.666666,12" id="path6926" transform="translate(60.333333, 12.666667) scale(-1, 1) rotate(-180.000000) translate(-60.333333, -12.666667) "></path>
+            <path d="M47,47 L73.666666,47" id="path6930" transform="translate(60.333333, 47.666667) scale(-1, 1) rotate(-180.000000) translate(-60.333333, -47.666667) "></path>
+            <path d="M47,41 L73.666666,41" id="path6934" transform="translate(60.333333, 41.666667) scale(-1, 1) rotate(-180.000000) translate(-60.333333, -41.666667) "></path>
+            <path d="M47,52 L73.666666,52" id="path6938" transform="translate(60.333333, 52.666667) scale(-1, 1) rotate(-180.000000) translate(-60.333333, -52.666667) "></path>
+            <path d="M9,36 L35.666666,36" id="path6942" transform="translate(22.333333, 36.666667) scale(-1, 1) rotate(-180.000000) translate(-22.333333, -36.666667) "></path>
+            <path d="M9,41 L35.666666,41" id="path6946" transform="translate(22.333333, 41.666667) scale(-1, 1) rotate(-180.000000) translate(-22.333333, -41.666667) "></path>
+            <path d="M9,47 L35.666666,47" id="path6950" transform="translate(22.333333, 47.666667) scale(-1, 1) rotate(-180.000000) translate(-22.333333, -47.666667) "></path>
+            <path d="M9,52 L35.666666,52" id="path6954" transform="translate(22.333333, 52.666667) scale(-1, 1) rotate(-180.000000) translate(-22.333333, -52.666667) "></path>
+            <path d="M19.9999999,21.6666665 L16,15" id="path6958" transform="translate(18.000000, 18.333333) scale(-1, 1) rotate(-180.000000) translate(-18.000000, -18.333333) "></path>
+            <path d="M25,21.6666665 L28.9999999,15" id="path6962" transform="translate(27.000000, 18.333333) scale(-1, 1) rotate(-180.000000) translate(-27.000000, -18.333333) "></path>
+            <path d="M26.9999998,24 L19,24" id="path6966" transform="translate(23.000000, 24.666667) scale(-1, 1) rotate(-180.000000) translate(-23.000000, -24.666667) "></path>
+            <polyline id="path6970" transform="translate(60.666666, 27.000000) scale(-1, 1) rotate(-180.000000) translate(-60.666666, -27.000000) " points="73.3333327 17 48 17 48 36.9999995"></polyline>
+            <path d="M53,33 L53,36.9999999" id="path6974" transform="translate(53.666667, 35.000000) scale(-1, 1) rotate(-180.000000) translate(-53.666667, -35.000000) "></path>
+            <path d="M59,33 L59,36.9999999" id="path6978" transform="translate(59.666667, 35.000000) scale(-1, 1) rotate(-180.000000) translate(-59.666667, -35.000000) "></path>
+            <path d="M64,33 L64,36.9999999" id="path6982" transform="translate(64.666667, 35.000000) scale(-1, 1) rotate(-180.000000) translate(-64.666667, -35.000000) "></path>
+            <path d="M69,33 L69,36.9999999" id="path6986" transform="translate(69.666667, 35.000000) scale(-1, 1) rotate(-180.000000) translate(-69.666667, -35.000000) "></path>
+            <polyline id="path6990" transform="translate(60.666666, 23.333333) scale(-1, 1) rotate(-180.000000) translate(-60.666666, -23.333333) " points="48 20 51.9999999 20 57.3333331 25.3333332 62.6666663 20 69.3333328 26.6666665 73.3333327 26.6666665"></polyline>
+            <path d="M41,54.3333322 L41,9" id="path6994" transform="translate(41.666667, 31.666666) scale(-1, 1) rotate(-180.000000) translate(-41.666667, -31.666666) "></path>
+        </g>
+    </g>
+</svg>

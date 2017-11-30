@@ -1,0 +1,8 @@
+div.contextual-links-region {
+  @extend %uikit-contextual-links;
+
+  // Active styling over other contextual links
+  &-active .contextual-links-wrapper {
+    z-index: 455;
+  }
+}

@@ -1,0 +1,49 @@
+// Autocomplete field
+//
+// As the user starts to type a value, a selection list appears below the form
+// item allowing them to choose an option.
+//
+// .is-throbbing - Waiting for search result.
+//
+// Markup: autocomplete.twig
+//
+// Style guide: forms.autocomplete
+
+
+// Animated throbber
+%uikit-autocomplete {
+  background-image: url('../sass/components/forms/autocomplete/throbber-inactive.png');
+  background-position: 99% center;
+  background-repeat: no-repeat;
+  position: relative;
+
+  // Suggestion list.
+  &__list-wrapper {
+    border: 1px solid;
+    overflow: hidden;
+    position: absolute;
+    z-index: 100;
+  }
+
+  &__list {
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__list-item {
+    cursor: default;
+    white-space: pre;
+
+    &.is-selected,
+    &--is-selected {
+      background: #eee;
+    }
+  }
+
+  &.is-throbbing,
+  &--is-throbbing {
+    background-image: url('../sass/components/forms/autocomplete/throbber-active.gif');
+  }
+}

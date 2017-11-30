@@ -1,0 +1,32 @@
+//--------------------------------------------------------------
+// Site nav
+// The main navigation element on the site
+//
+//--------------------------------------------------------------
+@import 'print';
+
+%uikit-sitenav {
+  @extend .uikit-link-list;
+  @extend .uikit-link-list--inline;
+  padding: 0;
+  li a {
+    display: block;
+  }
+  & > li {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    & > a {
+      padding: uikit-space(1) uikit-space(.5);
+      font-weight: 700;
+      border-bottom: 4px solid transparent;
+    }
+    &.sfHover > a,
+    & > a:hover,
+    & > a:focus
+    & > a:active,
+    &.active-trail > a {
+      border-bottom: 6px solid $colour-Primary-darkest;
+    }
+  }
+}

@@ -1,0 +1,110 @@
+// All paragraph bands
+.para-container {
+    @extend %band;
+}
+
+// Mixin to apply row and container
+@mixin row-and-container {
+    // Contain content (required)
+    &.inside-para-container {
+        @extend .container;
+    }
+    // Add row (required)
+    .paragraphs-items {
+        @extend .row;
+    }
+}
+
+// Topic feature (nested paragraphs)
+// Container for large and small features
+.paragraphs-item-two-columns { 
+    // Style band
+    &.para-container {
+        @extend %band--neutral; 
+        margin-top: -#{uikit-space(1)};
+    }
+
+    @include row-and-container;  
+    // Layout
+    > .group-left {
+        @extend .col-xs-12;
+        @extend .col-sm-6;
+    }
+    > .group-right {
+        @extend .col-xs-12;
+        @extend .col-sm-6;
+    }
+}
+// Main feature
+.paragraphs-item-featured-news-events {
+    padding: 0;
+    &.inside-para-container {
+        padding: 0 uikit-space(1) 0 0;
+    }
+    
+}
+// Sub features
+.paragraphs-item-para-view {
+    padding: 0;
+}
+
+// Getting started
+// Danny - consider creating modifiers of .listing__count {}
+.paragraphs-item-para-links {    
+    // Style band
+    &.para-container {
+    }
+    @include row-and-container;
+    
+    // Each entity
+    .paragraphs-item-para-link {
+        @extend .tile;
+    }
+
+    // CANNOT EXTEND ONTO THESE
+    .field-name-field-link-to {
+        @extend .tile__title;
+    }
+
+    // CANNOT EXTEND ONTO THESE
+    .field-name-field-summary {
+        @extend .tile__desc !optional;
+    }
+}
+
+// Statistics
+.paragraphs-items-field-para-statistic {
+    @include row-and-container;
+
+    // Each entity
+    // Integrate with stat/_module.scss
+
+}
+
+// Browse by lifestage
+.paragraphs-item-para-taxonomies {
+    // Style band
+    &.para-container {
+        @extend %band--neutral; 
+    }
+    @include row-and-container;
+}
+
+// Hotline
+.paragraphs-item-para-contact {
+    // Style band
+    &.para-container {
+        @extend %band--primary; 
+    }
+    @include row-and-container;
+}
+
+// Stats
+.paragraphs-item-para-statistics {
+    // Style band
+    &.para-container {
+        @extend %band--neutral; 
+    }
+    @include row-and-container;
+
+}

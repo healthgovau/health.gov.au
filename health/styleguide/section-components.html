@@ -1,0 +1,2293 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Parkes Style Guide</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="kss-assets/kss.css">
+  <link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/style-guide/kss-only.css">
+
+</head>
+<body id="kss-node" >
+
+<div class="kss-sidebar kss-style">
+  <header class="kss-header">
+    <h1 class="kss-doc-title">Parkes Style Guide</h1>
+  </header>
+  <nav class="kss-nav">
+    <ul class="kss-nav__menu">
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="./">
+          <span class="kss-nav__ref">0</span
+          ><span class="kss-nav__name">Overview</span>
+        </a>
+      </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-sass.html">
+          <span class="kss-nav__ref">1</span><span class="kss-nav__name">Uikit and Sass</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-base.html">
+          <span class="kss-nav__ref">2</span><span class="kss-nav__name">Defaults</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-components.html">
+          <span class="kss-nav__ref">3</span><span class="kss-nav__name">components</span>
+        </a>
+                  <ul class="kss-nav__menu-child">
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-components.html#kssref-components-environment">
+                <span class="kss-nav__ref ">3.1</span
+                ><span class="kss-nav__name">Environment indicator</span>
+              </a>
+            </li>
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-components.html#kssref-components-fieldset">
+                <span class="kss-nav__ref ">3.2</span
+                ><span class="kss-nav__name">Fieldset</span>
+              </a>
+            </li>
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-components.html#kssref-components-stats">
+                <span class="kss-nav__ref ">3.3</span
+                ><span class="kss-nav__name">Statistics</span>
+              </a>
+            </li>
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-components.html#kssref-components-taskbar">
+                <span class="kss-nav__ref ">3.4</span
+                ><span class="kss-nav__name">Taskbar</span>
+              </a>
+            </li>
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-components.html#kssref-components-video">
+                <span class="kss-nav__ref ">3.5</span
+                ><span class="kss-nav__name">Video</span>
+              </a>
+            </li>
+                    </ul>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-component.html">
+          <span class="kss-nav__ref">4</span><span class="kss-nav__name">Components</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-navigation.html">
+          <span class="kss-nav__ref">5</span><span class="kss-nav__name">Navigation</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-forms.html">
+          <span class="kss-nav__ref">6</span><span class="kss-nav__name">Forms</span>
+        </a>
+              </li>
+        </ul>
+  </nav>
+</div>
+<article role="main" class="kss-main">
+
+  
+          <div id="kssref-components" class="kss-section kss-section--depth-1 ">
+      <div class="kss-style">
+                <h1 class="kss-title kss-title--level-1">
+          <a class="kss-title__permalink" href="#kssref-components">
+            <span class="kss-title__ref">
+              3
+              <span class="kss-title__permalink-hash">
+                components
+              </span>
+            </span>
+            components
+          </a>
+        </h1>
+
+        
+        
+              </div>
+
+      
+          </div>
+          <section id="kssref-components-environment" class="kss-section kss-section--depth-2 ">
+      <div class="kss-style">
+                <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-components-environment">
+            <span class="kss-title__ref">
+              3.1
+              <span class="kss-title__permalink-hash">
+                components.environment
+              </span>
+            </span>
+            Environment indicator
+          </a>
+        </h2>
+
+                  <p class="kss-toolbar">
+                          <a href="#kssref-components-environment" data-kss-fullscreen="kssref-components-environment">
+                <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                  <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                </svg>
+                <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                  <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                </svg>
+              </a>
+              <a href="item-components-environment.html" target="_blank">
+                <span class="kss-toolbar__tooltip">Open in new window</span>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                  <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                  <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                  <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                  <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                  <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                  <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                </svg>
+              </a>
+                        <a href="#kssref-components-environment" data-kss-guides="true">
+              <span class="kss-toolbar__tooltip">Toggle example guides</span>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+              </svg>
+            </a>
+            <a href="#kssref-components-environment" data-kss-markup="true">
+              <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+              </svg>
+            </a>
+          </p>
+        
+                  <div class="kss-description">
+            <p>A band that can be set per environment to indicate the server environment.</p>
+
+          </div>
+        
+              </div>
+
+              <div class="kss-modifier__wrapper">
+          <div class="kss-modifier__heading kss-style">
+            Example          </div>
+
+          
+          <div class="kss-modifier__example">
+            <div class="env-indicator local">Local development</div>
+<div class="env-indicator dev">Development</div>
+<div class="env-indicator release">Release</div>
+<div class="env-indicator prod">Production</div>
+            <div class="kss-modifier__example-footer"></div>
+          </div>
+
+                  </div>
+                  <details class="kss-markup kss-style">
+            <summary>
+                              Markup: <code>components/environment/environment.twig</code>
+                          </summary>
+            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;env-indicator local&quot;&gt;Local development&lt;/div&gt;
+&lt;div class=&quot;env-indicator dev&quot;&gt;Development&lt;/div&gt;
+&lt;div class=&quot;env-indicator release&quot;&gt;Release&lt;/div&gt;
+&lt;div class=&quot;env-indicator prod&quot;&gt;Production&lt;/div&gt;</code></pre>
+          </details>
+              
+              <div class="kss-source kss-style">
+          Source: <code>components/environment/_module.scss</code>, line 1
+        </div>
+          </section>
+          <section id="kssref-components-fieldset" class="kss-section kss-section--depth-2 ">
+      <div class="kss-style">
+                <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-components-fieldset">
+            <span class="kss-title__ref">
+              3.2
+              <span class="kss-title__permalink-hash">
+                components.fieldset
+              </span>
+            </span>
+            Fieldset
+          </a>
+        </h2>
+
+                  <p class="kss-toolbar">
+                          <a href="#kssref-components-fieldset" data-kss-fullscreen="kssref-components-fieldset">
+                <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                  <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                </svg>
+                <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                  <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                </svg>
+              </a>
+              <a href="item-components-fieldset.html" target="_blank">
+                <span class="kss-toolbar__tooltip">Open in new window</span>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                  <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                  <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                  <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                  <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                  <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                  <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                </svg>
+              </a>
+                        <a href="#kssref-components-fieldset" data-kss-guides="true">
+              <span class="kss-toolbar__tooltip">Toggle example guides</span>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+              </svg>
+            </a>
+            <a href="#kssref-components-fieldset" data-kss-markup="true">
+              <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+              </svg>
+            </a>
+          </p>
+        
+                  <div class="kss-description">
+            <p>Displaying fieldset in various ways.</p>
+
+          </div>
+        
+              </div>
+
+              <div class="kss-modifier__wrapper">
+          <div class="kss-modifier__heading kss-style">
+            Example          </div>
+
+          
+          <div class="kss-modifier__example">
+            <fieldset>
+    <legend>Fieldset legend</legend>
+        <div class="fieldset__description">
+            Provide a feature image that will be associated with this <em>Page</em>. The
+            image will be rendered above the page body text.
+        </div>
+        <div class="fieldset__content">
+            Some content
+        </div>
+    </div>
+</fieldset>
+            <div class="kss-modifier__example-footer"></div>
+          </div>
+
+                  </div>
+                  <details class="kss-markup kss-style">
+            <summary>
+                              Markup: <code>components/fieldset/fieldset.twig</code>
+                          </summary>
+            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;fieldset&gt;
+    &lt;legend&gt;Fieldset legend&lt;/legend&gt;
+        &lt;div class=&quot;fieldset__description&quot;&gt;
+            Provide a feature image that will be associated with this &lt;em&gt;Page&lt;/em&gt;. The
+            image will be rendered above the page body text.
+        &lt;/div&gt;
+        &lt;div class=&quot;fieldset__content&quot;&gt;
+            Some content
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+          </details>
+              
+              <div class="kss-source kss-style">
+          Source: <code>components/fieldset/_module.scss</code>, line 1
+        </div>
+          </section>
+          <section id="kssref-components-stats" class="kss-section kss-section--depth-2 ">
+      <div class="kss-style">
+                <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-components-stats">
+            <span class="kss-title__ref">
+              3.3
+              <span class="kss-title__permalink-hash">
+                components.stats
+              </span>
+            </span>
+            Statistics
+          </a>
+        </h2>
+
+                  <p class="kss-toolbar">
+                          <a href="#kssref-components-stats" data-kss-fullscreen="kssref-components-stats">
+                <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                  <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                </svg>
+                <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                  <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                </svg>
+              </a>
+              <a href="item-components-stats.html" target="_blank">
+                <span class="kss-toolbar__tooltip">Open in new window</span>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                  <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                  <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                  <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                  <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                  <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                  <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                </svg>
+              </a>
+                        <a href="#kssref-components-stats" data-kss-guides="true">
+              <span class="kss-toolbar__tooltip">Toggle example guides</span>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+              </svg>
+            </a>
+            <a href="#kssref-components-stats" data-kss-markup="true">
+              <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+              </svg>
+            </a>
+          </p>
+        
+                  <div class="kss-description">
+            <p>Displaying statistics in various ways.</p>
+
+          </div>
+        
+              </div>
+
+              <div class="kss-modifier__wrapper">
+          <div class="kss-modifier__heading kss-style">
+            Examples          </div>
+
+                      <div class="kss-modifier__default-name kss-style">
+              Default styling
+            </div>
+          
+          <div class="kss-modifier__example">
+            <div class="page">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="stat ">
+          <div class="stat__wrapper">
+            <div class="stat__card--blue">
+              <h4 class="stat__header">Antibiotic prescriptions to non-hospital patients in 2015</h4>
+              <p class="stat__count">
+                <span class="stat__count-value">37.29</span>
+                <span class="stat__count-units">%</span>
+              </p>
+              <p class="stat__trend">
+              <span class="stat__trend-value">
+                + 10.45%
+                <i class="fa fa-arrow-up stat__trend-value--positive" aria-hidden="true"></i>
+              </span>
+                <span class="stat__trend-date">since Sept 2012</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stat ">
+          <div class="stat__wrapper">
+            <div class="stat__card--blue">
+              <h4 class="stat__header">Short title</h4>
+              <p class="stat__count">
+                <span class="stat__count-value">37</span>
+                <span class="stat__count-units">million</span>
+              </p>
+              <p class="stat__trend">
+              <span class="stat__trend-value">
+                - 3 million
+                <i class="fa fa-arrow-down stat__trend-value--negative" aria-hidden="true"></i>
+              </span>
+                <span class="stat__trend-date">in 2017</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stat ">
+          <div class="stat__wrapper">
+            <div class="stat__card--blue">
+              <h4 class="stat__header">Average cost of milk</h4>
+              <p class="stat__count">
+                <span class="stat__count-units--left">$</span>
+                <span class="stat__count-value">5.50</span>
+              </p>
+              <p class="stat__trend">
+              <span class="stat__trend-value">
+                + $0.45
+                <i class="fa fa-arrow-up stat__trend-value--negative" aria-hidden="true"></i>
+              </span>
+                <span class="stat__trend-date">Over the last 2 years</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+            <div class="kss-modifier__example-footer"></div>
+          </div>
+
+                      <div class="kss-modifier__name kss-style">
+              .stat--no-trend
+            </div>
+            <div class="kss-modifier__description kss-style">
+              No trend info
+            </div>
+            <div class="kss-modifier__example">
+              <div class="page">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="stat stat--no-trend">
+          <div class="stat__wrapper">
+            <div class="stat__card--blue">
+              <h4 class="stat__header">Antibiotic prescriptions to non-hospital patients in 2015</h4>
+              <p class="stat__count">
+                <span class="stat__count-value">37.29</span>
+                <span class="stat__count-units">%</span>
+              </p>
+              <p class="stat__trend">
+              <span class="stat__trend-value">
+                + 10.45%
+                <i class="fa fa-arrow-up stat__trend-value--positive" aria-hidden="true"></i>
+              </span>
+                <span class="stat__trend-date">since Sept 2012</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stat stat--no-trend">
+          <div class="stat__wrapper">
+            <div class="stat__card--blue">
+              <h4 class="stat__header">Short title</h4>
+              <p class="stat__count">
+                <span class="stat__count-value">37</span>
+                <span class="stat__count-units">million</span>
+              </p>
+              <p class="stat__trend">
+              <span class="stat__trend-value">
+                - 3 million
+                <i class="fa fa-arrow-down stat__trend-value--negative" aria-hidden="true"></i>
+              </span>
+                <span class="stat__trend-date">in 2017</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stat stat--no-trend">
+          <div class="stat__wrapper">
+            <div class="stat__card--blue">
+              <h4 class="stat__header">Average cost of milk</h4>
+              <p class="stat__count">
+                <span class="stat__count-units--left">$</span>
+                <span class="stat__count-value">5.50</span>
+              </p>
+              <p class="stat__trend">
+              <span class="stat__trend-value">
+                + $0.45
+                <i class="fa fa-arrow-up stat__trend-value--negative" aria-hidden="true"></i>
+              </span>
+                <span class="stat__trend-date">Over the last 2 years</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+                  </div>
+                  <details class="kss-markup kss-style">
+            <summary>
+                              Markup: <code>components/stat/stat.twig</code>
+                          </summary>
+            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;page&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-md-4&quot;&gt;
+        &lt;div class=&quot;stat {{modifier_class}}&quot;&gt;
+          &lt;div class=&quot;stat__wrapper&quot;&gt;
+            &lt;div class=&quot;stat__card--blue&quot;&gt;
+              &lt;h4 class=&quot;stat__header&quot;&gt;Antibiotic prescriptions to non-hospital patients in 2015&lt;/h4&gt;
+              &lt;p class=&quot;stat__count&quot;&gt;
+                &lt;span class=&quot;stat__count-value&quot;&gt;37.29&lt;/span&gt;
+                &lt;span class=&quot;stat__count-units&quot;&gt;%&lt;/span&gt;
+              &lt;/p&gt;
+              &lt;p class=&quot;stat__trend&quot;&gt;
+              &lt;span class=&quot;stat__trend-value&quot;&gt;
+                + 10.45%
+                &lt;i class=&quot;fa fa-arrow-up stat__trend-value--positive&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+              &lt;/span&gt;
+                &lt;span class=&quot;stat__trend-date&quot;&gt;since Sept 2012&lt;/span&gt;
+              &lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col-md-4&quot;&gt;
+        &lt;div class=&quot;stat {{modifier_class}}&quot;&gt;
+          &lt;div class=&quot;stat__wrapper&quot;&gt;
+            &lt;div class=&quot;stat__card--blue&quot;&gt;
+              &lt;h4 class=&quot;stat__header&quot;&gt;Short title&lt;/h4&gt;
+              &lt;p class=&quot;stat__count&quot;&gt;
+                &lt;span class=&quot;stat__count-value&quot;&gt;37&lt;/span&gt;
+                &lt;span class=&quot;stat__count-units&quot;&gt;million&lt;/span&gt;
+              &lt;/p&gt;
+              &lt;p class=&quot;stat__trend&quot;&gt;
+              &lt;span class=&quot;stat__trend-value&quot;&gt;
+                - 3 million
+                &lt;i class=&quot;fa fa-arrow-down stat__trend-value--negative&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+              &lt;/span&gt;
+                &lt;span class=&quot;stat__trend-date&quot;&gt;in 2017&lt;/span&gt;
+              &lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col-md-4&quot;&gt;
+        &lt;div class=&quot;stat {{modifier_class}}&quot;&gt;
+          &lt;div class=&quot;stat__wrapper&quot;&gt;
+            &lt;div class=&quot;stat__card--blue&quot;&gt;
+              &lt;h4 class=&quot;stat__header&quot;&gt;Average cost of milk&lt;/h4&gt;
+              &lt;p class=&quot;stat__count&quot;&gt;
+                &lt;span class=&quot;stat__count-units--left&quot;&gt;$&lt;/span&gt;
+                &lt;span class=&quot;stat__count-value&quot;&gt;5.50&lt;/span&gt;
+              &lt;/p&gt;
+              &lt;p class=&quot;stat__trend&quot;&gt;
+              &lt;span class=&quot;stat__trend-value&quot;&gt;
+                + $0.45
+                &lt;i class=&quot;fa fa-arrow-up stat__trend-value--negative&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+              &lt;/span&gt;
+                &lt;span class=&quot;stat__trend-date&quot;&gt;Over the last 2 years&lt;/span&gt;
+              &lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </details>
+              
+              <div class="kss-source kss-style">
+          Source: <code>components/stat/_module.scss</code>, line 1
+        </div>
+          </section>
+          <section id="kssref-components-taskbar" class="kss-section kss-section--depth-2 ">
+      <div class="kss-style">
+                <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-components-taskbar">
+            <span class="kss-title__ref">
+              3.4
+              <span class="kss-title__permalink-hash">
+                components.taskbar
+              </span>
+            </span>
+            Taskbar
+          </a>
+        </h2>
+
+                  <p class="kss-toolbar">
+                          <a href="#kssref-components-taskbar" data-kss-fullscreen="kssref-components-taskbar">
+                <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                  <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                </svg>
+                <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                  <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                </svg>
+              </a>
+              <a href="item-components-taskbar.html" target="_blank">
+                <span class="kss-toolbar__tooltip">Open in new window</span>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                  <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                  <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                  <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                  <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                  <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                  <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                </svg>
+              </a>
+                        <a href="#kssref-components-taskbar" data-kss-guides="true">
+              <span class="kss-toolbar__tooltip">Toggle example guides</span>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+              </svg>
+            </a>
+            <a href="#kssref-components-taskbar" data-kss-markup="true">
+              <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+              </svg>
+            </a>
+          </p>
+        
+                  <div class="kss-description">
+            <p>A taskbar for displaying a wrappable list of task &#39;accelatorators&#39; with icon.
+Default display is plain but a &#39;tiled&#39; version is available.</p>
+
+          </div>
+        
+              </div>
+
+              <div class="kss-modifier__wrapper">
+          <div class="kss-modifier__heading kss-style">
+            Examples          </div>
+
+                      <div class="kss-modifier__default-name kss-style">
+              Default styling
+            </div>
+          
+          <div class="kss-modifier__example">
+            <nav class="">
+    <ul>
+        <li>
+            <a class="taskbar__item" href="#">				
+                <img class="taskbar__img" src="../images/icons/general-practice.png">
+                <h2 class="taskbar__title">General practice</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="i../images/icons/aged-care.png">
+                <h2 class="taskbar__title">Aged care</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consectetur </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/general-public.png">
+                <h2 class="taskbar__title">General public</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consec</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/hospital.png">
+                <h2 class="taskbar__title">Hospital</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor  </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/pharmacy.png">
+                <h2 class="taskbar__title">Pharmacy</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, cons </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/laboratory-services.png">
+                <h2 class="taskbar__title">Laboratory services</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/agriculture-industry.png">
+                <h2 class="taskbar__title">Agriculture and industry</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/veterinary-practice.png">
+                <h2 class="taskbar__title">Veterinary practice</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/animal-owners.png">
+                <h2 class="taskbar__title">Animal owners</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, conse</p>
+            </a>
+        </li>
+    </ul>
+</nav>
+            <div class="kss-modifier__example-footer"></div>
+          </div>
+
+                      <div class="kss-modifier__name kss-style">
+              taskbar--2
+            </div>
+            <div class="kss-modifier__description kss-style">
+              Displays 2 items in a row
+            </div>
+            <div class="kss-modifier__example">
+              <nav class="taskbar--2">
+    <ul>
+        <li>
+            <a class="taskbar__item" href="#">				
+                <img class="taskbar__img" src="../images/icons/general-practice.png">
+                <h2 class="taskbar__title">General practice</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="i../images/icons/aged-care.png">
+                <h2 class="taskbar__title">Aged care</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consectetur </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/general-public.png">
+                <h2 class="taskbar__title">General public</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consec</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/hospital.png">
+                <h2 class="taskbar__title">Hospital</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor  </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/pharmacy.png">
+                <h2 class="taskbar__title">Pharmacy</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, cons </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/laboratory-services.png">
+                <h2 class="taskbar__title">Laboratory services</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/agriculture-industry.png">
+                <h2 class="taskbar__title">Agriculture and industry</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/veterinary-practice.png">
+                <h2 class="taskbar__title">Veterinary practice</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/animal-owners.png">
+                <h2 class="taskbar__title">Animal owners</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, conse</p>
+            </a>
+        </li>
+    </ul>
+</nav>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+                      <div class="kss-modifier__name kss-style">
+              taskbar--3
+            </div>
+            <div class="kss-modifier__description kss-style">
+              Displays 3 items in a row
+            </div>
+            <div class="kss-modifier__example">
+              <nav class="taskbar--3">
+    <ul>
+        <li>
+            <a class="taskbar__item" href="#">				
+                <img class="taskbar__img" src="../images/icons/general-practice.png">
+                <h2 class="taskbar__title">General practice</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="i../images/icons/aged-care.png">
+                <h2 class="taskbar__title">Aged care</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consectetur </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/general-public.png">
+                <h2 class="taskbar__title">General public</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consec</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/hospital.png">
+                <h2 class="taskbar__title">Hospital</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor  </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/pharmacy.png">
+                <h2 class="taskbar__title">Pharmacy</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, cons </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/laboratory-services.png">
+                <h2 class="taskbar__title">Laboratory services</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/agriculture-industry.png">
+                <h2 class="taskbar__title">Agriculture and industry</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/veterinary-practice.png">
+                <h2 class="taskbar__title">Veterinary practice</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/animal-owners.png">
+                <h2 class="taskbar__title">Animal owners</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, conse</p>
+            </a>
+        </li>
+    </ul>
+</nav>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+                      <div class="kss-modifier__name kss-style">
+              taskbar--4
+            </div>
+            <div class="kss-modifier__description kss-style">
+              Displays 4 items in a row
+            </div>
+            <div class="kss-modifier__example">
+              <nav class="taskbar--4">
+    <ul>
+        <li>
+            <a class="taskbar__item" href="#">				
+                <img class="taskbar__img" src="../images/icons/general-practice.png">
+                <h2 class="taskbar__title">General practice</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="i../images/icons/aged-care.png">
+                <h2 class="taskbar__title">Aged care</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consectetur </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/general-public.png">
+                <h2 class="taskbar__title">General public</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consec</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/hospital.png">
+                <h2 class="taskbar__title">Hospital</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor  </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/pharmacy.png">
+                <h2 class="taskbar__title">Pharmacy</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, cons </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/laboratory-services.png">
+                <h2 class="taskbar__title">Laboratory services</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/agriculture-industry.png">
+                <h2 class="taskbar__title">Agriculture and industry</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/veterinary-practice.png">
+                <h2 class="taskbar__title">Veterinary practice</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/animal-owners.png">
+                <h2 class="taskbar__title">Animal owners</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, conse</p>
+            </a>
+        </li>
+    </ul>
+</nav>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+                      <div class="kss-modifier__name kss-style">
+              taskbar--5
+            </div>
+            <div class="kss-modifier__description kss-style">
+              Displays 5 items in a row
+            </div>
+            <div class="kss-modifier__example">
+              <nav class="taskbar--5">
+    <ul>
+        <li>
+            <a class="taskbar__item" href="#">				
+                <img class="taskbar__img" src="../images/icons/general-practice.png">
+                <h2 class="taskbar__title">General practice</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="i../images/icons/aged-care.png">
+                <h2 class="taskbar__title">Aged care</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consectetur </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/general-public.png">
+                <h2 class="taskbar__title">General public</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consec</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/hospital.png">
+                <h2 class="taskbar__title">Hospital</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor  </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/pharmacy.png">
+                <h2 class="taskbar__title">Pharmacy</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, cons </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/laboratory-services.png">
+                <h2 class="taskbar__title">Laboratory services</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/agriculture-industry.png">
+                <h2 class="taskbar__title">Agriculture and industry</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/veterinary-practice.png">
+                <h2 class="taskbar__title">Veterinary practice</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/animal-owners.png">
+                <h2 class="taskbar__title">Animal owners</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, conse</p>
+            </a>
+        </li>
+    </ul>
+</nav>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+                      <div class="kss-modifier__name kss-style">
+              taskbar--6
+            </div>
+            <div class="kss-modifier__description kss-style">
+              Displays 6 items in a row
+            </div>
+            <div class="kss-modifier__example">
+              <nav class="taskbar--6">
+    <ul>
+        <li>
+            <a class="taskbar__item" href="#">				
+                <img class="taskbar__img" src="../images/icons/general-practice.png">
+                <h2 class="taskbar__title">General practice</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="i../images/icons/aged-care.png">
+                <h2 class="taskbar__title">Aged care</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consectetur </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/general-public.png">
+                <h2 class="taskbar__title">General public</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consec</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/hospital.png">
+                <h2 class="taskbar__title">Hospital</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor  </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/pharmacy.png">
+                <h2 class="taskbar__title">Pharmacy</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, cons </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/laboratory-services.png">
+                <h2 class="taskbar__title">Laboratory services</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/agriculture-industry.png">
+                <h2 class="taskbar__title">Agriculture and industry</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/veterinary-practice.png">
+                <h2 class="taskbar__title">Veterinary practice</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/animal-owners.png">
+                <h2 class="taskbar__title">Animal owners</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, conse</p>
+            </a>
+        </li>
+    </ul>
+</nav>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+                      <div class="kss-modifier__name kss-style">
+              taskbar--tiled--2
+            </div>
+            <div class="kss-modifier__description kss-style">
+              Displays 2 tiled items in a row
+            </div>
+            <div class="kss-modifier__example">
+              <nav class="taskbar--tiled--2">
+    <ul>
+        <li>
+            <a class="taskbar__item" href="#">				
+                <img class="taskbar__img" src="../images/icons/general-practice.png">
+                <h2 class="taskbar__title">General practice</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="i../images/icons/aged-care.png">
+                <h2 class="taskbar__title">Aged care</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consectetur </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/general-public.png">
+                <h2 class="taskbar__title">General public</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consec</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/hospital.png">
+                <h2 class="taskbar__title">Hospital</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor  </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/pharmacy.png">
+                <h2 class="taskbar__title">Pharmacy</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, cons </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/laboratory-services.png">
+                <h2 class="taskbar__title">Laboratory services</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/agriculture-industry.png">
+                <h2 class="taskbar__title">Agriculture and industry</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/veterinary-practice.png">
+                <h2 class="taskbar__title">Veterinary practice</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/animal-owners.png">
+                <h2 class="taskbar__title">Animal owners</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, conse</p>
+            </a>
+        </li>
+    </ul>
+</nav>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+                      <div class="kss-modifier__name kss-style">
+              taskbar--tiled--3
+            </div>
+            <div class="kss-modifier__description kss-style">
+              Displays 3 tiled items in a row
+            </div>
+            <div class="kss-modifier__example">
+              <nav class="taskbar--tiled--3">
+    <ul>
+        <li>
+            <a class="taskbar__item" href="#">				
+                <img class="taskbar__img" src="../images/icons/general-practice.png">
+                <h2 class="taskbar__title">General practice</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="i../images/icons/aged-care.png">
+                <h2 class="taskbar__title">Aged care</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consectetur </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/general-public.png">
+                <h2 class="taskbar__title">General public</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consec</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/hospital.png">
+                <h2 class="taskbar__title">Hospital</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor  </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/pharmacy.png">
+                <h2 class="taskbar__title">Pharmacy</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, cons </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/laboratory-services.png">
+                <h2 class="taskbar__title">Laboratory services</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/agriculture-industry.png">
+                <h2 class="taskbar__title">Agriculture and industry</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/veterinary-practice.png">
+                <h2 class="taskbar__title">Veterinary practice</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/animal-owners.png">
+                <h2 class="taskbar__title">Animal owners</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, conse</p>
+            </a>
+        </li>
+    </ul>
+</nav>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+                      <div class="kss-modifier__name kss-style">
+              taskbar--tiled--4
+            </div>
+            <div class="kss-modifier__description kss-style">
+              Displays 4 tiled items in a row
+            </div>
+            <div class="kss-modifier__example">
+              <nav class="taskbar--tiled--4">
+    <ul>
+        <li>
+            <a class="taskbar__item" href="#">				
+                <img class="taskbar__img" src="../images/icons/general-practice.png">
+                <h2 class="taskbar__title">General practice</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="i../images/icons/aged-care.png">
+                <h2 class="taskbar__title">Aged care</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consectetur </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/general-public.png">
+                <h2 class="taskbar__title">General public</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consec</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/hospital.png">
+                <h2 class="taskbar__title">Hospital</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor  </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/pharmacy.png">
+                <h2 class="taskbar__title">Pharmacy</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, cons </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/laboratory-services.png">
+                <h2 class="taskbar__title">Laboratory services</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/agriculture-industry.png">
+                <h2 class="taskbar__title">Agriculture and industry</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/veterinary-practice.png">
+                <h2 class="taskbar__title">Veterinary practice</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/animal-owners.png">
+                <h2 class="taskbar__title">Animal owners</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, conse</p>
+            </a>
+        </li>
+    </ul>
+</nav>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+                      <div class="kss-modifier__name kss-style">
+              taskbar--tiled--5
+            </div>
+            <div class="kss-modifier__description kss-style">
+              Displays 5 tiled items in a row
+            </div>
+            <div class="kss-modifier__example">
+              <nav class="taskbar--tiled--5">
+    <ul>
+        <li>
+            <a class="taskbar__item" href="#">				
+                <img class="taskbar__img" src="../images/icons/general-practice.png">
+                <h2 class="taskbar__title">General practice</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="i../images/icons/aged-care.png">
+                <h2 class="taskbar__title">Aged care</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consectetur </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/general-public.png">
+                <h2 class="taskbar__title">General public</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consec</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/hospital.png">
+                <h2 class="taskbar__title">Hospital</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor  </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/pharmacy.png">
+                <h2 class="taskbar__title">Pharmacy</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, cons </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/laboratory-services.png">
+                <h2 class="taskbar__title">Laboratory services</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/agriculture-industry.png">
+                <h2 class="taskbar__title">Agriculture and industry</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/veterinary-practice.png">
+                <h2 class="taskbar__title">Veterinary practice</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/animal-owners.png">
+                <h2 class="taskbar__title">Animal owners</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, conse</p>
+            </a>
+        </li>
+    </ul>
+</nav>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+                      <div class="kss-modifier__name kss-style">
+              taskbar--tiled--6
+            </div>
+            <div class="kss-modifier__description kss-style">
+              Displays 6 tiled items in a row
+            </div>
+            <div class="kss-modifier__example">
+              <nav class="taskbar--tiled--6">
+    <ul>
+        <li>
+            <a class="taskbar__item" href="#">				
+                <img class="taskbar__img" src="../images/icons/general-practice.png">
+                <h2 class="taskbar__title">General practice</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="i../images/icons/aged-care.png">
+                <h2 class="taskbar__title">Aged care</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consectetur </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/general-public.png">
+                <h2 class="taskbar__title">General public</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, consec</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/hospital.png">
+                <h2 class="taskbar__title">Hospital</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor  </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/pharmacy.png">
+                <h2 class="taskbar__title">Pharmacy</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, cons </p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/laboratory-services.png">
+                <h2 class="taskbar__title">Laboratory services</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/agriculture-industry.png">
+                <h2 class="taskbar__title">Agriculture and industry</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/veterinary-practice.png">
+                <h2 class="taskbar__title">Veterinary practice</h2>
+                <p class="taskbar__desc">Lorem ipsum</p>
+            </a>
+        </li>
+        <li>
+            <a class="taskbar__item" href="#">
+                <img class="taskbar__img" src="../images/icons/animal-owners.png">
+                <h2 class="taskbar__title">Animal owners</h2>
+                <p class="taskbar__desc">Lorem ipsum dolor sit amet, conse</p>
+            </a>
+        </li>
+    </ul>
+</nav>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+                  </div>
+                  <details class="kss-markup kss-style">
+            <summary>
+                              Markup: <code>components/taskbar/taskbar.twig</code>
+                          </summary>
+            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;nav class=&quot;{{modifier_class}}&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;a class=&quot;taskbar__item&quot; href=&quot;#&quot;&gt;				
+                &lt;img class=&quot;taskbar__img&quot; src=&quot;../images/icons/general-practice.png&quot;&gt;
+                &lt;h2 class=&quot;taskbar__title&quot;&gt;General practice&lt;/h2&gt;
+                &lt;p class=&quot;taskbar__desc&quot;&gt;Lorem ipsum dolor&lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a class=&quot;taskbar__item&quot; href=&quot;#&quot;&gt;
+                &lt;img class=&quot;taskbar__img&quot; src=&quot;i../images/icons/aged-care.png&quot;&gt;
+                &lt;h2 class=&quot;taskbar__title&quot;&gt;Aged care&lt;/h2&gt;
+                &lt;p class=&quot;taskbar__desc&quot;&gt;Lorem ipsum dolor sit amet, consectetur &lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a class=&quot;taskbar__item&quot; href=&quot;#&quot;&gt;
+                &lt;img class=&quot;taskbar__img&quot; src=&quot;../images/icons/general-public.png&quot;&gt;
+                &lt;h2 class=&quot;taskbar__title&quot;&gt;General public&lt;/h2&gt;
+                &lt;p class=&quot;taskbar__desc&quot;&gt;Lorem ipsum dolor sit amet, consec&lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a class=&quot;taskbar__item&quot; href=&quot;#&quot;&gt;
+                &lt;img class=&quot;taskbar__img&quot; src=&quot;../images/icons/hospital.png&quot;&gt;
+                &lt;h2 class=&quot;taskbar__title&quot;&gt;Hospital&lt;/h2&gt;
+                &lt;p class=&quot;taskbar__desc&quot;&gt;Lorem ipsum dolor  &lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a class=&quot;taskbar__item&quot; href=&quot;#&quot;&gt;
+                &lt;img class=&quot;taskbar__img&quot; src=&quot;../images/icons/pharmacy.png&quot;&gt;
+                &lt;h2 class=&quot;taskbar__title&quot;&gt;Pharmacy&lt;/h2&gt;
+                &lt;p class=&quot;taskbar__desc&quot;&gt;Lorem ipsum dolor sit amet, cons &lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a class=&quot;taskbar__item&quot; href=&quot;#&quot;&gt;
+                &lt;img class=&quot;taskbar__img&quot; src=&quot;../images/icons/laboratory-services.png&quot;&gt;
+                &lt;h2 class=&quot;taskbar__title&quot;&gt;Laboratory services&lt;/h2&gt;
+                &lt;p class=&quot;taskbar__desc&quot;&gt;Lorem ipsum&lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a class=&quot;taskbar__item&quot; href=&quot;#&quot;&gt;
+                &lt;img class=&quot;taskbar__img&quot; src=&quot;../images/icons/agriculture-industry.png&quot;&gt;
+                &lt;h2 class=&quot;taskbar__title&quot;&gt;Agriculture and industry&lt;/h2&gt;
+                &lt;p class=&quot;taskbar__desc&quot;&gt;Lorem ipsum dolor&lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a class=&quot;taskbar__item&quot; href=&quot;#&quot;&gt;
+                &lt;img class=&quot;taskbar__img&quot; src=&quot;../images/icons/veterinary-practice.png&quot;&gt;
+                &lt;h2 class=&quot;taskbar__title&quot;&gt;Veterinary practice&lt;/h2&gt;
+                &lt;p class=&quot;taskbar__desc&quot;&gt;Lorem ipsum&lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a class=&quot;taskbar__item&quot; href=&quot;#&quot;&gt;
+                &lt;img class=&quot;taskbar__img&quot; src=&quot;../images/icons/animal-owners.png&quot;&gt;
+                &lt;h2 class=&quot;taskbar__title&quot;&gt;Animal owners&lt;/h2&gt;
+                &lt;p class=&quot;taskbar__desc&quot;&gt;Lorem ipsum dolor sit amet, conse&lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+          </details>
+              
+              <div class="kss-source kss-style">
+          Source: <code>components/taskbar/_module.scss</code>, line 1
+        </div>
+          </section>
+          <section id="kssref-components-video" class="kss-section kss-section--depth-2 ">
+      <div class="kss-style">
+                <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-components-video">
+            <span class="kss-title__ref">
+              3.5
+              <span class="kss-title__permalink-hash">
+                components.video
+              </span>
+            </span>
+            Video
+          </a>
+        </h2>
+
+                  <p class="kss-toolbar">
+                          <a href="#kssref-components-video" data-kss-fullscreen="kssref-components-video">
+                <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                  <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                </svg>
+                <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                  <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                </svg>
+              </a>
+              <a href="item-components-video.html" target="_blank">
+                <span class="kss-toolbar__tooltip">Open in new window</span>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                  <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                  <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                  <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                  <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                  <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                  <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                </svg>
+              </a>
+                        <a href="#kssref-components-video" data-kss-guides="true">
+              <span class="kss-toolbar__tooltip">Toggle example guides</span>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+              </svg>
+            </a>
+            <a href="#kssref-components-video" data-kss-markup="true">
+              <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+              </svg>
+            </a>
+          </p>
+        
+                  <div class="kss-description">
+            <p>Display of inline video.</p>
+
+          </div>
+        
+              </div>
+
+              <div class="kss-modifier__wrapper">
+          <div class="kss-modifier__heading kss-style">
+            Examples          </div>
+
+                      <div class="kss-modifier__default-name kss-style">
+              Default styling
+            </div>
+          
+          <div class="kss-modifier__example">
+            <div class="container">
+    <div class="video video--left">
+        <div class="video__title">Don't make smokes your story</div>
+        <div class="video__left">
+            <div class="video__preview">
+                <a class="js-video-play " href="#" title="Play video" data-youtubeid="iz8C4xgz-fE">
+                    <picture title="Don't makes smokes your story">
+                        <img src="../images/video/video-preview.jpg" alt="Don't makes smokes your story"
+                             title="Don't makes smokes your story">
+                    </picture>
+                    <div class="video__play-button"></div>
+                    <div class="video__length">0:45</div>
+                </a>
+            </div>
+            <details open="" data-label="video-transcript" class="video__transcript" id="view-transcript">
+                <summary aria-controls="transcript-body" aria-expanded="false" class="uikit-accordion__closed uikit-accordion--closed" onclick="return UIKIT.accordion.Toggle( this )">Read transcript</summary>
+                <div class="video__transcript-body uikit-accordion--closed" id="transcript-body">
+                    <div class="video__transcript-body-wrapper">
+                        <h2>Don’t Make Smokes Your Story – National Tobacco Campaign</h2>
+                        <h3>TV commercial – 48 seconds</h3>
+                        <p>Ted and his family sitting on the back steps with his guitar.</p>
+                        <p><strong>Voiceover: Family is everything to me.&nbsp; </strong></p>
+                        <p>We see Ted in the kitchen with his extended family.</p>
+                        <p><strong>Voiceover: I can’t imagine life without them, to be honest. </strong></p>
+                        <p>We see Ted in the hospital with an oxygen mask on his face. A close up of his finger with a pulse monitor attached.</p>
+                        <p><strong>Voiceover: I’ve had my battles with smokes. </strong></p>
+                        <p>We see Ted’s wife standing at his hospital bedside.</p>
+                        <p><strong>Voiceover: My lungs got pretty bad </strong></p>
+                        <p>We see a close up of Ted’s face with the oxygen mask.</p>
+                        <p><strong>Voiceover: Sometimes I could hardly breathe and that was tough on everyone. </strong></p>
+                        <p>In a flashback, we cut to a younger Ted at a skate park, smoking with a mate. We then see them passing cigarettes to each other as they sit in the skate bowl.</p>
+                        <p><strong>Voiceover: I’m not sure why I smoked; I just did. </strong></p>
+                        <p>We see Ted playing with his children in the backyard.</p>
+                        <p><strong>Voiceover: My kids, Jarrah and Yani, I wanted to be there for them, so I quit.&nbsp; Quitting was tough, I just kept trying. </strong></p>
+                        <p>We see Ted kicking a football with his children.</p>
+                        <p><strong>Voiceover: now I can keep up with them in the yard….</strong></p>
+                        <p>Ted helps his children riding their bikes on the street.</p>
+                        <p><strong>Voiceover: …and I’ve got more money to spend on better things</strong>.</p>
+                        <p>We see Ted standing in front of his house taking a selfie with his Mum.</p>
+                        <p><strong>Voiceover: Mum and the Aunties are pretty happy that I quit. </strong></p>
+                        <p>We see Ted with his extended family in the kitchen.</p>
+                        <p><strong>Voiceover: They didn’t want me to die from smokes like Dad did</strong>.</p>
+                        <p>We see Ted’s face and a shot of Ted standing in front of his house with his children playing football behind him.</p>
+                        <p><strong>Voiceover: My name is Ted, and family is my story.</strong></p>
+                        <p><strong>Voiceover: DON’T MAKE SMOKES YOUR STORY.</strong></p>
+                        <p><strong>Voiceover: For help, download the My Quit Buddy app, call the Quitline, or visit quitnow.</strong></p>
+                        <p>Federal Government logo, Quitline Logo and My QuitBuddy logo</p>
+                        <p><strong>Voiceover: Authorised by the Australian Government, Canberra. </strong></p>
+                        <p>Authorised by the Australian Government, Canberra.&nbsp; Spoken by F. Leone</p>
+                    </div>
+                </div>
+            </details>
+        </div>
+        <div class="video__right">
+                <p class="video__description">Well done! You’ve taken an important
+                    step on the road to becoming smoke-free. Quitting can be hard and most smokers try a
+                    number of times before they finally quit for good. So take it one step at a time and
+                    don’t beat yourself up. The longer you stay smoke-free, the easier it gets. <a
+                            href="/smokes/health-benefits-quitting">Learn the many benefits of quitting</a>
+                    and <a href="http://quitnow.gov.au/internet/quitnow/publishing.nsf/Content/home">ways to
+                        help you do this</a>.</p>
+            <a class="video__cta" href="#">Find out more</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="video video--right">
+        <div class="video__title">Don't make smokes your story</div>
+        <div class="video__left">
+            <p class="video__description">Well done! You’ve taken an important
+                step on the road to becoming smoke-free. Quitting can be hard and most smokers try a
+                number of times before they finally quit for good. So take it one step at a time and
+                don’t beat yourself up. The longer you stay smoke-free, the easier it gets. <a
+                        href="/smokes/health-benefits-quitting">Learn the many benefits of quitting</a>
+                and <a href="http://quitnow.gov.au/internet/quitnow/publishing.nsf/Content/home">ways to
+                    help you do this</a>.</p>
+            <a class="video__cta" href="#">Find out more</a>
+        </div>
+        <div class="video__right">
+            <div class="video__preview">
+                <a class="js-video-play " href="#" title="Play video" data-youtubeid="iz8C4xgz-fE">
+                    <picture title="Don't makes smokes your story">
+                        <img src="../images/video/video-preview.jpg" alt="Don't makes smokes your story"
+                             title="Don't makes smokes your story">
+                    </picture>
+                    <div class="video__play-button"></div>
+                    <div class="video__length">0:45</div>
+                </a>
+
+            </div>
+            <details open="" data-label="video-transcript" aria-expanded="false" class="video__transcript" id="view-transcript">
+                <summary aria-controls="transcript-body" aria-expanded="false" onclick="return UIKIT.accordion.Toggle( this )">Read transcript</summary>
+                <div class="video__transcript-body" id="transcript-body">
+                    <div class="video__transcript-body-wrapper">
+                        <h2>Don’t Make Smokes Your Story – National Tobacco Campaign</h2>
+                        <h3>TV commercial – 48 seconds</h3>
+                        <p>Ted and his family sitting on the back steps with his guitar.</p>
+                        <p><strong>Voiceover: Family is everything to me.&nbsp; </strong></p>
+                        <p>We see Ted in the kitchen with his extended family.</p>
+                        <p><strong>Voiceover: I can’t imagine life without them, to be honest. </strong></p>
+                        <p>We see Ted in the hospital with an oxygen mask on his face. A close up of his finger with a pulse monitor attached.</p>
+                        <p><strong>Voiceover: I’ve had my battles with smokes. </strong></p>
+                        <p>We see Ted’s wife standing at his hospital bedside.</p>
+                        <p><strong>Voiceover: My lungs got pretty bad </strong></p>
+                        <p>We see a close up of Ted’s face with the oxygen mask.</p>
+                        <p><strong>Voiceover: Sometimes I could hardly breathe and that was tough on everyone. </strong></p>
+                        <p>In a flashback, we cut to a younger Ted at a skate park, smoking with a mate. We then see them passing cigarettes to each other as they sit in the skate bowl.</p>
+                        <p><strong>Voiceover: I’m not sure why I smoked; I just did. </strong></p>
+                        <p>We see Ted playing with his children in the backyard.</p>
+                        <p><strong>Voiceover: My kids, Jarrah and Yani, I wanted to be there for them, so I quit.&nbsp; Quitting was tough, I just kept trying. </strong></p>
+                        <p>We see Ted kicking a football with his children.</p>
+                        <p><strong>Voiceover: now I can keep up with them in the yard….</strong></p>
+                        <p>Ted helps his children riding their bikes on the street.</p>
+                        <p><strong>Voiceover: …and I’ve got more money to spend on better things</strong>.</p>
+                        <p>We see Ted standing in front of his house taking a selfie with his Mum.</p>
+                        <p><strong>Voiceover: Mum and the Aunties are pretty happy that I quit. </strong></p>
+                        <p>We see Ted with his extended family in the kitchen.</p>
+                        <p><strong>Voiceover: They didn’t want me to die from smokes like Dad did</strong>.</p>
+                        <p>We see Ted’s face and a shot of Ted standing in front of his house with his children playing football behind him.</p>
+                        <p><strong>Voiceover: My name is Ted, and family is my story.</strong></p>
+                        <p><strong>Voiceover: DON’T MAKE SMOKES YOUR STORY.</strong></p>
+                        <p><strong>Voiceover: For help, download the My Quit Buddy app, call the Quitline, or visit quitnow.</strong></p>
+                        <p>Federal Government logo, Quitline Logo and My QuitBuddy logo</p>
+                        <p><strong>Voiceover: Authorised by the Australian Government, Canberra. </strong></p>
+                        <p>Authorised by the Australian Government, Canberra.&nbsp; Spoken by F. Leone</p>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </div>
+</div>
+            <div class="kss-modifier__example-footer"></div>
+          </div>
+
+                      <div class="kss-modifier__name kss-style">
+              video--left
+            </div>
+            <div class="kss-modifier__description kss-style">
+              Video on the left
+            </div>
+            <div class="kss-modifier__example">
+              <div class="container">
+    <div class="video video--left">
+        <div class="video__title">Don't make smokes your story</div>
+        <div class="video__left">
+            <div class="video__preview">
+                <a class="js-video-play " href="#" title="Play video" data-youtubeid="iz8C4xgz-fE">
+                    <picture title="Don't makes smokes your story">
+                        <img src="../images/video/video-preview.jpg" alt="Don't makes smokes your story"
+                             title="Don't makes smokes your story">
+                    </picture>
+                    <div class="video__play-button"></div>
+                    <div class="video__length">0:45</div>
+                </a>
+            </div>
+            <details open="" data-label="video-transcript" class="video__transcript" id="view-transcript">
+                <summary aria-controls="transcript-body" aria-expanded="false" class="uikit-accordion__closed uikit-accordion--closed" onclick="return UIKIT.accordion.Toggle( this )">Read transcript</summary>
+                <div class="video__transcript-body uikit-accordion--closed" id="transcript-body">
+                    <div class="video__transcript-body-wrapper">
+                        <h2>Don’t Make Smokes Your Story – National Tobacco Campaign</h2>
+                        <h3>TV commercial – 48 seconds</h3>
+                        <p>Ted and his family sitting on the back steps with his guitar.</p>
+                        <p><strong>Voiceover: Family is everything to me.&nbsp; </strong></p>
+                        <p>We see Ted in the kitchen with his extended family.</p>
+                        <p><strong>Voiceover: I can’t imagine life without them, to be honest. </strong></p>
+                        <p>We see Ted in the hospital with an oxygen mask on his face. A close up of his finger with a pulse monitor attached.</p>
+                        <p><strong>Voiceover: I’ve had my battles with smokes. </strong></p>
+                        <p>We see Ted’s wife standing at his hospital bedside.</p>
+                        <p><strong>Voiceover: My lungs got pretty bad </strong></p>
+                        <p>We see a close up of Ted’s face with the oxygen mask.</p>
+                        <p><strong>Voiceover: Sometimes I could hardly breathe and that was tough on everyone. </strong></p>
+                        <p>In a flashback, we cut to a younger Ted at a skate park, smoking with a mate. We then see them passing cigarettes to each other as they sit in the skate bowl.</p>
+                        <p><strong>Voiceover: I’m not sure why I smoked; I just did. </strong></p>
+                        <p>We see Ted playing with his children in the backyard.</p>
+                        <p><strong>Voiceover: My kids, Jarrah and Yani, I wanted to be there for them, so I quit.&nbsp; Quitting was tough, I just kept trying. </strong></p>
+                        <p>We see Ted kicking a football with his children.</p>
+                        <p><strong>Voiceover: now I can keep up with them in the yard….</strong></p>
+                        <p>Ted helps his children riding their bikes on the street.</p>
+                        <p><strong>Voiceover: …and I’ve got more money to spend on better things</strong>.</p>
+                        <p>We see Ted standing in front of his house taking a selfie with his Mum.</p>
+                        <p><strong>Voiceover: Mum and the Aunties are pretty happy that I quit. </strong></p>
+                        <p>We see Ted with his extended family in the kitchen.</p>
+                        <p><strong>Voiceover: They didn’t want me to die from smokes like Dad did</strong>.</p>
+                        <p>We see Ted’s face and a shot of Ted standing in front of his house with his children playing football behind him.</p>
+                        <p><strong>Voiceover: My name is Ted, and family is my story.</strong></p>
+                        <p><strong>Voiceover: DON’T MAKE SMOKES YOUR STORY.</strong></p>
+                        <p><strong>Voiceover: For help, download the My Quit Buddy app, call the Quitline, or visit quitnow.</strong></p>
+                        <p>Federal Government logo, Quitline Logo and My QuitBuddy logo</p>
+                        <p><strong>Voiceover: Authorised by the Australian Government, Canberra. </strong></p>
+                        <p>Authorised by the Australian Government, Canberra.&nbsp; Spoken by F. Leone</p>
+                    </div>
+                </div>
+            </details>
+        </div>
+        <div class="video__right">
+                <p class="video__description">Well done! You’ve taken an important
+                    step on the road to becoming smoke-free. Quitting can be hard and most smokers try a
+                    number of times before they finally quit for good. So take it one step at a time and
+                    don’t beat yourself up. The longer you stay smoke-free, the easier it gets. <a
+                            href="/smokes/health-benefits-quitting">Learn the many benefits of quitting</a>
+                    and <a href="http://quitnow.gov.au/internet/quitnow/publishing.nsf/Content/home">ways to
+                        help you do this</a>.</p>
+            <a class="video__cta" href="#">Find out more</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="video video--right">
+        <div class="video__title">Don't make smokes your story</div>
+        <div class="video__left">
+            <p class="video__description">Well done! You’ve taken an important
+                step on the road to becoming smoke-free. Quitting can be hard and most smokers try a
+                number of times before they finally quit for good. So take it one step at a time and
+                don’t beat yourself up. The longer you stay smoke-free, the easier it gets. <a
+                        href="/smokes/health-benefits-quitting">Learn the many benefits of quitting</a>
+                and <a href="http://quitnow.gov.au/internet/quitnow/publishing.nsf/Content/home">ways to
+                    help you do this</a>.</p>
+            <a class="video__cta" href="#">Find out more</a>
+        </div>
+        <div class="video__right">
+            <div class="video__preview">
+                <a class="js-video-play " href="#" title="Play video" data-youtubeid="iz8C4xgz-fE">
+                    <picture title="Don't makes smokes your story">
+                        <img src="../images/video/video-preview.jpg" alt="Don't makes smokes your story"
+                             title="Don't makes smokes your story">
+                    </picture>
+                    <div class="video__play-button"></div>
+                    <div class="video__length">0:45</div>
+                </a>
+
+            </div>
+            <details open="" data-label="video-transcript" aria-expanded="false" class="video__transcript" id="view-transcript">
+                <summary aria-controls="transcript-body" aria-expanded="false" onclick="return UIKIT.accordion.Toggle( this )">Read transcript</summary>
+                <div class="video__transcript-body" id="transcript-body">
+                    <div class="video__transcript-body-wrapper">
+                        <h2>Don’t Make Smokes Your Story – National Tobacco Campaign</h2>
+                        <h3>TV commercial – 48 seconds</h3>
+                        <p>Ted and his family sitting on the back steps with his guitar.</p>
+                        <p><strong>Voiceover: Family is everything to me.&nbsp; </strong></p>
+                        <p>We see Ted in the kitchen with his extended family.</p>
+                        <p><strong>Voiceover: I can’t imagine life without them, to be honest. </strong></p>
+                        <p>We see Ted in the hospital with an oxygen mask on his face. A close up of his finger with a pulse monitor attached.</p>
+                        <p><strong>Voiceover: I’ve had my battles with smokes. </strong></p>
+                        <p>We see Ted’s wife standing at his hospital bedside.</p>
+                        <p><strong>Voiceover: My lungs got pretty bad </strong></p>
+                        <p>We see a close up of Ted’s face with the oxygen mask.</p>
+                        <p><strong>Voiceover: Sometimes I could hardly breathe and that was tough on everyone. </strong></p>
+                        <p>In a flashback, we cut to a younger Ted at a skate park, smoking with a mate. We then see them passing cigarettes to each other as they sit in the skate bowl.</p>
+                        <p><strong>Voiceover: I’m not sure why I smoked; I just did. </strong></p>
+                        <p>We see Ted playing with his children in the backyard.</p>
+                        <p><strong>Voiceover: My kids, Jarrah and Yani, I wanted to be there for them, so I quit.&nbsp; Quitting was tough, I just kept trying. </strong></p>
+                        <p>We see Ted kicking a football with his children.</p>
+                        <p><strong>Voiceover: now I can keep up with them in the yard….</strong></p>
+                        <p>Ted helps his children riding their bikes on the street.</p>
+                        <p><strong>Voiceover: …and I’ve got more money to spend on better things</strong>.</p>
+                        <p>We see Ted standing in front of his house taking a selfie with his Mum.</p>
+                        <p><strong>Voiceover: Mum and the Aunties are pretty happy that I quit. </strong></p>
+                        <p>We see Ted with his extended family in the kitchen.</p>
+                        <p><strong>Voiceover: They didn’t want me to die from smokes like Dad did</strong>.</p>
+                        <p>We see Ted’s face and a shot of Ted standing in front of his house with his children playing football behind him.</p>
+                        <p><strong>Voiceover: My name is Ted, and family is my story.</strong></p>
+                        <p><strong>Voiceover: DON’T MAKE SMOKES YOUR STORY.</strong></p>
+                        <p><strong>Voiceover: For help, download the My Quit Buddy app, call the Quitline, or visit quitnow.</strong></p>
+                        <p>Federal Government logo, Quitline Logo and My QuitBuddy logo</p>
+                        <p><strong>Voiceover: Authorised by the Australian Government, Canberra. </strong></p>
+                        <p>Authorised by the Australian Government, Canberra.&nbsp; Spoken by F. Leone</p>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </div>
+</div>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+                      <div class="kss-modifier__name kss-style">
+              video--right
+            </div>
+            <div class="kss-modifier__description kss-style">
+              Video on the right
+            </div>
+            <div class="kss-modifier__example">
+              <div class="container">
+    <div class="video video--left">
+        <div class="video__title">Don't make smokes your story</div>
+        <div class="video__left">
+            <div class="video__preview">
+                <a class="js-video-play " href="#" title="Play video" data-youtubeid="iz8C4xgz-fE">
+                    <picture title="Don't makes smokes your story">
+                        <img src="../images/video/video-preview.jpg" alt="Don't makes smokes your story"
+                             title="Don't makes smokes your story">
+                    </picture>
+                    <div class="video__play-button"></div>
+                    <div class="video__length">0:45</div>
+                </a>
+            </div>
+            <details open="" data-label="video-transcript" class="video__transcript" id="view-transcript">
+                <summary aria-controls="transcript-body" aria-expanded="false" class="uikit-accordion__closed uikit-accordion--closed" onclick="return UIKIT.accordion.Toggle( this )">Read transcript</summary>
+                <div class="video__transcript-body uikit-accordion--closed" id="transcript-body">
+                    <div class="video__transcript-body-wrapper">
+                        <h2>Don’t Make Smokes Your Story – National Tobacco Campaign</h2>
+                        <h3>TV commercial – 48 seconds</h3>
+                        <p>Ted and his family sitting on the back steps with his guitar.</p>
+                        <p><strong>Voiceover: Family is everything to me.&nbsp; </strong></p>
+                        <p>We see Ted in the kitchen with his extended family.</p>
+                        <p><strong>Voiceover: I can’t imagine life without them, to be honest. </strong></p>
+                        <p>We see Ted in the hospital with an oxygen mask on his face. A close up of his finger with a pulse monitor attached.</p>
+                        <p><strong>Voiceover: I’ve had my battles with smokes. </strong></p>
+                        <p>We see Ted’s wife standing at his hospital bedside.</p>
+                        <p><strong>Voiceover: My lungs got pretty bad </strong></p>
+                        <p>We see a close up of Ted’s face with the oxygen mask.</p>
+                        <p><strong>Voiceover: Sometimes I could hardly breathe and that was tough on everyone. </strong></p>
+                        <p>In a flashback, we cut to a younger Ted at a skate park, smoking with a mate. We then see them passing cigarettes to each other as they sit in the skate bowl.</p>
+                        <p><strong>Voiceover: I’m not sure why I smoked; I just did. </strong></p>
+                        <p>We see Ted playing with his children in the backyard.</p>
+                        <p><strong>Voiceover: My kids, Jarrah and Yani, I wanted to be there for them, so I quit.&nbsp; Quitting was tough, I just kept trying. </strong></p>
+                        <p>We see Ted kicking a football with his children.</p>
+                        <p><strong>Voiceover: now I can keep up with them in the yard….</strong></p>
+                        <p>Ted helps his children riding their bikes on the street.</p>
+                        <p><strong>Voiceover: …and I’ve got more money to spend on better things</strong>.</p>
+                        <p>We see Ted standing in front of his house taking a selfie with his Mum.</p>
+                        <p><strong>Voiceover: Mum and the Aunties are pretty happy that I quit. </strong></p>
+                        <p>We see Ted with his extended family in the kitchen.</p>
+                        <p><strong>Voiceover: They didn’t want me to die from smokes like Dad did</strong>.</p>
+                        <p>We see Ted’s face and a shot of Ted standing in front of his house with his children playing football behind him.</p>
+                        <p><strong>Voiceover: My name is Ted, and family is my story.</strong></p>
+                        <p><strong>Voiceover: DON’T MAKE SMOKES YOUR STORY.</strong></p>
+                        <p><strong>Voiceover: For help, download the My Quit Buddy app, call the Quitline, or visit quitnow.</strong></p>
+                        <p>Federal Government logo, Quitline Logo and My QuitBuddy logo</p>
+                        <p><strong>Voiceover: Authorised by the Australian Government, Canberra. </strong></p>
+                        <p>Authorised by the Australian Government, Canberra.&nbsp; Spoken by F. Leone</p>
+                    </div>
+                </div>
+            </details>
+        </div>
+        <div class="video__right">
+                <p class="video__description">Well done! You’ve taken an important
+                    step on the road to becoming smoke-free. Quitting can be hard and most smokers try a
+                    number of times before they finally quit for good. So take it one step at a time and
+                    don’t beat yourself up. The longer you stay smoke-free, the easier it gets. <a
+                            href="/smokes/health-benefits-quitting">Learn the many benefits of quitting</a>
+                    and <a href="http://quitnow.gov.au/internet/quitnow/publishing.nsf/Content/home">ways to
+                        help you do this</a>.</p>
+            <a class="video__cta" href="#">Find out more</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="video video--right">
+        <div class="video__title">Don't make smokes your story</div>
+        <div class="video__left">
+            <p class="video__description">Well done! You’ve taken an important
+                step on the road to becoming smoke-free. Quitting can be hard and most smokers try a
+                number of times before they finally quit for good. So take it one step at a time and
+                don’t beat yourself up. The longer you stay smoke-free, the easier it gets. <a
+                        href="/smokes/health-benefits-quitting">Learn the many benefits of quitting</a>
+                and <a href="http://quitnow.gov.au/internet/quitnow/publishing.nsf/Content/home">ways to
+                    help you do this</a>.</p>
+            <a class="video__cta" href="#">Find out more</a>
+        </div>
+        <div class="video__right">
+            <div class="video__preview">
+                <a class="js-video-play " href="#" title="Play video" data-youtubeid="iz8C4xgz-fE">
+                    <picture title="Don't makes smokes your story">
+                        <img src="../images/video/video-preview.jpg" alt="Don't makes smokes your story"
+                             title="Don't makes smokes your story">
+                    </picture>
+                    <div class="video__play-button"></div>
+                    <div class="video__length">0:45</div>
+                </a>
+
+            </div>
+            <details open="" data-label="video-transcript" aria-expanded="false" class="video__transcript" id="view-transcript">
+                <summary aria-controls="transcript-body" aria-expanded="false" onclick="return UIKIT.accordion.Toggle( this )">Read transcript</summary>
+                <div class="video__transcript-body" id="transcript-body">
+                    <div class="video__transcript-body-wrapper">
+                        <h2>Don’t Make Smokes Your Story – National Tobacco Campaign</h2>
+                        <h3>TV commercial – 48 seconds</h3>
+                        <p>Ted and his family sitting on the back steps with his guitar.</p>
+                        <p><strong>Voiceover: Family is everything to me.&nbsp; </strong></p>
+                        <p>We see Ted in the kitchen with his extended family.</p>
+                        <p><strong>Voiceover: I can’t imagine life without them, to be honest. </strong></p>
+                        <p>We see Ted in the hospital with an oxygen mask on his face. A close up of his finger with a pulse monitor attached.</p>
+                        <p><strong>Voiceover: I’ve had my battles with smokes. </strong></p>
+                        <p>We see Ted’s wife standing at his hospital bedside.</p>
+                        <p><strong>Voiceover: My lungs got pretty bad </strong></p>
+                        <p>We see a close up of Ted’s face with the oxygen mask.</p>
+                        <p><strong>Voiceover: Sometimes I could hardly breathe and that was tough on everyone. </strong></p>
+                        <p>In a flashback, we cut to a younger Ted at a skate park, smoking with a mate. We then see them passing cigarettes to each other as they sit in the skate bowl.</p>
+                        <p><strong>Voiceover: I’m not sure why I smoked; I just did. </strong></p>
+                        <p>We see Ted playing with his children in the backyard.</p>
+                        <p><strong>Voiceover: My kids, Jarrah and Yani, I wanted to be there for them, so I quit.&nbsp; Quitting was tough, I just kept trying. </strong></p>
+                        <p>We see Ted kicking a football with his children.</p>
+                        <p><strong>Voiceover: now I can keep up with them in the yard….</strong></p>
+                        <p>Ted helps his children riding their bikes on the street.</p>
+                        <p><strong>Voiceover: …and I’ve got more money to spend on better things</strong>.</p>
+                        <p>We see Ted standing in front of his house taking a selfie with his Mum.</p>
+                        <p><strong>Voiceover: Mum and the Aunties are pretty happy that I quit. </strong></p>
+                        <p>We see Ted with his extended family in the kitchen.</p>
+                        <p><strong>Voiceover: They didn’t want me to die from smokes like Dad did</strong>.</p>
+                        <p>We see Ted’s face and a shot of Ted standing in front of his house with his children playing football behind him.</p>
+                        <p><strong>Voiceover: My name is Ted, and family is my story.</strong></p>
+                        <p><strong>Voiceover: DON’T MAKE SMOKES YOUR STORY.</strong></p>
+                        <p><strong>Voiceover: For help, download the My Quit Buddy app, call the Quitline, or visit quitnow.</strong></p>
+                        <p>Federal Government logo, Quitline Logo and My QuitBuddy logo</p>
+                        <p><strong>Voiceover: Authorised by the Australian Government, Canberra. </strong></p>
+                        <p>Authorised by the Australian Government, Canberra.&nbsp; Spoken by F. Leone</p>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </div>
+</div>
+              <div class="kss-modifier__example-footer"></div>
+            </div>
+                  </div>
+                  <details class="kss-markup kss-style">
+            <summary>
+                              Markup: <code>components/video/video.twig</code>
+                          </summary>
+            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;video video--left&quot;&gt;
+        &lt;div class=&quot;video__title&quot;&gt;Don&#039;t make smokes your story&lt;/div&gt;
+        &lt;div class=&quot;video__left&quot;&gt;
+            &lt;div class=&quot;video__preview&quot;&gt;
+                &lt;a class=&quot;js-video-play &quot; href=&quot;#&quot; title=&quot;Play video&quot; data-youtubeid=&quot;iz8C4xgz-fE&quot;&gt;
+                    &lt;picture title=&quot;Don&#039;t makes smokes your story&quot;&gt;
+                        &lt;img src=&quot;../images/video/video-preview.jpg&quot; alt=&quot;Don&#039;t makes smokes your story&quot;
+                             title=&quot;Don&#039;t makes smokes your story&quot;&gt;
+                    &lt;/picture&gt;
+                    &lt;div class=&quot;video__play-button&quot;&gt;&lt;/div&gt;
+                    &lt;div class=&quot;video__length&quot;&gt;0:45&lt;/div&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;details open=&quot;&quot; data-label=&quot;video-transcript&quot; class=&quot;video__transcript&quot; id=&quot;view-transcript&quot;&gt;
+                &lt;summary aria-controls=&quot;transcript-body&quot; aria-expanded=&quot;false&quot; class=&quot;uikit-accordion__closed uikit-accordion--closed&quot; onclick=&quot;return UIKIT.accordion.Toggle( this )&quot;&gt;Read transcript&lt;/summary&gt;
+                &lt;div class=&quot;video__transcript-body uikit-accordion--closed&quot; id=&quot;transcript-body&quot;&gt;
+                    &lt;div class=&quot;video__transcript-body-wrapper&quot;&gt;
+                        &lt;h2&gt;Don’t Make Smokes Your Story – National Tobacco Campaign&lt;/h2&gt;
+                        &lt;h3&gt;TV commercial – 48 seconds&lt;/h3&gt;
+                        &lt;p&gt;Ted and his family sitting on the back steps with his guitar.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: Family is everything to me.&amp;nbsp; &lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;We see Ted in the kitchen with his extended family.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: I can’t imagine life without them, to be honest. &lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;We see Ted in the hospital with an oxygen mask on his face. A close up of his finger with a pulse monitor attached.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: I’ve had my battles with smokes. &lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;We see Ted’s wife standing at his hospital bedside.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: My lungs got pretty bad &lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;We see a close up of Ted’s face with the oxygen mask.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: Sometimes I could hardly breathe and that was tough on everyone. &lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;In a flashback, we cut to a younger Ted at a skate park, smoking with a mate. We then see them passing cigarettes to each other as they sit in the skate bowl.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: I’m not sure why I smoked; I just did. &lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;We see Ted playing with his children in the backyard.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: My kids, Jarrah and Yani, I wanted to be there for them, so I quit.&amp;nbsp; Quitting was tough, I just kept trying. &lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;We see Ted kicking a football with his children.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: now I can keep up with them in the yard….&lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;Ted helps his children riding their bikes on the street.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: …and I’ve got more money to spend on better things&lt;/strong&gt;.&lt;/p&gt;
+                        &lt;p&gt;We see Ted standing in front of his house taking a selfie with his Mum.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: Mum and the Aunties are pretty happy that I quit. &lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;We see Ted with his extended family in the kitchen.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: They didn’t want me to die from smokes like Dad did&lt;/strong&gt;.&lt;/p&gt;
+                        &lt;p&gt;We see Ted’s face and a shot of Ted standing in front of his house with his children playing football behind him.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: My name is Ted, and family is my story.&lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: DON’T MAKE SMOKES YOUR STORY.&lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: For help, download the My Quit Buddy app, call the Quitline, or visit quitnow.&lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;Federal Government logo, Quitline Logo and My QuitBuddy logo&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: Authorised by the Australian Government, Canberra. &lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;Authorised by the Australian Government, Canberra.&amp;nbsp; Spoken by F. Leone&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/details&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;video__right&quot;&gt;
+                &lt;p class=&quot;video__description&quot;&gt;Well done! You’ve taken an important
+                    step on the road to becoming smoke-free. Quitting can be hard and most smokers try a
+                    number of times before they finally quit for good. So take it one step at a time and
+                    don’t beat yourself up. The longer you stay smoke-free, the easier it gets. &lt;a
+                            href=&quot;/smokes/health-benefits-quitting&quot;&gt;Learn the many benefits of quitting&lt;/a&gt;
+                    and &lt;a href=&quot;http://quitnow.gov.au/internet/quitnow/publishing.nsf/Content/home&quot;&gt;ways to
+                        help you do this&lt;/a&gt;.&lt;/p&gt;
+            &lt;a class=&quot;video__cta&quot; href=&quot;#&quot;&gt;Find out more&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;video video--right&quot;&gt;
+        &lt;div class=&quot;video__title&quot;&gt;Don&#039;t make smokes your story&lt;/div&gt;
+        &lt;div class=&quot;video__left&quot;&gt;
+            &lt;p class=&quot;video__description&quot;&gt;Well done! You’ve taken an important
+                step on the road to becoming smoke-free. Quitting can be hard and most smokers try a
+                number of times before they finally quit for good. So take it one step at a time and
+                don’t beat yourself up. The longer you stay smoke-free, the easier it gets. &lt;a
+                        href=&quot;/smokes/health-benefits-quitting&quot;&gt;Learn the many benefits of quitting&lt;/a&gt;
+                and &lt;a href=&quot;http://quitnow.gov.au/internet/quitnow/publishing.nsf/Content/home&quot;&gt;ways to
+                    help you do this&lt;/a&gt;.&lt;/p&gt;
+            &lt;a class=&quot;video__cta&quot; href=&quot;#&quot;&gt;Find out more&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;video__right&quot;&gt;
+            &lt;div class=&quot;video__preview&quot;&gt;
+                &lt;a class=&quot;js-video-play &quot; href=&quot;#&quot; title=&quot;Play video&quot; data-youtubeid=&quot;iz8C4xgz-fE&quot;&gt;
+                    &lt;picture title=&quot;Don&#039;t makes smokes your story&quot;&gt;
+                        &lt;img src=&quot;../images/video/video-preview.jpg&quot; alt=&quot;Don&#039;t makes smokes your story&quot;
+                             title=&quot;Don&#039;t makes smokes your story&quot;&gt;
+                    &lt;/picture&gt;
+                    &lt;div class=&quot;video__play-button&quot;&gt;&lt;/div&gt;
+                    &lt;div class=&quot;video__length&quot;&gt;0:45&lt;/div&gt;
+                &lt;/a&gt;
+
+            &lt;/div&gt;
+            &lt;details open=&quot;&quot; data-label=&quot;video-transcript&quot; aria-expanded=&quot;false&quot; class=&quot;video__transcript&quot; id=&quot;view-transcript&quot;&gt;
+                &lt;summary aria-controls=&quot;transcript-body&quot; aria-expanded=&quot;false&quot; onclick=&quot;return UIKIT.accordion.Toggle( this )&quot;&gt;Read transcript&lt;/summary&gt;
+                &lt;div class=&quot;video__transcript-body&quot; id=&quot;transcript-body&quot;&gt;
+                    &lt;div class=&quot;video__transcript-body-wrapper&quot;&gt;
+                        &lt;h2&gt;Don’t Make Smokes Your Story – National Tobacco Campaign&lt;/h2&gt;
+                        &lt;h3&gt;TV commercial – 48 seconds&lt;/h3&gt;
+                        &lt;p&gt;Ted and his family sitting on the back steps with his guitar.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: Family is everything to me.&amp;nbsp; &lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;We see Ted in the kitchen with his extended family.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: I can’t imagine life without them, to be honest. &lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;We see Ted in the hospital with an oxygen mask on his face. A close up of his finger with a pulse monitor attached.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: I’ve had my battles with smokes. &lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;We see Ted’s wife standing at his hospital bedside.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: My lungs got pretty bad &lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;We see a close up of Ted’s face with the oxygen mask.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: Sometimes I could hardly breathe and that was tough on everyone. &lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;In a flashback, we cut to a younger Ted at a skate park, smoking with a mate. We then see them passing cigarettes to each other as they sit in the skate bowl.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: I’m not sure why I smoked; I just did. &lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;We see Ted playing with his children in the backyard.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: My kids, Jarrah and Yani, I wanted to be there for them, so I quit.&amp;nbsp; Quitting was tough, I just kept trying. &lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;We see Ted kicking a football with his children.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: now I can keep up with them in the yard….&lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;Ted helps his children riding their bikes on the street.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: …and I’ve got more money to spend on better things&lt;/strong&gt;.&lt;/p&gt;
+                        &lt;p&gt;We see Ted standing in front of his house taking a selfie with his Mum.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: Mum and the Aunties are pretty happy that I quit. &lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;We see Ted with his extended family in the kitchen.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: They didn’t want me to die from smokes like Dad did&lt;/strong&gt;.&lt;/p&gt;
+                        &lt;p&gt;We see Ted’s face and a shot of Ted standing in front of his house with his children playing football behind him.&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: My name is Ted, and family is my story.&lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: DON’T MAKE SMOKES YOUR STORY.&lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: For help, download the My Quit Buddy app, call the Quitline, or visit quitnow.&lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;Federal Government logo, Quitline Logo and My QuitBuddy logo&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Voiceover: Authorised by the Australian Government, Canberra. &lt;/strong&gt;&lt;/p&gt;
+                        &lt;p&gt;Authorised by the Australian Government, Canberra.&amp;nbsp; Spoken by F. Leone&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/details&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </details>
+              
+              <div class="kss-source kss-style">
+          Source: <code>components/video/_module.scss</code>, line 1
+        </div>
+          </section>
+  </article>
+
+<!-- SCRIPTS -->
+<script src="kss-assets/kss.js"></script>
+<script src="kss-assets/scrollspy.js"></script>
+<script src="kss-assets/prettify.js"></script>
+<script src="kss-assets/kss-fullscreen.js"></script>
+<script src="kss-assets/kss-guides.js"></script>
+<script src="kss-assets/kss-markup.js"></script>
+<script>
+  prettyPrint();
+  var spy = new ScrollSpy('#kss-node', {
+    nav: '.kss-nav__menu-child > li > a',
+    className: 'is-in-viewport'
+  });
+  var kssFullScreen = new KssFullScreen({
+    idPrefix: 'kss-fullscreen-',
+    bodyClass: 'kss-fullscreen-mode',
+    elementClass: 'is-fullscreen'
+  });
+  var kssGuides = new KssGuides({
+    bodyClass: 'kss-guides-mode'
+  });
+  var kssMarkup = new KssMarkup({
+    bodyClass: 'kss-markup-mode',
+    detailsClass: 'kss-markup'
+  });
+</script>
+
+
+
+
+<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>

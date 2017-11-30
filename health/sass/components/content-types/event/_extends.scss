@@ -1,0 +1,10 @@
+
+// Default/full content
+.node-type-event {
+    @extend .node-type-news-article;
+}
+
+// Display modes
+.node-event {
+	@extend .node-news-article;
+}

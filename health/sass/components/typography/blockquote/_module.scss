@@ -1,0 +1,41 @@
+//--------------------------------------------------------------
+// Blockquote
+// Styling for block quotes based of Uikit v1
+//
+//-------------------------------------------------------------
+
+%uikit-blockquote {
+  font-family: $uikit-font-system;
+	color: $uikit-colour-Text;
+	line-height: $uikit-leading;
+  margin: uikit-space(1) uikit-space(.25);
+	padding: uikit-space(.75) uikit-space(.75) uikit-space(.75) uikit-space(3);
+	border-radius: $uikit-border-radius;
+	box-shadow: 2px 0 6px transparentize($uikit-colour-Text, 0.3);
+	max-width: $uikit-maxwidth;
+  border-left: 6px solid $uikit-colour-Border;
+  background-repeat: no-repeat;
+	background-size: 70px;
+	background-position: center left;
+  background-image: uikit-svguri('<svg fill="#{ $uikit-colour-Text }" xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 32 32">
+        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
+      </svg>');
+
+  :first-child {
+		margin-top: 0;
+	}
+
+	:last-child {
+		margin-bottom: 0;
+	}
+
+  .ie8 &,
+	.lt-ie8 & {
+		border-top: $uikit-borderize;
+		border-right: $uikit-borderize;
+		border-bottom: $uikit-borderize;
+	}
+}
+
+@import 'print';

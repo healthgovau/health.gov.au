@@ -1,0 +1,45 @@
+%flat-tier {
+  padding-top: uikit-space(2);
+  border-top: 3px solid $uikit-colour-Primary;
+}
+
+.col-md-4 .uikit-card--featured-top .uikit-card--featured {
+  min-height: 150px;
+}
+
+.front .region-content .block-panels-mini {
+  margin-top: uikit-space(3);
+  @extend %flat-tier;
+
+  .bean-call-to-action,
+  .bean-large-button {
+    h3 {
+      @include uikit-sronly();
+    }
+  }
+
+  .view-popular h4 {
+    font-size: 16px;
+    padding: uikit-space(.25) uikit-space(.5);
+    border-left: 2px solid $uikit-colour-Primary;
+    a {
+      display: inline-block;
+    }
+  }
+}
+
+.front .region-content #block-panels-mini-home-topics {
+  padding-top: 0;
+  margin-top: 0;
+  border-top: 0;
+}
+
+
+// Simple theming experimentation
+.region-featured {
+  padding-bottom: 0;
+}
+
+.uikit-body .uikit-header__logo {
+	border-bottom: 0;
+}

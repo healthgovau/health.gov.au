@@ -1,0 +1,23 @@
+.environment {
+  position: fixed;
+  left: 5px;
+  top: 5px;
+  z-index: 999999999;
+  &.local {
+    @extend %env-indicator--local;
+  }
+  &.master-database {
+    @extend %env-indicator--dev;
+  }
+  &.release {
+    @extend %env-indicator--release;
+  }
+  &.prod {
+    @extend %env-indicator--prod;
+  }
+  &.logged-in {
+    top: 85px;
+  }
+}
+
+

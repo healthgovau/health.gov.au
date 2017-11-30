@@ -1,0 +1,27 @@
+//
+// Drupal selectors.
+//
+.collapsible-fieldset,
+.collapsible {
+  @extend %uikit-collapsible-fieldset;
+
+  .fieldset-legend {
+    @extend %uikit-collapsible-fieldset__legend;
+
+    .summary {
+      @extend %uikit-collapsible-fieldset__summary;
+    }
+  }
+
+  &.collapsed {
+    @extend %uikit-collapsible-fieldset--is-collapsed;
+
+    .fieldset-legend {
+      @extend %uikit-collapsible-fieldset--is-collapsed__legend;
+    }
+
+    .fieldset-wrapper {
+      @extend %uikit-collapsible-fieldset--is-collapsed__wrapper;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+// Breadcrumbs
+//
+// Breadcrumbs help users understand where they are in the service and how they got there.
+
+.breadcrumbs {
+  @extend .uikit-breadcrumbs;
+}
+
+.breadcrumbs__list {
+  @extend .uikit-link-list;
+  @extend .uikit-link-list--inline;
+}

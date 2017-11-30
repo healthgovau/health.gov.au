@@ -1,0 +1,32 @@
+// Pager
+//
+// Paged navigation is a list of page numbers when more than 1 page of content
+// is available.
+//
+// Markup: pager.twig
+//
+// Style guide: navigation.pager
+
+%uikit-pager {
+  clear: both;
+  padding: 0;
+  text-align: center;
+
+  @media print {
+    display: none;
+  }
+
+  // A page item in the pager list.
+  &__item {
+    display: inline;
+    padding: 0 .5em;
+    list-style-type: none;
+    background-image: none;
+  }
+
+  // The current page's list item.
+  &__current-item {
+    @extend %uikit-pager__item;
+    font-weight: bold;
+  }
+}

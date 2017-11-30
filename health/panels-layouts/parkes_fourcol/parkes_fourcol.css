@@ -1,0 +1,11 @@
+/* Styles for the admin section of the panel */
+
+.panels-dnd .panel-4col {
+  margin: 0 -.5%;
+}
+
+.panels-dnd .panel-4col .panel-panel {
+  width: 24%;
+  float: left;
+  margin: 0 .5%;
+}

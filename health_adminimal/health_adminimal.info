@@ -1,0 +1,6 @@
+name = Health Adminimal
+description = Health customisations to the Adminimal theme.
+core = 7.x
+base theme = adminimal
+
+stylesheets[all][] = customisations.css

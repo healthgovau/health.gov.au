@@ -1,0 +1,10 @@
+//--------------------------------------------------------------
+// Workbench
+// Styling for the workbench section
+//
+//-------------------------------------------------------------
+@import 'print';
+
+%uikit-workbench {
+  @extend .uikit-page-alerts;
+}

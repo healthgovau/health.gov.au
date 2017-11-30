@@ -1,0 +1,22 @@
+// Define view styles
+
+// Components in views may or may not have their own fixed width by breakpoint.
+// Danny - consider unit widths (fixed px default with --flex variant of 100%)
+
+// Listing view
+.page-views {
+    .views-row {
+        @include uikit-clearfix;
+        border-bottom: $uikit-borderize;
+        padding-top: uikit-space(1);
+        padding-bottom: uikit-space(1);
+    }
+}
+
+// Features - small
+.paragraphs-view-news_and_events {
+    .views-row {
+        margin-bottom: uikit-space(1);
+        @include uikit-clearfix;
+    }
+}

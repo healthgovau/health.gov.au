@@ -1,0 +1,13 @@
+.block-facetapi {
+    @extend %filter;
+    .uikit-accordion__title {
+        @extend %filter__title-container;
+    }
+    .block__title {
+        @extend .uikit-display-1;
+        margin-bottom: 0;
+    }
+    .uikit-accordion__body {
+        @extend %filter__body;
+    }
+}

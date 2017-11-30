@@ -1,0 +1,63 @@
+//--------------------------------------------------------------
+// Local naviagation
+// Applies the local navigation styling
+//
+//-------------------------------------------------------------
+
+// Individual menu items
+%uikit-localnav--link {
+  display: block;
+  border: none;
+  border-left: 4px solid transparent;
+  border-bottom: none;
+  text-decoration: none;
+  padding: uikit-space(.5);
+
+  &:hover {
+    border-left-color: $uikit-colour-Primary;
+  }
+
+  &.active-trail {
+    font-weight: 700;
+  }
+
+  &.active {
+    background: $uikit-colour-Background;
+    border-left-color: $uikit-colour-Primary;
+  }
+}
+
+// Menu with indentation
+%uikit-localnav {
+  @extend .uikit-link-list;
+  padding: 0; 
+  ul {
+    font-size: 14px;
+    text-transform: none;
+    li:last-child {
+      border-bottom: none;
+    }
+    a {
+      padding: uikit-space(.5) uikit-space(1);
+    }
+    ul {
+      font-size: 12px;
+      a {
+        padding: uikit-space(.5) uikit-space(1.5);
+        border-bottom: 0;
+      }
+    }
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    border-bottom: $uikit-borderize;
+    &:first-child {
+      border-top: $uikit-borderize;
+    }
+  }
+  a {
+    @extend %uikit-localnav--link;
+  }
+}

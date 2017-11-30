@@ -1,0 +1,76 @@
+@mixin icon($icon, $size) {
+  font-size: $size;
+  content: $icon;
+}
+
+.icon {
+  font-family: "FontAwesome";
+  &--block {
+    display: block;
+  }
+}
+
+// Font Awesome pseudo-class implementation
+// Usage: apply class='fa-iconname' (reference Font Awesome class names)
+// Optional class='icon-dark', 'icon-light' for colouring (default is grey)
+// Optional class='icon-large'
+// Note: it cannot be applied to absolutely positioned elements
+
+// Example application
+// element {
+//  @extend %baseicon;
+//  &:before {
+//    content: "\f16a";
+//  }
+// }
+
+%baseicon {
+  position: relative;
+  padding-left: 2em; // Revisit
+  &:before {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: inherit;
+    font-size: 1.5em;
+    position: absolute;
+    line-height: 1;
+    left: 0; // Revisit
+  }
+}
+
+// Default style (with generic sizing)
+[class*="fa-"] {
+  @extend %baseicon;
+}
+
+// Size variants
+.fa-large {
+  padding-left: 3.5em; // Revisit
+  &:before {
+    font-size: 2.5em;
+  }
+}
+
+// If applied to typography, size according to element
+h1, h2, h3, h4, h5, h6, p {
+  &[class*="fa-"] {
+    &:before {
+      font-size: inherit;
+    }
+  }
+}
+
+// Colours
+.fa-dark {
+  &:before {
+    color: #000;
+  }
+}
+
+.fa-light {
+  &:before {
+    color: #FFF;
+  }
+}

@@ -1,0 +1,16 @@
+// Page alerts
+//
+// Status messages to notify the user.
+
+.messages {
+  @extend .uikit-page-alerts;
+  &.error {
+    @extend .uikit-page-alerts--error;
+  }
+  &.warning {
+    @extend .uikit-page-alerts--warning
+  }
+  &.status {
+    @extend .uikit-page-alerts--success;
+  }
+}

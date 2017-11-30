@@ -1,0 +1,12 @@
+// Navbar
+//
+// A simple method to get navigation links to appear in one line.
+//
+// Markup: navbar.twig
+//
+// Style guide: navigation.navbar
+
+.uikit-body .region-navigation .sf-menu {
+  @extend %uikit-sitenav;
+  @extend %uikit-dropdown;
+}

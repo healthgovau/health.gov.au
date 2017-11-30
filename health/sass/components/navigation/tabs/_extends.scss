@@ -1,0 +1,14 @@
+.tabs {
+  @extend %tabs;
+  li {
+    @extend %tabs__tab;
+    a {
+      &:not(.active) {
+        @extend %tabs__tab__link;
+      }
+      &.active {
+        @extend %tabs__tab__link--active;
+      }
+    }
+  }
+}

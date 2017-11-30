@@ -1,0 +1,64 @@
+//	==========================
+//
+//	Per-instance module customisation
+// 
+//	==========================
+//	This file extends theme classes. For example:
+//	
+//	Redeclare variables:
+//	$var1 = xxx;
+//	
+//	Declare custom classes
+//  .custom {
+//		@extend %themeclass;	
+//		// Custom styles
+//		style1 = xxx;
+//	}
+
+/**
+ * Content type: Video
+ * Display mode: Teaser
+ */
+
+// Default
+.node-video.view-mode-full {
+  @extend %video;
+
+  .group-left {
+    @extend %video--left__left;
+  }
+
+  .group-right {
+    @extend %video--left__right;
+  }
+
+  .group-video {
+    position: relative;
+  }
+
+  .field-name-field-video-length .field-item {
+    margin-right: 1px;
+    margin-bottom: 8px;
+    @extend %video__length;
+  }
+
+  .field-name-field-video-preview {
+    @extend %video__preview;
+  }
+
+  .video-youtube-wrapper {
+    @extend %video__youtube;
+  }
+
+  .video__transcript {
+    .accordion-panel {
+      //@extend .uikit-accordion__body;
+      //@extend .uikit-accordion--closed;
+      @extend %video__transcript-body;
+      .field-item {
+        @extend %video__transcript-body-wrapper;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,117 @@
+// Base style for uikit card
+%uikit-card {
+  background: #fff;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+  border-radius: $uikit-border-radius;
+  max-width: $uikit-maxwidth;
+}
+
+// Image orientation
+%uikit-card--featured-img {
+  display: block;
+  margin-bottom: 0;
+  min-height: 100%;
+  min-width: 100%;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%uikit-card--bottom {
+  @include uikit-clearfix;
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  .uikit-card--type {
+    float: left;
+  }
+  .uikit-card--date {
+    float: right;
+    font-size: 12px;
+  }
+}
+
+// Image top style
+%uikit-card--featured-top {
+  min-height: 400px;
+  position: relative;
+  .uikit-card--content {
+    padding: uikit-space(1) 0 uikit-space(2);
+    border-bottom-left-radius: $uikit-border-radius;
+    border-bottom-right-radius: $uikit-border-radius;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+  }
+  .uikit-card--featured {
+    min-height: 350px;
+    margin: uikit-space(-1) uikit-space(-1) 0 uikit-space(-1);
+    background: $uikit-colour-Text;
+    border-top-left-radius: $uikit-border-radius;
+    border-top-right-radius: $uikit-border-radius;
+    overflow: hidden;
+    position: relative;
+  }
+}
+
+// Image left style
+%uikit-card--featured-left {
+  float: left;
+  width: 300px;
+  overflow: hidden;
+  position: relative;
+  background: $uikit-colour-Text;
+  border-bottom-left-radius: $uikit-border-radius;
+  border-top-left-radius: $uikit-border-radius;
+}
+
+%uikit-card-compact {
+  @extend %uikit-card;
+
+  .node-title {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+
+  .uikit-card-compact--content {
+    height: 100%;
+    position: relative;
+    padding: uikit-space(.5) uikit-space(.75) uikit-space(2.25);
+    .uikit-card--bottom {
+      padding: 0 uikit-space(.75) uikit-space(.5);
+    }
+  }
+
+  &.uikit-card--featured-left {
+    .uikit-card--featured {
+      width: 100px;
+      height: 100%;
+      min-height: 100px;
+    }
+    .uikit-card-compact--content {
+      margin-left: 100px;
+    }
+  }
+}
+
+// Card listing style
+%uikit-card--list {
+  @extend .uikit-card;
+  &--item {
+    margin-bottom: 0;
+    border-bottom: $uikit-borderize;
+    padding: uikit-space(.5) uikit-space(1);
+    margin: 0 uikit-space(-1);
+    &:first-of-type {
+      border-top: $uikit-borderize;
+    }
+  }
+}
+

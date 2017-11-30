@@ -1,0 +1,16 @@
+
+@mixin cardify($bg: $colour-card, $shadow: $card-shadow, $margin: uikit-space(1), $padding: uikit-space(1) ) {
+  background: $bg;
+  box-shadow: $shadow;
+  border-radius: $uikit-border-radius;
+  display: block;
+  margin-bottom: 0;
+  // Image pane
+  .group-left {
+    padding: 0;
+  }
+  // Content pane
+  .group-right {
+    padding: $padding;
+  }
+}

@@ -1,0 +1,105 @@
+//--------------------------------------------------------------
+// Root layout styles
+// Modifications to the root elements which are required
+//
+//------------------------------------------------------------
+
+// Set page width based on content type
+// Default is to contain .page-layout unless content type is listed below
+// which will be full width to permit bands
+// :not() supported by IE9+ so polyfill
+body{
+  &:not(.node-type-health-topic):not(.node-type-health-topic-hp){
+    .page-layout {
+      @extend .container;
+    }
+  }
+}
+
+// Danny - move this
+// Contain Drupal nav and messages
+body.node-type-health-topic {
+  .tabs.primary,
+  .messages.status {
+    @extend .container;
+  }
+}
+
+// Default spacing for body elements
+.page-layout {
+  margin-bottom: uikit-space(2);
+}
+
+// Global styling
+.uikit-body .view ul > .views-row,
+.node > .field,
+.panel-pane {
+  margin-bottom: uikit-space(1);
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.uikit-body .view-popular ul > .views-row {
+  margin-bottom: 0;
+}
+
+.panel-featured .panel-middle-top {
+  margin-bottom: uikit-space(1);
+}
+
+%views-4col {
+  .item-list ul {
+    @extend .row;
+  }
+  .views-row {
+    @extend .col-md-3;
+  }
+}
+
+// Latest updates layout
+%latest-updates-layout {
+  & > .view {
+    @extend .row;
+    // First column
+    & > .view-content {
+      @extend .col-md-7;
+      position: relative;
+    } 
+    // Listing
+    .attachment-after {
+      .view-related-content {
+        @extend .row;
+      }
+      @extend .col-md-5;
+      .view .view-content {
+        @extend .col-md-12;
+      }
+    } 
+    // More button
+    .view-footer {
+      @extend .col-md-12;
+      margin-top: uikit-space(1);
+      padding-bottom: uikit-space(1);
+    }
+  }
+}
+
+// Use the latest updates layout.
+#block-views-related-content-block {
+  @extend .col-md-12;
+  @extend %latest-updates-layout;
+}
+
+
+// Categories block (Additional information for..)
+#block-views-categories-block-1 {
+  @extend .col-md-12;
+  @extend %views-4col;
+  .col-md-3 {
+    text-align: center;
+    h3 {
+      @extend h4;
+    }
+  }
+}

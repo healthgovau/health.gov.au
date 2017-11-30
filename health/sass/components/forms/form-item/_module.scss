@@ -1,0 +1,71 @@
+// Form item
+//
+// Wrapper for a form element (or group of form elements) and its label.
+//
+// .form-item--inline - Inline form items.
+// .form-item--tight  - Packs groups of form items closer together.
+// .is-error          - Highlight the form elements that caused a form
+//                      submission error.
+//
+// Markup: form-item.twig
+//
+// Style guide: forms.form-item
+
+// Form item (radio)
+//
+// Checkboxes and radios require slightly different markup; their label is after
+// their widget instead of before. Uses the `.form-item--radio` class variant of
+// the normal form item and is placed on each of the nested form items.
+//
+// .is-error - Highlight the form elements that caused a form submission error.
+//
+// Markup: form-item--radio.twig
+//
+// Style guide: forms.form-item--radio
+
+%uikit-form-item {
+  margin-bottom: uikit-space(1);
+
+  // The part of the label that indicates a required field.
+  &__required {
+    color: red;
+  }
+
+  // The descriptive help text (separate from the label).
+  &__description {
+    @extend .uikit-text-input__hint;
+  }
+
+  &--inline {
+    display: inline;
+
+    div,
+    label {
+      display: inline;
+    }
+
+    // There's always an exception.
+    &__exception {
+      display: block;
+    }
+  }
+
+  &--tight {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  &.is-error &__widget,
+  &--is-error__widget {
+    border: 1px solid color(form-error);
+  }
+
+  &.is-error,
+  &--is-error {
+    input,
+    textarea,
+    select {
+      @extend .uikit-text-input--invalid;
+    }
+  }
+}

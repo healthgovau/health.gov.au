@@ -1,0 +1,25 @@
+.goTop {
+  border-radius: 5px;
+  background-color: transparent;
+  position: fixed;
+  display: block;
+  right: 15px;
+  bottom: 15px;
+  border: none;
+  opacity: 0;
+  z-index: -1;
+  .fa {
+    color: white;
+    font-size: 22px;
+  }
+  &:hover {
+    opacity: 1;
+    background-color: transparent;
+  }
+}
+
+.isVisible {
+  opacity: .8;
+  z-index: 9999;
+  transition: all .4s ease-in;
+}

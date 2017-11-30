@@ -1,0 +1,51 @@
+//	==========================
+//
+//	Per-instance module customisation
+// 
+//	==========================
+//	This file extends theme classes. For example:
+//	
+//	Redeclare variables:
+//	$var1 = xxx;
+//	
+//	Declare custom classes
+//  .custom {
+//		@extend %themeclass;	
+//		// Custom styles
+//		style1 = xxx;
+//	}
+
+//$colour-Taskbar: #760000;
+
+// Using taskbar with a view.
+.taskbar,
+.taskbar--tiled--2,
+.taskbar--tiled--3,
+.taskbar--tiled--4,
+.taskbar--tiled--5,
+.taskbar--tiled--6
+{
+
+  &.view ul > .views-row {
+    &:hover {
+      cursor: pointer;
+    }
+    margin: 0;
+    .node {
+      @extend %taskbar__item;
+    }
+
+    .field-name-field-image {
+      @extend %taskbar__img;
+    }
+
+    .field-name-title a {
+      @extend %taskbar__title;
+    }
+
+    .field-name-body p {
+      @extend %taskbar__desc;
+    }
+
+  }
+}

@@ -1,0 +1,23 @@
+// Buttons
+//
+// Buttons built with the `<button>` element are the most flexible for styling
+// purposes. But `<input>` elements with `type` set to `submit`, `image`,
+// `reset`, or `button` are also supported.
+//
+// Below is the default button styling. To see variations on the button styling
+// see the [button component](section-forms.html#kssref-forms-button).
+//
+// :hover        - Hover styling.
+// :active:hover - Depressed button styling.
+//
+// Markup: forms-button.twig
+//
+// Style guide: forms.base.button
+.button,
+%button,
+button,
+html [type='button'],
+[type='reset'],
+[type='submit']{
+  @extend .uikit-btn;
+}

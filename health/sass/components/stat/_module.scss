@@ -1,0 +1,174 @@
+// Statistics
+//
+// Displaying statistics in various ways.
+//
+// .stat--no-trend  - No trend info
+//
+// Markup: stat.twig
+//
+// Style guide: components.stats
+
+.stat,
+%stat {
+  @extend .row;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+// Stat wrapper.
+.stat__wrapper,
+%stat__wrapper {
+  @extend .col-xs-12;
+}
+
+// Card wrapper.
+.stat__card,
+%stat__card {
+  overflow: hidden;
+  width: 100%;
+  @include cardify();
+}
+
+// Colours - blue
+.stat__card--blue,
+%stat__card--blue {
+  @extend %stat__card;
+  @include uikit-media('md') {
+    .stat__header,
+    %stat__header {
+      border-bottom: 8px solid $colour-Statistics-blue;
+    }
+    border-bottom: 0;
+  }
+  border-bottom: 8px solid $colour-Statistics-blue;
+}
+
+// Header.
+.stat__header,
+%stat__header {
+  @extend .col-md-12;
+
+  @extend h5;
+  margin: 12px 0 0 0;
+  font-weight: bold;
+  padding: 0 16px 0 16px;
+  @include uikit-media('md') {
+    padding: 12px 16px 20px 16px;
+  }
+}
+
+// Main statistic.
+.stat__count,
+%stat__count {
+
+  @extend .col-md-12;
+  @extend .col-xs-6;
+
+  padding: uikit-space(0.5) 0 uikit-space(0.5) 0;
+
+  @include uikit-media('md') {
+    border-bottom: 1px solid $uikit-colour-Background;
+    padding: uikit-space(1) 0 uikit-space(1) 0;
+  }
+}
+
+.stat__count-value,
+%stat__count-value {
+  @extend h1;
+  margin: 0;
+  font-weight: 500;
+  font-size: 2.5em;
+  display: inline;
+
+  @include uikit-media('md') {
+    font-size: 4em;
+  }
+}
+
+.stat__count-units,
+%stat__count-units {
+  font-size: 1.5rem;
+
+  @include uikit-media('md') {
+    font-size: 2rem;
+  }
+}
+
+.stat__count-units--left,
+%stat__count-units--left {
+  @extend %stat__count-units;
+  margin-left: 0;
+}
+
+// The trend.
+.stat__trend,
+%stat__trend {
+
+  @extend .col-md-12;
+  @extend .col-xs-6;
+
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.stat__trend-value,
+%stat__trend-value {
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.stat__trend-value--positive,
+%stat__trend-value--positive {
+  color: $uikit-colour-Success;
+  margin-left: 5px;
+}
+
+.stat__trend-value--negative,
+%stat__trend-value--negative {
+  color: $uikit-colour-Error;
+  margin-left: 5px;
+}
+
+.stat__trend-date,
+%stat__trend-date {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  display: block;
+}
+
+// Variation with no trend.
+.stat--no-trend,
+%stat--no-trend {
+  .stat__trend {
+    @extend %stat__trend--no-trend;
+  }
+  .stat__count {
+    @extend %stat__count--no-trend;
+  }
+}
+%stat__trend--no-trend {
+  display: none;
+}
+%stat__count--no-trend {
+  @extend %stat__count;
+  border-bottom: 0;
+  @extend .col-xs-12;
+}
+
+// UIKit overrides.
+// @todo There has to be a better way to do this... Danny, help!
+.page {
+  i.stat__trend-value--positive, i.stat__trend-value--negative {
+    font-style: normal;
+  }
+  p.stat__trend, p.stat__count {
+    margin: 0;
+  }
+}
+
+@import '_print.scss';
+@import "_extends.scss";
+

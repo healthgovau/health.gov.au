@@ -1,0 +1,23 @@
+div.toc {
+	border: 0;
+	background: transparent;
+	padding: 0;
+	.item-list {
+		@extend .uikit-inpage-nav-links;
+		// This should be fixed up at some point. Most likely added with JS.
+		&:before {
+			content: "Content";
+			@extend .uikit-inpage-nav-links__heading;
+			@extend .uikit-display-2;
+		}
+	}
+	ul {
+		@extend .uikit-link-list;
+		a {
+			font-weight: bold;
+		}
+	}
+}
+div.region-content .anchor {
+	display: none;
+}

@@ -1,0 +1,11 @@
+// Dropdown
+//
+// Uses the sitenav and adds dropdown functionality.
+//
+// Markup: dropdown.twig
+//
+// Style guide: navigation.dropdown
+
+.region-navigation .sf-menu {
+  @extend %uikit-dropdown;
+}

@@ -1,0 +1,47 @@
+
+// The %text-form-element can be used to style `<input>` text types and
+// `<textarea>` elements at the same time.
+%text-form-element {
+  @extend .uikit-text-input;
+}
+
+// Inputs
+//
+// The `<input>` element is mostly used for text-based inputs that include the
+// HTML5 types: `text`, `search`, `tel`, `url`, `email`, `password`, `date`,
+// `time`, `number`, `range`, `color`, and `file`.
+//
+// Markup: forms-input.twig
+//
+// Style guide: forms.base.input
+
+[type='text'],
+[type='search'],
+[type='tel'],
+[type='url'],
+[type='email'],
+[type='password'],
+[type='date'],
+[type='time'],
+[type='number'] {
+  @extend %text-form-element !optional;
+}
+
+[type='range'] {
+  // Add your styles.
+}
+
+[type='color'] {
+  // Add your styles.
+}
+
+[type='file'] {
+  // Add your styles.
+}
+
+.form-type-textfield {
+  label {
+    @extend .uikit-control-input;
+    @extend .uikit-text-input__label;
+  }
+}

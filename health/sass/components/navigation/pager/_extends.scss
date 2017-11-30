@@ -1,0 +1,25 @@
+
+
+//
+// Drupal selectors.
+//
+
+// .pager-item     - A list item containing a page number in the list of pages.
+// .pager-first    - The first page's list item.
+// .pager-previous - The previous page's list item.
+// .pager-next     - The next page's list item.
+// .pager-last     - The last page's list item.
+// .pager-ellipsis - A concatenation of several list items using an ellipsis.
+
+.pager-item,
+.pager-first,
+.pager-previous,
+.pager-next,
+.pager-last,
+.pager-ellipsis {
+  @extend %uikit-pager__item;
+}
+
+.pager-current {
+  @extend %uikit-pager__current-item;
+}

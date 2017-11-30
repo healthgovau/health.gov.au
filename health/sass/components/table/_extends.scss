@@ -1,0 +1,17 @@
+// Tables
+//
+// The `<table>` element displays tabular data in rows, columns, and cells.
+//
+// Markup: tables-table.twig
+//
+// Weight: 1
+//
+// Style guide: base.table
+
+table {
+  @extend %table;
+}
+
+.responsive-table-wrapper {
+  @extend %table__responsive-wrapper;
+}

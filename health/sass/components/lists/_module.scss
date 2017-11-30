@@ -1,0 +1,44 @@
+// Large list styles
+%list--large {
+    list-style-type: none;
+    counter-reset: standard-counter;
+    padding: 20px 0;
+    >li {
+        vertical-align: top;
+        position: relative;
+        margin: 0 0 12px;
+        padding: 15px 15px 15px 50px;
+        background: lighten($colour-Taskbar, 2%);
+        &::before {
+            content: counter(standard-counter, decimal);
+            counter-increment: standard-counter;
+            float: left;
+            text-align: center;
+            font-weight: 700;
+            position: absolute;
+            left: 14px;
+            top: 9px;
+            padding-top: 0;
+            font-size: 24px;
+        }
+    }
+}
+
+  // Apply default to <ol>
+ol.list--large {
+    @extend %list--large;
+}
+
+// Variant for <ul>
+ul.list--large {
+    @extend %list--large;
+    counter-reset: none;
+    >li {
+        padding-left: 50px;
+        &::before {
+        top: 0;
+        content: '■';
+        counter-increment: none;
+        }
+    }
+}

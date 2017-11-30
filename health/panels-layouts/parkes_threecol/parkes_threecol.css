@@ -1,0 +1,11 @@
+/* Styles for the admin section of the panel */
+
+.panels-dnd .panel-featured {
+  margin: 0 -.5%;
+}
+
+.panels-dnd .panel-featured .panel-panel {
+  width: 32.33%;
+  float: left;
+  margin: 0 .5%;
+}

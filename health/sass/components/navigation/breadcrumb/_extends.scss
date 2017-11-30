@@ -1,0 +1,12 @@
+// Breadcrumb navigation
+//
+// The path to the current page in the form of a list of links.
+//
+// Markup: breadcrumb.twig
+//
+// Style guide: navigation.breadcrumb
+
+%uikit-breadcrumbs,
+.uikit-breadcrumbs {
+  @extend .uikit-breadcrumbs;
+}

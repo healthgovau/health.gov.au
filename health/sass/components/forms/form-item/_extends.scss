@@ -1,0 +1,54 @@
+//
+// Drupal selectors.
+//
+.form-item {
+  @extend %uikit-form-item;
+}
+
+.form-item {
+  label {
+    font-weight: bold;
+    @extend .uikit-text-input__label;
+  }
+  input.error,
+  textarea.error {
+    @extend .uikit-text-input--invalid;
+  }
+  select.error {
+    border: $uikit-colour-Error;
+  }
+  .description {
+    @extend .uikit-text-input__hint;
+  }
+  .help-block {
+    @extend .uikit-text-input__hint;
+  }
+}
+
+.form-required {
+  @extend %uikit-form-item__required;
+}
+
+// Password confirmation.
+.password-parent,
+.confirm-parent {
+  @extend %uikit-form-item--tight;
+}
+
+table .form-item {
+  @extend %uikit-form-item--tight;
+}
+
+label.option {
+  display: inline;
+  font-weight: normal;
+}
+
+.container-inline {
+  .form-item {
+    @extend %uikit-form-item--inline;
+  } // Fieldset contents always need to be rendered as block.
+  .fieldset-wrapper {
+    @extend %uikit-form-item--inline__exception;
+  }
+}

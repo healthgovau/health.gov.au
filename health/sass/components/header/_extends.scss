@@ -1,0 +1,11 @@
+// Header
+//
+// Header.
+
+.header {
+  @extend .uikit-header;
+}
+
+.header--light {
+  @extend .uikit-header--light;
+}

@@ -1,0 +1,56 @@
+// Content type styles by display mode (defined in /display-modes/*)
+// ========================================
+
+// Structure:
+// ----------------------------------------
+// Default (full content)
+// .node-type-<content type name> {
+//   @extend %dm-full-content;
+//   <overrides>
+// }
+//
+// Display modes
+// .node-content-type {
+//   &.view-mode-<view mode name> {	
+//   @extend %dm-<display mode name>;
+//   <overrides>
+// }
+
+
+// Default/full content
+.node-type-news-article {
+    @extend %dm-full-content;
+}
+
+// Display modes
+.node-news-article {
+	// List vertical
+	&.view-mode-listing_vertical {
+		@extend %dm-list-vertical;
+    }
+
+	// List vertical small
+	&.view-mode-listing_vertical_small {
+	   @extend %dm-list-vertical--small;
+	   @include cardify($padding: uikit-space(.5) uikit-space(1));
+    }
+
+	// List horizontal
+	&.view-mode-listing_horizontal {
+
+    }
+
+	// Feature
+	&.view-mode-feature {
+		@extend %dm-feature;
+		@include cardify();
+	}
+
+	// Inline
+	&.view-mode-inline {
+		border-left: 10px solid $uikit-colour-Border;
+		background: $uikit-colour-Background;
+		padding: uikit-space(1.5) uikit-space(1.5) uikit-space(.5);
+		margin: uikit-space(1) 0 uikit-space(2);
+	}
+}

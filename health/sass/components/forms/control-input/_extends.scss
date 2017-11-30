@@ -1,0 +1,23 @@
+// Radios and checkboxes
+.webform-component-radios,
+.webform-component-checkboxes,
+.form-type-radios,
+.form-type-checkboxes,
+.form-type-checkbox {
+  label {
+    @extend .uikit-control-input;
+    @extend .uikit-text-input__label;
+    .input__text {
+      font-weight: 400;
+      @extend .uikit-control-input__text;
+    }
+  }
+  input {
+    @extend .uikit-control-input__input;
+  }
+  .description {
+    @extend %form-item--radio__description;
+  }
+}
+
+

@@ -1,0 +1,19 @@
+@import 'themes/health/colors';
+@import 'themes/health/variables';
+
+@import 'vendors/uikit';
+
+@import 'abstracts/abstracts';
+
+@import 'components/components';
+
+@import 'base/fonts';
+@import 'base/normalize';
+
+@import 'shame';
+
+.cke_editable {
+  padding: 20px;
+  @extend .uikit-body;
+  @extend .uikit-grid;
+}

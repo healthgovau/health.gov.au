@@ -1,0 +1,22 @@
+// Text areas
+//
+// The `<textarea>` element represents a multi-line plain text form field.
+//
+// Markup: forms-textarea.twig
+//
+// Style guide: forms.base.textarea
+
+textarea {
+  @extend %text-form-element !optional;
+  @extend .uikit-text-input--textarea;
+  // Remove the default vertical scrollbar in IE.
+  overflow: auto;
+}
+
+.field-type-text-with-summary,
+.field-type-text {
+  label {
+    @extend .uikit-control-input;
+    @extend .uikit-text-input__label;
+  }
+}

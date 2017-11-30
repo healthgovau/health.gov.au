@@ -1,0 +1,23 @@
+//
+// Drupal selectors.
+//
+.progress-bar,
+.progress {
+  @extend %uikit-progress-bar;
+
+  .bar {
+    @extend %uikit-progress-bar__bar;
+  }
+
+  .filled {
+    @extend %uikit-progress-bar__fill;
+  }
+
+  .percentage {
+    @extend %uikit-progress-bar__percentage;
+  }
+}
+
+.ajax-progress-bar {
+  @extend %uikit-progress-bar--inline;
+}

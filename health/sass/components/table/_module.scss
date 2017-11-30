@@ -1,0 +1,47 @@
+//--------------------------------------------------------------
+// Table module
+// Tables help users view tabular data.
+//
+//--------------------------------------------------------------
+
+// @todo We shouldn't need to import this here, but it won't compile without it.
+@import '../../abstracts/mixins';
+
+%table {
+  margin-bottom: uikit-space(.75);
+  width: 100%;
+  border-collapse: collapse;
+
+  tr:nth-child(even) {
+    background-color: $uikit-colour-Background;
+  }
+
+  td,
+  th {
+    @include uikit-media('md') {
+      padding: uikit-space(.75);
+      font-size: initial;
+    }
+
+    border-bottom: $uikit-borderize;
+    padding: uikit-space(.5);
+    text-align: left;
+  }
+
+  thead {
+    border-bottom: 2px solid $uikit-colour-Border;
+  }
+
+  @include media-max( md ) {
+    min-width: 43em;
+  }
+}
+
+%table__responsive-wrapper {
+  @include media-max( md ) {
+    overflow: scroll;
+  }
+
+}
+
+@import 'print';

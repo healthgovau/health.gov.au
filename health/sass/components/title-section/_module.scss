@@ -1,0 +1,45 @@
+// Section header + breadcrumbs
+.page-title {
+  &.header.header--light {
+    background: $colour-Primary;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+.page-title__core {
+  @extend .col-md-8;
+  padding-top: uikit-space(1);
+  padding-bottom: uikit-space(1);
+
+  // Danny = add a variant for full width
+  // &.full-width {
+  //   @extend .col-md-12;
+  // }
+}
+
+.page-title__supp {
+  @extend .col-md-4;
+  .block-bean-call-to-action {
+    background: $colour-Primary-dark;
+    padding: uikit-space(1);
+    .content {
+      padding-left: 0;
+      padding-right: 0;
+      width: 100%;
+    }
+    .field-name-field-link-to a {
+      margin-bottom: 0;
+    }
+    .block__title {
+      @extend .uikit-display-3;
+    }
+  }
+}
+
+// Title section for standar content
+.page .section-header {
+    @extend .uikit-header-heading;
+    font-family: $uikit-font;
+    margin-bottom: 0;
+    font-size: 26px;
+}

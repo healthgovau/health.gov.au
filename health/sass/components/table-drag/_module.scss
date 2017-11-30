@@ -1,0 +1,83 @@
+// Table drag
+//
+// Drag and drop rows inside a form.
+//
+// If your custom theme isn't used for Drupal's admin pages, you can safely
+// delete this component to save file weight in the generated CSS.
+//
+// Markup: table-drag.twig
+//
+// Style guide: forms.table-drag
+
+%uikit-table-drag {
+  &__wrapper {
+    cursor: move;
+  }
+
+  &__item {
+    background-color: #eee;
+  }
+
+  &__item-previous {
+    background-color: #ddd;
+  }
+
+  &__handle {
+    cursor: move;
+    float: left;
+    height: 1.7em;
+    margin-left: -1em;
+    overflow: hidden;
+    text-decoration: none;
+    font-size: 12px;
+
+    &:focus,
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__handle-icon {
+    box-sizing: content-box;
+    background: url('../sass/components/table-drag/handle-icon.png') no-repeat 6px 9px;
+    height: 13px;
+    margin: -.4em .5em;
+    padding: .42em .5em;
+    width: 13px;
+  }
+
+  &__handle.is-hover &__handle-icon,
+  &__handle-icon--is-hover {
+    background-position: 6px -11px;
+  }
+
+  &__toggle-weight-wrapper {
+    text-align: right;
+  }
+
+  &__toggle-weight {
+    font-size: .9em;
+  }
+
+  &__indentation {
+    float: left;
+    height: 1.7em;
+    margin: -.4em .2em -.4em -.4em;
+    padding: .42em 0 .42em .6em;
+    width: 20px;
+  }
+
+  &__tree-child {
+    background: url('../sass/components/table-drag/tree-child.png') no-repeat 11px center;
+  }
+
+  &__tree-child-last {
+    @extend %uikit-table-drag__tree-child;
+    background-image: url('../sass/components/table-drag/tree-child-last.png');
+  }
+
+  &__tree-child-horizontal {
+    @extend %uikit-table-drag__tree-child;
+    background-position: -11px center;
+  }
+}

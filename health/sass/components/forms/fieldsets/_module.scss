@@ -1,0 +1,16 @@
+// Fieldsets
+//
+// The `<fieldset>` element groups a set of form fields, optionally under a
+// common name given by the `<legend>` element.
+//
+// Markup: forms-fieldset.twig
+//
+// Style guide: forms.base.fieldset
+
+%uikit-fieldset {
+  // Change the border, margin, and padding in all browsers (opinionated).
+  padding: uikit-space(1);
+  border: $uikit-borderize;
+  margin: 0 2px;
+  margin-bottom: uikit-space(1);
+}

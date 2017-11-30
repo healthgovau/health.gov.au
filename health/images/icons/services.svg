@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="86px" height="87px" viewBox="0 0 86 87" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>services</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="services" transform="translate(1.000000, 2.000000)" stroke="#222829" stroke-width="2.6666666">
+            <path d="M25.0066661,61.6586655 C20.1253329,57.7479989 16.9999996,51.739999 16.9999996,44.9999992 C8.16399982,44.9999992 1,37.8359994 1,28.9999996 C1,20.1626665 8.16399982,13 16.9999996,13 L20.9999995,13" id="path19534" transform="translate(13.003333, 37.329333) scale(-1, 1) rotate(-180.000000) translate(-13.003333, -37.329333) "></path>
+            <path d="M63.5213333,19 L67.5213332,19 C76.3573329,19 83.5213328,26.1626665 83.5213328,34.9999996 C83.5213328,42.9293327 78.1879996,49.6666659 70.1879998,49.6666659 C70.1879998,55.4999991 67.1253332,60.311999 61,61.4239989" id="path19538" transform="translate(72.260666, 40.211999) scale(-1, 1) rotate(-180.000000) translate(-72.260666, -40.211999) "></path>
+            <path d="M51.3333329,16 L34,16" id="path19542" transform="translate(42.666666, 16.666667) scale(-1, 1) rotate(-180.000000) translate(-42.666666, -16.666667) "></path>
+            <path d="M51.3333329,22 L34,22" id="path19546" transform="translate(42.666666, 22.666667) scale(-1, 1) rotate(-180.000000) translate(-42.666666, -22.666667) "></path>
+            <path d="M51.3333329,27 L34,27" id="path19550" transform="translate(42.666666, 27.666667) scale(-1, 1) rotate(-180.000000) translate(-42.666666, -27.666667) "></path>
+            <path d="M25,5.3333332 L60.9999991,5.3333332 L60.9999991,50.6666654 L27.6666666,50.6666654 C26.1946666,50.6666654 25,49.4719988 25,47.9999988 L25,2.6666666 C25,1.19466664 26.1946666,0 27.6666666,0 L62.3333324,0" id="path19554" transform="translate(43.666666, 25.333333) scale(-1, 1) rotate(-180.000000) translate(-43.666666, -25.333333) "></path>
+            <polyline id="path19558" stroke-linejoin="round" transform="translate(30.333333, 64.666667) scale(-1, 1) rotate(-180.000000) translate(-30.333333, -64.666667) " points="35.6666664 62 30.3333332 67.3333332 25 62"></polyline>
+            <polyline id="path19562" stroke-linejoin="round" transform="translate(54.333333, 64.666667) scale(-1, 1) rotate(-180.000000) translate(-54.333333, -64.666667) " points="59.6666664 62 54.3333332 67.3333332 49 62"></polyline>
+            <polyline id="path19566" stroke-linejoin="round" transform="translate(42.333333, 80.666667) scale(-1, 1) rotate(-180.000000) translate(-42.333333, -80.666667) " points="47.6666664 83.3333332 42.3333332 78 37 83.3333332"></polyline>
+            <polyline id="path19570" stroke-linejoin="round" transform="translate(15.333333, 68.666667) scale(-1, 1) rotate(-180.000000) translate(-15.333333, -68.666667) " points="30.6666659 75.333333 30.6666659 62 0 62"></polyline>
+            <polyline id="path19574" stroke-linejoin="round" transform="translate(69.333333, 68.666667) scale(-1, 1) rotate(-180.000000) translate(-69.333333, -68.666667) " points="54 75.333333 54 62 84.6666659 62"></polyline>
+            <path d="M42,82.6666661 L42,60" id="path19578" stroke-linejoin="round" transform="translate(42.666667, 71.333333) scale(-1, 1) rotate(-180.000000) translate(-42.666667, -71.333333) "></path>
+        </g>
+    </g>
+</svg>

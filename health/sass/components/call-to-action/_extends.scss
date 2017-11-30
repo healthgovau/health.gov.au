@@ -1,0 +1,9 @@
+.block-bean-call-to-action,
+.bean-call-to-action {
+  p:last-of-type {
+    margin-bottom: uikit-space(1);
+  }
+  .field-name-field-link-to a {
+    @extend .uikit-cta-link;
+  } 
+}

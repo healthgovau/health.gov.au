@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="86px" height="70px" viewBox="0 0 86 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>health-topics-inverted</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="health-topics-inverted" transform="translate(2.000000, 2.000000)" stroke-width="2.6666666" stroke="#FFFFFF">
+            <polyline id="path6902" transform="translate(40.999999, 30.666666) scale(-1, 1) rotate(-180.000000) translate(-40.999999, -30.666666) " points="32.9999993 1.99999992e-07 5 1.99999992e-07 5 61.333332 35.6666659 61.333332 40.9999991 55.9999988 46.3333323 61.333332 76.9999982 61.333332 76.9999982 1.99999992e-07 48.9999989 1.99999992e-07"></polyline>
+            <path d="M77.3333314,66.333332 L82.6666646,66.333332 L82.6666646,5.0000002 L45.3333322,5.0000002 L45.3333322,9.0000001 C45.3333322,11.208 43.5413322,13 41.3333323,13 C39.1253324,13 37.3333324,11.208 37.3333324,9.0000001 L37.3333324,5.0000002 L-7.10542736e-15,5.0000002 L-7.10542736e-15,66.333332 L5.3333332,66.333332" id="path6906" transform="translate(41.333332, 35.666666) scale(-1, 1) rotate(-180.000000) translate(-41.333332, -35.666666) "></path>
+            <path d="M18.9999998,25.0000001 C18.9999998,22.7920002 17.2079998,21.0000002 14.9999999,21.0000002 C12.792,21.0000002 11,22.7920002 11,25.0000001 C11,27.208 12.792,29 14.9999999,29 C17.2079998,29 18.9999998,27.208 18.9999998,25.0000001 Z" id="path6910" transform="translate(15.000000, 25.000000) scale(-1, 1) rotate(-180.000000) translate(-15.000000, -25.000000) "></path>
+            <path d="M34.9999998,25.0000001 C34.9999998,22.7920002 33.2079998,21.0000002 30.9999999,21.0000002 C28.792,21.0000002 27,22.7920002 27,25.0000001 C27,27.208 28.792,29 30.9999999,29 C33.2079998,29 34.9999998,27.208 34.9999998,25.0000001 Z" id="path6914" transform="translate(31.000000, 25.000000) scale(-1, 1) rotate(-180.000000) translate(-31.000000, -25.000000) "></path>
+            <path d="M26.9999998,12.0000001 C26.9999998,9.79200016 25.2079998,8.0000002 22.9999999,8.0000002 C20.792,8.0000002 19,9.79200016 19,12.0000001 C19,14.208 20.792,16 22.9999999,16 C25.2079998,16 26.9999998,14.208 26.9999998,12.0000001 Z" id="path6918" transform="translate(23.000000, 12.000000) scale(-1, 1) rotate(-180.000000) translate(-23.000000, -12.000000) "></path>
+            <path d="M47,7 L73.666666,7" id="path6922" transform="translate(60.333333, 8.333333) scale(-1, 1) rotate(-180.000000) translate(-60.333333, -8.333333) "></path>
+            <path d="M47,12 L73.666666,12" id="path6926" transform="translate(60.333333, 13.333333) scale(-1, 1) rotate(-180.000000) translate(-60.333333, -13.333333) "></path>
+            <path d="M47,47 L73.666666,47" id="path6930" transform="translate(60.333333, 48.333333) scale(-1, 1) rotate(-180.000000) translate(-60.333333, -48.333333) "></path>
+            <path d="M47,41 L73.666666,41" id="path6934" transform="translate(60.333333, 42.333333) scale(-1, 1) rotate(-180.000000) translate(-60.333333, -42.333333) "></path>
+            <path d="M47,52 L73.666666,52" id="path6938" transform="translate(60.333333, 53.333333) scale(-1, 1) rotate(-180.000000) translate(-60.333333, -53.333333) "></path>
+            <path d="M9,36 L35.666666,36" id="path6942" transform="translate(22.333333, 37.333333) scale(-1, 1) rotate(-180.000000) translate(-22.333333, -37.333333) "></path>
+            <path d="M9,41 L35.666666,41" id="path6946" transform="translate(22.333333, 42.333333) scale(-1, 1) rotate(-180.000000) translate(-22.333333, -42.333333) "></path>
+            <path d="M9,47 L35.666666,47" id="path6950" transform="translate(22.333333, 48.333333) scale(-1, 1) rotate(-180.000000) translate(-22.333333, -48.333333) "></path>
+            <path d="M9,52 L35.666666,52" id="path6954" transform="translate(22.333333, 53.333333) scale(-1, 1) rotate(-180.000000) translate(-22.333333, -53.333333) "></path>
+            <path d="M19.9999999,21.666666 L16,14.9999995" id="path6958" transform="translate(18.000000, 18.333333) scale(-1, 1) rotate(-180.000000) translate(-18.000000, -18.333333) "></path>
+            <path d="M25,21.666666 L28.9999999,14.9999995" id="path6962" transform="translate(27.000000, 18.333333) scale(-1, 1) rotate(-180.000000) translate(-27.000000, -18.333333) "></path>
+            <path d="M26.9999998,24 L19,24" id="path6966" transform="translate(23.000000, 25.333333) scale(-1, 1) rotate(-180.000000) translate(-23.000000, -25.333333) "></path>
+            <polyline id="path6970" transform="translate(60.666666, 27.000000) scale(-1, 1) rotate(-180.000000) translate(-60.666666, -27.000000) " points="73.3333327 17.0000005 48 17.0000005 48 37"></polyline>
+            <path d="M53,33.0000001 L53,37" id="path6974" transform="translate(54.333333, 35.000000) scale(-1, 1) rotate(-180.000000) translate(-54.333333, -35.000000) "></path>
+            <path d="M59,33.0000001 L59,37" id="path6978" transform="translate(60.333333, 35.000000) scale(-1, 1) rotate(-180.000000) translate(-60.333333, -35.000000) "></path>
+            <path d="M64,33.0000001 L64,37" id="path6982" transform="translate(65.333333, 35.000000) scale(-1, 1) rotate(-180.000000) translate(-65.333333, -35.000000) "></path>
+            <path d="M69,33.0000001 L69,37" id="path6986" transform="translate(70.333333, 35.000000) scale(-1, 1) rotate(-180.000000) translate(-70.333333, -35.000000) "></path>
+            <polyline id="path6990" transform="translate(60.666666, 23.333333) scale(-1, 1) rotate(-180.000000) translate(-60.666666, -23.333333) " points="48 19.9999995 51.9999999 19.9999995 57.3333331 25.3333327 62.6666663 19.9999995 69.3333328 26.666666 73.3333327 26.666666"></polyline>
+            <path d="M41,54.333332 L41,8.9999998" id="path6994" transform="translate(42.333333, 31.666666) scale(-1, 1) rotate(-180.000000) translate(-42.333333, -31.666666) "></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,32 @@
+// Menu navigation
+//
+// A default link list used as navigation which can be displayed to the
+// side or below the main content.
+//
+// Markup: menu.twig
+//
+// Style guide: navigation.menu
+
+// Default link styling
+.menu {
+  @extend .uikit-link-list;
+}
+
+// Sub menu above search
+#block-menu-menu-sub-menu {
+  @include uikit-clearfix;
+  .block__title {
+    @include uikit-sronly;
+  }
+  .menu {
+    @extend .uikit-link-list--inline;
+    float: right;
+    background: transparent;
+    padding-top: 0;
+    li:first-of-type{
+      margin-left: 0;
+    }
+  }
+}
+
+

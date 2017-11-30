@@ -1,0 +1,91 @@
+// Drupal admin tables
+//
+// Complex forms that appear in html `<table>` elements.
+//
+// If your custom theme isn't used for Drupal's admin pages, you can safely
+// delete this component to save file weight in the generated CSS.
+//
+// Markup: form-table.twig
+//
+// Style guide: forms.form-table
+
+%uikit-form-table {
+  &__sticky-header {
+    position: fixed;
+    visibility: hidden;
+    margin-top: 0;
+
+    &.is-sticky,
+    &--is-sticky {
+      visibility: visible;
+    }
+  }
+
+  &__header {
+    border-bottom: 3px solid #ccc;
+    padding-right: 1em;
+    text-align: left;
+  }
+
+  &__body {
+    border-top: $uikit-borderize;
+  }
+
+  &__row {
+    padding: .1em .6em;
+    border-bottom: $uikit-borderize;
+    background-color: #eee;
+
+    &:nth-child(even) {
+      background-color: #fff;
+    }
+
+    &.is-active,
+    &--is-active {
+      background-color: #ccc;
+    }
+
+    &.is-disabled,
+    &--is-disabled {
+      background: #aaa;
+    }
+
+    &.is-selected,
+    &--is-selected {
+      background: rgba(250,194,102,0.5);
+    }
+  }
+
+  &__list {
+    margin: 0;
+  }
+
+  &__narrow-column {
+    // sass-lint:disable no-vendor-prefixes, no-duplicate-properties
+    width: -moz-min-content;
+    width: -webkit-min-content;
+    text-align: center;
+  }
+
+  // Automatically set styles on child HTML structure.
+  th {
+    @extend %uikit-form-table__header;
+
+    // Override specificity. :-p
+    &.form-table__narrow-column {
+      @extend %uikit-form-table__narrow-column;
+    }
+  }
+
+  tbody {
+    @extend %uikit-form-table__body;
+
+    tr {
+      @extend %uikit-form-table__row;
+    }
+  }
+
+  ul {
+    @extend %uikit-form-table__list;
+  }
+}

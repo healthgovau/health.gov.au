@@ -1,0 +1,27 @@
+// Grid
+//
+// A grid.
+
+.page {
+  @extend .uikit-grid;
+}
+
+// Apply grid to content and navigation based on sinlg epane or left/right pane
+
+// Full width (no sidebar)
+.content-full {
+  @extend .col-md-12;
+}
+
+// Content and sidebar
+.content {  
+  @extend .col-sm-9;
+  @extend .col-md-9;    
+}
+.sidebar {
+  @extend .col-sm-3;
+  @extend .col-md-3;
+}
+// If need to differentiate
+//.sidebar-right,
+//.sidebar-left {}

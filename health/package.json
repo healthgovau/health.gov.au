@@ -1,0 +1,94 @@
+{
+  "name": "zen-subtheme",
+  "author": "You!",
+  "description": "The node.js requirements to build this project.",
+  "version": "1.0.0",
+  "repository": {},
+  "devDependencies": {
+    "@gov.au/accordion": "^0.3.0",
+    "@gov.au/pancake": "^1.0.6",
+    "@gov.au/pancake-sass": "^1.0.7",
+    "browser-sync": "^2.18.8",
+    "browsersync": "0.0.1-security",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-sass": "^3.1.0",
+    "gulp-size": "^2.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "kss": "^3.0.0-beta.18",
+    "path": "^0.12.7",
+    "sass-versioning": "^0.2.2"
+  },
+  "dependencies": {
+    "@gov.au/accordion": "^0.3.0",
+    "@gov.au/animate": "^0.1.2",
+    "@gov.au/body": "^0.1.0",
+    "@gov.au/breadcrumbs": "^0.1.0",
+    "@gov.au/buttons": "^0.3.0",
+    "@gov.au/callout": "^0.1.0",
+    "@gov.au/control-input": "^0.1.0",
+    "@gov.au/core": "^0.1.2",
+    "@gov.au/cta-link": "^0.1.0",
+    "@gov.au/direction-links": "^0.1.0",
+    "@gov.au/footer": "^0.1.0",
+    "@gov.au/grid-12": "^0.1.0",
+    "@gov.au/header": "^1.0.0",
+    "@gov.au/headings": "^0.1.0",
+    "@gov.au/inpage-nav": "^0.1.0",
+    "@gov.au/keyword-list": "^0.1.0",
+    "@gov.au/link-list": "^0.1.0",
+    "@gov.au/page-alerts": "^0.1.0",
+    "@gov.au/pancake": "^1.0.6",
+    "@gov.au/pancake-js": "^1.0.9",
+    "@gov.au/pancake-sass": "^1.1.0",
+    "@gov.au/responsive-media": "^0.1.0",
+    "@gov.au/select": "^0.1.0",
+    "@gov.au/skip-link": "^0.1.0",
+    "@gov.au/tags": "^0.1.0",
+    "@gov.au/text-inputs": "^0.1.0"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "private": true,
+  "//": "The postinstall script is needed to work-around this Drupal core bug: https://www.drupal.org/node/2329453",
+  "scripts": {
+    "postinstall": "npm rebuild node-sass && find node_modules/ -name '*.info' -type f -delete",
+    "test": "gulp",
+    "pancake": "node node_modules/@gov.au/pancake/bin/pancake"
+  },
+  "pancake": {
+    "auto-save": true,
+    "plugins": true,
+    "ignore": [],
+    "css": {
+      "minified": true,
+      "modules": false,
+      "browsers": [
+        "last 2 versions",
+        "ie 8",
+        "ie 9",
+        "ie 10"
+      ],
+      "location": "css/",
+      "name": false
+    },
+    "sass": {
+      "modules": false,
+      "location": "sass/vendors/",
+      "name": "uikit.scss"
+    },
+    "js": {
+      "minified": true,
+      "modules": false,
+      "location": "pancake/js/",
+      "name": "pancake.js"
+    },
+    "react": {
+      "location": "pancake/react/"
+    }
+  }
+}

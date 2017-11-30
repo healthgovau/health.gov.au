@@ -1,0 +1,31 @@
+//
+// Drupal selectors.
+//
+
+.autocomplete,
+.form-autocomplete {
+  input {
+    @extend %uikit-autocomplete;
+
+    &.throbbing {
+      @extend %uikit-autocomplete--is-throbbing;
+    }
+  }
+}
+
+// sass-lint:disable no-ids
+#autocomplete {
+  @extend %uikit-autocomplete__list-wrapper;
+
+  ul {
+    @extend %uikit-autocomplete__list;
+  }
+
+  li {
+    @extend %uikit-autocomplete__list-item;
+  }
+
+  .selected {
+    @extend %uikit-autocomplete__list-item--is-selected;
+  }
+}

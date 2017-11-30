@@ -1,0 +1,140 @@
+//	==========================
+//
+//	Per-instance module customisation
+// 
+//	==========================
+//	This file extends theme classes. For example:
+//	
+//	Redeclare variables:
+//	$var1 = xxx;
+//	
+//	Declare custom classes
+//  .custom {
+//		@extend %themeclass;	
+//		// Custom styles
+//		style1 = xxx;
+//	}
+
+// Statistics band.
+.paragraphs-item-para-statistics {
+
+  // 2 in a row.
+  &.listing__count--2 {
+    .paragraphs-item-para-statistic {
+      @extend .col-md-6;
+    }
+  }
+
+  // 3 in a row.
+  &.listing__count--3 {
+    .paragraphs-item-para-statistic {
+      @extend .col-md-4;
+    }
+  }
+
+  // 4 in a row.
+  &.listing__count--4 {
+    .paragraphs-item-para-statistic {
+      @extend .col-md-3;
+    }
+  }
+}
+
+// Statistic.
+.paragraphs-item-para-statistic {
+
+  @extend %stat;
+
+  // Horizontal listing.
+  &.view-mode-listing_horizontal {
+
+    // Outer wrapper.
+    .one-column-wrapper {
+      @extend %stat__wrapper;
+
+      // Inner wrapper.
+      .group-statistic {
+        @extend %stat__card--blue;
+
+        // Header.
+        h4 {
+          @extend %stat__header;
+        }
+
+        // Value.
+        .group-statistic-value {
+          @extend %stat__count;
+
+          // Reset UIKit p margin styles.
+          margin: 0;
+
+          .field-name-field-statistic-value {
+            @extend %stat__count-value;
+          }
+
+          .field-name-field-statistic-unit-suffix {
+            @extend %stat__count-units;
+          }
+
+          .field-name-field-statistic-unit-prefix {
+            @extend %stat__count-units--left;
+          }
+        }
+
+
+        // Trend.
+        .group-statistic-trend {
+          @extend %stat__trend;
+
+          // Reset UIKit p margin styles.
+          margin: 0;
+
+          .field-name-field-statistic-trend {
+            @extend %stat__trend-value;
+
+            i {
+              font-style: normal;
+              &.negative {
+                @extend %stat__trend-value--negative;
+              }
+              &.positive {
+                @extend %stat__trend-value--positive;
+              }
+            }
+          }
+
+          .field-name-field-statistic-trend-timeframe {
+            @extend %stat__trend-date;
+          }
+
+
+        }
+
+
+      }
+    }
+
+    // No trend variant.
+    &.no-trend {
+      // Outer wrapper.
+      .one-column-wrapper {
+        @extend %stat__wrapper;
+
+        // Inner wrapper.
+        .group-statistic {
+
+          // Trend
+          .group-statistic-trend {
+            @extend %stat__trend--no-trend;
+          }
+
+          // Value
+          .group-statistic-value {
+            @extend %stat__count--no-trend;
+          }
+        }
+      }
+    }
+  }
+}
+

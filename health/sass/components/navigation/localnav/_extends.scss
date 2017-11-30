@@ -1,0 +1,50 @@
+// Nav menu
+//
+// A "nav menu" is secondary, hierarchical navigation which can be displayed to the
+// side or below the main content.
+//
+// Markup: nav-menu.twig
+//
+// Style guide: navigation.nav-menu
+
+// Default link styling
+.menu {
+  @extend .uikit-link-list;
+}
+
+// Local navigation
+.uikit-body .sidebar .block-menu-block {
+  // Drupal block title as link helper styles
+  &__title {
+    font-size: 22px;
+  }
+  .menu {
+    @extend %uikit-localnav;
+  }
+}
+
+// When the block title is a link
+.uikit-body .sidebar .block-menu-block--title-link {
+  .block__title {
+    margin: 0;
+    a {
+      font-size: 18px;
+      @extend %uikit-localnav--link;
+      border-top: $uikit-borderize;
+    }
+  }
+  // The indent needs to adjust as the parent item is now a link
+  .menu {
+    a {
+      padding-left: uikit-space(1);
+    }
+    ul {
+      a {
+        padding-left: uikit-space(1.5);
+      }
+      ul a {
+        padding-left: uikit-space(2);
+      }
+    }
+  }
+}
