@@ -9,4 +9,32 @@
 .uikit-body .region-navigation .sf-menu {
   @extend %uikit-sitenav;
   @extend %uikit-dropdown;
+  padding-bottom: 20px;
+  @include uikit-media(sm){
+    padding-bottom: 0;
+  }
+}
+
+// Mobile nav logic.
+.region-navigation .block-superfish.mobilemenu-active {
+  margin: 0;
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+}
+
+.region-navigation .block-superfish {
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.8s linear;
+
+  @include uikit-media(xs) {}
+
+  @include uikit-media(sm) {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+  }
+
 }

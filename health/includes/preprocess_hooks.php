@@ -2,14 +2,16 @@
 // Include inc files.
 include_once drupal_get_path('theme', 'health') . '/includes/helper.php';
 
-CONST VUEJS_URL = 'https://unpkg.com/vue@2.4.4/dist/vue.min.js';
 CONST READSPEAKER_URL = '//f1.as.readspeaker.com/script/5802/ReadSpeaker.js?pids=embhl';
 CONST GOOGLE_MAP_API = '//maps.googleapis.com/maps/api/staticmap';
 CONST RESOURCES_TYPE = [
   'image',
   'publication',
   'video',
+  'audio',
+  'app_or_tool',
 ];
+CONST THEME_PATH_TOKEN_GENERIC = '[theme-path]';
 
 /**
  * Override or insert variables for the breadcrumb theme function.
@@ -48,12 +50,14 @@ function health_preprocess_maintenance_page(&$variables, $hook) {
  */
 function health_preprocess_page(&$variables) {
   // Add vuejs and backtotop JS to all pages.
-  drupal_add_js(VUEJS_URL, 'external');
+  drupal_add_js(path_to_theme() . '/js/vue.min.js');
   drupal_add_js(path_to_theme() . '/js/health.backtotop.js');
+  $variables['backtotop'] = theme('backtotop', []);
   
   // Add readspeaker JS to all pages.
   drupal_add_js(READSPEAKER_URL, 'external');
   drupal_add_js(path_to_theme() . '/js/health.readspeaker.js');
+  $variables['readspeaker'] = theme('readspeaker', []);
   
   // Add parameters to JS.
   drupal_add_js(
@@ -74,26 +78,95 @@ function health_preprocess_page(&$variables) {
     ]
   );
 
-  // Pages under a topic or grand-parents pages should use the parents' title
-  // in the title section.
+  // Always add summary. If it is not needed, it will be removed.
+  if (isset($variables['node'])) {
+    $summary = field_get_items('node', $variables['node'], 'field_summary');
+    if ($summary && isset($summary[0]['value'])) {
+      $variables['summary'] = $summary[0]['value'];
+    }
+  } else {
+    // Check if this is a views page.
+    if ($view = views_get_page_view()) {
+      $variables['summary'] = $view->display_handler->get_option('display_comment');
+    }
+  }
 
-  // Get the active trail.
+  // Pages under a topic or grand-parents pages should use the parents' title
+  // in the title section and no summary.
+
   $active_trail = menu_get_active_trail();
   if (!empty($active_trail)) {
-    if (count($active_trail) > 3) {
-      if (isset($active_trail[2]['title'])) {
-        $variables['section_title'] = $active_trail[2]['title'];
+
+    // Topics
+    if ($active_trail[1]['href'] == 'topics') {
+      if (isset($variables['node'])) {
+        if (count($active_trail) > 3) {
+          if ($variables['node']->type != 'health_topic_hp') {
+
+            $health_topic_hp = node_load(str_replace('node/', '', $active_trail[3]['link_path']));
+            $health_topic = node_load(str_replace('node/', '', $active_trail[2]['link_path']));
+
+            // Check if we are under a health professional section of the topic.
+            if ($health_topic_hp && $health_topic_hp->type == 'health_topic_hp') {
+              $variables['section_title'] = $health_topic_hp->title;
+              $variables['summary'] = NULL;
+              // Check if we are under the general section of the topic.
+            } else if ($health_topic) {
+              $variables['section_title'] = $health_topic->title;
+              $variables['summary'] = NULL;
+            }
+          }
+        }
+      }
+    }
+
+    // Conditions and diseases
+    // Title doesn't appear in the active trail, so set one manually.
+    if ($active_trail[1]['href'] == 'conditions-and-diseases') {
+      if (count($active_trail) > 2) {
+        $variables['section_title'] = 'Conditions and diseases';
+        $variables['summary'] = NULL;
+      }
+    }
+
+    // Resources
+    if ($active_trail[1]['href'] == 'resources') {
+      if (isset($variables['node'])) {
+        $variables['section_title'] = ucfirst($variables['node']->type) . 's';
+        $variables['summary'] = NULL;
+      }
+    }
+
+    // Services
+    // Title doesn't appear in the active trail, so set one manually.
+    if ($active_trail[1]['href'] == 'services') {
+      if (count($active_trail) > 2) {
+        $variables['section_title'] = 'Services';
+        $variables['summary'] = NULL;
+      }
+    }
+
+    // About us.
+    if ($active_trail[1]['href'] == 'node/1') {
+      $variables['section_title'] = $active_trail[1]['title'];
+      $variables['summary'] = NULL;
+    }
+
+    // News and events
+    // Title doesn't appear in the active trail, so set one manually.
+    if ($active_trail[1]['href'] == 'news-and-events') {
+      if (count($active_trail) > 3) {
+        $variables['section_title'] = 'News and events';
+        $variables['summary'] = NULL;
       }
     }
   }
-  
-  // For resource content types, we use the content type name for the section
-  // title.
-  if (isset($variables['node'])) {
-    $node = $variables['node'];
-    if (in_array($node->type, RESOURCES_TYPE)) {
-      $variables['section_title'] = ucfirst($node->type);
-    }
+
+  // Add search api page title logic.
+  // This should be removed after using funnelback.
+  if (arg(0) == 'search' && arg(1)) {
+    $variables['title'] = 'Search - ' . arg(1);
+    $variables['section_title'] = NULL;
   }
 
 }
@@ -169,32 +242,16 @@ function health_preprocess_html(&$variables, $hook) {
       }
     }
     $variables['classes_array'][] = drupal_html_class('section-'.$section);
-  }
 
-  // Store the menu item since it has some useful information.
-  $variables['menu_item'] = menu_get_item();
-  if ($variables['menu_item']) {
-    switch ($variables['menu_item']['page_callback']) {
-      case 'views_page':
-        // Is this a Views page?
-        $variables['classes_array'][] = 'page-views';
-        break;
-      case 'page_manager_blog':
-      case 'page_manager_blog_user':
-      case 'page_manager_contact_site':
-      case 'page_manager_contact_user':
-      case 'page_manager_node_add':
-      case 'page_manager_node_edit':
-      case 'page_manager_node_view_page':
-      case 'page_manager_page_execute':
-      case 'page_manager_poll':
-      case 'page_manager_search_page':
-      case 'page_manager_term_view_page':
-      case 'page_manager_user_edit_page':
-      case 'page_manager_user_view_page':
-        // Is this a Panels page?
-        $variables['classes_array'][] = 'page-panels';
-        break;
+    // Store the menu item since it has some useful information.
+    $variables['menu_item'] = menu_get_item();
+    if ($variables['menu_item']) {
+      switch ($variables['menu_item']['page_callback']) {
+        case 'views_page':
+          // Is this a Views page?
+          $variables['classes_array'][] = 'page-views';
+          break;
+      }
     }
   }
 }
@@ -375,6 +432,25 @@ function health_preprocess_block(&$variables, $hook) {
   if ($variables['elements']['#block']->module == 'menu_block' && $variables['elements']['#config']['title_link']) {
     $variables['classes_array'][] = 'block-menu-block--title-link';
   }
+
+  // Facet blocks.
+  if (key_exists('#facet', $variables['elements'])) {
+
+    // Collapse all by default.
+    $variables['collapsed'] = TRUE;
+
+    // Get the currently selected facets from the URL.
+    $query_string = drupal_get_query_parameters();
+    if (isset($query_string['f'])) {
+      foreach ($query_string['f'] as $string) {
+        $parts = explode(':', $string);
+        // If there is a selected value in this filter, then we open the filter group.
+        if ($variables['elements']['#facet']['field'] == $parts[0]) {
+          $variables['collapsed'] = FALSE;
+        }
+      }
+    }
+  }
 }
 
 /**
@@ -415,34 +491,54 @@ function health_preprocess_field(&$variables) {
   }
 
   // Videos.
-  if ($variables['element']['#field_name'] == 'field_video_preview') {
+  if ($variables['element']['#bundle'] == 'video' && $variables['element']['#field_name'] == 'field_image_featured') {
     $nid = $variables['element']['#object']->nid;
     $video_node = node_load($nid);
-    $youtube_code = $video_node->field_youtube_video_id[LANGUAGE_NONE][0]['value'];
+    $youtube_code = $video_node->field_video_youtubeid[LANGUAGE_NONE][0]['value'];
     $variables['youtube_code'] = $youtube_code;
     // Add JS to embed video.
-    drupal_add_js(drupal_get_path('theme', 'health') . '/js/video.js');
+    drupal_add_js(drupal_get_path('theme', 'health') . '/js/health.video.js');
   }
 
-  // Statistics trend arrow.
-  if ($variables['element']['#field_name'] == 'field_statistic_trend') {
+  // Statistic value - split up the value into parts so they can be styled.
+  if ($variables['element']['#field_name'] == 'field_statistic_value') {
 
-    // Check if we should show the trend icon.
-    $object = $variables['element']['#object'];
-    if ($object->field_statistic_show_trend_icon[$variables['element']['#language']][0]['value'] == 1) {
+    $matches = array();
+    preg_match_all("/(\D?)(\d*)(.*)/", $variables['items'][0]['#markup'], $matches);
 
-      // Find out if it is positive or negative.
-      $value = $variables['items'][0]['#markup'];
-      $value = preg_replace('/[^0-9-\+]*/', '', $value);
-      if (is_numeric($value)) {
-        $value = (int) $value;
-        if ($value < 0) {
-          $classes = 'fa-arrow-down negative';
-        }
-        else {
-          $classes = 'fa-arrow-up positive';
-        }
-        $variables['items'][0]['#markup'] .= '<i class="fa ' . $classes . '" aria-hidden="true"></i>';
+    $output = '';
+    if (!empty($matches[1][0])) {
+      $output .= '<span class="statistic-value-prefix">' . trim($matches[1][0]) . '</span>';
+    }
+    if (!empty($matches[2][0])) {
+      $output .= '<span class="statistic-value">' . trim($matches[2][0]) . '</span>';
+    }
+    if (!empty($matches[3][0])) {
+      $output .= '<span class="statistic-value-suffix">' . trim($matches[3][0]) . '</span>';
+    }
+    $variables['items'][0]['#markup'] = $output;
+  }
+
+  // Statistic trend icon - replace with an actual icon.
+  if ($variables['element']['#field_name'] == 'field_statistic_trend_show_icon') {
+
+    if (isset($variables['element']['#items'][0])) {
+      switch ($variables['element']['#items'][0]['value']) {
+        case 'no':
+          $variables['items'][0]['#markup'] = '<span></span>';
+          break;
+        case 'up-positive';
+          $variables['items'][0]['#markup'] = '<i class="fa fa-arrow-up statistic-icon positive" aria-hidden="true"></i>';
+          break;
+        case 'down-positive';
+          $variables['items'][0]['#markup'] = '<i class="fa fa-arrow-down statistic-icon positive" aria-hidden="true"></i>';
+          break;
+        case 'up-negative';
+          $variables['items'][0]['#markup'] = '<i class="fa fa-arrow-up statistic-icon negative" aria-hidden="true"></i>';
+          break;
+        case 'down-negative';
+          $variables['items'][0]['#markup'] = '<i class="fa fa-arrow-down statistic-icon negative" aria-hidden="true"></i>';
+          break;
       }
     }
   }
@@ -465,6 +561,57 @@ function health_preprocess_field(&$variables) {
       }
     }
   }
+
+  // Hide last updated field if it is not later than date published.
+  if ($variables['element']['#field_name'] == 'field_date_updated' && $variables['element']['#view_mode'] == 'full') {
+    $node_type = $variables['element']['#object']->type;
+    if (in_array($node_type, RESOURCES_TYPE)) {
+      // Apply logic only to resources content types.
+      if (isset($variables['element']['#items'][0])) {
+        $last_updated = strtotime($variables['element']['#items'][0]['value']);
+        $first_published = strtotime(_health_find_first_publish_date($variables['element']['#object']->nid));
+
+        // There has not been any update once published.
+        if ($last_updated <= $first_published) {
+          // Do not render this field.
+          $variables['#access'] = FALSE;
+          $variables['classes_array'][] = 'sr-only';
+        }
+
+        // Hide the field if last updated is not later than publication date in
+        // publication content type.
+        if ($variables['element']['#bundle'] == 'publication') {
+          $node = $variables['element']['#object'];
+          if (isset($node->field_publication_date[LANGUAGE_NONE][0])) {
+            $publication_date = $node->field_publication_date[LANGUAGE_NONE][0]['value'];
+
+            if ($last_updated <= strtotime($publication_date)) {
+              // Do not render this field.
+              unset($variables['items']);
+              $variables['classes_array'][] = 'sr-only';
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Token replacement (node) for all labels.
+  $variables['label'] = token_replace($variables['label'], array('node' => $variables['element']['#object']));
+
+  // Feature image.
+  if ($variables['element']['#field_name'] == 'field_image_featured') {
+    // News.
+    if ($variables['element']['#object']->type == 'news_article') {
+      // If it is full display and the image is the default, don't show it.
+      if ($variables['element']['#view_mode'] == 'full') {
+        if ($variables['element'][0]['#item']['fid'] == 641) {
+          $variables['items'][0]['#access'] = FALSE;
+        }
+      }
+    }
+  }
+
 }
 
 /**
@@ -560,9 +707,15 @@ function health_preprocess_entity(&$variables) {
     // Add the number of child paragraph items in the listing as a css class.
     // This assumes there is only one child paragraph listing in a paragraph.
     foreach($variables['content'] as $field => $data) {
-      if ($data['#field_type'] == 'paragraphs') {
+      if ($data['#field_type'] == 'paragraphs' || $data['#field_type'] == 'entityreference') {
         $variables['classes_array'][] = 'listing__count--' . count($data['#items']);
       }
+    }
+
+    // Add bundle title to class.
+    if (isset($para_item->field_pbundle_title[LANGUAGE_NONE][0])) {
+      $title = $para_item->field_pbundle_title[LANGUAGE_NONE][0]['value'];
+      $variables['classes_array'][] = strtolower(str_replace(' ', '-', $title));
     }
 
     // Statistic.
@@ -570,29 +723,6 @@ function health_preprocess_entity(&$variables) {
       // Add no-trend variant if trend info hasn't been added.
       if (empty($variables['elements']['#entity']->field_statistic_trend) && empty($variables['elements']['#entity']->field_statistic_trend_timeframe)) {
         $variables['classes_array'][] = 'no-trend';
-      }
-    }
-
-    // Term link.
-    if ($para_item->bundle == 'para_taxonomy') {
-      // Override term link field content with link field and term label.
-      if (isset($para_item->field_related_term) && isset($para_item->field_link_to)) {
-        $term = taxonomy_term_load($para_item->field_related_term[LANGUAGE_NONE][0]['target_id']);
-        $term_label = $term->name;
-        $link = $para_item->field_link_to[LANGUAGE_NONE][0]['url'];
-        $render = array(
-          '#theme' => 'link',
-          '#text' => $term_label,
-          '#path' => $link,
-          '#options' => array(
-            'attributes' => array(
-              'class' => 'term-link',
-              'title' => 'Term link',
-            ),
-            'html' => TRUE,
-          ),
-        );
-        $variables['term_link'] = drupal_render($render);
       }
     }
 
@@ -624,20 +754,92 @@ function health_preprocess_entity(&$variables) {
         $variables['classes_array'][] = 'listing__count--' . count($view->result);
       }
     }
+
+    // 2 col para.
+    if ($para_item->bundle == 'two_columns') {
+      if (isset($para_item->field_pbundle_title[LANGUAGE_NONE])) {
+        $title = $para_item->field_pbundle_title[LANGUAGE_NONE][0]['value'];
+
+        // Add title to class.
+        $variables['classes_array'][] = 'paragraphs-2-columns-' . strtolower(str_replace(' ', '-', $title));
+      }
+    }
+
+    // Term para.
+    if ($para_item->bundle == 'para_taxonomy') {
+      $link_url = $para_item->field_link_external[LANGUAGE_NONE][0]['url'];
+
+      // Override taxonomy title link.
+      $taxonomy_terms = $variables['content']['field_related_term'][0]['taxonomy_term'];
+      foreach ($taxonomy_terms as $key => $taxonomy_term) {
+        $variables['content']['field_related_term'][0]['taxonomy_term'][$key]['title'][0]['#markup'] = '<h3>' . l($taxonomy_term['#term']->name, $link_url) . '</h3>';
+      }
+    }
+
+    // Block para.
+    if ($para_item->bundle == 'para_block') {
+      // Add total block number in current para to class.
+      $block_num = count($para_item->field_para_block_id[LANGUAGE_NONE]);
+      $variables['classes_array'][] = 'block__count--' . $block_num;
+    }
   }
 
+  // Custom token replacement.
+  if (isset($variables['content']['field_bean_body'])) {
+    $variables['content']['field_bean_body'][0]['#markup'] = str_replace(THEME_PATH_TOKEN_GENERIC, '/' . path_to_theme(), $variables['content']['field_bean_body'][0]['#markup']);
+  }
+
+  // Beans.
   if ($variables['entity_type'] == 'bean') {
 
     $bean = $variables['bean'];
 
-    // For share this block.
-    if ($bean->delta == 'share-this') {
+    // For share this and page accessibility link block.
+    $token_blocks = [
+      'share-this',
+      'page-accessibility-link',
+    ];
+    if (in_array($bean->delta, $token_blocks)) {
       Global $base_url;
       $current_url = drupal_encode_path($base_url . '/' . drupal_get_path_alias(current_path()));
       $current_title = drupal_get_title();
       $variables['field_bean_body'][0]['value'] = str_replace('[current-page:title]', $current_title, $variables['field_bean_body'][0]['value']);
       $variables['field_bean_body'][0]['value'] = str_replace('[current-page:url]', $current_url, $variables['field_bean_body'][0]['value']);
       $variables['content']['field_bean_body'][0]['#markup'] = $variables['field_bean_body'][0]['value'];
+    }
+
+    // Link to field.
+    if (isset($variables['content']['field_link_to'])) {
+      // Link to the feedback form.
+      if ($variables['content']['field_link_to'][0]['#element']['url'] == 'node/21') {
+        $date = new DateTime();
+        // Add current page and unique id to link.
+        global $base_url;
+        $variables['content']['field_link_to'][0]['#element']['query'] = [
+          'referrer' => $base_url . '/' . drupal_get_path_alias(),
+          'id' => $date->format('jHis')
+        ];
+      }
+    }
+
+    // Add hook for preprocess field in bean.
+    if (isset($bean->preprocess_fields)) {
+      foreach($bean->preprocess_fields as $field) {
+        $preprocess = 'health_preprocess_ds_' . $field;
+        if (function_exists($preprocess)) {
+          $variables[$field] = $preprocess($variables);
+        }
+      }
+    }
+  }
+
+  // Display suite preprocess hooks.
+  if (isset($variables['paragraphs_item']->preprocess_fields)) {
+    foreach($variables['paragraphs_item']->preprocess_fields as $field) {
+      $preprocess = 'health_preprocess_ds_' . $field;
+      if (function_exists($preprocess)) {
+        $variables[$field] = $preprocess($variables);
+      }
     }
   }
 }
@@ -663,7 +865,8 @@ function health_preprocess_region(&$variables, $hook) {
     'footer_top',
     'footer_bottom',
     'page_bottom',
-    'sub_title'
+    'title_supp',
+    'content_bottom'
   ];
 
   // Use the region--no-wrapper template for these regions

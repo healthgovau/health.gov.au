@@ -1,0 +1,64 @@
+// Default/full content
+.node-type-image{
+    @extend %dm-full-content;
+	@extend %page-help-only;
+
+	.region-content {
+		margin-top: uikit-space(1.5);
+	}
+}
+
+// Display modes
+.node-image {
+    background: transparent;
+
+    .field-name-field-image-featured {
+		@extend %image--full;
+    }
+
+    // image download
+	.paragraphs-items-field-image-files {
+        @extend %document-link;
+	}
+
+	// Major list
+	&.view-mode-listing_vertical {
+		@extend %dm-list-vertical;
+		.group-left {
+			display: block;
+		}
+	}
+
+    &.view-mode-listing_vertical_small {
+		@extend %dm-list-vertical--small;
+    }
+
+    // Feature
+	&.view-mode-feature {
+		@extend %dm-feature-2-col;
+    }	
+	// Inline
+	&.view-mode-inline {
+		margin: uikit-space(2) 0 uikit-space(1);
+		padding: 0;
+		border: 0;
+		background: none;
+		// thumbnail
+		.field-name-field-image-featured {
+			width: 100%;
+			a {
+				background: none;
+				border: 0;
+			}
+			img {
+				@extend .uikit-responsive-media-img;
+				border: 0;
+			}
+		}
+		
+		// Link
+		.field-name-title {
+			font-size: 14px;
+		}
+	}
+}

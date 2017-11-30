@@ -1,0 +1,128 @@
+.paragraphs-item-para-block {
+  @extend %paragraphs-item-para-block;
+  .field-name-field-title {
+    @extend %list-item-title--large;
+  }
+}
+.block__count--5 .bean-image-and-text {
+  width: 100%;
+  float: left;
+
+  @include uikit-media(sm) {
+    width: 50%;
+  }
+  @include uikit-media(md) {
+    width: 33%;
+  }
+  @include uikit-media(lg) {
+    width: 20%;
+  }
+}
+
+.block__count--3 .bean-image-and-text {
+  width: 100%;
+  float: left;
+
+  @include uikit-media(sm) {
+    width: 50%;
+  }
+  @include uikit-media(md) {
+    width: 33%;
+  }
+
+}
+
+.block__count--1 .bean-image-and-text {
+  width: 100%;
+}
+
+.bean-image-and-text {
+  .field-name-field-link-internal {
+    @extend %list-item-title;
+  }
+
+  &.view-mode-full {
+
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    min-height: 1px;
+    padding-left: 12px;
+    padding-right: 12px;
+    text-align: left;
+
+    .bean-block-content {
+      a {
+        display: block;
+        color: #fff;
+        overflow: hidden;
+
+        &:hover,
+        &:focus {
+          background: lighten($colour-Primary-darkest, 5%);
+        }
+
+        .field-name-field-image {
+          img {
+            max-width: 70%;
+            @include uikit-media(sm) {
+              max-width: 30%;
+            }
+          }
+          // Resp
+          float: left;
+          width: 35%;
+          text-align: left;
+          @include uikit-media(sm) {
+            float: none;
+            width: 100%;
+            text-align: center;
+          }
+        }
+
+        .field-name-field-link-internal {
+          @extend %list-item-title;
+          color: #fff;
+          // Resp
+          display: block;
+          margin-left: 35%;
+          margin-top: 10px;
+          text-align: left;
+          @include uikit-media(sm) {
+            margin-left: 0;
+            text-align: center;
+          }
+        }
+
+        .field-name-field-bean-text {
+          display: block;
+          margin-left: 35%;
+          text-align: left;
+          @include uikit-media(sm) {
+            margin-left: 0;
+            text-align: center;
+          }
+        }
+
+      }
+    }
+  }
+
+  &.view-mode-feature {
+    float: left;
+    .group-left,
+    .group-right {
+      width: 100%;
+      @include uikit-media(sm) {
+        width: 50%;
+        padding-right: uikit-space(1);
+      }
+    }
+    @include cardify();
+  }
+
+  &.view-mode-listing_vertical {
+    @extend %dm-list-vertical;
+  }
+}
+

@@ -1,0 +1,43 @@
+// Inline
+%dm-inline {
+    border-left: $health-borderize--fat;
+    background: $uikit-colour-Background;
+    padding: uikit-space(1) uikit-space(1) uikit-space(.5);
+    margin: uikit-space(1) 0 uikit-space(2);
+
+    // layout
+    .group-left {
+        width: 15%;
+    }
+    .group-right {
+        width: 85%;
+    }
+    .field-name-title {
+        h2 {
+            @extend .uikit-display-3;
+        }
+        p {
+            @extend .uikit-display-2;
+        }
+    }
+    // thumbnail
+    .field-name-field-image-thumbnail,
+    .field-name-field-image-featured {
+        width: 80%;
+        margin-top: 5px;
+        img {
+            border: $health-borderize;
+        }
+    }
+    // date
+    .field-type-datetime {
+        @extend .meta-date;
+        margin-bottom: uikit-space(0.5);
+    }
+    // lists
+    .field-name-field-summary {
+        ol, ul {
+            padding-left: 1.2em;
+        }
+    }        
+}

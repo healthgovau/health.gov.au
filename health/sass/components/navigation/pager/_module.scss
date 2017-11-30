@@ -9,8 +9,8 @@
 
 %uikit-pager {
   clear: both;
-  padding: 0;
-  text-align: center;
+  padding: uikit-space(1) 0;
+  //text-align: center;
 
   @media print {
     display: none;

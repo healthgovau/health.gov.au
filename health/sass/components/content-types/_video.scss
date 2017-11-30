@@ -1,0 +1,94 @@
+// Content type template
+// ======================
+
+// Default/full content
+.node-type-video {
+  @extend %dm-full-content;
+  @extend %page-help-and-currency;
+
+	.region-content {
+		margin-top: uikit-space(1.5);
+	}
+}
+
+// Display modes
+.node-video {
+
+  // List vertical
+  &.view-mode-listing_vertical {
+    @extend %dm-list-vertical;
+  }
+  // List vertical small
+  &.view-mode-listing_vertical_small {
+		@extend %dm-list-vertical--small;
+  }
+
+  // List horizontal
+  &.view-mode-listing_horizontal {
+    @extend %dm-list-horizontal;
+  }
+
+  // Feature
+  &.view-mode-feature,
+  &.view-mode-full {
+    @extend %video;
+
+    .group-left {
+      @include uikit-media(md){
+        padding-right: uikit-space(1);
+      }
+    }
+
+    > .group-left {
+      width: 100%;
+      @include uikit-clearfix;
+      @include uikit-media(md){
+        width: 40%;
+      }
+    }
+    > .group-right {
+      width: 100%;
+      @include uikit-clearfix;
+      @include uikit-media(md){
+        width: 60%;
+        margin-top: -50px;
+      }
+    }
+
+    .group-video-preview {
+      position: relative;
+    }
+
+    .field-name-field-resource-duration .field-item {
+      margin-right: 1px;
+      margin-bottom: 8px;
+      @extend %video__length;
+    }
+
+    .field-name-field-image-featured {
+      @extend %video__preview;
+      img {
+        width: 100%;
+      }
+      padding-bottom: 0 !important;
+    }
+
+    .field-name-field-summary {
+      @extend %video__description;
+    }
+
+    .video-youtube-wrapper {
+      @extend %video__youtube;
+    }
+  }
+
+  // Inline style
+  &.view-mode-inline {
+    @extend %dm-inline;
+  }
+
+  // Search
+  &.view-mode-search_result {
+    @extend %dm-search-index;
+  }
+}

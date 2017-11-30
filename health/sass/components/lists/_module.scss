@@ -8,7 +8,7 @@
         position: relative;
         margin: 0 0 12px;
         padding: 15px 15px 15px 50px;
-        background: lighten($colour-Taskbar, 2%);
+        background: $colour-Primary-light;
         &::before {
             content: counter(standard-counter, decimal);
             counter-increment: standard-counter;

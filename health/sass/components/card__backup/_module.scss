@@ -23,7 +23,7 @@
 }
 
 %uikit-card--bottom {
-  @include uikit-clearfix;
+  @include uikit-clearfix();
   font-size: 14px;
   position: absolute;
   bottom: 0;

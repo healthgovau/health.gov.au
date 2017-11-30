@@ -1,0 +1,26 @@
+// Styles to apply to all content types
+
+// Default/full content for all nodes
+.page-node {
+    @extend %dm-full-content;
+	@extend %page-help-and-currency;
+}
+
+// Home page
+.page-node-landing-page {
+	@extend %page-help-only;
+}
+
+// Specific content types
+@import 'components/content-types/news';
+@import 'components/content-types/event';
+@import 'components/content-types/publication';
+@import 'components/content-types/image';
+@import 'components/content-types/video';
+@import 'components/content-types/campaign';
+@import 'components/content-types/condition-disease';
+@import 'components/content-types/contact';
+@import 'components/content-types/program-initiative';
+@import 'components/content-types/statistic';
+@import 'components/content-types/service';
+@import 'components/content-types/topic';

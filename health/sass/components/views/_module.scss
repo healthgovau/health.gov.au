@@ -3,20 +3,73 @@
 // Components in views may or may not have their own fixed width by breakpoint.
 // Danny - consider unit widths (fixed px default with --flex variant of 100%)
 
-// Listing view
+// View footer
 .page-views {
-    .views-row {
-        @include uikit-clearfix;
-        border-bottom: $uikit-borderize;
-        padding-top: uikit-space(1);
-        padding-bottom: uikit-space(1);
+	@extend %page-help-only;
+}
+
+// Generic Listing view
+.page-views {
+    .view-content {
+        margin-bottom: uikit-space(1);
+        .views-row {
+            @include uikit-clearfix();
+            border-bottom: $uikit-borderize;
+            padding-top: uikit-space(.5);
+            padding-bottom: uikit-space(.5);
+            @include uikit-media(md){
+                padding-top: uikit-space(1.5);
+                padding-bottom: uikit-space(1);
+            }
+            &:first-child,
+            &.views-row-first {
+                padding-top: 1.6em;
+            }
+            &:last-child,
+            &.views-row-last {
+                border-bottom: 0;
+            }
+        }
+    }
+}
+
+// Topic listing
+.page-topics {
+    .view-content {
+        .views-row {
+            &:first-child,
+            &.views-row-first {
+                padding-top: 0;
+            }
+        }
     }
 }
 
 // Features - small
-.paragraphs-view-news_and_events {
+.paragraphs-view-news_and_events,
+.paragraphs-view-display-latest_resources_hp,
+.paragraphs-view-display-resources_for_public_in_hp,
+.paragraphs-view-display-latest_resources_public,
+.paragraphs-view-display-global_latest_resources {
     .views-row {
         margin-bottom: uikit-space(1);
-        @include uikit-clearfix;
+        @include uikit-clearfix();
+    }
+}
+
+// Popular resources
+.paragraphs-view-display-popular_resources {
+    .views-row {
+        margin-bottom: uikit-space(1);
+        @include uikit-clearfix();
+    }
+}
+
+// Generic listing
+.view-header {
+    @extend .uikit-display-2;
+    span {
+        font-size: 30px;
+        font-weight: 700;
     }
 }

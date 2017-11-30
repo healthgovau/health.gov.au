@@ -19,33 +19,43 @@
   endif;
 ?>
 <div class="page">
-  <header class="header header--light" role="banner">
-    <div class="container">
-      <div class="row">
-        <div class="header__logo">
-          <?php if ($logo): ?>
-            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="logo">
-              <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="logo__image" />
-            </a>
-          <?php endif; ?>
-          <?php if ($site_name || $site_slogan): ?>
-            <div class="element-invisible header__header-subline">
-              <?php if ($site_name): ?>
-                <h1><?php print $site_name; ?></h1>
-              <?php endif; ?>
-
-              <?php if ($site_slogan): ?>
-                <div><?php print $site_slogan; ?></div>
-              <?php endif; ?>
-            </div>
-          <?php endif; ?>
+    <div class="header-top">
+        <div class="container">
+          <?php print render($page['header-top']); ?>
         </div>
-        <div class="header__search">
-          <?php print render($page['header']); ?>
-        </div>
-      </div>
     </div>
-  </header>
+    <header class="uikit-header uikit-header--light" role="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                  <?php if ($logo): ?>
+                      <a href="<?php print $front_page; ?>"
+                         title="<?php print t('Home'); ?>" rel="home"
+                         class="uikit-header__logo">
+                          <img src="<?php print $logo; ?>" alt="<?php print t(
+                            'Antimicrobial resistance home'
+                          ); ?>"
+                               class="uikit-header__logo-image uikit-responsive-media-img"/>
+                      </a>
+                  <?php endif; ?>
+                  <?php if ($site_name || $site_slogan): ?>
+                      <div class="element-invisible header__header-subline">
+                        <?php if ($site_name): ?>
+                            <p><?php print $site_name; ?></p>
+                        <?php endif; ?>
+
+                        <?php if ($site_slogan): ?>
+                            <div><?php print $site_slogan; ?></div>
+                        <?php endif; ?>
+                      </div>
+                  <?php endif; ?>
+                </div>
+                <div class="col-sm-6">
+                  <?php print render($page['header']); ?>
+                </div>
+            </div>
+        </div>
+    </header>
 
   <?php print render($page['alerts']); ?>
 
@@ -73,15 +83,16 @@
                 <p class="section-header"><?php print $section_title; ?></p>
               <?php endif; ?>
 
-              <?php print render($page['title']); ?>
+              <?php if (isset($summary)): ?>
+                <p class="summary"><?php print $summary; ?></p>
+              <?php endif; ?>
 
+              <?php print render($page['title_core']); ?>
             </div>
+
             <div class="page-title__supp">
-              <?php print render($page['sub_title']); ?>
+              <?php print render($page['title_supp']); ?>
             </div>
-          </div>
-          <div id="readspeaker">
-            <readspeaker></readspeaker>
           </div>
         </div>
       </div>
@@ -98,29 +109,38 @@
           </aside>
         <?php endif; ?>
 
+        <?php if ($sidebar_second): ?>
+            <aside class="sidebar sidebar-right" role="complementary">
+              <?php print $sidebar_second; ?>
+            </aside>
+        <?php endif; ?>
+
         <main class="<?php print $content_class; ?>" id="content" role="main">
-          <?php print $messages; ?>
-          <?php print render($tabs); ?>
-          <?php print render($page['help']); ?>
-          <?php if ($action_links): ?>
-            <ul class="action-links"><?php print render($action_links); ?></ul>
+          <?php if (!drupal_is_front_page()): ?>
+            <?php print $readspeaker; ?>
           <?php endif; ?>
 
-          <?php if (isset($section_title)): ?>
-            <?php print render($title_prefix); ?>
-            <h1><?php print $title; ?></h1>
-            <?php print render($title_suffix); ?>
-          <?php endif; ?>
+            <div id="read">
 
-          <?php print render($page['content']); ?>
-          <?php print $feed_icons; ?>
+              <?php print render($tabs); ?>
+              <?php print render($page['help']); ?>
+              <?php if ($action_links): ?>
+                  <ul class="action-links"><?php print render($action_links); ?></ul>
+              <?php endif; ?>
+
+              <?php if (isset($section_title)): ?>
+                <?php print render($title_prefix); ?>
+                  <h1><?php print $title; ?></h1>
+                <?php print render($title_suffix); ?>
+              <?php endif; ?>
+
+              <?php print $messages; ?>
+
+              <?php print render($page['content']); ?>
+              <?php print $feed_icons; ?>
+            </div>
         </main>
 
-        <?php if ($sidebar_second): ?>
-          <aside class="sidebar sidebar-right" role="complementary">
-            <?php print $sidebar_second; ?>
-          </aside>
-        <?php endif; ?>
       </div>
     </div>
 
@@ -138,17 +158,15 @@
       <div class="footer__end row">
         <?php print render($page['footer_bottom']); ?>
       </div>
-      <div class="row">
+      <div>
         <div class="footer__logo">
           <img src="/<?php print path_to_theme(); ?>/images/coat-of-arms.png" alt="Commonwealth Coat of Arms crest logo">
         </div>
         <p class="footer__attribution">
-          <small>© Commonwealth of Australia, <a href="https://raw.githubusercontent.com/govau/uikit/master/LICENSE" rel="external license">MIT licensed</a></small>
+          <small>© Commonwealth of Australia</small>
         </p>
       </div>
     </div>
   </footer>
-  <div id="backtotop">
-    <backtotop></backtotop>
-  </div>
+    <?php print $backtotop; ?>
 </div>

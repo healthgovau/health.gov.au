@@ -20,33 +20,33 @@
 
   // 2 in a row.
   &.listing__count--2 {
-    .paragraphs-item-para-statistic {
+    .field-name-field-statistics > .field-items > .field-item {
       @extend .col-md-6;
     }
   }
 
   // 3 in a row.
   &.listing__count--3 {
-    .paragraphs-item-para-statistic {
+    .field-name-field-statistics > .field-items > .field-item {
       @extend .col-md-4;
     }
   }
 
   // 4 in a row.
   &.listing__count--4 {
-    .paragraphs-item-para-statistic {
+    .field-name-field-statistics > .field-items > .field-item {
       @extend .col-md-3;
     }
   }
 }
 
 // Statistic.
-.paragraphs-item-para-statistic {
+.node-statistic {
 
   @extend %stat;
 
-  // Horizontal listing.
-  &.view-mode-listing_horizontal {
+  // Featured
+  &.view-mode-feature {
 
     // Outer wrapper.
     .one-column-wrapper {
@@ -56,81 +56,72 @@
       .group-statistic {
         @extend %stat__card--blue;
 
-        // Header.
-        h4 {
-          @extend %stat__header;
-        }
-
         // Value.
-        .group-statistic-value {
-          @extend %stat__count;
+        p.field-name-field-statistic-value {
+          @extend %stat__value;
 
           // Reset UIKit p margin styles.
           margin: 0;
 
-          .field-name-field-statistic-value {
-            @extend %stat__count-value;
+          .statistic-value {
+            @extend %stat__value-value;
           }
 
-          .field-name-field-statistic-unit-suffix {
-            @extend %stat__count-units;
+          .statistic-value-suffix {
+            @extend %stat__value-suffix;
           }
 
-          .field-name-field-statistic-unit-prefix {
-            @extend %stat__count-units--left;
+          .statistic-value-prefix {
+            @extend %stat__value-prefix;
           }
         }
 
+        // Text.
+        p.field-name-field-statistic-value-text {
+          @extend %stat__text;
+          // Reset UIKit p margin styles.
+          margin: 0;
+        }
 
         // Trend.
-        .group-statistic-trend {
+        .group-trend {
           @extend %stat__trend;
-
-          // Reset UIKit p margin styles.
-          margin: 0;
-
-          .field-name-field-statistic-trend {
-            @extend %stat__trend-value;
-
-            i {
-              font-style: normal;
-              &.negative {
-                @extend %stat__trend-value--negative;
-              }
-              &.positive {
-                @extend %stat__trend-value--positive;
-              }
-            }
-          }
-
-          .field-name-field-statistic-trend-timeframe {
-            @extend %stat__trend-date;
-          }
-
-
         }
 
+        .field-name-field-statistic-trend-text {
+          @extend %stat__trend-value;
+        }
 
-      }
-    }
-
-    // No trend variant.
-    &.no-trend {
-      // Outer wrapper.
-      .one-column-wrapper {
-        @extend %stat__wrapper;
-
-        // Inner wrapper.
-        .group-statistic {
-
-          // Trend
-          .group-statistic-trend {
-            @extend %stat__trend--no-trend;
+        .statistic-icon {
+          @extend %stat__trend-icon;
+          font-style: normal;
+          &.negative {
+            @extend %stat__trend-icon--negative;
           }
+          &.positive {
+            @extend %stat__trend-icon--positive;
+          }
+        }
+      }
 
-          // Value
-          .group-statistic-value {
-            @extend %stat__count--no-trend;
+      // No trend variant.
+      &.no-trend {
+        // Outer wrapper.
+        .one-column-wrapper {
+          @extend %stat__wrapper;
+
+          // Inner wrapper.
+          .group-statistic {
+
+            // Trend
+            .group-statistic-trend {
+              @extend %stat__trend--no-trend;
+            }
+
+            // Value
+            .group-statistic-value {
+              @extend %stat__value--no-trend;
+            }
           }
         }
       }

@@ -11,9 +11,9 @@
     <?php print render($title_prefix); ?>
     <?php if ($title): ?>
     <a href="<?php print '#accordion-' . $block_html_id?>"
-       class="uikit-accordion__title uikit-accordion--closed js-uikit-accordion"
+       class="uikit-accordion__title uikit-accordion--<?php print $collapsed ? 'closed' : 'open' ?> js-uikit-accordion"
        aria-controls="<?php print 'accordion-' . $block_html_id; ?>"
-       aria-expanded="false"
+       aria-expanded="<?php print $collapsed ? 'false' : 'true' ?>"
        aria-selected="false"
        role="tab"
        onClick="return UIKIT.accordion.Toggle( this )">
@@ -21,7 +21,7 @@
     <?php endif; ?>
     <?php print render($title_suffix); ?>
 
-    <div class="uikit-accordion__body uikit-accordion--closed" id="<?php print 'accordion-' . $block_html_id; ?>" aria-hidden="true">
+    <div class="uikit-accordion__body uikit-accordion--<?php print $collapsed ? 'closed' : 'open' ?>" id="<?php print 'accordion-' . $block_html_id; ?>" aria-hidden="true">
         <div class="uikit-accordion__body-wrapper">
             <?php print $content; ?>
         </div>

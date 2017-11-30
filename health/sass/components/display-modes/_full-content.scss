@@ -1,0 +1,27 @@
+%dm-full-content {
+    width: 100%;
+    // layout
+	.group-left {
+		width: 100%;
+		@include uikit-media(xs) {
+			width: 30%;
+		}
+	}
+	.group-right {
+		width: 100%;
+		@include uikit-media(xs) {
+			width: 70%;
+		}
+	}
+    .group-footer {
+        padding-top: uikit-space(1);
+    }
+    .field-name-field-image-featured {
+        img {
+            max-width: 100%;   
+        }
+        a {
+            border: none;
+        }
+    }
+}

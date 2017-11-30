@@ -1,0 +1,74 @@
+.views-exposed-form {
+  label {
+    margin-bottom: uikit-space(.25);
+    display: block;
+  }
+  .views-exposed-widget {
+    float: none;
+    padding: 0;
+
+    &.views-submit-button {
+      float: left;
+    }
+
+    &.views-reset-button {
+      float: left;
+      padding: 10px 0 0 20px;
+    }
+  }
+  .form-item {
+    margin-bottom: uikit-space(.25);
+  }
+  .views-exposed-widget .form-submit {
+    margin-top: 0;
+  }
+}
+
+.views-widget-sort-sort_bef_combine {
+  border-bottom: solid 2px $colour-Primary-darkest;
+  margin-bottom: uikit-space(.75);
+}
+
+.form-type-bef-link {
+  display: inline-block;
+  a {
+    @extend .uikit-tags__item;
+    &.active {
+      color: #fff;
+      background: $colour-Primary-darkest;
+    }
+  }
+}
+
+// Applied filters
+#edit-custom-remove {
+  label {
+    margin-right: uikit-space(0.5);
+    float: left;
+    @extend .uikit-display-1;
+  }
+  .facet-clear {
+    color: $colour-minorText;
+  }
+  .facet-remove {
+    display: inline;
+  }
+  .facet-remove-link {
+    @extend .uikit-tags__item;
+    font-weight: normal;
+    &.active {
+      color: #fff;
+      background: $colour-Primary-darkest;
+    }
+  }
+  // Fix the inline display of the icon.
+  .fa {
+    display: inline;
+    font-size: 0.6em;
+    padding-left: 0.5em;
+    &:before {
+      position: relative;
+    }
+
+  }
+}

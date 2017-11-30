@@ -12,6 +12,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
+            <a class="mobile-toggle" href="#">Menu</a>
           <?php print $content; ?>
         </div>
       </div>

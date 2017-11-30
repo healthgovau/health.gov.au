@@ -1,0 +1,195 @@
+// Getting started
+.paragraphs-item-para-links {
+    
+    // This creates .container and .row from band markup for BS grid
+    @include row-and-container;
+
+    // Band title
+    h2 {
+        @extend .col-xs-12;
+        @extend .uikit-display-4;
+        border-bottom: $health-borderize--fat;
+        border-bottom-color: $colour-Primary-darkest;
+        padding-bottom: uikit-space(.25);
+        margin-bottom: uikit-space(.5);
+    }
+
+    // Each item
+    .paragraphs-item-para-link {
+        @extend .col-xs-6;
+        @extend .col-md-3;
+    }
+
+    // Item link
+    .field-type-link-field {
+        @extend .tile__title;
+    }
+}
+
+// Browse by lifestage
+.paragraphs-item-para-taxonomies {
+    clear: both;
+    @include uikit-clearfix();
+    // This creates .container and .row from band markup for BS grid
+    &.para-container {
+        @extend %band--primary; 
+        padding-bottom: 0;
+    }
+    @include row-and-container;
+    overflow: hidden;
+    padding-bottom: uikit-space(0.75);
+
+    // Layout
+    // Needs > as there are more .group-x inside
+    > .group-left {
+        margin-bottom: uikit-space( 1 );
+        @include uikit-media( sm ) {
+            margin: 0;
+        }
+        @extend .col-xs-12;
+        @extend .col-sm-3;
+    }
+    > .group-right {
+        @extend .col-xs-12;
+        @extend .col-sm-9;
+        .paragraphs-item-para-taxonomy {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    // Items
+    .field-name-field-taxonomy-paragraph {
+        > .field-items {
+            > .field-item {
+                float: left;
+                width: 50%;
+                @include uikit-media(md){
+                    width: 33.3%;
+                }
+                .field-type-entityreference {
+                    background: $colour-Primary-light;
+                    padding: uikit-space(1); 
+                    margin: 0 uikit-space(.25) uikit-space(.5) uikit-space(.25);
+                    max-height: 300px;
+                    display: block;
+                    overflow: hidden;
+                    text-align: center;
+                    border-radius: $uikit-border-radius;
+                    @include shadowfy($colour-Primary-dark);
+                    @include uikit-media(sm){
+                        margin: 0 uikit-space(.5) uikit-space(1) uikit-space(.5);
+                    }
+
+                    // Add mobile width 100% and odd/evenm handling
+                    // Title
+                    h3 {
+                        @extend %list-item-title;
+                    }
+
+                    .group-left,
+                    .group-right {
+                        display: block;
+                        width: 100%;
+                        margin-bottom: 0;
+                    }
+
+                    .group-left {
+                        margin-bottom: 0;
+                        @include uikit-media( sm ) {
+                            margin-bottom: uikit-space(1);
+                        }
+                        img {
+                            max-width: 30%;
+                        }
+                    }
+                }
+                &.even .field-type-entityreference {
+                    margin-left: 0;
+                    @include uikit-media(sm){
+                        margin: 0 uikit-space(.5) uikit-space(1) uikit-space(.5);
+                    }
+                }
+                &.odd .field-type-entityreference {
+                    margin-right: 0;
+                    @include uikit-media(sm){
+                        margin: 0 uikit-space(.5) uikit-space(1) uikit-space(.5);
+                    }
+                }
+            }
+        }
+    }
+
+    // Title
+    h2 {
+        @extend .uikit-display-4;
+    }
+}
+
+.paragraphs-item-para-contact {
+    // This creates .container and .row from band markup for BS grid
+    &.para-container {
+        @extend %band; 
+    }
+    @include row-and-container;
+    // display mode
+    .view-mode-hotline_bar {
+        h2 {
+            @extend .uikit-display-4;
+        }
+        .field-name-field-telephone {
+            @extend .uikit-display-3;
+            font-weight: 700;
+        }
+    }
+}
+
+.paragraphs-item-para-statistics {
+    // This creates .container and .row from band markup for BS grid
+    &.para-container {
+        @extend %band; 
+    }
+    @include row-and-container;
+    .view-mode-full {
+        h2 {
+            @extend .uikit-display-4;
+        }
+    }
+    // Wrapper title/summary
+    h2,
+    .field-name-field-summary {
+        @extend .col-xs-12;
+    }
+}
+
+// Review
+.paragraphs-item-two-columns {
+    .view-mode-full {
+        h2 {
+            @extend .uikit-display-4;
+        }
+        .group-left,
+        .group-right {
+            margin-bottom: uikit-space(1);
+            @include uikit-media( sm ) {
+                margin: 0;
+            }
+        }
+    }
+
+    &.paragraphs-2-columns-resources {
+        h2 {
+            @extend .uikit-display-4;
+        }
+        .group-left,
+        .group-right {
+            margin-bottom: uikit-space(1);
+            width: 100%;
+            @include uikit-media( sm ) {
+                margin: 0;
+                width: 50%;
+            }
+        }
+
+    }
+}

@@ -26,6 +26,12 @@ function health_adminimal_toc_filter_back_to_top($variables) {
   return '<span class="back-to-index-link"><a href="#index-links">' . t('Back to contents ↑') . '</a></span>';
 }
 
+/**
+ * Implements hook_form_BASE_FORM_alter().
+ */
+function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
+  array_unshift($form['actions']['submit']['#submit'],'_health_adminimal_process_date');
+}
 
 /**
  * Implements hook_form_alter().
@@ -58,13 +64,12 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
   // Target audience group - disable for some content types.
   if (key_exists('#bundle', $form)) {
     $disabled = [
-      'campaign',
-      'conditions_diseases',
-      'contact',
-      'publication'
+      'health_topic',
+      'health_topic_hp',
+      'condition_or_disease',
     ];
     if (in_array($form['#bundle'], $disabled)) {
-      $form['field_audience_intended_target']['#disabled'] = 'disabled';
+      $form['field_audience']['#disabled'] = TRUE;
     }
   }
 }
@@ -192,6 +197,18 @@ function health_adminimal_feature_validator($form, &$form_state) {
       if ($feature_iamge_id == 0) {
         form_set_error('field_feature_image', t('Feature image field cannot be empty if marked as promoted to feature.'));
       }
+    }
+  }
+}
+
+/**
+ * Custom node form submit handler to compare the last update and last review
+ * date.
+ */
+function _health_adminimal_process_date($form, &$form_state) {
+  if (isset($form_state['values']['field_last_updated'][LANGUAGE_NONE][0]) && isset($form_state['values']['field_last_reviewed'][LANGUAGE_NONE][0])) {
+    if (strtotime($form_state['values']['field_last_updated'][LANGUAGE_NONE][0]['value']) > strtotime($form_state['values']['field_last_reviewed'][LANGUAGE_NONE][0]['value'])) {
+      $form_state['values']['field_last_reviewed'][LANGUAGE_NONE][0] = $form_state['values']['field_last_updated'][LANGUAGE_NONE][0];
     }
   }
 }

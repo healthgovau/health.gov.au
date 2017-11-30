@@ -1,0 +1,71 @@
+// Feature
+%dm-feature {
+    overflow: hidden;
+    // Layout
+    .group-left {
+        width: 100%;
+        padding-bottom: 0;
+        @include uikit-clearfix();
+    }
+    .group-right {
+        width: 100%;
+        @include uikit-clearfix();
+        padding-top: uikit-space( .5);
+    }
+    // Date and tag
+    @extend %date-and-tag;
+    
+    .field-type-image {
+        width: 100%;
+        img {
+            float: left;
+            border: 0;
+        }
+        a {
+            border: none;
+        }
+    }
+    .field-name-title h2 {
+        @extend %list-item-title--large;
+    }
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+%dm-feature-2-col {
+    overflow: hidden;
+    // Layout
+    .group-left {
+        width: 50%;
+        padding-bottom: 0;
+        padding-right: uikit-space(1);
+        @include uikit-clearfix();
+    }
+    .group-right {
+        width: 50%;
+        @include uikit-clearfix();
+    }
+    // Date and tag
+    @extend %date-and-tag;
+    
+    .field-name-field-image-featured {
+        width: 100%;
+        img {
+            float: left;
+            border: 0;
+        }
+        a {
+            border: none;
+        }
+    }
+    .field-name-title {
+        h2,
+        h3 {
+            @extend %list-item-title--large;
+        }
+    }
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+}

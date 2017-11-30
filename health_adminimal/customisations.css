@@ -1,15 +1,17 @@
-/* body override */
-body {
-    font-size:14px;
+/* font sizes override */
+body, input:not(#edit-module-filter-name), option, select, textarea {
+    font-size: 14px !important;
 }
 
 /* Layout checkboxes in 3 columns for long lists */
 @media screen and (min-width: 768px) {
-    #edit-field-language-und.form-radios {
+    #edit-field-language-und.form-radios,
+    #edit-field-related-health-topic-und.form-checkboxes
+    {
         column-count: 3;
         -webkit-column-count: 3;
         -moz-column-count: 3;
-        max-width: 66em;
+        max-width: 72em;
     }
 
     /* Layout checkboxes in 2 columns for longish lists */
@@ -106,13 +108,27 @@ body.adminimal-skin-material .fieldset-wrapper .fieldset-description {
     padding: 0 0 15px 0;
 }
 
-/* Hide the toggle to swap between dragging and weight selection */
-.tabledrag-toggle-weight-wrapper {
-    display: none;
+/* Fix legend padding issue */
+fieldset:not(.filter-wrapper) legend {
+    padding: 0px 0px 10px 3px !important;
+}
+fieldset:not(.filter-wrapper).collapsible legend {
+    padding: 0 !important;
+}
+body.adminimal-skin-material fieldset:not(.filter-wrapper) {
+    padding-top: 55px !important;
+}
+body.adminimal-skin-material fieldset.collapsed {
+    padding-top: 22px !important;
 }
 
-/* SOmething */
-.group-statistic-value .field-type-text {
-    float: left;
-    margin-right: 20px;
+body.adminimal-skin-material table tbody td fieldset legend a {
+    padding: 0px !important;
 }
+
+/* Fieldset legend sizes */
+fieldset:not(.filter-wrapper) > legend > span {
+    font-size: 22px;
+    color: #2196F3;
+}
+

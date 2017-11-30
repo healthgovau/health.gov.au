@@ -1,0 +1,95 @@
+.filter__mobile-title,
+.filter-topics-by-letter__mobile-title {
+  display: block;
+  margin-bottom: uikit-space(.5);
+  @extend .uikit-display-1;
+  font-weight: 700;
+  background: $colour-Primary-darkest;
+  padding: uikit-space(.5);
+  color: #fff;
+  @include uikit-media(sm) {
+    display: none;
+  }
+  &:after {
+    width: 20px;
+    height: 20px;
+    content: " ";
+    display: inline-block;
+    margin-left: 10px;
+    background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="5 2 15 15">
+    <path fill="#FFFFFF" d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+    <path d="M0-.75h24v24H0z" fill="none"/>
+  </svg>');
+    background-repeat: no-repeat;
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+  }
+}
+.filter__mobile-title.expanded:after,
+.filter-topics-by-letter__mobile-title.expanded:after {
+  -ms-transform: rotate(180deg); /* IE 9 */
+  -webkit-transform: rotate(180deg); /* Safari */
+  transform: rotate(180deg);
+}
+.filter__title {
+  display: none;
+  @extend .uikit-display-2;
+  margin-bottom: uikit-space(.5) !important;
+  @include uikit-media(sm) {
+    display: block;
+  }
+}
+p.filter__help {
+  display: none;
+  @include uikit-media(sm) {
+    display: block;
+    margin-right: 3em;
+  }
+}
+.block-facetapi {
+  @extend %mobile-menu;
+  .uikit-accordion__title {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    .block__title {
+      font-size: 16px;
+    }
+  }
+  .facetapi-facetapi-checkbox-links a {
+    border: none;
+  }
+  &.facetshow {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+  }
+}
+
+.filter-topics-by-letter {
+  @extend %mobile-menu;
+  &.facetshow {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+  }
+}
+
+%mobile-menu {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.8s linear;
+  height: 0;
+  @include uikit-media(sm) {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    padding-right: uikit-space(1);
+  }
+}

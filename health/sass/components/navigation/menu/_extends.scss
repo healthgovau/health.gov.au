@@ -14,7 +14,7 @@
 
 // Sub menu above search
 #block-menu-menu-sub-menu {
-  @include uikit-clearfix;
+  @include uikit-clearfix();
   .block__title {
     @include uikit-sronly;
   }
@@ -27,6 +27,8 @@
       margin-left: 0;
     }
   }
+  display: none;
+  @include uikit-media(sm) {
+    display: block;
+  }
 }
-
-

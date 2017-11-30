@@ -12,44 +12,92 @@
 // contexts in Firefox 4+, Safari, and Chrome.
 h1 {
   @extend .uikit-display-6;
+  line-height: 1.3;
+  font-size: 28px;
+  @include uikit-media(sm){
+    font-size: 32px;
+  }
+  @include uikit-media(md){
+    font-size: 36px;
+  }
 }
 h2 {
   @extend .uikit-display-5;
+  font-size: 24px;
+  @include uikit-media(sm){
+    font-size: 28px;
+  }
+  @include uikit-media(md){
+    font-size: 32px;
+  }
 }
 h3 {
   @extend .uikit-display-4;
+  font-size: 20px;
+  @include uikit-media(sm){
+    font-size: 24px;
+  }
+  @include uikit-media(md){
+    font-size: 28px;
+  }
 }
 h4{
   @extend .uikit-display-3;
+  font-size: 16px;
+  @include uikit-media(sm){
+    font-size: 20px;
+  }
+  @include uikit-media(md){
+    font-size: 24px;
+  }
 }
 h5 {
   @extend .uikit-display-2;
+  font-size: 16px;
+  @include uikit-media(sm){
+    font-size: 18px;
+  }
+  @include uikit-media(md){
+    font-size: 20px;
+  }
 }
 h6 {
   @extend .uikit-display-1;
+  font-size: 14px;
+  @include uikit-media(sm){
+    font-size: 14px;
+  }
+  @include uikit-media(md){
+    font-size: 16px;
+  }
+}
+
+// Section header
+.uikit-header-heading {
+  font-size: 28px;
+  @include uikit-media(sm){
+    font-size: 32px;
+  }
+  @include uikit-media(md){
+    font-size: 36px;
+  }
 }
 
 // Lists and auto-generated content
 %list-item-title {
   @extend .uikit-display-2;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   @include uikit-media('sm') {
-    font-size: 16px;
-  }
-  @include uikit-media('md') {
     font-size: 18px;
   }
 }
 
 %list-item-title--large {
   @extend .uikit-display-3;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 700;
   @include uikit-media('sm') {
-    font-size: 20px;
-  }
-  @include uikit-media('md') {
     font-size: 24px;
   }
 }

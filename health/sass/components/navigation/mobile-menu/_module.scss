@@ -1,0 +1,85 @@
+.uikit-body .mobile-toggle,
+.uikit-body .mobile-nav-toggle {
+  padding: uikit-space(.5) uikit-space(.25);
+  font-weight: 700;
+  display: block;
+  border-bottom: 0;
+  &:after {
+    width: 20px;
+    height: 20px;
+    content: " ";
+    display: inline-block;
+    margin-left: 10px;
+    background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="5 2 15 15">
+      <path fill="#{ $colour-Primary-darkest }" d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+      <path d="M0-.75h24v24H0z" fill="none"/>
+    </svg>');
+	background-repeat: no-repeat;
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+  }
+  @include uikit-media(sm) {
+    display: none;
+  }
+}
+
+.node-type-page .mobile-nav-toggle {
+  // Move into section header for standard pages.
+  float: left;
+  margin: -30px 0 0 12px;
+  padding: 0;
+  //padding-left: 1.6em !important;
+  border-left: 4px solid transparent;
+  background: $colour-Primary;
+  @include uikit-media(sm) {
+    display: none;
+  }
+}
+
+// Primary nav
+.region-navigation {
+  .mobile-toggle,
+  .mobile-nav-toggle {
+    text-align: right;
+    margin-bottom: 6px;
+  }
+}
+
+// Secondary nav
+.region-sidebar-second {
+  padding-bottom: uikit-space(1);
+  @include uikit-media(sm){
+    padding-bottom: uikit-space(2);
+  }
+
+  .block-menu-block {
+    margin-top: -25px;
+    @include uikit-media( sm ) {
+      margin-top: 0px;
+    }
+    .mobile-toggle,
+    .mobile-nav-toggle {
+      background: $colour-Primary;
+    }
+  }
+}
+
+.mobilemenu-active {
+  %uikit-dropdown {
+    display: block;
+  }
+}
+
+.uikit-body .mobile-toggle.mobilemenu-active:after,
+.uikit-body .mobile-nav-toggle.mobilemenu-active:after {
+  -ms-transform: rotate(180deg); /* IE 9 */
+  -webkit-transform: rotate(180deg); /* Safari */
+  transform: rotate(180deg);
+}

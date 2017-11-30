@@ -1,0 +1,19 @@
+%dm-list-horizontal {
+    // Layout
+    .group-left {
+        width: 33%;
+    }
+    .group-right {
+        width: 67%; //$left-width; // define
+    }
+    // Fields
+    .field-name-field-image-featured {
+        width: 80%;
+    }
+    .field-name-title h2,
+    .field-name-title h3 {
+        @extend %list-item-title--large;
+    }
+    // Date and tag
+    @extend %date-and-tag;
+}

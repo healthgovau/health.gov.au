@@ -1,0 +1,88 @@
+%dm-list-vertical {
+    // Layout
+    .group-left {
+        width: 20%;
+        padding-right: uikit-space(.5);
+        @include uikit-media(xs) {
+            width: 25%;
+            padding-right: uikit-space(1);
+        }
+    }
+    .group-right {
+        width: 80%;
+        @include uikit-media(xs) {
+            width: 75%;
+        }
+    }
+    // Fields
+    .field-name-field-image-featured {
+        width: 100%;
+        img {
+            float: left;
+            margin-bottom: uikit-space(.75);
+        }
+    }
+    
+    // Date and tag
+    @extend %date-and-tag;
+
+    // Title
+    .field-name-title {
+        h2,
+        h3 {
+            @extend %list-item-title--large;
+        }
+    }
+}
+
+// Listing vertical small
+%dm-list-vertical--small {
+    // Layout
+    .group-left {
+        width: 40%;
+    }
+    .group-right {
+        width: 60%;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: uikit-space(1);
+    }
+    // Fields
+    .field-name-title {
+        h2,
+        h3 {
+            @extend %list-item-title;
+        }
+    }
+
+    // Date and tag
+    @extend %date-and-tag;
+
+    .field-name-field-image-featured {
+        width: 100%;
+        img {
+            float: left;
+            border: none;
+        }
+        a {
+            border: none;
+        }
+    }
+}
+
+%dm-list-vertical--small-noimage {
+    border-left: $health-borderize--fat;
+    .group-left {
+        display: none;
+    }
+    .group-right {
+        width: 100%;
+    } // Fields
+    .field-name-title h2,
+    .field-name-title h3,
+    .field-name-title h4 {
+        @extend %list-item-title;
+    }
+    // Date and tag
+    @extend %date-and-tag;
+}

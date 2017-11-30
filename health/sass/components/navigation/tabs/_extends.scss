@@ -12,3 +12,11 @@
     }
   }
 }
+
+// A-Z topics
+.filter-topics-by-letter li {
+  @extend %az-list__item;
+  a {
+    @extend %az-list__link;
+  }
+}

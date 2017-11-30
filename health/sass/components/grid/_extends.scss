@@ -15,12 +15,10 @@
 
 // Content and sidebar
 .content {  
-  @extend .col-sm-9;
-  @extend .col-md-9;    
+  @extend .col-sm-8;
 }
 .sidebar {
-  @extend .col-sm-3;
-  @extend .col-md-3;
+  @extend .col-sm-4;
 }
 // If need to differentiate
 //.sidebar-right,

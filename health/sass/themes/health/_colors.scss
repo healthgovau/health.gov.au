@@ -6,32 +6,40 @@
 //
 // Style guide: sass.colors
 
-$uikit-colour-Hero: #115361; //color variables (yes! the actual spelling doesn't have a u)
-$uikit-colour-Primary: #1e58a1;
-$uikit-colour-Secondary: #313131;
-$uikit-colour-Background: #f0f3f5;
-$uikit-colour-Border: #ccc;
-$uikit-colour-Text: #313131;
-$uikit-colour-Link: #bbebff;
+$uikit-colour-Hero: #115361 !default; //color variables (yes! the actual spelling doesn't have a u)
+$uikit-colour-Primary: #1B7991 !default;
+$uikit-colour-Secondary: #313131 !default;
+$uikit-colour-Background: #f0f3f5 !default;
+$uikit-colour-Border: #CCC;
+$uikit-colour-Text: #313131 !default;
+$uikit-colour-Link: #5bcbe3 !default;
 
-$uikit-colour-Error: #ff635c;
-$uikit-colour-Success: #0cac78;
-$uikit-colour-Warning: #f69900;
-$uikit-colour-Info: #00bfe9;
+$uikit-colour-Error: #ff635c !default;
+$uikit-colour-Success: #0cac78 !default;
+$uikit-colour-Warning: #f69900 !default;
+$uikit-colour-Info: #00bfe9 !default;
+
+// Health variables here
+$colour-Shadow: rgba(0,0,0,0.1);
+$colour-card: #fff;
+$colour-Primary: #d7e7fe;
+$colour-Primary-light: #edf4ff;
+$colour-Primary-dark: #c3dcff;
+$colour-Primary-darker: #8fc1fc;
+$colour-Primary-darkest: #1e58a1;
+
+$uikit-colour-Link: $colour-Primary-dark; // Health override
+$uikit-colour-Primary: $colour-Primary-darkest; // Health override
 
 // Statistics
-$colour-Statistics-blue: $uikit-colour-Primary;
+$colour-Statistics-blue: $colour-Primary-darkest;
 $colour-Statistics-orange: $uikit-colour-Warning;
 $colour-Statistics-green: $uikit-colour-Success;
 $colour-Statistics-red: $uikit-colour-Error;
 
-// Taskbar
-$colour-Taskbar: #e3f1fd !default;
+// Typography
 $colour-minorText: #6e6e6e;
+$aqua: #18788d;
 
-// Health variables here
-$colour-card: #fff;
-$colour-Primary: #d7e7fe;
-$colour-Primary-dark: #c3dcff;
-$colour-Primary-darker: #8fc1fc;
-$colour-Primary-darkest: #1e58a1;
+// Alpha/beta
+$colour-Beta: #f47738;

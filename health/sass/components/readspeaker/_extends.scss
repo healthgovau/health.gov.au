@@ -1,10 +1,39 @@
-// Temp
 #readspeaker {
-  display: none;
-}
-
-#readspeaker {
+  margin-bottom: uikit-space(1);
   a {
     border-bottom: none;
+    &:hover,
+    &:active {
+      background-color: none;
+    }
+    &:after {
+      display: none;
+    }
   }
+  .rsbtn {
+    margin-bottom: 0;
+  }
+}
+
+.page-views {
+  #readspeaker {
+    float: right;
+    margin-bottom: 0;
+  }
+}
+
+.node-type-landing-page,
+.node-type-health-topic,
+.node-type-health-topic-hp {
+  .content-full {
+    #readspeaker {
+      display: none;
+    }
+  }
+}
+
+// shame for vaccine preventable page
+.page-conditions-and-diseases-vaccine-preventable-conditions-and-diseases {
+  float: none;
+  margin-bottom: uikit-space(1);
 }

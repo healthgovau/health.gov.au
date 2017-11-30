@@ -1,0 +1,13 @@
+// ext link
+%ext-link-wrapper {
+    @include link-pullout;
+    a {
+        font-weight: bold;
+    }
+}
+
+%ext-link {
+    color: $aqua;
+    font-size: 14px;
+    word-break: break-all;
+}      

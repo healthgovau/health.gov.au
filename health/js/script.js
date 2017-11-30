@@ -33,7 +33,38 @@
       // Home page highlighted
       $('.region-highlighted .uikit-card .bean-title', context).matchHeight({byRow: false});
       $('.region-highlighted .uikit-card', context).matchHeight();
-      
+
+      // Listing page selector cards.
+      $('.selector-card', context).matchHeight();
+
+    }
+  };
+
+  Drupal.behaviors.healthMobileMenu = {
+    attach: function (context, settings) {
+
+      // Hide the alert when the close button is pressed.
+      $('.mobile-toggle', context).click(function (e) {
+        e.preventDefault();
+        $(this).next('div').toggleClass('mobilemenu-active');
+        $(this).toggleClass('mobilemenu-active');
+      });
+
+      $('.mobile-nav-toggle', context).click(function (e) {
+        e.preventDefault();
+        $(this).next('div').toggleClass('mobilemenu-active');
+        $(this).toggleClass('mobilemenu-active');
+      });
+
+      $('.filter__mobile-title', context).click(function (e) {
+        $(this).toggleClass('expanded');
+        $('.block-facetapi', context).toggleClass('facetshow');
+      });
+
+      $('.filter-topics-by-letter__mobile-title', context).click(function (e) {
+        $(this).toggleClass('expanded');
+        $('.filter-topics-by-letter', context).toggleClass('facetshow');
+      });
     }
   };
 
@@ -45,18 +76,31 @@
         e.preventDefault();
         $('body').toggleClass('health-alert-inactive');
       });
-      
+
     }
   };
 
-  // Flash up an environment indicator for PaaS.
-  Drupal.behaviors.displayEnvironment = {
+  // Remove required = true until form element has lost focus.
+  Drupal.behaviors.formValidate = {
     attach: function (context, settings) {
-      if ($('.environment', context).length > 0) {
-        $('.environment').show().delay(1000).fadeOut(500);
-      }
+
+      var reqItems = $(".node-form *:invalid");
+
+      reqItems.each(function () {
+        var element = $(this);
+        // Only apply to elements without a maxlength.
+        // Elements with maxlength are handled by vuejs.
+        if (element.attr('maxlength') == -1) {
+          element.removeAttr('required');
+
+          element.blur(function () {
+            element.attr("required", "true");
+          });
+        }
+      });
     }
   };
+
 
   // Responsive tables.
   Drupal.behaviors.responsiveTables = {
@@ -64,6 +108,26 @@
       // Find any tables.
       // Add a div around them with with 'responsive-table-wrapper' class.
       $('table', context).wrap('<div class="responsive-table-wrapper"></div>');
+    }
+  };
+
+  // Add classes and elements to external links.
+  Drupal.behaviors.externalLinks = {
+    attach: function (context, settings) {
+      // Add external links.
+      Drupal.health.externalLinks();
+      // Add class to any li surrounding an external link.
+      $('a[rel=external]').parent('li').addClass('external-link');
+    }
+  };
+
+  // Add classes and elements to external links.
+  Drupal.behaviors.selectorCardsClick = {
+    attach: function (context, settings) {
+      $('.selector-card').click(function(e) {
+        e.preventDefault();
+        location.href = $(this).find('a').attr('href');
+      });
     }
   };
 

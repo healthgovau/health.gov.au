@@ -26,63 +26,116 @@ if (theme_get_setting('health_rebuild_registry') && !defined('MAINTENANCE_MODE')
 /**
  * Implements HOOK_theme().
  */
-function health_theme(&$existing, $type, $theme, $path) {
-  // If we are auto-rebuilding the theme registry, warn about the feature.
-  if (
-    // Don't display on update.php or install.php.
-    !defined('MAINTENANCE_MODE')
-    // Only display for site config admins.
-    && function_exists('user_access') && user_access('administer site configuration')
-    && theme_get_setting('health_rebuild_registry')
-    // Always display in the admin section, otherwise limit to three per hour.
-    && (arg(0) == 'admin' || flood_is_allowed($GLOBALS['theme'] . '_rebuild_registry_warning', 3))
-  ) {
-    flood_register_event($GLOBALS['theme'] . '_rebuild_registry_warning');
-    drupal_set_message(t('For easier theme development, the theme registry is being rebuilt on every page request. It is <em>extremely</em> important to <a href="!link">turn off this feature</a> on production websites.', array('!link' => url('admin/appearance/settings/' . $GLOBALS['theme']))), 'warning', FALSE);
-  }
+function health_theme() {
+  $theme['document_accessibility_link'] = [
+    'variables' => [
+      'current_page' => NULL,
+    ],
+    'template' => 'document_accessibility_link',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
 
-  // hook_theme() expects an array, so return an empty one.
-  return array();
+  $theme['toc'] = [
+    'variables' => [],
+    'template' => 'toc',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
+  $theme['backtotop'] = [
+    'variables' => [],
+    'template' => 'back_to_top',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
+  $theme['readspeaker'] = [
+    'variables' => [],
+    'template' => 'readspeaker',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
+  $theme['selected_filters_wrapper'] = [
+    'variables' => [
+      'selected_filters' => NULL,
+    ],
+    'template' => 'selected_filters_wrapper',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
+  $theme['selected_filter'] = [
+    'variables' => [
+      'url' => NULL,
+      'classes' => NULL,
+      'text' => NULL,
+    ],
+    'template' => 'selected_filter',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
+  $theme['public_hp_switcher'] = [
+    'variables' => [
+      'text' => NULL,
+      'title' => NULL,
+      'link' => NULL,
+    ],
+    'template' => 'public_hp_switcher',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
+  $theme['media_enquiry'] = [
+    'template' => 'media_enquiry',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
+  return $theme;
 }
 
 /**
  * Implements THEME_breadcrumb().
  */
 function health_breadcrumb($variables) {
-  // Override breadcrumb if current page is a search view page.
-  $query_string = drupal_get_query_parameters();
-  if (isset($query_string['f'])) {
-    // Find out if it is a topic related page.
-    foreach ($query_string['f'] as $string) {
-      if (strpos($string, 'field_related_health_topic') !== FALSE) {
-        // Do not override the title if there are more than one topic in the filter.
-        if (substr_count(implode('&', $query_string['f']), 'field_related_health_topic') == 1) {
-          $topic_id = explode(':', $string)[1];
-          $topic_node = node_load($topic_id);
-          array_splice($variables['breadcrumb'], 1, 0, l($topic_node->title, $topic_node->path['alias']));
+  // Override breadcrumb if current page is a search result page using default
+  // search API.
+  $crumbs_trail = array_keys($variables['crumbs_trail']);
+  if ($crumbs_trail[1] == 'search' && !empty($crumbs_trail[2])) {
+    $variables['breadcrumb'][2] = 'Search - ' . arg(1);
+    $output = '<nav class="breadcrumbs uikit-breadcrumbs" role="navigation">';
+    $output .= '<ol class="uikit-link-list uikit-link-list--inline"><li>';
+    $output .= implode('</li><li>', $variables['breadcrumb']);
+    $output .= '</li></ol></nav>';
+
+    return $output;
+  }
+  else {
+    // Override breadcrumb if current page is a search view page.
+    $query_string = drupal_get_query_parameters();
+    if (isset($query_string['f'])) {
+      // Find out if it is a topic related page.
+      foreach ($query_string['f'] as $string) {
+        if (strpos($string, 'field_related_health_topic') !== FALSE) {
+          // Do not override the title if there are more than one topic in the filter.
+          if (substr_count(implode('&', $query_string['f']), 'field_related_health_topic') == 1) {
+            $topic_id = explode(':', $string)[1];
+            $topic_node = node_load($topic_id);
+            array_splice($variables['breadcrumb'], 1, 0, l($topic_node->title, $topic_node->path['alias']));
+          }
         }
       }
     }
-  }
-  
-  // Build the breadcrumb trail.
-  // We replace the default breadcrumb output for a couple of key reasons:
-  //  - should be wrapped in a nav tag
-  //  - breadcrumb items should be in an ordered list
-  $output = '<nav class="breadcrumbs" role="navigation">';
-  $output .= '<h2 class="element-invisible">' . $variables['title'] . '</h2>';
-  $output .= '<ol class="breadcrumbs__list">';
-  // If home is set from the setting, we display home link.
-  if (isset($variables['crumbs_trail']['front'])) {
-    $output .= '<li><a href="/">Home</a></li><li>';
-  }
-  else {
-    $output .= '<li>';
-  }
-  $output .= implode('</li><li>', $variables['breadcrumb']);
-  $output .= '</li></ol></nav>';
 
-  return $output;
+    // Build the breadcrumb trail.
+    // We replace the default breadcrumb output for a couple of key reasons:
+    //  - should be wrapped in a nav tag
+    //  - breadcrumb items should be in an ordered list
+    $output = '<nav class="breadcrumbs" role="navigation">';
+    $output .= '<h2 class="element-invisible">' . $variables['title'] . '</h2>';
+    $output .= '<ol class="breadcrumbs__list"><li>';
+    $output .= implode('</li><li>', $variables['breadcrumb']);
+    $output .= '</li></ol></nav>';
+
+    return $output;
+
+  }
+
 }
 
 
@@ -214,20 +267,40 @@ function health_form_node_form_alter(&$form, &$form_state, $form_id) {
 
 /**
  * Implements hook_form_BASE_FORM_ID_alter().
- * 
- * Append selected filter links to 'contains' search box. 
+ *
+ * Append selected filter links to 'contains' search box.
  */
 function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
   if (isset($form['#info']['filter-search_api_views_fulltext'])) {
+    // Add placeholder.
+    $form['search_api_views_fulltext']['#attributes']['placeholder'] = t('Enter your search term');
+
+    // Append selected filters.
     $query_string = drupal_get_query_parameters();
+
+    $links = '';
+
+    $form['#suffix'] = '';
+
+    // Create a filter to remove the search term.
+    if (isset($query_string['search_api_views_fulltext'])) {
+      $query_string_modified = $query_string;
+      unset($query_string_modified['search_api_views_fulltext']);
+      $links .= theme('selected_filter', [
+          'url' => url('/' . current_path(), ['query' => $query_string_modified]),
+          'classes' => 'facet-remove-link',
+          'text' => $query_string['search_api_views_fulltext'],
+        ]
+      );
+    }
+
+    // Add form label.
+    $form['search_api_views_fulltext']['#title'] = t('Search list');
+
     if (isset($query_string['f']) && !empty($query_string['f'])) {
       // Find selected filters.
-      $output = '<div id="edit-custom-remove" class="form-item form-type-item">
-<label for="edit-custom-remove">Filters </label>
-<div class="facet-remove">';
-      $links = '';
-      $url = '';
       foreach ($query_string['f'] as $key => $param) {
+        $url = '';
         $query_string_modified = $query_string['f'];
         $filter_name = _health_find_facet_filter_name($param);
         // Re compose query string.
@@ -239,48 +312,59 @@ function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
           $url .= '&f[' . $key_1 . ']=' . $item;
         }
 
-        $links .= '<a class="facet-remove-link" href="/' . current_path() . '?' . $url . '">' . $filter_name . ' <span class="facet-remove-link__icon">X</span></a>';
+        $links .= theme('selected_filter', [
+            'url' => '/' . current_path() . '?' . $url,
+            'classes' => 'facet-remove-link',
+            'text' => $filter_name,
+          ]
+        );
       }
-      
-      $output .= $links . '</div></div>';
+    }
 
-      $form['#suffix'] = $output;
+    if ($links) {
+      // Default link to clear the search and filters.
+      $clear_all = l(t('Clear all'),
+        '/' . current_path(),
+        [
+          'attributes' => [
+            'class' => 'clear-all',
+            'title' => 'Clear all',
+          ],
+        ]
+      );
+
+      $form['#suffix'] .= theme('selected_filters_wrapper', [
+        'selected_filters' => $links,
+        'clear_all' => $clear_all,
+      ]);
     }
   }
 }
 
 /**
- * Implements hook_form_alter().
- * @param $form
- */
+* Implements hook_form_alter().
+* @param $form
+*/
 function health_form_alter(&$form, &$form_state, $form_id) {
 
   // Alter user feedback webform.
-  if (isset($form['#node'])) {
-    $node = $form['#node'];
-    // Find user feedback form by title.
-    if ($node->title == 'Provide feedback' && $node->type == 'webform') {
-      // Add referrer.
-      $referrer_url = $_SERVER['HTTP_REFERER'];
-      $form['submitted']['is_this_feedback_for']['#type'] = 'select';
-      $form['submitted']['is_this_feedback_for']['#options'] = array(
-        'The whole website' => t('The whole website'),
-        $referrer_url => t('The page you were just on'),
-      );
-      // Remove the default validate for the new option in the select list.
-      // @todo Use another approach to add the option dynamically.
-      $form['#validate'] = array();
-      
-      // Attach vuejs and countdown js.
-      $form['#attached']['js'][] = path_to_theme() . '/js/health.feedback.countdown.js';
-
-      // Add vue directive.
-      _health_add_vuejs_directive($form, [
-        'feedback' => 'feedback-textarea', 
-        'suggestions_for_improvement' => 'improvement-textarea',
-      ]);
-    }
+  if ($form['#form_id'] == 'webform_client_form_21') {
+    // Add maxlength.
+    _health_add_maxlength($form, [
+      'suggestions_for_improvement' => 1200,
+      'feedback' => 1200,
+    ]);
   }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function health_form_search_api_page_search_form_alter(&$form, &$form_state) {
+  // Add wrapper to apply the uikit search form style.
+  $form['#prefix'] = '<div class="block block-search-api-page contextual-links-region last even" id="search-api-page-search-form">';
+  $form['#suffix'] = '</div>';
+  $form['keys_1']['#attributes']['placeholder'] = t('Enter your search term');
 }
 
 /**
@@ -558,7 +642,7 @@ function health_file_entity_download_link($variables) {
 
       // Publications.
       if ($node->type == 'publication') {
-        $docs = $node->field_resource_documents[$node->language];
+        $docs = $node->field_publication_files[$node->language];
         foreach ($docs as $doc) {
           $entities = entity_load('paragraphs_item', [$doc['value']]);
           if (!empty($entities)) {
@@ -584,15 +668,17 @@ function health_file_entity_download_link($variables) {
 
       // Images.
       if ($node->type == 'image') {
-        $docs = $node->field_para_images[$node->language];
+        $docs = $node->field_image_files[$node->language];
         foreach ($docs as $doc) {
           $entities = entity_load('paragraphs_item', [$doc['value']]);
           if (!empty($entities)) {
             $para_documents = array_pop($entities);
-            if ($para_documents->field_file[LANGUAGE_NONE][0]['fid'] == $file->fid) {
-              // Get sizing.
-              if (isset($para_documents->field_paragraph_title)) {
-                $size = $para_documents->field_paragraph_title[LANGUAGE_NONE][0]['value'];
+            foreach($para_documents->field_images[LANGUAGE_NONE] as $image) {
+              if ($image['fid'] == $file->fid) {
+                // Get sizing.
+                if (isset($para_documents->field_image_size)) {
+                  $size = $para_documents->field_image_size[LANGUAGE_NONE][0]['value'];
+                }
               }
             }
           }
@@ -600,12 +686,15 @@ function health_file_entity_download_link($variables) {
       }
 
       // Construct the link.
-      $variables['text'] = '<div class="file__link">Download <span>' . $title . ' as</span> ' . health_get_friendly_mime($file->filemime) . '</div>';
+      $variables['text'] = '<div class="file__link">Download <span class="file__link-title">' . $title . ' as</span> ' . health_get_friendly_mime($file->filemime) . '</div>';
 
       // Add metatdata (file size, image size, no of pages)
       $variables['text'].= '<span class="file__meta"> - ' . format_size($file->filesize);
       if (isset($no_of_pages)) {
-        $variables['text'].= ', ' . $no_of_pages . ' pages';
+        $variables['text'].= ', ' . $no_of_pages . ' page';
+        if ($no_of_pages > 1) {
+          $variables['text'].= 's';
+        }
       }
       if (isset($size)) {
         $variables['text'].= ', ' . $size;
@@ -728,4 +817,50 @@ function health_webform_element($variables) {
   $output .= "</div>\n";
 
   return $output;
+}
+
+/**
+ * Implements theme_menu_link().
+ * Add default audience filter to specific paths.
+ *
+ * @param array $variables
+ *
+ * @return string
+ */
+function health_menu_link(array $variables) {
+  if ($query = _health_default_audience_menu($variables['element']['#href'])) {
+    $variables['element']['#localized_options']['query'] = $query;
+  }
+  return theme_menu_link($variables);
+}
+
+/**
+ * Implements theme_superfish_menu_item_link().
+ * Add default audience filter to specific paths.
+ *
+ * @param $variables
+ *
+ * @return string
+ */
+function health_superfish_menu_item_link($variables) {
+  if ($query = _health_default_audience_menu($variables['menu_item']['link']['href'])) {
+    $variables['link_options']['query'] = $query;
+  }
+  return theme_superfish_menu_item_link($variables);
+}
+
+/**
+ * Implements theme_crumbs_breadcrumb_link().
+ * Add default audience filter to specific paths.
+ *
+ * @param array $item
+ *
+ * @return string
+ */
+function health_crumbs_breadcrumb_link(array $item) {
+
+  if ($query = _health_default_audience_menu($item['href'])) {
+    $item['localized_options']['query'] = $query;
+  }
+  return theme_crumbs_breadcrumb_link($item);
 }

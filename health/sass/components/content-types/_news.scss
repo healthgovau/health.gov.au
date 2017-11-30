@@ -1,0 +1,48 @@
+// Content type styles by display mode (defined in /display-modes/*)
+// ========================================
+
+
+// Default/full content
+.node-type-news-article {
+  @extend %dm-full-content;
+  @extend %page-help-only;
+
+  .region-content {
+    margin-top: uikit-space(1.5);
+  }
+}
+
+// Display modes
+.node-news-article {
+
+	// Major list
+	&.view-mode-listing_vertical {
+		@extend %dm-list-vertical;
+		.group-left {
+			display: block;
+		}
+	}
+
+	// List vertical small
+	&.view-mode-listing_vertical_small {
+		@extend %dm-list-vertical--small;
+		@include cardify($padding: uikit-space(.5) uikit-space(1));
+	}
+
+	// Feature
+	&.view-mode-feature {
+		@extend %dm-feature;
+		.field-name-field-image-featured {
+			@extend %image--full;
+		}
+		.group-right {
+			padding-top: 0;
+		}
+        @include cardify();
+	}
+	
+	// Inline style
+	&.view-mode-inline {
+		@extend %dm-inline;
+	}
+}

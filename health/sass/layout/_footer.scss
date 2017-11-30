@@ -1,4 +1,17 @@
 .footer {
+  padding: 0;
+  padding-top: uikit-space( 1 );
+  @include uikit-media( sm ) {
+    padding: uikit-space( 1 );
+  }
+
+  .menu {
+    padding: 0.4em 0 1em 0;
+
+    @include uikit-media( sm ) {
+      padding: 0.4em 0;
+    }
+  }
   &__navigation {
     .block {
       @extend .col-md-3;
@@ -6,7 +19,6 @@
   }
   &__logo {
     max-width: 157px;
-    float: left;
   }
   &__attribution {
     margin-left: 180px;

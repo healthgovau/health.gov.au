@@ -19,3 +19,31 @@
 // }
 
 // Danny review as this is applying to more than just tags. In fact, ALL entity references!
+// Tags
+//
+// The related tags on a page.
+//
+// Markup: tags.twig
+//
+// Style guide: navigation.tags
+
+// Parent label
+.field-name-field-related-health-topics {
+  .label-above,
+  .label-inline {
+    @extend %field-label;
+    margin-bottom: uikit-space(.5);
+  }
+}
+
+.tags__item {
+  display: inline;
+  > a {
+    @extend .uikit-tags__item;
+    font-weight: normal;
+    &.active {
+      color: #fff;
+      background: $colour-Primary-darkest;
+    }
+  }
+}

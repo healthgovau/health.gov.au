@@ -7,7 +7,7 @@
     @extend .col-md-3;
 }
 .tile__title {
-    @extend .uikit-display-2;
+    @extend %list-item-title;
 }
 .tile__desc {
     //

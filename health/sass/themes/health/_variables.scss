@@ -32,10 +32,11 @@ $uikit-maxwidth: 42em; //Answer to life, the universe, and everything (keeps thi
 // Borders
 $uikit-borderize: 1px solid $uikit-colour-Border;
 $health-borderize: 3px solid $uikit-colour-Border;
+$health-borderize--fat: 6px solid $uikit-colour-Border;
 $uikit-border-radius: 3px;
 
 // Taskbar
 $minHeight-Taskbar: 200px !default;
 
 // Box shadow
-$card-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+$card-shadow: 0px 3px 10px $colour-Shadow;

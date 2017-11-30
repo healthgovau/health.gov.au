@@ -1,110 +1,213 @@
-// All paragraph bands
-.para-container {
-    @extend %band;
-}
-
 // Mixin to apply row and container
 @mixin row-and-container {
-    // Contain content (required)
-    &.inside-para-container {
-        @extend .container;
+  // Contain content (required)
+  &.inside-para-container {
+    @extend .container;
+  }
+  // Add row (required)
+  .paragraphs-items {
+    @extend .row;
+  }
+}
+
+// Share this
+#block-bean-share-this {
+  @extend %band;
+
+  padding: uikit-space(0.8) 0 0 0;
+
+  background: $colour-Primary-light;
+  .wrapper {
+    @extend .container;
+  }
+  .block__title {
+    @extend .uikit-display-2;
+    font-weight: 700;
+    @include uikit-media(sm) {
+      width: uikit-space(4);
+      float: left;
     }
-    // Add row (required)
-    .paragraphs-items {
+  }
+}
+
+// Listing back button band.
+.listing-back {
+  @extend %band;
+  padding: uikit-space(0.8) 0 uikit-space(0.8) 0;
+  //background: $uikit-colour-Background;
+  .wrapper {
+    @extend .container;
+    text-align: center;
+  }
+  a {
+    font-size: 1em;
+    @include uikit-media(md) {
+      font-size: 1.1em;
+    }
+    @extend %baseicon;
+    &.listing-back__icon:before {
+      content: "\f060";
+    }
+  }
+}
+
+// Landing pages only.
+body {
+  &.node-type-health-topic,
+  &.node-type-health-topic-hp,
+  &.node-type-landing-page {
+
+    // All paragraph bands
+    .para-container {
+      @extend %band;
+    }
+
+    // Topic feature (nested paragraphs)
+    // Container for large and small features
+    .paragraphs-item-two-columns {
+      // Style band
+      &.para-container {
+        @extend %band--neutral;
+        //margin-top: -#{uikit-space(1)};
+      }
+
+      @include row-and-container;
+      // Layout
+      > .group-left {
+        @extend .col-xs-12;
+        @extend .col-sm-6;
+      }
+      > .group-right {
+        @extend .col-xs-12;
+        @extend .col-sm-6;
+      }
+    }
+    // Main feature
+    .paragraphs-item-featured-news-events,
+    .paragraphs-item-featured-news-events-hp {
+      padding: 0;
+      &.inside-para-container {
+        padding: 0;
+      }
+
+    }
+    // Sub features
+    .paragraphs-item-para-view {
+      padding: 0;
+    }
+
+    // Statistics
+    .paragraphs-items-field-para-statistic {
+      @include row-and-container;
+
+      // Each entity
+      // Integrate with stat/_module.scss
+
+    }
+
+    // contact hotline
+    .paragraphs-item-para-contact {
+      padding: 0;
+      .view-mode-hotline_bar {
+        padding: uikit-space(0.5);
+        // Layout
+        .group-left {
+          width: 100%;
+          @include uikit-media(sm) {
+            width: 50%;
+          }
+        }
+        .group-right {
+          width: 100%;
+          @include uikit-media(sm) {
+            width: 50%;
+          }
+          .paragraphs-item-para-telephone {
+            padding: 0;
+            @include uikit-media(sm) {
+              text-align: center;
+            }
+            .field-name-field-contact-telephone {
+              @extend %list-item-title--large;
+              a {
+                border: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 2 col resources.
+    .paragraphs-2-columns-resources {
+      // Style band
+      &.para-container {
+        @extend %band--primary;
+      }
+      padding-bottom: uikit-space(2);
+      // Title/summary
+      .group-header {
+        @extend .col-xs-12;
+      }
+    }
+
+    // Home page
+    .page-landing {
+      .paragraphs-2-columns-resources {
+        background: $colour-Primary-light;
+      }
+    }
+
+    // block band
+    .paragraphs-item-para-block {
+      // Style band
+      &.para-container {
+        @extend %band;
+      }
+      @include row-and-container;
+    }
+
+    // Video band
+    .paragraphs-item-para-reference-video {
+      // Style band
+      &.para-container {
+        @extend %band;
+      }
+      @include row-and-container;
+    }
+
+    .paragraphs-item-featured-resource {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    // Document links
+    .para-container {
+      &.paragraphs-item-image {
+        padding-top: 0;
+        padding-bottom: uikit-space(1);
+      }
+    }
+
+    // Accessibility band on landing pages.
+    #block-bean-page-accessibility-link {
+      @extend .container;
+      .entity-bean {
         @extend .row;
-    }
-}
-
-// Topic feature (nested paragraphs)
-// Container for large and small features
-.paragraphs-item-two-columns { 
-    // Style band
-    &.para-container {
-        @extend %band--neutral; 
-        margin-top: -#{uikit-space(1)};
+        .field-name-field-bean-body {
+          @extend .col-xs-12; // FOR SOME REASON THIS DOESN'T WORK!!!!!!!!!!!!!
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+      }
     }
 
-    @include row-and-container;  
-    // Layout
-    > .group-left {
-        @extend .col-xs-12;
-        @extend .col-sm-6;
+    // Text content.
+    .paragraphs-item-para-content-text {
+      @extend .container;
+      .inside-para-container {
+        @extend .row;
+      }
     }
-    > .group-right {
-        @extend .col-xs-12;
-        @extend .col-sm-6;
-    }
-}
-// Main feature
-.paragraphs-item-featured-news-events {
-    padding: 0;
-    &.inside-para-container {
-        padding: 0 uikit-space(1) 0 0;
-    }
-    
-}
-// Sub features
-.paragraphs-item-para-view {
-    padding: 0;
-}
-
-// Getting started
-// Danny - consider creating modifiers of .listing__count {}
-.paragraphs-item-para-links {    
-    // Style band
-    &.para-container {
-    }
-    @include row-and-container;
-    
-    // Each entity
-    .paragraphs-item-para-link {
-        @extend .tile;
-    }
-
-    // CANNOT EXTEND ONTO THESE
-    .field-name-field-link-to {
-        @extend .tile__title;
-    }
-
-    // CANNOT EXTEND ONTO THESE
-    .field-name-field-summary {
-        @extend .tile__desc !optional;
-    }
-}
-
-// Statistics
-.paragraphs-items-field-para-statistic {
-    @include row-and-container;
-
-    // Each entity
-    // Integrate with stat/_module.scss
-
-}
-
-// Browse by lifestage
-.paragraphs-item-para-taxonomies {
-    // Style band
-    &.para-container {
-        @extend %band--neutral; 
-    }
-    @include row-and-container;
-}
-
-// Hotline
-.paragraphs-item-para-contact {
-    // Style band
-    &.para-container {
-        @extend %band--primary; 
-    }
-    @include row-and-container;
-}
-
-// Stats
-.paragraphs-item-para-statistics {
-    // Style band
-    &.para-container {
-        @extend %band--neutral; 
-    }
-    @include row-and-container;
-
+  }
 }

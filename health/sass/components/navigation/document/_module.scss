@@ -1,0 +1,40 @@
+%document-link {
+    padding-bottom: uikit-space(0.5);
+    h2 {
+        @extend .uikit-display-3;
+    }
+    .file-icon {
+        float: left;
+        margin-right: 10px;
+        margin-top: 5px;
+    }
+    a {
+        border-bottom: 0;
+    }
+    .file__link {
+        display: inline;
+        font-weight: bold;
+        border-bottom: solid 1px $colour-Primary-darkest;
+        span {
+            @extend %visually-hidden;
+        }
+    }
+    .file__meta {
+        display: inline;
+        color: $uikit-colour-Secondary;
+    }
+    .field-name-field-file,
+    .field-name-field-images .field-item {
+      @include link-pullout;
+      .field-items {
+        padding-bottom: 0px;
+      }
+      .field-item {
+        padding-bottom: 6px;
+      }
+    }
+
+    .field-name-field-image-files .field-items {
+      padding-bottom: 0px;
+    }
+}

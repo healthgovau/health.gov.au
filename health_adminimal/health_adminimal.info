@@ -4,3 +4,5 @@ core = 7.x
 base theme = adminimal
 
 stylesheets[all][] = customisations.css
+
+scripts[] = script.js

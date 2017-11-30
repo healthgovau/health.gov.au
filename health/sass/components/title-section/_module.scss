@@ -4,19 +4,78 @@
     background: $colour-Primary;
     padding-top: 0;
     padding-bottom: 0;
+    margin-bottom: uikit-space(1);
+    @include uikit-media(md){
+      margin-bottom: uikit-space(2);
+    }
   }
 }
-.page-title__core {
-  @extend .col-md-8;
-  padding-top: uikit-space(1);
-  padding-bottom: uikit-space(1);
 
-  // Danny = add a variant for full width
-  // &.full-width {
-  //   @extend .col-md-12;
-  // }
+.node-type-health-topic,
+.node-type-health-topic-hp,
+.node-type-landing-page {
+  .page-title {
+    &.header.header--light {
+      margin-bottom: 0;
+    }
+  }
 }
 
+// Main breadcrumb/title/summary
+.node-type-page {
+  .page-title__core {
+    float: left;
+    padding: uikit-space(0.5) 0 uikit-space(0.5) uikit-space(0.5);
+    @include uikit-media( sm ){
+      float: none;
+    }
+    @include uikit-media( md ){
+      float: left;
+    }
+  }
+}
+
+.page-title__core {
+  @extend .col-md-8;
+  padding: uikit-space(0.5) 0 uikit-space(0.5);
+  @include uikit-media(sm){
+    padding: uikit-space(1) 0 uikit-space(1.5);
+  }
+
+  // Section title (large)
+  .uikit-header-heading {
+
+  }
+
+  // Section title (small)
+  .section-header {
+    @extend .uikit-display-2;
+    font-weight: 700;
+    margin-bottom: 0;
+    a {
+      border-bottom: 0;
+    }
+  }
+
+  .summary {
+    @extend .uikit-header-subline;
+    margin-bottom: 0;
+  }
+}
+
+// GP/HP switch box
+.node-type-page {
+  .page-title__supp {
+    .block-bean-call-to-action {
+      width: 50%;
+      float: right;
+      @include uikit-media(sm) {
+        width: 100%;
+        float: none;
+      }
+    }
+  }
+}
 .page-title__supp {
   @extend .col-md-4;
   .block-bean-call-to-action {
@@ -34,12 +93,4 @@
       @extend .uikit-display-3;
     }
   }
-}
-
-// Title section for standar content
-.page .section-header {
-    @extend .uikit-header-heading;
-    font-family: $uikit-font;
-    margin-bottom: 0;
-    font-size: 26px;
 }

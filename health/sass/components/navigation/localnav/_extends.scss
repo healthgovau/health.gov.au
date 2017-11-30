@@ -16,12 +16,20 @@
 .uikit-body .sidebar .block-menu-block {
   // Drupal block title as link helper styles
   &__title {
-    font-size: 22px;
+    font-size: 18px;
+    margin-bottom: 0;
   }
   .menu {
     @extend %uikit-localnav;
   }
 }
+
+// UIkit override
+.uikit-body .uikit-accordion__title {
+  font-size: 16px;
+  padding-left: 1em;
+}
+
 
 // When the block title is a link
 .uikit-body .sidebar .block-menu-block--title-link {
@@ -47,4 +55,33 @@
       }
     }
   }
+}
+
+// Mobile nav logic.
+.menu-block-wrapper.menu-name-main-menu.mobilemenu-active {
+  margin: 0 -12px;
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+}
+
+.menu-block-wrapper.menu-name-main-menu {
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.8s linear;
+
+  @include uikit-media(xs) {}
+
+  @include uikit-media(sm) {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+  }
+
+  // Hide external link in local nav bar.
+  .menu li.external-link {
+    display: none;
+  }
+
 }

@@ -12,12 +12,16 @@
 @import 'typography/blockquote/extends';
 @import 'typography/headings/extends';
 @import 'typography/fields/module';
-@import 'typography/fields/extends';
 
 // Component styles
 @import 'tile/module';
 @import 'card/module';
 @import 'card/extends';
+
+// Block styles
+@import 'block-types/module';
+@import 'block-types/extends';
+@import 'block-types/image-text';
 
 // Component types
 @import 'alert/module';
@@ -32,6 +36,7 @@
 @import 'page-alerts/extends';
 @import 'breadcrumbs/extends';
 @import 'video/module';
+@import 'images/module';
 @import 'stat/module';
 @import 'environment/module';
 @import 'taskbar/module';
@@ -48,13 +53,15 @@
 @import 'display-modes/module';
 
 // Content types
-@import 'content-types/news/extends';
-@import 'content-types/event/extends';
+@import 'content-types/module';
 
 // Views, bands and layouts
 @import 'views/module';
 @import 'bands/module';
 @import 'bands/extends';
+
+// Views, bands and layouts
+@import 'paragraphs/extends';
 
 // Drupal
 @import 'drupal-contextual-links/module';
@@ -72,6 +79,7 @@
 // Style guide: forms
 @import 'forms/autocomplete/module';
 @import 'forms/autocomplete/extends';
+@import 'forms/better-exposed-filter/module';
 @import 'forms/button/module';
 @import 'forms/button/extends';
 @import 'forms/collapsible-fieldset/module';
@@ -116,6 +124,7 @@
 @import 'navigation/localnav/module';
 @import 'navigation/localnav/extends';
 @import 'navigation/menu/extends';
+@import 'navigation/mobile-menu/module';
 @import 'navigation/more-link/extends';
 @import 'navigation/pager/module';
 @import 'navigation/pager/extends';
@@ -127,4 +136,10 @@
 @import 'navigation/tags/extends';
 @import 'navigation/filters/module';
 @import 'navigation/filters/extends';
+@import 'navigation/external/module';
+@import 'navigation/document/module';
+@import 'navigation/faceted-block/extends';
+@import 'navigation/selector/module';
 
+// Search page
+@import 'search/extends';

@@ -1,34 +1,42 @@
 // Health header
-header {
-  &.header.header--light {
-    padding: uikit-space(1) 0;
-    margin-bottom: 0;
-    background: $uikit-colour-Background;
-    .logo {
-      display: inline-block;
-      border: none;
-      &:hover,
-      &:active {
-        background-color: transparent;
+header.uikit-header {
+  padding: uikit-space(1) 0 uikit-space(.5);
+  margin-bottom: 0;
+  @include uikit-clearfix();
+  @include uikit-media(md){
+    padding-bottom: uikit-space(1);
+  }
+  .uikit-header__logo {
+    display: block;
+		border-bottom: 2px solid transparent;
+		padding: uikit-space(.25);
+		&:hover,
+		&:focus {
+      border-bottom: 2px solid $colour-Primary-darkest;
+		}
+    @include uikit-media(md) {
+      float: left;
+    }
+    &-image {
+      display: block;
+      max-width: 70%;
+      margin: auto;
+      @include uikit-media(sm) {
+        max-width: 100%;
+        margin: 0;
+      }
+      @include uikit-media(md) {
+        max-width: 70%;
       }
     }
-    .logo__image {
-      height: 70px;  // Probably needs to not be fixed width but svg gets owned in ie11
-      display: block;
-      width: auto;
+  }
+  .region-header {
+    width: 100%;
+    margin-top: uikit-space(.5);
+    @include uikit-media(sm) {
+      max-width: 360px;
+      margin-top: uikit-space(-.5);
+      float: right;
     }
   }
-
-  .region-header {
-    margin-top: uikit-space(-.5);
-  }
-}
-
-// Layout
-.header__logo {
-  @extend .col-md-8;
-}
-
-.header__search {
-  @extend .col-md-4;
 }

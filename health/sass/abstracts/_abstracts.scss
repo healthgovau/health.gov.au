@@ -1,9 +1,4 @@
-// Mixins
-//
-// Custom mixins used on this site.
-//
-// Weight: 1
-//
-// Style guide: sass.mixins
-@import 'visually-hidden/visually-hidden';
-@import 'clearfix/clearfix';
+@import 'abstracts/clearfix';
+@import 'abstracts/visually-hidden';
+@import 'abstracts/mixins';
+@import 'abstracts/functions';

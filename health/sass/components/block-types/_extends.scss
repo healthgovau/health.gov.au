@@ -1,0 +1,32 @@
+// Shame for home page background colour.
+.front .paragraphs-item-para-block {
+  @extend .uikit-header--dark;
+  @extend .uikit-header;
+  padding-top: 0;
+  padding-bottom: 0;
+  &.block__count--5 {
+    background: $colour-Primary-darkest;
+  }
+  &.block__count--1 {
+    background: $colour-Primary-dark;
+    color: black;
+    .view-mode-feature {
+      background: $colour-Primary-dark;
+      box-shadow: none;
+    }
+    .group-left {
+      float: right;
+    }
+  }
+}
+
+// Handbook band in immunisation topic page for HP.
+#block-bean-handbook-featured-block-in-immun {
+  .view-mode-feature {
+    box-shadow: none;
+  }
+  .group-left {
+    float: right;
+  }
+}
+

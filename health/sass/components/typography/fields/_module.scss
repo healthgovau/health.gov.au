@@ -2,4 +2,147 @@
 .meta-date {
     color: $colour-minorText;
     font-size: 87.5%;
+    margin-bottom: uikit-space(0.5);
+}
+
+// Wrapper for date and tag
+%date-and-tag {
+    .field-type-datetime {
+        @extend .meta-date;
+        float: left;
+        padding-right: uikit-space(.5);
+    }
+    .field-type-taxonomy-term-reference {
+        @extend .meta-date;
+        float: left;
+        padding-left: uikit-space(.5);
+        border-left: 1px solid $colour-minorText;
+    }
+}
+
+// All fields
+%field-label {
+    font-weight: bold;
+    margin-bottom: uikit-space(.25);
+}
+
+%field-item {
+    padding-bottom: uikit-space(1);
+    display: block;
+}
+
+// Stacked vs inline
+.field-label-inline {
+    .field-label {
+        @extend %field-label;
+        width: 12em;
+        float: left;
+    }
+    .field-items {
+        @extend %field-item;
+        margin-left: 13em;
+        float: none;
+    }
+}
+.field-label-above {
+    .field-label {
+        @extend %field-label;
+    }
+    .field-items {
+        @extend %field-item;
+    }
+}
+
+// Styling by field name
+
+// Ext link
+.field-name-field-link-external {
+    padding-bottom: uikit-space(1.5);
+    .field-label {
+        @extend .uikit-display-3;
+        font-weight: normal;
+    }
+    .field-items {
+        @extend %ext-link-wrapper;
+    }
+}
+.external-link-url {
+    @extend %ext-link;
+}
+
+// Document accessibility
+.document-accessibility-form {
+  padding: uikit-space(1.5) 0 uikit-space(0.5) 0;
+  color: $colour-minorText;
+  a {
+    color: $colour-minorText;
+  }
+  font-size: 0.9em;
+}
+
+// Summary
+.field-name-field-summary {
+    @include uikit-clearfix();
+    clear: both;
+}
+
+// Resource title.
+.resource-title, p.resource-title {
+  @extend .uikit-display-2;
+  margin-bottom: uikit-space(0.5);
+}
+
+// Page currency
+// Standard content types - last updated and 'what's wrong' at bottom
+%page-help-and-currency {
+    .field-name-field-date-updated,
+    .field-name-field-date-published {
+        &.field-label-inline {
+            border-top: $uikit-borderize;
+            padding-top: uikit-space(1);
+            margin-top: uikit-space(1);
+            @include uikit-media(sm){
+                margin-top: uikit-space(2);
+            }
+            @include uikit-media(md){
+                margin-top: uikit-space(3);
+            }
+            .field-label {
+                width: 12em;
+            }
+            .field-items {
+                margin-left: 8em;
+            }            
+        }
+    }
+}
+%page-help-only {
+    .field-name-field-date-updated,
+    .field-name-field-date-published {
+      &.field-label-inline, &.field-label-above {
+        border: 0;
+        padding-top: 0;
+        margin-top: 0;
+        .field-label {
+          width: 12em;
+        }
+      }
+      &.field-label-inline {
+        .field-items {
+          margin-left: 13em;
+        }
+      }
+    }
+    #block-bean-page-accessibility-link {
+        border-top: $uikit-borderize;
+        padding-top: uikit-space(1);
+        margin-top: uikit-space(1);
+        @include uikit-media(sm){
+            margin-top: uikit-space(2);
+        }
+        @include uikit-media(md){
+            margin-top: uikit-space(3);
+        }
+    }
+
 }

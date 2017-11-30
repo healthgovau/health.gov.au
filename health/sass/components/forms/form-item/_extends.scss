@@ -17,11 +17,12 @@
   select.error {
     border: $uikit-colour-Error;
   }
-  .description {
+  .description, .help-block {
     @extend .uikit-text-input__hint;
+    margin-bottom: uikit-space(0.75);
   }
-  .help-block {
-    @extend .uikit-text-input__hint;
+  .resizable-textarea .grippie {
+    height: 0px;
   }
 }
 
@@ -51,4 +52,24 @@ label.option {
   .fieldset-wrapper {
     @extend %uikit-form-item--inline__exception;
   }
+}
+
+// Activity register form
+.node-form {
+  margin-bottom: uikit-space(2);
+}
+
+.form-wrapper, .form-item-title, .webform-component {
+  margin-bottom: uikit-space(1.75);
+}
+
+// Characters remaining
+.form-element-with-counter .form-element-length-counter {
+  margin: uikit-space(-1.25) 0 0 0;
+  padding-bottom: uikit-space(2);
+  @extend .uikit-text-input__hint;
+}
+
+.form-actions {
+  margin-bottom: uikit-space(2);
 }

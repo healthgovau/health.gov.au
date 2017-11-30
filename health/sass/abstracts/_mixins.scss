@@ -52,8 +52,30 @@
   }
 }
 
-@mixin link-pullout($border-width: 10px, $border-color: $uikit-colour-Border, $pad: 20px){
+@mixin link-pullout($border-width: 6px, $border-color: $colour-Primary-darkest, $pad: 20px){
   border-left: $border-width solid $border-color;
   padding-left: $pad;
-  padding-top: 8px;
+  padding-top: uikit-space(.5);
 }
+
+@mixin shadowfy($colour: $colour-Shadow){
+  box-shadow: 0px 3px 10px $colour;
+}
+
+// UI-Kit link style
+%link {
+  border-bottom: 1px solid $colour-Primary-darkest;
+}
+
+// Mixin to apply row and container
+@mixin row-and-container {
+  // Contain content (required)
+  &.inside-para-container {
+    @extend .container;
+  }
+  // Add row (required)
+  .paragraphs-items {
+    @extend .row;
+  }
+}
+

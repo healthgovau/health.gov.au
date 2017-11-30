@@ -1,14 +1,24 @@
-.social__links {
+ul.social__links, // Getting specific with it nah nah nah nah na na na!
+.social__links
+{
   padding-left: 0;
-  .social__links-item {
-    list-style-type: none;
-    display: block;
-    margin-right: 0;
 
-    @media (min-width: $uikit-media-sm) {
-      display: inline;
-      margin-right: 1.2em;
+  overflow: hidden;
+  @include uikit-media(sm){
+    display: block;
+    margin-left: uikit-space(5);
+  }
+
+  .social__links-item {
+
+    float: left;
+    @include uikit-media(sm){
+      float: none;
     }
+
+    list-style-type: none;
+    margin-right: uikit-space(1);
+    display: inline;
 
     // Font Awesome implementation
     a {
@@ -34,7 +44,7 @@
       display: inline;
       margin-right: 0;
       &:after {
-        background-image: none;
+        display: none;
       }
     }
   }

@@ -21,7 +21,7 @@
 .taskbar,
 %taskbar {
   color: #000;
-  @include uikit-clearfix;
+  @include uikit-clearfix();
   ul {
     list-style-type: none;
     margin: 0;
@@ -47,11 +47,11 @@
     @include uikit-media('xs') {
       min-height: $minHeight-Taskbar;
     }
-    background-color: darken($colour-Taskbar, 5%);
+    background-color: $colour-Primary-dark;
     &:hover,
     &:active,
     &:focus {
-      background-color: darken($colour-Taskbar, 10%);
+      background-color: $colour-Primary-darker;
     }
   }
 

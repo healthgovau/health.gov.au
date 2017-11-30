@@ -8,8 +8,8 @@
 // Default is to contain .page-layout unless content type is listed below
 // which will be full width to permit bands
 // :not() supported by IE9+ so polyfill
-body{
-  &:not(.node-type-health-topic):not(.node-type-health-topic-hp){
+body {
+  &:not(.node-type-health-topic, .node-type-health-topic-hp, .node-type-landing-page){
     .page-layout {
       @extend .container;
     }
@@ -31,14 +31,14 @@ body.node-type-health-topic {
 }
 
 // Global styling
-.uikit-body .view ul > .views-row,
-.node > .field,
-.panel-pane {
-  margin-bottom: uikit-space(1);
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-}
+// .uikit-body .view ul > .views-row,
+// .node > .field,
+// .panel-pane {
+//   margin-bottom: uikit-space(1);
+//   &:last-of-type {
+//     margin-bottom: 0;
+//   }
+// }
 
 .uikit-body .view-popular ul > .views-row {
   margin-bottom: 0;
@@ -54,6 +54,18 @@ body.node-type-health-topic {
   }
   .views-row {
     @extend .col-md-3;
+  }
+}
+
+// Float local nav right (reqd for source order)
+.page-content .sidebar-right {
+  float: none;
+  padding-left: 0;
+  padding-right: 0;
+  @include uikit-media(sm){
+    float: right;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 

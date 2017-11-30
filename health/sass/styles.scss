@@ -47,8 +47,6 @@
 
 // Mixins 
 @import 'abstracts/abstracts';
-@import 'abstracts/mixins';
-@import 'abstracts/functions';
 
 // Components
 @import 'components/components';
@@ -61,6 +59,7 @@
 //
 @import 'layout/layout';
 @import 'layout/regions';
+@import 'layout/header-top';
 @import 'layout/header';
 @import 'layout/footer';
 

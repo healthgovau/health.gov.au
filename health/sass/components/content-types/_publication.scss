@@ -1,0 +1,44 @@
+// Default/full content
+.node-type-publication {
+    @extend %dm-full-content;
+	@extend %page-help-only;
+
+	.region-content {
+		margin-top: uikit-space(1.5);
+	}
+}
+
+// Display modes
+.node-publication {
+    background: transparent;
+
+    .field-name-field-image-featured {
+		@extend %image--full;
+    }
+
+    // Document download
+    .paragraphs-items-field-resource-document {
+      padding-bottom: uikit-space(1) !important;
+      @extend %document-link;
+    }
+
+	// Major list
+	&.view-mode-listing_vertical {
+		@extend %dm-list-vertical;
+		.group-left {
+			display: block;
+		}
+	}
+    &.view-mode-listing_vertical_small {
+		@extend %dm-list-vertical--small;
+    }
+
+    // Feature
+	&.view-mode-feature {
+		@extend %dm-feature-2-col;
+    }	
+	// Inline style
+	&.view-mode-inline {
+		@extend %dm-inline;
+	}
+}

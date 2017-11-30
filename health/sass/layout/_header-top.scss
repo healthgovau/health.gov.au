@@ -1,0 +1,21 @@
+.header-top {
+  background: $uikit-colour-Secondary;
+  color: #ffffff;
+  padding: uikit-space(.5);
+  .beta-icon {
+    background: $colour-Beta;
+    padding: 0 8px;
+    border-radius: 10px;
+    margin-right: 10px;
+    color: #000;
+    float: left;
+  }
+  .message {
+    display: block;
+    margin-left: 60px;
+  }
+  a {
+    color: #fff;
+    border-bottom-color: #fff;
+  }
+}
