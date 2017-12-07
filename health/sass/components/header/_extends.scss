@@ -2,10 +2,6 @@
 //
 // Header.
 
-.header {
-  @extend .uikit-header;
-}
-
-.header--light {
-  @extend .uikit-header--light;
+.uikit-header.uikit-header--light {
+  background-color: white;
 }

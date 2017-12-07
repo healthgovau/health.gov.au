@@ -1,23 +1,18 @@
 ul.social__links, // Getting specific with it nah nah nah nah na na na!
 .social__links
 {
-  padding-left: 0;
+  padding: 0;
+  margin: 0;
 
   overflow: hidden;
-  @include uikit-media(sm){
-    display: block;
-    margin-left: uikit-space(5);
-  }
 
   .social__links-item {
 
     float: left;
-    @include uikit-media(sm){
-      float: none;
-    }
 
     list-style-type: none;
     margin-right: uikit-space(1);
+    margin-bottom: 0;
     display: inline;
 
     // Font Awesome implementation
@@ -47,8 +42,5 @@ ul.social__links, // Getting specific with it nah nah nah nah na na na!
         display: none;
       }
     }
-  }
-  h3 {
-    margin-top: 0;
   }
 }

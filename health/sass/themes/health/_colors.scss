@@ -22,13 +22,61 @@ $uikit-colour-Info: #00bfe9 !default;
 // Health variables here
 $colour-Shadow: rgba(0,0,0,0.1);
 $colour-card: #fff;
-$colour-Primary: #d7e7fe;
-$colour-Primary-light: #edf4ff;
-$colour-Primary-dark: #c3dcff;
-$colour-Primary-darker: #8fc1fc;
-$colour-Primary-darkest: #1e58a1;
+$colour-Primary: #153a6e;
+$colour-Primary-darker: #062855;
+$colour-Primary-darkest: #062855;
+$colour-Secondary-darker: #f2f2f2;
+$colour-Secondary: #f9f9f9;
+$colour-Secondary-darkest: #e5e5e5;
+$colour-Primary-light: #f2f2f2;
+$colour-Callout-darkest: #006e7a;
+$colour-Callout: #007b89;
+$colour-Callout-lighter: #2da5b3;
+$colour-Orange: #c42832;
+$colour-Dark: #696969;
+$colour-Darker: #0e1b44;
 
-$uikit-colour-Link: $colour-Primary-dark; // Health override
+%colour-Primary-background {
+  background: $colour-Primary-darkest;
+  background: -webkit-linear-gradient(left, $colour-Primary-darkest, $colour-Primary);
+  background: -o-linear-gradient(right, $colour-Primary-darkest, $colour-Primary);
+  background: -moz-linear-gradient(right, $colour-Primary-darkest, $colour-Primary);
+  background: linear-gradient(to right, $colour-Primary-darkest, $colour-Primary);
+}
+
+%colour-Secondary-background {
+  background: $colour-Secondary-darker;
+  background: -webkit-linear-gradient(left, $colour-Secondary-darker, $colour-Secondary);
+  background: -o-linear-gradient(right, $colour-Secondary-darker, $colour-Secondary);
+  background: -moz-linear-gradient(right, $colour-Secondary-darker, $colour-Secondary);
+  background: linear-gradient(to right, $colour-Secondary-darker, $colour-Secondary);
+}
+
+%colour-Secondary-background-darkest {
+  background: $colour-Secondary-darkest;
+  background: -webkit-linear-gradient(left, $colour-Secondary-darkest, $colour-Secondary);
+  background: -o-linear-gradient(right, $colour-Secondary-darkest, $colour-Secondary);
+  background: -moz-linear-gradient(right, $colour-Secondary-darkest, $colour-Secondary);
+  background: linear-gradient(to right, $colour-Secondary-darkest, $colour-Secondary);
+}
+
+%colour-Secondary-background-reverse {
+  background: $colour-Secondary;
+  background: -webkit-linear-gradient(left, $colour-Secondary, $colour-Secondary-darkest);
+  background: -o-linear-gradient(right, $colour-Secondary, $colour-Secondary-darkest);
+  background: -moz-linear-gradient(right, $colour-Secondary, $colour-Secondary-darkest);
+  background: linear-gradient(to right, $colour-Secondary, $colour-Secondary-darkest);
+}
+
+%colour-Callout-background {
+  background: $colour-Callout-darkest;
+  background: -webkit-linear-gradient(left, $colour-Callout-darkest, $colour-Callout);
+  background: -o-linear-gradient(right, $colour-Callout-darkest, $colour-Callout);
+  background: -moz-linear-gradient(right, $colour-Callout-darkest, $colour-Callout);
+  background: linear-gradient(to right, $colour-Callout-darkest, $colour-Callout);
+}
+
+$uikit-colour-Link: $colour-Callout; // Health override
 $uikit-colour-Primary: $colour-Primary-darkest; // Health override
 
 // Statistics

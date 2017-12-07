@@ -52,6 +52,7 @@
 </head>
 
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
+<?php print $google_tag_manager; ?>
   <nav class="skip-link" id="skip-link">
     <a class="skip-link__link" href="#content">Skip to main content</a>
     <a class="skip-link__link" href="#nav">Skip to main navigation</a>

@@ -8,12 +8,19 @@
  */
 ?>
 <div class="<?php print $classes; ?>"<?php print $attributes; ?> id="<?php print $block_html_id; ?>">
-  <div class="wrapper">
-    <?php print render($title_prefix); ?>
-    <?php if ($title): ?>
-      <h3<?php print $title_attributes; ?>><?php print $title; ?></h3>
-    <?php endif; ?>
-    <?php print render($title_suffix); ?>
-    <?php print $content; ?>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2 col-sm-3">
+        <?php print render($title_prefix); ?>
+        <?php if ($title): ?>
+          <h3<?php print $title_attributes; ?>><?php print $title; ?></h3>
+        <?php endif; ?>
+        <?php print render($title_suffix); ?>
+      </div>
+
+      <div class="col-md-10 col-sm-9">
+        <?php print $content; ?>
+      </div>
+    </div>
   </div>
 </div>

@@ -6,25 +6,30 @@
 }
 %band--neutral {
     @extend %band;
-    background: $uikit-colour-Background;
+    @extend %colour-Secondary-background;
+}
+
+%band--neutral-darkest {
+    @extend %band;
+    @extend %colour-Secondary-background-darkest;
 }
 
 %band--primary {
     @extend %band;
-    background: $colour-Primary;
+    @extend %colour-Primary-background;
 }
 
 %band--primary-dark {
     @extend %band;
-    background: $colour-Primary-dark;
+    //background: $colour-Primary-dark;
 }
 
 %band--primary-darker {
     @extend %band;
-    background: $colour-Primary-darkest;
+    //background: $colour-Primary-darkest;
 }
 
 %band--primary-darkest {
     @extend %band;
-    background: $colour-Primary-darkest;
+    //background: $colour-Primary-darkest;
 }

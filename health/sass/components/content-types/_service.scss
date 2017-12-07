@@ -2,13 +2,13 @@
 // ======================
 
 // Default/full content
-.node-type-services {
+.node-type-service {
     @extend %dm-full-content;
 	@extend %page-help-and-currency;
 }
 
 // Display modes
-.node-services {
+.node-service {
 
 	// List vertical
 	&.view-mode-listing_vertical {

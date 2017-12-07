@@ -13,9 +13,9 @@
   $sidebar_first  = render($page['sidebar_first']);
   $sidebar_second = render($page['sidebar_second']);
   
-  $content_class = 'content-full';
+  $content_class = 'main-content-full';
   if ($sidebar_first || $sidebar_second):
-    $content_class = 'content';
+    $content_class = 'main-content';
   endif;
 ?>
 <div class="page">
@@ -33,7 +33,7 @@
                          title="<?php print t('Home'); ?>" rel="home"
                          class="uikit-header__logo">
                           <img src="<?php print $logo; ?>" alt="<?php print t(
-                            'Antimicrobial resistance home'
+                            'Australia government Department of Health'
                           ); ?>"
                                class="uikit-header__logo-image uikit-responsive-media-img"/>
                       </a>
@@ -70,7 +70,7 @@
       <div class="page-title header header--light">
         <div class="container">
           <div class="row">
-            <div class="page-title__core">
+            <div class="page-title__core col">
               <?php print $breadcrumb; ?>
 
               <?php if ($title && !isset($section_title)): ?>
@@ -90,7 +90,7 @@
               <?php print render($page['title_core']); ?>
             </div>
 
-            <div class="page-title__supp">
+            <div class="page-title__supp col">
               <?php print render($page['title_supp']); ?>
             </div>
           </div>
@@ -157,14 +157,12 @@
       </div>
       <div class="footer__end row">
         <?php print render($page['footer_bottom']); ?>
-      </div>
-      <div>
-        <div class="footer__logo">
-          <img src="/<?php print path_to_theme(); ?>/images/coat-of-arms.png" alt="Commonwealth Coat of Arms crest logo">
-        </div>
-        <p class="footer__attribution">
-          <small>© Commonwealth of Australia</small>
-        </p>
+          <div class="footer__logo">
+              <img src="/<?php print path_to_theme(); ?>/images/coat-of-arms.png" alt="Commonwealth Coat of Arms crest logo">
+          </div>
+          <p class="footer__attribution">
+              <small>© Commonwealth of Australia</small>
+          </p>
       </div>
     </div>
   </footer>

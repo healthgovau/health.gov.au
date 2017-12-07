@@ -59,14 +59,30 @@
     @extend %date-and-tag;
 
     .field-name-field-image-featured {
-        width: 100%;
-        img {
-            float: left;
-            border: none;
+      background-color: #ececec;
+      div {
+        line-height: 0;
+      }
+      width: 100%;
+      img {
+        border: none;
+        max-height: 138px;
+        width: auto;
+        @include uikit-media(sm) {
+          max-height: 78px;
+          width: auto;
         }
-        a {
-            border: none;
+        @include uikit-media(md) {
+          max-height: 104px;
         }
+        @include uikit-media(lg) {
+          max-height: 127px;
+        }
+      }
+      text-align: center;
+      a {
+          border: none;
+      }
     }
 }
 

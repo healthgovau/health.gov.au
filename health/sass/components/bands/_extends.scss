@@ -1,31 +1,29 @@
-// Mixin to apply row and container
-@mixin row-and-container {
-  // Contain content (required)
-  &.inside-para-container {
-    @extend .container;
-  }
-  // Add row (required)
-  .paragraphs-items {
-    @extend .row;
-  }
-}
-
 // Share this
 #block-bean-share-this {
   @extend %band;
 
-  padding: uikit-space(0.8) 0 0 0;
+  padding: uikit-space(0.7) 0;
 
-  background: $colour-Primary-light;
-  .wrapper {
-    @extend .container;
+  @include uikit-media(sm) {
+    padding: uikit-space(1) 0;
   }
+
+  @extend %colour-Secondary-background-reverse;
   .block__title {
     @extend .uikit-display-2;
     font-weight: 700;
-    @include uikit-media(sm) {
-      width: uikit-space(4);
-      float: left;
+    margin:0;
+  }
+}
+
+// Is there something wrong with this page.
+#block-bean-page-accessibility-link {
+  padding: 0 0 uikit-space(1) 0;
+  @extend .container;
+  .entity-bean {
+    @extend .row;
+    .field-name-field-bean-body {
+      @extend .col-xs-12;
     }
   }
 }
@@ -34,7 +32,6 @@
 .listing-back {
   @extend %band;
   padding: uikit-space(0.8) 0 uikit-space(0.8) 0;
-  //background: $uikit-colour-Background;
   .wrapper {
     @extend .container;
     text-align: center;
@@ -67,21 +64,28 @@ body {
     .paragraphs-item-two-columns {
       // Style band
       &.para-container {
-        @extend %band--neutral;
-        //margin-top: -#{uikit-space(1)};
+        @extend %band--neutral-darkest;
       }
 
-      @include row-and-container;
-      // Layout
-      > .group-left {
-        @extend .col-xs-12;
-        @extend .col-sm-6;
+      &.resources {
+        background: white;
       }
-      > .group-right {
-        @extend .col-xs-12;
-        @extend .col-sm-6;
+
+      // Layout
+      @include row-and-container;
+      > .para-row {
+        > .group-header,
+        > .group-footer {
+          @extend .col-xs-12;
+        }
+        > .group-left,
+        > .group-right {
+          @extend .col-xs-12;
+          @extend .col-sm-6;
+        }
       }
     }
+
     // Main feature
     .paragraphs-item-featured-news-events,
     .paragraphs-item-featured-news-events-hp {
@@ -96,15 +100,6 @@ body {
       padding: 0;
     }
 
-    // Statistics
-    .paragraphs-items-field-para-statistic {
-      @include row-and-container;
-
-      // Each entity
-      // Integrate with stat/_module.scss
-
-    }
-
     // contact hotline
     .paragraphs-item-para-contact {
       padding: 0;
@@ -112,16 +107,12 @@ body {
         padding: uikit-space(0.5);
         // Layout
         .group-left {
-          width: 100%;
-          @include uikit-media(sm) {
-            width: 50%;
-          }
+          @extend .col-xs-12;
+          @extend .col-sm-6;
         }
         .group-right {
-          width: 100%;
-          @include uikit-media(sm) {
-            width: 50%;
-          }
+          @extend .col-xs-12;
+          @extend .col-sm-6;
           .paragraphs-item-para-telephone {
             padding: 0;
             @include uikit-media(sm) {
@@ -144,7 +135,6 @@ body {
       &.para-container {
         @extend %band--primary;
       }
-      padding-bottom: uikit-space(2);
       // Title/summary
       .group-header {
         @extend .col-xs-12;
@@ -154,17 +144,8 @@ body {
     // Home page
     .page-landing {
       .paragraphs-2-columns-resources {
-        background: $colour-Primary-light;
+        background: white;
       }
-    }
-
-    // block band
-    .paragraphs-item-para-block {
-      // Style band
-      &.para-container {
-        @extend %band;
-      }
-      @include row-and-container;
     }
 
     // Video band
@@ -189,23 +170,11 @@ body {
       }
     }
 
-    // Accessibility band on landing pages.
-    #block-bean-page-accessibility-link {
-      @extend .container;
-      .entity-bean {
-        @extend .row;
-        .field-name-field-bean-body {
-          @extend .col-xs-12; // FOR SOME REASON THIS DOESN'T WORK!!!!!!!!!!!!!
-          padding-left: 12px;
-          padding-right: 12px;
-        }
-      }
-    }
-
     // Text content.
-    .paragraphs-item-para-content-text {
+    .para-container.paragraphs-item-para-content-text {
+      @extend %band--neutral;
       @extend .container;
-      .inside-para-container {
+      .field-name-field-body {
         @extend .row;
       }
     }

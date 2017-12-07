@@ -47,7 +47,7 @@
     @include uikit-media('xs') {
       min-height: $minHeight-Taskbar;
     }
-    background-color: $colour-Primary-dark;
+    @extend %colour-Secondary-background;
     &:hover,
     &:active,
     &:focus {

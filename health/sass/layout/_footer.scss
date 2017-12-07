@@ -1,9 +1,6 @@
 .footer {
   padding: 0;
   padding-top: uikit-space( 1 );
-  @include uikit-media( sm ) {
-    padding: uikit-space( 1 );
-  }
 
   .menu {
     padding: 0.4em 0 1em 0;

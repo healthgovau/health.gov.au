@@ -1,0 +1,72 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// header module
+// Headers provide a consistent start to pages.
+//
+// Content:
+// - Header styles
+// - Logo container styling
+// - Logomark styling
+// - Logotype styling
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Header styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Basic header block styling.
+ */
+.uikit-header {
+	font-family: $uikit-font-system;
+	color: #fff;
+	background: $uikit-colour-Primary;
+	padding: uikit-space( 1 ) 0 uikit-space( 1.25 ) 0;
+	margin-bottom: uikit-space( 1 );
+
+	&.uikit-header--hero {
+		padding: uikit-space( 2 ) 0 uikit-space( 2.5 ) 0;
+	}
+
+	@include uikit-media( sm ) {
+		padding: uikit-space( 2 ) 0 uikit-space( 3 ) 0;
+
+		&.uikit-header--hero {
+			padding: uikit-space( 4.5 ) 0 uikit-space( 8.5 ) 0;
+		}
+	}
+
+	&.uikit-header--light {
+		background-color: $uikit-colour-Background;
+		color: $uikit-colour-Text;
+	}
+
+	&.uikit-header--dark {
+		background-color: $uikit-colour-Secondary;
+	}
+}
+
+.uikit-header-heading {
+	font-size: 20px;
+	line-height: $uikit-leading;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+
+	@include uikit-media( sm ) {
+		font-size: 36px;
+	}
+}
+
+.uikit-header-subline {
+	font-size: 18px;
+	line-height: $uikit-leading;
+	max-width: $uikit-maxwidth;
+
+	@include uikit-media( sm ) {
+		font-size: 20px;
+	}
+}

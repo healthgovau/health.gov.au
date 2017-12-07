@@ -1,9 +1,4 @@
-.paragraphs-item-para-block {
-  @extend %paragraphs-item-para-block;
-  .field-name-field-title {
-    @extend %list-item-title--large;
-  }
-}
+
 .block__count--5 .bean-image-and-text {
   width: 100%;
   float: left;
@@ -20,16 +15,9 @@
 }
 
 .block__count--3 .bean-image-and-text {
-  width: 100%;
-  float: left;
-
-  @include uikit-media(sm) {
-    width: 50%;
-  }
-  @include uikit-media(md) {
-    width: 33%;
-  }
-
+  @extend .col-xs-12;
+  @extend .col-sm-6;
+  @extend .col-md-4;
 }
 
 .block__count--1 .bean-image-and-text {
@@ -53,15 +41,6 @@
 
     .bean-block-content {
       a {
-        display: block;
-        color: #fff;
-        overflow: hidden;
-
-        &:hover,
-        &:focus {
-          background: lighten($colour-Primary-darkest, 5%);
-        }
-
         .field-name-field-image {
           img {
             max-width: 70%;
@@ -82,7 +61,6 @@
 
         .field-name-field-link-internal {
           @extend %list-item-title;
-          color: #fff;
           // Resp
           display: block;
           margin-left: 35%;
@@ -112,13 +90,18 @@
     float: left;
     .group-left,
     .group-right {
-      width: 100%;
-      @include uikit-media(sm) {
-        width: 50%;
-        padding-right: uikit-space(1);
+      @extend .col-xs-12;
+      @extend .col-sm-6;
+    }
+    .field-name-field-image {
+      @extend %image--full;
+    }
+    .group-left {
+      margin-bottom: uikit-space( 1 );
+      @include uikit-media( sm ) {
+        margin-bottom: 0;
       }
     }
-    @include cardify();
   }
 
   &.view-mode-listing_vertical {

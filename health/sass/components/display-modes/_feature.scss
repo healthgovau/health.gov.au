@@ -34,38 +34,51 @@
 }
 
 %dm-feature-2-col {
-    overflow: hidden;
-    // Layout
-    .group-left {
-        width: 50%;
-        padding-bottom: 0;
-        padding-right: uikit-space(1);
-        @include uikit-clearfix();
+  @extend .row;
+
+  overflow: hidden;
+  // Layout
+  .group-left {
+    @extend .col-md-6;
+    padding-bottom: uikit-space(0.75);
+    @include uikit-media(xs) {
+      padding-bottom: 0;
     }
-    .group-right {
-        width: 50%;
-        @include uikit-clearfix();
+  }
+  .group-right {
+    @extend .col-md-6;
+  }
+  // Date and tag
+  @extend %date-and-tag;
+
+  // Image
+  .field-name-field-image-featured {
+    div {
+      line-height: 0;
     }
-    // Date and tag
-    @extend %date-and-tag;
-    
-    .field-name-field-image-featured {
+    img {
+      border: 0;
+      max-height: 275px;
+      width: auto;
+      @include uikit-media(md) {
+        height: auto;
+        max-height: none;
         width: 100%;
-        img {
-            float: left;
-            border: 0;
-        }
-        a {
-            border: none;
-        }
+      }
     }
-    .field-name-title {
-        h2,
-        h3 {
-            @extend %list-item-title--large;
-        }
+    a {
+      border: none;
     }
-    p:last-of-type {
-        margin-bottom: 0;
+
+  }
+  // Title
+  .field-name-title {
+    h2,
+    h3 {
+      @extend %list-item-title--large;
     }
+  }
+  p:last-of-type {
+    margin-bottom: 0;
+  }
 }

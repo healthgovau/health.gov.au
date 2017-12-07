@@ -8,7 +8,6 @@
 //
 // Style guide: components.stats
 
-.stat,
 %stat {
   @extend .row;
   text-align: center;
@@ -16,13 +15,11 @@
 }
 
 // Stat wrapper.
-.stat__wrapper,
 %stat__wrapper {
   @extend .col-xs-12;
 }
 
 // Card wrapper.
-.stat__card,
 %stat__card {
   overflow: hidden;
   width: 100%;
@@ -30,7 +27,6 @@
 }
 
 // Colours - blue
-.stat__card--blue,
 %stat__card--blue {
   @extend %stat__card;
   @include uikit-media('md') {
@@ -44,11 +40,9 @@
 }
 
 // Statistic value.
-.stat__value,
 %stat__value {
 
-  @extend .col-md-12;
-  @extend .col-xs-6;
+  @extend .col-xs-12;
 
   padding: uikit-space(0.5) 0 uikit-space(0.5) 0;
 
@@ -57,7 +51,6 @@
   }
 }
 
-.stat__value-value,
 %stat__value-value {
   @extend h1;
   margin: 0;
@@ -70,9 +63,7 @@
   }
 }
 
-.stat__value-suffix,
 %stat__value-suffix,
-.stat__value-prefix,
 %stat__value-prefix {
   font-size: 1.5rem;
   @include uikit-media('md') {
@@ -81,59 +72,51 @@
 }
 
 // Statistic text.
-.stat__text,
 %stat__text {
 
-  font-size: 1.35em;
-  line-height: 1.35em;
+  font-size: 1.25em;
+  line-height: 1.25em;
   font-weight: bold;
 
-  padding: 0 uikit-space(1) uikit-space(1) uikit-space(1);
+  padding: 0 uikit-space(1) uikit-space(0.25) uikit-space(1);
 
   @include uikit-media('md') {
-    //padding-bottom: uikit-space(1);
+    padding-bottom: uikit-space(1);
   }
 }
 
 // The trend.
-.stat__trend,
 %stat__trend {
 
-  @extend .col-md-12;
-  @extend .col-xs-6;
+  @extend .col-xs-12;
 
   padding-top: 12px;
   padding-bottom: 12px;
 }
 
-.stat__trend-value,
 %stat__trend-value {
   padding: 0;
   margin: 0;
   display: inline;
 }
 
-.stat__trend-icon,
 %stat__trend-icon {
   display: inline-block;
   padding-bottom: 15px;
   font-size: 0.85em;
 }
 
-.stat__trend-icon--positive,
 %stat__trend-icon--positive {
   color: $uikit-colour-Success;
   margin-left: 5px;
 }
 
-.stat__trend-icon--negative,
 %stat__trend-icon--negative {
   color: $uikit-colour-Error;
   margin-left: 5px;
 }
 
 // Variation with no trend.
-.stat--no-trend,
 %stat--no-trend {
   .stat__trend {
     @extend %stat__trend--no-trend;
@@ -163,5 +146,4 @@
 }
 
 @import '_print.scss';
-@import "_extends.scss";
 

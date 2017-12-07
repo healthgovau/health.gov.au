@@ -1,13 +1,13 @@
 .region-featured {
   @extend .uikit-header;
   @extend .uikit-header--light;
+  background: $colour-Secondary-darkest;
   margin-bottom: 0;
   background: #fff;
 }
 
 .region-navigation {
-  background: $uikit-colour-Background;
-  box-shadow: 0 -6px $colour-Primary-darker inset;
+  background: white;
 }
 
 // .front {

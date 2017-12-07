@@ -28,6 +28,7 @@ body.node-type-health-topic {
 // Default spacing for body elements
 .page-layout {
   margin-bottom: uikit-space(2);
+  @extend .container-fluid;
 }
 
 // Global styling

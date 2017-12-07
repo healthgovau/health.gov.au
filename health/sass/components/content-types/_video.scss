@@ -20,7 +20,13 @@
   }
   // List vertical small
   &.view-mode-listing_vertical_small {
-		@extend %dm-list-vertical--small;
+	@extend %dm-list-vertical--small;
+    @extend %video;
+    .field-name-field-resource-duration .field-item {
+      margin-right: 1px;
+      margin-bottom: 8px;
+      @extend %video__length;
+    }
   }
 
   // List horizontal

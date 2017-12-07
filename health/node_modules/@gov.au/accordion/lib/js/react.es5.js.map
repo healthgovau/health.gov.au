@@ -1,0 +1,46 @@
+{
+  "version": 3,
+  "sources": [
+    "react.es5.js"
+  ],
+  "names": [
+    "IDstart",
+    "Accordion",
+    "props",
+    "toggle",
+    "bind",
+    "ID",
+    "closeClass",
+    "open",
+    "nextProps",
+    "UIKIT",
+    "accordion",
+    "Open",
+    "accordionHeader",
+    "Close",
+    "event",
+    "preventDefault",
+    "Toggle",
+    "speed",
+    "onOpen",
+    "afterOpen",
+    "onClose",
+    "afterClose",
+    "header",
+    "children",
+    "PureComponent",
+    "propTypes",
+    "node",
+    "isRequired",
+    "string",
+    "bool",
+    "number",
+    "func",
+    "defaultProps"
+  ],
+  "mappings": "ikBASA,4B,2CACA,qC,mDAEA,6B,63BAZA,+BACA;;;;;;gKAaA,GAAIA,SAAU,CAAd,C,GAEMC,U,0EACL;;;;;IAMA,mBAAaC,KAAb,CAAqB,6IACbA,KADa,GAGpB,MAAKC,MAAL,CAAc,MAAKA,MAAL,CAAYC,IAAZ,OAAd,CAEA;AACAJ,UAEA,MAAKK,EAAL,aAAuBL,OAAvB,CACA,MAAKM,UAAL,CAAkB,MAAKJ,KAAL,CAAWK,IAAX,CAAkB,EAAlB,CAAuB,yBAAzC,CAToB,YAUpB,CAGD;;sGAG2BC,S,CAAY,CACtC,GAAMD,MAAOC,UAAUD,IAAvB,CAEA,GAAIA,IAAJ,CAAW,CACVE,MAAMC,SAAN,CAAgBC,IAAhB,CAAsB,KAAKC,eAA3B,CACA,CAFD,IAGK,CACJH,MAAMC,SAAN,CAAgBG,KAAhB,CAAuB,KAAKD,eAA5B,CACA,CACD,CAGD;;;;0CAKQE,K,CAAQ,CACfA,MAAMC,cAAN,GAEAN,MAAMC,SAAN,CAAgBM,MAAhB,CAAwB,KAAKJ,eAA7B,CAA8C,KAAKV,KAAL,CAAWe,KAAzD,CAAgE,CAC/DC,OAAQ,KAAKhB,KAAL,CAAWgB,MAD4C,CAE/DC,UAAW,KAAKjB,KAAL,CAAWiB,SAFyC,CAG/DC,QAAS,KAAKlB,KAAL,CAAWkB,OAH2C,CAI/DC,WAAY,KAAKnB,KAAL,CAAWmB,UAJwC,CAAhE,CAMA,C,uCAGQ,iBACR,MACC,sCAAK,UAAU,iBAAf,EACC,mCAAG,SAAW,KAAKhB,EAAnB,CACC,uDAAyD,KAAKC,UAD/D,CAEC,gBAAgB,KAAKD,EAFtB,CAGC,gBAAgB,KAAKH,KAAL,CAAWK,IAH5B,CAIC,gBAAgB,KAAKL,KAAL,CAAWK,IAJ5B,CAKC,KAAK,KALN,CAMC,IAAM,6BAAmB,CAAE,OAAKK,eAAL,CAAuBA,eAAiB,CANpE,CAOC,QAAU,KAAKT,MAPhB,EAQI,KAAKD,KAAL,CAAWoB,MARf,CADD,CAYC,qCACC,mCAAqC,KAAKhB,UAD3C,CAEC,GAAK,KAAKD,EAFX,CAGC,cAAc,KAAKH,KAAL,CAAWK,IAAX,CAAkB,OAAlB,CAA4B,MAH3C,EAIC,qCAAK,UAAU,+BAAf,EAEG,KAAKL,KAAL,CAAWqB,QAFd,CAJD,CAZD,CAwBD,C,sBA9EsB,gBAAMC,a,EA+E7B,CAGD;;;;GAKAvB,UAAUwB,SAAV,CAAsB,CACrBF,SAAU,oBAAUG,IAAV,CAAeC,UADJ,CAErBL,OAAQ,oBAAUM,MAAV,CAAiBD,UAFJ,CAGrBpB,KAAM,oBAAUsB,IAHK,CAIrBZ,MAAO,oBAAUa,MAJI,CAKrBZ,OAAQ,oBAAUa,IALG,CAMrBZ,UAAW,oBAAUY,IANA,CAOrBX,QAAS,oBAAUW,IAPE,CAQrBV,WAAY,oBAAUU,IARD,CAAtB,CAWA9B,UAAU+B,YAAV,CAAyB,CACxBzB,KAAM,KADkB,CAAzB,C,gBAIeN,S",
+  "file": "react.es5.js",
+  "sourcesContent": [
+    "/*! @gov.au/accordion v0.3.0 */\n/***************************************************************************************************************************************************************\n *\n * Accordion function\n *\n * A component to allow users to show or hide page elements.\n *\n **************************************************************************************************************************************************************/\n\nimport React from 'react';\nimport PropTypes from 'prop-types';\n\nimport '../css/styles.css';\n\nlet IDstart = 0;\n\nclass Accordion extends React.PureComponent {\n\t/**\n\t * Constructor\n\t * Create state and iterate over a unique ID\n\t *\n\t * @param  {object}  props - The props object\n\t */\n\tconstructor( props ) {\n\t\tsuper( props );\n\n\t\tthis.toggle = this.toggle.bind( this );\n\n\t\t// Generate a unique ID and our css class\n\t\tIDstart ++;\n\n\t\tthis.ID = `accordion${ IDstart }`;\n\t\tthis.closeClass = this.props.open ? '' : 'uikit-accordion--closed';\n\t}\n\n\n\t/**\n\t * Handle state if supplied\n\t */\n\tcomponentWillReceiveProps( nextProps ) {\n\t\tconst open = nextProps.open;\n\n\t\tif( open ) {\n\t\t\tUIKIT.accordion.Open( this.accordionHeader );\n\t\t}\n\t\telse {\n\t\t\tUIKIT.accordion.Close( this.accordionHeader );\n\t\t}\n\t}\n\n\n\t/**\n\t * Toggle an accordion on click\n\t *\n\t * @param  {event object} event - The event object of the click\n\t */\n\ttoggle( event ) {\n\t\tevent.preventDefault();\n\n\t\tUIKIT.accordion.Toggle( this.accordionHeader, this.props.speed, {\n\t\t\tonOpen: this.props.onOpen,\n\t\t\tafterOpen: this.props.afterOpen,\n\t\t\tonClose: this.props.onClose,\n\t\t\tafterClose: this.props.afterClose,\n\t\t});\n\t}\n\n\n\trender() {\n\t\treturn (\n\t\t\t<div className=\"uikit-accordion\">\n\t\t\t\t<a href={`#${ this.ID }`}\n\t\t\t\t\tclassName={`uikit-accordion__title js-uikit-accordion ${ this.closeClass }`}\n\t\t\t\t\taria-controls={ this.ID }\n\t\t\t\t\taria-expanded={ this.props.open }\n\t\t\t\t\taria-selected={ this.props.open }\n\t\t\t\t\trole=\"tab\"\n\t\t\t\t\tref={ accordionHeader => { this.accordionHeader = accordionHeader } }\n\t\t\t\t\tonClick={ this.toggle }>\n\t\t\t\t\t\t{ this.props.header }\n\t\t\t\t</a>\n\n\t\t\t\t<div\n\t\t\t\t\tclassName={`uikit-accordion__body ${ this.closeClass }`}\n\t\t\t\t\tid={ this.ID }\n\t\t\t\t\taria-hidden={ this.props.open ? 'false' : 'true' }>\n\t\t\t\t\t<div className=\"uikit-accordion__body-wrapper\">\n\n\t\t\t\t\t\t{ this.props.children }\n\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t);\n\t}\n};\n\n\n/**\n * propTypes definition\n *\n * @type {Object}\n */\nAccordion.propTypes = {\n\tchildren: PropTypes.node.isRequired,\n\theader: PropTypes.string.isRequired,\n\topen: PropTypes.bool,\n\tspeed: PropTypes.number,\n\tonOpen: PropTypes.func,\n\tafterOpen: PropTypes.func,\n\tonClose: PropTypes.func,\n\tafterClose: PropTypes.func,\n};\n\nAccordion.defaultProps = {\n\topen: false,\n};\n\nexport default Accordion;\n"
+  ]
+}

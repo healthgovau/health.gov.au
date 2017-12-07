@@ -1,6 +1,6 @@
 // Getting started
 .paragraphs-item-para-links {
-    
+
     // This creates .container and .row from band markup for BS grid
     @include row-and-container;
 
@@ -8,15 +8,13 @@
     h2 {
         @extend .col-xs-12;
         @extend .uikit-display-4;
-        border-bottom: $health-borderize--fat;
-        border-bottom-color: $colour-Primary-darkest;
         padding-bottom: uikit-space(.25);
         margin-bottom: uikit-space(.5);
     }
 
     // Each item
     .paragraphs-item-para-link {
-        @extend .col-xs-6;
+        @extend .col-sm-6;
         @extend .col-md-3;
     }
 
@@ -32,59 +30,50 @@
     @include uikit-clearfix();
     // This creates .container and .row from band markup for BS grid
     &.para-container {
-        @extend %band--primary; 
+        @extend %band--neutral;
         padding-bottom: 0;
     }
     @include row-and-container;
     overflow: hidden;
     padding-bottom: uikit-space(0.75);
 
-    // Layout
-    // Needs > as there are more .group-x inside
-    > .group-left {
-        margin-bottom: uikit-space( 1 );
-        @include uikit-media( sm ) {
-            margin: 0;
-        }
+    // Band title
+    h2 {
         @extend .col-xs-12;
-        @extend .col-sm-3;
-    }
-    > .group-right {
-        @extend .col-xs-12;
-        @extend .col-sm-9;
-        .paragraphs-item-para-taxonomy {
-            padding-top: 0;
-            padding-bottom: 0;
-        }
+        @extend .uikit-display-4;
+        padding-bottom: uikit-space(.25);
+        margin-bottom: uikit-space(.5);
     }
 
     // Items
+    // Wrapper title/summary
     .field-name-field-taxonomy-paragraph {
         > .field-items {
             > .field-item {
-                float: left;
-                width: 50%;
-                @include uikit-media(md){
-                    width: 33.3%;
+                @extend .col-sm-6;
+                @extend .col-md-3;
+
+                .para-container {
+                    margin-top: 1em;
+                    margin-bottom: 1em;
+                    padding: 0;
+                }
+                // Hide external link label.
+                a:after {
+                    display: none;
                 }
                 .field-type-entityreference {
-                    background: $colour-Primary-light;
-                    padding: uikit-space(1); 
-                    margin: 0 uikit-space(.25) uikit-space(.5) uikit-space(.25);
+                    padding: uikit-space(1);
                     max-height: 300px;
                     display: block;
                     overflow: hidden;
-                    text-align: center;
-                    border-radius: $uikit-border-radius;
-                    @include shadowfy($colour-Primary-dark);
-                    @include uikit-media(sm){
-                        margin: 0 uikit-space(.5) uikit-space(1) uikit-space(.5);
-                    }
 
-                    // Add mobile width 100% and odd/evenm handling
+                    @include card-colour($colour-Secondary);
+                    // Add mobile width 100% and odd/even handling
                     // Title
                     h3 {
                         @extend %list-item-title;
+                        text-decoration: underline;
                     }
 
                     .group-left,
@@ -96,25 +85,15 @@
 
                     .group-left {
                         margin-bottom: 0;
-                        @include uikit-media( sm ) {
-                            margin-bottom: uikit-space(1);
-                        }
-                        img {
-                            max-width: 30%;
-                        }
+                        max-width: 20%;
+                        float: right;
                     }
                 }
                 &.even .field-type-entityreference {
                     margin-left: 0;
-                    @include uikit-media(sm){
-                        margin: 0 uikit-space(.5) uikit-space(1) uikit-space(.5);
-                    }
                 }
                 &.odd .field-type-entityreference {
                     margin-right: 0;
-                    @include uikit-media(sm){
-                        margin: 0 uikit-space(.5) uikit-space(1) uikit-space(.5);
-                    }
                 }
             }
         }
@@ -126,6 +105,7 @@
     }
 }
 
+// Contact
 .paragraphs-item-para-contact {
     // This creates .container and .row from band markup for BS grid
     &.para-container {
@@ -137,59 +117,135 @@
         h2 {
             @extend .uikit-display-4;
         }
-        .field-name-field-telephone {
-            @extend .uikit-display-3;
-            font-weight: 700;
+        .paragraphs-item-para-telephone {
+            padding: 0;
+            .field-name-field-contact-telephone {
+                @extend .uikit-display-3;
+                font-weight: 700;
+            }
         }
     }
 }
 
+// Statistics
 .paragraphs-item-para-statistics {
-    // This creates .container and .row from band markup for BS grid
-    &.para-container {
-        @extend %band; 
+  // This creates .container and .row from band markup for BS grid
+  &.para-container {
+    @extend %band;
+  }
+  @include row-and-container;
+  .view-mode-full {
+    h2 {
+      @extend .uikit-display-4;
     }
-    @include row-and-container;
-    .view-mode-full {
-        h2 {
-            @extend .uikit-display-4;
-        }
+  }
+  // Wrapper title/summary
+  h2,
+  .field-name-field-summary, .field-name-field-link-internal {
+    @extend .col-xs-12;
+  }
+
+  .field-name-field-summary {
+    p {
+      margin: uikit-space(0.5) 0 uikit-space(0.75) 0;
     }
-    // Wrapper title/summary
-    h2,
-    .field-name-field-summary {
-        @extend .col-xs-12;
+  }
+
+  .field-name-field-link-internal {
+    a {
+      @extend .uikit-cta-link;
     }
+  }
+
+  // 2 in a row.
+  &.listing__count--2 {
+    .field-name-field-statistics > .field-items > .field-item {
+      @extend .col-md-6;
+    }
+  }
+
+  // 3 in a row.
+  &.listing__count--3 {
+    .field-name-field-statistics > .field-items > .field-item {
+      @extend .col-md-4;
+    }
+  }
+
+  // 4 in a row.
+  &.listing__count--4 {
+    .field-name-field-statistics > .field-items > .field-item {
+      @extend .col-md-3;
+    }
+  }
 }
 
-// Review
+// Two columns - review
 .paragraphs-item-two-columns {
-    .view-mode-full {
-        h2 {
-            @extend .uikit-display-4;
-        }
-        .group-left,
-        .group-right {
-            margin-bottom: uikit-space(1);
-            @include uikit-media( sm ) {
-                margin: 0;
-            }
-        }
+  // Layout
+  @include row-and-container;
+  > .para-row {
+    > .group-header,
+    > .group-footer {
+      @extend .col-xs-12;
     }
+    > .group-left,
+    > .group-right {
+      @extend .col-xs-12;
+      @extend .col-sm-6;
+    }
+  }
 
-    &.paragraphs-2-columns-resources {
-        h2 {
-            @extend .uikit-display-4;
+  .view-mode-full {
+    .para-row {
+      h2 {
+        @extend .uikit-display-4;
+      }
+      > .group-left,
+      > .group-right {
+        margin-bottom: uikit-space(1);
+        @include uikit-media(sm) {
+          margin: 0;
         }
-        .group-left,
-        .group-right {
-            margin-bottom: uikit-space(1);
-            width: 100%;
-            @include uikit-media( sm ) {
-                margin: 0;
-                width: 50%;
-            }
-        }
+      }
 
+      // Shame!
+      .group-footer {
+        .paragraphs-item-para-link {
+          a {
+            @extend .uikit-cta-link;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Block para
+.paragraphs-item-para-block {
+  &.para-container {
+    @extend %band;
+  }
+  @include row-and-container;
+
+  .field-name-field-title {
+    @extend .uikit-display-4;
+  }
+
+  .field-name-field-title,
+  .field-name-field-summary {
+    @extend .col-xs-12;
+  }
+
+  .bean-basic-content {
+    @extend .col-xs-12;
+  }
+}
+
+// View para
+.paragraphs-item-para-view {
+    .para-row {
+        > a {
+            @extend .uikit-cta-link;
+        }
     }
 }

@@ -27,7 +27,7 @@
  * @see template_process()
  */
 ?>
-<div class="uikit-callout <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<div class="messages info <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <div class="bean-block-content"<?php print $content_attributes; ?>>
     <?php

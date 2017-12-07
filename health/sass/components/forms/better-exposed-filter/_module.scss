@@ -55,11 +55,15 @@
   }
   .facet-remove-link {
     @extend .uikit-tags__item;
-    font-weight: normal;
-    &.active {
+    border: 1px solid $colour-Callout;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $colour-Callout;
       color: #fff;
-      background: $colour-Primary-darkest;
     }
+    font-weight: normal;
   }
   // Fix the inline display of the icon.
   .fa {

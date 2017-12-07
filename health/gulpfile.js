@@ -47,6 +47,7 @@ options.styleGuide = {
   // The following paths are relative to the generated style guide.
   css: [
     path.relative(options.rootPath.styleGuide, options.theme.css + 'styles.css'),
+    path.relative(options.rootPath.styleGuide, options.theme.css + 'ckeditor.css'),
     path.relative(options.rootPath.styleGuide, options.theme.css + 'style-guide/kss-only.css')
   ],
   js: [

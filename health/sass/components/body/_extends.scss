@@ -4,4 +4,11 @@
 
 .page {
   @extend .uikit-body;
+  a {
+    border-bottom: 1px solid $colour-Callout;
+    &:hover {
+      text-decoration: none;
+      background: none;
+    }
+  }
 }

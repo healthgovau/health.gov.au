@@ -37,6 +37,9 @@
       // Listing page selector cards.
       $('.selector-card', context).matchHeight();
 
+      // Title section match height.
+      $('.page-title .col', context).matchHeight();
+
     }
   };
 

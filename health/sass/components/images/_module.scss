@@ -6,12 +6,8 @@
 %image--full {
     margin-bottom: uikit-space(1);
     width: 100%;
-    @include uikit-media(xs){
-        width: 80%;
-    }
     img {
         border: $health-borderize;
-        float: left;
         width: 100%;
     }     
 }

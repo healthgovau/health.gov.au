@@ -1,0 +1,94 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// buttons module
+// Buttons signal action. Use them to move the user through the service.
+//
+// Content:
+// - primary
+// - secondary
+// - tertiary
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// buttons
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.uikit-btn {
+	display: inline-block;
+	-webkit-appearance: none;
+	border: none;
+	background: none;
+	font-size: 17px;
+	font-family: $uikit-font-system;
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+	border-radius: $uikit-border-radius;
+	background-color: $uikit-colour-Primary;
+	padding: uikit-space( 0.5 ) uikit-space( 0.75 );
+	cursor: pointer;
+	transition: background 0.1s ease;
+
+	&:focus,
+	&:hover {
+		background-color: $uikit-colour-Primary--30;
+	}
+
+	@include uikit-focus();
+
+	&:disabled {
+		background-color: $uikit-colour-Border-30;
+		font-weight: normal;
+		color: $uikit-colour-Text;
+		border: 1px dotted $uikit-colour-Text;
+		cursor: not-allowed;
+
+		&:focus,
+		&:hover {
+			background-color: $uikit-colour-Border-30;
+		}
+	}
+}
+
+/**
+ * SECONDARY
+ */
+.uikit-btn--secondary {
+	background-color: $uikit-colour-Secondary;
+
+	&:focus,
+	&:hover {
+		background-color: $uikit-colour-Secondary-70;
+	}
+}
+
+/**
+ * TERTIARY
+ */
+.uikit-btn--tertiary {
+	background-color: #fff;
+	color: $uikit-colour-Text;
+	border: 1px solid $uikit-colour-Primary;
+
+	&:focus,
+	&:hover {
+		background-color: $uikit-colour-Primary-10;
+	}
+}
+
+/**
+ * BLOCK
+ */
+.uikit-btn--block {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	text-align: center;
+
+	& + .uikit-btn--block {
+		margin-top: uikit-space( 0.25 );
+	}
+}

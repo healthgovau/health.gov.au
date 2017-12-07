@@ -14,9 +14,12 @@
 }
 
 // A-Z topics
-.filter-topics-by-letter li {
-  @extend %az-list__item;
-  a {
-    @extend %az-list__link;
+.filter-topics-by-letter {
+  max-width: 17em;
+  li {
+    @extend %az-list__item;
+    a {
+      @extend %az-list__link;
+    }
   }
 }

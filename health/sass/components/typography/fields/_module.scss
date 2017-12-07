@@ -35,13 +35,19 @@
 .field-label-inline {
     .field-label {
         @extend %field-label;
-        width: 12em;
-        float: left;
+        margin-right: uikit-space(0.25);
+        @include uikit-media(sm) {
+          margin-right: 0;
+          width: 12em;
+          float: left;
+        }
     }
-    .field-items {
+    .field-items, dl.tags {
         @extend %field-item;
-        margin-left: 13em;
-        float: none;
+        @include uikit-media(sm) {
+          margin-left: 13em;
+          float: none;
+        }
     }
 }
 .field-label-above {
@@ -95,6 +101,9 @@
 // Page currency
 // Standard content types - last updated and 'what's wrong' at bottom
 %page-help-and-currency {
+    .page-layout {
+      margin-bottom: 0;
+    }
     .field-name-field-date-updated,
     .field-name-field-date-published {
         &.field-label-inline {
@@ -107,33 +116,20 @@
             @include uikit-media(md){
                 margin-top: uikit-space(3);
             }
-            .field-label {
-                width: 12em;
-            }
-            .field-items {
-                margin-left: 8em;
-            }            
         }
     }
 }
 %page-help-only {
+
     .field-name-field-date-updated,
     .field-name-field-date-published {
       &.field-label-inline, &.field-label-above {
         border: 0;
         padding-top: 0;
         margin-top: 0;
-        .field-label {
-          width: 12em;
-        }
-      }
-      &.field-label-inline {
-        .field-items {
-          margin-left: 13em;
-        }
       }
     }
-    #block-bean-page-accessibility-link {
+    .field-name-field-related-health-topics {
         border-top: $uikit-borderize;
         padding-top: uikit-space(1);
         margin-top: uikit-space(1);

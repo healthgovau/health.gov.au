@@ -15,15 +15,14 @@
     margin: 0;
     li {
       .selector-card {
-        padding: uikit-space(1) uikit-space(.5);
         display: block;
         text-align: center;
         margin-bottom: 0;
-        background: $uikit-colour-Background;
+        background: $colour-Secondary;
         border-bottom: 6px solid $colour-Primary-darkest;
         &:hover,
         &:active {
-          background-color: $colour-Primary-dark;
+          background-color: $colour-Secondary-darkest;
           cursor: pointer;
         }
         a {
@@ -46,6 +45,78 @@
             margin-bottom: 0;
             margin-top: 8px;
           }
+        }
+        .image-card:before {
+          content: "\f03e";
+          font-family: FontAwesome;
+          font-size: 3em;
+          font-style: normal;
+          font-weight: normal;
+          text-decoration: inherit;
+          z-index: 1;
+        }
+        .video-card:before {
+          content: "\f03d";
+          font-family: FontAwesome;
+          font-size: 3em;
+          font-style: normal;
+          font-weight: normal;
+          text-decoration: inherit;
+          z-index: 1;
+        }
+        .publication-card:before {
+          content: "\f02d";
+          font-family: FontAwesome;
+          font-size: 3em;
+          font-style: normal;
+          font-weight: normal;
+          text-decoration: inherit;
+          z-index: 1;
+        }
+        .corp-publication-card:before {
+          content: "\f0ea";
+          font-family: FontAwesome;
+          font-size: 3em;
+          font-style: normal;
+          font-weight: normal;
+          text-decoration: inherit;
+          z-index: 1;
+        }
+        .event-card:before {
+          content: "\f073";
+          font-family: FontAwesome;
+          font-size: 3em;
+          font-style: normal;
+          font-weight: normal;
+          text-decoration: inherit;
+          z-index: 1;
+        }
+        .news-card:before {
+          content: "\f1ea";
+          font-family: FontAwesome;
+          font-size: 3em;
+          font-style: normal;
+          font-weight: normal;
+          text-decoration: inherit;
+          z-index: 1;
+        }
+        .release-card:before {
+          content: "\f06e";
+          font-family: FontAwesome;
+          font-size: 3em;
+          font-style: normal;
+          font-weight: normal;
+          text-decoration: inherit;
+          z-index: 1;
+        }
+        .alert-card:before {
+          content: "\f071";
+          font-family: FontAwesome;
+          font-size: 3em;
+          font-style: normal;
+          font-weight: normal;
+          text-decoration: inherit;
+          z-index: 1;
         }
       }
     }

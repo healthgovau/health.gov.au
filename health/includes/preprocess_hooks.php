@@ -182,6 +182,10 @@ function health_preprocess_page(&$variables) {
  *   this function to have consistent variables.
  */
 function health_preprocess_html(&$variables, $hook) {
+  // Add google tag manager.
+  drupal_add_js(drupal_get_path('theme', 'health') . '/js/health.gtm.js');
+  $variables['google_tag_manager'] = theme('google_tag_manager', []);
+
   // Add variables and paths needed for HTML5 and responsive support.
   $variables['base_path'] = base_path();
   $variables['path_to_health'] = drupal_get_path('theme', 'health');
@@ -612,6 +616,12 @@ function health_preprocess_field(&$variables) {
     }
   }
 
+  // Related term field.
+  if ($variables['element']['#field_name'] == 'field_related_term') {
+    $item_id = $variables['element']['#object']->item_id;
+    // Add item ID to class.
+    $variables['classes_array'][] = 'item-' . $item_id;
+  }
 }
 
 /**
@@ -769,11 +779,8 @@ function health_preprocess_entity(&$variables) {
     if ($para_item->bundle == 'para_taxonomy') {
       $link_url = $para_item->field_link_external[LANGUAGE_NONE][0]['url'];
 
-      // Override taxonomy title link.
-      $taxonomy_terms = $variables['content']['field_related_term'][0]['taxonomy_term'];
-      foreach ($taxonomy_terms as $key => $taxonomy_term) {
-        $variables['content']['field_related_term'][0]['taxonomy_term'][$key]['title'][0]['#markup'] = '<h3>' . l($taxonomy_term['#term']->name, $link_url) . '</h3>';
-      }
+      // Pass link to template.
+      $variables['link_url'] = $link_url;
     }
 
     // Block para.

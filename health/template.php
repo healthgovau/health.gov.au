@@ -86,6 +86,12 @@ function health_theme() {
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
   ];
 
+  $theme['google_tag_manager'] = [
+    'variables' => [],
+    'template' => 'health_google_tag_manager',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
   return $theme;
 }
 

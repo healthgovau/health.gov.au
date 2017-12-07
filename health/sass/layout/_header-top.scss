@@ -1,14 +1,15 @@
 .header-top {
   background: $uikit-colour-Secondary;
   color: #ffffff;
-  padding: uikit-space(.5);
+  padding: uikit-space(.5) 0;
   .beta-icon {
-    background: $colour-Beta;
+    background: $colour-Callout;
     padding: 0 8px;
-    border-radius: 10px;
     margin-right: 10px;
-    color: #000;
+    color: white;
+    font-weight: bold;
     float: left;
+    text-transform: uppercase;
   }
   .message {
     display: block;

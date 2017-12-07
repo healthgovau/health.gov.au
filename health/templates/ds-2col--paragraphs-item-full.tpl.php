@@ -8,6 +8,8 @@
 <div class="para-container <?php print $classes; ?>">
   <<?php print $layout_wrapper; print $layout_attributes; ?> class="inside-para-container ds-2col <?php print $classes;?> clearfix">
 
+  <div class="para-row">
+
   <?php if (isset($title_suffix['contextual_links'])): ?>
     <?php print render($title_suffix['contextual_links']); ?>
   <?php endif; ?>
@@ -20,6 +22,7 @@
 <?php print $right; ?>
 </<?php print $right_wrapper ?>>
 
+</div>
 </<?php print $layout_wrapper ?>>
 
 <?php if (!empty($drupal_render_children)): ?>

@@ -16,10 +16,8 @@
 // Component styles
 @import 'tile/module';
 @import 'card/module';
-@import 'card/extends';
 
 // Block styles
-@import 'block-types/module';
 @import 'block-types/extends';
 @import 'block-types/image-text';
 
@@ -48,6 +46,7 @@
 @import 'footer/extends';
 @import 'readspeaker/extends';
 @import 'socialmedia/extends';
+@import 'link/extends';
 
 // Display modes
 @import 'display-modes/module';
@@ -143,3 +142,6 @@
 
 // Search page
 @import 'search/extends';
+
+// Inline styles
+@import 'lists/module';

@@ -8,12 +8,8 @@ header.uikit-header {
   }
   .uikit-header__logo {
     display: block;
-		border-bottom: 2px solid transparent;
-		padding: uikit-space(.25);
-		&:hover,
-		&:focus {
-      border-bottom: 2px solid $colour-Primary-darkest;
-		}
+    border-bottom: 2px solid transparent;
+    padding: uikit-space(.25);
     @include uikit-media(md) {
       float: left;
     }

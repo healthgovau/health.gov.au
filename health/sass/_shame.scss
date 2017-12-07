@@ -19,33 +19,62 @@
 // Contact hot line bar for immunisation.
 .page-node-1021 {
   .paragraphs-item-para-contact.para-container {
-      background: $uikit-colour-Secondary;
+    @extend %colour-Callout-background;
+    color: white;
+    h2 {
       color: white;
-      h2 {
-          color: white;
-      }
-      a {
-          color: white;
-          text-decoration: none;
-          &:hover {
-              color: white;
-              text-decoration: underline;
-              background: none;
-          }
-      }
-  }
-}
-
-// Fix landing page horizontal bar.
-.node-type-health-topic,
-.node-type-health-topic-hp,
-.node-type-landing-page {
-  .page {
-    .row {
-      margin: 0;
-      .content-full {
-        padding: 0;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      &:hover {
+        color: white;
+        text-decoration: underline;
+        background: none;
       }
     }
   }
+}
+
+// Immunisation topic page browse by lifestage band.
+// Items
+// Wrapper title/summary
+.paragraphs-item-para-taxonomies {
+  .field-name-field-taxonomy-paragraph {
+    > .field-items {
+      > .field-item {
+        .field-type-entityreference {
+          color: $colour-Secondary;
+          h3 {
+            color: $colour-Secondary;
+          }
+          &.item-666 {
+            @include card-colour($colour-Primary);
+          }
+          &.item-671 {
+            @include card-colour($colour-Orange);
+          }
+          &.item-676 {
+            @include card-colour($colour-Callout);
+          }
+          &.item-681 {
+            @include card-colour($colour-Callout-darkest);
+          }
+          &.item-686 {
+            @include card-colour($colour-Dark);
+          }
+          &.item-691 {
+            @include card-colour($colour-Darker);
+          }
+          &.item-696 {
+            @include card-colour($colour-Primary-darkest);
+          }
+        }
+      }
+    }
+  }
+}
+// Remove padding on dl set by UIKit
+.page dl {
+  margin-bottom: 0;
 }

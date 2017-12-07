@@ -54,6 +54,9 @@
     .views-row {
         margin-bottom: uikit-space(1);
         @include uikit-clearfix();
+        &:last-of-type {
+          margin-bottom: 0;
+        }
     }
 }
 

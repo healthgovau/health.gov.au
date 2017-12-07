@@ -8,6 +8,8 @@
 <div class="para-container <?php print $classes; ?>">
 <<?php print $layout_wrapper; print $layout_attributes; ?> class="inside-para-container ds-2col-stacked <?php print $classes;?> clearfix">
 
+  <div class="para-row">
+
   <?php if (isset($title_suffix['contextual_links'])): ?>
   <?php print render($title_suffix['contextual_links']); ?>
   <?php endif; ?>
@@ -27,6 +29,8 @@
   <<?php print $footer_wrapper ?> class="group-footer<?php print $footer_classes; ?>">
     <?php print $footer; ?>
   </<?php print $footer_wrapper ?>>
+
+</div>
 
 </<?php print $layout_wrapper ?>>
 

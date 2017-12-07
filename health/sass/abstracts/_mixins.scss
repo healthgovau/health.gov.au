@@ -72,10 +72,19 @@
   // Contain content (required)
   &.inside-para-container {
     @extend .container;
-  }
-  // Add row (required)
-  .paragraphs-items {
-    @extend .row;
+
+    // Add row (required)
+    > .para-row {
+      @extend .row;
+    }
   }
 }
 
+// Mixin to apply colours to card.
+@mixin card-colour($colour: $colour-Callout) {
+  background: $colour;
+
+  &:hover {
+    background: lighten($colour, 5%);
+  }
+}

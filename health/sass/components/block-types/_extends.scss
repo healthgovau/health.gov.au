@@ -1,22 +1,36 @@
 // Shame for home page background colour.
 .front .paragraphs-item-para-block {
-  @extend .uikit-header--dark;
-  @extend .uikit-header;
+  //@extend .uikit-header--dark;
+  //@extend .uikit-header;
   padding-top: 0;
   padding-bottom: 0;
   &.block__count--5 {
-    background: $colour-Primary-darkest;
+    @extend %colour-Primary-background;
+    &.view-mode-full {
+
+      .bean-block-content {
+        a {
+          border-bottom: none;
+          display: block;
+          color: #fff;
+          overflow: hidden;
+
+          &:hover,
+          &:focus {
+            background: lighten($colour-Primary-darkest, 5%);
+          }
+
+          .field-name-field-link-internal {
+            color: #fff;
+          }
+        }
+      }
+    }
   }
   &.block__count--1 {
-    background: $colour-Primary-dark;
+    //background: $colour-Primary-dark;
+    @extend %colour-Secondary-background;
     color: black;
-    .view-mode-feature {
-      background: $colour-Primary-dark;
-      box-shadow: none;
-    }
-    .group-left {
-      float: right;
-    }
   }
 }
 
@@ -29,4 +43,3 @@
     float: right;
   }
 }
-

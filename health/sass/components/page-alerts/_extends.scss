@@ -8,9 +8,32 @@
     @extend .uikit-page-alerts--error;
   }
   &.warning {
-    @extend .uikit-page-alerts--warning
+    @extend .uikit-page-alerts--warning;
   }
   &.status {
     @extend .uikit-page-alerts--success;
+  }
+  &.info {
+    h3 {
+      @extend .uikit-display-2;
+    }
+
+    border-color: $colour-Callout-lighter;
+    &:after {
+      top: 29px;
+      width: 32px;
+      height: 32px;
+      left: -40px;
+    }
+  }
+}
+
+// Topic landing page.
+.page-topics {
+  .messages {
+    margin: 0;
+    @include uikit-media(sm) {
+      margin-top: 8em;
+    }
   }
 }
