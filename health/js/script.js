@@ -40,6 +40,7 @@
       // Title section match height.
       $('.page-title .col', context).matchHeight();
 
+      $('.page-node-1021 .field-name-field-related-term', context).matchHeight();
     }
   };
 
