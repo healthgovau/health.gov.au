@@ -32,7 +32,7 @@
                       <a href="<?php print $front_page; ?>"
                          title="<?php print t('Home'); ?>" rel="home"
                          class="uikit-header__logo">
-                          <img src="<?php print $logo; ?>" alt="<?php print t(
+                          <img src="/<?php print path_to_theme(); ?>/images/DoHCrest.svg" alt="<?php print t(
                             'Australia government Department of Health'
                           ); ?>"
                                class="uikit-header__logo-image uikit-responsive-media-img"/>
@@ -158,7 +158,7 @@
       <div class="footer__end row">
         <?php print render($page['footer_bottom']); ?>
           <div class="footer__logo">
-              <img src="/<?php print path_to_theme(); ?>/images/coat-of-arms.png" alt="Commonwealth Coat of Arms crest logo">
+              <img src="/<?php print path_to_theme(); ?>/images/GovCrest.svg" alt="Commonwealth Coat of Arms crest logo">
           </div>
           <p class="footer__attribution">
               <small>© Commonwealth of Australia</small>

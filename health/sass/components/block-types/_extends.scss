@@ -29,7 +29,7 @@
   }
   &.block__count--1 {
     //background: $colour-Primary-dark;
-    @extend %colour-Secondary-background;
+    @extend %colour-Light-background;
     color: black;
   }
 }
