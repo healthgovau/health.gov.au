@@ -15,14 +15,11 @@ header.uikit-header {
     }
     &-image {
       display: block;
-      max-width: 70%;
+      width: 100%;
       margin: auto;
       @include uikit-media(sm) {
         max-width: 100%;
         margin: 0;
-      }
-      @include uikit-media(md) {
-        max-width: 70%;
       }
     }
   }
