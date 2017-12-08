@@ -16,8 +16,9 @@
 	border-bottom: 0;
 }
 
-// Immunisation topic.
-.page-node-1021 {
+// immunisation
+.page-node-1021,
+.page-node-1156 {
   // Contact hot line bar for immunisation.
   .paragraphs-item-para-contact.para-container {
     @extend %colour-Secondary-background;
@@ -130,7 +131,7 @@
 
           .field-name-field-link-internal {
             color: #fff;
-            border-bottom: 1px solid white;
+            text-decoration: underline;
           }
         }
       }
@@ -142,6 +143,7 @@
     color: black;
   }
 }
+
 
 // Remove padding on dl set by UIKit
 .page dl {
