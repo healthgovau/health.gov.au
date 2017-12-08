@@ -5791,6 +5791,9 @@ fieldset .fieldset-legend {
   .page a:hover {
     text-decoration: none;
     background: none; }
+  .page a:focus {
+    background-color: #0091a0;
+    color: white; }
 
 .uikit-header.uikit-header--light {
   background-color: white; }
@@ -6401,7 +6404,7 @@ body.node-type-health-topic .para-container.paragraphs-item-para-content-text, b
 
 #block-bean-feedback-band p:last-of-type,
 #block-bean-homepage-about-us p:last-of-type {
-  padding-bottom: 0; }
+  margin-bottom: 0; }
 
 body.node-type-health-topic .paragraphs-item-two-columns.resources, body.node-type-health-topic-hp .paragraphs-item-two-columns.resources, body.node-type-landing-page .paragraphs-item-two-columns.resources {
   background: white; }
@@ -6806,7 +6809,7 @@ th .checkbox {
 .uikit-header #search-block-form, #block-search-api-page-default-search, .uikit-header #block-search-api-page-default-search, #search-api-page-search-form, .view-filters .views-exposed-form {
   position: relative;
   border-radius: 3px;
-  background: #fefeff;
+  background: #008998;
   overflow: hidden; }
   .uikit-header #search-block-form:before, #block-search-api-page-default-search:before, .uikit-header #block-search-api-page-default-search:before, #search-api-page-search-form:before, .view-filters .views-exposed-form:before, .uikit-header #search-block-form:after, #block-search-api-page-default-search:after, .uikit-header #block-search-api-page-default-search:after, #search-api-page-search-form:after, .view-filters .views-exposed-form:after {
     content: " ";
@@ -6832,12 +6835,15 @@ th .checkbox {
       box-sizing: border-box;
       height: 48px; }
   .uikit-header #search-block-form .form-submit, #block-search-api-page-default-search .form-submit, #search-api-page-search-form .form-submit, .view-filters .views-exposed-form .form-submit {
+    background-color: #008998;
     float: right;
     width: 48px;
     height: 48px;
     text-indent: 999px;
     border-radius: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='-5 -5 32 32' fill='%23fefeff' xmlns='http://www.w3.org/2000/svg'%3E    %3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E"); }
+    .uikit-header #search-block-form .form-submit:hover, #block-search-api-page-default-search .form-submit:hover, #search-api-page-search-form .form-submit:hover, .view-filters .views-exposed-form .form-submit:hover, .uikit-header #search-block-form .form-submit:focus, #block-search-api-page-default-search .form-submit:focus, #search-api-page-search-form .form-submit:focus, .view-filters .views-exposed-form .form-submit:focus {
+      background-color: #006570; }
 
 .view-filters .views-exposed-form {
   margin-bottom: 1.6em; }
@@ -7216,6 +7222,8 @@ ul.links {
     .region-navigation .sf-menu > li > a, .uikit-body .region-navigation .sf-menu > li > a, .page .region-navigation .sf-menu > li > a, .cke_editable .region-navigation .sf-menu > li > a {
       font-weight: 700;
       padding: 0.64em 0; }
+      .region-navigation .sf-menu > li > a:focus {
+        color: #313131; }
       @media (min-width: 768px) {
         .region-navigation .sf-menu > li > a, .uikit-body .region-navigation .sf-menu > li > a, .page .region-navigation .sf-menu > li > a, .cke_editable .region-navigation .sf-menu > li > a {
           border-bottom: 6px solid transparent;

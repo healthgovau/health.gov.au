@@ -44,6 +44,10 @@
       font-weight: 700;
       padding: uikit-space(0.4) 0;
 
+      &:focus {
+        color: $uikit-colour-Text;
+      }
+
       @include uikit-media(sm) {
         border-bottom: 6px solid transparent;
         padding: uikit-space(1) 0;
