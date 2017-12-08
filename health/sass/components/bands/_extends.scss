@@ -189,5 +189,10 @@ body {
         @extend .row;
       }
     }
+
+    // Statistics
+    .paragraphs-item-para-statistics {
+      @extend %colour-light-background-reverse;
+    }
   }
 }

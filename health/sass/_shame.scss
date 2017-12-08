@@ -16,8 +16,10 @@
 	border-bottom: 0;
 }
 
-// Contact hot line bar for immunisation.
+// Immunisation topic.
 .page-node-1021 {
+
+  // Contact hot line bar for immunisation.
   .paragraphs-item-para-contact.para-container {
     @extend %colour-Secondary-background;
     color: white;
@@ -31,6 +33,21 @@
         color: white;
         text-decoration: underline;
         background: none;
+      }
+    }
+  }
+
+  .paragraphs-item-para-statistics {
+    .field-name-field-statistics .field-item {
+      &:nth-child(1) {
+        .group-statistic {
+          @extend %stat__card--dark;
+        }
+      }
+      &:nth-child(3) {
+        .group-statistic {
+          @extend %stat__card--secondary;
+        }
       }
     }
   }
@@ -74,6 +91,7 @@
     }
   }
 }
+
 // Remove padding on dl set by UIKit
 .page dl {
   margin-bottom: 0;

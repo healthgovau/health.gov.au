@@ -24,19 +24,62 @@
   overflow: hidden;
   width: 100%;
   @include cardify();
-}
-
-// Colours - blue
-%stat__card--blue {
-  @extend %stat__card;
   @include uikit-media('md') {
-    .stat__text,
     %stat__text {
-      border-bottom: 8px solid $colour-Statistics-blue;
+      border-bottom: 8px solid white;
     }
     border-bottom: 0;
   }
-  border-bottom: 8px solid $colour-Statistics-blue;
+  border-bottom: 8px solid white;
+}
+
+// Colours
+%stat__card--primary {
+  @extend %stat__card;
+  background-color: $colour-Primary-darker;
+  color: white;
+  @include uikit-media('md') {
+    %stat__text {
+      border-color: $colour-Primary;
+    }
+  }
+  border-color: $colour-Primary;
+}
+
+%stat__card--secondary {
+  @extend %stat__card;
+  background-color: $colour-Secondary-darker;
+  color: white;
+  @include uikit-media('md') {
+    %stat__text {
+      border-color: $colour-Secondary;
+    }
+  }
+  border-color: $colour-Secondary;
+}
+
+%stat__card--tertiary {
+  @extend %stat__card;
+  background-color: $colour-Tertiary-darker;
+  color: white;
+  @include uikit-media('md') {
+    %stat__text {
+      border-color: $colour-Tertiary;
+    }
+  }
+  border-color: $colour-Tertiary;
+}
+
+%stat__card--dark {
+  @extend %stat__card;
+  background-color: $colour-darker;
+  color: white;
+  @include uikit-media('md') {
+    %stat__text {
+      border-color: $colour-dark;
+    }
+  }
+  border-color: $colour-dark;
 }
 
 // Statistic value.
@@ -57,6 +100,7 @@
   font-weight: 500;
   font-size: 2.5em;
   display: inline;
+  color: white;
 
   @include uikit-media('md') {
     font-size: 4em;
@@ -104,15 +148,7 @@
   display: inline-block;
   padding-bottom: 15px;
   font-size: 0.85em;
-}
-
-%stat__trend-icon--positive {
-  color: $uikit-colour-Success;
-  margin-left: 5px;
-}
-
-%stat__trend-icon--negative {
-  color: $uikit-colour-Error;
+  color: white;
   margin-left: 5px;
 }
 
@@ -135,6 +171,7 @@
 }
 
 // UIKit overrides.
+// Shame!
 // @todo There has to be a better way to do this... Danny, help!
 .page {
   i.stat__trend-value--positive, i.stat__trend-value--negative {
