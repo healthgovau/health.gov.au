@@ -10156,7 +10156,7 @@ header.uikit-header, header.region-featured {
     background: #000b33; }
   .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a .field-name-field-link-internal {
     color: #fff;
-    border-bottom: 1px solid white; }
+    text-decoration: underline; }
 
 .front .paragraphs-item-para-block.para-container.block__count--1 {
   color: black; }
