@@ -16,8 +16,9 @@
 	border-bottom: 0;
 }
 
-// Contact hot line bar for immunisation.
+// immunisation
 .page-node-1021 {
+  // Contact hot line bar for immunisation.
   .paragraphs-item-para-contact.para-container {
     @extend %colour-Secondary-background;
     color: white;
@@ -34,46 +35,100 @@
       }
     }
   }
-}
 
-// Immunisation topic page browse by lifestage band.
-// Items
-// Wrapper title/summary
-.paragraphs-item-para-taxonomies {
-  .field-name-field-taxonomy-paragraph {
-    > .field-items {
-      > .field-item {
-        .field-type-entityreference {
-          color: white;
-          h3 {
+  // More on immunisation.
+  .paragraphs-item-para-block {
+    &.para-container {
+      @extend %colour-Secondary-background;
+      color: white;
+      h2 {
+        color: white;
+      }
+      a {
+        color: white;
+        border-bottom: 1px white solid;
+        &:hover {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  // Immunisation topic page browse by lifestage band.
+  // Items
+  // Wrapper title/summary
+  .paragraphs-item-para-taxonomies {
+    .field-name-field-taxonomy-paragraph {
+      > .field-items {
+        > .field-item {
+          .field-type-entityreference {
             color: white;
-          }
-          &.item-666 {
-            @include card-colour($colour-Primary, $colour-Primary-hover);
-          }
-          &.item-671 {
-            @include card-colour($colour-Tertiary, $colour-Tertiary-hover);
-          }
-          &.item-676 {
-            @include card-colour($colour-Secondary-light, $colour-Secondary-hover);
-          }
-          &.item-681 {
-            @include card-colour($colour-Secondary-dark, $colour-Secondary-hover);
-          }
-          &.item-686 {
-            @include card-colour($colour-dark, $colour-dark-hover);
-          }
-          &.item-691 {
-            @include card-colour($colour-darkest, $colour-dark-hover);
-          }
-          &.item-696 {
-            @include card-colour($colour-Tertiary-dark, $colour-Tertiary-hover);
+            h3 {
+              color: white;
+            }
+            &.item-666 {
+              @include card-colour($colour-Primary, $colour-Primary-hover);
+            }
+            &.item-671 {
+              @include card-colour($colour-Tertiary, $colour-Tertiary-hover);
+            }
+            &.item-676 {
+              @include card-colour($colour-Secondary-light, $colour-Secondary-hover);
+            }
+            &.item-681 {
+              @include card-colour($colour-Secondary-dark, $colour-Secondary-hover);
+            }
+            &.item-686 {
+              @include card-colour($colour-dark, $colour-dark-hover);
+            }
+            &.item-691 {
+              @include card-colour($colour-darkest, $colour-dark-hover);
+            }
+            &.item-696 {
+              @include card-colour($colour-Tertiary-dark, $colour-Tertiary-hover);
+            }
           }
         }
       }
     }
   }
 }
+
+// For homepage only.
+// Shame for home page background colour.
+.front .paragraphs-item-para-block.para-container {
+  &.block__count--5 {
+    @extend %colour-Primary-background;
+    &.view-mode-full {
+
+      .bean-block-content {
+        a {
+          border-bottom: none;
+          display: block;
+          color: #fff;
+          overflow: hidden;
+
+          &:hover,
+          &:focus {
+            background: $colour-Primary-hover
+          }
+
+          .field-name-field-link-internal {
+            color: #fff;
+            border-bottom: 1px solid white;
+          }
+        }
+      }
+    }
+  }
+  &.block__count--1 {
+    //background: $colour-Primary-dark;
+    @extend %colour-Light-background;
+    color: black;
+  }
+}
+
+
 // Remove padding on dl set by UIKit
 .page dl {
   margin-bottom: 0;

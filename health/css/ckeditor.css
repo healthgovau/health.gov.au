@@ -1,9 +1,9 @@
 @charset "UTF-8";
-.front .paragraphs-item-para-block.block__count--5, .page-title__supp .region-title-supp, .page .footer, body.node-type-health-topic .paragraphs-2-columns-resources.para-container, body.node-type-health-topic-hp .paragraphs-2-columns-resources.para-container, body.node-type-landing-page .paragraphs-2-columns-resources.para-container {
+.page-title__supp .region-title-supp, .page .footer, body.node-type-health-topic .paragraphs-2-columns-resources.para-container, body.node-type-health-topic-hp .paragraphs-2-columns-resources.para-container, body.node-type-landing-page .paragraphs-2-columns-resources.para-container, .front .paragraphs-item-para-block.para-container.block__count--5 {
   background: #1b2a57;
   background: linear-gradient(to right, #1b2a57, #153a6e); }
 
-.front .paragraphs-item-para-block.block__count--1, .page-title.header.header--light, body.node-type-health-topic .para-container.paragraphs-item-para-content-text, body.node-type-health-topic-hp .para-container.paragraphs-item-para-content-text, body.node-type-landing-page .para-container.paragraphs-item-para-content-text, .paragraphs-item-para-taxonomies.para-container {
+.page-title.header.header--light, body.node-type-health-topic .para-container.paragraphs-item-para-content-text, body.node-type-health-topic-hp .para-container.paragraphs-item-para-content-text, body.node-type-landing-page .para-container.paragraphs-item-para-content-text, .paragraphs-item-para-taxonomies.para-container, .front .paragraphs-item-para-block.para-container.block__count--1 {
   background: #ecedee;
   background: linear-gradient(to right, #ecedee, #f9f9f9); }
 
@@ -15,7 +15,7 @@ body.node-type-health-topic .paragraphs-item-two-columns.para-container, body.no
   background: #e5e5e5;
   background: linear-gradient(to right, #e5e5e5, #f9f9f9); }
 
-.taskbar .taskbar__item, .taskbar.view ul > .views-row .node, .taskbar--tiled--2 .taskbar__item, .taskbar--2 .taskbar__item, .taskbar--tiled--3 .taskbar__item, .taskbar--3 .taskbar__item, .taskbar--tiled--4 .taskbar__item, .taskbar--4 .taskbar__item, .taskbar--tiled--5 .taskbar__item, .taskbar--5 .taskbar__item, .taskbar--tiled--6 .taskbar__item, .taskbar--6 .taskbar__item, .taskbar--tiled--2.view ul > .views-row .node, .taskbar--tiled--3.view ul > .views-row .node, .taskbar--tiled--4.view ul > .views-row .node, .taskbar--tiled--5.view ul > .views-row .node, .taskbar--tiled--6.view ul > .views-row .node, .page-node-1021 .paragraphs-item-para-contact.para-container {
+.taskbar .taskbar__item, .taskbar.view ul > .views-row .node, .taskbar--tiled--2 .taskbar__item, .taskbar--2 .taskbar__item, .taskbar--tiled--3 .taskbar__item, .taskbar--3 .taskbar__item, .taskbar--tiled--4 .taskbar__item, .taskbar--4 .taskbar__item, .taskbar--tiled--5 .taskbar__item, .taskbar--5 .taskbar__item, .taskbar--tiled--6 .taskbar__item, .taskbar--6 .taskbar__item, .taskbar--tiled--2.view ul > .views-row .node, .taskbar--tiled--3.view ul > .views-row .node, .taskbar--tiled--4.view ul > .views-row .node, .taskbar--tiled--5.view ul > .views-row .node, .taskbar--tiled--6.view ul > .views-row .node, .page-node-1021 .paragraphs-item-para-contact.para-container, .page-node-1021 .paragraphs-item-para-block.para-container {
   background: #006e7a;
   background: linear-gradient(to right, #006e7a, #008998); }
 
@@ -4885,21 +4885,6 @@ h6 {
 .tile {
   padding: 0; }
 
-.front .paragraphs-item-para-block {
-  padding-top: 0;
-  padding-bottom: 0; }
-  .front .paragraphs-item-para-block.block__count--5.view-mode-full .bean-block-content a {
-    border-bottom: none;
-    display: block;
-    color: #fff;
-    overflow: hidden; }
-    .front .paragraphs-item-para-block.block__count--5.view-mode-full .bean-block-content a:hover, .front .paragraphs-item-para-block.block__count--5.view-mode-full .bean-block-content a:focus {
-      background: #000b33; }
-    .front .paragraphs-item-para-block.block__count--5.view-mode-full .bean-block-content a .field-name-field-link-internal {
-      color: #fff; }
-  .front .paragraphs-item-para-block.block__count--1 {
-    color: black; }
-
 #block-bean-handbook-featured-block-in-immun .view-mode-feature {
   box-shadow: none; }
 
@@ -4938,7 +4923,7 @@ h6 {
       max-width: 70%; }
       @media (min-width: 768px) {
         .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image img {
-          max-width: 30%; } }
+          max-width: 40%; } }
     @media (min-width: 768px) {
       .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image {
         float: none;
@@ -6409,7 +6394,8 @@ body.node-type-health-topic .paragraphs-item-para-view, body.node-type-health-to
   padding: 0; }
 
 body.node-type-health-topic .paragraphs-item-para-contact, body.node-type-health-topic-hp .paragraphs-item-para-contact, body.node-type-landing-page .paragraphs-item-para-contact {
-  padding: 0; }
+  padding: 0;
+  text-align: center; }
   body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar {
     padding: 0.8em; }
     body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar .group-right .paragraphs-item-para-telephone, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar .group-right .paragraphs-item-para-telephone, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar .group-right .paragraphs-item-para-telephone {
@@ -7642,38 +7628,62 @@ body {
       text-decoration: underline;
       background: none; }
 
-.paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference {
+.page-node-1021 .paragraphs-item-para-block.para-container {
   color: white; }
-  .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference h3 {
+  .page-node-1021 .paragraphs-item-para-block.para-container h2, .page-node-1021 .paragraphs-item-para-block.para-container .video--left .video__title, .video--left .page-node-1021 .paragraphs-item-para-block.para-container .video__title, .page-node-1021 .paragraphs-item-para-block.para-container .video--right .video__title, .video--right .page-node-1021 .paragraphs-item-para-block.para-container .video__title, .page-node-1021 .paragraphs-item-para-block.para-container .node-video.view-mode-listing_vertical_small .video__title, .node-video.view-mode-listing_vertical_small .page-node-1021 .paragraphs-item-para-block.para-container .video__title, .page-node-1021 .paragraphs-item-para-block.para-container .node-video.view-mode-feature .video__title, .node-video.view-mode-feature .page-node-1021 .paragraphs-item-para-block.para-container .video__title, .page-node-1021 .paragraphs-item-para-block.para-container .node-video.view-mode-full .video__title, .node-video.view-mode-full .page-node-1021 .paragraphs-item-para-block.para-container .video__title {
     color: white; }
-  .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-666 {
+  .page-node-1021 .paragraphs-item-para-block.para-container a {
+    color: white;
+    border-bottom: 1px white solid; }
+    .page-node-1021 .paragraphs-item-para-block.para-container a:hover {
+      border-bottom: none; }
+
+.page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference {
+  color: white; }
+  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference h3 {
+    color: white; }
+  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-666 {
     background: #153a6e; }
-    .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-666:hover {
+    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-666:hover {
       background: #000b33; }
-  .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-671 {
+  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-671 {
     background: #df2f3b; }
-    .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-671:hover {
+    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-671:hover {
       background: #a31f26; }
-  .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-676 {
+  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-676 {
     background: #0091a0; }
-    .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-676:hover {
+    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-676:hover {
       background: #006570; }
-  .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-681 {
+  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-681 {
     background: #007b89; }
-    .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-681:hover {
+    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-681:hover {
       background: #006570; }
-  .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-686 {
+  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-686 {
     background: #6d6e70; }
-    .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-686:hover {
+    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-686:hover {
       background: #404041; }
-  .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-691 {
+  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-691 {
     background: #58585b; }
-    .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-691:hover {
+    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-691:hover {
       background: #404041; }
-  .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-696 {
+  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-696 {
     background: #d42b38; }
-    .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-696:hover {
+    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-696:hover {
       background: #a31f26; }
+
+.front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a {
+  border-bottom: none;
+  display: block;
+  color: #fff;
+  overflow: hidden; }
+  .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a:hover, .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a:focus {
+    background: #000b33; }
+  .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a .field-name-field-link-internal {
+    color: #fff;
+    border-bottom: 1px solid white; }
+
+.front .paragraphs-item-para-block.para-container.block__count--1 {
+  color: black; }
 
 .page dl {
   margin-bottom: 0; }
