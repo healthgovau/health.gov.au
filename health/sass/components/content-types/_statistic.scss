@@ -36,7 +36,7 @@
 
       // Inner wrapper.
       .group-statistic {
-        @extend %stat__card--blue;
+        @extend %stat__card--primary;
 
         // Value.
         p.field-name-field-statistic-value {
@@ -77,12 +77,6 @@
         .statistic-icon {
           @extend %stat__trend-icon;
           font-style: normal;
-          &.negative {
-            @extend %stat__trend-icon--negative;
-          }
-          &.positive {
-            @extend %stat__trend-icon--positive;
-          }
         }
       }
 

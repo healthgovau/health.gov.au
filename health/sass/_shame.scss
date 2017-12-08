@@ -37,6 +37,21 @@
     }
   }
 
+  .paragraphs-item-para-statistics {
+    .field-name-field-statistics .field-item {
+      &:nth-child(1) {
+        .group-statistic {
+          @extend %stat__card--dark;
+        }
+      }
+      &:nth-child(3) {
+        .group-statistic {
+          @extend %stat__card--secondary;
+        }
+      }
+    }
+  }
+
   // More on immunisation.
   .paragraphs-item-para-block {
     &.para-container {
