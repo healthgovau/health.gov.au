@@ -48,6 +48,17 @@
   }
 }
 
+#block-bean-feedback-band,
+#block-bean-homepage-about-us {
+  h2 {
+    @extend .uikit-display-4;
+    max-width: 60rem;
+  }
+  p:last-of-type {
+    padding-bottom: 0;
+  }
+}
+
 // Landing pages only.
 body {
   &.node-type-health-topic,
