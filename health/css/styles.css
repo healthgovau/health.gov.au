@@ -15,7 +15,9 @@ body.node-type-health-topic .paragraphs-item-two-columns.para-container, body.no
   background: #e5e5e5;
   background: linear-gradient(to right, #e5e5e5, #f9f9f9); }
 
-.taskbar .taskbar__item, .taskbar.view ul > .views-row .node, .taskbar--tiled--2 .taskbar__item, .taskbar--2 .taskbar__item, .taskbar--tiled--3 .taskbar__item, .taskbar--3 .taskbar__item, .taskbar--tiled--4 .taskbar__item, .taskbar--4 .taskbar__item, .taskbar--tiled--5 .taskbar__item, .taskbar--5 .taskbar__item, .taskbar--tiled--6 .taskbar__item, .taskbar--6 .taskbar__item, .taskbar--tiled--2.view ul > .views-row .node, .taskbar--tiled--3.view ul > .views-row .node, .taskbar--tiled--4.view ul > .views-row .node, .taskbar--tiled--5.view ul > .views-row .node, .taskbar--tiled--6.view ul > .views-row .node, .page-node-1021 .paragraphs-item-para-contact.para-container, .page-node-1021 .paragraphs-item-para-block.para-container {
+.taskbar .taskbar__item, .taskbar.view ul > .views-row .node, .taskbar--tiled--2 .taskbar__item, .taskbar--2 .taskbar__item, .taskbar--tiled--3 .taskbar__item, .taskbar--3 .taskbar__item, .taskbar--tiled--4 .taskbar__item, .taskbar--4 .taskbar__item, .taskbar--tiled--5 .taskbar__item, .taskbar--5 .taskbar__item, .taskbar--tiled--6 .taskbar__item, .taskbar--6 .taskbar__item, .taskbar--tiled--2.view ul > .views-row .node, .taskbar--tiled--3.view ul > .views-row .node, .taskbar--tiled--4.view ul > .views-row .node, .taskbar--tiled--5.view ul > .views-row .node, .taskbar--tiled--6.view ul > .views-row .node, .page-node-1021 .paragraphs-item-para-contact.para-container,
+.page-node-1156 .paragraphs-item-para-contact.para-container, .page-node-1021 .paragraphs-item-para-block.para-container,
+.page-node-1156 .paragraphs-item-para-block.para-container {
   background: #006e7a;
   background: linear-gradient(to right, #006e7a, #008998); }
 
@@ -7491,7 +7493,9 @@ tr.drag-previous {
   text-align: center;
   margin-bottom: 12px; }
 
-.node-statistic.view-mode-feature .one-column-wrapper .group-statistic, .node-statistic.view-mode-inline .one-column-wrapper .group-statistic, .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic, .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic {
+.node-statistic.view-mode-feature .one-column-wrapper .group-statistic, .node-statistic.view-mode-inline .one-column-wrapper .group-statistic, .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic,
+.page-node-1156 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic, .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic,
+.page-node-1156 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic {
   overflow: hidden;
   width: 100%;
   background: #fff;
@@ -7499,12 +7503,18 @@ tr.drag-previous {
   margin-bottom: 0;
   overflow: hidden;
   border-bottom: 8px solid white; }
-  .node-statistic.view-mode-feature .one-column-wrapper .group-statistic .group-left, .node-statistic.view-mode-inline .one-column-wrapper .group-statistic .group-left, .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic .group-left, .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic .group-left {
+  .node-statistic.view-mode-feature .one-column-wrapper .group-statistic .group-left, .node-statistic.view-mode-inline .one-column-wrapper .group-statistic .group-left, .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic .group-left,
+  .page-node-1156 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic .group-left, .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic .group-left,
+  .page-node-1156 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic .group-left {
     padding: 0; }
-  .node-statistic.view-mode-feature .one-column-wrapper .group-statistic .group-right, .node-statistic.view-mode-inline .one-column-wrapper .group-statistic .group-right, .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic .group-right, .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic .group-right {
+  .node-statistic.view-mode-feature .one-column-wrapper .group-statistic .group-right, .node-statistic.view-mode-inline .one-column-wrapper .group-statistic .group-right, .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic .group-right,
+  .page-node-1156 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic .group-right, .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic .group-right,
+  .page-node-1156 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic .group-right {
     padding: 1.6em; }
   @media (min-width: 992px) {
-    .node-statistic.view-mode-feature .one-column-wrapper .group-statistic, .node-statistic.view-mode-inline .one-column-wrapper .group-statistic, .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic, .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic {
+    .node-statistic.view-mode-feature .one-column-wrapper .group-statistic, .node-statistic.view-mode-inline .one-column-wrapper .group-statistic, .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic,
+    .page-node-1156 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic, .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic,
+    .page-node-1156 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic {
       border-bottom: 0; }
       .node-statistic.view-mode-feature .one-column-wrapper .group-statistic p.field-name-field-statistic-value-text, .node-statistic.view-mode-inline .one-column-wrapper .group-statistic p.field-name-field-statistic-value-text {
         border-bottom: 8px solid white; } }
@@ -7517,20 +7527,30 @@ tr.drag-previous {
     .node-statistic.view-mode-feature .one-column-wrapper .group-statistic p.field-name-field-statistic-value-text, .node-statistic.view-mode-inline .one-column-wrapper .group-statistic p.field-name-field-statistic-value-text {
       border-color: #153a6e; } }
 
-.page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic {
+.page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic,
+.page-node-1156 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic {
   background-color: #006e7a;
   color: white;
   border-color: #008998; }
   @media (min-width: 992px) {
-    .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .node-statistic.view-mode-feature .one-column-wrapper .group-statistic p.field-name-field-statistic-value-text, .node-statistic.view-mode-feature .one-column-wrapper .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic p.field-name-field-statistic-value-text, .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .node-statistic.view-mode-inline .one-column-wrapper .group-statistic p.field-name-field-statistic-value-text, .node-statistic.view-mode-inline .one-column-wrapper .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic p.field-name-field-statistic-value-text {
+    .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .node-statistic.view-mode-feature .one-column-wrapper .group-statistic p.field-name-field-statistic-value-text, .node-statistic.view-mode-feature .one-column-wrapper .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic p.field-name-field-statistic-value-text,
+    .page-node-1156 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .node-statistic.view-mode-feature .one-column-wrapper .group-statistic p.field-name-field-statistic-value-text, .node-statistic.view-mode-feature .one-column-wrapper
+    .page-node-1156 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic p.field-name-field-statistic-value-text, .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .node-statistic.view-mode-inline .one-column-wrapper .group-statistic p.field-name-field-statistic-value-text, .node-statistic.view-mode-inline .one-column-wrapper .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic p.field-name-field-statistic-value-text,
+    .page-node-1156 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .node-statistic.view-mode-inline .one-column-wrapper .group-statistic p.field-name-field-statistic-value-text, .node-statistic.view-mode-inline .one-column-wrapper
+    .page-node-1156 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(3) .group-statistic p.field-name-field-statistic-value-text {
       border-color: #008998; } }
 
-.page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic {
+.page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic,
+.page-node-1156 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic {
   background-color: #626366;
   color: white;
   border-color: #6d6e70; }
   @media (min-width: 992px) {
-    .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .node-statistic.view-mode-feature .one-column-wrapper .group-statistic p.field-name-field-statistic-value-text, .node-statistic.view-mode-feature .one-column-wrapper .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic p.field-name-field-statistic-value-text, .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .node-statistic.view-mode-inline .one-column-wrapper .group-statistic p.field-name-field-statistic-value-text, .node-statistic.view-mode-inline .one-column-wrapper .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic p.field-name-field-statistic-value-text {
+    .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .node-statistic.view-mode-feature .one-column-wrapper .group-statistic p.field-name-field-statistic-value-text, .node-statistic.view-mode-feature .one-column-wrapper .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic p.field-name-field-statistic-value-text,
+    .page-node-1156 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .node-statistic.view-mode-feature .one-column-wrapper .group-statistic p.field-name-field-statistic-value-text, .node-statistic.view-mode-feature .one-column-wrapper
+    .page-node-1156 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic p.field-name-field-statistic-value-text, .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .node-statistic.view-mode-inline .one-column-wrapper .group-statistic p.field-name-field-statistic-value-text, .node-statistic.view-mode-inline .one-column-wrapper .page-node-1021 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic p.field-name-field-statistic-value-text,
+    .page-node-1156 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .node-statistic.view-mode-inline .one-column-wrapper .group-statistic p.field-name-field-statistic-value-text, .node-statistic.view-mode-inline .one-column-wrapper
+    .page-node-1156 .paragraphs-item-para-statistics .field-name-field-statistics .field-item:nth-child(1) .group-statistic p.field-name-field-statistic-value-text {
       border-color: #6d6e70; } }
 
 .node-statistic.view-mode-feature .one-column-wrapper.no-trend .one-column-wrapper .group-statistic .group-statistic-value, .node-statistic.view-mode-inline .one-column-wrapper.no-trend .one-column-wrapper .group-statistic .group-statistic-value, .node-statistic.view-mode-feature .one-column-wrapper .group-statistic p.field-name-field-statistic-value, .node-statistic.view-mode-inline .one-column-wrapper .group-statistic p.field-name-field-statistic-value {
@@ -10028,59 +10048,103 @@ header.uikit-header, header.region-featured {
 .uikit-body .uikit-header__logo, .page .uikit-header__logo {
   border-bottom: 0; }
 
-.page-node-1021 .paragraphs-item-para-contact.para-container {
+.page-node-1021 .paragraphs-item-para-contact.para-container,
+.page-node-1156 .paragraphs-item-para-contact.para-container {
   color: white; }
-  .page-node-1021 .paragraphs-item-para-contact.para-container h2, .page-node-1021 .paragraphs-item-para-contact.para-container .video--left .video__title, .video--left .page-node-1021 .paragraphs-item-para-contact.para-container .video__title, .page-node-1021 .paragraphs-item-para-contact.para-container .video--right .video__title, .video--right .page-node-1021 .paragraphs-item-para-contact.para-container .video__title, .page-node-1021 .paragraphs-item-para-contact.para-container .node-video.view-mode-listing_vertical_small .video__title, .node-video.view-mode-listing_vertical_small .page-node-1021 .paragraphs-item-para-contact.para-container .video__title, .page-node-1021 .paragraphs-item-para-contact.para-container .node-video.view-mode-feature .video__title, .node-video.view-mode-feature .page-node-1021 .paragraphs-item-para-contact.para-container .video__title, .page-node-1021 .paragraphs-item-para-contact.para-container .node-video.view-mode-full .video__title, .node-video.view-mode-full .page-node-1021 .paragraphs-item-para-contact.para-container .video__title {
+  .page-node-1021 .paragraphs-item-para-contact.para-container h2, .page-node-1021 .paragraphs-item-para-contact.para-container .video--left .video__title, .video--left .page-node-1021 .paragraphs-item-para-contact.para-container .video__title, .page-node-1021 .paragraphs-item-para-contact.para-container .video--right .video__title, .video--right .page-node-1021 .paragraphs-item-para-contact.para-container .video__title, .page-node-1021 .paragraphs-item-para-contact.para-container .node-video.view-mode-listing_vertical_small .video__title, .node-video.view-mode-listing_vertical_small .page-node-1021 .paragraphs-item-para-contact.para-container .video__title, .page-node-1021 .paragraphs-item-para-contact.para-container .node-video.view-mode-feature .video__title, .node-video.view-mode-feature .page-node-1021 .paragraphs-item-para-contact.para-container .video__title, .page-node-1021 .paragraphs-item-para-contact.para-container .node-video.view-mode-full .video__title, .node-video.view-mode-full .page-node-1021 .paragraphs-item-para-contact.para-container .video__title,
+  .page-node-1156 .paragraphs-item-para-contact.para-container h2,
+  .page-node-1156 .paragraphs-item-para-contact.para-container .video--left .video__title, .video--left
+  .page-node-1156 .paragraphs-item-para-contact.para-container .video__title,
+  .page-node-1156 .paragraphs-item-para-contact.para-container .video--right .video__title, .video--right
+  .page-node-1156 .paragraphs-item-para-contact.para-container .video__title,
+  .page-node-1156 .paragraphs-item-para-contact.para-container .node-video.view-mode-listing_vertical_small .video__title, .node-video.view-mode-listing_vertical_small
+  .page-node-1156 .paragraphs-item-para-contact.para-container .video__title,
+  .page-node-1156 .paragraphs-item-para-contact.para-container .node-video.view-mode-feature .video__title, .node-video.view-mode-feature
+  .page-node-1156 .paragraphs-item-para-contact.para-container .video__title,
+  .page-node-1156 .paragraphs-item-para-contact.para-container .node-video.view-mode-full .video__title, .node-video.view-mode-full
+  .page-node-1156 .paragraphs-item-para-contact.para-container .video__title {
     color: white; }
-  .page-node-1021 .paragraphs-item-para-contact.para-container a {
+  .page-node-1021 .paragraphs-item-para-contact.para-container a,
+  .page-node-1156 .paragraphs-item-para-contact.para-container a {
     color: white;
     text-decoration: none; }
-    .page-node-1021 .paragraphs-item-para-contact.para-container a:hover {
+    .page-node-1021 .paragraphs-item-para-contact.para-container a:hover,
+    .page-node-1156 .paragraphs-item-para-contact.para-container a:hover {
       color: white;
       text-decoration: underline;
       background: none; }
 
-.page-node-1021 .paragraphs-item-para-block.para-container {
+.page-node-1021 .paragraphs-item-para-block.para-container,
+.page-node-1156 .paragraphs-item-para-block.para-container {
   color: white; }
-  .page-node-1021 .paragraphs-item-para-block.para-container h2, .page-node-1021 .paragraphs-item-para-block.para-container .video--left .video__title, .video--left .page-node-1021 .paragraphs-item-para-block.para-container .video__title, .page-node-1021 .paragraphs-item-para-block.para-container .video--right .video__title, .video--right .page-node-1021 .paragraphs-item-para-block.para-container .video__title, .page-node-1021 .paragraphs-item-para-block.para-container .node-video.view-mode-listing_vertical_small .video__title, .node-video.view-mode-listing_vertical_small .page-node-1021 .paragraphs-item-para-block.para-container .video__title, .page-node-1021 .paragraphs-item-para-block.para-container .node-video.view-mode-feature .video__title, .node-video.view-mode-feature .page-node-1021 .paragraphs-item-para-block.para-container .video__title, .page-node-1021 .paragraphs-item-para-block.para-container .node-video.view-mode-full .video__title, .node-video.view-mode-full .page-node-1021 .paragraphs-item-para-block.para-container .video__title {
+  .page-node-1021 .paragraphs-item-para-block.para-container h2, .page-node-1021 .paragraphs-item-para-block.para-container .video--left .video__title, .video--left .page-node-1021 .paragraphs-item-para-block.para-container .video__title, .page-node-1021 .paragraphs-item-para-block.para-container .video--right .video__title, .video--right .page-node-1021 .paragraphs-item-para-block.para-container .video__title, .page-node-1021 .paragraphs-item-para-block.para-container .node-video.view-mode-listing_vertical_small .video__title, .node-video.view-mode-listing_vertical_small .page-node-1021 .paragraphs-item-para-block.para-container .video__title, .page-node-1021 .paragraphs-item-para-block.para-container .node-video.view-mode-feature .video__title, .node-video.view-mode-feature .page-node-1021 .paragraphs-item-para-block.para-container .video__title, .page-node-1021 .paragraphs-item-para-block.para-container .node-video.view-mode-full .video__title, .node-video.view-mode-full .page-node-1021 .paragraphs-item-para-block.para-container .video__title,
+  .page-node-1156 .paragraphs-item-para-block.para-container h2,
+  .page-node-1156 .paragraphs-item-para-block.para-container .video--left .video__title, .video--left
+  .page-node-1156 .paragraphs-item-para-block.para-container .video__title,
+  .page-node-1156 .paragraphs-item-para-block.para-container .video--right .video__title, .video--right
+  .page-node-1156 .paragraphs-item-para-block.para-container .video__title,
+  .page-node-1156 .paragraphs-item-para-block.para-container .node-video.view-mode-listing_vertical_small .video__title, .node-video.view-mode-listing_vertical_small
+  .page-node-1156 .paragraphs-item-para-block.para-container .video__title,
+  .page-node-1156 .paragraphs-item-para-block.para-container .node-video.view-mode-feature .video__title, .node-video.view-mode-feature
+  .page-node-1156 .paragraphs-item-para-block.para-container .video__title,
+  .page-node-1156 .paragraphs-item-para-block.para-container .node-video.view-mode-full .video__title, .node-video.view-mode-full
+  .page-node-1156 .paragraphs-item-para-block.para-container .video__title {
     color: white; }
-  .page-node-1021 .paragraphs-item-para-block.para-container a {
+  .page-node-1021 .paragraphs-item-para-block.para-container a,
+  .page-node-1156 .paragraphs-item-para-block.para-container a {
     color: white;
     border-bottom: 1px white solid; }
-    .page-node-1021 .paragraphs-item-para-block.para-container a:hover {
+    .page-node-1021 .paragraphs-item-para-block.para-container a:hover,
+    .page-node-1156 .paragraphs-item-para-block.para-container a:hover {
       border-bottom: none; }
 
-.page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference {
+.page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference,
+.page-node-1156 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference {
   color: white; }
-  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference h3 {
+  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference h3,
+  .page-node-1156 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference h3 {
     color: white; }
-  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-666 {
+  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-666,
+  .page-node-1156 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-666 {
     background: #153a6e; }
-    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-666:hover {
+    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-666:hover,
+    .page-node-1156 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-666:hover {
       background: #000b33; }
-  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-671 {
+  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-671,
+  .page-node-1156 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-671 {
     background: #df2f3b; }
-    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-671:hover {
+    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-671:hover,
+    .page-node-1156 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-671:hover {
       background: #a31f26; }
-  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-676 {
+  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-676,
+  .page-node-1156 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-676 {
     background: #0091a0; }
-    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-676:hover {
+    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-676:hover,
+    .page-node-1156 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-676:hover {
       background: #006570; }
-  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-681 {
+  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-681,
+  .page-node-1156 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-681 {
     background: #007b89; }
-    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-681:hover {
+    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-681:hover,
+    .page-node-1156 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-681:hover {
       background: #006570; }
-  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-686 {
+  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-686,
+  .page-node-1156 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-686 {
     background: #6d6e70; }
-    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-686:hover {
+    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-686:hover,
+    .page-node-1156 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-686:hover {
       background: #404041; }
-  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-691 {
+  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-691,
+  .page-node-1156 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-691 {
     background: #58585b; }
-    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-691:hover {
+    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-691:hover,
+    .page-node-1156 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-691:hover {
       background: #404041; }
-  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-696 {
+  .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-696,
+  .page-node-1156 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-696 {
     background: #d42b38; }
-    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-696:hover {
+    .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-696:hover,
+    .page-node-1156 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-696:hover {
       background: #a31f26; }
 
 .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a {
