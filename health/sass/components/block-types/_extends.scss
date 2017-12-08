@@ -17,7 +17,7 @@
 
           &:hover,
           &:focus {
-            background: lighten($colour-Primary-darkest, 5%);
+            background: $colour-Primary-hover
           }
 
           .field-name-field-link-internal {

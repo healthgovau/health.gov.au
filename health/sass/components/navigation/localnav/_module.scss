@@ -14,7 +14,7 @@
   padding: uikit-space(.5);
 
   &:hover {
-    border-left-color: $colour-Primary-darkest;
+    border-left-color: $colour-Secondary-darker;
   }
 
   &.active-trail {
@@ -23,7 +23,7 @@
 
   &.active {
     background: $uikit-colour-Background;
-    border-left-color: $colour-Primary-darkest;
+    border-left-color: $colour-Secondary-darker;
   }
 }
 

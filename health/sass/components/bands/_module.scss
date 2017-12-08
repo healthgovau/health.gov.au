@@ -6,12 +6,12 @@
 }
 %band--neutral {
     @extend %band;
-    @extend %colour-Secondary-background;
+    @extend %colour-Light-background;
 }
 
 %band--neutral-darkest {
     @extend %band;
-    @extend %colour-Secondary-background-darkest;
+    @extend %colour-Light-dark-background;
 }
 
 %band--primary {

@@ -22,26 +22,65 @@ $uikit-colour-Info: #00bfe9 !default;
 // Health variables here
 $colour-Shadow: rgba(0,0,0,0.1);
 $colour-card: #fff;
+
 $colour-Primary: #153a6e;
-$colour-Primary-darker: #062855;
-$colour-Primary-darkest: #062855;
-$colour-Secondary-darker: #f2f2f2;
-$colour-Secondary: #f9f9f9;
-$colour-Secondary-darkest: #e5e5e5;
-$colour-Primary-light: #f2f2f2;
-$colour-Callout-darkest: #006e7a;
-$colour-Callout: #007b89;
-$colour-Callout-lighter: #2da5b3;
-$colour-Orange: #c42832;
-$colour-Dark: #696969;
-$colour-Darker: #0e1b44;
+$colour-Primary-dark: #213363;
+$colour-Primary-darker: #1b2a57;
+$colour-Primary-light: #22447b;
+$colour-Primary-hover: #000b33;
+
+$colour-Secondary: #008998;
+$colour-Secondary-dark: #007b89;
+$colour-Secondary-darker: #006e7a;
+$colour-Secondary-light: #0091a0;
+$colour-Secondary-hover: #006570;
+
+$colour-Tertiary: #df2f3b;
+$colour-Tertiary-dark: #d42b38;
+$colour-Tertiary-darker: #c42832;
+$colour-Tertiary-light: #ee303b;
+$colour-Tertiary-hover: #a31f26;
+
+$colour-dark: #6d6e70;
+$colour-darker: #626366;
+$colour-darkest: #58585b;
+$colour-dark-hover: #404041;
+
+$colour-light-dark: #e5e5e5;
+$colour-light: #ecedee;
+$colour-lighter: #f1f1f2;
+$colour-lightest: #f9f9f9;
 
 %colour-Primary-background {
-  background: $colour-Primary-darkest;
-  background: -webkit-linear-gradient(left, $colour-Primary-darkest, $colour-Primary);
-  background: -o-linear-gradient(right, $colour-Primary-darkest, $colour-Primary);
-  background: -moz-linear-gradient(right, $colour-Primary-darkest, $colour-Primary);
-  background: linear-gradient(to right, $colour-Primary-darkest, $colour-Primary);
+  background: $colour-Primary-darker;
+  background: -webkit-linear-gradient(left, $colour-Primary-darker, $colour-Primary);
+  background: -o-linear-gradient(right, $colour-Primary-darker, $colour-Primary);
+  background: -moz-linear-gradient(right, $colour-Primary-darker, $colour-Primary);
+  background: linear-gradient(to right, $colour-Primary-darker, $colour-Primary);
+}
+
+%colour-Light-background {
+  background: $colour-light;
+  background: -webkit-linear-gradient(left, $colour-light, $colour-lightest);
+  background: -o-linear-gradient(right, $colour-light, $colour-lightest);
+  background: -moz-linear-gradient(right, $colour-light, $colour-lightest);
+  background: linear-gradient(to right, $colour-light, $colour-lightest);
+}
+
+%colour-light-background-reverse {
+  background: $colour-lightest;
+  background: -webkit-linear-gradient(left, $colour-lightest, $colour-light);
+  background: -o-linear-gradient(right, $colour-lightest, $colour-light);
+  background: -moz-linear-gradient(right, $colour-lightest, $colour-light);
+  background: linear-gradient(to right, $colour-lightest, $colour-light);
+}
+
+%colour-Light-dark-background {
+  background: $colour-light-dark;
+  background: -webkit-linear-gradient(left, $colour-light-dark, $colour-lightest);
+  background: -o-linear-gradient(right, $colour-light-dark, $colour-lightest);
+  background: -moz-linear-gradient(right, $colour-light-dark, $colour-lightest);
+  background: linear-gradient(to right, $colour-light-dark, $colour-lightest);
 }
 
 %colour-Secondary-background {
@@ -52,35 +91,11 @@ $colour-Darker: #0e1b44;
   background: linear-gradient(to right, $colour-Secondary-darker, $colour-Secondary);
 }
 
-%colour-Secondary-background-darkest {
-  background: $colour-Secondary-darkest;
-  background: -webkit-linear-gradient(left, $colour-Secondary-darkest, $colour-Secondary);
-  background: -o-linear-gradient(right, $colour-Secondary-darkest, $colour-Secondary);
-  background: -moz-linear-gradient(right, $colour-Secondary-darkest, $colour-Secondary);
-  background: linear-gradient(to right, $colour-Secondary-darkest, $colour-Secondary);
-}
-
-%colour-Secondary-background-reverse {
-  background: $colour-Secondary;
-  background: -webkit-linear-gradient(left, $colour-Secondary, $colour-Secondary-darkest);
-  background: -o-linear-gradient(right, $colour-Secondary, $colour-Secondary-darkest);
-  background: -moz-linear-gradient(right, $colour-Secondary, $colour-Secondary-darkest);
-  background: linear-gradient(to right, $colour-Secondary, $colour-Secondary-darkest);
-}
-
-%colour-Callout-background {
-  background: $colour-Callout-darkest;
-  background: -webkit-linear-gradient(left, $colour-Callout-darkest, $colour-Callout);
-  background: -o-linear-gradient(right, $colour-Callout-darkest, $colour-Callout);
-  background: -moz-linear-gradient(right, $colour-Callout-darkest, $colour-Callout);
-  background: linear-gradient(to right, $colour-Callout-darkest, $colour-Callout);
-}
-
-$uikit-colour-Link: $colour-Callout; // Health override
-$uikit-colour-Primary: $colour-Primary-darkest; // Health override
+$uikit-colour-Link: $colour-Secondary; // Health override
+$uikit-colour-Primary: $colour-Primary; // Health override
 
 // Statistics
-$colour-Statistics-blue: $colour-Primary-darkest;
+$colour-Statistics-blue: $colour-Primary-darker;
 $colour-Statistics-orange: $uikit-colour-Warning;
 $colour-Statistics-green: $uikit-colour-Success;
 $colour-Statistics-red: $uikit-colour-Error;
@@ -88,6 +103,3 @@ $colour-Statistics-red: $uikit-colour-Error;
 // Typography
 $colour-minorText: #6e6e6e;
 $aqua: #18788d;
-
-// Alpha/beta
-$colour-Beta: #f47738;

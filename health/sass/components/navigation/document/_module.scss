@@ -14,7 +14,7 @@
     .file__link {
         display: inline;
         font-weight: bold;
-        border-bottom: solid 1px $colour-Primary-darkest;
+        border-bottom: solid 1px $colour-Secondary-darker;
         span {
             @extend %visually-hidden;
         }

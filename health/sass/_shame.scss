@@ -1,6 +1,6 @@
 %flat-tier {
   padding-top: uikit-space(2);
-  border-top: 3px solid $colour-Primary-darkest;
+  border-top: 3px solid $colour-Primary-darker;
 }
 
 .col-md-4 .uikit-card--featured-top .uikit-card--featured {
@@ -19,7 +19,7 @@
 // Contact hot line bar for immunisation.
 .page-node-1021 {
   .paragraphs-item-para-contact.para-container {
-    @extend %colour-Callout-background;
+    @extend %colour-Secondary-background;
     color: white;
     h2 {
       color: white;
@@ -44,30 +44,30 @@
     > .field-items {
       > .field-item {
         .field-type-entityreference {
-          color: $colour-Secondary;
+          color: white;
           h3 {
-            color: $colour-Secondary;
+            color: white;
           }
           &.item-666 {
-            @include card-colour($colour-Primary);
+            @include card-colour($colour-Primary, $colour-Primary-hover);
           }
           &.item-671 {
-            @include card-colour($colour-Orange);
+            @include card-colour($colour-Tertiary, $colour-Tertiary-hover);
           }
           &.item-676 {
-            @include card-colour($colour-Callout);
+            @include card-colour($colour-Secondary-light, $colour-Secondary-hover);
           }
           &.item-681 {
-            @include card-colour($colour-Callout-darkest);
+            @include card-colour($colour-Secondary-dark, $colour-Secondary-hover);
           }
           &.item-686 {
-            @include card-colour($colour-Dark);
+            @include card-colour($colour-dark, $colour-dark-hover);
           }
           &.item-691 {
-            @include card-colour($colour-Darker);
+            @include card-colour($colour-darkest, $colour-dark-hover);
           }
           &.item-696 {
-            @include card-colour($colour-Primary-darkest);
+            @include card-colour($colour-Tertiary-dark, $colour-Tertiary-hover);
           }
         }
       }

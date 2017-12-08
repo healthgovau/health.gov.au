@@ -18,11 +18,10 @@
         display: block;
         text-align: center;
         margin-bottom: 0;
-        background: $colour-Secondary;
-        border-bottom: 6px solid $colour-Primary-darkest;
+        background: $colour-light;
         &:hover,
         &:active {
-          background-color: $colour-Secondary-darkest;
+          background-color: $colour-dark-hover;
           cursor: pointer;
         }
         a {

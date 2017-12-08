@@ -1,7 +1,7 @@
 // Section header + breadcrumbs
 .page-title {
   &.header.header--light {
-    @extend %colour-Secondary-background;
+    @extend %colour-Light-background;
     padding-top: 0;
     padding-bottom: 0;
     margin-bottom: uikit-space(1);
@@ -99,22 +99,22 @@
       .field-name-field-link-to a {
         margin-bottom: 0;
         &:after {
-          color: $colour-Secondary;
+          color: white;
         }
       }
       .block__title {
         @extend .uikit-display-3;
-        color: $colour-Secondary;
+        color: white;
       }
       a {
-        color: $colour-Secondary;
-        border-bottom: solid 1px $colour-Secondary;
+        color: white;
+        border-bottom: solid 1px white;
         &:hover {
           background: none;
-          border-bottom: solid 1px $colour-Secondary;
+          border-bottom: solid 1px white;
         }
       }
-      color: $colour-Secondary;
+      color: white;
     }
 
   }

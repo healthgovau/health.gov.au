@@ -40,12 +40,12 @@
   display: inline;
   > a {
     @extend .uikit-tags__item;
-    border: 1px solid $colour-Callout;
+    border: 1px solid $colour-Secondary;
 
     &:hover,
     &:focus,
     &:active {
-      background-color: $colour-Callout;
+      background-color: $colour-Secondary;
       color: #fff;
     }
     font-weight: normal;

@@ -10,26 +10,26 @@
     padding-right: 0;
 
     a {
-      color: $colour-Secondary;
-      border-bottom: solid 1px $colour-Secondary;
+      color: white;
+      border-bottom: solid 1px white;
       &:hover {
         background: none;
         border-bottom: none;
       }
       &[rel~='external']:after {
-        color: $colour-Secondary
+        color: white
       }
     }
     h3.block__title {
-      color: $colour-Secondary;
+      color: white;
     }
-    color: $colour-Secondary;
+    color: white;
     .bean-large-button .field-name-field-link-to a {
       background-color: transparent;
-      color: $colour-Secondary;
-      border: 1px solid $colour-Secondary;
+      color: white;
+      border: 1px solid white;
       &:hover {
-        background-color: $colour-Primary;
+        background-color: $colour-Primary-hover;
       }
     }
 

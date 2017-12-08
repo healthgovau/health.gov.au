@@ -52,7 +52,7 @@
   }
 }
 
-@mixin link-pullout($border-width: 6px, $border-color: $colour-Primary-darkest, $pad: 20px){
+@mixin link-pullout($border-width: 6px, $border-color: $colour-Secondary-darker, $pad: 20px){
   border-left: $border-width solid $border-color;
   padding-left: $pad;
   padding-top: uikit-space(.5);
@@ -64,7 +64,7 @@
 
 // UI-Kit link style
 %link {
-  border-bottom: 1px solid $colour-Primary-darkest;
+  border-bottom: 1px solid $colour-Secondary;
 }
 
 // Mixin to apply row and container
@@ -81,10 +81,10 @@
 }
 
 // Mixin to apply colours to card.
-@mixin card-colour($colour: $colour-Callout) {
+@mixin card-colour($colour: $colour-Secondary, $colour-hover: $colour-Secondary-hover) {
   background: $colour;
 
   &:hover {
-    background: lighten($colour, 5%);
+    background: $colour-hover;
   }
 }

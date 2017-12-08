@@ -58,7 +58,7 @@
   border-bottom: 4px solid transparent;
   &:hover,
   &:focus {
-    border-bottom: 4px solid $colour-Primary-darkest;
+    border-bottom: 4px solid $colour-Secondary-darker;
     background-color: $uikit-colour-Link;
   }
 }
@@ -66,7 +66,7 @@
 .tabs__tab__link--active,
 %tabs__tab__link--active {
   @extend %tabs__tab__link;
-  border-bottom: 4px solid $colour-Primary-darkest;
+  border-bottom: 4px solid $colour-Secondary-darker;
   background-color: $uikit-colour-Link;
   font-weight: bold;
 }

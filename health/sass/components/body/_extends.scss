@@ -5,7 +5,7 @@
 .page {
   @extend .uikit-body;
   a {
-    border-bottom: 1px solid $colour-Callout;
+    border-bottom: 1px solid $colour-Secondary;
     &:hover {
       text-decoration: none;
       background: none;
