@@ -17,6 +17,9 @@
   .page-title {
     &.header.header--light {
       margin-bottom: 0;
+      h1 {
+        color: $colour-Secondary;
+      }
     }
   }
 }
