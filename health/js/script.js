@@ -125,14 +125,4 @@
     }
   };
 
-  // Add classes and elements to external links.
-  Drupal.behaviors.selectorCardsClick = {
-    attach: function (context, settings) {
-      $('.selector-card').click(function(e) {
-        e.preventDefault();
-        location.href = $(this).find('a').attr('href');
-      });
-    }
-  };
-
 })(jQuery, Drupal, this, this.document);
