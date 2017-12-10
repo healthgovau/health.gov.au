@@ -90,10 +90,7 @@
       vertical-align: middle;
     }
     .block-bean-call-to-action {
-      padding: uikit-space(1) 0 uikit-space(1) 0;
-      @include uikit-media( md ) {
-        padding: uikit-space(1);
-      }
+      padding: uikit-space(1);
       .main-content {
         padding-left: 0;
         padding-right: 0;

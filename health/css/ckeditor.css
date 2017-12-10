@@ -5859,11 +5859,8 @@ fieldset .fieldset-legend {
         display: table-cell;
         vertical-align: middle; } }
     .page-title__supp .region-title-supp .block-bean-call-to-action {
-      padding: 1.6em 0 1.6em 0;
+      padding: 1.6em;
       color: white; }
-      @media (min-width: 992px) {
-        .page-title__supp .region-title-supp .block-bean-call-to-action {
-          padding: 1.6em; } }
       .page-title__supp .region-title-supp .block-bean-call-to-action .main-content {
         padding-left: 0;
         padding-right: 0;
