@@ -28,7 +28,7 @@
     }
 
     @include uikit-media(lg) {
-      margin: 0 uikit-space(1);
+      margin: 0 uikit-space(1.5);
     }
 
     &:first-child {
