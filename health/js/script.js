@@ -40,7 +40,11 @@
       // Title section match height.
       $('.page-title .col', context).matchHeight();
 
+      // Lifestage on topic page
       $('.page-node-1021 .field-name-field-related-term', context).matchHeight();
+
+      // Front page task accelerator.
+      $('.front .paragraphs-item-para-block.para-container.block__count--5 .bean-block-content a', context).matchHeight();
     }
   };
 

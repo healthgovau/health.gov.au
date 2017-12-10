@@ -10,5 +10,9 @@
       text-decoration: none;
       background: none;
     }
+    &:focus {
+      background-color: $colour-Secondary-light;
+      color: white;
+    }
   }
 }
