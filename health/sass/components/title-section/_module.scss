@@ -83,9 +83,12 @@
     display: table;
   }
   .region-title-supp {
-    @extend %colour-Primary-background;
-    display: table-cell;
-    vertical-align: middle;
+    @extend %colour-Dark-background;
+    display: block;
+    @include uikit-media( md ) {
+      display: table-cell;
+      vertical-align: middle;
+    }
     .block-bean-call-to-action {
       padding: uikit-space(1) 0 uikit-space(1) 0;
       @include uikit-media( md ) {
@@ -117,5 +120,15 @@
       color: white;
     }
 
+  }
+}
+
+// For Topic landing pages.
+.node-type-health-topic,
+.node-type-health-topic-hp {
+  .page-title__supp {
+    .region-title-supp {
+      @extend %colour-Primary-background;
+    }
   }
 }
