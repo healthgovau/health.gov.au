@@ -25,6 +25,7 @@
 [type='time'],
 [type='number'] {
   @extend %text-form-element !optional;
+  width: 100%;
 }
 
 [type='range'] {
