@@ -6764,9 +6764,7 @@ body {
   clear: both; }
 
 .visually-hidden,
-.element-invisible,
-.node-publication .paragraphs-items-field-resource-document .file__link span,
-.node-image .paragraphs-items-field-image-files .file__link span {
+.element-invisible {
   position: absolute;
   width: 1px;
   height: 1px;

@@ -15,9 +15,6 @@
         display: inline;
         font-weight: bold;
         border-bottom: solid 1px $colour-Secondary-darker;
-        span {
-            @extend %visually-hidden;
-        }
     }
     .file__meta {
         display: inline;
