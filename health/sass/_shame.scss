@@ -131,7 +131,10 @@
 
           .field-name-field-link-internal {
             color: #fff;
-            text-decoration: underline;
+            .field-item {
+              display: inline;
+              border-bottom: 1px solid white;
+            }
           }
         }
       }
@@ -147,4 +150,12 @@
 // Remove padding on dl set by UIKit
 .page dl {
   margin-bottom: 0;
+}
+
+// For programs and initiatives listing page block above the view.
+.page-initiatives-and-programs.page-views {
+  .bean-image-and-text {
+    @extend %colour-Light-background-reverse;
+    margin-bottom: uikit-space( 1 );
+  }
 }
