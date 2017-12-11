@@ -14,7 +14,10 @@
     }
   }
   .group-footer {
-    padding-top: uikit-space(1);
+    padding-top: 0;
+    @include uikit-media(sm) {
+      padding-top: uikit-space(1);
+    }
   }
   .field-name-field-image-featured {
     img {
@@ -34,6 +37,5 @@
       padding-bottom: uikit-space(1);
     }
   }
-
 
 }

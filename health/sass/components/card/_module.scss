@@ -1,5 +1,5 @@
 
-@mixin cardify($bg: $colour-card, $shadow: $card-shadow, $margin: uikit-space(1), $padding: uikit-space(1) ) {
+@mixin cardify($bg: $colour-card) {
   background: $bg;
   display: block;
   margin-bottom: 0;
@@ -10,6 +10,45 @@
   }
   // Content pane
   .group-right {
-    padding: $padding;
+    padding: uikit-space(.6);
+    @include uikit-media(sm) {
+      padding: uikit-space(1);
+    }
+  }
+}
+
+@mixin cardify-small($bg: $colour-card) {
+  background: $bg;
+  display: block;
+  margin-bottom: 0;
+  overflow: hidden;
+  // Image pane
+  .group-left {
+    padding: 0;
+  }
+  // Content pane
+  .group-right {
+    padding: uikit-space(.2) uikit-space(.35) 0 uikit-space(.35);
+    @include uikit-media(sm) {
+      padding: uikit-space(.5) uikit-space(1);
+    }
+
+    .field-name-title {
+      h3, h2 {
+        font-size: 14px;
+        @include uikit-media(sm) {
+          font-size: 18px;
+        }
+      }
+    }
+    .field-name-field-date-published,
+    .field-type-taxonomy-term-reference {
+      font-size: 12px;
+      margin-bottom: uikit-space(.15);
+      @include uikit-media(sm) {
+        font-size: 14px;
+      }
+    }
+
   }
 }

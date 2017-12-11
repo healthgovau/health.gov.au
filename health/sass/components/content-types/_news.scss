@@ -26,7 +26,7 @@
 	// List vertical small
 	&.view-mode-listing_vertical_small {
 		@extend %dm-list-vertical--small;
-		@include cardify($padding: uikit-space(.5) uikit-space(1));
+		@include cardify-small();
 	}
 
 	// Feature
@@ -39,6 +39,7 @@
 			padding-top: 0;
 		}
         @include cardify();
+
 	}
 	
 	// Inline style

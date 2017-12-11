@@ -21,3 +21,17 @@ html [type='button'],
 [type='submit']{
   @extend .uikit-btn;
 }
+
+.button--secondary {
+  @extend .uikit-btn--secondary;
+}
+
+.button--tertiary {
+  @extend .uikit-btn--tertiary;
+  border-color: $colour-Secondary;
+  color: $colour-Secondary;
+  a {
+    color: $colour-Secondary;
+    border: 0;
+  }
+}

@@ -52,7 +52,10 @@
 .paragraphs-view-display-latest_resources_public,
 .paragraphs-view-display-global_latest_resources {
     .views-row {
-        margin-bottom: uikit-space(1);
+        margin-bottom: uikit-space(.5);
+        @include uikit-media(sm) {
+          margin-bottom: uikit-space(1);
+        }
         @include uikit-clearfix();
         &:last-of-type {
           margin-bottom: 0;
