@@ -10023,11 +10023,11 @@ header.uikit-header, header.region-featured {
         float: left; } }
     header.uikit-header .uikit-header__logo-image, header.region-featured .uikit-header__logo-image {
       display: block;
-      width: 100%;
+      width: 50%;
       margin: auto; }
       @media (min-width: 768px) {
         header.uikit-header .uikit-header__logo-image, header.region-featured .uikit-header__logo-image {
-          max-width: 100%;
+          width: 100%;
           margin: 0; } }
   header.uikit-header .region-header, header.region-featured .region-header {
     width: 100%;
