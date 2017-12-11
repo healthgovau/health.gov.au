@@ -45,6 +45,9 @@
 
       // Front page task accelerator.
       $('.front .paragraphs-item-para-block.para-container.block__count--5 .bean-block-content a', context).matchHeight();
+
+      // Front page feedback band.
+      $('.feedback-col', context).matchHeight();
     }
   };
 
