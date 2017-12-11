@@ -4883,7 +4883,7 @@ h6 {
       background: #008998;
       color: white;
       padding: 0.2em;
-      border: 5px solid white;
+      border: 2px solid white;
       font-size: 2em; }
 
 .isVisible {
@@ -7714,8 +7714,10 @@ body {
   .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a:hover, .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a:focus {
     background: #000b33; }
   .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a .field-name-field-link-internal {
-    color: #fff;
-    text-decoration: underline; }
+    color: #fff; }
+    .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a .field-name-field-link-internal .field-item {
+      display: inline;
+      border-bottom: 1px solid white; }
 
 .front .paragraphs-item-para-block.para-container.block__count--1 {
   color: black; }
