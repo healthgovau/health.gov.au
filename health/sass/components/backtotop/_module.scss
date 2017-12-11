@@ -11,14 +11,18 @@
     opacity: 1;
     background-color: transparent;
   }
-  i:before {
-    position: relative;
-    background: $colour-Secondary;
-    color: white;
-    padding: 0.2em;
-    border: 5px solid white;
-    border-radius: 10px;
-    font-size: 2em;
+  i {
+    margin: 0;
+    padding-left: 2.5em;
+    &:before {
+      position: relative;
+      background: $colour-Secondary;
+      color: white;
+      padding: 0.2em;
+      border: 5px solid white;
+      border-radius: 10px;
+      font-size: 2em;
+    }
   }
 }
 

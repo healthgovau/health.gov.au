@@ -4975,14 +4975,17 @@ h6 {
   .goTop:hover {
     opacity: 1;
     background-color: transparent; }
-  .goTop i:before {
-    position: relative;
-    background: #008998;
-    color: white;
-    padding: 0.2em;
-    border: 5px solid white;
-    border-radius: 10px;
-    font-size: 2em; }
+  .goTop i {
+    margin: 0;
+    padding-left: 2.5em; }
+    .goTop i:before {
+      position: relative;
+      background: #008998;
+      color: white;
+      padding: 0.2em;
+      border: 5px solid white;
+      border-radius: 10px;
+      font-size: 2em; }
 
 .isVisible {
   opacity: .8;
