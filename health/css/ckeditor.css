@@ -5917,10 +5917,11 @@ ul.social__links,
       width: 75%; } }
 
 .bean-image-and-text.view-mode-listing_vertical .field-name-field-image-featured, .node-news-article.view-mode-listing_vertical .field-name-field-image-featured, .node-event.view-mode-listing_vertical .field-name-field-image-featured, .node-publication.view-mode-listing_vertical .field-name-field-image-featured, .node-image.view-mode-listing_vertical .field-name-field-image-featured, .node-video.view-mode-listing_vertical .field-name-field-image-featured, .node-campaign.view-mode-listing_vertical .field-name-field-image-featured, .node-condition-or-disease.view-mode-listing_vertical .field-name-field-image-featured, .node-contact.view-mode-listing_vertical .field-name-field-image-featured, .node-initiative-or-program.view-mode-listing_vertical .field-name-field-image-featured, .node-statistic.view-mode-listing_vertical .field-name-field-image-featured, .node-service.view-mode-listing_vertical .field-name-field-image-featured, .node-health-topic.view-mode-listing_vertical .field-name-field-image-featured {
-  width: 100%; }
-  .bean-image-and-text.view-mode-listing_vertical .field-name-field-image-featured img, .node-news-article.view-mode-listing_vertical .field-name-field-image-featured img, .node-event.view-mode-listing_vertical .field-name-field-image-featured img, .node-publication.view-mode-listing_vertical .field-name-field-image-featured img, .node-image.view-mode-listing_vertical .field-name-field-image-featured img, .node-video.view-mode-listing_vertical .field-name-field-image-featured img, .node-campaign.view-mode-listing_vertical .field-name-field-image-featured img, .node-condition-or-disease.view-mode-listing_vertical .field-name-field-image-featured img, .node-contact.view-mode-listing_vertical .field-name-field-image-featured img, .node-initiative-or-program.view-mode-listing_vertical .field-name-field-image-featured img, .node-statistic.view-mode-listing_vertical .field-name-field-image-featured img, .node-service.view-mode-listing_vertical .field-name-field-image-featured img, .node-health-topic.view-mode-listing_vertical .field-name-field-image-featured img {
-    float: left;
-    margin-bottom: 1.2em; }
+  width: 100%;
+  background-color: #f9f9f9;
+  border: 2px solid #e8e8e8; }
+  .bean-image-and-text.view-mode-listing_vertical .field-name-field-image-featured div, .node-news-article.view-mode-listing_vertical .field-name-field-image-featured div, .node-event.view-mode-listing_vertical .field-name-field-image-featured div, .node-publication.view-mode-listing_vertical .field-name-field-image-featured div, .node-image.view-mode-listing_vertical .field-name-field-image-featured div, .node-video.view-mode-listing_vertical .field-name-field-image-featured div, .node-campaign.view-mode-listing_vertical .field-name-field-image-featured div, .node-condition-or-disease.view-mode-listing_vertical .field-name-field-image-featured div, .node-contact.view-mode-listing_vertical .field-name-field-image-featured div, .node-initiative-or-program.view-mode-listing_vertical .field-name-field-image-featured div, .node-statistic.view-mode-listing_vertical .field-name-field-image-featured div, .node-service.view-mode-listing_vertical .field-name-field-image-featured div, .node-health-topic.view-mode-listing_vertical .field-name-field-image-featured div {
+    line-height: 0; }
 
 .node-news-article.view-mode-listing_vertical_small .group-left, .node-event.view-mode-listing_vertical_small .group-left, .node-publication.view-mode-listing_vertical_small .group-left, .node-image.view-mode-listing_vertical_small .group-left, .node-video.view-mode-listing_vertical_small .group-left {
   width: 40%; }
@@ -5932,13 +5933,14 @@ ul.social__links,
   padding-left: 1.6em; }
 
 .node-news-article.view-mode-listing_vertical_small .field-name-field-image-featured, .node-event.view-mode-listing_vertical_small .field-name-field-image-featured, .node-publication.view-mode-listing_vertical_small .field-name-field-image-featured, .node-image.view-mode-listing_vertical_small .field-name-field-image-featured, .node-video.view-mode-listing_vertical_small .field-name-field-image-featured {
-  background-color: #ececec;
+  background-color: #f9f9f9;
+  border: 2px solid #e8e8e8;
   width: 100%;
   text-align: center; }
   .node-news-article.view-mode-listing_vertical_small .field-name-field-image-featured div, .node-event.view-mode-listing_vertical_small .field-name-field-image-featured div, .node-publication.view-mode-listing_vertical_small .field-name-field-image-featured div, .node-image.view-mode-listing_vertical_small .field-name-field-image-featured div, .node-video.view-mode-listing_vertical_small .field-name-field-image-featured div {
     line-height: 0; }
   .node-news-article.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-event.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-publication.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-image.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-video.view-mode-listing_vertical_small .field-name-field-image-featured img {
-    border: none;
+    border: 0;
     max-height: 138px;
     width: auto; }
     @media (min-width: 768px) {
@@ -6005,19 +6007,22 @@ ul.social__links,
     @media (min-width: 576px) {
       .node-publication.view-mode-feature .group-left, .node-image.view-mode-feature .group-left {
         padding-bottom: 0; } }
-  .node-publication.view-mode-feature .field-name-field-image-featured div, .node-image.view-mode-feature .field-name-field-image-featured div {
-    line-height: 0; }
-  .node-publication.view-mode-feature .field-name-field-image-featured img, .node-image.view-mode-feature .field-name-field-image-featured img {
-    border: 0;
-    max-height: 275px;
-    width: auto; }
-    @media (min-width: 992px) {
-      .node-publication.view-mode-feature .field-name-field-image-featured img, .node-image.view-mode-feature .field-name-field-image-featured img {
-        height: auto;
-        max-height: none;
-        width: 100%; } }
-  .node-publication.view-mode-feature .field-name-field-image-featured a, .node-image.view-mode-feature .field-name-field-image-featured a {
-    border: none; }
+  .node-publication.view-mode-feature .field-name-field-image-featured, .node-image.view-mode-feature .field-name-field-image-featured {
+    background-color: #f9f9f9;
+    border: 2px solid #e8e8e8; }
+    .node-publication.view-mode-feature .field-name-field-image-featured div, .node-image.view-mode-feature .field-name-field-image-featured div {
+      line-height: 0; }
+    .node-publication.view-mode-feature .field-name-field-image-featured img, .node-image.view-mode-feature .field-name-field-image-featured img {
+      border: 0;
+      max-height: 275px;
+      width: auto; }
+      @media (min-width: 992px) {
+        .node-publication.view-mode-feature .field-name-field-image-featured img, .node-image.view-mode-feature .field-name-field-image-featured img {
+          height: auto;
+          max-height: none;
+          width: 100%; } }
+    .node-publication.view-mode-feature .field-name-field-image-featured a, .node-image.view-mode-feature .field-name-field-image-featured a {
+      border: none; }
   .node-publication.view-mode-feature p:last-of-type, .node-image.view-mode-feature p:last-of-type {
     margin-bottom: 0; }
 
@@ -6496,6 +6501,12 @@ body.node-type-health-topic .para-container.paragraphs-item-image, body.node-typ
     .paragraphs-item-two-columns .view-mode-full .para-row > .group-left,
     .paragraphs-item-two-columns .view-mode-full .para-row > .group-right {
       margin: 0; } }
+
+.paragraphs-item-para-block .block.block-bean .entity-bean {
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em; }
 
 @media print {
   .uikit-contextual-links {
