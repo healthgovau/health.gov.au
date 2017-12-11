@@ -16,11 +16,12 @@
     }
     // Fields
     .field-name-field-image-featured {
-        width: 100%;
-        img {
-            float: left;
-            margin-bottom: uikit-space(.75);
+        div {
+          line-height: 0;
         }
+        width: 100%;
+        background-color: #f9f9f9;
+        border: 2px solid #e8e8e8;
     }
     
     // Date and tag
@@ -59,13 +60,14 @@
     @extend %date-and-tag;
 
     .field-name-field-image-featured {
-      background-color: #ececec;
+      background-color: #f9f9f9;
+      border: 2px solid #e8e8e8;
       div {
         line-height: 0;
       }
       width: 100%;
       img {
-        border: none;
+        border: 0;
         max-height: 138px;
         width: auto;
         @include uikit-media(sm) {
