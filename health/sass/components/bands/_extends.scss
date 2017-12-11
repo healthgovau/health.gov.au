@@ -159,25 +159,16 @@ body {
       text-align: center;
       .view-mode-hotline_bar {
         padding: uikit-space(0.5);
-        // Layout
-        .group-left {
-          @extend .col-xs-12;
-          @extend .col-sm-6;
-        }
-        .group-right {
-          @extend .col-xs-12;
-          @extend .col-sm-6;
-          .paragraphs-item-para-telephone {
-            padding: 0;
-            @include uikit-media(sm) {
-              text-align: center;
-            }
-            .field-name-field-contact-telephone {
-              @extend %list-item-title--large;
-              a {
-                border: none;
-              }
-            }
+        a {
+          &:before {
+            content: "\f095";
+            font-family: FontAwesome;
+            font-size: 1em;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: inherit;
+            z-index: 1;
+            margin-right: 5px;
           }
         }
       }
