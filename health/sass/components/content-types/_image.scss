@@ -12,8 +12,10 @@
 .node-image {
     background: transparent;
 
-    .field-name-field-image-featured {
-		@extend %image--full;
+    &.view-mode-full {
+      .field-name-field-image-featured {
+        @extend %image--full;
+      }
     }
 
     // image download
