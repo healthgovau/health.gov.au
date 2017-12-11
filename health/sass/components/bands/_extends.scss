@@ -160,6 +160,7 @@ body {
       .view-mode-hotline_bar {
         padding: uikit-space(0.5);
         a {
+          border-bottom: none;
           &:before {
             content: "\f095";
             font-family: FontAwesome;
@@ -169,6 +170,11 @@ body {
             text-decoration: inherit;
             z-index: 1;
             margin-right: 5px;
+          }
+          &:hover {
+            &:before {
+              margin-right: 10px;
+            }
           }
         }
       }
