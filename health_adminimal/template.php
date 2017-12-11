@@ -69,7 +69,7 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
       'condition_or_disease',
     ];
     if (in_array($form['#bundle'], $disabled)) {
-      //$form['field_audience']['#disabled'] = TRUE;
+      $form['field_audience']['#disabled'] = TRUE;
     }
   }
 }
