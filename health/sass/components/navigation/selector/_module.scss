@@ -1,6 +1,5 @@
 .resources-selector, .news-events-selector {
   margin: -#{uikit-space(0.5)} 0 uikit-space(.5);
-  background: $colour-lighter;
   @include uikit-media(sm) {
     margin: 0 0 uikit-space(1.5);
   }
@@ -18,15 +17,21 @@
       .selector-card {
         text-align: center;
         margin-bottom: 0;
-        color: $colour-Secondary;
+        .card {
+          &:before {
+            color: $colour-Secondary;
+          }
+        }
         a {
           @extend %list-item-title;
-          border-bottom: 1px solid $colour-Secondary;
+          border-bottom: 1px solid #313131;
           margin-bottom: 0;
-          color: $colour-Secondary;
           display: inline;
           &:hover {
             border: none;
+          }
+          &:after {
+            color: #313131;
           }
         }
         img {
