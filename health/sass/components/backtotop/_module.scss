@@ -1,5 +1,4 @@
 .goTop {
-  border-radius: 5px;
   background-color: transparent;
   position: fixed;
   display: block;
@@ -8,13 +7,18 @@
   border: none;
   opacity: 0;
   z-index: -1;
-  .fa {
-    color: white;
-    font-size: 22px;
-  }
   &:hover {
     opacity: 1;
     background-color: transparent;
+  }
+  i:before {
+    position: relative;
+    background: $colour-Secondary;
+    color: white;
+    padding: 0.2em;
+    border: 5px solid white;
+    border-radius: 10px;
+    font-size: 2em;
   }
 }
 
