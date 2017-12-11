@@ -57,6 +57,48 @@
   p:last-of-type {
     margin-bottom: 0;
   }
+  .feedback-band {
+    .feedback-col {
+      @extend .col-xs-12;
+      @extend .col-sm-6;
+      &.link {
+        display: block;
+        margin-top: uikit-space( 1 );
+
+        @include uikit-media( sm ) {
+          display: table;
+          margin-top: 0;
+        }
+
+        .feedback-col-link {
+          display: block;
+
+          @include uikit-media( sm ) {
+            display: table-cell;
+            vertical-align: middle;
+          }
+
+          a {
+            @extend .uikit-btn-large;
+
+            width: 100%;
+
+            @include uikit-media( sm ) {
+              margin: auto;
+              width: 50%;
+            }
+            background-color: $colour-Secondary;
+            color: white;
+            border: 1px solid $colour-Secondary;
+            &:hover {
+              background-color: $colour-Secondary-hover;
+            }
+          }
+        }
+
+      }
+    }
+  }
 }
 
 // Landing pages only.
