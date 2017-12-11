@@ -8,7 +8,7 @@
     padding: uikit-space(1) 0;
   }
 
-  @extend %colour-light-background-reverse;
+  @extend %colour-Light-background-reverse;
   .block__title {
     @extend .uikit-display-2;
     font-weight: 700;
@@ -235,7 +235,7 @@ body {
 
     // Statistics
     .paragraphs-item-para-statistics {
-      @extend %colour-light-background-reverse;
+      @extend %colour-Light-background-reverse;
     }
   }
 }

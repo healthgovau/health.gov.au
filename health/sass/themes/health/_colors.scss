@@ -67,7 +67,7 @@ $colour-lightest: #f9f9f9;
   background: linear-gradient(to right, $colour-light, $colour-lightest);
 }
 
-%colour-light-background-reverse {
+%colour-Light-background-reverse {
   background: $colour-lightest;
   background: -webkit-linear-gradient(left, $colour-lightest, $colour-light);
   background: -o-linear-gradient(right, $colour-lightest, $colour-light);

@@ -8,7 +8,7 @@
   background: #ecedee;
   background: linear-gradient(to right, #ecedee, #f9f9f9); }
 
-#block-bean-share-this, body.node-type-health-topic .paragraphs-item-para-statistics, body.node-type-health-topic-hp .paragraphs-item-para-statistics, body.node-type-landing-page .paragraphs-item-para-statistics {
+#block-bean-share-this, body.node-type-health-topic .paragraphs-item-para-statistics, body.node-type-health-topic-hp .paragraphs-item-para-statistics, body.node-type-landing-page .paragraphs-item-para-statistics, .page-initiatives-and-programs.page-views .bean-image-and-text {
   background: #f9f9f9;
   background: linear-gradient(to right, #f9f9f9, #ecedee); }
 

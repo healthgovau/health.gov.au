@@ -151,3 +151,10 @@
 .page dl {
   margin-bottom: 0;
 }
+
+// For programs and initiatives listing page block above the view.
+.page-initiatives-and-programs.page-views {
+  .bean-image-and-text {
+    @extend %colour-Light-background-reverse;
+  }
+}
