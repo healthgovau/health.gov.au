@@ -122,7 +122,7 @@
 
             <div id="read">
 
-              <?php print render($tabs); ?>
+              <div id="tabs"><?php print render($tabs); ?></div>
               <?php print render($page['help']); ?>
               <?php if ($action_links): ?>
                   <ul class="action-links"><?php print render($action_links); ?></ul>

@@ -32,6 +32,10 @@
     &.para-container {
         @extend %band--neutral;
         padding-bottom: 0;
+        margin-bottom: -12px;
+        @include uikit-media(sm) {
+          margin-bottom: -24px;
+        }
     }
     @include row-and-container;
     overflow: hidden;
@@ -54,10 +58,20 @@
                 @extend .col-md-3;
 
                 .para-container {
-                    margin-top: 1em;
-                    margin-bottom: 1em;
+                    margin-bottom: 12px;
+                    @include uikit-media(sm) {
+                      margin-bottom: 24px;
+                    }
                     padding: 0;
                 }
+
+                .taxonomy-term-description {
+                  margin: 0;
+                  p {
+                    margin: 0;
+                  }
+                }
+
                 // Hide external link label.
                 a:after {
                     display: none;

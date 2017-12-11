@@ -60,6 +60,7 @@
   &:focus {
     border-bottom: 4px solid $colour-Secondary-darker;
     background-color: $uikit-colour-Link;
+    color: white;
   }
 }
 
@@ -68,6 +69,7 @@
   @extend %tabs__tab__link;
   border-bottom: 4px solid $colour-Secondary-darker;
   background-color: $uikit-colour-Link;
+  color: white;
   font-weight: bold;
 }
 
