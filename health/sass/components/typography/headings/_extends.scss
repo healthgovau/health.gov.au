@@ -93,11 +93,20 @@ h6 {
   }
 }
 
-%list-item-title--large {
-  @extend .uikit-display-3;
+%list-item-title--medium {
+  @extend .uikit-display-2;
   font-size: 18px;
   font-weight: 700;
   @include uikit-media('sm') {
-    font-size: 20px;
+    font-size: 22px;
+  }
+}
+
+%list-item-title--large {
+  @extend .uikit-display-3;
+  font-size: 20px;
+  font-weight: 700;
+  @include uikit-media('sm') {
+    font-size: 24px;
   }
 }
