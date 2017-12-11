@@ -156,5 +156,6 @@
 .page-initiatives-and-programs.page-views {
   .bean-image-and-text {
     @extend %colour-Light-background-reverse;
+    margin-bottom: uikit-space( 1 );
   }
 }
