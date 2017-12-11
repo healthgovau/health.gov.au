@@ -30,7 +30,7 @@
 
 // Topic landing page.
 .page-topics {
-  .messages {
+  .messages.info {
     margin: 0;
     @include uikit-media(sm) {
       margin-top: 16em;
