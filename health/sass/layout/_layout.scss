@@ -18,8 +18,9 @@ body {
 
 // Danny - move this
 // Contain Drupal nav and messages
-body.node-type-health-topic {
-  .tabs.primary,
+body.node-type-health-topic,
+body.node-type-health-topic-hp {
+  #tabs,
   .messages.status {
     @extend .container;
   }
