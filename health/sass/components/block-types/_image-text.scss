@@ -47,6 +47,10 @@
             @include uikit-media(sm) {
               max-width: 40%;
             }
+            // For IE 9, 10.
+            &:focus {
+              outline: none;
+            }
           }
           // Resp
           float: left;

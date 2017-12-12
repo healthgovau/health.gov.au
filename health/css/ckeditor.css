@@ -4789,6 +4789,8 @@ h6 {
       @media (min-width: 768px) {
         .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image img {
           max-width: 40%; } }
+      .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image img:focus {
+        outline: none; }
     @media (min-width: 768px) {
       .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image {
         float: none;

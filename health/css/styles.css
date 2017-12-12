@@ -7132,6 +7132,8 @@ h6 {
       @media (min-width: 768px) {
         .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image img {
           max-width: 40%; } }
+      .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image img:focus {
+        outline: none; }
     @media (min-width: 768px) {
       .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image {
         float: none;
@@ -10091,6 +10093,8 @@ header.uikit-header, header.region-featured {
         header.uikit-header .uikit-header__logo-image, header.region-featured .uikit-header__logo-image {
           width: 100%;
           margin: 0; } }
+      header.uikit-header .uikit-header__logo-image :focus, header.region-featured .uikit-header__logo-image :focus {
+        outline: none; }
   header.uikit-header .region-header, header.region-featured .region-header {
     width: 100%;
     margin-top: 0.8em; }

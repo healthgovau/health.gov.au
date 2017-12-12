@@ -21,6 +21,10 @@ header.uikit-header {
         width: 100%;
         margin: 0;
       }
+      // For IE 9, 10.
+      :focus {
+        outline: none;
+      }
     }
   }
   .region-header {
