@@ -5764,6 +5764,7 @@ a.uikit-header__logo:hover {
           border-bottom: solid 1px white; }
 
 .page .footer {
+  background-color: #1b2a57;
   padding-left: 0;
   padding-right: 0;
   color: white; }

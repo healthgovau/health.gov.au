@@ -5,6 +5,9 @@
   .footer {
     @extend .uikit-footer;
 
+    // for IE 9.
+    background-color: $colour-Primary-darker;
+
     @extend %colour-Primary-background;
 
     padding-left: 0;
