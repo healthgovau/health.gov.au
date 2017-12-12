@@ -8751,9 +8751,9 @@ body.node-type-health-topic .paragraphs-item-para-contact, body.node-type-health
   text-align: center; }
   body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar {
     padding: 0.8em; }
-    body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar a, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar a, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar a {
+    body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a {
       border-bottom: none; }
-      body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar a:before, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar a:before, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar a:before {
+      body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a:before, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a:before, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a:before {
         content: "\f095";
         font-family: FontAwesome;
         font-size: 1em;
@@ -8762,7 +8762,7 @@ body.node-type-health-topic .paragraphs-item-para-contact, body.node-type-health
         text-decoration: inherit;
         z-index: 1;
         margin-right: 5px; }
-      body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar a:hover:before, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar a:hover:before, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar a:hover:before {
+      body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a:hover:before, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a:hover:before, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a:hover:before {
         margin-right: 10px; }
 
 body.node-type-health-topic .page-landing .paragraphs-2-columns-resources, body.node-type-health-topic-hp .page-landing .paragraphs-2-columns-resources, body.node-type-landing-page .page-landing .paragraphs-2-columns-resources {

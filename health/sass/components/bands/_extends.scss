@@ -159,21 +159,23 @@ body {
       text-align: center;
       .view-mode-hotline_bar {
         padding: uikit-space(0.5);
-        a {
-          border-bottom: none;
-          &:before {
-            content: "\f095";
-            font-family: FontAwesome;
-            font-size: 1em;
-            font-style: normal;
-            font-weight: normal;
-            text-decoration: inherit;
-            z-index: 1;
-            margin-right: 5px;
-          }
-          &:hover {
+        .field-name-field-contact-telephone {
+          a {
+            border-bottom: none;
             &:before {
-              margin-right: 10px;
+              content: "\f095";
+              font-family: FontAwesome;
+              font-size: 1em;
+              font-style: normal;
+              font-weight: normal;
+              text-decoration: inherit;
+              z-index: 1;
+              margin-right: 5px;
+            }
+            &:hover {
+              &:before {
+                margin-right: 10px;
+              }
             }
           }
         }
