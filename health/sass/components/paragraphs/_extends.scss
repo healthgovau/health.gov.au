@@ -86,8 +86,9 @@
                     // Add mobile width 100% and odd/even handling
                     // Title
                     h3 {
-                        @extend %list-item-title;
-                        text-decoration: underline;
+                      @extend %list-item-title;
+                      border-bottom: 1px solid white;
+                      display: inline;
                     }
 
                     .group-left,
