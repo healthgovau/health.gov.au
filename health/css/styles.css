@@ -8503,7 +8503,7 @@ ul.social__links,
 .node-type-video .region-content {
   margin-top: 2.4em; }
 
-.node-video.view-mode-listing_vertical_small .field-name-field-resource-duration .field-item {
+.node-video.view-mode-listing_vertical .field-name-field-resource-duration .field-item, .node-video.view-mode-listing_vertical_small .field-name-field-resource-duration .field-item {
   margin-right: 1px;
   margin-bottom: 8px;
   margin-top: -25px;
@@ -8515,7 +8515,7 @@ ul.social__links,
   filter: alpha(opacity=75);
   vertical-align: top;
   display: inline-block; }
-  .node-video.view-mode-listing_vertical_small .field-name-field-resource-duration .field-item:before {
+  .node-video.view-mode-listing_vertical .field-name-field-resource-duration .field-item:before, .node-video.view-mode-listing_vertical_small .field-name-field-resource-duration .field-item:before {
     background-image: url("../images/icons/video.svg");
     background-position: center center;
     background-repeat: no-repeat;
