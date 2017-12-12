@@ -10157,11 +10157,13 @@ header.uikit-header, header.region-featured {
     color: white; }
   .page-node-1021 .paragraphs-item-para-contact.para-container a,
   .page-node-1156 .paragraphs-item-para-contact.para-container a {
-    color: white; }
+    color: white;
+    border-bottom: 1px solid white; }
     .page-node-1021 .paragraphs-item-para-contact.para-container a:hover,
     .page-node-1156 .paragraphs-item-para-contact.para-container a:hover {
       color: white;
-      background: none; }
+      background: none;
+      border-bottom: none; }
 
 .page-node-1021 .paragraphs-item-para-block.para-container,
 .page-node-1156 .paragraphs-item-para-block.para-container {
