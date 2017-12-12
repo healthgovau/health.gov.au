@@ -17,13 +17,11 @@ header.uikit-header {
       display: block;
       width: 50%;
       margin: auto;
+      // For IE 9, 10.
+      color: transparent;
       @include uikit-media(sm) {
         width: 100%;
         margin: 0;
-      }
-      // For IE 9, 10.
-      &:focus {
-        outline: none;
       }
     }
   }
