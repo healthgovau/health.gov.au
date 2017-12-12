@@ -10080,15 +10080,15 @@ header.uikit-header, header.region-featured {
   header.uikit-header .uikit-header__logo, header.region-featured .uikit-header__logo {
     display: block;
     border-bottom: 2px solid transparent;
-    padding: 0.4em; }
+    padding: 0.4em;
+    color: transparent; }
     @media (min-width: 992px) {
       header.uikit-header .uikit-header__logo, header.region-featured .uikit-header__logo {
         float: left; } }
     header.uikit-header .uikit-header__logo-image, header.region-featured .uikit-header__logo-image {
       display: block;
       width: 50%;
-      margin: auto;
-      color: transparent; }
+      margin: auto; }
       @media (min-width: 768px) {
         header.uikit-header .uikit-header__logo-image, header.region-featured .uikit-header__logo-image {
           width: 100%;
