@@ -41,14 +41,13 @@
 
     .bean-block-content {
       a {
+        color: transparent;
         .field-name-field-image {
           img {
             max-width: 70%;
             @include uikit-media(sm) {
               max-width: 40%;
             }
-            // For IE 9, 10.
-            color: transparent;
           }
           // Resp
           float: left;
@@ -78,6 +77,7 @@
           display: block;
           margin-left: 35%;
           text-align: left;
+          color: white;
           @include uikit-media(sm) {
             margin-left: 0;
             text-align: center;

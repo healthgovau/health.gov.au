@@ -7123,38 +7123,40 @@ h6 {
   padding-left: 12px;
   padding-right: 12px;
   text-align: left; }
-  .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image {
-    float: left;
-    width: 35%;
-    text-align: left; }
-    .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image img {
-      max-width: 70%;
-      color: transparent; }
+  .bean-image-and-text.view-mode-full .bean-block-content a {
+    color: transparent; }
+    .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image {
+      float: left;
+      width: 35%;
+      text-align: left; }
+      .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image img {
+        max-width: 70%; }
+        @media (min-width: 768px) {
+          .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image img {
+            max-width: 40%; } }
       @media (min-width: 768px) {
-        .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image img {
-          max-width: 40%; } }
-    @media (min-width: 768px) {
-      .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image {
-        float: none;
-        width: 100%;
-        text-align: center; } }
-  .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-link-internal {
-    display: block;
-    margin-left: 35%;
-    margin-top: 10px;
-    text-align: left; }
-    @media (min-width: 768px) {
-      .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-link-internal {
-        margin-left: 0;
-        text-align: center; } }
-  .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-bean-text {
-    display: block;
-    margin-left: 35%;
-    text-align: left; }
-    @media (min-width: 768px) {
-      .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-bean-text {
-        margin-left: 0;
-        text-align: center; } }
+        .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image {
+          float: none;
+          width: 100%;
+          text-align: center; } }
+    .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-link-internal {
+      display: block;
+      margin-left: 35%;
+      margin-top: 10px;
+      text-align: left; }
+      @media (min-width: 768px) {
+        .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-link-internal {
+          margin-left: 0;
+          text-align: center; } }
+    .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-bean-text {
+      display: block;
+      margin-left: 35%;
+      text-align: left;
+      color: white; }
+      @media (min-width: 768px) {
+        .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-bean-text {
+          margin-left: 0;
+          text-align: center; } }
 
 .bean-image-and-text.view-mode-feature {
   float: left; }
