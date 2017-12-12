@@ -4,6 +4,7 @@
 .page {
   .footer {
     @extend .uikit-footer;
+
     @extend %colour-Primary-background;
 
     padding-left: 0;

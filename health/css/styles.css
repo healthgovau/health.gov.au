@@ -1,29 +1,29 @@
 @charset "UTF-8";
 .node-type-health-topic .page-title__supp .region-title-supp,
 .node-type-health-topic-hp .page-title__supp .region-title-supp, .page .footer, body.node-type-health-topic .paragraphs-2-columns-resources.para-container, body.node-type-health-topic-hp .paragraphs-2-columns-resources.para-container, body.node-type-landing-page .paragraphs-2-columns-resources.para-container, .front .paragraphs-item-para-block.para-container.block__count--5 {
-  background: #1b2a57;
+  background-color: #1b2a57;
   background: linear-gradient(to right, #1b2a57, #153a6e); }
 
 .page-title.header.header--light, body.node-type-health-topic .para-container.paragraphs-item-para-content-text, body.node-type-health-topic-hp .para-container.paragraphs-item-para-content-text, body.node-type-landing-page .para-container.paragraphs-item-para-content-text, .paragraphs-item-para-taxonomies.para-container, .front .paragraphs-item-para-block.para-container.block__count--1 {
-  background: #ecedee;
+  background-color: #ecedee;
   background: linear-gradient(to right, #ecedee, #f9f9f9); }
 
 #block-bean-share-this, body.node-type-health-topic .paragraphs-item-para-statistics, body.node-type-health-topic-hp .paragraphs-item-para-statistics, body.node-type-landing-page .paragraphs-item-para-statistics, .page-initiatives-and-programs.page-views .bean-image-and-text {
-  background: #f9f9f9;
+  background-color: #f9f9f9;
   background: linear-gradient(to right, #f9f9f9, #ecedee); }
 
 body.node-type-health-topic .paragraphs-item-two-columns.para-container, body.node-type-health-topic-hp .paragraphs-item-two-columns.para-container, body.node-type-landing-page .paragraphs-item-two-columns.para-container {
-  background: #e5e5e5;
+  background-color: #e5e5e5;
   background: linear-gradient(to right, #e5e5e5, #f9f9f9); }
 
 .taskbar .taskbar__item, .taskbar.view ul > .views-row .node, .taskbar--tiled--2 .taskbar__item, .taskbar--2 .taskbar__item, .taskbar--tiled--3 .taskbar__item, .taskbar--3 .taskbar__item, .taskbar--tiled--4 .taskbar__item, .taskbar--4 .taskbar__item, .taskbar--tiled--5 .taskbar__item, .taskbar--5 .taskbar__item, .taskbar--tiled--6 .taskbar__item, .taskbar--6 .taskbar__item, .taskbar--tiled--2.view ul > .views-row .node, .taskbar--tiled--3.view ul > .views-row .node, .taskbar--tiled--4.view ul > .views-row .node, .taskbar--tiled--5.view ul > .views-row .node, .taskbar--tiled--6.view ul > .views-row .node, .page-node-1021 .paragraphs-item-para-contact.para-container,
 .page-node-1156 .paragraphs-item-para-contact.para-container, .page-node-1021 .paragraphs-item-para-block.para-container,
 .page-node-1156 .paragraphs-item-para-block.para-container {
-  background: #006e7a;
+  background-color: #006e7a;
   background: linear-gradient(to right, #006e7a, #008998); }
 
 .page-title__supp .region-title-supp {
-  background: #626366;
+  background-color: #626366;
   background: linear-gradient(to right, #626366, #6d6e70); }
 
 /**
@@ -8750,17 +8750,19 @@ body.node-type-health-topic .paragraphs-item-para-contact, body.node-type-health
   text-align: center; }
   body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar {
     padding: 0.8em; }
-    bor body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar a:before, bor body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar a:before, bor body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar a:before {
-      content: "\f095";
-      font-family: FontAwesome;
-      font-size: 1em;
-      font-style: normal;
-      font-weight: normal;
-      text-decoration: inherit;
-      z-index: 1;
-      margin-right: 5px; }
-    body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar a:hover:before, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar a:hover:before, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar a:hover:before {
-      margin-right: 10px; }
+    body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar a, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar a, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar a {
+      border-bottom: none; }
+      body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar a:before, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar a:before, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar a:before {
+        content: "\f095";
+        font-family: FontAwesome;
+        font-size: 1em;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        z-index: 1;
+        margin-right: 5px; }
+      body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar a:hover:before, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar a:hover:before, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar a:hover:before {
+        margin-right: 10px; }
 
 body.node-type-health-topic .page-landing .paragraphs-2-columns-resources, body.node-type-health-topic-hp .page-landing .paragraphs-2-columns-resources, body.node-type-landing-page .page-landing .paragraphs-2-columns-resources {
   background: white; }

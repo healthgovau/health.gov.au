@@ -160,7 +160,7 @@ body {
       .view-mode-hotline_bar {
         padding: uikit-space(0.5);
         a {
-          bor
+          border-bottom: none;
           &:before {
             content: "\f095";
             font-family: FontAwesome;

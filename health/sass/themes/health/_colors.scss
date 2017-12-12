@@ -52,7 +52,7 @@ $colour-lighter: #f1f1f2;
 $colour-lightest: #f9f9f9;
 
 %colour-Primary-background {
-  background: $colour-Primary-darker;
+  background-color: $colour-Primary-darker;
   background: -webkit-linear-gradient(left, $colour-Primary-darker, $colour-Primary);
   background: -o-linear-gradient(right, $colour-Primary-darker, $colour-Primary);
   background: -moz-linear-gradient(right, $colour-Primary-darker, $colour-Primary);
@@ -60,7 +60,7 @@ $colour-lightest: #f9f9f9;
 }
 
 %colour-Light-background {
-  background: $colour-light;
+  background-color: $colour-light;
   background: -webkit-linear-gradient(left, $colour-light, $colour-lightest);
   background: -o-linear-gradient(right, $colour-light, $colour-lightest);
   background: -moz-linear-gradient(right, $colour-light, $colour-lightest);
@@ -68,7 +68,7 @@ $colour-lightest: #f9f9f9;
 }
 
 %colour-Light-background-reverse {
-  background: $colour-lightest;
+  background-color: $colour-lightest;
   background: -webkit-linear-gradient(left, $colour-lightest, $colour-light);
   background: -o-linear-gradient(right, $colour-lightest, $colour-light);
   background: -moz-linear-gradient(right, $colour-lightest, $colour-light);
@@ -76,7 +76,7 @@ $colour-lightest: #f9f9f9;
 }
 
 %colour-Light-dark-background {
-  background: $colour-light-dark;
+  background-color: $colour-light-dark;
   background: -webkit-linear-gradient(left, $colour-light-dark, $colour-lightest);
   background: -o-linear-gradient(right, $colour-light-dark, $colour-lightest);
   background: -moz-linear-gradient(right, $colour-light-dark, $colour-lightest);
@@ -84,7 +84,7 @@ $colour-lightest: #f9f9f9;
 }
 
 %colour-Secondary-background {
-  background: $colour-Secondary-darker;
+  background-color: $colour-Secondary-darker;
   background: -webkit-linear-gradient(left, $colour-Secondary-darker, $colour-Secondary);
   background: -o-linear-gradient(right, $colour-Secondary-darker, $colour-Secondary);
   background: -moz-linear-gradient(right, $colour-Secondary-darker, $colour-Secondary);
@@ -92,7 +92,7 @@ $colour-lightest: #f9f9f9;
 }
 
 %colour-Dark-background {
-  background: $colour-darker;
+  background-color: $colour-darker;
   background: -webkit-linear-gradient(left, $colour-darker, $colour-dark);
   background: -o-linear-gradient(right, $colour-darker, $colour-dark);
   background: -moz-linear-gradient(right, $colour-darker, $colour-dark);
