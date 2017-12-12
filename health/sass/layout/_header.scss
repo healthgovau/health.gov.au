@@ -22,7 +22,7 @@ header.uikit-header {
         margin: 0;
       }
       // For IE 9, 10.
-      :focus {
+      &:focus {
         outline: none;
       }
     }
