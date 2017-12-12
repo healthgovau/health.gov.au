@@ -10,10 +10,12 @@ header.uikit-header {
     display: block;
     border-bottom: 2px solid transparent;
     padding: uikit-space(.25);
+    width: 100%;
     // For IE 9, 10.
     color: transparent;
     @include uikit-media(md) {
       float: left;
+      width: 70%;
     }
     &-image {
       display: block;

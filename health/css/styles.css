@@ -10082,10 +10082,12 @@ header.uikit-header, header.region-featured {
     display: block;
     border-bottom: 2px solid transparent;
     padding: 0.4em;
+    width: 100%;
     color: transparent; }
     @media (min-width: 992px) {
       header.uikit-header .uikit-header__logo, header.region-featured .uikit-header__logo {
-        float: left; } }
+        float: left;
+        width: 70%; } }
     header.uikit-header .uikit-header__logo-image, header.region-featured .uikit-header__logo-image {
       display: block;
       width: 50%;
