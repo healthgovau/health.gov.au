@@ -29,7 +29,8 @@
 }
 
 // Topic landing page.
-.page-topics {
+.page-topics,
+.page-initiatives-and-programs {
   .messages.info {
     margin: 0;
     @include uikit-media(sm) {
