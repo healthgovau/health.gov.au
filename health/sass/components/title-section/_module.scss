@@ -42,7 +42,7 @@
   @extend .col-md-8;
   padding: uikit-space(0.5) 0 uikit-space(0.5);
   @include uikit-media(sm){
-    padding: uikit-space(1) 0 uikit-space(1.5);
+    padding: uikit-space(1) 0;
   }
 
   // Section title (large)
