@@ -153,10 +153,11 @@ function health_preprocess_page(&$variables) {
     }
 
     // News and events
-    // Title doesn't appear in the active trail, so set one manually.
+    // Set title to be the third level menu trail.
     if ($active_trail[1]['href'] == 'news-and-events') {
       if (count($active_trail) > 3) {
-        $variables['section_title'] = 'News and events';
+
+        $variables['section_title'] = strtoupper(explode('/', $active_trail[2]['href'])[1]);
         $variables['summary'] = NULL;
       }
     }
