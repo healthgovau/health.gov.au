@@ -7249,19 +7249,21 @@ h6 {
  * @return {string}               - The code passed in via @content wrapped inside a media query
  */
 table {
-  margin-bottom: 1.2em;
+  margin-bottom: 1.6em;
   width: 100%;
   border-collapse: collapse; }
   table tr:nth-child(even) {
     background-color: #f0f3f5; }
   table td, table th {
     border-bottom: 1px solid #CCC;
-    padding: 0.8em;
+    padding: 0.4em;
     text-align: left; }
     @media (min-width: 992px) {
       table td, table th {
-        padding: 1.2em;
+        padding: 0.64em;
         font-size: initial; } }
+    table td p:last-of-type, table th p:last-of-type {
+      margin-bottom: 0; }
   table thead {
     border-bottom: 2px solid #CCC; }
   @media (max-width: 992px) {
@@ -7345,10 +7347,12 @@ tr.drag-previous {
     height: 32px;
     left: -40px; }
 
-.page-topics .messages.info {
+.page-topics .messages.info,
+.page-initiatives-and-programs .messages.info {
   margin: 0; }
   @media (min-width: 768px) {
-    .page-topics .messages.info {
+    .page-topics .messages.info,
+    .page-initiatives-and-programs .messages.info {
       margin-top: 16em; } }
 
 .video--left, .video--right, .node-video.view-mode-feature, .node-video.view-mode-full {
