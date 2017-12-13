@@ -112,22 +112,6 @@ function health_breadcrumb($variables) {
     return $output;
   }
   else {
-    // Override breadcrumb if current page is a search view page.
-    $query_string = drupal_get_query_parameters();
-    if (isset($query_string['f'])) {
-      // Find out if it is a topic related page.
-      foreach ($query_string['f'] as $string) {
-        if (strpos($string, 'field_related_health_topic') !== FALSE) {
-          // Do not override the title if there are more than one topic in the filter.
-          if (substr_count(implode('&', $query_string['f']), 'field_related_health_topic') == 1) {
-            $topic_id = explode(':', $string)[1];
-            $topic_node = node_load($topic_id);
-            array_splice($variables['breadcrumb'], 1, 0, l($topic_node->title, $topic_node->path['alias']));
-          }
-        }
-      }
-    }
-
     // Build the breadcrumb trail.
     // We replace the default breadcrumb output for a couple of key reasons:
     //  - should be wrapped in a nav tag
@@ -371,34 +355,6 @@ function health_form_search_api_page_search_form_alter(&$form, &$form_state) {
   $form['#prefix'] = '<div class="block block-search-api-page contextual-links-region last even" id="search-api-page-search-form">';
   $form['#suffix'] = '</div>';
   $form['keys_1']['#attributes']['placeholder'] = t('Enter your search term');
-}
-
-/**
- * Implements hook_views_pre_render().
- *
- * Override or insert variables into the views pre render.
- *
- * @param array $view
- *   The view object about to be processed.
- */
-function health_views_pre_render(&$view) {
-  // Override title for search views based on the faceted filter.
-  if ($view->base_field == 'search_api_id') {
-    $query_string = drupal_get_query_parameters();
-    if (isset($query_string['f'])) {
-      // Find out if it is a topic related page.
-      foreach ($query_string['f'] as $string) {
-        if (strpos($string, 'field_related_health_topic') !== FALSE) {
-          // Do not override the title if there are more than one topic in the filter.
-          if (substr_count(implode('&', $query_string['f']), 'field_related_health_topic') == 1) {
-            $topic_id = explode(':', $string)[1];
-            $topic_node = node_load($topic_id);
-            $view->build_info['title'] = $topic_node->title . ' - ' . $view->name;
-          }
-        }
-      }
-    }
-  }
 }
 
 /**
