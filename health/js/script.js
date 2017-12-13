@@ -19,7 +19,7 @@
     attach: function (context, settings) {
       window.FontAwesomeConfig = {
         searchPseudoElements: true
-      }
+      };
     }
   };
 

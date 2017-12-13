@@ -4897,16 +4897,13 @@ h6 {
   .goTop:hover {
     opacity: 1;
     background-color: transparent; }
-  .goTop i {
+  .goTop svg {
     margin: 0;
-    padding-left: 2.5em; }
-    .goTop i:before {
-      position: relative;
-      background: #008998;
-      color: white;
-      padding: 0.2em;
-      border: 2px solid white;
-      font-size: 30px; }
+    position: relative;
+    background: #008998;
+    color: white;
+    padding: 0.2em;
+    border: 2px solid white; }
 
 .isVisible {
   opacity: .8;
@@ -6918,7 +6915,7 @@ textarea {
   overflow: auto; }
 
 .icon {
-  font-family: "FontAwesome"; }
+  font-family: "Font Awesome 5 Free"; }
   .icon--block {
     display: block; }
 
