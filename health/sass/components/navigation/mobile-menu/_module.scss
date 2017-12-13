@@ -76,9 +76,12 @@
 
 // Secondary nav / local nav
 .region-sidebar-second {
+  margin-top: - uikit-space(1);
   padding-bottom: uikit-space(1);
   @include uikit-media(sm){
     padding-bottom: uikit-space(2);
+    margin-top: 0;
+    
   }
   .block-menu-block {
     @extend %colour-Light-background;

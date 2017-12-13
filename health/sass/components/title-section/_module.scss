@@ -4,7 +4,7 @@
     @extend %colour-Light-background;
     padding-top: 0;
     padding-bottom: 0;
-    margin-bottom: 0;
+    margin-bottom: uikit-space(1);
     @include uikit-media(sm){
       margin-bottom: uikit-space(2);
     }
