@@ -30,8 +30,9 @@
           &:hover {
             border: none;
           }
-          &:after {
-            color: #313131;
+          &:focus {
+            background-color: #0091a0;
+            color: white;
           }
         }
         img {
@@ -105,7 +106,7 @@
           z-index: 1;
         }
         .release-card:before {
-          content: "\f06e";
+          content: "\f0a1";
           font-family: FontAwesome;
           font-size: 3em;
           font-style: normal;

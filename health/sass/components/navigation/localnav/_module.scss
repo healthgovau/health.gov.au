@@ -24,6 +24,13 @@
   &.active {
     background: $uikit-colour-Background;
     border-left-color: $colour-Secondary-darker;
+    &:hover {
+      background: white;
+    }
+    &:focus {
+      background-color: $colour-Secondary-light;
+      color: white;
+    }
   }
 }
 
