@@ -8,7 +8,7 @@
 @import '../../abstracts/mixins';
 
 %table {
-  margin-bottom: uikit-space(.75);
+  margin-bottom: uikit-space(1);
   width: 100%;
   border-collapse: collapse;
 
@@ -19,13 +19,18 @@
   td,
   th {
     @include uikit-media('md') {
-      padding: uikit-space(.75);
+      padding: uikit-space(.4);
       font-size: initial;
     }
 
     border-bottom: $uikit-borderize;
-    padding: uikit-space(.5);
+    padding: uikit-space(.25);
     text-align: left;
+
+    // Remove extra padding around the last p tag.
+    p:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   thead {
