@@ -11,19 +11,6 @@
   }
 }
 
-.node-type-health-topic,
-.node-type-health-topic-hp,
-.node-type-landing-page {
-  .page-title {
-    &.header.header--light {
-      margin-bottom: 0;
-      h1 {
-        color: $colour-Secondary;
-      }
-    }
-  }
-}
-
 // Main breadcrumb/title/summary
 .node-type-page {
   .page-title__core {
