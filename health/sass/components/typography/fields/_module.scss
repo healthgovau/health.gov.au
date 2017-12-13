@@ -33,6 +33,11 @@
 
 // Stacked vs inline
 .field-label-inline {
+    clear: both;
+    @include uikit-media(sm) {
+      clear: none;
+    }
+
     .field-label {
         @extend %field-label;
         margin-right: uikit-space(0.25);
