@@ -5,24 +5,14 @@
     padding-top: 0;
     padding-bottom: 0;
     margin-bottom: 0;
-    @include uikit-media(md){
+    @include uikit-media(sm){
       margin-bottom: uikit-space(2);
     }
   }
 }
 
-// Main breadcrumb/title/summary
-/*.node-type-page {
-  .page-title__core {
-    padding: uikit-space(0.5) 0 uikit-space(0.5) uikit-space(0.5);
-    @include uikit-media( md ){
-      float: left;
-    }
-  }
-}*/
-
 .page-title__core {
-  @extend .col-md-8;
+  @extend .col-sm-8;
   padding: 12px;
   @include uikit-media(sm){
     padding: uikit-space(1) 0;
@@ -52,7 +42,7 @@
   @include uikit-media(sm) {
     display: block;
   }
-  @extend .col-md-4;
+  @extend .col-sm-4;
   @include uikit-media( md ) {
     display: table;
   }
