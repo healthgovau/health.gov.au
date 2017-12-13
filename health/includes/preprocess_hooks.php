@@ -157,7 +157,7 @@ function health_preprocess_page(&$variables) {
     if ($active_trail[1]['href'] == 'news-and-events') {
       if (count($active_trail) > 3) {
 
-        $variables['section_title'] = strtoupper(explode('/', $active_trail[2]['href'])[1]);
+        $variables['section_title'] = ucfirst(explode('/', $active_trail[2]['href'])[1]);
         $variables['summary'] = NULL;
       }
     }
