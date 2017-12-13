@@ -30,8 +30,9 @@
           &:hover {
             border: none;
           }
-          &:after {
-            color: #313131;
+          &:focus {
+            background-color: #0091a0;
+            color: white;
           }
         }
         img {
