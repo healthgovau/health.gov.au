@@ -5712,23 +5712,6 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
     .page-title.header.header--light {
       margin-bottom: 3.2em; } }
 
-.node-type-health-topic .page-title.header.header--light,
-.node-type-health-topic-hp .page-title.header.header--light,
-.node-type-landing-page .page-title.header.header--light {
-  margin-bottom: 0; }
-  .node-type-health-topic .page-title.header.header--light h1, .node-type-health-topic .page-title.header.header--light .node-statistic.view-mode-feature .one-column-wrapper .group-statistic p.field-name-field-statistic-value .statistic-value, .node-statistic.view-mode-feature .one-column-wrapper .group-statistic p.field-name-field-statistic-value .node-type-health-topic .page-title.header.header--light .statistic-value, .node-type-health-topic .page-title.header.header--light .node-statistic.view-mode-inline .one-column-wrapper .group-statistic p.field-name-field-statistic-value .statistic-value, .node-statistic.view-mode-inline .one-column-wrapper .group-statistic p.field-name-field-statistic-value .node-type-health-topic .page-title.header.header--light .statistic-value,
-  .node-type-health-topic-hp .page-title.header.header--light h1,
-  .node-type-health-topic-hp .page-title.header.header--light .node-statistic.view-mode-feature .one-column-wrapper .group-statistic p.field-name-field-statistic-value .statistic-value, .node-statistic.view-mode-feature .one-column-wrapper .group-statistic p.field-name-field-statistic-value
-  .node-type-health-topic-hp .page-title.header.header--light .statistic-value,
-  .node-type-health-topic-hp .page-title.header.header--light .node-statistic.view-mode-inline .one-column-wrapper .group-statistic p.field-name-field-statistic-value .statistic-value, .node-statistic.view-mode-inline .one-column-wrapper .group-statistic p.field-name-field-statistic-value
-  .node-type-health-topic-hp .page-title.header.header--light .statistic-value,
-  .node-type-landing-page .page-title.header.header--light h1,
-  .node-type-landing-page .page-title.header.header--light .node-statistic.view-mode-feature .one-column-wrapper .group-statistic p.field-name-field-statistic-value .statistic-value, .node-statistic.view-mode-feature .one-column-wrapper .group-statistic p.field-name-field-statistic-value
-  .node-type-landing-page .page-title.header.header--light .statistic-value,
-  .node-type-landing-page .page-title.header.header--light .node-statistic.view-mode-inline .one-column-wrapper .group-statistic p.field-name-field-statistic-value .statistic-value, .node-statistic.view-mode-inline .one-column-wrapper .group-statistic p.field-name-field-statistic-value
-  .node-type-landing-page .page-title.header.header--light .statistic-value {
-    color: #008998; }
-
 .node-type-page .page-title__core {
   float: left;
   padding: 0.8em 0 0.8em 0.8em; }

@@ -1,2 +1,3 @@
 .idea/
 health/node_modules/
+health/sass/vendors/uikit.scss
