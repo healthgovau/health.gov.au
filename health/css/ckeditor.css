@@ -4550,7 +4550,9 @@ html > body .uikit-select__element, html > body .form-select--wrapper select, .f
   clear: both; }
 
 .visually-hidden,
-.element-invisible {
+.element-invisible,
+.node-publication .paragraphs-items-field-resource-document .file__link span,
+.node-image .paragraphs-items-field-image-files .file__link span {
   position: absolute;
   width: 1px;
   height: 1px;
