@@ -58,6 +58,7 @@
     margin-bottom: 0;
   }
   .feedback-band {
+    @extend .row;
     .feedback-col {
       @extend .col-xs-12;
       @extend .col-sm-6;
