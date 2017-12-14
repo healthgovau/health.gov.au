@@ -146,6 +146,15 @@ function health_preprocess_page(&$variables) {
       }
     }
 
+    // Initiatives and programs
+    // Title doesn't appear in the active trail, so set one manually.
+    if ($active_trail[1]['href'] == 'initiatives-and-programs') {
+      if (count($active_trail) > 2) {
+        $variables['section_title'] = 'Initiatives and programs';
+        $variables['summary'] = NULL;
+      }
+    }
+
     // About us.
     if ($active_trail[1]['href'] == 'node/1') {
       $variables['section_title'] = $active_trail[1]['title'];
