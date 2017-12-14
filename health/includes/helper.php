@@ -277,6 +277,7 @@ function _health_default_audience_menu($path) {
     'news-and-events',
     'resources',
     'initiatives-and-programs',
+    'committees-and-groups',
   );
   foreach ($audience_default_paths as $audience_default_path) {
     if ($path == $audience_default_path) {
