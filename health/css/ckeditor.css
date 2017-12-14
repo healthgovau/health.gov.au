@@ -4954,16 +4954,13 @@ h6 {
   .goTop:hover {
     opacity: 1;
     background-color: transparent; }
-  .goTop i {
+  .goTop svg {
     margin: 0;
-    padding-left: 2.5em; }
-    .goTop i:before {
-      position: relative;
-      background: #008998;
-      color: white;
-      padding: 0.2em;
-      border: 2px solid white;
-      font-size: 30px; }
+    position: relative;
+    background: #008998;
+    color: white;
+    padding: 0.2em;
+    border: 2px solid white; }
 
 .isVisible {
   opacity: .8;
@@ -4978,6 +4975,9 @@ h6 {
     .block-bean-call-to-action .field-name-field-link-to a,
     .bean-call-to-action .field-name-field-link-to a, .uikit-cta-link, .video--left .video__cta, .video--right .video__cta, .node-video.view-mode-feature .video__cta, .node-video.view-mode-full .video__cta, .paragraphs-item-para-statistics .field-name-field-link-internal a, .paragraphs-item-two-columns .view-mode-full .para-row .group-footer .paragraphs-item-para-link a, .paragraphs-item-para-view .para-row > a {
       font-size: 1.2em; } }
+  .block-bean-call-to-action .field-name-field-link-to a:after,
+  .bean-call-to-action .field-name-field-link-to a:after, .uikit-cta-link:after, .video--left .video__cta:after, .video--right .video__cta:after, .node-video.view-mode-feature .video__cta:after, .node-video.view-mode-full .video__cta:after, .paragraphs-item-para-statistics .field-name-field-link-internal a:after, .paragraphs-item-two-columns .view-mode-full .para-row .group-footer .paragraphs-item-para-link a:after, .paragraphs-item-para-view .para-row > a:after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E   %3Cpath fill='#008998' d='M128 64l-64 64-16-16 64-64'/%3E   %3Cpath fill='#008998' d='M128 64l-16 16-64-64L64 0'/%3E  %3C/svg%3E"); }
 
 /**
  * Create media queries and wraps the @content code inside of it
@@ -5815,6 +5815,8 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
         .page-title__supp .region-title-supp .block-bean-call-to-action a:hover {
           background: none;
           border-bottom: solid 1px white; }
+        .page-title__supp .region-title-supp .block-bean-call-to-action a:after {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E   %3Cpath fill='white' d='M128 64l-64 64-16-16 64-64'/%3E   %3Cpath fill='white' d='M128 64l-16 16-64-64L64 0'/%3E  %3C/svg%3E"); }
 
 .page .footer {
   background-color: #1b2a57;
@@ -5868,53 +5870,18 @@ ul.social__links,
     margin-right: 1.6em;
     margin-bottom: 0;
     display: inline; }
-    ul.social__links .social__links-item a,
-    .social__links .social__links-item a {
-      display: inline;
-      margin-right: 0; }
-      ul.social__links .social__links-item a.youtube:before,
-      .social__links .social__links-item a.youtube:before {
-        content: "\f16a"; }
-      ul.social__links .social__links-item a.twitter:before,
-      .social__links .social__links-item a.twitter:before {
-        content: "\f099"; }
-      ul.social__links .social__links-item a.facebook:before,
-      .social__links .social__links-item a.facebook:before {
-        content: "\f09a"; }
-      ul.social__links .social__links-item a.email:before,
-      .social__links .social__links-item a.email:before {
-        content: "\f003"; }
-      ul.social__links .social__links-item a.linkedin:before,
-      .social__links .social__links-item a.linkedin:before {
-        content: "\f0e1"; }
-      ul.social__links .social__links-item a.instagram:before,
-      .social__links .social__links-item a.instagram:before {
-        content: "\f16d"; }
-      ul.social__links .social__links-item a:after,
-      .social__links .social__links-item a:after {
-        display: none; }
+    ul.social__links .social__links-item svg,
+    .social__links .social__links-item svg {
+      margin-right: 0.8em; }
+    ul.social__links .social__links-item a svg.fa-external-link-alt,
+    .social__links .social__links-item a svg.fa-external-link-alt {
+      display: none; }
 
-.block-bean-call-to-action .field-name-field-link-to a:after,
-.bean-call-to-action .field-name-field-link-to a:after, .uikit-cta-link:after, .video--left .video__cta:after, .video--right .video__cta:after, .node-video.view-mode-feature .video__cta:after, .node-video.view-mode-full .video__cta:after, .paragraphs-item-para-statistics .field-name-field-link-internal a:after, .paragraphs-item-two-columns .view-mode-full .para-row .group-footer .paragraphs-item-para-link a:after, .paragraphs-item-para-view .para-row > a:after {
-  background-image: none;
-  content: "\f061";
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit;
-  color: #008998;
-  z-index: 1; }
+.page a[rel~='external'] svg {
+  margin-left: 5px; }
 
 .page a[rel~='external']:after {
-  background-image: none;
-  content: "\f08e";
-  font-family: FontAwesome;
-  font-size: small;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit;
-  color: #008998;
-  z-index: 1; }
+  display: none; }
 
 .page-node, .node-type-news-article, .node-type-event, .node-type-publication, .node-type-image, .node-type-video, .node-type-campaign, .node-type-committee-or-group, .node-type-condition-or-disease, .node-type-contact, .node-type-initiative-or-program, .node-type-statistic, .node-type-service, .node-type-health-topic,
 .node-type-health-topic-hp {
@@ -6465,19 +6432,13 @@ body.node-type-health-topic .paragraphs-item-para-contact, body.node-type-health
   text-align: center; }
   body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar {
     padding: 0.8em; }
+    body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone svg, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone svg, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone svg {
+      color: white;
+      margin-right: 5px; }
     body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a {
       border-bottom: none; }
-      body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a:before, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a:before, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a:before {
-        content: "\f095";
-        font-family: FontAwesome;
-        font-size: 1em;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: inherit;
-        z-index: 1;
-        margin-right: 5px; }
-      body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a:hover:before, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a:hover:before, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a:hover:before {
-        margin-right: 10px; }
+      body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a:hover, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a:hover, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a:hover {
+        margin-left: 10px; }
 
 body.node-type-health-topic .page-landing .paragraphs-2-columns-resources, body.node-type-health-topic-hp .page-landing .paragraphs-2-columns-resources, body.node-type-landing-page .page-landing .paragraphs-2-columns-resources {
   background: white; }
@@ -6522,7 +6483,7 @@ body.node-type-health-topic .para-container.paragraphs-item-image, body.node-typ
     margin: 0; }
     .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .taxonomy-term-description p {
       margin: 0; }
-  .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item a:after {
+  .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item svg {
     display: none; }
   .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference {
     padding: 1.6em;
@@ -6942,27 +6903,17 @@ th .checkbox {
 textarea {
   overflow: auto; }
 
-.icon {
-  font-family: "FontAwesome"; }
-  .icon--block {
-    display: block; }
+.icon--block {
+  display: block; }
 
 ul.social__links .social__links-item a,
 .social__links .social__links-item a, .listing-back a, [class*="fa-"] {
   position: relative;
-  margin-left: 2em; }
+  line-height: 1;
+  left: 0; }
   
   .social__links .social__links-item a:before, .listing-back a:before, [class*="fa-"]:before {
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-    color: inherit;
-    font-size: 1.5em;
-    position: absolute;
-    line-height: 1;
-    left: 0;
-    margin-left: -1.2em; }
+    display: none; }
 
 .fa-large {
   padding-left: 3.5em; }
@@ -7564,8 +7515,8 @@ p.filter__help {
     .resources-selector ul li .selector-card, .news-events-selector ul li .selector-card {
       text-align: center;
       margin-bottom: 0; }
-      .resources-selector ul li .selector-card .card:before, .news-events-selector ul li .selector-card .card:before {
-        color: #008998; }
+      .resources-selector ul li .selector-card .icon, .news-events-selector ul li .selector-card .icon {
+        margin-bottom: 10px; }
       .resources-selector ul li .selector-card a, .news-events-selector ul li .selector-card a {
         border-bottom: 1px solid #313131;
         margin-bottom: 0;
@@ -7587,70 +7538,6 @@ p.filter__help {
             display: block;
             margin-bottom: 0;
             margin-top: 8px; } }
-      .resources-selector ul li .selector-card .image-card:before, .news-events-selector ul li .selector-card .image-card:before {
-        content: "\f03e";
-        font-family: FontAwesome;
-        font-size: 3em;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: inherit;
-        z-index: 1; }
-      .resources-selector ul li .selector-card .video-card:before, .news-events-selector ul li .selector-card .video-card:before {
-        content: "\f03d";
-        font-family: FontAwesome;
-        font-size: 3em;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: inherit;
-        z-index: 1; }
-      .resources-selector ul li .selector-card .publication-card:before, .news-events-selector ul li .selector-card .publication-card:before {
-        content: "\f02d";
-        font-family: FontAwesome;
-        font-size: 3em;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: inherit;
-        z-index: 1; }
-      .resources-selector ul li .selector-card .corp-publication-card:before, .news-events-selector ul li .selector-card .corp-publication-card:before {
-        content: "\f0ea";
-        font-family: FontAwesome;
-        font-size: 3em;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: inherit;
-        z-index: 1; }
-      .resources-selector ul li .selector-card .event-card:before, .news-events-selector ul li .selector-card .event-card:before {
-        content: "\f073";
-        font-family: FontAwesome;
-        font-size: 3em;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: inherit;
-        z-index: 1; }
-      .resources-selector ul li .selector-card .news-card:before, .news-events-selector ul li .selector-card .news-card:before {
-        content: "\f1ea";
-        font-family: FontAwesome;
-        font-size: 3em;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: inherit;
-        z-index: 1; }
-      .resources-selector ul li .selector-card .release-card:before, .news-events-selector ul li .selector-card .release-card:before {
-        content: "\f0a1";
-        font-family: FontAwesome;
-        font-size: 3em;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: inherit;
-        z-index: 1; }
-      .resources-selector ul li .selector-card .alert-card:before, .news-events-selector ul li .selector-card .alert-card:before {
-        content: "\f071";
-        font-family: FontAwesome;
-        font-size: 3em;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: inherit;
-        z-index: 1; }
 
 .page-search main .block-search-api-page {
   width: 100%; }
@@ -7685,7 +7572,7 @@ ol.list--large, ul.list--large {
     position: relative;
     margin: 0 0 12px;
     padding: 15px 15px 15px 50px;
-    background: #22447b; }
+    background: #e5e5e5; }
     ol.list--large > li::before, ul.list--large > li::before {
       content: counter(standard-counter, decimal);
       counter-increment: standard-counter;

@@ -13,6 +13,6 @@
         return this.hostname && this.hostname !== location.hostname;
       }
       return false;
-    }).attr('rel','external');
+    }).attr('rel','external').append('<i class="fas fa-external-link-alt fa-xs"></i>');
   };
 })(jQuery);
