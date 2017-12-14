@@ -4,7 +4,6 @@
 }
 
 .icon {
-  font-family: "Font Awesome 5 Free";
   &--block {
     display: block;
   }
@@ -26,18 +25,10 @@
 
 %baseicon {
   position: relative;
-  margin-left: 2em;
+  line-height: 1;
+  left: 0;
   &:before {
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-    color: inherit;
-    font-size: 1.5em;
-    position: absolute;
-    line-height: 1;
-    left: 0;
-    margin-left: -1.2em;
+    display: none;
   }
 }
 

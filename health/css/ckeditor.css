@@ -5868,25 +5868,16 @@ ul.social__links,
 
 .block-bean-call-to-action .field-name-field-link-to a:after,
 .bean-call-to-action .field-name-field-link-to a:after, .uikit-cta-link:after, .video--left .video__cta:after, .video--right .video__cta:after, .node-video.view-mode-feature .video__cta:after, .node-video.view-mode-full .video__cta:after, .paragraphs-item-para-statistics .field-name-field-link-internal a:after, .paragraphs-item-two-columns .view-mode-full .para-row .group-footer .paragraphs-item-para-link a:after, .paragraphs-item-para-view .para-row > a:after {
-  background-image: none;
   content: "\f061";
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit;
+  font-family: "Font Awesome 5 Solid";
   color: #008998;
   z-index: 1; }
 
+.page a[rel~='external'] svg {
+  margin-left: 5px; }
+
 .page a[rel~='external']:after {
-  background-image: none;
-  content: "\f08e";
-  font-family: FontAwesome;
-  font-size: small;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit;
-  color: #008998;
-  z-index: 1; }
+  display: none; }
 
 .page-node, .node-type-news-article, .node-type-event, .node-type-publication, .node-type-image, .node-type-video, .node-type-campaign, .node-type-condition-or-disease, .node-type-contact, .node-type-initiative-or-program, .node-type-statistic, .node-type-service, .node-type-health-topic,
 .node-type-health-topic-hp {
@@ -6914,27 +6905,17 @@ th .checkbox {
 textarea {
   overflow: auto; }
 
-.icon {
-  font-family: "Font Awesome 5 Free"; }
-  .icon--block {
-    display: block; }
+.icon--block {
+  display: block; }
 
 ul.social__links .social__links-item a,
 .social__links .social__links-item a, .listing-back a, [class*="fa-"] {
   position: relative;
-  margin-left: 2em; }
+  line-height: 1;
+  left: 0; }
   
   .social__links .social__links-item a:before, .listing-back a:before, [class*="fa-"]:before {
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-    color: inherit;
-    font-size: 1.5em;
-    position: absolute;
-    line-height: 1;
-    left: 0;
-    margin-left: -1.2em; }
+    display: none; }
 
 .fa-large {
   padding-left: 3.5em; }
