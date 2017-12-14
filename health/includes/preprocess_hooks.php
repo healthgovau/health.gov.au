@@ -156,8 +156,15 @@ function health_preprocess_page(&$variables) {
     // Set title to be the third level menu trail.
     if ($active_trail[1]['href'] == 'news-and-events') {
       if (count($active_trail) > 3) {
-
         $variables['section_title'] = ucfirst(explode('/', $active_trail[2]['href'])[1]);
+        $variables['summary'] = NULL;
+      }
+    }
+
+    // Committees and groups
+    if ($active_trail[1]['href'] == 'committees-and-groups') {
+      if (count($active_trail) > 2) {
+        $variables['section_title'] = 'Committees and groups';
         $variables['summary'] = NULL;
       }
     }
