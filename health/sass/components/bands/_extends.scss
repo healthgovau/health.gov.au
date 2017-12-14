@@ -166,22 +166,14 @@ body {
       .view-mode-hotline_bar {
         padding: uikit-space(0.5);
         .field-name-field-contact-telephone {
+          svg {
+            color: white;
+            margin-right: 5px;
+          }
           a {
             border-bottom: none;
-            &:before {
-              content: "\f095";
-              font-family: FontAwesome;
-              font-size: 1em;
-              font-style: normal;
-              font-weight: normal;
-              text-decoration: inherit;
-              z-index: 1;
-              margin-right: 5px;
-            }
             &:hover {
-              &:before {
-                margin-right: 10px;
-              }
+              margin-left: 10px;
             }
           }
         }

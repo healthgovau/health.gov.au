@@ -7,8 +7,7 @@
     attach: function (context, settings) {
       var url = '/' + settings.health.theme_path + '/images/icons/gototop.png';
       Vue.component('backtotop', {
-        //template: '<button title="back to top" class="goTop" v-if="isVisible" @click="backToTop"> <img title="back to top" v-bind:src="imageLink" > </button>',
-        template: '<button title="back to top" class="goTop" v-if="isVisible" @click="backToTop"> <i class="fa fa-arrow-up fa-large" aria-hidden="true"></i> </button>',
+        template: '<button title="back to top" class="goTop" v-if="isVisible" @click="backToTop"> <i class="fas fa-arrow-up fa-3x" aria-hidden="true"></i> </button>',
         data: function() {
           return {
             isVisible: false,

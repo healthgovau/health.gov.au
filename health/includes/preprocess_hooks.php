@@ -191,7 +191,7 @@ function health_preprocess_page(&$variables) {
  */
 function health_preprocess_html(&$variables, $hook) {
   // Add google tag manager.
-  drupal_add_js(drupal_get_path('theme', 'health') . '/js/health.gtm.js');
+  //drupal_add_js(drupal_get_path('theme', 'health') . '/js/health.gtm.js');
   $variables['google_tag_manager'] = theme('google_tag_manager', []);
 
   // Add variables and paths needed for HTML5 and responsive support.
