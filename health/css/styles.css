@@ -7362,7 +7362,8 @@ ul.links {
     .region-navigation .block-superfish {
       visibility: visible;
       opacity: 1;
-      height: auto; } }
+      height: auto;
+      margin-left: 12px; } }
 
 @media print {
   .uikit-tabs {
