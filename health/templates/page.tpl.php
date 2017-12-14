@@ -117,7 +117,7 @@
 
         <main class="<?php print $content_class; ?>" id="content" role="main">
           <?php if (!drupal_is_front_page()): ?>
-            <?php print $readspeaker; ?>
+            <?php //print $readspeaker; ?>
           <?php endif; ?>
 
             <div id="read">
