@@ -7641,7 +7641,7 @@ ol.list--large, ul.list--large {
     position: relative;
     margin: 0 0 12px;
     padding: 15px 15px 15px 50px;
-    background: #22447b; }
+    background: #e5e5e5; }
     ol.list--large > li::before, ul.list--large > li::before {
       content: counter(standard-counter, decimal);
       counter-increment: standard-counter;
