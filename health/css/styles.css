@@ -5909,31 +5909,12 @@ ul.social__links,
     margin-right: 1.6em;
     margin-bottom: 0;
     display: inline; }
-    ul.social__links .social__links-item a,
-    .social__links .social__links-item a {
-      display: inline;
-      margin-right: 0; }
-      ul.social__links .social__links-item a.youtube:before,
-      .social__links .social__links-item a.youtube:before {
-        content: "\f16a"; }
-      ul.social__links .social__links-item a.twitter:before,
-      .social__links .social__links-item a.twitter:before {
-        content: "\f099"; }
-      ul.social__links .social__links-item a.facebook:before,
-      .social__links .social__links-item a.facebook:before {
-        content: "\f09a"; }
-      ul.social__links .social__links-item a.email:before,
-      .social__links .social__links-item a.email:before {
-        content: "\f003"; }
-      ul.social__links .social__links-item a.linkedin:before,
-      .social__links .social__links-item a.linkedin:before {
-        content: "\f0e1"; }
-      ul.social__links .social__links-item a.instagram:before,
-      .social__links .social__links-item a.instagram:before {
-        content: "\f16d"; }
-      ul.social__links .social__links-item a:after,
-      .social__links .social__links-item a:after {
-        display: none; }
+    ul.social__links .social__links-item svg,
+    .social__links .social__links-item svg {
+      margin-right: 0.8em; }
+    ul.social__links .social__links-item a svg.fa-external-link-alt,
+    .social__links .social__links-item a svg.fa-external-link-alt {
+      display: none; }
 
 .block-bean-call-to-action .field-name-field-link-to a:after,
 .bean-call-to-action .field-name-field-link-to a:after, .uikit-cta-link:after, .video--left .video__cta:after, .video--right .video__cta:after, .node-video.view-mode-feature .video__cta:after, .node-video.view-mode-full .video__cta:after, .paragraphs-item-para-statistics .field-name-field-link-internal a:after, .paragraphs-item-two-columns .view-mode-full .para-row .group-footer .paragraphs-item-para-link a:after, .paragraphs-item-para-view .para-row > a:after {
