@@ -4987,6 +4987,9 @@ h6 {
     .block-bean-call-to-action .field-name-field-link-to a,
     .bean-call-to-action .field-name-field-link-to a, .uikit-cta-link, .video--left .video__cta, .video--right .video__cta, .node-video.view-mode-feature .video__cta, .node-video.view-mode-full .video__cta, .paragraphs-item-para-statistics .field-name-field-link-internal a, .paragraphs-item-two-columns .view-mode-full .para-row .group-footer .paragraphs-item-para-link a, .paragraphs-item-para-view .para-row > a {
       font-size: 1.2em; } }
+  .block-bean-call-to-action .field-name-field-link-to a:after,
+  .bean-call-to-action .field-name-field-link-to a:after, .uikit-cta-link:after, .video--left .video__cta:after, .video--right .video__cta:after, .node-video.view-mode-feature .video__cta:after, .node-video.view-mode-full .video__cta:after, .paragraphs-item-para-statistics .field-name-field-link-internal a:after, .paragraphs-item-two-columns .view-mode-full .para-row .group-footer .paragraphs-item-para-link a:after, .paragraphs-item-para-view .para-row > a:after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E   %3Cpath fill='#008998' d='M128 64l-64 64-16-16 64-64'/%3E   %3Cpath fill='#008998' d='M128 64l-16 16-64-64L64 0'/%3E  %3C/svg%3E"); }
 
 /**
  * Create media queries and wraps the @content code inside of it
@@ -5856,6 +5859,8 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
         .page-title__supp .region-title-supp .block-bean-call-to-action a:hover {
           background: none;
           border-bottom: solid 1px white; }
+        .page-title__supp .region-title-supp .block-bean-call-to-action a:after {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E   %3Cpath fill='white' d='M128 64l-64 64-16-16 64-64'/%3E   %3Cpath fill='white' d='M128 64l-16 16-64-64L64 0'/%3E  %3C/svg%3E"); }
 
 .page .footer {
   background-color: #1b2a57;
@@ -5915,13 +5920,6 @@ ul.social__links,
     ul.social__links .social__links-item a svg.fa-external-link-alt,
     .social__links .social__links-item a svg.fa-external-link-alt {
       display: none; }
-
-.block-bean-call-to-action .field-name-field-link-to a:after,
-.bean-call-to-action .field-name-field-link-to a:after, .uikit-cta-link:after, .video--left .video__cta:after, .video--right .video__cta:after, .node-video.view-mode-feature .video__cta:after, .node-video.view-mode-full .video__cta:after, .paragraphs-item-para-statistics .field-name-field-link-internal a:after, .paragraphs-item-two-columns .view-mode-full .para-row .group-footer .paragraphs-item-para-link a:after, .paragraphs-item-para-view .para-row > a:after {
-  content: "\f061";
-  font-family: "Font Awesome 5 Solid";
-  color: #008998;
-  z-index: 1; }
 
 .page a[rel~='external'] svg {
   margin-left: 5px; }

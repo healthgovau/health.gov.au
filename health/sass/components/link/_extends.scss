@@ -1,11 +1,3 @@
-// Override uikit cta link icon with font awesome.
-.uikit-cta-link:after {
-  content: "\f061";
-  font-family: "Font Awesome 5 Solid";
-  color: $colour-Secondary;
-  z-index: 1;
-}
-
 // Override external link icon with font awesome.
 .page a[rel~='external'] {
   svg {
