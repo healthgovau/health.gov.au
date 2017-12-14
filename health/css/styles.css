@@ -6535,7 +6535,7 @@ body.node-type-health-topic .para-container.paragraphs-item-image, body.node-typ
     margin: 0; }
     .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .taxonomy-term-description p {
       margin: 0; }
-  .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item a:after {
+  .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item svg {
     display: none; }
   .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference {
     padding: 1.6em;
