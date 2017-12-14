@@ -29,12 +29,11 @@
   opacity: 0;
   transition: visibility 0s, opacity 0.8s linear;
 
-  @include uikit-media(xs) {}
-
   @include uikit-media(sm) {
     visibility: visible;
     opacity: 1;
     height: auto;
+    margin-left: 12px;
   }
 
 }
