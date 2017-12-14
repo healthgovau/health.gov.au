@@ -7648,6 +7648,9 @@ body {
 .page-node-1021 .paragraphs-item-para-block.para-container,
 .page-node-1156 .paragraphs-item-para-block.para-container {
   color: white; }
+  .page-node-1021 .paragraphs-item-para-block.para-container .group-left,
+  .page-node-1156 .paragraphs-item-para-block.para-container .group-left {
+    float: none; }
   .page-node-1021 .paragraphs-item-para-block.para-container h2, .page-node-1021 .paragraphs-item-para-block.para-container .video--left .video__title, .video--left .page-node-1021 .paragraphs-item-para-block.para-container .video__title, .page-node-1021 .paragraphs-item-para-block.para-container .video--right .video__title, .video--right .page-node-1021 .paragraphs-item-para-block.para-container .video__title, .page-node-1021 .paragraphs-item-para-block.para-container .node-video.view-mode-feature .video__title, .node-video.view-mode-feature .page-node-1021 .paragraphs-item-para-block.para-container .video__title, .page-node-1021 .paragraphs-item-para-block.para-container .node-video.view-mode-full .video__title, .node-video.view-mode-full .page-node-1021 .paragraphs-item-para-block.para-container .video__title,
   .page-node-1156 .paragraphs-item-para-block.para-container h2,
   .page-node-1156 .paragraphs-item-para-block.para-container .video--left .video__title, .video--left
