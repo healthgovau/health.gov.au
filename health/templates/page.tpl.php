@@ -92,6 +92,7 @@
 
             <div class="page-title__supp col">
               <?php print render($page['title_supp']); ?>
+              <?php print isset($initiative_or_program_logo) ? $initiative_or_program_logo : ''; ?>
             </div>
           </div>
         </div>

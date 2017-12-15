@@ -149,7 +149,7 @@ function health_preprocess_page(&$variables) {
     // Initiatives and programs
     // Title doesn't appear in the active trail, so set one manually.
     if ($active_trail[1]['href'] == 'initiatives-and-programs') {
-      if (count($active_trail) > 2) {
+      if (count($active_trail) > 3) {
         $variables['section_title'] = 'Initiatives and programs';
         $variables['summary'] = NULL;
       }
@@ -184,6 +184,15 @@ function health_preprocess_page(&$variables) {
   if (arg(0) == 'search' && arg(1)) {
     $variables['title'] = 'Search - ' . arg(1);
     $variables['section_title'] = NULL;
+  }
+
+  // Add the Initiatives and programs logo so it can be rendered in the header.
+  if (isset($variables['node'])) {
+    if ($variables['node']->type == 'initiative_or_program') {
+      $logo = field_view_field('node', $variables['node'], 'field_image_featured', array('label'=> 'hidden', 'settings' => array('image_style' => 'title_section_image')));
+      $variables['initiative_or_program_logo'] = render($logo);
+      $variables['node']->field_image_featured = array();
+    }
   }
 
 }
