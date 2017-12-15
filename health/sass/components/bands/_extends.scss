@@ -43,13 +43,15 @@
       font-size: 1.1em;
     }
     @extend %baseicon;
-    &.listing-back__icon:before {
-      content: "\f060";
-      font-size: 1.25em;
-      line-height: 1.25;
-    }
     color: white;
     border-color: white;
+  }
+  .listing-back__icon {
+    @extend %baseicon;
+    color: white;
+    font-size: 1.25em;
+    line-height: 1.25;
+    margin-right: 5px;
   }
 }
 
