@@ -6425,9 +6425,12 @@ ul.social__links,
   .paragraphs-view-display-popular_resources .views-row:after {
     clear: both; }
 
-.view-header span {
-  font-size: 30px;
-  font-weight: 700; }
+.view-header {
+  float: left;
+  margin-right: 45px; }
+  .view-header span {
+    font-size: 30px;
+    font-weight: 700; }
 
 body.node-type-health-topic .para-container.paragraphs-item-para-content-text, body.node-type-health-topic-hp .para-container.paragraphs-item-para-content-text, body.node-type-landing-page .para-container.paragraphs-item-para-content-text, .paragraphs-item-para-taxonomies.para-container, body.node-type-health-topic .paragraphs-item-two-columns.para-container, body.node-type-health-topic-hp .paragraphs-item-two-columns.para-container, body.node-type-landing-page .paragraphs-item-two-columns.para-container, body.node-type-health-topic .paragraphs-2-columns-resources.para-container, body.node-type-health-topic-hp .paragraphs-2-columns-resources.para-container, body.node-type-landing-page .paragraphs-2-columns-resources.para-container, #block-bean-share-this, .listing-back, body.node-type-health-topic .para-container, body.node-type-health-topic-hp .para-container, body.node-type-landing-page .para-container, body.node-type-health-topic .paragraphs-item-para-reference-video.para-container, body.node-type-health-topic-hp .paragraphs-item-para-reference-video.para-container, body.node-type-landing-page .paragraphs-item-para-reference-video.para-container, .paragraphs-item-para-contact.para-container, .paragraphs-item-para-statistics.para-container, .paragraphs-item-para-block.para-container {
   padding-top: 2.4em;
@@ -7851,6 +7854,10 @@ body {
   .page-initiatives-and-programs.page-views .bean-image-and-text .group-right {
     padding: 1.6em;
     width: 60%; }
+
+.page-conditions-and-diseases-vaccine-preventable-conditions-and-diseases .view-header {
+  float: none;
+  margin: 0; }
 
 .cke_editable {
   padding: 20px; }
