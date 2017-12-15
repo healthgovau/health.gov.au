@@ -57,8 +57,7 @@
   }
 
   // Feature
-  &.view-mode-feature,
-  &.view-mode-full {
+  &.view-mode-feature {
     @extend %video;
 
     .group-left {
@@ -107,6 +106,39 @@
 
     .video-youtube-wrapper {
       @extend %video__youtube;
+    }
+  }
+
+  // Full content.
+  &.view-mode-full {
+    @extend .view-mode-feature;
+    .group-right {
+      @include uikit-media(md){
+        padding-right: uikit-space(1);
+      }
+    }
+
+    > .group-right {
+      width: 100%;
+      @include uikit-clearfix;
+      @include uikit-media(md){
+        width: 40%;
+      }
+    }
+    > .group-left {
+      width: 100%;
+      @include uikit-clearfix;
+      @include uikit-media(md){
+        width: 60%;
+        margin-top: -50px;
+      }
+    }
+
+    .field-name-field-summary {
+      .field-label {
+        font-size: 1em;
+      }
+      font-size: 1em;
     }
   }
 
