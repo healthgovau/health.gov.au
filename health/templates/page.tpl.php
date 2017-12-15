@@ -70,7 +70,7 @@
       <div class="page-title header header--light">
         <div class="container">
           <div class="row">
-            <div class="page-title__core col">
+            <div class="page-title__core col <?php print isset($section_title) ? 'section-title' : '' ?>">
               <?php print $breadcrumb; ?>
 
               <?php if ($title && !isset($section_title)): ?>
@@ -90,9 +90,9 @@
               <?php print render($page['title_core']); ?>
             </div>
 
-            <div class="page-title__supp col">
+            <div class="page-title__supp col <?php print isset($section_title) ? 'section-title' : '' ?>">
               <?php print render($page['title_supp']); ?>
-              <?php print isset($initiative_or_program_logo) ? $initiative_or_program_logo : ''; ?>
+              <?php print isset($initiative_or_program_logo) ? $initiative_or_program_logo : ''?>
             </div>
           </div>
         </div>
