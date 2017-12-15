@@ -57,6 +57,9 @@
     &.para-container {
       @extend %colour-Secondary-background;
       color: white;
+      .group-left {
+        float: none;
+      }
       h2 {
         color: white;
       }
