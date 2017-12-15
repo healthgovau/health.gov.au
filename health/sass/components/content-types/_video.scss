@@ -120,6 +120,7 @@
 
     > .group-right {
       width: 100%;
+      margin-top: 0;
       @include uikit-clearfix;
       @include uikit-media(md){
         width: 40%;
@@ -130,7 +131,6 @@
       @include uikit-clearfix;
       @include uikit-media(md){
         width: 60%;
-        margin-top: -50px;
       }
     }
 

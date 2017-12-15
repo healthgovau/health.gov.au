@@ -6387,7 +6387,8 @@ ul.social__links,
     padding-right: 1.6em; } }
 
 .node-video.view-mode-full > .group-right {
-  width: 100%; }
+  width: 100%;
+  margin-top: 0; }
   .node-video.view-mode-full > .group-right:before, .node-video.view-mode-full > .group-right:after {
     content: " ";
     display: table; }
@@ -6406,8 +6407,7 @@ ul.social__links,
     clear: both; }
   @media (min-width: 992px) {
     .node-video.view-mode-full > .group-left {
-      width: 60%;
-      margin-top: -50px; } }
+      width: 60%; } }
 
 .node-video.view-mode-full .field-name-field-summary {
   font-size: 1em; }
