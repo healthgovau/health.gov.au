@@ -160,5 +160,14 @@
   .bean-image-and-text {
     @extend %colour-Light-background-reverse;
     margin-bottom: uikit-space( 1 );
+
+    // Change the percentage of the regions with huge shame.
+    .group-left {
+      width: 40%;
+    }
+    .group-right {
+      padding: uikit-space( 1 );
+      width: 60%;
+    }
   }
 }
