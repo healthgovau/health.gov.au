@@ -17,7 +17,7 @@
   @include uikit-media(sm){
     padding: uikit-space(1) 0;
     &.section-title {
-      padding: uikit-space(0.5) 0;
+      padding: uikit-space(0.5) 12px;
     }
   }
 
@@ -109,6 +109,7 @@
       color: white;
       .field-name-field-link-to a {
         color: white;
+        border-color: white;
         font-size: 1.2em;
         &:after {
           color: white;
