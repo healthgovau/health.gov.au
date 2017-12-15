@@ -31,6 +31,7 @@
     }
   }
 
+  // Summary
   .summary {
     @extend .uikit-header-subline;
     margin-bottom: 0;
@@ -84,6 +85,12 @@
       color: white;
     }
 
+  }
+
+  // Program logo
+  .field-name-field-image-featured {
+      padding: uikit-space(1.5) 0 0 0;
+      text-align: right;
   }
 }
 
