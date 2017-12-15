@@ -8,9 +8,9 @@
  */
 
 // Include inc files.
-include_once drupal_get_path('theme', 'health') . '/includes/helper.php';
-include_once drupal_get_path('theme', 'health') . '/includes/preprocess_hooks.php';
-include_once drupal_get_path('theme', 'health') . '/includes/ds_preprocess_hooks.php';
+include_once drupal_get_path('theme', 'health') . '/includes/helper.inc';
+include_once drupal_get_path('theme', 'health') . '/includes/preprocess_hooks.inc';
+include_once drupal_get_path('theme', 'health') . '/includes/ds_preprocess_hooks.inc';
 
 // Auto-rebuild the theme registry during theme development.
 if (theme_get_setting('health_rebuild_registry') && !defined('MAINTENANCE_MODE')) {
