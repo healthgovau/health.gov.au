@@ -5918,7 +5918,8 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
   .page .footer .bean-large-button .field-name-field-link-to a {
     background-color: transparent;
     color: white;
-    border: 1px solid white; }
+    border: 1px solid white;
+    border-radius: 0px; }
     .page .footer .bean-large-button .field-name-field-link-to a:hover, .page .footer .bean-large-button .field-name-field-link-to a:focus {
       background-color: #000b33; }
   .page .footer .footer__end {
