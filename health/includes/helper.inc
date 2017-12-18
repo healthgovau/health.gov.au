@@ -14,6 +14,7 @@ function health_get_friendly_mime($mimetype) {
   $descriptions = [
     'application/pdf' => '<abbr title="Portable Document Format">PDF</abbr>',
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document' => '<abbr title="Microsoft Word document">Word</abbr>',
+    'application/msword' => '<abbr title="Microsoft Word document">Word</abbr>',
     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' => '<abbr title="Microsoft Excel document">Excel</abbr>',
     'text/plain' => 'plain text',
     'image/jpeg' => '<abbr title="Joint Photographic Experts Group">JPEG</abbr>',
