@@ -22,6 +22,9 @@
 
 #search-api-page-search-form {
   @extend %uikit-search;
+  .search-form {
+    margin: 0;
+  }
 }
 
 .view-filters .views-exposed-form {
