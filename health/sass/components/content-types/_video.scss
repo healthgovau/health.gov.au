@@ -144,7 +144,13 @@
 
   // Inline style
   &.view-mode-inline {
-    @extend %dm-inline;
+    @extend %dm-inline-2-col;
+    .group-left {
+      @extend .col-sm-6;
+    }
+    div.group-right {
+      @extend .col-sm-6;
+    }
   }
 
   // Search

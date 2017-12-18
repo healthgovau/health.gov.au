@@ -1,43 +1,61 @@
 // Inline
 %dm-inline {
-    border-left: $health-borderize--fat;
-    background: $uikit-colour-Background;
-    padding: uikit-space(1) uikit-space(1) uikit-space(.5);
-    margin: uikit-space(1) 0 uikit-space(2);
+  border-left: $health-borderize--fat;
+  background: $uikit-colour-Background;
 
-    // layout
-    .group-left {
-        width: 15%;
+  padding: uikit-space(0.5);
+  @include uikit-media(sm) {
+    padding: uikit-space(1);
+  }
+
+  margin-bottom: uikit-space(1);
+
+  .field-name-title {
+    h2 {
+      @extend .uikit-display-3;
     }
-    .group-right {
-        width: 85%;
+    p {
+      @extend .uikit-display-2;
     }
-    .field-name-title {
-        h2 {
-            @extend .uikit-display-3;
-        }
-        p {
-            @extend .uikit-display-2;
-        }
+  }
+  // thumbnail
+  .field-name-field-image-thumbnail,
+  .field-name-field-image-featured {
+    img {
+      border: $health-borderize;
+      max-height: 200px;
+      width: auto;
+      @include uikit-media(sm) {
+        width: 100%;
+        max-height: none;
+      }
     }
-    // thumbnail
-    .field-name-field-image-thumbnail,
-    .field-name-field-image-featured {
-        width: 80%;
-        margin-top: 5px;
-        img {
-            border: $health-borderize;
-        }
+  }
+  // date
+  .field-type-datetime {
+    @extend .meta-date;
+    margin-bottom: uikit-space(0.5);
+  }
+  // lists
+  .field-name-field-summary {
+    p:last-of-type {
+      margin-bottom: 0;
     }
-    // date
-    .field-type-datetime {
-        @extend .meta-date;
-        margin-bottom: uikit-space(0.5);
-    }
-    // lists
-    .field-name-field-summary {
-        ol, ul {
-            padding-left: 1.2em;
-        }
-    }        
+  }
+}
+
+%dm-inline-2-col {
+  @extend %dm-inline;
+  padding: uikit-space(0.5) 0;
+  @include uikit-media(sm) {
+    padding: uikit-space(1) uikit-space(0.5);
+  }
+
+  // layout
+  .group-left {
+    @extend .col-sm-3;
+  }
+  .group-right {
+    @extend .col-sm-9;
+  }
 }
