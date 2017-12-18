@@ -5042,6 +5042,8 @@ table {
   border-collapse: collapse; }
   table tr:nth-child(even) {
     background-color: #f0f3f5; }
+  table.table__no-banding tr:nth-child(even) {
+    background-color: transparent; }
   table td, table th {
     border-bottom: 1px solid #CCC;
     padding: 0.4em;
