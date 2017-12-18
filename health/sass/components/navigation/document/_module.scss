@@ -2,6 +2,7 @@
     padding-bottom: uikit-space(0.5);
     h2,h3 {
         @extend .uikit-display-1;
+        margin-bottom: uikit-space(0.5);
     }
     .file-icon {
         float: left;
