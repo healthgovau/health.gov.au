@@ -7103,6 +7103,9 @@ th .checkbox {
     .uikit-header #search-block-form .form-submit:hover, .region-featured #search-block-form .form-submit:hover, #block-search-api-page-default-search .form-submit:hover, #search-api-page-search-form .form-submit:hover, .view-filters .views-exposed-form .form-submit:hover, .uikit-header #search-block-form .form-submit:focus, .region-featured #search-block-form .form-submit:focus, #block-search-api-page-default-search .form-submit:focus, #search-api-page-search-form .form-submit:focus, .view-filters .views-exposed-form .form-submit:focus {
       background-color: #006570; }
 
+#search-api-page-search-form .search-form {
+  margin: 0; }
+
 .view-filters .views-exposed-form {
   margin-bottom: 1.6em; }
   @media (min-width: 992px) {
