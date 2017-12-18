@@ -1,7 +1,7 @@
 %document-link {
     padding-bottom: uikit-space(0.5);
-    h2 {
-        @extend .uikit-display-3;
+    h2,h3 {
+        @extend .uikit-display-1;
     }
     .file-icon {
         float: left;
@@ -13,11 +13,13 @@
     }
     .file__link {
         display: inline;
-        font-weight: bold;
         border-bottom: solid 1px $colour-Secondary-darker;
         span {
             @extend %visually-hidden;
         }
+      &:hover {
+        border-bottom: none;
+      }
     }
     .file__meta {
         display: inline;

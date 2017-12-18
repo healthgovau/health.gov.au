@@ -16,6 +16,12 @@
     background-color: $uikit-colour-Background;
   }
 
+  &.table__no-banding {
+    tr:nth-child(even) {
+      background-color: transparent;
+    }
+  }
+
   td,
   th {
     @include uikit-media('md') {

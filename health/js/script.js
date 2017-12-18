@@ -22,10 +22,6 @@
       $('.region-content-bottom .pane-related-content', context).matchHeight();
       $('.region-content-bottom .pane-title', context).matchHeight();
 
-      // // Make the image left find the parent card to match image height
-      $('.views-row .uikit-card-compact', context).matchHeight({byRow: false});
-      $('.panel-panel .uikit-card-compact', context).matchHeight({byRow: false});
-
       // Match the categories height
       $('.view-categories .views-row .uikit-card', context).matchHeight();
       $('.view-categories .views-row .uikit-card h3', context).matchHeight();
@@ -48,6 +44,10 @@
 
       // Front page feedback band.
       $('.feedback-col', context).matchHeight();
+
+      // Statistics
+      $('.group-statistic .field-name-field-statistic-value-text', context).matchHeight();
+      $('.group-trend', context).matchHeight();
     }
   };
 

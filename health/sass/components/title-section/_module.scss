@@ -16,6 +16,9 @@
   padding: 12px;
   @include uikit-media(sm){
     padding: uikit-space(1) 0;
+    &.section-title {
+      padding: uikit-space(0.5) 12px;
+    }
   }
 
   // Section title (large)
@@ -29,6 +32,9 @@
     a {
       border-bottom: 0;
     }
+    @include uikit-media(sm) {
+      display: none;
+    }
   }
 
   // Summary
@@ -36,6 +42,7 @@
     @extend .uikit-header-subline;
     margin-bottom: 0;
   }
+
 }
 
 .page-title__supp {
@@ -48,41 +55,34 @@
     display: table;
   }
   .region-title-supp {
-    @extend %colour-Dark-background;
+
+    background-color: $colour-light;
+
     display: block;
     @include uikit-media( md ) {
       display: table-cell;
       vertical-align: middle;
     }
+
     .block-bean-call-to-action {
-      padding: uikit-space(1);
+      padding: uikit-space(0.5) uikit-space(1);
+
       .main-content {
         padding-left: 0;
         padding-right: 0;
         width: 100%;
       }
       .field-name-field-link-to a {
+        font-size: 14px;
         margin-bottom: 0;
         &:after {
-          color: white;
+          color: black;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E   %3Cpath fill='black' d='M128 64l-64 64-16-16 64-64'/%3E   %3Cpath fill='black' d='M128 64l-16 16-64-64L64 0'/%3E  %3C/svg%3E");
         }
       }
       .block__title {
         @extend .uikit-display-3;
-        color: white;
       }
-      a {
-        color: white;
-        border-bottom: solid 1px white;
-        &:hover {
-          background: none;
-          border-bottom: solid 1px white;
-        }
-        &:after {
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E   %3Cpath fill='white' d='M128 64l-64 64-16-16 64-64'/%3E   %3Cpath fill='white' d='M128 64l-16 16-64-64L64 0'/%3E  %3C/svg%3E");
-        }
-      }
-      color: white;
     }
 
   }
@@ -97,9 +97,38 @@
 // For Topic landing pages.
 .node-type-health-topic,
 .node-type-health-topic-hp {
+
   .page-title__supp {
     .region-title-supp {
       @extend %colour-Primary-background;
+
+      .block-bean-call-to-action {
+        padding: uikit-space(1);
+      }
+
+      color: white;
+      .field-name-field-link-to a {
+        color: white;
+        border-color: white;
+        font-size: 1.2em;
+        &:after {
+          color: white;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E   %3Cpath fill='white' d='M128 64l-64 64-16-16 64-64'/%3E   %3Cpath fill='white' d='M128 64l-16 16-64-64L64 0'/%3E  %3C/svg%3E");
+        }
+      }
+      .block__title {
+        color: white;
+      }
+    }
+  }
+}
+
+// For all landing pages.
+.node-type-health-topic,
+.node-type-health-topic-hp {
+  .page-title {
+    &.header.header--light {
+      margin-bottom: 0;
     }
   }
 }
