@@ -32,6 +32,8 @@
       background-color: transparent;
       color: white;
       border: 1px solid white;
+      // By UX request.
+      border-radius: 0px;
       &:hover,
       &:focus {
         background-color: $colour-Primary-hover;

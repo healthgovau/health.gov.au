@@ -55,6 +55,13 @@
   // More on immunisation.
   .paragraphs-item-para-block {
     &.para-container {
+      .bean-image-and-text.view-mode-full {
+        .field-name-field-image {
+          img {
+            width: 20%;
+          }
+        }
+      }
       h2 {
         color: white;
       }
@@ -63,14 +70,14 @@
         border-bottom: none;
         &:hover {
           background: $colour-Secondary-hover;
+          .field-name-field-link-internal {
+            .field-item {
+              border-bottom: none;
+            }
+          }
         }
       }
       @extend %colour-Secondary-background;
-      .field-name-field-image {
-        img {
-          width: 20%;
-        }
-      }
       .field-name-field-link-internal {
         .field-item {
           display: inline-block;
@@ -120,6 +127,8 @@
       }
     }
   }
+
+
 }
 
 // For homepage only.
@@ -129,6 +138,8 @@
     @extend %colour-Primary-background;
     &.view-mode-full {
 
+      padding-top: 1em;
+      padding-bottom: 1em;
       .bean-block-content {
         a {
           border-bottom: none;
@@ -138,7 +149,12 @@
 
           &:hover,
           &:focus {
-            background: $colour-Primary-hover
+            background: $colour-Primary-hover;
+            .field-name-field-link-internal {
+              .field-item {
+                border-bottom: none;
+              }
+            }
           }
 
           .field-name-field-link-internal {

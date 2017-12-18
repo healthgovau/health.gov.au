@@ -91,6 +91,11 @@
                       display: inline;
                     }
 
+                    &:hover {
+                      h3 {
+                        border-bottom: none;
+                      }
+                    }
                     .group-left,
                     .group-right {
                         display: block;

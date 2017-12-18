@@ -2,6 +2,15 @@
 #block-bean-handbook-featured-block-in-immun {
   .view-mode-feature {
     box-shadow: none;
+    a {
+      color: white;
+      border-bottom: 1px solid white;
+      display: inline;
+      &:hover {
+        border-bottom: none;
+        background: none;
+      }
+    }
   }
   .group-left {
     float: right;
