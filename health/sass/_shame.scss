@@ -63,6 +63,11 @@
         border-bottom: none;
         &:hover {
           background: $colour-Secondary-hover;
+          .field-name-field-link-internal {
+            .field-item {
+              border-bottom: none;
+            }
+          }
         }
       }
       @extend %colour-Secondary-background;
@@ -140,7 +145,12 @@
 
           &:hover,
           &:focus {
-            background: $colour-Primary-hover
+            background: $colour-Primary-hover;
+            .field-name-field-link-internal {
+              .field-item {
+                border-bottom: none;
+              }
+            }
           }
 
           .field-name-field-link-internal {

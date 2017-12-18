@@ -6689,6 +6689,8 @@ body.node-type-health-topic .para-container.paragraphs-item-image, body.node-typ
     .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference h3 {
       border-bottom: 1px solid white;
       display: inline; }
+    .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference:hover h3 {
+      border-bottom: none; }
     .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference .group-left,
     .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference .group-right {
       display: block;
@@ -7991,6 +7993,9 @@ header.uikit-header, header.region-featured {
     .page-node-1021 .paragraphs-item-para-block.para-container a:hover,
     .page-node-1156 .paragraphs-item-para-block.para-container a:hover {
       background: #006570; }
+      .page-node-1021 .paragraphs-item-para-block.para-container a:hover .field-name-field-link-internal .field-item,
+      .page-node-1156 .paragraphs-item-para-block.para-container a:hover .field-name-field-link-internal .field-item {
+        border-bottom: none; }
   .page-node-1021 .paragraphs-item-para-block.para-container .field-name-field-image img,
   .page-node-1156 .paragraphs-item-para-block.para-container .field-name-field-image img {
     width: 20%; }
@@ -8059,6 +8064,8 @@ header.uikit-header, header.region-featured {
     color: transparent; }
     .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a:hover, .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a:focus {
       background: #000b33; }
+      .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a:hover .field-name-field-link-internal .field-item, .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a:focus .field-name-field-link-internal .field-item {
+        border-bottom: none; }
     .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a .field-name-field-link-internal {
       color: #fff; }
       .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a .field-name-field-link-internal .field-item {
