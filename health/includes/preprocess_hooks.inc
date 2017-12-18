@@ -534,7 +534,7 @@ function health_preprocess_field(&$variables) {
   if ($variables['element']['#field_name'] == 'field_statistic_value') {
 
     $matches = array();
-    preg_match_all("/(\D?)(\d*)(.*)/", $variables['items'][0]['#markup'], $matches);
+    preg_match_all("/(\D?)([\d\.]*)(.*)/", $variables['items'][0]['#markup'], $matches);
 
     $output = '';
     if (!empty($matches[1][0])) {
