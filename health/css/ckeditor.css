@@ -5338,10 +5338,8 @@ tr.drag-previous {
 
 .node-statistic.view-mode-feature .one-column-wrapper .group-statistic .statistic-icon, .node-statistic.node-video.view-mode-full .one-column-wrapper .group-statistic .statistic-icon, .node-statistic.view-mode-inline .one-column-wrapper .group-statistic .statistic-icon {
   display: inline-block;
-  padding-bottom: 15px;
-  font-size: 0.85em;
-  color: white;
-  margin-left: 5px; }
+  margin-right: 5px;
+  color: white; }
 
 .node-statistic.view-mode-feature .one-column-wrapper.no-trend .one-column-wrapper .group-statistic .group-statistic-trend, .node-statistic.node-video.view-mode-full .one-column-wrapper.no-trend .one-column-wrapper .group-statistic .group-statistic-trend, .node-statistic.view-mode-inline .one-column-wrapper.no-trend .one-column-wrapper .group-statistic .group-statistic-trend {
   display: none; }

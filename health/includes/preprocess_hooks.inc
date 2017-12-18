@@ -558,16 +558,16 @@ function health_preprocess_field(&$variables) {
           $variables['items'][0]['#markup'] = '<span></span>';
           break;
         case 'up-positive';
-          $variables['items'][0]['#markup'] = '<i class="fa fa-arrow-up statistic-icon positive" aria-hidden="true"></i>';
+          $variables['items'][0]['#markup'] = '<i class="fas fa-arrow-up statistic-icon positive" aria-hidden="true"></i>';
           break;
         case 'down-positive';
-          $variables['items'][0]['#markup'] = '<i class="fa fa-arrow-down statistic-icon positive" aria-hidden="true"></i>';
+          $variables['items'][0]['#markup'] = '<i class="fas fa-arrow-down statistic-icon positive" aria-hidden="true"></i>';
           break;
         case 'up-negative';
-          $variables['items'][0]['#markup'] = '<i class="fa fa-arrow-up statistic-icon negative" aria-hidden="true"></i>';
+          $variables['items'][0]['#markup'] = '<i class="fas fa-arrow-up statistic-icon negative" aria-hidden="true"></i>';
           break;
         case 'down-negative';
-          $variables['items'][0]['#markup'] = '<i class="fa fa-arrow-down statistic-icon negative" aria-hidden="true"></i>';
+          $variables['items'][0]['#markup'] = '<i class="fas fa-arrow-down statistic-icon negative" aria-hidden="true"></i>';
           break;
       }
     }
