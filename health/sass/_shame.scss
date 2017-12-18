@@ -55,6 +55,13 @@
   // More on immunisation.
   .paragraphs-item-para-block {
     &.para-container {
+      .bean-image-and-text.view-mode-full {
+        .field-name-field-image {
+          img {
+            width: 20%;
+          }
+        }
+      }
       h2 {
         color: white;
       }
@@ -71,11 +78,6 @@
         }
       }
       @extend %colour-Secondary-background;
-      .field-name-field-image {
-        img {
-          width: 20%;
-        }
-      }
       .field-name-field-link-internal {
         .field-item {
           display: inline-block;
@@ -125,6 +127,8 @@
       }
     }
   }
+
+
 }
 
 // For homepage only.

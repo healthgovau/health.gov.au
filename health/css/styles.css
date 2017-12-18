@@ -4952,6 +4952,13 @@ h6 {
 
 #block-bean-handbook-featured-block-in-immun .view-mode-feature, #block-bean-handbook-featured-block-in-immun .node-video.view-mode-full {
   box-shadow: none; }
+  #block-bean-handbook-featured-block-in-immun .view-mode-feature a, #block-bean-handbook-featured-block-in-immun .node-video.view-mode-full a {
+    color: white;
+    border-bottom: 1px solid white;
+    display: inline; }
+    #block-bean-handbook-featured-block-in-immun .view-mode-feature a:hover, #block-bean-handbook-featured-block-in-immun .node-video.view-mode-full a:hover {
+      border-bottom: none;
+      background: none; }
 
 #block-bean-handbook-featured-block-in-immun .group-left {
   float: right; }
@@ -7975,6 +7982,9 @@ header.uikit-header, header.region-featured {
 .page-node-1021 .paragraphs-item-para-block.para-container,
 .page-node-1156 .paragraphs-item-para-block.para-container {
   color: white; }
+  .page-node-1021 .paragraphs-item-para-block.para-container .bean-image-and-text.view-mode-full .field-name-field-image img,
+  .page-node-1156 .paragraphs-item-para-block.para-container .bean-image-and-text.view-mode-full .field-name-field-image img {
+    width: 20%; }
   .page-node-1021 .paragraphs-item-para-block.para-container h2, .page-node-1021 .paragraphs-item-para-block.para-container .video--left .video__title, .video--left .page-node-1021 .paragraphs-item-para-block.para-container .video__title, .page-node-1021 .paragraphs-item-para-block.para-container .video--right .video__title, .video--right .page-node-1021 .paragraphs-item-para-block.para-container .video__title, .page-node-1021 .paragraphs-item-para-block.para-container .node-video.view-mode-feature .video__title, .node-video.view-mode-feature .page-node-1021 .paragraphs-item-para-block.para-container .video__title, .page-node-1021 .paragraphs-item-para-block.para-container .node-video.view-mode-full .video__title, .node-video.view-mode-full .page-node-1021 .paragraphs-item-para-block.para-container .video__title,
   .page-node-1156 .paragraphs-item-para-block.para-container h2,
   .page-node-1156 .paragraphs-item-para-block.para-container .video--left .video__title, .video--left
@@ -7996,9 +8006,6 @@ header.uikit-header, header.region-featured {
       .page-node-1021 .paragraphs-item-para-block.para-container a:hover .field-name-field-link-internal .field-item,
       .page-node-1156 .paragraphs-item-para-block.para-container a:hover .field-name-field-link-internal .field-item {
         border-bottom: none; }
-  .page-node-1021 .paragraphs-item-para-block.para-container .field-name-field-image img,
-  .page-node-1156 .paragraphs-item-para-block.para-container .field-name-field-image img {
-    width: 20%; }
   .page-node-1021 .paragraphs-item-para-block.para-container .field-name-field-link-internal .field-item,
   .page-node-1156 .paragraphs-item-para-block.para-container .field-name-field-link-internal .field-item {
     display: inline-block;
