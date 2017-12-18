@@ -13,15 +13,30 @@
     background: transparent;
 
     &.view-mode-full {
+
+      // Image
       .field-name-field-image-featured {
         @extend %image--full;
       }
-    }
 
-    // Document download
-    .paragraphs-items-field-resource-document {
-      padding-bottom: uikit-space(1) !important;
-      @extend %document-link;
+      // Document download
+      .paragraphs-item-documents {
+        padding-bottom: uikit-space(1) !important;
+        @extend %document-link;
+      }
+
+      .paragraphs-items-field-publication-files {
+        > h2 {
+          @extend .uikit-display-3;
+        }
+      }
+
+      .field-name-field-resource-file-summary {
+        p:last-of-type {
+          margin-bottom: uikit-space(0.5);
+        }
+      }
+
     }
 
 	// Major list
