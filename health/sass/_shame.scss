@@ -55,21 +55,30 @@
   // More on immunisation.
   .paragraphs-item-para-block {
     &.para-container {
-      @extend %colour-Secondary-background;
-      color: white;
-      .group-left {
-        float: none;
-      }
       h2 {
         color: white;
       }
       a {
-        color: white;
-        border-bottom: 1px white solid;
+        display: block;
+        border-bottom: none;
         &:hover {
-          border-bottom: none;
+          background: $colour-Secondary-hover;
         }
       }
+      @extend %colour-Secondary-background;
+      .field-name-field-image {
+        img {
+          width: 20%;
+        }
+      }
+      .field-name-field-link-internal {
+        .field-item {
+          display: inline-block;
+          border-bottom: 1px solid white;
+          color: white;
+        }
+      }
+      color: white;
     }
   }
 
