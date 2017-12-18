@@ -4988,7 +4988,7 @@ h6 {
       max-width: 70%; }
       @media (min-width: 768px) {
         .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image img {
-          max-width: 40%; } }
+          max-width: 50%; } }
     @media (min-width: 768px) {
       .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image {
         float: none;
@@ -8048,18 +8048,21 @@ header.uikit-header, header.region-featured {
     .page-node-1156 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-696:hover {
       background: #a31f26; }
 
-.front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a {
-  border-bottom: none;
-  display: block;
-  overflow: hidden;
-  color: transparent; }
-  .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a:hover, .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a:focus {
-    background: #000b33; }
-  .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a .field-name-field-link-internal {
-    color: #fff; }
-    .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a .field-name-field-link-internal .field-item {
-      display: inline;
-      border-bottom: 1px solid white; }
+.front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full {
+  padding-top: 1em;
+  padding-bottom: 1em; }
+  .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a {
+    border-bottom: none;
+    display: block;
+    overflow: hidden;
+    color: transparent; }
+    .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a:hover, .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a:focus {
+      background: #000b33; }
+    .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a .field-name-field-link-internal {
+      color: #fff; }
+      .front .paragraphs-item-para-block.para-container.block__count--5.view-mode-full .bean-block-content a .field-name-field-link-internal .field-item {
+        display: inline;
+        border-bottom: 1px solid white; }
 
 .front .paragraphs-item-para-block.para-container.block__count--1 {
   color: black; }

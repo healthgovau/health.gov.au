@@ -129,6 +129,8 @@
     @extend %colour-Primary-background;
     &.view-mode-full {
 
+      padding-top: 1em;
+      padding-bottom: 1em;
       .bean-block-content {
         a {
           border-bottom: none;
