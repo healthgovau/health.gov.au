@@ -6231,6 +6231,8 @@ ul.social__links,
   background: transparent; }
   .node-publication.view-mode-full .paragraphs-item-documents {
     padding-bottom: 1.6em !important; }
+  .node-publication.view-mode-full .paragraphs-items-field-publication-files > h2, .node-publication.view-mode-full .video--left .paragraphs-items-field-publication-files > .video__title, .video--left .node-publication.view-mode-full .paragraphs-items-field-publication-files > .video__title, .node-publication.view-mode-full .video--right .paragraphs-items-field-publication-files > .video__title, .video--right .node-publication.view-mode-full .paragraphs-items-field-publication-files > .video__title, .node-publication.view-mode-full .node-video.view-mode-feature .paragraphs-items-field-publication-files > .video__title, .node-video.view-mode-feature .node-publication.view-mode-full .paragraphs-items-field-publication-files > .video__title, .node-publication.view-mode-full .node-video.view-mode-full .paragraphs-items-field-publication-files > .video__title, .node-video.view-mode-full .node-publication.view-mode-full .paragraphs-items-field-publication-files > .video__title {
+    margin-bottom: 1.6em; }
   .node-publication.view-mode-full .field-name-field-resource-file-summary p:last-of-type {
     margin-bottom: 0.8em; }
   .node-publication.view-mode-listing_vertical .group-left {

@@ -28,6 +28,7 @@
       .paragraphs-items-field-publication-files {
         > h2 {
           @extend .uikit-display-3;
+          margin-bottom: uikit-space(1);
         }
       }
 
