@@ -5116,7 +5116,8 @@ table {
   table td, table th {
     border-bottom: 1px solid #CCC;
     padding: 0.4em;
-    text-align: left; }
+    text-align: left;
+    vertical-align: top; }
     @media (min-width: 992px) {
       table td, table th {
         padding: 0.64em;
