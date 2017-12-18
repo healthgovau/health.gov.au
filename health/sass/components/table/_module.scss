@@ -32,6 +32,7 @@
     border-bottom: $uikit-borderize;
     padding: uikit-space(.25);
     text-align: left;
+    vertical-align: top;
 
     // Remove extra padding around the last p tag.
     p:last-of-type {
