@@ -6588,6 +6588,7 @@ body.node-type-health-topic .para-container.paragraphs-item-para-content-text, b
         vertical-align: middle; } }
     #block-bean-feedback-band .feedback-band .feedback-col.link .feedback-col-link a,
     #block-bean-homepage-about-us .feedback-band .feedback-col.link .feedback-col-link a {
+      border-radius: 0;
       width: 100%;
       background-color: #008998;
       color: white;
