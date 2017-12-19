@@ -23,9 +23,7 @@
   margin-bottom: 0;
   overflow: hidden;
   // Image pane
-  .group-left {
-    padding: 0;
-  }
+  .group-left {}
   // Content pane
   .group-right {
     padding: uikit-space(.2) uikit-space(.35) 0 uikit-space(.35);

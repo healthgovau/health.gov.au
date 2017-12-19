@@ -11,44 +11,18 @@
 	}
 }
 
-// Display modes
-%duration-item {
-  margin-right: 1px;
-  margin-bottom: 8px;
-  margin-top: -25px;
-  padding: 0 5px 0 5px;
-  float: right;
-  background-color: #000;
-  color: #fff;
-  @include opacity(0.75);
-  vertical-align: top;
-  display: inline-block;
-  &:before {
-    background-image: url("../images/icons/video.svg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    content: ' ';
-    display: inline-block;
-    height: 1em;
-    width: 1em;
-  }
-}
 .node-video {
 
   // List vertical
   &.view-mode-listing_vertical {
     @extend %dm-list-vertical;
-    .field-name-field-resource-duration .field-item {
-      @extend %duration-item;
-    }
+    @extend %video__extend--small;
   }
+
   // List vertical small
   &.view-mode-listing_vertical_small {
 	@extend %dm-list-vertical--small;
-    .field-name-field-resource-duration .field-item {
-      @extend %duration-item;
-    }
+    @extend %video__extend--small;
   }
 
   // List horizontal
@@ -58,8 +32,9 @@
 
   // Feature
   &.view-mode-feature {
-    @extend %video;
+    @extend %video__extend;
 
+    // Layout
     .group-left {
       @include uikit-media(md){
         padding-right: uikit-space(1);
@@ -82,36 +57,12 @@
       }
     }
 
-    .group-video-preview {
-      position: relative;
-    }
 
-    .field-name-field-resource-duration .field-item {
-      margin-right: 1px;
-      margin-bottom: 8px;
-      @extend %video__length;
-    }
-
-    .field-name-field-image-featured {
-      @extend %video__preview;
-      img {
-        width: 100%;
-      }
-      padding-bottom: 0 !important;
-    }
-
-    .field-name-field-summary {
-      @extend %video__description;
-    }
-
-    .video-youtube-wrapper {
-      @extend %video__youtube;
-    }
   }
 
   // Full content.
   &.view-mode-full {
-    @extend .view-mode-feature;
+    @extend %video__extend;
     .group-right {
       @include uikit-media(md){
         padding-right: uikit-space(1);
@@ -133,23 +84,21 @@
         width: 60%;
       }
     }
-
-    .field-name-field-summary {
-      .field-label {
-        font-size: 1em;
-      }
-      font-size: 1em;
-    }
   }
 
   // Inline style
   &.view-mode-inline {
     @extend %dm-inline-2-col;
+    @extend %video__extend--small;
     .group-left {
       @extend .col-sm-6;
     }
     div.group-right {
       @extend .col-sm-6;
+    }
+    .field-name-field-resource-duration .field-items .field-item {
+      margin-right: 3px;
+      margin-bottom: 9px;
     }
   }
 
@@ -158,3 +107,38 @@
     @extend %dm-search-index;
   }
 }
+
+
+// Extend the video classes onto our fields.
+%video__extend {
+  .group-video-preview {
+    position: relative;
+  }
+
+  .field-name-field-resource-duration .field-item {
+    @extend %video__length;
+  }
+
+  .field-name-field-image-featured {
+    @extend %video__preview;
+    img {
+      width: 100%;
+    }
+    padding-bottom: 0 !important;
+  }
+
+  .video-youtube-wrapper {
+    @extend %video__youtube;
+  }
+}
+
+// Small variety.
+%video__extend--small {
+  @extend %video__extend;
+  .field-name-field-resource-duration .field-item {
+    @extend %video__length--small;
+    margin-right: 14px;
+    margin-bottom: 10px;
+  }
+}
+

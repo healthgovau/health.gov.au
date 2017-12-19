@@ -1,27 +1,33 @@
 %dm-list-vertical {
     // Layout
+    @extend .row;
+    .wrapper {
+      @extend .col-sm-12;
+    }
     .group-left {
-        width: 20%;
-        padding-right: uikit-space(.5);
-        @include uikit-media(xs) {
-            width: 25%;
-            padding-right: uikit-space(1);
-        }
+      @extend .col-sm-3;
+      padding-bottom: uikit-space(0.5);
+      @include uikit-media(sm) {
+        padding-bottom: 0;
+      }
+
+      // Shame. Override ds-col css.
+      width: 100%;
+      float: none;
     }
     .group-right {
-        width: 80%;
-        @include uikit-media(xs) {
-            width: 75%;
-        }
+      @extend .col-sm-9;
+
+      // Shame. Override ds-col css.
+      width: 100%;
+      float: none;
     }
     // Fields
     .field-name-field-image-featured {
-        div {
-          line-height: 0;
-        }
-        width: 100%;
-        background-color: #f9f9f9;
-        border: 2px solid #e8e8e8;
+      img {
+        @extend %mobile-max-height-image;
+        border: $health-borderize;
+      }
     }
     
     // Date and tag
@@ -34,6 +40,11 @@
             @extend %list-item-title--large;
         }
     }
+}
+
+%mobile-max-height-image {
+  max-height: 230px;
+  width: auto;
 }
 
 // Listing vertical small
@@ -60,30 +71,9 @@
     @extend %date-and-tag;
 
     .field-name-field-image-featured {
-      background-color: #f9f9f9;
-      border: 2px solid #f5f5f5;
-      div {
-        line-height: 0;
-      }
-      width: 100%;
       img {
-        border: 0;
-        max-height: 138px;
-        width: auto;
-        @include uikit-media(sm) {
-          max-height: 78px;
-          width: auto;
-        }
-        @include uikit-media(md) {
-          max-height: 104px;
-        }
-        @include uikit-media(lg) {
-          max-height: 127px;
-        }
-      }
-      text-align: center;
-      a {
-          border: none;
+        @extend %mobile-max-height-image;
+        border: $health-borderize;
       }
     }
 }
@@ -91,11 +81,12 @@
 %dm-list-vertical--small-noimage {
     border-left: $health-borderize--fat;
     .group-left {
-        display: none;
+      display: none;
     }
     .group-right {
-        width: 100%;
-    } // Fields
+      @extend .col-sm-12;
+    }
+    // Fields
     .field-name-title h2,
     .field-name-title h3,
     .field-name-title h4 {
