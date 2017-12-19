@@ -6382,7 +6382,7 @@ ul.social__links,
 .node-statistic.view-mode-feature .statistic .group-statistic .statistic-icon, .node-statistic.node-video.view-mode-full .statistic .group-statistic .statistic-icon, .node-statistic.view-mode-inline .statistic .group-statistic .statistic-icon {
   font-style: normal; }
 
-.node-statistic.view-mode-inline {
+.node-statistic.view-mode-feature, .node-statistic.node-video.view-mode-full {
   max-width: 25em; }
 
 .page-views .view-content {
