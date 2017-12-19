@@ -7717,6 +7717,9 @@ p.filter__help {
         padding-top: 2.4em;
         padding-bottom: 2.4em; } }
 
+.page-search main .pager {
+  border: none; }
+
 ol.list--large, ul.list--large {
   list-style-type: none;
   counter-reset: standard-counter;
