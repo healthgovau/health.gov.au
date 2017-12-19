@@ -635,7 +635,7 @@ function health_preprocess_field(&$variables) {
     if ($variables['element']['#object']->type == 'news_article') {
       // If it is full display and the image is the default, don't show it.
       if ($variables['element']['#view_mode'] == 'full') {
-        if ($variables['element'][0]['#item']['fid'] == 641) {
+        if ($variables['element'][0]['#item']['fid'] == 956) {
           $variables['items'][0]['#access'] = FALSE;
         }
       }
