@@ -28,6 +28,8 @@
   &.view-mode-feature,
   &.view-mode-inline {
 
+    max-width: 25em;
+
     @extend %stat;
 
     // Outer wrapper.
@@ -102,10 +104,6 @@
         }
       }
     }
-  }
-
-  &.view-mode-feature {
-    max-width: 25em;
   }
 
   // Search
