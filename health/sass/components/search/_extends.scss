@@ -18,6 +18,7 @@
 .page-search {
   main {
     @extend .col-xs-12;
+    @extend .col-sm-8;
     .block-search-api-page {
       width: 100%;
       @include uikit-media(sm) {
