@@ -9,9 +9,17 @@
 ?>
 <div class="<?php print $classes; ?>"<?php print $attributes; ?> id="<?php print $block_html_id; ?>">
 
+  <?php if ($block->region == 'sidebar_second') : ?>
     <a class="mobile-nav-toggle" href="#">
-        <span class="local-nav-title">In this section</span>
+      <span class="local-nav-title">In this section</span>
     </a>
+  <?php else: ?>
+    <?php print render($title_prefix); ?>
+    <?php if ($title): ?>
+      <h3<?php print $title_attributes; ?>><?php print $title; ?></h3>
+    <?php endif; ?>
+    <?php print render($title_suffix); ?>
+  <?php endif; ?>
 
   <?php print $content; ?>
 </div>
