@@ -1,0 +1,48 @@
+// For Topic landing pages.
+.node-type-health-topic,
+.node-type-health-topic-hp {
+
+  .page-title__supp {
+    .region-title-supp {
+      @extend %colour-Primary-background;
+
+      .block-bean-call-to-action {
+        padding: uikit-space(1);
+      }
+
+      color: white;
+      .field-name-field-link-to a {
+        color: white;
+        border-color: white;
+        font-size: 1.2em;
+        &:after {
+          color: white;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E   %3Cpath fill='white' d='M128 64l-64 64-16-16 64-64'/%3E   %3Cpath fill='white' d='M128 64l-16 16-64-64L64 0'/%3E  %3C/svg%3E");
+        }
+      }
+      .block__title {
+        color: white;
+      }
+    }
+  }
+}
+
+// For all landing pages.
+.node-type-health-topic,
+.node-type-health-topic-hp {
+  .page-title {
+    &.header.header--light {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Hide page-title__supp in all resources pages.
+.section-resources {
+  .page-title__supp {
+    display: none;
+  }
+  .page-title__core {
+    @extend .col-xs-12;
+  }
+}
