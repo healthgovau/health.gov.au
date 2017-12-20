@@ -23,7 +23,9 @@
 	// List vertical small
 	&.view-mode-listing_vertical_small {
 		@extend %dm-list-vertical--small;
-		@include cardify-small();
+        @include  uikit-media(sm) {
+          @include cardify-small();
+        }
         img {
           border: none !important;
         }

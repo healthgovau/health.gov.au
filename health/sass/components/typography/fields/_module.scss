@@ -10,12 +10,6 @@
 
   .field-type-datetime,
   .field-type-taxonomy-term-reference {
-    font-size: 13px;
-    margin-bottom: uikit-space(.15);
-    @include uikit-media(sm) {
-      font-size: 16px;
-    }
-
     @extend .meta-date;
     float: left;
   }

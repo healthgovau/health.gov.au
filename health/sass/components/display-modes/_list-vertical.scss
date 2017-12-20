@@ -54,10 +54,13 @@
         width: 40%;
     }
     .group-right {
-        width: 60%;
-        padding-top: 0;
-        padding-bottom: 0;
+      width: 60%;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: uikit-space(.5);
+      @include uikit-media(sm) {
         padding-left: uikit-space(1);
+      }
     }
     // Fields
     .field-name-title {
@@ -83,6 +86,19 @@
         }
         border: $health-borderize;
       }
+    }
+
+    .field-type-datetime,
+    .field-type-taxonomy-term-reference {
+      font-size: 12px;
+      margin-bottom: uikit-space(.15);
+      @include uikit-media(sm) {
+        font-size: 16px;
+      }
+      border: none;
+      float: none;
+      padding: 0;
+      margin-bottom: 0;
     }
 }
 
