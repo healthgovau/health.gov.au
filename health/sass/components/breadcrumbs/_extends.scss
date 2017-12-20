@@ -10,3 +10,11 @@
   @extend .uikit-link-list;
   @extend .uikit-link-list--inline;
 }
+
+// Override margin bottom from UI Kit
+.breadcrumbs > .breadcrumbs__list {
+  padding: 0px;
+  > li {
+    margin-bottom: 0.6em;
+  }
+}

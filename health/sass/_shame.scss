@@ -186,6 +186,8 @@
     @extend %colour-Light-background-reverse;
     margin: 0 0 uikit-space( 1 ) 0;
 
+
+
     // Change the percentage of the regions with huge shame.
     .group-left {
       width: 100%;
@@ -194,7 +196,6 @@
         width: 25%;
         padding: 0;
       }
-
       div {
         line-height: 0;
       }
@@ -224,6 +225,10 @@
           padding: 0;
           font-size: 1.25em;
         }
+      }
+
+      p:last-of-type {
+        margin-bottom: 0;
       }
     }
   }
