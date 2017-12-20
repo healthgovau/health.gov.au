@@ -9,7 +9,7 @@
     }
     .group-right {
       @extend .col-xs-4;
-      padding: 0;
+      padding-right: uikit-space( 1 );
       text-align: right;
     }
     .beta-icon {

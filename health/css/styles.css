@@ -7499,7 +7499,7 @@ ul.list--large {
   .page .header-top .group-left {
     padding: 0; }
   .page .header-top .group-right {
-    padding: 0;
+    padding-right: 1.6em;
     text-align: right; }
   .page .header-top .beta-icon {
     background: #008998;
