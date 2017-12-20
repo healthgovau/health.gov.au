@@ -5741,7 +5741,7 @@ ul.social__links,
 .bean-image-and-text.view-mode-listing_vertical .field-name-field-image-featured img, .node-news-article.view-mode-listing_vertical .field-name-field-image-featured img, .node-event.view-mode-listing_vertical .field-name-field-image-featured img, .node-publication.view-mode-listing_vertical .field-name-field-image-featured img, .node-image.view-mode-listing_vertical .field-name-field-image-featured img, .node-video.view-mode-listing_vertical .field-name-field-image-featured img, .node-campaign.view-mode-listing_vertical .field-name-field-image-featured img, .node-committee-or-group.view-mode-listing_vertical .field-name-field-image-featured img, .node-condition-or-disease.view-mode-listing_vertical .field-name-field-image-featured img, .node-contact.view-mode-listing_vertical .field-name-field-image-featured img, .node-initiative-or-program.view-mode-listing_vertical .field-name-field-image-featured img, .node-statistic.view-mode-listing_vertical .field-name-field-image-featured img, .node-service.view-mode-listing_vertical .field-name-field-image-featured img, .node-health-topic.view-mode-listing_vertical .field-name-field-image-featured img {
   max-height: 240px;
   width: auto;
-  border: 3px solid #CCC; }
+  border: 2px solid #CCC; }
   @media (min-width: 768px) {
     .bean-image-and-text.view-mode-listing_vertical .field-name-field-image-featured img, .node-news-article.view-mode-listing_vertical .field-name-field-image-featured img, .node-event.view-mode-listing_vertical .field-name-field-image-featured img, .node-publication.view-mode-listing_vertical .field-name-field-image-featured img, .node-image.view-mode-listing_vertical .field-name-field-image-featured img, .node-video.view-mode-listing_vertical .field-name-field-image-featured img, .node-campaign.view-mode-listing_vertical .field-name-field-image-featured img, .node-committee-or-group.view-mode-listing_vertical .field-name-field-image-featured img, .node-condition-or-disease.view-mode-listing_vertical .field-name-field-image-featured img, .node-contact.view-mode-listing_vertical .field-name-field-image-featured img, .node-initiative-or-program.view-mode-listing_vertical .field-name-field-image-featured img, .node-statistic.view-mode-listing_vertical .field-name-field-image-featured img, .node-service.view-mode-listing_vertical .field-name-field-image-featured img, .node-health-topic.view-mode-listing_vertical .field-name-field-image-featured img {
       max-height: none;
@@ -5766,7 +5766,7 @@ ul.social__links,
 .node-news-article.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-event.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-publication.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-image.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-video.view-mode-listing_vertical_small .field-name-field-image-featured img {
   max-height: 240px;
   width: auto;
-  border: 3px solid #CCC; }
+  border: 2px solid #CCC; }
   @media (min-width: 768px) {
     .node-news-article.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-event.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-publication.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-image.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-video.view-mode-listing_vertical_small .field-name-field-image-featured img {
       max-height: 130px; } }
@@ -6720,7 +6720,9 @@ th .checkbox {
       margin-top: 0; }
 
 textarea {
-  overflow: auto; }
+  overflow: auto;
+  width: 100%;
+  max-width: 42em; }
 
 .icon--block {
   display: block; }
@@ -7692,12 +7694,39 @@ header.uikit-header, header.region-featured {
   margin-bottom: 0; }
 
 .page-initiatives-and-programs.page-views .bean-image-and-text {
-  margin-bottom: 1.6em; }
+  margin: 0 0 1.6em 0; }
   .page-initiatives-and-programs.page-views .bean-image-and-text .group-left {
-    width: 40%; }
+    width: 100%;
+    padding: 0.8em 0.8em 0 0.8em; }
+    @media (min-width: 768px) {
+      .page-initiatives-and-programs.page-views .bean-image-and-text .group-left {
+        width: 25%;
+        padding: 0; } }
+    .page-initiatives-and-programs.page-views .bean-image-and-text .group-left div {
+      line-height: 0; }
+    .page-initiatives-and-programs.page-views .bean-image-and-text .group-left img {
+      max-height: 160px;
+      width: auto; }
+      @media (min-width: 768px) {
+        .page-initiatives-and-programs.page-views .bean-image-and-text .group-left img {
+          width: 100%;
+          height: auto;
+          max-height: none; } }
   .page-initiatives-and-programs.page-views .bean-image-and-text .group-right {
-    padding: 1.6em;
-    width: 60%; }
+    width: 100%;
+    padding: 0.8em; }
+    @media (min-width: 768px) {
+      .page-initiatives-and-programs.page-views .bean-image-and-text .group-right {
+        width: 75%; } }
+    @media (min-width: 768px) {
+      .page-initiatives-and-programs.page-views .bean-image-and-text .group-right {
+        padding: 0.8em 1.6em; } }
+    .page-initiatives-and-programs.page-views .bean-image-and-text .group-right .field-name-field-link-external {
+      padding-bottom: 0.8em; }
+      .page-initiatives-and-programs.page-views .bean-image-and-text .group-right .field-name-field-link-external .field-items {
+        border: none;
+        padding: 0;
+        font-size: 1.25em; }
 
 .page-conditions-and-diseases-vaccine-preventable-conditions-and-diseases .view-header {
   float: none;
