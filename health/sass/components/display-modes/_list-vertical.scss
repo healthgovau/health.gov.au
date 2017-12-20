@@ -31,7 +31,7 @@
           max-height: none;
           width: 100%;
         }
-        border: $health-borderize;
+        border: $health-borderize--thin;
       }
     }
     
@@ -82,7 +82,7 @@
         @include uikit-media(sm) {
           max-height: 130px;
         }
-        border: $health-borderize;
+        border: $health-borderize--thin;
       }
     }
 
