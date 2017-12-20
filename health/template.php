@@ -638,7 +638,7 @@ function health_file_entity_download_link($variables) {
             foreach($para_documents->field_images[LANGUAGE_NONE] as $image) {
               if ($image['fid'] == $file->fid) {
                 // Get sizing.
-                if (isset($para_documents->field_image_size)) {
+                if (isset($para_documents->field_image_size) && !empty($para_documents->field_image_size)) {
                   $size = $para_documents->field_image_size[LANGUAGE_NONE][0]['value'];
                 }
               }
