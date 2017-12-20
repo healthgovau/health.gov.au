@@ -27,9 +27,9 @@
   }
   // Content pane
   .group-right {
-    padding: uikit-space(.5) uikit-space(.5) 0 uikit-space(.5);
+    padding: uikit-space(.5);
     @include uikit-media(sm) {
-      padding: uikit-space(.75) uikit-space(.75) 0 uikit-space(.75);
+      padding: uikit-space(.75);
     }
   }
   .field-name-title {
