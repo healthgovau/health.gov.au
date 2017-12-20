@@ -7524,6 +7524,8 @@ body {
         border: none;
         padding: 0;
         font-size: 1.25em; }
+    .page-initiatives-and-programs.page-views .bean-image-and-text .group-right p:last-of-type {
+      margin-bottom: 0; }
 
 .page-conditions-and-diseases-vaccine-preventable-conditions-and-diseases .view-header {
   float: none;
