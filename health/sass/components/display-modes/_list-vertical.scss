@@ -70,9 +70,7 @@
         }
     }
 
-    // Date and tag
-    @extend %date-and-tag;
-
+    // Image
     .field-name-field-image-featured {
       div {
         line-height: 0;
@@ -88,18 +86,8 @@
       }
     }
 
-    .field-type-datetime,
-    .field-type-taxonomy-term-reference {
-      font-size: 12px;
-      margin-bottom: uikit-space(.15);
-      @include uikit-media(sm) {
-        font-size: 16px;
-      }
-      border: none;
-      float: none;
-      padding: 0;
-      margin-bottom: 0;
-    }
+    // Date and tag
+    @extend %date-and-tag--small;
 }
 
 %dm-list-vertical--small-noimage {
