@@ -7,17 +7,27 @@
 
 // Wrapper for date and tag
 %date-and-tag {
-    .field-type-datetime {
-        @extend .meta-date;
-        float: left;
-        padding-right: uikit-space(.5);
+
+  .field-type-datetime,
+  .field-type-taxonomy-term-reference {
+    font-size: 13px;
+    margin-bottom: uikit-space(.15);
+    @include uikit-media(sm) {
+      font-size: 16px;
     }
-    .field-type-taxonomy-term-reference {
-        @extend .meta-date;
-        float: left;
-        padding-left: uikit-space(.5);
-        border-left: 1px solid $colour-minorText;
-    }
+
+    @extend .meta-date;
+    float: left;
+  }
+
+  .field-type-datetime {
+    padding-right: uikit-space(.5);
+  }
+
+  .field-type-taxonomy-term-reference {
+    padding-left: uikit-space(.5);
+    border-left: 1px solid $colour-minorText;
+  }
 }
 
 // All fields

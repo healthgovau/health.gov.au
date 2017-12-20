@@ -25,7 +25,12 @@
     // Fields
     .field-name-field-image-featured {
       img {
-        @extend %mobile-max-height-image;
+        max-height: 240px;
+        width: auto;
+        @include uikit-media(sm) {
+          max-height: none;
+          width: 100%;
+        }
         border: $health-borderize;
       }
     }
@@ -40,11 +45,6 @@
             @extend %list-item-title--large;
         }
     }
-}
-
-%mobile-max-height-image {
-  max-height: 230px;
-  width: auto;
 }
 
 // Listing vertical small
@@ -71,8 +71,16 @@
     @extend %date-and-tag;
 
     .field-name-field-image-featured {
+      div {
+        line-height: 0;
+        text-align: right;
+      }
       img {
-        @extend %mobile-max-height-image;
+        max-height: 240px;
+        width: auto;
+        @include uikit-media(sm) {
+          max-height: 130px;
+        }
         border: $health-borderize;
       }
     }

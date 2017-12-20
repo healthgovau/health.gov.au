@@ -26,27 +26,17 @@
   .group-left {}
   // Content pane
   .group-right {
-    padding: uikit-space(.2) uikit-space(.35) 0 uikit-space(.35);
+    padding: uikit-space(.5) uikit-space(.5) 0 uikit-space(.5);
     @include uikit-media(sm) {
-      padding: uikit-space(.5) uikit-space(1);
+      padding: uikit-space(.75) uikit-space(.75) 0 uikit-space(.75);
     }
-
-    .field-name-title {
-      h3, h2 {
-        font-size: 14px;
-        @include uikit-media(sm) {
-          font-size: 18px;
-        }
-      }
-    }
-    .field-name-field-date-published,
-    .field-type-taxonomy-term-reference {
-      font-size: 12px;
-      margin-bottom: uikit-space(.15);
+  }
+  .field-name-title {
+    h3, h2 {
+      font-size: 14px;
       @include uikit-media(sm) {
-        font-size: 14px;
+        font-size: 18px;
       }
     }
-
   }
 }
