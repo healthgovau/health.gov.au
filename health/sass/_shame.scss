@@ -184,15 +184,47 @@
 .page-initiatives-and-programs.page-views {
   .bean-image-and-text {
     @extend %colour-Light-background-reverse;
-    margin-bottom: uikit-space( 1 );
+    margin: 0 0 uikit-space( 1 ) 0;
 
     // Change the percentage of the regions with huge shame.
     .group-left {
-      width: 40%;
+      width: 100%;
+      padding: uikit-space(.5) uikit-space(.5) 0 uikit-space(.5);
+      @include uikit-media(sm) {
+        width: 25%;
+        padding: 0;
+      }
+
+      div {
+        line-height: 0;
+      }
+      img {
+        max-height: 160px;
+        width: auto;
+        @include uikit-media(sm) {
+          width: 100%;
+          height: auto;
+          max-height: none;
+        }
+      }
     }
     .group-right {
-      padding: uikit-space( 1 );
-      width: 60%;
+      width: 100%;
+      @include uikit-media(sm) {
+        width: 75%;
+      }
+      padding: uikit-space(.5);
+      @include uikit-media(sm) {
+        padding: uikit-space(0.5) uikit-space(1);
+      }
+      .field-name-field-link-external {
+        padding-bottom: uikit-space(0.5);
+        .field-items {
+          border: none;
+          padding: 0;
+          font-size: 1.25em;
+        }
+      }
     }
   }
 }
