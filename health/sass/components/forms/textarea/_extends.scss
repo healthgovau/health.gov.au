@@ -11,6 +11,8 @@ textarea {
   @extend .uikit-text-input--textarea;
   // Remove the default vertical scrollbar in IE.
   overflow: auto;
+  width: 100%;
+  max-width: 42em;
 }
 
 .field-type-text-with-summary,
