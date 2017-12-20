@@ -123,7 +123,7 @@ function health_preprocess_page(&$variables) {
     // Conditions and diseases
     // Title doesn't appear in the active trail, so set one manually.
     if ($active_trail[1]['href'] == 'conditions-and-diseases') {
-      if (count($active_trail) > 2) {
+      if (count($active_trail) > 3) {
         $variables['section_title'] = 'Conditions and diseases';
         $variables['summary'] = NULL;
       }
@@ -140,7 +140,7 @@ function health_preprocess_page(&$variables) {
     // Services
     // Title doesn't appear in the active trail, so set one manually.
     if ($active_trail[1]['href'] == 'services') {
-      if (count($active_trail) > 2) {
+      if (count($active_trail) > 3) {
         $variables['section_title'] = 'Services';
         $variables['summary'] = NULL;
       }
