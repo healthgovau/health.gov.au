@@ -1,22 +1,33 @@
-.header-top {
-  background: $uikit-colour-Secondary;
-  color: #ffffff;
-  padding: uikit-space(.5) 0;
-  .beta-icon {
-    background: $colour-Secondary;
-    padding: 0 8px;
-    margin-right: 10px;
-    color: white;
-    font-weight: bold;
-    float: left;
-    text-transform: uppercase;
-  }
-  .message {
-    display: block;
-    margin-left: 60px;
-  }
-  a {
-    color: #fff;
-    border-bottom-color: #fff;
+.page {
+  .header-top {
+    background: $uikit-colour-Secondary;
+    color: #ffffff;
+    padding: uikit-space(.5) 0;
+    .group-left {
+      @extend .col-xs-8;
+      padding: 0;
+    }
+    .group-right {
+      @extend .col-xs-4;
+      padding: 0;
+      text-align: right;
+    }
+    .beta-icon {
+      background: $colour-Secondary;
+      padding: 0 8px;
+      margin-right: 10px;
+      color: white;
+      font-weight: bold;
+      float: left;
+      text-transform: uppercase;
+    }
+    .message {
+      display: block;
+      margin-left: 60px;
+    }
+    a {
+      color: #fff;
+      border-bottom-color: #fff;
+    }
   }
 }
