@@ -28,9 +28,6 @@
     .field-name-title h2 {
         @extend %list-item-title--medium;
     }
-    p:last-of-type {
-        margin-bottom: 0;
-    }
 }
 
 %dm-feature-2-col {
@@ -79,8 +76,5 @@
     h3 {
       @extend %list-item-title--medium;
     }
-  }
-  p:last-of-type {
-    margin-bottom: 0;
   }
 }

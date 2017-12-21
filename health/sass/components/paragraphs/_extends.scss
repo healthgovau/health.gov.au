@@ -22,6 +22,10 @@
     .field-type-link-field {
         @extend .tile__title;
     }
+
+  .field-name-field-summary {
+    margin-bottom: uikit-space(1);
+  }
 }
 
 // Browse by lifestage
@@ -65,13 +69,6 @@
                     padding: 0;
                 }
 
-                .taxonomy-term-description {
-                  margin: 0;
-                  p {
-                    margin: 0;
-                  }
-                }
-
                 // Hide external link label.
                 svg {
                     display: none;
@@ -85,11 +82,20 @@
                     @include card-colour($colour-Secondary);
                     // Add mobile width 100% and odd/even handling
                     // Title
-                    h3 {
-                      @extend %list-item-title;
-                      border-bottom: 1px solid white;
-                      display: inline;
+                    .field-name-title {
+                      margin-bottom: uikit-space(0.5);
+                      h3 {
+                        @extend %list-item-title;
+                        border-bottom: 1px solid white;
+                        display: inline;
+                      }
                     }
+
+                  // Override drupal taxonomy term style.
+                  .taxonomy-term-description {
+                    padding: 0;
+                    margin: 0;
+                  }
 
                     &:hover {
                       h3 {
@@ -167,7 +173,8 @@
 
   .field-name-field-summary {
     p {
-      margin: uikit-space(0.5) 0 uikit-space(0.75) 0;
+      margin-top: uikit-space(0.5);
+      margin-bottom: uikit-space(0.5);
     }
   }
 
@@ -219,6 +226,9 @@
     .para-row {
       h2 {
         @extend .uikit-display-4;
+      }
+      .field-name-field-summary {
+        margin-bottom: uikit-space(1);
       }
       > .group-left,
       > .group-right {

@@ -226,10 +226,6 @@
           font-size: 1.25em;
         }
       }
-
-      p:last-of-type {
-        margin-bottom: 0;
-      }
     }
   }
 }
@@ -240,4 +236,10 @@
     float: none;
     margin: 0;
   }
+}
+
+// Stop all last P tags from having a bottom margin, this happens across the
+// site in a number of places and is a UIKit style.
+p:last-of-type {
+  margin-bottom: 0;
 }

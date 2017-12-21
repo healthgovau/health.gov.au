@@ -36,12 +36,6 @@
     @extend .meta-date;
     margin-bottom: uikit-space(0.5);
   }
-  // lists
-  .field-name-field-summary {
-    p:last-of-type {
-      margin-bottom: 0;
-    }
-  }
 }
 
 %dm-inline-2-col {

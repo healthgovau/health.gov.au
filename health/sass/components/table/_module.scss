@@ -34,10 +34,6 @@
     text-align: left;
     vertical-align: top;
 
-    // Remove extra padding around the last p tag.
-    p:last-of-type {
-      margin-bottom: 0;
-    }
   }
 
   thead {
