@@ -227,8 +227,10 @@
       h2 {
         @extend .uikit-display-4;
       }
-      .field-name-field-summary {
-        margin-bottom: uikit-space(1);
+      .group-header {
+        .field-name-field-summary {
+          margin-bottom: uikit-space(1);
+        }
       }
       > .group-left,
       > .group-right {
