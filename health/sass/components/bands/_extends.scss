@@ -61,9 +61,6 @@
     @extend .uikit-display-4;
     max-width: 60rem;
   }
-  p:last-of-type {
-    margin-bottom: 0;
-  }
   .feedback-band {
     @extend .row;
     .feedback-col {
@@ -166,6 +163,10 @@ body {
     .paragraphs-item-para-contact {
       padding: 0;
       text-align: center;
+      p {
+        margin-left: auto;
+        margin-right: auto;
+      }
       .view-mode-hotline_bar {
         padding: uikit-space(0.5);
         .field-name-field-contact-telephone {

@@ -87,7 +87,7 @@
               <?php endif; ?>
 
               <?php if (isset($summary)): ?>
-                <p class="summary"><?php print $summary; ?></p>
+                <?php print $summary; ?>
               <?php endif; ?>
 
               <?php print render($page['title_core']); ?>
