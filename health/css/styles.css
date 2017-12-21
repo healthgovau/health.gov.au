@@ -5665,12 +5665,11 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
       color: white; }
 
 #readspeaker {
-  display: none;
   margin-bottom: 1.6em; }
   #readspeaker a {
     border-bottom: none; }
     #readspeaker a:hover, #readspeaker a:active {
-      background-color: none; }
+      background-color: inherit; }
     #readspeaker a:after {
       display: none; }
   #readspeaker .rsbtn {
