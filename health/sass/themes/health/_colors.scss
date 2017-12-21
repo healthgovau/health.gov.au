@@ -99,6 +99,17 @@ $colour-lightest: #f9f9f9;
   background: linear-gradient(to right, $colour-darker, $colour-dark);
 }
 
+// Text colours
+%colour-text-inverse {
+  color: white;
+  h1,h2,h3,h4,h5,h6,a {
+    color: white;
+  }
+  a {
+    border-bottom-color: white;
+  }
+}
+
 $uikit-colour-Link: $colour-Secondary; // Health override
 $uikit-colour-Primary: $colour-Primary; // Health override
 

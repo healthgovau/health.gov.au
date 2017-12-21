@@ -56,7 +56,8 @@
 }
 
 #block-bean-feedback-band,
-#block-bean-homepage-about-us {
+#block-bean-homepage-about-us,
+#block-bean-ageing-and-aged-care {
   h2 {
     @extend .uikit-display-4;
     max-width: 60rem;
@@ -187,7 +188,6 @@
 
 
   }
-
 }
 
 // Landing pages only.

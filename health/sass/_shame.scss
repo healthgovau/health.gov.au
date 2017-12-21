@@ -194,6 +194,11 @@
     @extend %colour-Light-background;
     color: black;
   }
+
+  // Aged care.
+  &.block-id__ageing-and-aged-care {
+    @extend %colour-Light-background-reverse;
+  }
 }
 
 // Remove padding on dl set by UIKit
