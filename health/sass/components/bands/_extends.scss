@@ -61,6 +61,8 @@
     @extend .uikit-display-4;
     max-width: 60rem;
   }
+
+  // Feedback.
   .feedback-band {
     @extend .row;
     .feedback-col {
@@ -105,6 +107,87 @@
       }
     }
   }
+
+  // About us main banner homepage.
+  .about-us {
+    color: white;
+    h2 {
+      color: white;
+    }
+
+    background-color: $colour-Secondary;
+
+    .foreground {
+      @extend .container;
+
+
+      position: relative;
+
+      .group-left {
+        @include uikit-media(sm) {
+          width: 70%;
+          float: left;
+        }
+        .about-us__section {
+          h2 {
+            @include uikit-media(sm) {
+              font-size: 24px;
+            }
+            color: white;
+          }
+          background: $colour-dark-hover;
+          padding: uikit-space(0.5) uikit-space(1) uikit-space(0.75) uikit-space(1);
+          margin-top: uikit-space(0.5);
+          @include uikit-media(sm) {
+            margin: uikit-space(4) 0 uikit-space(1) 0;
+          }
+          p {
+            margin-bottom: uikit-space(0.5);
+          }
+        }
+      }
+      .group-right {
+        margin-bottom: uikit-space(0.5);
+        @include uikit-media(sm) {
+          width: 30%;
+          float: left;
+          margin-bottom: 0;
+        }
+        @extend %colour-Secondary-background;
+        padding: uikit-space(1);
+        p {
+          margin-bottom: uikit-space(1);
+        }
+      }
+    }
+
+    .background {
+      position: absolute;
+      width: auto;
+      height: 100%;
+      img {
+        width: auto;
+        height: 100%;
+      }
+      @include uikit-media(sm) {
+        padding-right: 21em;
+        width: 100%;
+        height: auto;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+    }
+
+    position: relative;
+    overflow: hidden;
+
+
+
+  }
+
 }
 
 // Landing pages only.

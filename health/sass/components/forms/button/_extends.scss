@@ -27,6 +27,19 @@ html [type='button'],
   @extend .uikit-btn--secondary;
 }
 
+.button--light {
+  background-color: white;
+  color: $uikit-colour-Text;
+  &:hover {
+    background-color: $colour-light-dark;
+  }
+}
+
+.button--small {
+  font-size: 14px;
+}
+
+
 .button--tertiary {
   @extend .uikit-btn--tertiary;
   border-color: $colour-Secondary;

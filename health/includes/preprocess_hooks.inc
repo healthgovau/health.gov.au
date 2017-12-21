@@ -814,6 +814,11 @@ function health_preprocess_entity(&$variables) {
       // Add total block number in current para to class.
       $block_num = count($para_item->field_para_block_id[LANGUAGE_NONE]);
       $variables['classes_array'][] = 'block__count--' . $block_num;
+
+      // Add class to identify specific block.
+      foreach($para_item->field_para_block_id[LANGUAGE_NONE] as $bid) {
+        $variables['classes_array'][] = 'block-id__' . $bid['value'];
+      }
     }
   }
 

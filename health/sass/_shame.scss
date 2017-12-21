@@ -134,7 +134,9 @@
 // For homepage only.
 // Shame for home page background colour.
 .front .paragraphs-item-para-block.para-container {
-  &.block__count--5 {
+
+  // Task accelerator.
+  &.block__count--5.block-id__topic-tile{
     @extend %colour-Primary-background;
     &.view-mode-full {
 
@@ -168,8 +170,27 @@
       }
     }
   }
-  &.block__count--1 {
-    //background: $colour-Primary-dark;
+
+  // About us.
+  &.block-id__homepage-about-us {
+    padding: 0;
+    .inside-para-container {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .para-row {
+      margin: 0;
+    }
+
+    .bean-basic-content {
+      padding: 0;
+    }
+  }
+
+  // Feedback.
+  &.block-id__feedback-band {
     @extend %colour-Light-background;
     color: black;
   }
