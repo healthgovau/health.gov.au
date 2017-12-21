@@ -6,16 +6,18 @@
     .group-left {
       width: auto;
       display: inline;
-      @extend .col-sm-8;
       padding: 0;
+      @include uikit-media( md ) {
+        float: left;
+      }
     }
     .group-right {
       width: auto;
       display: inline;
-      @extend .col-sm-4;
       text-align: left;
       padding: 0;
-      @include uikit-media( sm ) {
+      @include uikit-media( md ) {
+        float: right;
         padding-right: uikit-space( 1 );
         text-align: right;
       }
@@ -40,20 +42,20 @@
 
     .mobile-hide {
       display: none;
-      @include uikit-media(sm) {
+      @include uikit-media(md) {
         display: inline;
       }
     }
 
     .mobile-show {
       display: inline;
-      @include uikit-media(sm) {
+      @include uikit-media(md) {
         display: none;
       }
     }
 
     font-size: 13px;
-    @include uikit-media(sm) {
+    @include uikit-media(md) {
       font-size: inherit;
     }
 
