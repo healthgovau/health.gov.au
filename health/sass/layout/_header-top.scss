@@ -4,12 +4,14 @@
     color: #ffffff;
     padding: uikit-space(.5) 0;
     .group-left {
-      @extend .col-xs-12;
+      width: auto;
+      display: inline;
       @extend .col-sm-8;
       padding: 0;
     }
     .group-right {
-      @extend .col-xs-12;
+      width: auto;
+      display: inline;
       @extend .col-sm-4;
       text-align: left;
       padding: 0;
@@ -35,5 +37,25 @@
       color: #fff;
       border-bottom-color: #fff;
     }
+
+    .mobile-hide {
+      display: none;
+      @include uikit-media(sm) {
+        display: inline;
+      }
+    }
+
+    .mobile-show {
+      display: inline;
+      @include uikit-media(sm) {
+        display: none;
+      }
+    }
+
+    font-size: 13px;
+    @include uikit-media(sm) {
+      font-size: inherit;
+    }
+
   }
 }
