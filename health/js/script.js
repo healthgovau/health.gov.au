@@ -48,6 +48,9 @@
       // Statistics
       $('.group-statistic .field-name-field-statistic-value-text', context).matchHeight();
       $('.group-trend', context).matchHeight();
+
+      // About us boxes
+      $('.about-us .foreground > div', context).matchHeight();
     }
   };
 

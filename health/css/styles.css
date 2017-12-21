@@ -7896,7 +7896,9 @@ header.uikit-header, header.region-featured {
   float: none;
   margin: 0; }
 
-p:last-of-type {
+.node-type-health-topic p:last-of-type,
+.node-type-health-topic-hp p:last-of-type,
+.node-type-landing-page p:last-of-type {
   margin-bottom: 0; }
 
 /*# sourceMappingURL=styles.css.map */

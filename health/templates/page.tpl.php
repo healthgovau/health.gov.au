@@ -77,7 +77,7 @@
             <div class="page-title__core col <?php print isset($section_title) ? 'section-title' : '' ?>">
               <?php print $breadcrumb; ?>
 
-              <?php if ($title && !isset($section_title)): ?>
+              <?php if ($title): ?>
                 <?php print render($title_prefix); ?>
                 <h1 class="uikit-header-heading"><?php print $title; ?></h1>
                 <?php print render($title_suffix); ?>
@@ -126,12 +126,6 @@
               <?php print render($page['help']); ?>
               <?php if ($action_links): ?>
                   <ul class="action-links"><?php print render($action_links); ?></ul>
-              <?php endif; ?>
-
-              <?php if (isset($section_title)): ?>
-                <?php print render($title_prefix); ?>
-                  <h1><?php print $title; ?></h1>
-                <?php print render($title_suffix); ?>
               <?php endif; ?>
 
               <?php print $messages; ?>

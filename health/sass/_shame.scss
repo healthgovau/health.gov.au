@@ -261,6 +261,10 @@
 
 // Stop all last P tags from having a bottom margin, this happens across the
 // site in a number of places and is a UIKit style.
-p:last-of-type {
-  margin-bottom: 0;
+.node-type-health-topic,
+.node-type-health-topic-hp,
+.node-type-landing-page {
+  p:last-of-type {
+    margin-bottom: 0;
+  }
 }
