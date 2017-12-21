@@ -67,6 +67,7 @@
     <?php if (!drupal_is_front_page()): ?>
       <?php print $readspeaker; ?>
     <?php endif; ?>
+      <div id="read">
 
     <?php if(!drupal_is_front_page()): ?>
       <!-- Show the title and breadcrumbs when they are not on the homepage -->
@@ -120,7 +121,6 @@
         <?php endif; ?>
 
         <main class="<?php print $content_class; ?>" id="content" role="main">
-            <div id="read">
 
               <div id="tabs"><?php print render($tabs); ?></div>
               <?php print render($page['help']); ?>
@@ -138,7 +138,6 @@
 
               <?php print render($page['content']); ?>
               <?php print $feed_icons; ?>
-            </div>
         </main>
 
       </div>
@@ -148,6 +147,7 @@
     
     <?php print render($page['featured']); ?>
 
+      </div>
   </div>
 
   <footer class="footer <?php print $classes; ?>" role="contentinfo">
