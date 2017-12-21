@@ -1,12 +1,10 @@
 #readspeaker {
-  // hide readspeaker for this release.
-  display: none;
   margin-bottom: uikit-space(1);
   a {
     border-bottom: none;
     &:hover,
     &:active {
-      background-color: none;
+      background-color: inherit;
     }
     &:after {
       display: none;

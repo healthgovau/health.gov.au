@@ -64,6 +64,9 @@
   <?php print render($page['highlighted']); ?>
 
   <div class="page-content">
+    <?php if (!drupal_is_front_page()): ?>
+      <?php print $readspeaker; ?>
+    <?php endif; ?>
 
     <?php if(!drupal_is_front_page()): ?>
       <!-- Show the title and breadcrumbs when they are not on the homepage -->
@@ -117,10 +120,6 @@
         <?php endif; ?>
 
         <main class="<?php print $content_class; ?>" id="content" role="main">
-          <?php if (!drupal_is_front_page()): ?>
-            <?php //print $readspeaker; ?>
-          <?php endif; ?>
-
             <div id="read">
 
               <div id="tabs"><?php print render($tabs); ?></div>
