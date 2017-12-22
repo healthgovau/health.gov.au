@@ -6403,33 +6403,36 @@ body.node-type-health-topic .para-container.paragraphs-item-para-content-text, b
   #block-bean-homepage-about-us .about-us .foreground,
   #block-bean-ageing-and-aged-care .about-us .foreground {
     position: relative; }
-    @media (min-width: 1200px) {
-      #block-bean-feedback-band .about-us .foreground .group-left,
-      #block-bean-homepage-about-us .about-us .foreground .group-left,
-      #block-bean-ageing-and-aged-care .about-us .foreground .group-left {
-        background-size: 867px; } }
-    @media (min-width: 768px) {
-      #block-bean-feedback-band .about-us .foreground .group-left,
-      #block-bean-homepage-about-us .about-us .foreground .group-left,
-      #block-bean-ageing-and-aged-care .about-us .foreground .group-left {
-        width: 70%;
-        float: left; } }
-    #block-bean-feedback-band .about-us .foreground .group-left .about-us__section,
-    #block-bean-homepage-about-us .about-us .foreground .group-left .about-us__section,
-    #block-bean-ageing-and-aged-care .about-us .foreground .group-left .about-us__section {
-      background: #404041;
-      padding: 0.8em 1.6em 1.2em 1.6em;
-      margin: 12.8em 0 0 0; }
+    #block-bean-feedback-band .about-us .foreground .group-left,
+    #block-bean-homepage-about-us .about-us .foreground .group-left,
+    #block-bean-ageing-and-aged-care .about-us .foreground .group-left {
+      background-size: 867px; }
       @media (min-width: 768px) {
-        #block-bean-feedback-band .about-us .foreground .group-left .about-us__section,
-        #block-bean-homepage-about-us .about-us .foreground .group-left .about-us__section,
-        #block-bean-ageing-and-aged-care .about-us .foreground .group-left .about-us__section {
-          opacity: 0.8; } }
-      #block-bean-feedback-band .about-us .foreground .group-left .about-us__section p,
-      #block-bean-homepage-about-us .about-us .foreground .group-left .about-us__section p,
-      #block-bean-ageing-and-aged-care .about-us .foreground .group-left .about-us__section p {
-        font-size: 20px;
-        margin-bottom: 0.4em; }
+        #block-bean-feedback-band .about-us .foreground .group-left,
+        #block-bean-homepage-about-us .about-us .foreground .group-left,
+        #block-bean-ageing-and-aged-care .about-us .foreground .group-left {
+          width: 70%;
+          float: left; } }
+      #block-bean-feedback-band .about-us .foreground .group-left .about-us__section,
+      #block-bean-homepage-about-us .about-us .foreground .group-left .about-us__section,
+      #block-bean-ageing-and-aged-care .about-us .foreground .group-left .about-us__section {
+        background: #404041;
+        padding: 0.6em;
+        margin: 14.8em 0 0 9em; }
+        @media (min-width: 768px) {
+          #block-bean-feedback-band .about-us .foreground .group-left .about-us__section,
+          #block-bean-homepage-about-us .about-us .foreground .group-left .about-us__section,
+          #block-bean-ageing-and-aged-care .about-us .foreground .group-left .about-us__section {
+            opacity: 0.8; } }
+        #block-bean-feedback-band .about-us .foreground .group-left .about-us__section p,
+        #block-bean-homepage-about-us .about-us .foreground .group-left .about-us__section p,
+        #block-bean-ageing-and-aged-care .about-us .foreground .group-left .about-us__section p {
+          font-size: 16px;
+          margin-bottom: 0.4em; }
+        #block-bean-feedback-band .about-us .foreground .group-left .about-us__section a,
+        #block-bean-homepage-about-us .about-us .foreground .group-left .about-us__section a,
+        #block-bean-ageing-and-aged-care .about-us .foreground .group-left .about-us__section a {
+          font-size: 16px; }
     #block-bean-feedback-band .about-us .foreground .group-right,
     #block-bean-homepage-about-us .about-us .foreground .group-right,
     #block-bean-ageing-and-aged-care .about-us .foreground .group-right {

@@ -123,9 +123,7 @@
       position: relative;
 
       .group-left {
-        @include uikit-media(lg) {
-          background-size: 867px;
-        }
+        background-size: 867px;
 
         @include uikit-media(sm) {
           width: 70%;
@@ -136,11 +134,14 @@
             opacity: 0.8;
           }
           background: $colour-dark-hover;
-          padding: uikit-space(0.5) uikit-space(1) uikit-space(0.75) uikit-space(1);
-          margin: uikit-space(8) 0 0 0;
+          padding: 0.6em;
+          margin: 14.8em 0 0 9em;
           p {
-            font-size: 20px;
+            font-size: 16px;
             margin-bottom: uikit-space(0.25);
+          }
+          a {
+            font-size: 16px;
           }
         }
       }
