@@ -134,11 +134,11 @@
           background: $colour-dark-hover;
           padding: uikit-space(0.5) uikit-space(1) uikit-space(0.75) uikit-space(1);
           margin-top: uikit-space(0.5);
-          @include uikit-media(lg) {
+          @include uikit-media(md) {
             margin: uikit-space(8) 0 uikit-space(1) 0;
           }
           @include uikit-media(lg) {
-            margin: uikit-space(10) 0 uikit-space(1) 0;
+            margin: uikit-space(8) 0 uikit-space(1) 0;
           }
           p {
             font-size: 20px;
