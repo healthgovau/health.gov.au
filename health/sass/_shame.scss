@@ -149,6 +149,10 @@
           overflow: hidden;
           color: transparent;
 
+          .field-name-field-bean-text {
+            display: none;
+          }
+
           &:hover,
           &:focus {
             background: $colour-Primary-hover;

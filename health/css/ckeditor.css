@@ -6474,6 +6474,16 @@ body.node-type-health-topic .para-container.paragraphs-item-para-content-text, b
       #block-bean-homepage-about-us .about-us .background,
       #block-bean-ageing-and-aged-care .about-us .background {
         padding-right: 21em; } }
+    @media (min-width: 1800px) {
+      #block-bean-feedback-band .about-us .background,
+      #block-bean-homepage-about-us .about-us .background,
+      #block-bean-ageing-and-aged-care .about-us .background {
+        pading-right: 41em; } }
+    @media (min-width: 2460px) {
+      #block-bean-feedback-band .about-us .background,
+      #block-bean-homepage-about-us .about-us .background,
+      #block-bean-ageing-and-aged-care .about-us .background {
+        pading-right: 62em; } }
 
 body.node-type-health-topic .paragraphs-item-two-columns.resources, body.node-type-health-topic-hp .paragraphs-item-two-columns.resources, body.node-type-landing-page .paragraphs-item-two-columns.resources {
   background: white; }
@@ -7835,6 +7845,8 @@ body {
     display: block;
     overflow: hidden;
     color: transparent; }
+    .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a .field-name-field-bean-text {
+      display: none; }
     .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a:hover, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a:focus {
       background: #000b33; }
       .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a:hover .field-name-field-link-internal .field-item, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a:focus .field-name-field-link-internal .field-item {
