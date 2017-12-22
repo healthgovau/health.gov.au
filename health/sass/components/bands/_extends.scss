@@ -120,8 +120,6 @@
 
     .foreground {
       @extend .container;
-
-
       position: relative;
 
       .group-left {
@@ -130,21 +128,21 @@
           float: left;
         }
         .about-us__section {
-          opacity: 0.8;
-          h2 {
-            @include uikit-media(sm) {
-              font-size: 24px;
-            }
-            color: white;
+          @include uikit-media(sm) {
+            opacity: 0.8;
           }
           background: $colour-dark-hover;
           padding: uikit-space(0.5) uikit-space(1) uikit-space(0.75) uikit-space(1);
           margin-top: uikit-space(0.5);
-          @include uikit-media(sm) {
-            margin: uikit-space(16) 0 uikit-space(1) 0;
+          @include uikit-media(lg) {
+            margin: uikit-space(8) 0 uikit-space(1) 0;
+          }
+          @include uikit-media(lg) {
+            margin: uikit-space(10) 0 uikit-space(1) 0;
           }
           p {
-            margin-bottom: uikit-space(0.5);
+            font-size: 20px;
+            margin-bottom: uikit-space(0.25);
           }
         }
       }
@@ -154,11 +152,17 @@
           width: 30%;
           float: left;
           margin-bottom: 0;
+          h2 {
+            font-size: 28px;
+          }
         }
         @extend %colour-Secondary-background;
         padding: uikit-space(1);
         p {
           margin-bottom: uikit-space(1);
+        }
+        h2 {
+          font-size: 24px;
         }
       }
     }
@@ -172,7 +176,7 @@
         height: 100%;
       }
       @include uikit-media(sm) {
-        padding-right: 8em;
+        padding-right: 9em;
         width: 100%;
         height: auto;
         img {
