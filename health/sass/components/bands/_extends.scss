@@ -130,6 +130,7 @@
           float: left;
         }
         .about-us__section {
+          opacity: 0.8;
           h2 {
             @include uikit-media(sm) {
               font-size: 24px;
@@ -140,7 +141,7 @@
           padding: uikit-space(0.5) uikit-space(1) uikit-space(0.75) uikit-space(1);
           margin-top: uikit-space(0.5);
           @include uikit-media(sm) {
-            margin: uikit-space(4) 0 uikit-space(1) 0;
+            margin: uikit-space(16) 0 uikit-space(1) 0;
           }
           p {
             margin-bottom: uikit-space(0.5);
@@ -171,7 +172,7 @@
         height: 100%;
       }
       @include uikit-media(sm) {
-        padding-right: 21em;
+        padding-right: 8em;
         width: 100%;
         height: auto;
         img {
@@ -180,6 +181,9 @@
         }
       }
 
+      @include uikit-media(lg) {
+        padding-right: 21em;
+      }
     }
 
     position: relative;
