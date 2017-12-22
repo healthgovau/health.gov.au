@@ -6478,12 +6478,12 @@ body.node-type-health-topic .para-container.paragraphs-item-para-content-text, b
       #block-bean-feedback-band .about-us .background,
       #block-bean-homepage-about-us .about-us .background,
       #block-bean-ageing-and-aged-care .about-us .background {
-        pading-right: 41em; } }
+        padding-right: 41em; } }
     @media (min-width: 2460px) {
       #block-bean-feedback-band .about-us .background,
       #block-bean-homepage-about-us .about-us .background,
       #block-bean-ageing-and-aged-care .about-us .background {
-        pading-right: 62em; } }
+        padding-right: 62em; } }
 
 body.node-type-health-topic .paragraphs-item-two-columns.resources, body.node-type-health-topic-hp .paragraphs-item-two-columns.resources, body.node-type-landing-page .paragraphs-item-two-columns.resources {
   background: white; }
