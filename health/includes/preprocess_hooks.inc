@@ -650,10 +650,16 @@ function health_preprocess_field(&$variables) {
   }
 
   // Add p tags around plain text fields.
-  if ($variables['element']['#field_name'] == 'field_summary' || $variables['element']['#field_name'] == 'field_title') {
-    if (isset($variables['element']['#items'][0]) && key_exists('format', $variables['element']['#items'][0])) {
-      if ($variables['element']['#items'][0]['format'] == NULL) { // Plain text
-        $variables['items'][0]['#markup'] = '<p>' . $variables['items'][0]['#markup'] . '</p>';
+  $fields = [
+    'field_summary',
+    'field_title'
+  ];
+  foreach($fields as $field) {
+    if ($variables['element']['#field_name'] == $field) {
+      if (isset($variables['element']['#items'][0]) && key_exists('format', $variables['element']['#items'][0])) {
+        if ($variables['element']['#items'][0]['format'] == NULL) { // Plain text
+          $variables['items'][0]['#markup'] = '<p>' . $variables['items'][0]['#markup'] . '</p>';
+        }
       }
     }
   }
