@@ -117,10 +117,12 @@
     }
 
     background: white;
-    background: -moz-linear-gradient(right, white 50%, $colour-Secondary 50%);
-    background: -webkit-linear-gradient(right, white 50%,$colour-Secondary 50%);
-    background: linear-gradient(to right, white 50%,$colour-Secondary 50%);
-    background: -o-linear-gradient(right, white 50%, $colour-Secondary 50%);
+    @include uikit-media(lg) {
+      background: -moz-linear-gradient(right, white 50%, $colour-Secondary 50%);
+      background: -webkit-linear-gradient(right, white 50%, $colour-Secondary 50%);
+      background: linear-gradient(to right, white 50%, $colour-Secondary 50%);
+      background: -o-linear-gradient(right, white 50%, $colour-Secondary 50%);
+    }
 
     .foreground {
       @extend .container;
@@ -128,15 +130,19 @@
 
       .group-left {
         background-size: 755px;
+        width: 100%;
 
-        @include uikit-media(sm) {
+        @include uikit-media(lg) {
           width: 70%;
           float: left;
         }
         .about-us__section {
           background: $colour-dark-hover;
-          padding: 1.25em 2em;
-          margin: 16.5em 0 0 0;
+          padding: uikit-space(1);
+          @include uikit-media(lg) {
+            padding: 1.25em 2em;
+            margin: 16.5em 0 0 0;
+          }
           p {
             font-size: 20px;
             line-height: 1.35em;
@@ -149,8 +155,9 @@
       }
       .group-right {
         margin-bottom: uikit-space(0.5);
+        width: 100%;
         @extend %colour-Secondary-background;
-        padding: uikit-space(3) uikit-space(1) uikit-space(1) uikit-space(1);
+        padding: uikit-space(1);
         p {
           margin-bottom: uikit-space(1);
         }
@@ -158,7 +165,8 @@
           font-size: 26px;
         }
 
-        @include uikit-media(sm) {
+        @include uikit-media(lg) {
+          padding: uikit-space(3) uikit-space(1) uikit-space(1) uikit-space(1);
           width: 30%;
           float: left;
           margin-bottom: 0;

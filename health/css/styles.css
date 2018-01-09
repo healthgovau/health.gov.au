@@ -6385,8 +6385,6 @@ body.node-type-health-topic .para-container.paragraphs-item-para-content-text, b
 #block-bean-ageing-and-aged-care .about-us {
   color: white;
   background: white;
-  background: linear-gradient(to right, white 50%, #008998 50%);
-  background: -o-linear-gradient(right, white 50%, #008998 50%);
   position: relative;
   overflow: hidden; }
   #block-bean-feedback-band .about-us h2, #block-bean-feedback-band .about-us .video--left .video__title, .video--left #block-bean-feedback-band .about-us .video__title, #block-bean-feedback-band .about-us .video--right .video__title, .video--right #block-bean-feedback-band .about-us .video__title,
@@ -6401,6 +6399,12 @@ body.node-type-health-topic .para-container.paragraphs-item-para-content-text, b
   #block-bean-ageing-and-aged-care .about-us .video--right .video__title, .video--right
   #block-bean-ageing-and-aged-care .about-us .video__title {
     color: white; }
+  @media (min-width: 1200px) {
+    #block-bean-feedback-band .about-us,
+    #block-bean-homepage-about-us .about-us,
+    #block-bean-ageing-and-aged-care .about-us {
+      background: linear-gradient(to right, white 50%, #008998 50%);
+      background: -o-linear-gradient(right, white 50%, #008998 50%); } }
   #block-bean-feedback-band .about-us .foreground,
   #block-bean-homepage-about-us .about-us .foreground,
   #block-bean-ageing-and-aged-care .about-us .foreground {
@@ -6408,8 +6412,9 @@ body.node-type-health-topic .para-container.paragraphs-item-para-content-text, b
     #block-bean-feedback-band .about-us .foreground .group-left,
     #block-bean-homepage-about-us .about-us .foreground .group-left,
     #block-bean-ageing-and-aged-care .about-us .foreground .group-left {
-      background-size: 755px; }
-      @media (min-width: 768px) {
+      background-size: 755px;
+      width: 100%; }
+      @media (min-width: 1200px) {
         #block-bean-feedback-band .about-us .foreground .group-left,
         #block-bean-homepage-about-us .about-us .foreground .group-left,
         #block-bean-ageing-and-aged-care .about-us .foreground .group-left {
@@ -6419,8 +6424,13 @@ body.node-type-health-topic .para-container.paragraphs-item-para-content-text, b
       #block-bean-homepage-about-us .about-us .foreground .group-left .about-us__section,
       #block-bean-ageing-and-aged-care .about-us .foreground .group-left .about-us__section {
         background: #404041;
-        padding: 1.25em 2em;
-        margin: 16.5em 0 0 0; }
+        padding: 1.6em; }
+        @media (min-width: 1200px) {
+          #block-bean-feedback-band .about-us .foreground .group-left .about-us__section,
+          #block-bean-homepage-about-us .about-us .foreground .group-left .about-us__section,
+          #block-bean-ageing-and-aged-care .about-us .foreground .group-left .about-us__section {
+            padding: 1.25em 2em;
+            margin: 16.5em 0 0 0; } }
         #block-bean-feedback-band .about-us .foreground .group-left .about-us__section p,
         #block-bean-homepage-about-us .about-us .foreground .group-left .about-us__section p,
         #block-bean-ageing-and-aged-care .about-us .foreground .group-left .about-us__section p {
@@ -6435,7 +6445,8 @@ body.node-type-health-topic .para-container.paragraphs-item-para-content-text, b
     #block-bean-homepage-about-us .about-us .foreground .group-right,
     #block-bean-ageing-and-aged-care .about-us .foreground .group-right {
       margin-bottom: 0.8em;
-      padding: 4.8em 1.6em 1.6em 1.6em; }
+      width: 100%;
+      padding: 1.6em; }
       #block-bean-feedback-band .about-us .foreground .group-right p,
       #block-bean-homepage-about-us .about-us .foreground .group-right p,
       #block-bean-ageing-and-aged-care .about-us .foreground .group-right p {
@@ -6452,10 +6463,11 @@ body.node-type-health-topic .para-container.paragraphs-item-para-content-text, b
       #block-bean-ageing-and-aged-care .about-us .foreground .group-right .video--right .video__title, .video--right
       #block-bean-ageing-and-aged-care .about-us .foreground .group-right .video__title {
         font-size: 26px; }
-      @media (min-width: 768px) {
+      @media (min-width: 1200px) {
         #block-bean-feedback-band .about-us .foreground .group-right,
         #block-bean-homepage-about-us .about-us .foreground .group-right,
         #block-bean-ageing-and-aged-care .about-us .foreground .group-right {
+          padding: 4.8em 1.6em 1.6em 1.6em;
           width: 30%;
           float: left;
           margin-bottom: 0; }
