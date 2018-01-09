@@ -7168,22 +7168,22 @@ div.region-content .anchor {
 .uikit-body .sidebar .block-menu-block--title-link .menu ul ul a, .page .sidebar .block-menu-block--title-link .menu ul ul a, .cke_editable .sidebar .block-menu-block--title-link .menu ul ul a {
   padding-left: 3.2em; }
 
-.menu-block-wrapper.menu-name-main-menu.mobilemenu-active {
+.menu-block-wrapper.menu-name-main-menu.menu-block-2.mobilemenu-active {
   visibility: visible;
   opacity: 1;
   height: auto; }
 
-.menu-block-wrapper.menu-name-main-menu {
+.menu-block-wrapper.menu-name-main-menu.menu-block-2 {
   visibility: hidden;
   height: 0;
   opacity: 0;
   transition: visibility 0s, opacity 0.8s linear; }
   @media (min-width: 768px) {
-    .menu-block-wrapper.menu-name-main-menu {
+    .menu-block-wrapper.menu-name-main-menu.menu-block-2 {
       visibility: visible;
       opacity: 1;
       height: auto; } }
-  .menu-block-wrapper.menu-name-main-menu .menu li.external-link {
+  .menu-block-wrapper.menu-name-main-menu.menu-block-2 .menu li.external-link {
     display: none; }
 
 #block-menu-menu-sub-menu {

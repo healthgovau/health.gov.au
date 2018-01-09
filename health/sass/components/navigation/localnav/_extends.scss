@@ -58,13 +58,13 @@
 }
 
 // Mobile nav logic.
-.menu-block-wrapper.menu-name-main-menu.mobilemenu-active {
+.menu-block-wrapper.menu-name-main-menu.menu-block-2.mobilemenu-active {
   visibility: visible;
   opacity: 1;
   height: auto;
 }
 
-.menu-block-wrapper.menu-name-main-menu {
+.menu-block-wrapper.menu-name-main-menu.menu-block-2 {
   visibility: hidden;
   height: 0;
   opacity: 0;
