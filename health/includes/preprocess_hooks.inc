@@ -648,6 +648,15 @@ function health_preprocess_field(&$variables) {
     // Add item ID to class.
     $variables['classes_array'][] = 'item-' . $item_id;
   }
+
+  // Add p tags around plain text fields.
+  if ($variables['element']['#field_name'] == 'field_summary' || $variables['element']['#field_name'] == 'field_title') {
+    if (isset($variables['element']['#items'][0]) && key_exists('format', $variables['element']['#items'][0])) {
+      if ($variables['element']['#items'][0]['format'] == NULL) { // Plain text
+        $variables['items'][0]['#markup'] = '<p>' . $variables['items'][0]['#markup'] . '</p>';
+      }
+    }
+  }
 }
 
 /**
