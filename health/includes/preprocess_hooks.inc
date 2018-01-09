@@ -2,7 +2,7 @@
 // Include inc files.
 include_once drupal_get_path('theme', 'health') . '/includes/helper.inc';
 
-CONST READSPEAKER_URL = 'http://f1.as.readspeaker.com/script/5802/ReadSpeaker.js?pids=embhl';
+CONST READSPEAKER_URL = '//f1.as.readspeaker.com/script/5802/ReadSpeaker.js?pids=embhl';
 CONST GOOGLE_MAP_API = '//maps.googleapis.com/maps/api/staticmap';
 CONST RESOURCES_TYPE = [
   'image',
