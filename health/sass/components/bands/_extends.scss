@@ -116,53 +116,63 @@
       color: white;
     }
 
-    background-color: white; //$colour-Secondary;
+    background: white;
+    background: -moz-linear-gradient(right, white 50%, $colour-Secondary 50%);
+    background: -webkit-linear-gradient(right, white 50%,$colour-Secondary 50%);
+    background: linear-gradient(to right, white 50%,$colour-Secondary 50%);
+    background: -o-linear-gradient(right, white 50%, $colour-Secondary 50%);
 
     .foreground {
       @extend .container;
       position: relative;
 
       .group-left {
-        background-size: 867px;
+        background-size: 755px;
 
         @include uikit-media(sm) {
           width: 70%;
           float: left;
         }
         .about-us__section {
-          @include uikit-media(sm) {
-            opacity: 0.8;
-          }
           background: $colour-dark-hover;
-          padding: 0.6em;
-          margin: 14.8em 0 0 9em;
+          padding: 1.25em 2em;
+          margin: 16.5em 0 0 0;
           p {
-            font-size: 16px;
-            margin-bottom: uikit-space(0.25);
+            font-size: 20px;
+            line-height: 1.35em;
+            margin-bottom: 0.5em;
           }
           a {
-            font-size: 16px;
+            font-size: 20px;
           }
         }
       }
       .group-right {
         margin-bottom: uikit-space(0.5);
+        @extend %colour-Secondary-background;
+        padding: uikit-space(3) uikit-space(1) uikit-space(1) uikit-space(1);
+        p {
+          margin-bottom: uikit-space(1);
+        }
+        h2 {
+          font-size: 26px;
+        }
+
         @include uikit-media(sm) {
           width: 30%;
           float: left;
           margin-bottom: 0;
           h2 {
-            font-size: 28px;
+            font-size: 30px;
+          }
+          p {
+            font-size: 20px;
+          }
+          a {
+            font-size: 18px;
           }
         }
-        @extend %colour-Secondary-background;
-        padding: uikit-space(1);
-        p {
-          margin-bottom: uikit-space(1);
-        }
-        h2 {
-          font-size: 24px;
-        }
+
       }
     }
     position: relative;

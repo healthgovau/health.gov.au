@@ -27,10 +27,10 @@ html [type='button'],
   @extend .uikit-btn--secondary;
 }
 
-.button--light {
+.button--light, a.button--light {
   background-color: white;
   color: $uikit-colour-Text;
-  &:hover {
+  &:hover, &:active, &:focus {
     background-color: $colour-light-dark;
   }
 }
