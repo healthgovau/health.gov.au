@@ -1,6 +1,10 @@
 #readspeaker {
-  display: none;
-  margin-bottom: uikit-space(1);
+  display: inline;
+  div {
+    display: inline-block;
+  }
+  margin-left: 1em;
+  margin-top: 1.1em;
   a {
     border-bottom: none;
     &:hover,

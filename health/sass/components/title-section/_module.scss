@@ -22,7 +22,9 @@
   }
 
   // Section title (large)
-  .uikit-header-heading {}
+  .uikit-header-heading {
+    display: inline;
+  }
 
   // Section title (small)
   .section-header {

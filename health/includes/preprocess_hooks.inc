@@ -54,11 +54,19 @@ function health_preprocess_page(&$variables) {
   drupal_add_js(path_to_theme() . '/js/health.backtotop.js');
   $variables['backtotop'] = theme('backtotop', []);
   
-  // Add readspeaker JS to all pages.
-  drupal_add_js(READSPEAKER_URL, 'external');
-  drupal_add_js(path_to_theme() . '/js/health.readspeaker.js');
-  $variables['readspeaker'] = theme('readspeaker', []);
-  
+  // Add readspeaker JS to all pages except listing, homepage, topic and hp topic.
+  $variables['readspeaker'] = '';
+  $exclude = [
+    'health_topic',
+    'health_topic_hp',
+    'listing'
+  ];
+  if (isset($variables['node']) && !in_array($variables['node']->type, $exclude)) {
+    drupal_add_js(READSPEAKER_URL, 'external');
+    drupal_add_js(path_to_theme() . '/js/health.readspeaker.js');
+    $variables['readspeaker'] = theme('readspeaker', []);
+  }
+
   // Add parameters to JS.
   drupal_add_js(
     [
