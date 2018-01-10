@@ -1,6 +1,6 @@
 (function ($, Drupal, window, document) {
 
-  'use strict';
+  /*'use strict';
 
   // To understand behaviors, see https://drupal.org/node/756722#behaviors
   Drupal.behaviors.readspeaker = {
@@ -24,6 +24,8 @@
         el: '#readspeaker',
       });
 
+
+
     }
-  };
+  };*/
 })(jQuery, Drupal, this, this.document);
