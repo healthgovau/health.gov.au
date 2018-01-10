@@ -7494,13 +7494,14 @@ body {
 .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile {
   background: white; }
   .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a {
-    padding: 0.56em;
+    padding: 1.6em;
     border: 0;
     display: block;
     overflow: hidden;
-    color: transparent; }
+    color: transparent;
+    background: #f9f9f9; }
     .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a .field-name-field-image svg {
-      max-width: 50%; }
+      max-width: 65%; }
       .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a .field-name-field-image svg path, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a .field-name-field-image svg rect {
         fill: #213363; }
     .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a .field-name-field-bean-text {
@@ -7517,7 +7518,9 @@ body {
       color: #fff; }
     .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a .field-name-field-link-internal .field-item {
       display: inline;
-      font-weight: normal; }
+      border-bottom: 1px solid #313131;
+      font-weight: normal;
+      margin-bottom: 0; }
 
 .front .paragraphs-item-para-block.para-container.block-id__homepage-about-us {
   padding: 0; }

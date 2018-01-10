@@ -144,7 +144,7 @@
 
       .bean-block-content {
         a {
-          padding: uikit-space(0.35);
+          padding: uikit-space(1);
           border: 0;
           display: block;
           overflow: hidden;
@@ -152,7 +152,7 @@
 
           .field-name-field-image {
             svg {
-              max-width: 50%;
+              max-width: 65%;
               path, rect {
                 fill: $colour-Primary-dark;
               }
@@ -162,6 +162,8 @@
           .field-name-field-bean-text {
             display: none;
           }
+
+          background: $colour-lightest;
 
           &:hover,
           &:focus {
@@ -189,8 +191,9 @@
             }
             .field-item {
               display: inline;
-              //border-bottom: 1px solid white;
+              border-bottom: 1px solid $uikit-colour-Text;
               font-weight: normal;
+              margin-bottom: 0;
             }
 
           }
