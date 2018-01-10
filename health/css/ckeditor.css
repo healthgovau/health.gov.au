@@ -6125,14 +6125,24 @@ body.node-type-health-topic .para-container.paragraphs-item-para-content-text, b
 .para-container.block-id__homepage---healthcare-system #block-bean-homepage-healthcare-system .group-left img {
   border: 0; }
 
+.para-container.block-id__homepage---healthcare-system #block-bean-homepage-healthcare-system .group-left .field-name-field-image {
+  margin-bottom: 0; }
+
 .para-container.block-id__homepage---healthcare-system #block-bean-homepage-healthcare-system .group-right {
-  background: white;
-  margin-left: -12px;
   position: relative; }
+  @media (min-width: 768px) {
+    .para-container.block-id__homepage---healthcare-system #block-bean-homepage-healthcare-system .group-right {
+      margin-left: -12px;
+      background: white; } }
   .para-container.block-id__homepage---healthcare-system #block-bean-homepage-healthcare-system .group-right .field-name-field-bean-text {
-    padding: 0 1.6em 2.8em 1.6em;
-    position: absolute;
-    bottom: 0; }
+    background: white;
+    padding: 0.96em; }
+    @media (min-width: 768px) {
+      .para-container.block-id__homepage---healthcare-system #block-bean-homepage-healthcare-system .group-right .field-name-field-bean-text {
+        position: absolute;
+        bottom: 0;
+        background: transparent;
+        padding: 0 1.6em 2.8em 1.6em; } }
   .para-container.block-id__homepage---healthcare-system #block-bean-homepage-healthcare-system .group-right p:nth-of-type(1) {
     font-size: 19px;
     margin-bottom: 0.8em; }

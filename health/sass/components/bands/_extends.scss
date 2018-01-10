@@ -132,15 +132,25 @@
       img {
         border: 0;
       }
+      .field-name-field-image {
+        margin-bottom: 0;
+      }
     }
     .group-right {
       @extend .col-sm-4;
-      background: white;
-      margin-left: -12px;
+      @include uikit-media(sm) {
+        margin-left: -12px;
+        background: white;
+      }
       .field-name-field-bean-text {
-        padding: 0 uikit-space(1) uikit-space(1.75) uikit-space(1);
-        position: absolute;
-        bottom: 0;
+        background: white;
+        padding: uikit-space(.6);
+        @include uikit-media(sm) {
+          position: absolute;
+          bottom: 0;
+          background: transparent;
+          padding: 0 uikit-space(1) uikit-space(1.75) uikit-space(1);
+        }
       }
       p:nth-of-type(1) {
         font-size: 19px;
