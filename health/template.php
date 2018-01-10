@@ -116,7 +116,7 @@ function health_breadcrumb($variables) {
     // We replace the default breadcrumb output for a couple of key reasons:
     //  - should be wrapped in a nav tag
     //  - breadcrumb items should be in an ordered list
-    $output = '<nav class="breadcrumbs" role="navigation">';
+    $output = '<nav class="breadcrumbs rs_skip" role="navigation">';
     $output .= '<h2 class="element-invisible">' . $variables['title'] . '</h2>';
     $output .= '<ol class="breadcrumbs__list"><li>';
     $output .= implode('</li><li>', $variables['breadcrumb']);
