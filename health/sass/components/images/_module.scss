@@ -5,9 +5,15 @@
 
 %image--full {
     margin-bottom: uikit-space(1);
+    @include uikit-media(sm) {
+      margin-bottom: 0;
+    }
     width: 100%;
     img {
         border: $health-borderize;
         width: 100%;
-    }     
+    }
+  div {
+    line-height: 0;
+  }
 }

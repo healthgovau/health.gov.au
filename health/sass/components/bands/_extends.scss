@@ -55,136 +55,94 @@
   }
 }
 
+// Headings on homepage bands.
 #block-bean-feedback-band,
 #block-bean-homepage-about-us,
-#block-bean-ageing-and-aged-care {
+#block-bean-ageing-and-aged-care,
+#block-bean-homepage-healthcare-system {
   h2 {
     @extend .uikit-display-4;
     max-width: 60rem;
   }
+}
 
-  // Feedback.
-  .feedback-band {
-    @extend .row;
-    .feedback-col {
-      @extend .col-xs-12;
-      @extend .col-sm-6;
-      &.link {
+// Feedback.
+.feedback-band {
+  @extend .row;
+  .feedback-col {
+    @extend .col-xs-12;
+    @extend .col-sm-6;
+    &.link {
+      display: block;
+      margin-top: uikit-space( 1 );
+
+      @include uikit-media( sm ) {
+        display: table;
+        margin-top: 0;
+      }
+
+      .feedback-col-link {
         display: block;
-        margin-top: uikit-space( 1 );
 
         @include uikit-media( sm ) {
-          display: table;
-          margin-top: 0;
+          display: table-cell;
+          vertical-align: middle;
         }
 
-        .feedback-col-link {
-          display: block;
+        a {
+          @extend .uikit-btn-large;
+          border-radius: 0;
+
+          width: 100%;
 
           @include uikit-media( sm ) {
-            display: table-cell;
-            vertical-align: middle;
+            margin: auto;
+            width: 50%;
           }
-
-          a {
-            @extend .uikit-btn-large;
-            border-radius: 0;
-
-            width: 100%;
-
-            @include uikit-media( sm ) {
-              margin: auto;
-              width: 50%;
-            }
-            background-color: $colour-Secondary;
-            color: white;
-            border: 1px solid $colour-Secondary;
-            &:hover {
-              background-color: $colour-Secondary-hover;
-            }
+          background-color: $colour-Secondary;
+          color: white;
+          border: 1px solid $colour-Secondary;
+          &:hover {
+            background-color: $colour-Secondary-hover;
           }
         }
-
       }
+
     }
   }
+}
 
-  // About us main banner homepage.
-  .about-us {
-    color: white;
-    h2 {
-      color: white;
-    }
+// Homepage - About the department
+#block-bean-homepage-about-us {
+  @extend %band;
+  @extend .container;
+  .uikit-cta-link {
+    font-size: 24px;
+  }
+}
 
-    background: white;
-    @include uikit-media(lg) {
-      background: -moz-linear-gradient(right, white 50%, $colour-Secondary 50%);
-      background: -webkit-linear-gradient(right, white 50%, $colour-Secondary 50%);
-      background: linear-gradient(to right, white 50%, $colour-Secondary 50%);
-      background: -o-linear-gradient(right, white 50%, $colour-Secondary 50%);
-    }
-
-    .foreground {
-      @extend .container;
-      position: relative;
-
-      .group-left {
-        background-size: 755px;
-        width: 100%;
-
-        @include uikit-media(lg) {
-          width: 70%;
-          float: left;
-        }
-        .about-us__section {
-          background: $colour-dark-hover;
-          padding: uikit-space(1);
-          @include uikit-media(lg) {
-            padding: 1.25em 2em;
-            margin: 16.5em 0 0 0;
-          }
-          p {
-            font-size: 20px;
-            line-height: 1.35em;
-            margin-bottom: 0.5em;
-          }
-          a {
-            font-size: 20px;
-          }
-        }
-      }
-      .group-right {
-        margin-bottom: uikit-space(0.5);
-        width: 100%;
-        @extend %colour-Secondary-background;
-        padding: uikit-space(1);
-        p {
-          margin-bottom: uikit-space(1);
-        }
-        h2 {
-          font-size: 26px;
-        }
-
-        @include uikit-media(lg) {
-          padding: uikit-space(3) uikit-space(1) uikit-space(1) uikit-space(1);
-          width: 30%;
-          float: left;
-          margin-bottom: 0;
-          h2 {
-            font-size: 30px;
-          }
-          p {
-            font-size: 20px;
-          }
-          a {
-            font-size: 18px;
-          }
-        }
-
+// Homepage - The Australian healthcare system
+.para-container.block-id__homepage---healthcare-system {
+  @extend %colour-Light-dark-background-reverse;
+  #block-bean-homepage-healthcare-system {
+    .group-left {
+      @extend .col-sm-8;
+      img {
+        border: 0;
       }
     }
-    position: relative;
-    overflow: hidden;
+    .group-right {
+      @extend .col-sm-4;
+      background: white;
+      margin-left: -12px;
+      .field-name-field-bean-text {
+        padding: 2em uikit-space(1) uikit-space(1) uikit-space(1);
+      }
+      p:nth-of-type(1) {
+        font-size: 19px;
+        margin-bottom: uikit-space(.5);
+      }
+    }
   }
 }
 

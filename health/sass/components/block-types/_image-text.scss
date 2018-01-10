@@ -42,6 +42,9 @@
     .bean-block-content {
       a {
         .field-name-field-image {
+          .field-item {
+            line-height: 1;
+          }
           img {
             max-width: 70%;
             @include uikit-media(sm) {
@@ -96,12 +99,6 @@
     }
     .field-name-field-image {
       @extend %image--full;
-    }
-    .group-left {
-      margin-bottom: uikit-space( 1 );
-      @include uikit-media( sm ) {
-        margin-bottom: 0;
-      }
     }
   }
 

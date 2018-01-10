@@ -50,7 +50,7 @@
       $('.group-trend', context).matchHeight();
 
       // About us boxes
-      $('.about-us .foreground > div', context).matchHeight();
+      $('#block-bean-homepage-healthcare-system .group-left, #block-bean-homepage-healthcare-system .group-right', context).matchHeight();
     }
   };
 
