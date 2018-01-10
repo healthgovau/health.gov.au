@@ -1,6 +1,6 @@
 @charset "UTF-8";
 .node-type-health-topic .page-title__supp .region-title-supp,
-.node-type-health-topic-hp .page-title__supp .region-title-supp, .page .footer, body.node-type-health-topic .paragraphs-2-columns-resources.para-container, body.node-type-health-topic-hp .paragraphs-2-columns-resources.para-container, body.node-type-landing-page .paragraphs-2-columns-resources.para-container, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile {
+.node-type-health-topic-hp .page-title__supp .region-title-supp, .page .footer, body.node-type-health-topic .paragraphs-2-columns-resources.para-container, body.node-type-health-topic-hp .paragraphs-2-columns-resources.para-container, body.node-type-landing-page .paragraphs-2-columns-resources.para-container {
   background-color: #1b2a57;
   background: linear-gradient(to right, #1b2a57, #153a6e); }
 
@@ -7745,23 +7745,32 @@ header.uikit-header, header.region-featured {
     .page-node-1156 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference.item-696:hover {
       background: #a31f26; }
 
-.front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a {
-  padding: 0.56em;
-  border: 0;
-  display: block;
-  overflow: hidden;
-  color: transparent; }
-  .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a .field-name-field-bean-text {
-    display: none; }
-  .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a:hover, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a:focus {
-    background: #000b33; }
-    .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a:hover .field-name-field-link-internal .field-item, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a:focus .field-name-field-link-internal .field-item {
-      border-bottom: none; }
-  .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a .field-name-field-link-internal {
-    color: #fff; }
+.front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile {
+  background: white; }
+  .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a {
+    padding: 0.56em;
+    border: 0;
+    display: block;
+    overflow: hidden;
+    color: transparent; }
+    .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a .field-name-field-image svg {
+      max-width: 50%; }
+      .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a .field-name-field-image svg path, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a .field-name-field-image svg rect {
+        fill: #213363; }
+    .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a .field-name-field-bean-text {
+      display: none; }
+    .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a:hover, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a:focus {
+      background: #213363; }
+      .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a:hover .field-name-field-link-internal .field-item, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a:focus .field-name-field-link-internal .field-item {
+        border-bottom: none; }
+      .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a:hover .field-name-field-link-internal, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a:focus .field-name-field-link-internal {
+        color: #fff; }
+      .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a:hover .field-name-field-image svg path, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a:hover .field-name-field-image svg rect, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a:focus .field-name-field-image svg path, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a:focus .field-name-field-image svg rect {
+        fill: white; }
+    .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a .field-name-field-link-internal:hover, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a .field-name-field-link-internal:focus {
+      color: #fff; }
     .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile.view-mode-full .bean-block-content a .field-name-field-link-internal .field-item {
       display: inline;
-      border-bottom: 1px solid white;
       font-weight: normal; }
 
 .front .paragraphs-item-para-block.para-container.block-id__homepage-about-us {

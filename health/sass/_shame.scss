@@ -137,7 +137,9 @@
 
   // Task accelerator.
   &.block__count--5.block-id__topic-tile{
-    @extend %colour-Primary-background;
+    //@extend %colour-Primary-background;
+    //
+    background: white;
     &.view-mode-full {
 
       .bean-block-content {
@@ -148,27 +150,49 @@
           overflow: hidden;
           color: transparent;
 
+          .field-name-field-image {
+            svg {
+              max-width: 50%;
+              path, rect {
+                fill: $colour-Primary-dark;
+              }
+            }
+          }
+
           .field-name-field-bean-text {
             display: none;
           }
 
           &:hover,
           &:focus {
-            background: $colour-Primary-hover;
+            background: $colour-Primary-dark;
             .field-name-field-link-internal {
               .field-item {
                 border-bottom: none;
               }
             }
+            .field-name-field-link-internal {
+              color: #fff;
+            }
+
+            .field-name-field-image {
+              svg path, svg rect {
+                fill: white;
+              }
+            }
           }
 
           .field-name-field-link-internal {
-            color: #fff;
+            &:hover,
+            &:focus {
+              color: #fff;
+            }
             .field-item {
               display: inline;
-              border-bottom: 1px solid white;
+              //border-bottom: 1px solid white;
               font-weight: normal;
             }
+
           }
         }
       }
