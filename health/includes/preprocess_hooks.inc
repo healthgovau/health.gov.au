@@ -63,7 +63,6 @@ function health_preprocess_page(&$variables) {
   ];
   if (isset($variables['node']) && !in_array($variables['node']->type, $exclude)) {
     drupal_add_js(READSPEAKER_URL, 'external');
-    drupal_add_js(path_to_theme() . '/js/health.readspeaker.js');
     $variables['readspeaker'] = theme('readspeaker', []);
   }
 
