@@ -63,7 +63,7 @@ endif;
 
   <?php print render($page['highlighted']); ?>
 
-  <div class="page-content" id="page-content">
+  <div class="page-content">
 
   <?php if(!drupal_is_front_page()): ?>
     <!-- Show the title and breadcrumbs when they are not on the homepage -->
