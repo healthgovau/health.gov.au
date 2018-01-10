@@ -839,3 +839,20 @@ function health_block_view_alter(&$data, $block) {
     }
   }
 }
+
+/**
+ * Implements theme_image();
+ * 
+ * @param $variables
+ *
+ * @return bool|string
+ */
+function health_image($variables) {
+  // If this is an SVG, output the full SVG, not an IMG.
+  if (pathinfo(drupal_realpath($variables['path']), PATHINFO_EXTENSION) == 'svg') {
+    return file_get_contents(drupal_realpath($variables['path']));
+  }
+
+  // Otherwise, do the normal stuff.
+  return theme_image($variables);
+}
