@@ -107,22 +107,22 @@ endif;
     <div class="row">
 
     <?php if ($sidebar_first): ?>
-      <aside class="sidebar sidebar-left" role="complementary">
+      <aside class="sidebar sidebar-left rs_skip" role="complementary">
       <?php print $sidebar_first; ?>
       </aside>
     <?php endif; ?>
 
     <?php if ($sidebar_second): ?>
-      <aside class="sidebar sidebar-right" role="complementary">
+      <aside class="sidebar sidebar-right rs_skip" role="complementary">
         <?php print $sidebar_second; ?>
       </aside>
     <?php endif; ?>
 
     <main class="<?php print $content_class; ?>" id="content" role="main">
-      <div id="tabs"><?php print render($tabs); ?></div>
+      <div id="tabs" class="rs_skip"><?php print render($tabs); ?></div>
       <?php print render($page['help']); ?>
       <?php if ($action_links): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
+        <ul class="action-links rs_skip"><?php print render($action_links); ?></ul>
       <?php endif; ?>
 
       <?php print $messages; ?>

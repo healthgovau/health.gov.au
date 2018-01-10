@@ -104,7 +104,7 @@ function health_breadcrumb($variables) {
   $crumbs_trail = array_keys($variables['crumbs_trail']);
   if ($crumbs_trail[1] == 'search' && !empty($crumbs_trail[2])) {
     $variables['breadcrumb'][2] = 'Search - ' . arg(1);
-    $output = '<nav class="breadcrumbs uikit-breadcrumbs" role="navigation">';
+    $output = '<nav class="breadcrumbs uikit-breadcrumbs rs_skip" role="navigation">';
     $output .= '<ol class="uikit-link-list uikit-link-list--inline"><li>';
     $output .= implode('</li><li>', $variables['breadcrumb']);
     $output .= '</li></ol></nav>';

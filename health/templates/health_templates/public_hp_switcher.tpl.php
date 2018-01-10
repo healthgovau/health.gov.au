@@ -1,4 +1,4 @@
-<div class="block block-bean contextual-links-region first last odd block-bean-call-to-action" id="block-bean-professionals-hub-additional-inf">
+<div class="block block-bean contextual-links-region first last odd block-bean-call-to-action rs_skip" id="block-bean-professionals-hub-additional-inf">
     <?php if ($title): ?>
   <h3 class="block__title"><?php print $title; ?></h3>
     <?php endif; ?>
