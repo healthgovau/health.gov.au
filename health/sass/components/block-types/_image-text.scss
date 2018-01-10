@@ -45,10 +45,10 @@
           .field-item {
             line-height: 1;
           }
-          img {
-            max-width: 70%;
+          svg, img {
+            max-width: 60%;
             @include uikit-media(sm) {
-              max-width: 50%;
+              max-width: 30%;
             }
           }
           // Resp

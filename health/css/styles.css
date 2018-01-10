@@ -4608,11 +4608,11 @@ p.summary, .field-name-field-summary {
     text-align: left; }
     .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image .field-item {
       line-height: 1; }
-    .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image img {
-      max-width: 70%; }
+    .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image svg, .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image img {
+      max-width: 60%; }
       @media (min-width: 768px) {
-        .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image img {
-          max-width: 50%; } }
+        .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image svg, .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image img {
+          max-width: 30%; } }
     @media (min-width: 768px) {
       .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-image {
         float: none;
