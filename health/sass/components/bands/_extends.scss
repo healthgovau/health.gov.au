@@ -61,7 +61,7 @@
 #block-bean-ageing-and-aged-care,
 #block-bean-homepage-healthcare-system {
   h2 {
-    @extend .uikit-display-4;
+    @extend .uikit-display-3;
     max-width: 60rem;
   }
 }
@@ -113,11 +113,13 @@
 }
 
 // Homepage - About the department
-#block-bean-homepage-about-us {
-  @extend %band;
-  @extend .container;
-  .uikit-cta-link {
-    font-size: 24px;
+.para-container.block-id__homepage-about-us {
+  background: $colour-lighter;
+  #block-bean-homepage-about-us {
+    @extend %band;
+    padding-top: uikit-space(2);
+    padding-bottom: uikit-space(2);
+    @extend .container;
   }
 }
 
@@ -136,12 +138,16 @@
       background: white;
       margin-left: -12px;
       .field-name-field-bean-text {
-        padding: 2em uikit-space(1) uikit-space(1) uikit-space(1);
+        padding: 0 uikit-space(1) uikit-space(1.75) uikit-space(1);
+        position: absolute;
+        bottom: 0;
       }
       p:nth-of-type(1) {
         font-size: 19px;
         margin-bottom: uikit-space(.5);
       }
+      position: relative;
+
     }
   }
 }

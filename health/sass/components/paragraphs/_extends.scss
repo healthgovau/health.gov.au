@@ -259,16 +259,6 @@
   }
   @include row-and-container;
 
-  // Add padding between items, mainly needed for responsive.
-  &:not(.block__count--1) {
-    .block.block-bean .entity-bean {
-      padding-top: uikit-space(.25);
-      padding-bottom: uikit-space(.25);
-      margin-top: uikit-space(.25);
-      margin-bottom: uikit-space(.25);
-    }
-  }
-
   .field-name-field-title {
     @extend .uikit-display-4;
   }
