@@ -30,28 +30,20 @@
   .field-type-taxonomy-term-reference {
     @extend .meta-date;
     font-size: 12px;
-    margin-bottom: uikit-space(.15);
     @include uikit-media(sm) {
       font-size: 14px;
-      float: left;
     }
-    float: none;
+    float: left;
+    margin-bottom: 0;
   }
 
   .field-type-datetime {
-    padding: 0;
-    @include uikit-media(sm) {
-      padding-right: uikit-space(.5);
-    }
+    padding-right: uikit-space(.5);
   }
 
   .field-type-taxonomy-term-reference {
-    border: none;
-    padding: 0;
-    @include uikit-media(sm) {
-      padding-left: uikit-space(.5);
-      border-left: 1px solid $colour-minorText;
-    }
+    padding-left: uikit-space(.5);
+    border-left: 1px solid $colour-minorText;
   }
 }
 
