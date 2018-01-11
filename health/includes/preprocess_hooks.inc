@@ -670,6 +670,27 @@ function health_preprocess_field(&$variables) {
       }
     }
   }
+
+  // Publication date
+  if ($variables['element']['#field_name'] == 'field_publication_date') {
+    // Change the display of the date depending on the selected format for this node.
+    if ($field = field_get_items('node', $variables['element']['#object'], 'field_publication_date_display')) {
+      $field_instance = field_info_instance('node', $variables['element']['#field_name'], 'publication');
+      $display_settings = $field_instance['display'][$variables['element']['#view_mode']];
+      switch ($field[0]['value']) {
+        case 'month_year':
+          $display_settings['settings']['format_type'] = 'govcms_month_year';
+          break;
+        case 'year':
+          $display_settings['settings']['format_type'] = 'search_api_facetapi_YEAR';
+          break;
+      }
+      $rendered = field_view_field('node', $variables['element']['#object'], $variables['element']['#field_name'], $display_settings);
+      $variables['items'][0]['#markup'] = $rendered[0]['#markup'];
+    }
+  }
+
+
 }
 
 /**
