@@ -14,7 +14,6 @@
 
   'use strict';
 
-  // To understand behaviors, see https://drupal.org/node/756722#behaviors
   Drupal.behaviors.healthMatchHeight = {
     attach: function (context, settings) {
 
@@ -51,6 +50,13 @@
 
       // About us boxes
       $('#block-bean-homepage-healthcare-system .group-left, #block-bean-homepage-healthcare-system .group-right', context).matchHeight();
+    }
+  };
+
+  // Truncate lines.
+  Drupal.behaviors.healthTruncate = {
+    attach: function (context, settings) {
+      $clamp($('.view-mode-listing_vertical_small .field-name-title h2')[0], {clamp: 3});
     }
   };
 

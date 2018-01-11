@@ -50,13 +50,13 @@ stylesheets[all][] = node.css
 stylesheets[all][] = superfish.css
 
 ; Then we add our own stylesheet.
-stylesheets[all][] = css/fontawesome.css
 stylesheets[all][] = css/styles.css
 
 ; Optionally add some JavaScripts to your theme.
 scripts[] = js/matchHeight.min.js
 scripts[] = js/health.extlink.js
 scripts[] = js/fontawesome-all.min.js
+scripts[] = js/clamp.min.js
 scripts[] = js/script.js
 
 
