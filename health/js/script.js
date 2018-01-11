@@ -56,7 +56,9 @@
   // Truncate lines.
   Drupal.behaviors.healthTruncate = {
     attach: function (context, settings) {
-      $clamp($('.view-mode-listing_vertical_small .field-name-title h2')[0], {clamp: 3});
+      $('.view-mode-listing_vertical_small .field-name-title h2').each(function() {
+        $clamp($(this)[0], {clamp: 3});
+      });
     }
   };
 
