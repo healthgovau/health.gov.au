@@ -889,20 +889,6 @@ function health_preprocess_entity(&$variables) {
       $variables['content']['field_bean_body'][0]['#markup'] = $variables['field_bean_body'][0]['value'];
     }
 
-    // Link to field.
-    if (isset($variables['content']['field_link_to'])) {
-      // Link to the feedback form.
-      if ($variables['content']['field_link_to'][0]['#element']['url'] == 'node/21') {
-        $date = new DateTime();
-        // Add current page and unique id to link.
-        global $base_url;
-        $variables['content']['field_link_to'][0]['#element']['query'] = [
-          'referrer' => $base_url . '/' . drupal_get_path_alias(),
-          'id' => $date->format('jHis')
-        ];
-      }
-    }
-
     // Add hook for preprocess field in bean.
     if (isset($bean->preprocess_fields)) {
       foreach($bean->preprocess_fields as $field) {

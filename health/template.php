@@ -349,6 +349,9 @@ function health_form_alter(&$form, &$form_state, $form_id) {
     $date = new DateTime();
     $form['submitted']['reference']['#default_value'] = 'REF-' . $date->format('yj') . '-' . _health_gen_uid(4);
 
+    // Add referrer, where the use came from.
+    $form['submitted']['referrer']['#default_value'] = $_SERVER['HTTP_REFERER'];
+
     // Make sure this page isn't cache by Akamai or Drupal.
     drupal_add_http_header('Cache-Control', 'no-cache, no-store');
     drupal_page_is_cacheable(FALSE);
