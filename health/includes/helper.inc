@@ -286,3 +286,18 @@ function _health_default_audience_menu($path) {
   }
   return FALSE;
 }
+
+/**
+ * Generate a random letter based ID of varing lengths.
+ *
+ * @param int $length
+ *
+ * @return string
+ */
+function _health_gen_uid($length = 10) {
+  $str = "";
+  for ($x = 0; $x < $length; $x++) {
+    $str .= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 1);
+  }
+  return $str;
+}
