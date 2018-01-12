@@ -817,6 +817,48 @@ function health_preprocess_entity(&$variables) {
       $view->get_total_rows = TRUE;
       $view->set_display($view_mode);
       $view->preview = TRUE;
+
+      // Remove featured items from listings.
+      if ($view_name == 'news_and_events') {
+        switch($view_mode) {
+          case "latest_news_events_public":
+            if ($nid = _health_get_featured_item('featured_news_events')) {
+              $view->set_arguments([NULL, $nid]);
+            }
+          case "latest_news_events_hp":
+            if ($nid = _health_get_featured_item('featured_news_events_hp')) {
+              $view->set_arguments([NULL, $nid]);
+            }
+            break;
+          case "latest_news_events_global":
+            if ($nid = _health_get_featured_item('featured_news_events')) {
+              $view->set_arguments([$nid]);
+            }
+            break;
+        }
+      }
+      if ($view_name == 'latest_rsources') {
+        switch($view_mode) {
+          case "resources_for_public_in_hp":
+          case "latest_resources_public":
+          if ($nid = _health_get_featured_item('featured_resource')) {
+            $view->set_arguments([NULL, $nid]);
+          }
+          break;
+          case "global_public":
+            if ($nid = _health_get_featured_item('featured_resource')) {
+              $view->set_arguments([$nid]);
+            }
+            break;
+          case "latest_resources_hp":
+            if ($nid = _health_get_featured_item('featured_resource_hp')) {
+              $view->set_arguments([NULL, $nid]);
+            }
+            break;
+        }
+      }
+
+      // Generate the view.
       $view->execute();
 
       if ($view->total_rows > 0) {

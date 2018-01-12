@@ -301,3 +301,78 @@ function _health_gen_uid($length = 10) {
   }
   return $str;
 }
+
+/**
+ * Find the featured item based on the paragraph bundle.
+ *
+ * @param $featured_bundle_type
+ *   The paragraph bundle where the featured item would live.
+ *   We assume there is only one of these per page...
+ *
+ * @return bool
+ */
+function _health_get_featured_item($featured_bundle_type) {
+  $node = menu_get_object('node');
+  $components = field_get_items('node', $node, 'field_components');
+  // Get a list of ids of the components.
+  $ids = array();
+  foreach($components as $component) {
+    $ids[] = $component['value'];
+  }
+  $paragraphs = entity_load('paragraphs_item', $ids);
+  foreach($paragraphs as $paragraph) {
+
+    if ($nid = _health_get_featured_item_nid($paragraph, $featured_bundle_type)) {
+      return $nid;
+    }
+
+    if ($paragraph->bundle == 'two_columns') {
+      $column_one = field_get_items('paragraphs_item', $paragraph, 'field_first_column');
+      $column_two = field_get_items('paragraphs_item', $paragraph, 'field_second_column');
+      $items = entity_load('paragraphs_item', [$column_one[0]['value'], $column_two[0]['value']]);
+      foreach($items as $item) {
+        if ($nid = _health_get_featured_item_nid($item, $featured_bundle_type)) {
+          return $nid;
+        }
+      }
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Get the featured node id based on a node.
+ *
+ * @param $featured
+ *   Node
+ * @param $featured_bundle_type
+ *   The paragraph bundle where the featured item would live.
+ *
+ * @return bool
+ */
+function _health_get_featured_item_nid($featured, $featured_bundle_type) {
+  if ($featured->bundle == $featured_bundle_type) {
+    switch($featured_bundle_type) {
+      case 'featured_news_events':
+        $field = 'field_related';
+        break;
+      case 'featured_news_events_hp':
+        $field = 'field_featured_news_event_hp';
+        break;
+      case 'featured_resource':
+        $field = 'field_topic_featured_resource';
+        break;
+      case 'featured_resource_hp':
+        $field = 'field_related_resource';
+        break;
+      default:
+        $field = '';
+        break;
+    }
+    $featured_item = field_get_items('paragraphs_item', $featured, $field);
+    if (!empty($featured_item)) {
+      return $featured_item[0]['entity']->nid;
+    }
+  }
+  return FALSE;
+}
