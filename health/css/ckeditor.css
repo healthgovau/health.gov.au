@@ -5974,14 +5974,14 @@ ul.social__links,
 .paragraphs-view-display-latest_resources_hp .views-row,
 .paragraphs-view-display-resources_for_public_in_hp .views-row,
 .paragraphs-view-display-latest_resources_public .views-row,
-.paragraphs-view-display-global_latest_resources .views-row {
+.paragraphs-view-display-global_public .views-row {
   margin-bottom: 0.8em; }
   @media (min-width: 768px) {
     .paragraphs-view-news_and_events .views-row,
     .paragraphs-view-display-latest_resources_hp .views-row,
     .paragraphs-view-display-resources_for_public_in_hp .views-row,
     .paragraphs-view-display-latest_resources_public .views-row,
-    .paragraphs-view-display-global_latest_resources .views-row {
+    .paragraphs-view-display-global_public .views-row {
       margin-bottom: 1.6em; } }
   .paragraphs-view-news_and_events .views-row:before, .paragraphs-view-news_and_events .views-row:after,
   .paragraphs-view-display-latest_resources_hp .views-row:before,
@@ -5990,21 +5990,21 @@ ul.social__links,
   .paragraphs-view-display-resources_for_public_in_hp .views-row:after,
   .paragraphs-view-display-latest_resources_public .views-row:before,
   .paragraphs-view-display-latest_resources_public .views-row:after,
-  .paragraphs-view-display-global_latest_resources .views-row:before,
-  .paragraphs-view-display-global_latest_resources .views-row:after {
+  .paragraphs-view-display-global_public .views-row:before,
+  .paragraphs-view-display-global_public .views-row:after {
     content: " ";
     display: table; }
   .paragraphs-view-news_and_events .views-row:after,
   .paragraphs-view-display-latest_resources_hp .views-row:after,
   .paragraphs-view-display-resources_for_public_in_hp .views-row:after,
   .paragraphs-view-display-latest_resources_public .views-row:after,
-  .paragraphs-view-display-global_latest_resources .views-row:after {
+  .paragraphs-view-display-global_public .views-row:after {
     clear: both; }
   .paragraphs-view-news_and_events .views-row:last-of-type,
   .paragraphs-view-display-latest_resources_hp .views-row:last-of-type,
   .paragraphs-view-display-resources_for_public_in_hp .views-row:last-of-type,
   .paragraphs-view-display-latest_resources_public .views-row:last-of-type,
-  .paragraphs-view-display-global_latest_resources .views-row:last-of-type {
+  .paragraphs-view-display-global_public .views-row:last-of-type {
     margin-bottom: 0; }
 
 .paragraphs-view-display-popular_resources .views-row {
