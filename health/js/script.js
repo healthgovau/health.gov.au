@@ -50,6 +50,9 @@
 
       // About us boxes
       $('#block-bean-homepage-healthcare-system .group-left, #block-bean-homepage-healthcare-system .group-right', context).matchHeight();
+
+      // Homepage - In our portfolio
+      $('#block-bean-ageing-and-aged-care .bean-image-and-text, #block-bean-homepage-portfolio-sport .bean-image-and-text', context).matchHeight();
     }
   };
 
