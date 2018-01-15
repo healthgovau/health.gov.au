@@ -59,7 +59,8 @@
 #block-bean-feedback-band,
 #block-bean-homepage-about-us,
 #block-bean-ageing-and-aged-care,
-#block-bean-homepage-healthcare-system {
+#block-bean-homepage-healthcare-system,
+#block-bean-homepage-portfolio-sport {
   h2 {
     @extend .uikit-display-3;
     max-width: 60rem;
@@ -162,6 +163,11 @@
   }
 }
 
+// Homepage - Our portfolio
+body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-portfolio {
+  @extend %colour-Light-dark-background-reverse;
+}
+
 // Landing pages only.
 body {
   &.node-type-health-topic,
@@ -179,6 +185,12 @@ body {
       // Style band
       &.para-container {
         @extend %band--neutral-darkest;
+      }
+
+      // Stop the double banding when there are nested paragraphs.
+      .para-container {
+        padding-top: 0;
+        padding-bottom: 0;
       }
 
       &.resources {

@@ -221,10 +221,28 @@
       @extend .col-sm-6;
     }
   }
+  // Prevent nested block paragraphs in two column from using container and row.
+  // @todo Should we remove paragraphs-item-para-block container and row by default, and just let each individual one decide on a case by case basis?
+  > .para-row {
+    .paragraphs-item-para-block {
+      .inside-para-container {
+        box-sizing: inherit;
+        margin-right: 0;
+        margin-left: 0;
+        padding-left: 0;
+        padding-right: 0;
+        width: auto;
+        .para-row {
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+    }
+  }
 
-  .view-mode-full {
-    .para-row {
-      h2 {
+  &.view-mode-full {
+    > .para-row {
+      > h2 {
         @extend .uikit-display-4;
       }
       .group-header {
@@ -241,7 +259,7 @@
       }
 
       // Shame!
-      .group-footer {
+      > .group-footer {
         .paragraphs-item-para-link {
           a {
             @extend .uikit-cta-link;
@@ -257,6 +275,7 @@
   &.para-container {
     @extend %band;
   }
+  // @todo Should we remove paragraphs-item-para-block container and row by default, and just let each individual one decide on a case by case basis?
   @include row-and-container;
 
   .field-name-field-title {

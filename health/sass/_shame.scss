@@ -37,6 +37,7 @@
     }
   }
 
+  // Statistics
   .paragraphs-item-para-statistics {
     .field-name-field-statistics .field-item {
       &:nth-child(1) {
@@ -53,7 +54,7 @@
   }
 
   // More on immunisation.
-  .paragraphs-item-para-block {
+  .paragraphs-item-para-block.block-id__more-services-card {
     &.para-container {
       .bean-image-and-text.view-mode-full {
         .field-name-field-image {
@@ -89,7 +90,16 @@
     }
   }
 
-  // Immunisation topic page browse by lifestage band.
+  // Featured resource
+  .paragraphs-item-para-block.block-id__handbook-featured-block-in-immun {
+    @extend %colour-Secondary-background;
+    color: white;
+    h2 {
+      color: white;
+    }
+  }
+
+    // Immunisation topic page browse by lifestage band.
   // Items
   // Wrapper title/summary
   .paragraphs-item-para-taxonomies {

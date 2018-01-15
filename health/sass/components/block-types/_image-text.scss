@@ -24,11 +24,13 @@
   width: 100%;
 }
 
+// Image and text
 .bean-image-and-text {
   .field-name-field-link-internal {
     @extend %list-item-title;
   }
 
+  // Full display
   &.view-mode-full {
 
     float: left;
@@ -90,7 +92,8 @@
     }
   }
 
-  &.view-mode-feature {
+  // Large feature
+  &.view-mode-feature_large {
     float: left;
     .group-left,
     .group-right {
@@ -102,6 +105,15 @@
     }
   }
 
+  &.view-mode-feature {
+    @include cardify();
+    .group-left, .group-right {
+      float: none;
+      width: 100%;
+    }
+  }
+
+  // Vertical listing
   &.view-mode-listing_vertical {
     @extend %dm-list-vertical;
   }
