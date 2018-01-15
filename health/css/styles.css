@@ -7630,11 +7630,10 @@ header.uikit-header, header.region-featured {
         width: 70%; } }
     header.uikit-header .uikit-header__logo-image, header.region-featured .uikit-header__logo-image {
       display: block;
-      width: 50%;
+      width: 100%;
       margin: auto; }
       @media (min-width: 768px) {
         header.uikit-header .uikit-header__logo-image, header.region-featured .uikit-header__logo-image {
-          width: 100%;
           margin: 0; } }
   header.uikit-header .region-header, header.region-featured .region-header {
     width: 100%;
