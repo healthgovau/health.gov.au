@@ -49,10 +49,6 @@ function health_preprocess_maintenance_page(&$variables, $hook) {
  * Implements THEME_preprocess_page().
  */
 function health_preprocess_page(&$variables) {
-  // Debug $_SERVER info for shield. To be removed.
-  print_r($_SERVER);
-  print_r(variable_get('shield_remote_address'));
-
   // Add vuejs and backtotop JS to all pages.
   drupal_add_js(path_to_theme() . '/js/vue.min.js');
   drupal_add_js(path_to_theme() . '/js/health.backtotop.js');
