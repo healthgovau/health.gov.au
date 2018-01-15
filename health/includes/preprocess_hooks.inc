@@ -50,8 +50,8 @@ function health_preprocess_maintenance_page(&$variables, $hook) {
  */
 function health_preprocess_page(&$variables) {
   // Debug $_SERVER info for shield. To be removed.
-  krumo($_SERVER);
-  krumo(variable_get('shield_remote_address'));
+  print_r($_SERVER);
+  print_r(variable_get('shield_remote_address'));
 
   // Add vuejs and backtotop JS to all pages.
   drupal_add_js(path_to_theme() . '/js/vue.min.js');
