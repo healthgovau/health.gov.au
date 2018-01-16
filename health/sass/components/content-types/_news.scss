@@ -6,14 +6,27 @@
 .node-type-news-article {
   @extend %dm-full-content;
   @extend %page-help-only;
-
-  .region-content {
-    margin-top: uikit-space(1.5);
-  }
 }
 
 // Display modes
 .node-news-article {
+
+    // Full
+    &.view-mode-full {
+      .field-label-inline {
+        .field-label {
+          width: 11em;
+        }
+      }
+      .field-name-field-image-featured {
+        margin-bottom: uikit-space(1);
+      }
+      .field-name-field-related-health-topics {
+        .field-label {
+          width: auto;
+        }
+      }
+    }
 
 	// Major list
 	&.view-mode-listing_vertical {

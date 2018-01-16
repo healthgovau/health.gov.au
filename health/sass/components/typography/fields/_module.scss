@@ -69,8 +69,7 @@
         @extend %field-label;
         margin-right: uikit-space(0.25);
         @include uikit-media(sm) {
-          margin-right: 0;
-          width: 9em;
+          margin-right: uikit-space(.5);
           float: left;
         }
     }
