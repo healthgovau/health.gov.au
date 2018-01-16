@@ -162,12 +162,6 @@ function health_preprocess_page(&$variables) {
       }
     }
 
-    // About us.
-    if ($active_trail[1]['href'] == 'node/1') {
-      $variables['section_title'] = $active_trail[1]['title'];
-      $variables['summary'] = NULL;
-    }
-
     // News and events
     // Set title to be the third level menu trail.
     if ($active_trail[1]['href'] == 'news-and-events') {
