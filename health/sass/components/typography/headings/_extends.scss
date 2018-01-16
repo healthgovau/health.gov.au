@@ -21,6 +21,7 @@ h1 {
     font-size: 36px;
   }
 }
+
 h2 {
   @extend .uikit-display-5;
   font-size: 24px;
@@ -71,6 +72,17 @@ h6 {
     font-size: 16px;
   }
 }
+
+// Add margin top to missing uikit headers
+@for $i from 1 through 6 {
+  table + h#{$i},
+  div.responsive-table-wrapper + h#{$i},
+  ul + h#{$i}
+  {
+    margin-top: uikit-space(1);
+  }
+}
+
 
 // Section header
 .uikit-header-heading {

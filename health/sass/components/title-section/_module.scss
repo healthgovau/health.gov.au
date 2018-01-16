@@ -15,15 +15,15 @@
   @extend .col-sm-8;
   padding: 12px;
   @include uikit-media(sm){
-    padding: uikit-space(1) 0;
-    &.section-title {
-      padding: 1.2em 12px 0.6em 12px;
-    }
+    padding: uikit-space(1) 0 1rem 0;
   }
 
   // Section title (large)
   .uikit-header-heading {
-    display: inline;
+    line-height: 1.4;
+    max-width: 42em;
+    margin-top: 0.2em;
+    margin-bottom: 0.6rem;
   }
 
   // Section title (small)
@@ -42,7 +42,7 @@
   // Summary
   .summary {
     @extend .uikit-header-subline;
-    margin-bottom: 0;
+    margin-bottom: 0.4rem;
   }
 
 }

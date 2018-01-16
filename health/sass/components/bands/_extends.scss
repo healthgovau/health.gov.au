@@ -8,7 +8,7 @@
     padding: uikit-space(1) 0;
   }
 
-  @extend %colour-Light-background-reverse;
+  background-color: $colour-light;
   .block__title {
     @extend .uikit-display-2;
     font-weight: 700;

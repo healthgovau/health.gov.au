@@ -309,7 +309,9 @@
 // site in a number of places and is a UIKit style.
 .node-type-health-topic,
 .node-type-health-topic-hp,
-.node-type-landing-page {
+.node-type-landing-page,
+td, th,
+.view {
   p:last-of-type {
     margin-bottom: 0;
   }

@@ -53,10 +53,8 @@
     div {
       line-height: 0;
     }
-    background-color: #f9f9f9;
-    border: 2px solid #e8e8e8;
     img {
-      border: 0;
+      border: $health-borderize--thin;
       max-height: 275px;
       width: auto;
       @include uikit-media(md) {
