@@ -662,7 +662,19 @@ function health_file_entity_download_link($variables) {
       $variables['text'] = '<div class="file__link">Download <span class="file__link-title">' . $title . ' as</span> ' . health_get_friendly_mime($file->filemime) . '</div>';
 
       // Add metatdata (file size, image size, no of pages)
-      $variables['text'].= '<span class="file__meta"> - ' . format_size($file->filesize);
+
+      // Round to 1 decimal for MB and whole number for KB in terms of the file size format.
+      $file_size = explode(' ', format_size($file->filesize));
+      if (isset($file_size[1])) {
+        if ($file_size[1] == 'MB') {
+          $formatted_filesize = round($file_size[0], 1) . ' ' . $file_size[1];
+        }
+        else {
+          $formatted_filesize = round($file_size[0], 0) . ' ' . $file_size[1];
+        }
+      }
+
+      $variables['text'].= '<span class="file__meta"> - ' . $formatted_filesize;
       if (isset($no_of_pages)) {
         $variables['text'].= ', ' . $no_of_pages . ' page';
         if ($no_of_pages > 1) {
