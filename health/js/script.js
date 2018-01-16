@@ -56,19 +56,6 @@
     }
   };
 
-  // Truncate lines.
-  Drupal.behaviors.healthTruncate = {
-    attach: function (context, settings) {
-      $('.view-mode-listing_vertical_small .field-name-title h2').each(function() {
-        if (window.innerWidth < 768) {
-          $clamp($(this)[0], {clamp: 2});
-        } else {
-          $clamp($(this)[0], {clamp: 3});
-        }
-      });
-    }
-  };
-
   Drupal.behaviors.healthMobileMenu = {
     attach: function (context, settings) {
 
