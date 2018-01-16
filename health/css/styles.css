@@ -7605,7 +7605,8 @@ ul.list--large {
   background: #fff; }
 
 .region-navigation {
-  background: white; }
+  background: white;
+  box-shadow: 0 -6px #e5e5e5 inset; }
 
 .item-list ul {
   list-style: none;
