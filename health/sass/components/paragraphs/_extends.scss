@@ -242,7 +242,8 @@
 
   &.view-mode-full {
     > .para-row {
-      > h2 {
+      > h2,
+      > .group-header > h2 {
         @extend .uikit-display-4;
       }
       .group-header {

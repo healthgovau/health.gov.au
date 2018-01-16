@@ -75,11 +75,14 @@ endif;
 
         <?php if ($title): ?>
         <?php print render($title_prefix); ?>
-        <h1 class="uikit-header-heading"><?php print $title; ?></h1>
+        <h1 class="uikit-header-heading">
+          <?php print $title; ?>
+          <?php print $readspeaker; ?>
+        </h1>
         <?php print render($title_suffix); ?>
         <?php endif; ?>
 
-        <?php print $readspeaker; ?>
+
 
         <?php if (isset($section_title)): ?>
         <p class="section-header"><?php print $section_title; ?></p>

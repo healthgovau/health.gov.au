@@ -11,6 +11,7 @@
   margin-bottom: uikit-space(1);
   width: 100%;
   border-collapse: collapse;
+  border: $uikit-borderize;
 
   tr:nth-child(even) {
     background-color: $uikit-colour-Background;

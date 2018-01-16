@@ -70,14 +70,13 @@
         margin-right: uikit-space(0.25);
         @include uikit-media(sm) {
           margin-right: 0;
-          width: 12em;
+          width: 9em;
           float: left;
         }
     }
     .field-items, dl.tags {
         @extend %field-item;
         @include uikit-media(sm) {
-          margin-left: 13em;
           float: none;
         }
     }

@@ -62,6 +62,10 @@
 
 // Primary nav
 .region-navigation {
+  // Keyline across nav items.
+  position: relative;
+  z-index: 500;
+  box-shadow: 0 -6px #cccccc inset;
   .mobile-toggle {
     text-align: right;
   }
