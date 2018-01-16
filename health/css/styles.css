@@ -4566,8 +4566,7 @@ ul + h6 {
     margin-right: 0.4em; }
     @media (min-width: 768px) {
       .field-label-inline .field-label {
-        margin-right: 0;
-        width: 9em;
+        margin-right: 0.8em;
         float: left; } }
   @media (min-width: 768px) {
     .field-label-inline .field-items, .field-label-inline dl.tags {
@@ -5955,8 +5954,14 @@ ul.social__links,
 .node-video.view-mode-search_result, .node-campaign.view-mode-search_result, .node-committee-or-group.view-mode-search_result, .node-condition-or-disease.view-mode-search_result, .node-contact.view-mode-search_result, .node-initiative-or-program.view-mode-search_result, .node-statistic.view-mode-search_result, .node-service.view-mode-search_result, .node-health-topic.view-mode-search_result, .page-search main .search-api-page-results .view-mode-search_result {
   width: 100%; }
 
-.node-type-news-article .region-content {
-  margin-top: 2.4em; }
+.node-news-article.view-mode-full .field-label-inline .field-label {
+  width: 11em; }
+
+.node-news-article.view-mode-full .field-name-field-image-featured {
+  margin-bottom: 1.6em; }
+
+.node-news-article.view-mode-full .field-name-field-related-health-topics .field-label {
+  width: auto; }
 
 .node-news-article.view-mode-listing_vertical_small {
   background: #fff;
