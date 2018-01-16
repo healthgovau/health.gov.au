@@ -5548,6 +5548,7 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
   background-color: #1b2a57;
   padding-left: 0;
   padding-right: 0;
+  border: 0;
   color: white; }
   .page .footer a {
     color: white;
