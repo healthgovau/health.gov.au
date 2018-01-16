@@ -1,8 +1,12 @@
 // Generic band styles
 %band {
-    @include uikit-clearfix();
+  @include uikit-clearfix();
+  padding-top: uikit-space(1);
+  padding-bottom: uikit-space(1);
+  @include uikit-media(md) {
     padding-top: uikit-space(1.5);
     padding-bottom: uikit-space(1.5);
+  }
 }
 %band--neutral {
     @extend %band;

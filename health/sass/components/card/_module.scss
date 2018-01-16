@@ -11,7 +11,7 @@
   // Content pane
   .group-right {
     padding: uikit-space(.6);
-    @include uikit-media(sm) {
+    @include uikit-media(md) {
       padding: uikit-space(1);
     }
   }
@@ -28,14 +28,14 @@
   // Content pane
   .group-right {
     padding: 0.45em 0.8em;
-    @include uikit-media(sm) {
+    @include uikit-media(md) {
       padding: 0.57em 1.05em;
     }
   }
   .field-name-title {
     h3, h2 {
       font-size: 14px;
-      @include uikit-media(sm) {
+      @include uikit-media(md) {
         font-size: 18px;
       }
     }

@@ -100,7 +100,7 @@ h6 {
   @extend .uikit-display-2;
   font-size: 16px;
   font-weight: 700;
-  @include uikit-media('sm') {
+  @include uikit-media('md') {
     font-size: 18px;
   }
 }

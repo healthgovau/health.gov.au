@@ -1,16 +1,11 @@
 
 .block__count--5 .bean-image-and-text {
-  width: 100%;
+  width: 50%;
   float: left;
-
+  margin-bottom: 24px;
   @include uikit-media(sm) {
-    width: 50%;
-  }
-  @include uikit-media(md) {
-    width: 33%;
-  }
-  @include uikit-media(lg) {
     width: 20%;
+    margin-bottom: 0;
   }
 }
 
@@ -48,33 +43,20 @@
             line-height: 1;
           }
           svg, img {
-            max-width: 60%;
-            @include uikit-media(sm) {
-              max-width: 30%;
-            }
+            max-width: 30%;
           }
-          // Resp
-          float: left;
-          width: 35%;
-          text-align: left;
-          @include uikit-media(sm) {
-            float: none;
-            width: 100%;
-            text-align: center;
-          }
+          float: none;
+          width: 100%;
+          text-align: center;
         }
 
         .field-name-field-link-internal {
           @extend %list-item-title;
           // Resp
           display: block;
-          margin-left: 35%;
           margin-top: 10px;
-          text-align: left;
-          @include uikit-media(sm) {
-            margin-left: 0;
-            text-align: center;
-          }
+          margin-left: 0;
+          text-align: center;
         }
 
         .field-name-field-bean-text {

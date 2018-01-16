@@ -30,7 +30,7 @@
   .field-type-taxonomy-term-reference {
     @extend .meta-date;
     font-size: 12px;
-    @include uikit-media(sm) {
+    @include uikit-media(md) {
       font-size: 14px;
     }
     float: left;
