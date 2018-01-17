@@ -4680,7 +4680,7 @@ p.summary, .field-name-field-summary {
       font-size: 1.2em; } }
   .block-bean-call-to-action .field-name-field-link-to a:after,
   .bean-call-to-action .field-name-field-link-to a:after, .uikit-cta-link:after, .video__cta:after, .paragraphs-item-para-statistics .field-name-field-link-internal a:after, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:after, .paragraphs-item-para-view .para-row > a:after {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E   %3Cpath fill='#008998' d='M128 64l-64 64-16-16 64-64'/%3E   %3Cpath fill='#008998' d='M128 64l-16 16-64-64L64 0'/%3E  %3C/svg%3E"); }
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E   %3Cpath fill='%23008998' d='M128 64l-64 64-16-16 64-64'/%3E   %3Cpath fill='%23008998' d='M128 64l-16 16-64-64L64 0'/%3E  %3C/svg%3E"); }
 
 .uikit-cta-link--light,
 .page a.uikit-cta-link--light {
