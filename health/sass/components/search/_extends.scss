@@ -27,6 +27,10 @@
     }
     .search-api-page-results {
       margin-bottom: 1.7em;
+      .search-performance {
+        font-size: 1.5em;
+        padding-top: uikit-space( 1 );
+      }
       .search-results {
         padding-left: 0;
       }
