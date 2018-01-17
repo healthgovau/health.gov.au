@@ -68,47 +68,48 @@
 }
 
 // Feedback.
-.feedback-band {
-  @extend .row;
-  .feedback-col {
-    @extend .col-xs-12;
-    @extend .col-sm-6;
-    &.link {
-      display: block;
-      margin-top: uikit-space( 1 );
-
-      @include uikit-media( sm ) {
-        display: table;
-        margin-top: 0;
-      }
-
-      .feedback-col-link {
+.feedback-band.bean-basic-content {
+  .feedback-band {
+    @extend .row;
+    .feedback-col {
+      @extend .col-xs-12;
+      @extend .col-sm-6;
+      &.link {
         display: block;
+        margin-top: uikit-space(1);
 
-        @include uikit-media( sm ) {
-          display: table-cell;
-          vertical-align: middle;
+        @include uikit-media(sm) {
+          display: table;
+          margin-top: 0;
         }
 
-        a {
-          @extend .uikit-btn-large;
-          border-radius: 0;
+        .feedback-col-link {
+          display: block;
 
-          width: 100%;
-
-          @include uikit-media( sm ) {
-            margin: auto;
-            width: 50%;
+          @include uikit-media(sm) {
+            display: table-cell;
+            vertical-align: middle;
           }
-          background-color: $colour-Secondary;
-          color: white;
-          border: 1px solid $colour-Secondary;
-          &:hover {
-            background-color: $colour-Secondary-hover;
+
+          a {
+            @extend .uikit-btn-large;
+            border-radius: 0;
+
+            width: 100%;
+
+            @include uikit-media(sm) {
+              margin: auto;
+              width: 50%;
+            }
+            background-color: $colour-Secondary;
+            color: white;
+            border: 1px solid $colour-Secondary;
+            &:hover {
+              background-color: $colour-Secondary-hover;
+            }
           }
         }
       }
-
     }
   }
 }
@@ -145,8 +146,8 @@
       }
       .field-name-field-bean-text {
         background: white;
-        padding: 0;
-        @include uikit-media(md) {
+        padding: uikit-space(.6);
+        @include uikit-media(sm) {
           position: absolute;
           bottom: 0;
           background: transparent;
