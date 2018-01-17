@@ -911,6 +911,9 @@ function health_preprocess_entity(&$variables) {
 
     $bean = $variables['bean'];
 
+    // Add delta to class array.
+    $variables['classes_array'][] = $bean->delta;
+
     // For share this and page accessibility link block.
     $token_blocks = [
       'share-this',
