@@ -2664,7 +2664,12 @@ p + .uikit-display-3, p + h4, .bean-image-and-text.view-mode-listing_vertical .f
 .uikit-display-4, h3, .paragraphs-item-para-links h2, .paragraphs-item-para-links .video--left .video__title, .video--left .paragraphs-item-para-links .video__title, .paragraphs-item-para-links .video--right .video__title, .video--right .paragraphs-item-para-links .video__title, .paragraphs-item-para-taxonomies h2, .paragraphs-item-para-taxonomies .video--left .video__title, .video--left .paragraphs-item-para-taxonomies .video__title, .paragraphs-item-para-taxonomies .video--right .video__title, .video--right .paragraphs-item-para-taxonomies .video__title, .paragraphs-item-para-contact .view-mode-hotline_bar h2, .paragraphs-item-para-contact .view-mode-hotline_bar .video--left .video__title, .video--left .paragraphs-item-para-contact .view-mode-hotline_bar .video__title, .paragraphs-item-para-contact .view-mode-hotline_bar .video--right .video__title, .video--right .paragraphs-item-para-contact .view-mode-hotline_bar .video__title, .paragraphs-item-para-statistics .view-mode-full h2, .paragraphs-item-para-statistics .view-mode-full .video--left .video__title, .video--left .paragraphs-item-para-statistics .view-mode-full .video__title, .paragraphs-item-para-statistics .view-mode-full .video--right .video__title, .video--right .paragraphs-item-para-statistics .view-mode-full .video__title, .paragraphs-item-two-columns.view-mode-full > .para-row > h2, .video--left .paragraphs-item-two-columns.view-mode-full > .para-row > .video__title, .video--right .paragraphs-item-two-columns.view-mode-full > .para-row > .video__title,
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > h2, .video--left
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > .video__title, .video--right
-.paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > .video__title, .paragraphs-item-para-block .field-name-field-title {
+.paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > .video__title, .paragraphs-item-para-block .field-name-field-title, .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun h2, .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left .video__title, .video--left .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title, .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--right .video__title, .video--right .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title,
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun h2,
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left .video__title, .video--left
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title,
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--right .video__title, .video--right
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title {
   font-family: "Open Sans", Verdana, "Bitstream Vera Sans", sans-serif;
   color: #313131;
   display: block;
@@ -2676,7 +2681,12 @@ p + .uikit-display-3, p + h4, .bean-image-and-text.view-mode-listing_vertical .f
 p + .uikit-display-4, p + h3, .paragraphs-item-para-links p + h2, .paragraphs-item-para-links .video--left p + .video__title, .video--left .paragraphs-item-para-links p + .video__title, .paragraphs-item-para-links .video--right p + .video__title, .video--right .paragraphs-item-para-links p + .video__title, .paragraphs-item-para-taxonomies p + h2, .paragraphs-item-para-taxonomies .video--left p + .video__title, .video--left .paragraphs-item-para-taxonomies p + .video__title, .paragraphs-item-para-taxonomies .video--right p + .video__title, .video--right .paragraphs-item-para-taxonomies p + .video__title, .paragraphs-item-para-contact .view-mode-hotline_bar p + h2, .paragraphs-item-para-contact .view-mode-hotline_bar .video--left p + .video__title, .video--left .paragraphs-item-para-contact .view-mode-hotline_bar p + .video__title, .paragraphs-item-para-contact .view-mode-hotline_bar .video--right p + .video__title, .video--right .paragraphs-item-para-contact .view-mode-hotline_bar p + .video__title, .paragraphs-item-para-statistics .view-mode-full p + h2, .paragraphs-item-para-statistics .view-mode-full .video--left p + .video__title, .video--left .paragraphs-item-para-statistics .view-mode-full p + .video__title, .paragraphs-item-para-statistics .view-mode-full .video--right p + .video__title, .video--right .paragraphs-item-para-statistics .view-mode-full p + .video__title, .paragraphs-item-two-columns.view-mode-full > .para-row > p + h2, .video--left .paragraphs-item-two-columns.view-mode-full > .para-row > p + .video__title, .video--right .paragraphs-item-two-columns.view-mode-full > .para-row > p + .video__title,
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > p + h2, .video--left
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > p + .video__title, .video--right
-.paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > p + .video__title, .paragraphs-item-para-block p + .field-name-field-title {
+.paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > p + .video__title, .paragraphs-item-para-block p + .field-name-field-title, .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun p + h2, .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left p + .video__title, .video--left .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun p + .video__title, .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--right p + .video__title, .video--right .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun p + .video__title,
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun p + h2,
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left p + .video__title, .video--left
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun p + .video__title,
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--right p + .video__title, .video--right
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun p + .video__title {
   margin-top: 1.6em; }
 
 .uikit-display-5, h2, .video--left .video__title, .video--right .video__title {
@@ -3087,7 +3097,19 @@ h3,
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > .video__title,
 .video--right
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > .video__title,
-.paragraphs-item-para-block .field-name-field-title {
+.paragraphs-item-para-block .field-name-field-title,
+.page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun h2,
+.page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left .video__title,
+.video--left .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title,
+.page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--right .video__title,
+.video--right .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title,
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun h2,
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left .video__title,
+.video--left
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title,
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--right .video__title,
+.video--right
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title {
   font-weight: normal; }
 
 /*! @gov.au/inpage-nav v0.1.1 */

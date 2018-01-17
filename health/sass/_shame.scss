@@ -95,6 +95,7 @@
     @extend %colour-Secondary-background;
     color: white;
     h2 {
+      @extend .uikit-display-4;
       color: white;
     }
   }
