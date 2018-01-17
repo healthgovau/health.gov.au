@@ -145,8 +145,8 @@
       }
       .field-name-field-bean-text {
         background: white;
-        padding: uikit-space(.6);
-        @include uikit-media(sm) {
+        padding: 0;
+        @include uikit-media(md) {
           position: absolute;
           bottom: 0;
           background: transparent;
