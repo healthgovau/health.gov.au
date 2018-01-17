@@ -148,66 +148,114 @@
   // Task accelerator.
   &.block__count--5.block-id__topic-tile{
     background: white;
-    &.view-mode-full {
+    .bean-image-and-text {
+      a {
+        padding: uikit-space(.5);
+        @include uikit-media(md) {
+          padding: uikit-space(1);
+        }
+        border-top: 10px solid $uikit-colour-Link;
+        border-bottom: none;
+        display: block;
+        overflow: hidden;
+        color: transparent;
 
-      .bean-block-content {
-        a {
-          padding: uikit-space(.5);
-          @include uikit-media(md) {
-            padding: uikit-space(1);
-          }
-          border: 0;
-          display: block;
-          overflow: hidden;
-          color: transparent;
-
-          .field-name-field-image {
-            svg {
-              path, rect {
-                fill: $colour-Primary-dark;
-              }
+        .field-name-field-image {
+          svg {
+            path, rect {
+              fill: #000;
             }
           }
+        }
 
-          .field-name-field-bean-text {
-            display: none;
-          }
+        .field-name-field-bean-text {
+          display: none;
+        }
 
-          background: $colour-lightest;
+        background: $colour-lightest;
 
-          &:hover,
-          &:focus {
-            background: $colour-Primary-dark;
-            .field-name-field-link-internal {
-              color: #fff;
-              .field-item {
-                border-bottom: none;
-              }
-
-            }
-
-            .field-name-field-image {
-              svg path, svg rect {
-                fill: white;
-              }
-            }
-          }
-
+        &:hover,
+        &:focus {
+          background: $colour-light-dark;
           .field-name-field-link-internal {
-            &:hover,
-            &:focus {
-              color: #fff;
-            }
+            //color: #fff;
             .field-item {
-              display: inline;
-              border-bottom: 1px solid $uikit-colour-Text;
-              font-weight: normal;
-              margin-bottom: 0;
+              border-bottom: none;
             }
 
+          }
+
+          // .field-name-field-image {
+          //   svg path, svg rect {
+          //     fill: white;
+          //   }
+          // }
+        }         
+
+        .field-name-field-link-internal {
+          // &:hover,
+          // &:focus {
+          //   color: #fff;
+          // }
+          .field-item {
+            display: inline;
+            border-bottom: 1px solid $uikit-colour-Link;
+            font-weight: 700;
+            margin-bottom: 0;
           }
         }
       }
+      // Set colours for each accelerator
+      &.topic-tile {
+        a {
+          border-color: $colour-Primary;
+          &:hover,
+          &:focus {
+            border-color: $colour-Primary-hover;
+          }
+        }
+      }
+
+      &.conditions--diseases {
+        a {
+          border-color: $colour-Tertiary;
+          &:hover,
+          &:focus {
+            border-color: $colour-Tertiary-hover;
+          }
+        }
+      }
+
+      &.medicare-tile {
+        a {
+          border-color: $colour-Secondary;
+          &:hover,
+          &:focus {
+            border-color: $colour-Secondary-hover;
+          }
+        }
+      }
+
+      &.symptoms {
+        a {
+          border-color: $colour-Primary-light;
+          &:hover,
+          &:focus {
+            border-color: $colour-Primary-hover;
+          }
+        }
+      }
+
+      &.services--support {
+        a {
+          border-color: $colour-dark;
+          &:hover,
+          &:focus {
+            border-color: $colour-dark-hover;
+          }
+        }
+      }
+
     }
   }
 
@@ -313,5 +361,13 @@ td, th,
 .view {
   p:last-of-type {
     margin-bottom: 0;
+  }
+}
+
+// For survey only - remove afterwards
+#owInviteSnippet {
+  font-family: $uikit-font-system;
+  a[rel~='external'] svg {
+    margin-left: 5px;
   }
 }
