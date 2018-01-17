@@ -6247,8 +6247,8 @@ body.node-type-health-topic .para-container.paragraphs-item-para-content-text, b
       background: white; } }
   .para-container.block-id__homepage---healthcare-system #block-bean-homepage-healthcare-system .group-right .field-name-field-bean-text {
     background: white;
-    padding: 0.96em; }
-    @media (min-width: 768px) {
+    padding: 0; }
+    @media (min-width: 992px) {
       .para-container.block-id__homepage---healthcare-system #block-bean-homepage-healthcare-system .group-right .field-name-field-bean-text {
         position: absolute;
         bottom: 0;
