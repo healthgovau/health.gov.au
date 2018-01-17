@@ -17,12 +17,21 @@
     
     .field-type-image {
         width: 100%;
+      div, a {
+        line-height: 0;
+      }
         img {
             float: left;
             border: 0;
+          &:hover, &:active {
+            opacity: 0.75;
+          }
         }
         a {
             border: none;
+          background-color: black;
+          display: inline-block;
+
         }
     }
     .field-name-title h2 {
@@ -50,7 +59,7 @@
 
   // Image
   .field-name-field-image-featured {
-    div {
+    div, a {
       line-height: 0;
     }
     img {
@@ -62,9 +71,14 @@
         max-height: none;
         width: 100%;
       }
+      &:hover, &:active {
+        opacity: 0.75;
+      }
     }
     a {
+      background-color: black;
       border: none;
+      display: inline-block;
     }
 
   }

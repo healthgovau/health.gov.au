@@ -24,6 +24,12 @@
     }
     // Fields
     .field-name-field-image-featured {
+      a {
+        border-bottom: 0;
+        display: inline-block;
+        line-height: 0;
+        background-color: black;
+      }
       img {
         max-height: 240px;
         width: auto;
@@ -32,6 +38,9 @@
           width: 100%;
         }
         border: $health-borderize--thin;
+        &:hover, &:active {
+          opacity: 0.75;
+        }
       }
     }
     
@@ -76,6 +85,12 @@
         line-height: 0;
         text-align: right;
       }
+      a {
+        border-bottom: 0;
+        display: inline-block;
+        line-height: 0;
+        background-color: black;
+      }
       img {
         max-height: 240px;
         width: auto;
@@ -83,6 +98,9 @@
           max-height: 130px;
         }
         border: $health-borderize--thin;
+        &:hover, &:active {
+          opacity: 0.75;
+        }
       }
     }
 

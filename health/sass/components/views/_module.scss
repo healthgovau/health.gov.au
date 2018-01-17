@@ -78,6 +78,8 @@
         font-size: 30px;
         font-weight: 700;
     }
-    float: left;
-    margin-right: 45px;
+    @include uikit-media(sm) {
+      float: left;
+      margin-right: 45px;
+    }
 }
