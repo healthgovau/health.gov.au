@@ -274,13 +274,14 @@ function _health_label_display($variables, $field, $field_variables) {
  *   Query array used in link options.
  */
 function _health_default_audience_menu($path) {
-  $audience_default_paths = array(
+  $audience_default_paths = [
     'news-and-events',
     'resources',
     'initiatives-and-programs',
-  );
+    'services',
+  ];
   foreach ($audience_default_paths as $audience_default_path) {
-    if ($path == $audience_default_path) {
+    if (substr($path, 0, strlen($audience_default_path)) === $audience_default_path) {
       return ['f' => [0 => 'field_audience:451']];
     }
   }
