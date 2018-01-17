@@ -2664,7 +2664,12 @@ p + .uikit-display-3, p + h4, .bean-image-and-text.view-mode-listing_vertical .f
 .uikit-display-4, h3, .paragraphs-item-para-links h2, .paragraphs-item-para-links .video--left .video__title, .video--left .paragraphs-item-para-links .video__title, .paragraphs-item-para-links .video--right .video__title, .video--right .paragraphs-item-para-links .video__title, .paragraphs-item-para-taxonomies h2, .paragraphs-item-para-taxonomies .video--left .video__title, .video--left .paragraphs-item-para-taxonomies .video__title, .paragraphs-item-para-taxonomies .video--right .video__title, .video--right .paragraphs-item-para-taxonomies .video__title, .paragraphs-item-para-contact .view-mode-hotline_bar h2, .paragraphs-item-para-contact .view-mode-hotline_bar .video--left .video__title, .video--left .paragraphs-item-para-contact .view-mode-hotline_bar .video__title, .paragraphs-item-para-contact .view-mode-hotline_bar .video--right .video__title, .video--right .paragraphs-item-para-contact .view-mode-hotline_bar .video__title, .paragraphs-item-para-statistics .view-mode-full h2, .paragraphs-item-para-statistics .view-mode-full .video--left .video__title, .video--left .paragraphs-item-para-statistics .view-mode-full .video__title, .paragraphs-item-para-statistics .view-mode-full .video--right .video__title, .video--right .paragraphs-item-para-statistics .view-mode-full .video__title, .paragraphs-item-two-columns.view-mode-full > .para-row > h2, .video--left .paragraphs-item-two-columns.view-mode-full > .para-row > .video__title, .video--right .paragraphs-item-two-columns.view-mode-full > .para-row > .video__title,
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > h2, .video--left
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > .video__title, .video--right
-.paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > .video__title, .paragraphs-item-para-block .field-name-field-title {
+.paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > .video__title, .paragraphs-item-para-block .field-name-field-title, .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun h2, .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left .video__title, .video--left .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title, .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--right .video__title, .video--right .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title,
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun h2,
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left .video__title, .video--left
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title,
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--right .video__title, .video--right
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title {
   font-family: "Open Sans", Verdana, "Bitstream Vera Sans", sans-serif;
   color: #313131;
   display: block;
@@ -2676,7 +2681,12 @@ p + .uikit-display-3, p + h4, .bean-image-and-text.view-mode-listing_vertical .f
 p + .uikit-display-4, p + h3, .paragraphs-item-para-links p + h2, .paragraphs-item-para-links .video--left p + .video__title, .video--left .paragraphs-item-para-links p + .video__title, .paragraphs-item-para-links .video--right p + .video__title, .video--right .paragraphs-item-para-links p + .video__title, .paragraphs-item-para-taxonomies p + h2, .paragraphs-item-para-taxonomies .video--left p + .video__title, .video--left .paragraphs-item-para-taxonomies p + .video__title, .paragraphs-item-para-taxonomies .video--right p + .video__title, .video--right .paragraphs-item-para-taxonomies p + .video__title, .paragraphs-item-para-contact .view-mode-hotline_bar p + h2, .paragraphs-item-para-contact .view-mode-hotline_bar .video--left p + .video__title, .video--left .paragraphs-item-para-contact .view-mode-hotline_bar p + .video__title, .paragraphs-item-para-contact .view-mode-hotline_bar .video--right p + .video__title, .video--right .paragraphs-item-para-contact .view-mode-hotline_bar p + .video__title, .paragraphs-item-para-statistics .view-mode-full p + h2, .paragraphs-item-para-statistics .view-mode-full .video--left p + .video__title, .video--left .paragraphs-item-para-statistics .view-mode-full p + .video__title, .paragraphs-item-para-statistics .view-mode-full .video--right p + .video__title, .video--right .paragraphs-item-para-statistics .view-mode-full p + .video__title, .paragraphs-item-two-columns.view-mode-full > .para-row > p + h2, .video--left .paragraphs-item-two-columns.view-mode-full > .para-row > p + .video__title, .video--right .paragraphs-item-two-columns.view-mode-full > .para-row > p + .video__title,
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > p + h2, .video--left
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > p + .video__title, .video--right
-.paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > p + .video__title, .paragraphs-item-para-block p + .field-name-field-title {
+.paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > p + .video__title, .paragraphs-item-para-block p + .field-name-field-title, .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun p + h2, .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left p + .video__title, .video--left .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun p + .video__title, .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--right p + .video__title, .video--right .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun p + .video__title,
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun p + h2,
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left p + .video__title, .video--left
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun p + .video__title,
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--right p + .video__title, .video--right
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun p + .video__title {
   margin-top: 1.6em; }
 
 .uikit-display-5, h2, .video--left .video__title, .video--right .video__title {
@@ -3087,7 +3097,19 @@ h3,
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > .video__title,
 .video--right
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > .video__title,
-.paragraphs-item-para-block .field-name-field-title {
+.paragraphs-item-para-block .field-name-field-title,
+.page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun h2,
+.page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left .video__title,
+.video--left .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title,
+.page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--right .video__title,
+.video--right .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title,
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun h2,
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left .video__title,
+.video--left
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title,
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--right .video__title,
+.video--right
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title {
   font-weight: normal; }
 
 /*! @gov.au/inpage-nav v0.1.1 */
@@ -5527,7 +5549,7 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
   padding: 12px; }
   @media (min-width: 768px) {
     .page-title__core {
-      padding: 1.6em 0 1rem 0; } }
+      padding: 1.6em 0 1.6em 0; } }
   .page-title__core .uikit-header-heading {
     line-height: 1.4;
     max-width: 42em;
@@ -5719,9 +5741,11 @@ ul.social__links,
 
 .bean-image-and-text.view-mode-listing_vertical .field-name-field-image-featured a, .node-news-article.view-mode-listing_vertical .field-name-field-image-featured a, .node-event.view-mode-listing_vertical .field-name-field-image-featured a, .node-publication.view-mode-listing_vertical .field-name-field-image-featured a, .node-image.view-mode-listing_vertical .field-name-field-image-featured a, .node-video.view-mode-listing_vertical .field-name-field-image-featured a, .node-campaign.view-mode-listing_vertical .field-name-field-image-featured a, .node-committee-or-group.view-mode-listing_vertical .field-name-field-image-featured a, .node-condition-or-disease.view-mode-listing_vertical .field-name-field-image-featured a, .node-contact.view-mode-listing_vertical .field-name-field-image-featured a, .node-initiative-or-program.view-mode-listing_vertical .field-name-field-image-featured a, .node-statistic.view-mode-listing_vertical .field-name-field-image-featured a, .node-service.view-mode-listing_vertical .field-name-field-image-featured a, .node-health-topic.view-mode-listing_vertical .field-name-field-image-featured a {
   border-bottom: 0;
-  display: block;
-  line-height: 0;
-  background-color: black; }
+  line-height: 0; }
+  @media (min-width: 768px) {
+    .bean-image-and-text.view-mode-listing_vertical .field-name-field-image-featured a, .node-news-article.view-mode-listing_vertical .field-name-field-image-featured a, .node-event.view-mode-listing_vertical .field-name-field-image-featured a, .node-publication.view-mode-listing_vertical .field-name-field-image-featured a, .node-image.view-mode-listing_vertical .field-name-field-image-featured a, .node-video.view-mode-listing_vertical .field-name-field-image-featured a, .node-campaign.view-mode-listing_vertical .field-name-field-image-featured a, .node-committee-or-group.view-mode-listing_vertical .field-name-field-image-featured a, .node-condition-or-disease.view-mode-listing_vertical .field-name-field-image-featured a, .node-contact.view-mode-listing_vertical .field-name-field-image-featured a, .node-initiative-or-program.view-mode-listing_vertical .field-name-field-image-featured a, .node-statistic.view-mode-listing_vertical .field-name-field-image-featured a, .node-service.view-mode-listing_vertical .field-name-field-image-featured a, .node-health-topic.view-mode-listing_vertical .field-name-field-image-featured a {
+      background-color: black;
+      display: block; } }
 
 .bean-image-and-text.view-mode-listing_vertical .field-name-field-image-featured img, .node-news-article.view-mode-listing_vertical .field-name-field-image-featured img, .node-event.view-mode-listing_vertical .field-name-field-image-featured img, .node-publication.view-mode-listing_vertical .field-name-field-image-featured img, .node-image.view-mode-listing_vertical .field-name-field-image-featured img, .node-video.view-mode-listing_vertical .field-name-field-image-featured img, .node-campaign.view-mode-listing_vertical .field-name-field-image-featured img, .node-committee-or-group.view-mode-listing_vertical .field-name-field-image-featured img, .node-condition-or-disease.view-mode-listing_vertical .field-name-field-image-featured img, .node-contact.view-mode-listing_vertical .field-name-field-image-featured img, .node-initiative-or-program.view-mode-listing_vertical .field-name-field-image-featured img, .node-statistic.view-mode-listing_vertical .field-name-field-image-featured img, .node-service.view-mode-listing_vertical .field-name-field-image-featured img, .node-health-topic.view-mode-listing_vertical .field-name-field-image-featured img {
   max-height: 240px;
@@ -5730,9 +5754,9 @@ ul.social__links,
   @media (min-width: 768px) {
     .bean-image-and-text.view-mode-listing_vertical .field-name-field-image-featured img, .node-news-article.view-mode-listing_vertical .field-name-field-image-featured img, .node-event.view-mode-listing_vertical .field-name-field-image-featured img, .node-publication.view-mode-listing_vertical .field-name-field-image-featured img, .node-image.view-mode-listing_vertical .field-name-field-image-featured img, .node-video.view-mode-listing_vertical .field-name-field-image-featured img, .node-campaign.view-mode-listing_vertical .field-name-field-image-featured img, .node-committee-or-group.view-mode-listing_vertical .field-name-field-image-featured img, .node-condition-or-disease.view-mode-listing_vertical .field-name-field-image-featured img, .node-contact.view-mode-listing_vertical .field-name-field-image-featured img, .node-initiative-or-program.view-mode-listing_vertical .field-name-field-image-featured img, .node-statistic.view-mode-listing_vertical .field-name-field-image-featured img, .node-service.view-mode-listing_vertical .field-name-field-image-featured img, .node-health-topic.view-mode-listing_vertical .field-name-field-image-featured img {
       max-height: none;
-      width: 100%; } }
-  .bean-image-and-text.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-news-article.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-event.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-publication.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-image.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-video.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-campaign.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-committee-or-group.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-condition-or-disease.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-contact.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-initiative-or-program.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-statistic.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-service.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-health-topic.view-mode-listing_vertical .field-name-field-image-featured img:hover, .bean-image-and-text.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-news-article.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-event.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-publication.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-image.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-video.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-campaign.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-committee-or-group.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-condition-or-disease.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-contact.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-initiative-or-program.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-statistic.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-service.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-health-topic.view-mode-listing_vertical .field-name-field-image-featured img:active {
-    opacity: 0.75; }
+      width: 100%; }
+      .bean-image-and-text.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-news-article.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-event.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-publication.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-image.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-video.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-campaign.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-committee-or-group.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-condition-or-disease.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-contact.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-initiative-or-program.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-statistic.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-service.view-mode-listing_vertical .field-name-field-image-featured img:hover, .node-health-topic.view-mode-listing_vertical .field-name-field-image-featured img:hover, .bean-image-and-text.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-news-article.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-event.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-publication.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-image.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-video.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-campaign.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-committee-or-group.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-condition-or-disease.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-contact.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-initiative-or-program.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-statistic.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-service.view-mode-listing_vertical .field-name-field-image-featured img:active, .node-health-topic.view-mode-listing_vertical .field-name-field-image-featured img:active {
+        opacity: 0.75; } }
 
 .node-news-article.view-mode-listing_vertical_small .group-left, .node-event.view-mode-listing_vertical_small .group-left, .node-publication.view-mode-listing_vertical_small .group-left, .node-image.view-mode-listing_vertical_small .group-left, .node-video.view-mode-listing_vertical_small .group-left {
   width: 40%; }
@@ -5752,9 +5776,11 @@ ul.social__links,
 
 .node-news-article.view-mode-listing_vertical_small .field-name-field-image-featured a, .node-event.view-mode-listing_vertical_small .field-name-field-image-featured a, .node-publication.view-mode-listing_vertical_small .field-name-field-image-featured a, .node-image.view-mode-listing_vertical_small .field-name-field-image-featured a, .node-video.view-mode-listing_vertical_small .field-name-field-image-featured a {
   border-bottom: 0;
-  display: block;
-  line-height: 0;
-  background-color: black; }
+  line-height: 0; }
+  @media (min-width: 768px) {
+    .node-news-article.view-mode-listing_vertical_small .field-name-field-image-featured a, .node-event.view-mode-listing_vertical_small .field-name-field-image-featured a, .node-publication.view-mode-listing_vertical_small .field-name-field-image-featured a, .node-image.view-mode-listing_vertical_small .field-name-field-image-featured a, .node-video.view-mode-listing_vertical_small .field-name-field-image-featured a {
+      background-color: black;
+      display: block; } }
 
 .node-news-article.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-event.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-publication.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-image.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-video.view-mode-listing_vertical_small .field-name-field-image-featured img {
   max-height: 240px;
@@ -5762,9 +5788,9 @@ ul.social__links,
   border: 2px solid #CCC; }
   @media (min-width: 768px) {
     .node-news-article.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-event.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-publication.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-image.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-video.view-mode-listing_vertical_small .field-name-field-image-featured img {
-      max-height: 130px; } }
-  .node-news-article.view-mode-listing_vertical_small .field-name-field-image-featured img:hover, .node-event.view-mode-listing_vertical_small .field-name-field-image-featured img:hover, .node-publication.view-mode-listing_vertical_small .field-name-field-image-featured img:hover, .node-image.view-mode-listing_vertical_small .field-name-field-image-featured img:hover, .node-video.view-mode-listing_vertical_small .field-name-field-image-featured img:hover, .node-news-article.view-mode-listing_vertical_small .field-name-field-image-featured img:active, .node-event.view-mode-listing_vertical_small .field-name-field-image-featured img:active, .node-publication.view-mode-listing_vertical_small .field-name-field-image-featured img:active, .node-image.view-mode-listing_vertical_small .field-name-field-image-featured img:active, .node-video.view-mode-listing_vertical_small .field-name-field-image-featured img:active {
-    opacity: 0.75; }
+      max-height: 130px; }
+      .node-news-article.view-mode-listing_vertical_small .field-name-field-image-featured img:hover, .node-event.view-mode-listing_vertical_small .field-name-field-image-featured img:hover, .node-publication.view-mode-listing_vertical_small .field-name-field-image-featured img:hover, .node-image.view-mode-listing_vertical_small .field-name-field-image-featured img:hover, .node-video.view-mode-listing_vertical_small .field-name-field-image-featured img:hover, .node-news-article.view-mode-listing_vertical_small .field-name-field-image-featured img:active, .node-event.view-mode-listing_vertical_small .field-name-field-image-featured img:active, .node-publication.view-mode-listing_vertical_small .field-name-field-image-featured img:active, .node-image.view-mode-listing_vertical_small .field-name-field-image-featured img:active, .node-video.view-mode-listing_vertical_small .field-name-field-image-featured img:active {
+        opacity: 0.75; } }
 
 .node-campaign.view-mode-listing_vertical_small, .node-committee-or-group.view-mode-listing_vertical_small, .node-condition-or-disease.view-mode-listing_vertical_small, .node-contact.view-mode-listing_vertical_small, .node-initiative-or-program.view-mode-listing_vertical_small, .node-statistic.view-mode-listing_vertical_small, .node-service.view-mode-listing_vertical_small, .node-health-topic.view-mode-listing_vertical_small {
   border-left: 6px solid #CCC; }
@@ -5829,13 +5855,15 @@ ul.social__links,
       .node-publication.view-mode-feature .field-name-field-image-featured img, .node-image.view-mode-feature .field-name-field-image-featured img {
         height: auto;
         max-height: none;
-        width: 100%; } }
-    .node-publication.view-mode-feature .field-name-field-image-featured img:hover, .node-image.view-mode-feature .field-name-field-image-featured img:hover, .node-publication.view-mode-feature .field-name-field-image-featured img:active, .node-image.view-mode-feature .field-name-field-image-featured img:active {
-      opacity: 0.75; }
+        width: 100%; }
+        .node-publication.view-mode-feature .field-name-field-image-featured img:hover, .node-image.view-mode-feature .field-name-field-image-featured img:hover, .node-publication.view-mode-feature .field-name-field-image-featured img:active, .node-image.view-mode-feature .field-name-field-image-featured img:active {
+          opacity: 0.75; } }
   .node-publication.view-mode-feature .field-name-field-image-featured a, .node-image.view-mode-feature .field-name-field-image-featured a {
-    background-color: black;
-    border: none;
-    display: block; }
+    border: none; }
+    @media (min-width: 992px) {
+      .node-publication.view-mode-feature .field-name-field-image-featured a, .node-image.view-mode-feature .field-name-field-image-featured a {
+        background-color: black;
+        display: block; } }
 
 .node-news-article.view-mode-inline, .node-publication.view-mode-inline, .node-video.view-mode-inline, .node-contact.view-mode-inline, .node-initiative-or-program.view-mode-inline, .node-event.view-mode-inline, .node-campaign.view-mode-inline, .node-committee-or-group.view-mode-inline, .node-condition-or-disease.view-mode-inline, .node-service.view-mode-inline, .node-health-topic.view-mode-inline {
   border-left: 6px solid #CCC;
@@ -6255,6 +6283,9 @@ body.node-type-health-topic .para-container.paragraphs-item-para-content-text, b
   .para-container.block-id__homepage---healthcare-system #block-bean-homepage-healthcare-system .group-right p:nth-of-type(1) {
     font-size: 19px;
     margin-bottom: 0.8em; }
+
+body.node-type-health-topic .paragraphs-item-two-columns.general-public-resources.para-container, body.node-type-health-topic-hp .paragraphs-item-two-columns.general-public-resources.para-container, body.node-type-landing-page .paragraphs-item-two-columns.general-public-resources.para-container {
+  background: white; }
 
 body.node-type-health-topic .paragraphs-item-two-columns .para-container, body.node-type-health-topic-hp .paragraphs-item-two-columns .para-container, body.node-type-landing-page .paragraphs-item-two-columns .para-container {
   padding-top: 0;

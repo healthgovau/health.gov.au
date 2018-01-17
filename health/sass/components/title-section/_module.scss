@@ -15,7 +15,7 @@
   @extend .col-sm-8;
   padding: 12px;
   @include uikit-media(sm){
-    padding: uikit-space(1) 0 1rem 0;
+    padding: uikit-space(1) 0 uikit-space(1) 0;
   }
 
   // Section title (large)

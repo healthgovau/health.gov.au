@@ -187,6 +187,9 @@ body {
       &.para-container {
         @extend %band--neutral-darkest;
       }
+      &.general-public-resources.para-container {
+        background: white;
+      }
 
       // Stop the double banding when there are nested paragraphs.
       .para-container {
