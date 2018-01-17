@@ -138,6 +138,10 @@
         @extend %band; 
     }
     @include row-and-container;
+
+  .field-name-field-related-contact {
+    @extend .col-sm-12;
+  }
     // display mode
     .view-mode-hotline_bar {
         h2 {
