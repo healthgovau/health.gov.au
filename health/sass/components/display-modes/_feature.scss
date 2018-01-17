@@ -21,14 +21,13 @@
         line-height: 0;
       }
         img {
-            float: left;
-            border: 0;
+          border: 0;
           &:hover, &:active {
             opacity: 0.75;
           }
         }
         a {
-            border: none;
+          border: none;
           background-color: black;
           display: block;
 
@@ -74,7 +73,6 @@
           opacity: 0.75;
         }
       }
-
     }
     a {
       @include uikit-media(md) {
@@ -82,9 +80,7 @@
         display: block;
       }
       border: none;
-
     }
-
   }
   // Title
   .field-name-title {
