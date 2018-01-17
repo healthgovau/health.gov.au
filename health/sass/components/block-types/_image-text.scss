@@ -7,12 +7,46 @@
     width: 20%;
     margin-bottom: 0;
   }
+
+  .field-name-field-image {
+    svg {
+      max-width: 65%;
+      // IE doesn't handle max-width scaling correctly, so we have to specify width and height in px
+      max-width: 90px;
+      max-height: 90px;
+      @include uikit-media(sm) {
+        max-width: 75px;
+        max-height: 75px;
+      }
+      @include uikit-media(md) {
+        max-width: 105px;
+        max-height: 105px;
+      }
+    }
+  }
 }
 
 .block__count--3 .bean-image-and-text {
   @extend .col-xs-12;
   @extend .col-sm-6;
   @extend .col-md-4;
+  .field-name-field-image {
+    svg {
+      max-width: 30%;
+      // IE doesn't handle max-width scaling correctly, so we have to specify width and height in px
+      max-width: 90px;
+      max-height: 90px;
+      @include uikit-media(sm) {
+        max-width: 75px;
+        max-height: 75px;
+      }
+      @include uikit-media(md) {
+        max-width: 105px;
+        max-height: 105px;
+      }
+    }
+  }
+
 }
 
 .block__count--1 .bean-image-and-text {
@@ -42,8 +76,8 @@
           .field-item {
             line-height: 1;
           }
-          svg, img {
-            max-width: 30%;
+          svg {
+            max-width: 65%;
           }
           float: none;
           width: 100%;
