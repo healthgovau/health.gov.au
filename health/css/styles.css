@@ -5672,7 +5672,7 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
   padding: 12px; }
   @media (min-width: 768px) {
     .page-title__core {
-      padding: 1.6em 0 1rem 0; } }
+      padding: 1.6em 0 1.6em 0; } }
   .page-title__core .uikit-header-heading {
     line-height: 1.4;
     max-width: 42em;
