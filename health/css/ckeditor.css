@@ -24,8 +24,8 @@ body.node-type-health-topic .paragraphs-item-two-columns.para-container, body.no
 .uikit-body .mobile-nav-toggle.mobilemenu-active, .page .mobile-nav-toggle.mobilemenu-active, .cke_editable .mobile-nav-toggle.mobilemenu-active, .uikit-body .mobile-toggle:focus, .page .mobile-toggle:focus, .cke_editable .mobile-toggle:focus,
 .uikit-body .mobile-nav-toggle:focus, .page .mobile-nav-toggle:focus, .cke_editable .mobile-nav-toggle:focus, .region-navigation .block-superfish.mobilemenu-active, .page-node-1021 .paragraphs-item-para-contact.para-container,
 .page-node-1156 .paragraphs-item-para-contact.para-container, .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container,
-.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container, .page-node-1021 .paragraphs-item-para-block.block-id__handbook-featured-block-in-immun,
-.page-node-1156 .paragraphs-item-para-block.block-id__handbook-featured-block-in-immun {
+.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container, .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun,
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun {
   background-color: #006e7a;
   background: linear-gradient(to right, #006e7a, #008998); }
 
@@ -7566,15 +7566,15 @@ body {
     border-bottom: 1px solid white;
     color: white; }
 
-.page-node-1021 .paragraphs-item-para-block.block-id__handbook-featured-block-in-immun,
-.page-node-1156 .paragraphs-item-para-block.block-id__handbook-featured-block-in-immun {
+.page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun,
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun {
   color: white; }
-  .page-node-1021 .paragraphs-item-para-block.block-id__handbook-featured-block-in-immun h2, .page-node-1021 .paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left .video__title, .video--left .page-node-1021 .paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title, .page-node-1021 .paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--right .video__title, .video--right .page-node-1021 .paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title,
-  .page-node-1156 .paragraphs-item-para-block.block-id__handbook-featured-block-in-immun h2,
-  .page-node-1156 .paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left .video__title, .video--left
-  .page-node-1156 .paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title,
-  .page-node-1156 .paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--right .video__title, .video--right
-  .page-node-1156 .paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title {
+  .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun h2, .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left .video__title, .video--left .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title, .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--right .video__title, .video--right .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title,
+  .page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun h2,
+  .page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left .video__title, .video--left
+  .page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title,
+  .page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--right .video__title, .video--right
+  .page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title {
     color: white; }
 
 .page-node-1021 .paragraphs-item-para-taxonomies .field-name-field-taxonomy-paragraph > .field-items > .field-item .field-type-entityreference,
