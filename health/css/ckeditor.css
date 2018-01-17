@@ -6256,6 +6256,9 @@ body.node-type-health-topic .para-container.paragraphs-item-para-content-text, b
     font-size: 19px;
     margin-bottom: 0.8em; }
 
+body.node-type-health-topic .paragraphs-item-two-columns.general-public-resources.para-container, body.node-type-health-topic-hp .paragraphs-item-two-columns.general-public-resources.para-container, body.node-type-landing-page .paragraphs-item-two-columns.general-public-resources.para-container {
+  background: white; }
+
 body.node-type-health-topic .paragraphs-item-two-columns .para-container, body.node-type-health-topic-hp .paragraphs-item-two-columns .para-container, body.node-type-landing-page .paragraphs-item-two-columns .para-container {
   padding-top: 0;
   padding-bottom: 0; }
