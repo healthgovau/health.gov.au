@@ -70,15 +70,19 @@
         height: auto;
         max-height: none;
         width: 100%;
+        &:hover, &:active {
+          opacity: 0.75;
+        }
       }
-      &:hover, &:active {
-        opacity: 0.75;
-      }
+
     }
     a {
-      background-color: black;
+      @include uikit-media(md) {
+        background-color: black;
+        display: block;
+      }
       border: none;
-      display: block;
+
     }
 
   }

@@ -26,9 +26,11 @@
     .field-name-field-image-featured {
       a {
         border-bottom: 0;
-        display: block;
         line-height: 0;
-        background-color: black;
+        @include uikit-media(sm) {
+          background-color: black;
+          display: block;
+        }
       }
       img {
         max-height: 240px;
@@ -36,11 +38,11 @@
         @include uikit-media(sm) {
           max-height: none;
           width: 100%;
+          &:hover, &:active {
+            opacity: 0.75;
+          }
         }
         border: $health-borderize--thin;
-        &:hover, &:active {
-          opacity: 0.75;
-        }
       }
     }
     
@@ -87,20 +89,22 @@
       }
       a {
         border-bottom: 0;
-        display: block;
         line-height: 0;
-        background-color: black;
+        @include uikit-media(sm) {
+          background-color: black;
+          display: block;
+        }
       }
       img {
         max-height: 240px;
         width: auto;
         @include uikit-media(sm) {
           max-height: 130px;
+          &:hover, &:active {
+            opacity: 0.75;
+          }
         }
         border: $health-borderize--thin;
-        &:hover, &:active {
-          opacity: 0.75;
-        }
       }
     }
 
