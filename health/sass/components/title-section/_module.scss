@@ -21,7 +21,7 @@
   // Section title (large)
   .uikit-header-heading {
     line-height: 1.4;
-    max-width: 42em;
+    max-width: 26em;
     margin-top: 0.2em;
     margin-bottom: 0.6rem;
   }
@@ -91,6 +91,16 @@
   .field-name-field-image-featured {
       padding: uikit-space(1.5) 0 0 0;
       text-align: right;
+  }
+}
+
+// Hide page-title__supp.
+%page-title-no-supp {
+  .page-title__supp {
+    display: none;
+  }
+  .page-title__core {
+    @extend .col-xs-12;
   }
 }
 

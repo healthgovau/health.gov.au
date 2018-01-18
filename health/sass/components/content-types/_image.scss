@@ -2,6 +2,7 @@
 .node-type-image{
     @extend %dm-full-content;
 	@extend %page-help-only;
+    @extend %page-title-no-supp;
 
 	.region-content {
 		margin-top: uikit-space(1.5);

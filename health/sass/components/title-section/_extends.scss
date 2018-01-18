@@ -37,12 +37,3 @@
   }
 }
 
-// Hide page-title__supp in all resources pages.
-.section-resources {
-  .page-title__supp {
-    display: none;
-  }
-  .page-title__core {
-    @extend .col-xs-12;
-  }
-}
