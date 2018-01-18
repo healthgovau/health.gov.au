@@ -57,7 +57,6 @@ stylesheets[print][] = css/print.css
 scripts[] = js/matchHeight.min.js
 scripts[] = js/health.extlink.js
 scripts[] = js/fontawesome-all.min.js
-scripts[] = js/clamp.min.js
 scripts[] = js/script.js
 
 
