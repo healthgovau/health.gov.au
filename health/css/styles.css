@@ -5668,15 +5668,16 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
       margin-bottom: 3.2em; } }
 
 .page-title__core {
-  padding: 12px; }
+  padding: 12px;
+  max-width: 56em; }
   @media (min-width: 768px) {
     .page-title__core {
       padding: 1.6em 0 1.6em 0; } }
   .page-title__core .uikit-header-heading {
     line-height: 1.4;
-    max-width: 26em;
     margin-top: 0.2em;
-    margin-bottom: 0.6rem; }
+    margin-bottom: 0.6rem;
+    display: inline; }
   .page-title__core .section-header {
     font-weight: 700;
     margin-bottom: 0; }
@@ -5775,16 +5776,150 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
 
 #readspeaker {
   display: inline; }
-  #readspeaker div {
-    display: inline-block; }
   #readspeaker a {
     border-bottom: none; }
-    #readspeaker a:hover, #readspeaker a:active {
-      background-color: inherit; }
-    #readspeaker a:after {
-      display: none; }
   #readspeaker .rsbtn {
     margin-bottom: 0; }
+
+.rsbtn_colorskin {
+  position: relative;
+  font-size: 14px;
+  line-height: 1.3em;
+  display: inline-block;
+  padding: 4px;
+  background: white;
+  border: 1px solid #008998; }
+  .rsbtn_colorskin:hover {
+    background-color: #ecedee; }
+  .rsbtn_colorskin a {
+    color: #008998; }
+  .rsbtn_colorskin a, .rsbtn_colorskin span {
+    position: relative;
+    text-decoration: none; }
+  .rsbtn_colorskin .rsimg {
+    background: transparent url(../js/readspeaker/ReadSpeakerColorSkin.png) no-repeat scroll 0 0; }
+  .rsbtn_colorskin .rspart {
+    float: left;
+    margin-left: 2px; }
+    .rsbtn_colorskin .rspart.rsbutton {
+      background-color: #000;
+      width: 18px;
+      height: 18px;
+      /*
+       * Add rounded corners to supported browsers
+       */
+      border-radius: 5px;
+      /**
+       * This is just to make the rollover effect a little smoother.
+       */
+      transition: background-color .2s ease; }
+    .rsbtn_colorskin .rspart .rsbtn_btnlabel {
+      display: none; }
+  .rsbtn_colorskin .rsdefloat {
+    clear: both; }
+  .rsbtn_colorskin .rsbtn_box {
+    margin: 1px; }
+  .rsbtn_colorskin .rsbtn_play {
+    margin: 1px 0; }
+  .rsbtn_colorskin .rsbtn_left.rspart {
+    background: none; }
+  .rsbtn_colorskin .rsbtn_exp.rsimg.rspart {
+    background: none;
+    float: left;
+    display: none; }
+  .rsbtn_colorskin.rsexpanded .rsbtn_exp.rsimg {
+    display: inline; }
+  .rsbtn_colorskin .rsbtn_pause {
+    background-position: -18px -18px; }
+  .rsbtn_colorskin.rspaused .rsbtn_pause, .rsbtn_colorskin.rsstopped .rsbtn_pause {
+    background-position: -18px 0px; }
+  .rsbtn_colorskin .rsbtn_stop {
+    background-position: -18px -36px; }
+  .rsbtn_colorskin .rsbtn_progress_container {
+    border: 1px solid #000;
+    width: 50px;
+    height: 10px;
+    margin-top: 3px;
+    margin-left: 4px;
+    background-image: none;
+    /*
+     * Add rounded corners to supported browsers
+     */
+    border-radius: 3px; }
+  .rsbtn_colorskin .rsbtn_progress_handle.rsimg {
+    position: absolute;
+    background-color: #000;
+    top: -3px;
+    left: -3px;
+    width: 6px;
+    height: 16px;
+    background-image: none; }
+  .rsbtn_colorskin .rsbtn_progress_played {
+    position: absolute;
+    height: 100%;
+    background-color: #ccc;
+    background-image: none; }
+  .rsbtn_colorskin .rsbtn_volume {
+    margin-left: 4px;
+    background-position: -18px -54px; }
+  .rsbtn_colorskin .rsbtn_volume_container {
+    position: absolute;
+    display: none;
+    top: 100%;
+    width: 16px;
+    height: 40px;
+    border: 1px solid #000;
+    background: #fff; }
+  .rsbtn_colorskin .rsbtn_volume_slider {
+    width: 6px;
+    height: 30px;
+    margin: 5px;
+    background: #ccc; }
+  .rsbtn_colorskin .rsbtn_volume_handle.rsimg {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 12px;
+    height: 6px;
+    background: #000; }
+  .rsbtn_colorskin .rsbtn_dl {
+    background-position: -18px -72px; }
+  .rsbtn_colorskin .rsbtn_settings {
+    background-position: -18px -90px; }
+  .rsbtn_colorskin .rsbtn_closer {
+    margin-left: 2px;
+    background-position: -18px -108px; }
+  .rsbtn_colorskin.rspopup {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #555;
+    box-shadow: 0 0 5px #777;
+    display: none; }
+  .rsbtn_colorskin .rsbtn_powered {
+    display: none; }
+  .rsbtn_colorskin.rs_whitelogo .rsbtn_powered {
+    color: #fff; }
+    .rsbtn_colorskin.rs_whitelogo .rsbtn_powered .rsbtn_btnlabel a span.rsbtn_label_read, .rsbtn_colorskin.rs_whitelogo .rsbtn_powered .rsbtn_btnlabel a span.rsbtn_label_speaker {
+      color: #fff; }
+    .rsbtn_colorskin.rs_whitelogo .rsbtn_powered .rsbtn_btnlabel a span.rsbtn_label_icon.rsimg {
+      background-position: -285px -490px; }
+  .rsbtn_colorskin.rs_blacklogo .rsbtn_powered {
+    color: #000; }
+    .rsbtn_colorskin.rs_blacklogo .rsbtn_powered .rsbtn_btnlabel a span.rsbtn_label_read, .rsbtn_colorskin.rs_blacklogo .rsbtn_powered .rsbtn_btnlabel a span.rsbtn_label_speaker {
+      color: #000; }
+    .rsbtn_colorskin.rs_blacklogo .rsbtn_powered .rsbtn_btnlabel a span.rsbtn_label_icon.rsimg {
+      background-position: -433px -490px; }
+  .rsbtn_colorskin a.rsbtn_abouthelp {
+    background: url(../js/readspeaker/ReadSpeakerColorSkin.png) no-repeat scroll -20px -128px transparent;
+    background-color: #000;
+    border-radius: 7px;
+    transition: background-color 0.2s ease 0s;
+    height: 14px;
+    width: 14px;
+    float: left;
+    margin: 3px 1px 1px; }
+    .rsbtn_colorskin a.rsbtn_abouthelp:hover {
+      background-color: #ccc; }
 
 ul.social__links,
 .social__links {
