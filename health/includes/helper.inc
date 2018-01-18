@@ -265,6 +265,21 @@ function _health_label_display($variables, $field, $field_variables) {
 }
 
 /**
+ * Get the weight of a Display Suite field using the current view mode.
+ *
+ * @param $variables
+ *   Preprocess variables.
+ * @param $field
+ *   The field to get the weight for.
+ * @return int
+ *   The weight
+ */
+function _health_get_ds_field_weight($variables, $field) {
+  $field_settings = ds_get_field_settings('node', $variables['type'], $variables['view_mode']);
+  return $field_settings[$field]['weight'];
+}
+
+/**
  * Check if a path should have a default audience filter applied and return
  * appropriate query string.
  *
