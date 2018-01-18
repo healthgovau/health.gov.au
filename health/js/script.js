@@ -140,4 +140,16 @@
     }
   };
 
+  // Use singular when there is only 1 result in the view list.
+  Drupal.behaviors.singularResult = {
+    attach: function (context, settings) {
+      var total = $('.view-header span', context).text();
+      if (total === '1') {
+        $('.view-header span').after(' result');
+      }
+      else {
+        $('.view-header span').after(' results');
+      }
+    }
+  };
 })(jQuery, Drupal, this, this.document);
