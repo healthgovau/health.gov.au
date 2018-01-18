@@ -59,11 +59,14 @@ function health_preprocess_page(&$variables) {
   $exclude = [
     'health_topic',
     'health_topic_hp',
-    'listing'
+    'listing',
+    'landing_page'
   ];
   if (isset($variables['node']) && !in_array($variables['node']->type, $exclude)) {
     drupal_add_js(READSPEAKER_URL, 'external');
+    drupal_add_js(path_to_theme() . '/js/readspeaker/ReadSpeakerColorSkin.js');
     $variables['readspeaker'] = theme('readspeaker', []);
+
   }
 
   // Add parameters to JS.
