@@ -33,14 +33,22 @@
 		@extend %dm-list-vertical;
 	}
 
-	// List vertical small
-	&.view-mode-listing_vertical_small {
-		@extend %dm-list-vertical--small;
+    // List vertical small
+    &.view-mode-listing_vertical_small {
+      @extend %dm-list-vertical--small;
+      @include uikit-media(sm) {
         @include cardify-small();
         img {
-          border: none !important;
+          border: 0 !important;
         }
-	}
+      }
+      @include uikit-media(md) {
+        .group-details {
+          position: absolute;
+          bottom: 10px;
+        }
+      }
+    }
 
 	// Feature
 	&.view-mode-feature {
@@ -51,7 +59,9 @@
 		.group-right {
 			padding-top: 0;
 		}
+      @include uikit-media(sm) {
         @include cardify();
+      }
 
 	}
 	
