@@ -854,7 +854,7 @@ function health_crumbs_breadcrumb_link(array $item) {
  * Implements hook_block_view_alter().
  */
 function health_block_view_alter(&$data, $block) {
-  if ($block->title == 'Intended audience' && $block->module == 'facetapi') {
+  if ($block->title == 'Intended audience' && $block->module == 'facetapi' && isset($data)) {
     foreach ($data['content']['field_audience']['#items'] as $key => $item) {
       // Replace (0) with ''.
       $item['data'] = str_replace('(0)', '', $item['data']);
