@@ -89,7 +89,8 @@ gulp.task('clean:css', function() {
   return del([
       options.theme.css + '**/*.css',
       options.theme.css + '**/*.map',
-      '!' + options.theme.css + 'fontawesome.css'
+      '!' + options.theme.css + 'fontawesome.css',
+      '!' + options.theme.css + 'print.css'
     ], {force: true});
 });
 
