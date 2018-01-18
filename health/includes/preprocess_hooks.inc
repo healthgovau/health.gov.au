@@ -746,7 +746,10 @@ function health_preprocess_node(&$variables) {
     foreach($variables['preprocess_fields'] as $field) {
       $preprocess = 'health_preprocess_ds_' . $field;
       if (function_exists($preprocess)) {
-        $variables[$field] = $preprocess($variables);
+        $variables['content'][$field] = array(
+          '#markup' => $preprocess($variables),
+          '#weight' => _health_get_ds_field_weight($variables, $field)
+        );
       }
     }
   }
