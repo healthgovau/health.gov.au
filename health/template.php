@@ -279,7 +279,7 @@ function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
       $links .= theme('selected_filter', [
           'url' => url('/' . current_path(), ['query' => $query_string_modified]),
           'classes' => 'facet-remove-link',
-          'text' => $query_string['search_api_views_fulltext'],
+          'text' => t('@text', ['@text' => $query_string['search_api_views_fulltext']]),
         ]
       );
     }

@@ -701,7 +701,7 @@ function health_preprocess_node(&$variables) {
   $node = $variables['node'];
 
   // Add title and alt to default image for image field.
-  if (isset($node->field_image_featured) && $node->field_image_featured[LANGUAGE_NONE][0]['is_default'] == TRUE) {
+  if (isset($node->field_image_featured) && isset($node->field_image_featured[LANGUAGE_NONE][0]['is_default']) && $node->field_image_featured[LANGUAGE_NONE][0]['is_default'] == TRUE) {
     $variables['content']['field_image_featured'][0]['#item']['alt'] = t('Default image');
     $variables['content']['field_image_featured'][0]['#item']['title'] = t('Default image');
   }
