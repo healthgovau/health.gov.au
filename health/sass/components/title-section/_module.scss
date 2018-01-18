@@ -18,12 +18,14 @@
     padding: uikit-space(1) 0 uikit-space(1) 0;
   }
 
+  max-width: 56em;
+
   // Section title (large)
   .uikit-header-heading {
     line-height: 1.4;
-    max-width: 26em;
     margin-top: 0.2em;
     margin-bottom: 0.6rem;
+    display: inline;
   }
 
   // Section title (small)
