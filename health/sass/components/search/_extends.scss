@@ -26,10 +26,9 @@
       }
     }
     .search-api-page-results {
-      margin-bottom: 1.7em;
+      margin: uikit-space(1) 0 uikit-space(1) 0;
       .search-performance {
         font-size: 1.5em;
-        padding-top: uikit-space( 1 );
       }
       .search-results {
         padding-left: 0;

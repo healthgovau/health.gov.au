@@ -7598,10 +7598,9 @@ p.filter__help {
       width: 50%; } }
 
 .page-search main .search-api-page-results {
-  margin-bottom: 1.7em; }
+  margin: 1.6em 0 1.6em 0; }
   .page-search main .search-api-page-results .search-performance {
-    font-size: 1.5em;
-    padding-top: 1.6em; }
+    font-size: 1.5em; }
   .page-search main .search-api-page-results .search-results {
     padding-left: 0; }
   .page-search main .search-api-page-results .view-mode-search_result {
