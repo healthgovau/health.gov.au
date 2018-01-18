@@ -61,16 +61,22 @@
           img {
             width: 20%;
           }
+          svg {
+            path, rect {
+              fill: #000;
+            }
+          }
         }
-      }
-      h2 {
-        color: white;
       }
       a {
         display: block;
         border-bottom: none;
+        padding: uikit-space( 1 );
+        .field-name-field-bean-text {
+          color: $uikit-colour-Secondary;
+        }
         &:hover {
-          background: $colour-Secondary-hover;
+          background: $colour-light-dark;
           .field-name-field-link-internal {
             .field-item {
               border-bottom: none;
@@ -78,15 +84,28 @@
           }
         }
       }
-      @extend %colour-Secondary-background;
       .field-name-field-link-internal {
         .field-item {
           display: inline-block;
-          border-bottom: 1px solid white;
-          color: white;
+          border-bottom: 1px solid $uikit-colour-Secondary;
         }
       }
-      color: white;
+      color: $uikit-colour-Secondary;
+      .more-services-card {
+        a {
+          border-top: 10px solid $colour-Primary-dark;
+        }
+      }
+      .more-conditions-and-diseases-car {
+        a {
+          border-top: 10px solid $colour-Tertiary-dark;
+        }
+      }
+      .more-programs-and-initiatives-ca {
+        a {
+          border-top: 10px solid $colour-Secondary-dark;
+        }
+      }
     }
   }
 

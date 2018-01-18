@@ -53,6 +53,9 @@
 
       // Homepage - In our portfolio
       $('#block-bean-ageing-and-aged-care .bean-image-and-text, #block-bean-homepage-portfolio-sport .bean-image-and-text', context).matchHeight();
+
+      // Immunisation more on immunisation band
+      $('.paragraphs-item-para-block.block-id__more-services-card .bean-image-and-text a', context).matchHeight();
     }
   };
 
