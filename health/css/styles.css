@@ -6365,9 +6365,9 @@ body.node-type-health-topic .para-container.paragraphs-item-para-content-text, b
     .feedback-band.bean-basic-content .feedback-band .feedback-col.link .feedback-col-link a {
       border-radius: 0;
       width: 100%;
-      background-color: #008998;
+      background-color: #007b89;
       color: white;
-      border: 1px solid #008998; }
+      border: 1px solid #007b89; }
       @media (min-width: 768px) {
         .feedback-band.bean-basic-content .feedback-band .feedback-col.link .feedback-col-link a {
           margin: auto;
@@ -7721,7 +7721,7 @@ ul.list--large {
         padding-right: 1.6em;
         text-align: right; } }
   .page .header-top .beta-icon {
-    background: #008998;
+    background: #007b89;
     padding: 0 8px;
     margin-right: 10px;
     color: white;
