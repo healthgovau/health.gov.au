@@ -148,10 +148,8 @@
         background: white;
         padding: uikit-space(.6);
         @include uikit-media(sm) {
-          position: absolute;
-          bottom: 0;
           background: transparent;
-          padding: 0 uikit-space(1) uikit-space(1.75) uikit-space(1);
+          padding: uikit-space(1) uikit-space(1) uikit-space(1.75) uikit-space(1);
         }
       }
       p:nth-of-type(1) {
