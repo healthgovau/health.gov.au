@@ -30,7 +30,7 @@
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
     <div class="bean-block-content"<?php print $content_attributes; ?>>
-        <a href="<?php print $content['field_link_internal']['#items'][0]['url']; ?>">
+        <a href="<?php print $content['field_link_internal']['#items'][0]['url'] . '?' . drupal_http_build_query($content['field_link_internal']['#items'][0]['query']); ?>">
           <?php print render($content['field_image']); ?>
             <div class="field field-name-field-link-internal field-type-link-field field-label-hidden">
                 <div class="field-items">
