@@ -20,18 +20,20 @@
       div, a {
         line-height: 0;
       }
-        img {
-          border: 0;
-          &:hover, &:active {
-            opacity: 0.75;
-          }
+      img {
+        border: 0;
+        &:hover, &:focus, &:active {
+          opacity: 0.75;
         }
-        a {
-          border: none;
-          background-color: black;
-          display: block;
-
+      }
+      a {
+        border: none;
+        background-color: black;
+        display: block;
+        &:focus {
+          border: 2px solid $colour-Secondary-hover;
         }
+      }
     }
     .field-name-title h2 {
         @extend %list-item-title--medium;
@@ -69,7 +71,7 @@
         height: auto;
         max-height: none;
         width: 100%;
-        &:hover, &:active {
+        &:hover, &:focus, &:active {
           opacity: 0.75;
         }
       }
@@ -80,6 +82,9 @@
         display: block;
       }
       border: none;
+      &:focus {
+        border: 2px solid $colour-Secondary-hover;
+      }
     }
   }
   // Title

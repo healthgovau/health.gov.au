@@ -31,6 +31,9 @@
           background-color: black;
           display: block;
         }
+        &:focus {
+          border: 2px solid $colour-Secondary-hover;
+        }
       }
       img {
         max-height: 240px;
@@ -38,7 +41,7 @@
         @include uikit-media(sm) {
           max-height: none;
           width: 100%;
-          &:hover, &:active {
+          &:hover, &:focus, &:active {
             opacity: 0.75;
           }
         }
@@ -94,13 +97,16 @@
           background-color: black;
           display: block;
         }
+        &:focus {
+          border: 2px solid $colour-Secondary-hover;
+        }
       }
       img {
         max-height: 240px;
         width: auto;
         @include uikit-media(sm) {
           max-height: 130px;
-          &:hover, &:active {
+          &:hover, &:focus, &:active {
             opacity: 0.75;
           }
         }
