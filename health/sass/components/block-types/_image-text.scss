@@ -95,13 +95,8 @@
 
         .field-name-field-bean-text {
           display: block;
-          margin-left: 35%;
-          text-align: left;
           color: white;
-          @include uikit-media(sm) {
-            margin-left: 0;
-            text-align: center;
-          }
+          text-align: center;
         }
 
       }
