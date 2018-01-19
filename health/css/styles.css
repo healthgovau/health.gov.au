@@ -7874,6 +7874,8 @@ ul.list--large {
   .page .header-top a {
     color: #fff;
     border-bottom-color: #fff; }
+    .page .header-top a:hover {
+      border: none; }
   .page .header-top .mobile-hide {
     display: none; }
     @media (min-width: 992px) {

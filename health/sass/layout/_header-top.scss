@@ -38,6 +38,9 @@
     a {
       color: #fff;
       border-bottom-color: #fff;
+      &:hover {
+        border: none;
+      }
     }
 
     .mobile-hide {
