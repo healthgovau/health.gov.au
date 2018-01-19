@@ -4722,13 +4722,8 @@ p.summary, .field-name-field-summary {
     text-align: center; }
   .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-bean-text {
     display: block;
-    margin-left: 35%;
-    text-align: left;
-    color: white; }
-    @media (min-width: 768px) {
-      .bean-image-and-text.view-mode-full .bean-block-content a .field-name-field-bean-text {
-        margin-left: 0;
-        text-align: center; } }
+    color: white;
+    text-align: center; }
 
 .bean-image-and-text.view-mode-feature_large {
   float: left; }
