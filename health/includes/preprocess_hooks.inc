@@ -118,11 +118,11 @@ function health_preprocess_page(&$variables) {
 
             // Check if we are under a health professional section of the topic.
             if ($health_topic_hp && $health_topic_hp->type == 'health_topic_hp') {
-              $variables['section_title'] = $health_topic_hp->title;
+              $variables['section_title'] = l($health_topic_hp->title, 'node/' . $health_topic_hp->nid);
               $variables['summary'] = NULL;
               // Check if we are under the general section of the topic.
             } else if ($health_topic) {
-              $variables['section_title'] = $health_topic->title;
+              $variables['section_title'] = l($health_topic->title, 'node/' . $health_topic->nid);
               $variables['summary'] = NULL;
             }
           }
@@ -133,34 +133,36 @@ function health_preprocess_page(&$variables) {
     // Conditions and diseases
     // Title doesn't appear in the active trail, so set one manually.
     if ($active_trail[1]['href'] == 'conditions-and-diseases') {
-      if (count($active_trail) > 3) {
-        $variables['section_title'] = 'Conditions and diseases';
-        $variables['summary'] = NULL;
+      if (count($active_trail) > 2) {
+        $variables['section_title'] = l('Conditions and diseases', 'conditions-and-diseases');
       }
     }
 
     // Resources
     if ($active_trail[1]['href'] == 'resources') {
       if (isset($variables['node'])) {
-        $variables['section_title'] = ucfirst($variables['node']->type) . 's';
+        $variables['section_title'] = l(ucfirst($variables['node']->type) . 's', 'resources/' . $variables['node']->type . 's');
         $variables['summary'] = NULL;
+      } else if (count($active_trail) == 3) {
+        $variables['section_title'] = l('Resources', 'resources/');
       }
     }
 
     // Services
     // Title doesn't appear in the active trail, so set one manually.
     if ($active_trail[1]['href'] == 'services') {
-      if (count($active_trail) > 3) {
-        $variables['section_title'] = 'Services';
-        $variables['summary'] = NULL;
+      if (count($active_trail) > 2) {
+        $variables['section_title'] = l('Services', 'services');
       }
     }
 
     // Initiatives and programs
     // Title doesn't appear in the active trail, so set one manually.
     if ($active_trail[1]['href'] == 'initiatives-and-programs') {
+      if (count($active_trail) > 2) {
+        $variables['section_title'] = l('Initiatives and programs', 'initiatives-and-programs');
+      }
       if (count($active_trail) > 3) {
-        $variables['section_title'] = 'Initiatives and programs';
         $variables['summary'] = NULL;
       }
     }
@@ -168,8 +170,10 @@ function health_preprocess_page(&$variables) {
     // News and events
     // Set title to be the third level menu trail.
     if ($active_trail[1]['href'] == 'news-and-events') {
-      if (count($active_trail) > 3) {
-        $variables['section_title'] = ucfirst(explode('/', $active_trail[2]['href'])[1]);
+      if (count($active_trail) == 3) {
+        $variables['section_title'] = l('News and events', 'news-and-events');
+      } else if (count($active_trail) > 3) {
+        $variables['section_title'] = l(node_type_get_name($variables['node']), $active_trail[count($active_trail)-2]['href']);
         $variables['summary'] = NULL;
       }
     }
@@ -177,8 +181,7 @@ function health_preprocess_page(&$variables) {
     // Committees and groups
     if ($active_trail[1]['href'] == 'committees-and-groups') {
       if (count($active_trail) > 2) {
-        $variables['section_title'] = 'Committees and groups';
-        $variables['summary'] = NULL;
+        $variables['section_title'] = l('Committees and groups', 'committees-and-groups');
       }
     }
   }

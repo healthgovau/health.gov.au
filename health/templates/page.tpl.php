@@ -73,6 +73,12 @@ endif;
       <div class="page-title__core col <?php print isset($section_title) ? 'section-title' : '' ?>">
         <?php print $breadcrumb; ?>
 
+        <?php if (isset($section_title)): ?>
+          <p class="section-header">
+            <?php print $section_title; ?>
+          </p>
+        <?php endif; ?>
+
         <?php if ($title): ?>
         <?php print render($title_prefix); ?>
         <h1 class="uikit-header-heading">
@@ -82,10 +88,6 @@ endif;
         <?php endif; ?>
 
         <?php print $readspeaker; ?>
-
-        <?php if (isset($section_title)): ?>
-        <p class="section-header"><?php print $section_title; ?></p>
-        <?php endif; ?>
 
         <?php if (isset($summary)): ?>
         <p class="summary"><?php print $summary; ?></p>
