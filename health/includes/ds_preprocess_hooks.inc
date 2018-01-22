@@ -222,3 +222,47 @@ function health_preprocess_ds_public_hp_switcher(&$variables) {
 function health_preprocess_ds_media_enquiry(&$variables) {
   return theme('media_enquiry', ['nid' => $variables['node']->nid]);
 }
+
+/**
+ * Display suite preprocessor -- publication collection
+ *
+ * @param $variables
+ * @return string
+ */
+function health_preprocess_ds_related_publication_collections(&$variables) {
+  // Find paragraph collections the current publication belong to.
+  if ($variables['type'] == 'publication') {
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'paragraphs_item')
+      ->entityCondition('bundle', 'publication_grouping')
+      ->fieldCondition('field_reference_publication', 'target_id', $variables['nid'], '=')
+      ->addMetaData('account', user_load(1));
+
+    $result = $query->execute();
+    if (isset($result['paragraphs_item'])) {
+      $paragraphs_item_ids = array_keys($result['paragraphs_item']);
+      $links = [];
+      foreach ($paragraphs_item_ids as $paragraphs_item_id) {
+        $node_query = new EntityFieldQuery();
+        $node_query->entityCondition('entity_type', 'node')
+          ->entityCondition('bundle', 'publication_collection')
+          ->fieldCondition('field_publication_grouping', 'value', $paragraphs_item_id, '=')
+          ->addMetaData('account', user_load(1));
+        $node_result = $node_query->execute();
+        if (isset($node_result['node'])) {
+          $collection_ids = array_keys($node_result['node']);
+          $collections = entity_load('node', $collection_ids);
+          foreach ($collections as $collection) {
+            $links[] = l($collection->title, $collection->path['alias']);
+          }
+        }
+      }
+      $output = theme('item_list', [
+        'items' => $links,
+        'type' => 'ul',
+      ]);
+
+      return theme('publication_collection', ['collection_list' => $output]);
+    }
+  }
+}

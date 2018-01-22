@@ -92,6 +92,14 @@ function health_theme() {
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
   ];
 
+  $theme['publication_collection'] = [
+    'variables' => [
+      'collection_list' => NULL,
+    ],
+    'template' => 'publication_collection',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
   return $theme;
 }
 
