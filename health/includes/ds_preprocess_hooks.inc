@@ -48,7 +48,8 @@ function health_preprocess_ds_content_type(&$variables) {
  * @return string
  */
 function health_preprocess_ds_table_of_content(&$variables) {
-  if (isset($variables['field_generate_on_this_page'][LANGUAGE_NONE]) && $variables['field_generate_on_this_page'][LANGUAGE_NONE][0]['value'] == 1) {
+  if ((isset($variables['field_generate_on_this_page'][LANGUAGE_NONE]) && $variables['field_generate_on_this_page'][LANGUAGE_NONE][0]['value'] == 1) ||
+  (isset($variables['field_generate_in_collection'][LANGUAGE_NONE]) && $variables['field_generate_in_collection'][LANGUAGE_NONE][0]['value'] == 1)) {
     // This node is flagged to display table of content.
     drupal_add_js(drupal_get_path('theme', 'health') . '/js/anchorific.js');
     drupal_add_js(drupal_get_path('theme', 'health') . '/js/health.toc.js');
