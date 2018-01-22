@@ -31,6 +31,18 @@ function health_adminimal_toc_filter_back_to_top($variables) {
  */
 function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
   array_unshift($form['actions']['submit']['#submit'],'_health_adminimal_process_date');
+
+  // Hide option for publication collection content type.
+  if ($form_id == 'publication_collection_node_form') {
+    $form['field_publication_type']['#access'] = FALSE;
+  }
+
+  // Remove publication collection option from publication type list.
+  if ($form_id == 'publication_node_form') {
+    if (($key = array_search('Publication collection', $form['field_publication_type'][LANGUAGE_NONE]['#options'])) !== false) {
+      unset($form['field_publication_type'][LANGUAGE_NONE]['#options'][$key]);
+    }
+  }
 }
 
 /**
