@@ -32,15 +32,19 @@
   .section-header {
     @extend .uikit-display-2;
     font-weight: 700;
-    margin-bottom: 0;
+    margin-bottom: 0.4em;
     @include uikit-media(sm) {
       display: none;
+    }
+    .back-icon {
+      margin-right: 8px;
     }
   }
 
   // Summary
   .summary {
     @extend .uikit-header-subline;
+    margin-top: 0.4em;
     margin-bottom: 0.4rem;
   }
 
