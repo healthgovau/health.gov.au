@@ -395,8 +395,8 @@ td, th,
 
 /** START For health professionals **/
 // Include styles to support 'For health professionals' link.
-.topic-subpages {
-  .menu-block-wrapper.menu-name-main-menu.menu-block-2 {
+.topic-subpage {
+  .region-sidebar-second .block-menu-block {
     float: left;
     width: 50%;
     @include uikit-media(sm) {

@@ -33,9 +33,6 @@
     @extend .uikit-display-2;
     font-weight: 700;
     margin-bottom: 0;
-    a {
-      border-bottom: 0;
-    }
     @include uikit-media(sm) {
       display: none;
     }

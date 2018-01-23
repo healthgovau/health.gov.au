@@ -5696,8 +5696,6 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
   .page-title__core .section-header {
     font-weight: 700;
     margin-bottom: 0; }
-    .page-title__core .section-header a {
-      border-bottom: 0; }
     @media (min-width: 768px) {
       .page-title__core .section-header {
         display: none; } }
@@ -8246,11 +8244,11 @@ td p:last-of-type, th p:last-of-type,
     margin-left: 5px; }
 
 /** START For health professionals **/
-.topic-subpages .menu-block-wrapper.menu-name-main-menu.menu-block-2 {
+.topic-subpage .region-sidebar-second .block-menu-block {
   float: left;
   width: 50%; }
   @media (min-width: 768px) {
-    .topic-subpages .menu-block-wrapper.menu-name-main-menu.menu-block-2 {
+    .topic-subpage .region-sidebar-second .block-menu-block {
       float: none;
       width: 100%; } }
 
