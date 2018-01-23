@@ -56,8 +56,6 @@
   }
   .region-title-supp {
 
-    @extend %colour-Dark-background;
-
     display: block;
     @include uikit-media( md ) {
       display: table-cell;
