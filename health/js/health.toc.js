@@ -32,7 +32,7 @@
   // Generating table of content.
   Drupal.behaviors.toc = {
     attach: function (context, settings) {
-      $('.uikit-inpage-nav-links__heading', context).text('On this page');
+      $('.uikit-inpage-nav-links__heading', context).text(Drupal.settings.toc.title);
       $('.region-content', context).anchorific({
         navigation: '.toc',
         headers: 'h2',
