@@ -392,3 +392,38 @@ td, th,
     margin-left: 5px;
   }
 }
+
+/** START For health professionals **/
+// Include styles to support 'For health professionals' link.
+.topic-subpages {
+  .menu-block-wrapper.menu-name-main-menu.menu-block-2 {
+    float: left;
+    width: 50%;
+    @include uikit-media(sm) {
+      float: none;
+      width: 100%;
+    }
+  }
+}
+// Hide header version on mobile
+body:not(.node-type-health-topic) {
+  .page-title__supp {
+    .region-title-supp {
+      .block-bean-call-to-action {
+        display: none;
+        @include uikit-media(sm) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+// Hide sidebar version on desktop
+.region-sidebar-second {
+  .bean-public-hp-switcher {
+    @include uikit-media(sm) {
+      display: none;
+    }
+  }
+}
+/** END For health professionals **/
