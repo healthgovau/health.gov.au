@@ -678,7 +678,7 @@ function health_preprocess_field(&$variables) {
   if ($variables['element']['#field_name'] == 'field_publication_date') {
     // Change the display of the date depending on the selected format for this node.
     if ($field = field_get_items('node', $variables['element']['#object'], 'field_publication_date_display')) {
-      $field_instance = field_info_instance('node', $variables['element']['#field_name'], 'publication');
+      $field_instance = field_info_instance('node', $variables['element']['#field_name'], $variables['element']['#bundle']);
       $display_settings = $field_instance['display'][$variables['element']['#view_mode']];
       switch ($field[0]['value']) {
         case 'month_year':
