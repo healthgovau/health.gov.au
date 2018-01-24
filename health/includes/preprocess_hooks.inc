@@ -41,8 +41,7 @@ function health_preprocess_breadcrumb(&$variables, $hook) {
  */
 function health_preprocess_maintenance_page(&$variables, $hook) {
   health_preprocess_html($variables, $hook);
-  // There's nothing maintenance-related in health_preprocess_page(). Yet.
-  //health_preprocess_page($variables, $hook);
+  health_preprocess_page($variables);
 }
 
 /**
@@ -66,7 +65,6 @@ function health_preprocess_page(&$variables) {
     drupal_add_js(READSPEAKER_URL, 'external');
     drupal_add_js(path_to_theme() . '/js/readspeaker/ReadSpeakerColorSkin.js');
     $variables['readspeaker'] = theme('readspeaker', []);
-
   }
 
   // Add parameters to JS.
@@ -103,7 +101,6 @@ function health_preprocess_page(&$variables) {
 
   // Pages under a topic or grand-parents pages should use the parents' title
   // in the title section and no summary.
-
   $active_trail = menu_get_active_trail();
   if (!empty($active_trail)) {
 
@@ -255,10 +252,7 @@ function health_preprocess_html(&$variables, $hook) {
   // Serialize RDF Namespaces into an RDFa 1.1 prefix attribute.
   if ($variables['rdf_namespaces']) {
     $prefixes = array();
-    foreach (explode(
-               "\n  ",
-               ltrim($variables['rdf_namespaces'])
-             ) as $namespace) {
+    foreach (explode("\n  ", ltrim($variables['rdf_namespaces'])) as $namespace) {
       // Remove xlmns: and ending quote and fix prefix formatting.
       $prefixes[] = str_replace('="', ': ', substr($namespace, 6, -1));
     }
@@ -276,14 +270,12 @@ function health_preprocess_html(&$variables, $hook) {
     if ($arg[0] == 'node' && isset($arg[1])) {
       if ($arg[1] == 'add') {
         $section = 'node-add';
-      } elseif (isset($arg[2]) && is_numeric(
-          $arg[1]
-        ) && ($arg[2] == 'edit' || $arg[2] == 'delete')
-      ) {
-        $section = 'node-'.$arg[2];
+      }
+      elseif (isset($arg[2]) && is_numeric($arg[1]) && ($arg[2] == 'edit' || $arg[2] == 'delete')) {
+        $section = 'node-' . $arg[2];
       }
     }
-    $variables['classes_array'][] = drupal_html_class('section-'.$section);
+    $variables['classes_array'][] = drupal_html_class('section-' . $section);
 
     // Store the menu item since it has some useful information.
     $variables['menu_item'] = menu_get_item();
@@ -296,76 +288,6 @@ function health_preprocess_html(&$variables, $hook) {
       }
     }
   }
-}
-
-/**
- * Override or insert variables into the comment templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("comment" in this case.)
- */
-function health_preprocess_comment(&$variables, $hook) {
-  // Add $unpublished variable.
-  $variables['unpublished'] = ($variables['status'] == 'comment-unpublished') ? true : false;
-
-  // Add $preview variable.
-  $variables['preview'] = ($variables['status'] == 'comment-preview') ? true : false;
-
-  // If comment subjects are disabled, don't display them.
-  if (variable_get('comment_subject_field_'.$variables['node']->type, 1) == 0) {
-    $variables['title'] = '';
-  }
-
-  // Add pubdate to submitted variable.
-  $variables['pubdate'] = '<time pubdate datetime="'.format_date(
-      $variables['comment']->created,
-      'custom',
-      'c'
-    ).'">'.$variables['created'].'</time>';
-  $variables['submitted'] = t(
-    '!username replied on !datetime',
-    array(
-      '!username' => $variables['author'],
-      '!datetime' => $variables['pubdate'],
-    )
-  );
-
-  // If the comment is unpublished/preview, add a "unpublished" watermark class.
-  if ($variables['unpublished'] || $variables['preview']) {
-    $variables['classes_array'][] = 'watermark__wrapper';
-  }
-
-  // Zebra striping.
-  if ($variables['id'] == 1) {
-    $variables['classes_array'][] = 'first';
-  }
-  if ($variables['id'] == $variables['node']->comment_count) {
-    $variables['classes_array'][] = 'last';
-  }
-  $variables['classes_array'][] = $variables['zebra'];
-
-  // Add the comment__permalink class.
-  // @todo Candidate for removal as we don't want to change markup just to add classes.
-  $uri = entity_uri('comment', $variables['comment']);
-  $uri_options = $uri['options'] + array(
-      'attributes' => array(
-        'class' => array('comment__permalink'),
-        'rel' => 'bookmark',
-      ),
-    );
-  $variables['permalink'] = l(t('Permalink'), $uri['path'], $uri_options);
-
-  // Remove core's permalink class and add the comment__title class.
-  // @todo Candidate for removal as we don't want to change markup just to add classes.
-  $variables['title_attributes_array']['class'][] = 'comment__title';
-  $uri_options = $uri['options'] + array('attributes' => array('rel' => 'bookmark'));
-  $variables['title'] = l(
-    $variables['comment']->subject,
-    $uri['path'],
-    $uri_options
-  );
 }
 
 /**
@@ -694,8 +616,6 @@ function health_preprocess_field(&$variables) {
       $variables['items'][0]['#markup'] = $rendered[0]['#markup'];
     }
   }
-
-
 }
 
 /**
