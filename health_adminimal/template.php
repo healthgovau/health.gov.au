@@ -39,7 +39,7 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
 
   // Remove publication collection option from publication type list.
   if ($form_id == 'publication_node_form') {
-    if (($key = array_search('Publication collection', $form['field_publication_type'][LANGUAGE_NONE]['#options'])) !== false) {
+    if (($key = array_search('Collection', $form['field_publication_type'][LANGUAGE_NONE]['#options'])) !== false) {
       unset($form['field_publication_type'][LANGUAGE_NONE]['#options'][$key]);
     }
   }
