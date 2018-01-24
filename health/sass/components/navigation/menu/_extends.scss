@@ -28,3 +28,10 @@
     display: block;
   }
 }
+
+// Footer navigation.
+footer {
+  .menu {
+    @extend .uikit-link-list;
+  }
+}
