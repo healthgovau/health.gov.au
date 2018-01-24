@@ -69,11 +69,11 @@ function _health_add_maxlength(&$form, $element_names) {
   drupal_add_js(drupal_get_path('theme', 'health') .'/js/health.fieldcounter.js', 'file');
 
   // Add in the fields that we want to have this functionality.
-  $form['#attached']['js']['(function ($) {$(document).ready(function(){'.$js.'});})(jQuery);'] = array(
+  $form['#attached']['js']['(function ($) {$(document).ready(function(){'.$js.'});})(jQuery);'] = [
     'type' => 'inline',
     'scope' => 'footer',
     'weight' => 0,
-  );
+  ];
 }
 
 /**
