@@ -11,8 +11,17 @@
   <nav id="nav" class="<?php print $classes; ?>" >
     <div class="container">
       <div class="row">
-         <a class="mobile-toggle" href="#" class="col-xs-12">Menu</a>
-         <?php print $content; ?>
+        <a class="mobile-toggle mobile-toggle__main-menu col-xs-6">
+          <span class="mobile-toggle__open"><i class="fas fa-bars"></i>Open menu</span>
+          <span class="mobile-toggle__close"><i class="fas fa-times"></i>Close menu</span>
+        </a>
+        <a class="mobile-toggle mobile-toggle__search col-xs-6">
+          <span class="mobile-toggle__open"><i class="fas fa-search"></i>Open search</span>
+          <span class="mobile-toggle__close"><i class="fas fa-times"></i>Close search</span>
+        </a>
+      </div>
+      <div class="row">
+        <?php print $content; ?>
       </div>
     </div>
   </nav>

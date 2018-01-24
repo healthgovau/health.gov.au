@@ -50,3 +50,34 @@
     }
   }
 }
+
+
+// Mobile search
+.region-navigation {
+  #search-api-page-search-form {
+    display: none;
+    position: absolute;
+    background: white;
+    width: 100%;
+    overflow: visible;
+    padding: 12px;
+    margin-top: -6px;
+    &.mobilemenu-active { // Hide the search until triggered. Only triggers on mobile.
+      display: block;
+    }
+    border-bottom: 6px solid #cccccc;
+    border-radius: 0;
+    @include uikit-media(sm) {
+      border-bottom: 0;
+    }
+
+  }
+}
+.region-header { // Hide the search in the header on mobile.
+  div.block-search-api-page {
+    display: none;
+    @include uikit-media(sm) {
+      display: block;
+    }
+  }
+}

@@ -1,15 +1,18 @@
 // Health header
 header.uikit-header {
-  padding: uikit-space(1) 0 uikit-space(.5);
-  margin-bottom: 0;
   @include uikit-clearfix();
+  margin-bottom: 0;
+
+  padding: 0;
+  @include uikit-media(sm){
+    padding: uikit-space(1) 0 uikit-space(.5);
+  }
   @include uikit-media(md){
     padding-bottom: uikit-space(1);
   }
   .uikit-header__logo {
     display: block;
-    border-bottom: 2px solid transparent;
-    padding: uikit-space(.25);
+    padding: uikit-space(.75);
     width: 100%;
     // For IE 9, 10.
     color: transparent;
@@ -28,7 +31,6 @@ header.uikit-header {
   }
   .region-header {
     width: 100%;
-    margin-top: uikit-space(.5);
     @include uikit-media(sm) {
       max-width: 360px;
       margin-top: uikit-space(-.5);

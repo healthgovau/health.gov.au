@@ -19,6 +19,8 @@ $content_class = 'main-content';
 endif;
 ?>
 
+<div class="nav-overlay"></div>
+
 <div class="page">
   <div class="header-top">
     <div class="container">

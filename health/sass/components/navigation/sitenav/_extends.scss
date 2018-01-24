@@ -6,34 +6,46 @@
 //
 // Style guide: navigation.navbar
 
-.uikit-body .region-navigation .sf-menu {
-  @extend %uikit-sitenav;
-  @extend %uikit-dropdown;
-  padding-bottom: 20px;
-  @include uikit-media(sm){
-    padding-bottom: 0;
-  }
-}
+.region-navigation {
 
-// Mobile nav logic.
-.region-navigation .block-superfish.mobilemenu-active {
-  margin: 0;
-  visibility: visible;
-  opacity: 1;
-  height: auto;
-}
+  // Main menu.
+  #block-superfish-1 {
+    @extend %uikit-sitenav;
+    &.mobilemenu-active {
+      margin-top: -6px; // Keyline fix for mobile.
+    }
+    border-bottom: 6px solid #e5e5e5;
 
-.region-navigation .block-superfish {
-  visibility: hidden;
-  height: 0;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.8s linear;
-
-  @include uikit-media(sm) {
-    visibility: visible;
-    opacity: 1;
-    height: auto;
-    margin-left: 12px;
+    @include uikit-media(sm) {
+      border-bottom: 0;
+      margin-bottom: -7px;
+      ul li a {
+        border-bottom: 6px solid transparent;
+      }
+    }
   }
 
+  // Toggles for main menu and search.
+  .mobile-toggle {
+    @extend %uikit-sitenav__mobile-toggle;
+    margin-bottom: 6px; // Keyline fix for mobile.
+    
+    &.mobile-toggle__search {
+      text-align: right;
+    }
+  }
+
+  // Keyline across nav items.
+  position: relative;
+  z-index: 500;
+  box-shadow: 0 -6px #cccccc inset;
+}
+
+.nav-overlay {
+  @extend %uikit-sitenav-overlay;
+}
+
+header, .header-top {
+  position: relative;
+  z-index: 500;
 }

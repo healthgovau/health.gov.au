@@ -7,11 +7,6 @@
 //
 // Style guide: navigation.menu
 
-// Default link styling
-.menu {
-  @extend .uikit-link-list;
-}
-
 // Sub menu above search
 #block-menu-menu-sub-menu {
   @include uikit-clearfix();
@@ -19,6 +14,7 @@
     @include uikit-sronly;
   }
   .menu {
+    @extend .uikit-link-list;
     @extend .uikit-link-list--inline;
     float: right;
     background: transparent;

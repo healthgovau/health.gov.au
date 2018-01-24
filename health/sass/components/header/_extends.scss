@@ -2,8 +2,10 @@
 //
 // Header.
 
-.uikit-header.uikit-header--light {
-  background-color: white;
+.uikit-header {
+  &.uikit-header--light {
+    background-color: white;
+  }
 }
 
 a.uikit-header__logo {

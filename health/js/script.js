@@ -62,11 +62,39 @@
   Drupal.behaviors.healthMobileMenu = {
     attach: function (context, settings) {
 
-      // Hide the alert when the close button is pressed.
-      $('.mobile-toggle', context).click(function (e) {
+      // Main menu navigation toggle.
+      $('.mobile-toggle.mobile-toggle__main-menu', context).click(function (e) {
         e.preventDefault();
-        $(this).next('div').toggleClass('mobilemenu-active');
+
+        // Deactivate search if it is currently active.
+        if ($('.mobile-toggle.mobile-toggle__search', context).hasClass('mobilemenu-active')) {
+          $('.mobile-toggle.mobile-toggle__search').click();
+        }
+
+        $('.region-navigation .block-superfish').toggleClass('mobilemenu-active');
         $(this).toggleClass('mobilemenu-active');
+        $('.nav-overlay').toggleClass('active');
+      });
+
+      // Global search toggle.
+      $('.mobile-toggle.mobile-toggle__search', context).click(function (e) {
+        e.preventDefault();
+
+        // Deactivate nav if it is currently active.
+        if ($('.mobile-toggle.mobile-toggle__main-menu', context).hasClass('mobilemenu-active')) {
+          $('.mobile-toggle.mobile-toggle__main-menu').click();
+        }
+        $('.region-navigation .block-search-api-page').toggleClass('mobilemenu-active');
+        $(this).toggleClass('mobilemenu-active');
+        $('.nav-overlay').toggleClass('active');
+      });
+
+      // Handle switch between active toggles.
+      $('.mobile-toggle.mobile-toggle__search.mobilemenu-active', context).click(function (e) {
+        if ($('.mobile-toggle.mobile-toggle__main-menu', context).hasClass('mobilemenu-active')) {
+          $('.mobile-toggle.mobile-toggle__main-menu', context).removeClass('mobilemenu-active');
+          $('.region-navigation .block-superfish').removeClass('mobilemenu-active');
+        }
       });
 
       $('.mobile-nav-toggle', context).click(function (e) {
