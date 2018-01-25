@@ -218,9 +218,6 @@ function health_preprocess_html(&$variables, $hook) {
   //drupal_add_js(drupal_get_path('theme', 'health') . '/js/health.gtm.js');
   $variables['google_tag_manager'] = theme('google_tag_manager', []);
 
-  // Add font awesome 5 library.
-  drupal_add_js('https://use.fontawesome.com/releases/v5.0.4/js/all.js', 'external');
-
   // Add variables and paths needed for HTML5 and responsive support.
   $variables['base_path'] = base_path();
   $variables['path_to_health'] = drupal_get_path('theme', 'health');

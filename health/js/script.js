@@ -14,6 +14,15 @@
 
   'use strict';
 
+  // Enable fontawesome pseudo element.
+  Drupal.behaviors.fontAwesome = {
+    attach: function (context, settings) {
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      };
+    }
+  };
+
   Drupal.behaviors.healthMatchHeight = {
     attach: function (context, settings) {
 

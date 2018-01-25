@@ -11,13 +11,17 @@
     opacity: 1;
     background-color: transparent;
   }
-  svg {
-    margin: 0;
-    position: relative;
-    background: $colour-Secondary-dark;
-    color: white;
-    padding: 0.2em;
-    border: 2px solid white;
+  i {
+    padding-left: 0;
+    &:before {
+      position: relative;
+      background: $colour-Secondary;
+      color: white;
+      padding: 0.2em;
+      border: 2px solid white;
+      font-size: 30px;
+      margin: 0;
+    }
   }
 }
 

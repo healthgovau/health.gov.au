@@ -4711,13 +4711,16 @@ p.summary, .field-name-field-summary {
   .goTop:hover {
     opacity: 1;
     background-color: transparent; }
-  .goTop svg {
-    margin: 0;
-    position: relative;
-    background: #007b89;
-    color: white;
-    padding: 0.2em;
-    border: 2px solid white; }
+  .goTop i {
+    padding-left: 0; }
+    .goTop i:before {
+      position: relative;
+      background: #008998;
+      color: white;
+      padding: 0.2em;
+      border: 2px solid white;
+      font-size: 30px;
+      margin: 0; }
 
 .isVisible {
   opacity: .8;
@@ -7040,7 +7043,16 @@ ul.social__links .social__links-item a,
   left: 0; }
   
   .social__links .social__links-item a:before, .listing-back a:before, .listing-back .listing-back__icon:before, [class*="fa-"]:before {
-    display: none; }
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: inherit;
+    font-size: 1.5em;
+    position: absolute;
+    line-height: 1;
+    left: 0;
+    margin-left: -1.2em; }
 
 .fa-large {
   padding-left: 3.5em; }
