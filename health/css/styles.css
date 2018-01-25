@@ -7165,7 +7165,8 @@ p.summary, .field-name-field-summary {
     opacity: 1;
     background-color: transparent; }
   .goTop i {
-    padding-left: 0; }
+    padding-left: 0;
+    margin-left: 0; }
     .goTop i:before {
       position: relative;
       background: #008998;
@@ -10387,6 +10388,8 @@ ul.list--large {
     border-bottom-color: #fff; }
     .page .header-top a:hover {
       border: none; }
+    .page .header-top a:after {
+      color: white; }
   .page .header-top .mobile-hide {
     display: none; }
     @media (min-width: 992px) {

@@ -4712,7 +4712,8 @@ p.summary, .field-name-field-summary {
     opacity: 1;
     background-color: transparent; }
   .goTop i {
-    padding-left: 0; }
+    padding-left: 0;
+    margin-left: 0; }
     .goTop i:before {
       position: relative;
       background: #008998;
