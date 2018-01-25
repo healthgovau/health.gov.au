@@ -240,9 +240,17 @@ body {
       }
       .view-mode-hotline_bar {
         .field-name-field-contact-telephone {
-          svg {
-            color: white;
-            margin-right: 5px;
+          a {
+            &:before {
+              content: "\f095";
+              font-family: FontAwesome;
+              font-size: 1em;
+              font-style: normal;
+              font-weight: normal;
+              text-decoration: inherit;
+              z-index: 1;
+              margin-right: 5px;
+            }
           }
         }
       }

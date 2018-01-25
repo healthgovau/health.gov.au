@@ -9005,8 +9005,14 @@ body.node-type-health-topic .paragraphs-item-para-contact, body.node-type-health
   body.node-type-health-topic .paragraphs-item-para-contact p, body.node-type-health-topic-hp .paragraphs-item-para-contact p, body.node-type-landing-page .paragraphs-item-para-contact p {
     margin-left: auto;
     margin-right: auto; }
-  body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone svg, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone svg, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone svg {
-    color: white;
+  body.node-type-health-topic .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a:before, body.node-type-health-topic-hp .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a:before, body.node-type-landing-page .paragraphs-item-para-contact .view-mode-hotline_bar .field-name-field-contact-telephone a:before {
+    content: "\f095";
+    font-family: FontAwesome;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    z-index: 1;
     margin-right: 5px; }
 
 body.node-type-health-topic .page-landing .paragraphs-2-columns-resources, body.node-type-health-topic-hp .page-landing .paragraphs-2-columns-resources, body.node-type-landing-page .page-landing .paragraphs-2-columns-resources {
