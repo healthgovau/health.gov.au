@@ -14,6 +14,15 @@
 
   'use strict';
 
+  // Enable fontawesome pseudo element.
+  Drupal.behaviors.fontAwesome = {
+    attach: function (context, settings) {
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      };
+    }
+  };
+
   Drupal.behaviors.healthMatchHeight = {
     attach: function (context, settings) {
 
@@ -148,7 +157,6 @@
     }
   };
 
-
   // Responsive tables.
   Drupal.behaviors.responsiveTables = {
     attach: function (context, settings) {
@@ -164,7 +172,7 @@
       // Add external links.
       Drupal.health.externalLinks();
       // Add class to any li surrounding an external link.
-      $('a[rel=external]').parent('li').addClass('external-link');
+      $('a[rel=external]', context).parent('li').addClass('external-link');
     }
   };
 
@@ -173,10 +181,10 @@
     attach: function (context, settings) {
       var total = $('.view-header span', context).text();
       if (total === '1') {
-        $('.view-header span').after(' result');
+        $('.view-header span', context).after(' result');
       }
       else {
-        $('.view-header span').after(' results');
+        $('.view-header span', context).after(' results');
       }
     }
   };

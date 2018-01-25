@@ -15,14 +15,32 @@ ul.social__links, // Getting specific with it nah nah nah nah na na na!
     margin-bottom: 0;
     display: inline;
 
-    svg {
-      margin-right: uikit-space( .5 );
-    }
     // Font Awesome implementation
     a {
       @extend %baseicon;
+      &.youtube:before {
+        content: "\f16a";
+      }
+      &.twitter:before {
+        content: "\f099";
+      }
+      &.facebook:before {
+        content: "\f09a";
+      }
+      &.email:before {
+        content: "\f003";
+      }
+      &.linkedin:before {
+        content: "\f0e1";
+      }
+      &.instagram:before {
+        content: "\f16d";
+      }
+      display: inline;
+      margin-right: 0;
+
       // Hide external link for social media links.
-      svg.fa-external-link-alt {
+      &:after {
         display: none;
       }
     }
