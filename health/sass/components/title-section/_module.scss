@@ -77,10 +77,6 @@
         &:hover, &:focus {
           color: white;
         }
-        &:after {
-          color: white;
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E   %3Cpath fill='white' d='M128 64l-64 64-16-16 64-64'/%3E   %3Cpath fill='white' d='M128 64l-16 16-64-64L64 0'/%3E  %3C/svg%3E");
-        }
         svg {
           font-size: 1.2em;
           margin-right: 10px;
