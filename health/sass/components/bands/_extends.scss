@@ -107,6 +107,9 @@
             &:hover {
               background-color: $colour-Secondary-hover;
             }
+            &:after {
+              color: white;
+            }
           }
         }
       }

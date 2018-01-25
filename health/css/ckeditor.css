@@ -6491,6 +6491,8 @@ body.node-type-health-topic .para-container.paragraphs-item-para-content-text, b
           width: 50%; } }
       .feedback-band.bean-basic-content .feedback-band .feedback-col.link .feedback-col-link a:hover {
         background-color: #006570; }
+      .feedback-band.bean-basic-content .feedback-band .feedback-col.link .feedback-col-link a:after {
+        color: white; }
 
 .para-container.block-id__homepage-about-us {
   background: #f1f1f2; }
@@ -7671,8 +7673,8 @@ p.filter__help {
     .resources-selector ul li .selector-card, .news-events-selector ul li .selector-card {
       text-align: center;
       margin-bottom: 0; }
-      .resources-selector ul li .selector-card .icon, .news-events-selector ul li .selector-card .icon {
-        margin-bottom: 10px; }
+      .resources-selector ul li .selector-card .card:before, .news-events-selector ul li .selector-card .card:before {
+        color: #008998; }
       .resources-selector ul li .selector-card a, .news-events-selector ul li .selector-card a {
         border-bottom: 1px solid #313131;
         margin-bottom: 0;
@@ -7694,6 +7696,70 @@ p.filter__help {
             display: block;
             margin-bottom: 0;
             margin-top: 8px; } }
+      .resources-selector ul li .selector-card .image-card:before, .news-events-selector ul li .selector-card .image-card:before {
+        content: "\f03e";
+        font-family: FontAwesome;
+        font-size: 4em;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        z-index: 1; }
+      .resources-selector ul li .selector-card .video-card:before, .news-events-selector ul li .selector-card .video-card:before {
+        content: "\f03d";
+        font-family: FontAwesome;
+        font-size: 4em;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        z-index: 1; }
+      .resources-selector ul li .selector-card .publication-card:before, .news-events-selector ul li .selector-card .publication-card:before {
+        content: "\f02d";
+        font-family: FontAwesome;
+        font-size: 4em;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        z-index: 1; }
+      .resources-selector ul li .selector-card .corp-publication-card:before, .news-events-selector ul li .selector-card .corp-publication-card:before {
+        content: "\f0ea";
+        font-family: FontAwesome;
+        font-size: 4em;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        z-index: 1; }
+      .resources-selector ul li .selector-card .event-card:before, .news-events-selector ul li .selector-card .event-card:before {
+        content: "\f073";
+        font-family: FontAwesome;
+        font-size: 4em;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        z-index: 1; }
+      .resources-selector ul li .selector-card .news-card:before, .news-events-selector ul li .selector-card .news-card:before {
+        content: "\f1ea";
+        font-family: FontAwesome;
+        font-size: 4em;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        z-index: 1; }
+      .resources-selector ul li .selector-card .release-card:before, .news-events-selector ul li .selector-card .release-card:before {
+        content: "\f0a1";
+        font-family: FontAwesome;
+        font-size: 4em;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        z-index: 1; }
+      .resources-selector ul li .selector-card .alert-card:before, .news-events-selector ul li .selector-card .alert-card:before {
+        content: "\f071";
+        font-family: FontAwesome;
+        font-size: 4em;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        z-index: 1; }
 
 .page-search main .block-search-api-page {
   width: 100%; }
