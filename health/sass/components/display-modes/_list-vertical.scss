@@ -121,6 +121,11 @@
 
     // Date and tag
     @extend %date-and-tag--small;
+
+    // Collection link
+    .field-name-field-publication-collection {
+      padding-top: uikit-space(.75);
+    }
 }
 
 %dm-list-vertical--small-noimage {
