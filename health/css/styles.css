@@ -10350,6 +10350,15 @@ ul.list--large {
   .view-content:after {
     clear: both; }
 
+.page .header-top .alpha-icon, .page .header-top .beta-icon {
+  padding: 0 8px;
+  margin-right: 10px;
+  float: left;
+  text-transform: uppercase;
+  border-radius: 12px;
+  margin-top: 3px;
+  font-size: 14px; }
+
 .page .header-top {
   background: #313131;
   color: #ffffff;
@@ -10372,14 +10381,12 @@ ul.list--large {
         float: right;
         padding-right: 1.6em;
         text-align: right; } }
+  .page .header-top .alpha-icon {
+    background: #c22f73;
+    color: #FFF; }
   .page .header-top .beta-icon {
-    background: #007b89;
-    padding: 0 8px;
-    margin-right: 10px;
-    color: white;
-    font-weight: bold;
-    float: left;
-    text-transform: uppercase; }
+    background: #d34600;
+    color: #FFF; }
   .page .header-top .message {
     display: block;
     margin-left: 60px; }
