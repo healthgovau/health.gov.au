@@ -20,6 +20,11 @@
       @extend %date-and-tag;
     }
 
+    // sub-document links
+    .grouping-title {
+      font-weight: bold;
+    }
+
   }
 
   // Major list

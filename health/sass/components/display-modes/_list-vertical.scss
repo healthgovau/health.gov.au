@@ -59,6 +59,11 @@
             @extend %list-item-title--large;
         }
     }
+
+    // Collection link
+    .field-name-field-publication-collection {
+      padding-top: uikit-space(.75);
+    }
 }
 
 // Listing vertical small
