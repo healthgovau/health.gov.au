@@ -137,27 +137,6 @@
     }
   };
 
-  // Remove required = true until form element has lost focus.
-  Drupal.behaviors.formValidate = {
-    attach: function (context, settings) {
-
-      var reqItems = $(".node-form *:invalid");
-
-      reqItems.each(function () {
-        var element = $(this);
-        // Only apply to elements without a maxlength.
-        // Elements with maxlength are handled by vuejs.
-        if (element.attr('maxlength') == -1) {
-          element.removeAttr('required');
-
-          element.blur(function () {
-            element.attr("required", "true");
-          });
-        }
-      });
-    }
-  };
-
   // Responsive tables.
   Drupal.behaviors.responsiveTables = {
     attach: function (context, settings) {
