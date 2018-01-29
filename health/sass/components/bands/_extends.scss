@@ -122,8 +122,12 @@
   background: $colour-lighter;
   #block-bean-homepage-about-us {
     @extend %band;
-    padding-top: uikit-space(2);
-    padding-bottom: uikit-space(2);
+    padding-top: uikit-space(1);
+    padding-bottom: uikit-space(1);
+    @include uikit-media(sm) {
+      padding-top: uikit-space(2);
+      padding-bottom: uikit-space(2);
+    }
     @extend .container;
   }
 }

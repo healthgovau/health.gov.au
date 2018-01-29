@@ -16,6 +16,10 @@
     }
     border-bottom: 6px solid #e5e5e5;
 
+    ul.contextual-links {
+      display: none;
+    }
+
     @include uikit-media(sm) {
       border-bottom: 0;
       margin-bottom: -7px;
