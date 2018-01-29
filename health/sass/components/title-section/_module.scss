@@ -4,7 +4,7 @@
     @extend %colour-Light-background;
     padding-top: 0;
     padding-bottom: 0;
-    margin-bottom: uikit-space(1);
+    margin-bottom: 0;
     @include uikit-media(sm){
       margin-bottom: uikit-space(2);
     }
@@ -32,12 +32,13 @@
   .section-header {
     @extend .uikit-display-2;
     font-weight: 700;
+    font-size: 16px;
     margin-bottom: 0.4em;
     @include uikit-media(sm) {
       display: none;
     }
     .back-icon {
-      margin-right: 8px;
+      margin-right: -14px;
     }
   }
 

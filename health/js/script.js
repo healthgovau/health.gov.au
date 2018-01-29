@@ -106,10 +106,11 @@
         }
       });
 
-      $('.mobile-nav-toggle', context).click(function (e) {
+      // Local navigation
+      $('.mobile-toggle.mobile-toggle__local-nav a', context).click(function (e) {
         e.preventDefault();
-        $(this).next('div').toggleClass('mobilemenu-active');
-        $(this).toggleClass('mobilemenu-active');
+        $("#block-menu-block-2", context).toggleClass('mobilemenu-active');
+        $(".mobile-toggle.mobile-toggle__local-nav").toggleClass('mobilemenu-active');
       });
 
       $('.filter__mobile-title', context).click(function (e) {

@@ -68,7 +68,6 @@ endif;
   <div class="page-content" id="page-content">
 
   <?php if(!drupal_is_front_page()): ?>
-    <!-- Show the title and breadcrumbs when they are not on the homepage -->
     <div class="page-title header header--light">
     <div class="container">
       <div class="row">

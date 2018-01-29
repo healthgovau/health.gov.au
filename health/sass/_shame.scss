@@ -398,16 +398,6 @@ td, th,
 
 /** START For health professionals **/
 // Include styles to support 'For health professionals' link.
-.topic-subpage {
-  .region-sidebar-second .block-menu-block {
-    float: left;
-    width: 50%;
-    @include uikit-media(sm) {
-      float: none;
-      width: 100%;
-    }
-  }
-}
 // Hide header version on mobile
 body:not(.node-type-health-topic) {
   .page-title__supp {
@@ -421,12 +411,31 @@ body:not(.node-type-health-topic) {
     }
   }
 }
-// Hide sidebar version on desktop
+
 .region-sidebar-second {
+  #block-bean-local-navigation-menu-toggle-for {
+    float: left;
+    width: 50%;
+  }
+
   .bean-public-hp-switcher {
+    float: left;
+    width: 50%;
+    .field-name-field-link-to a.button {
+      display: block;
+      padding: 6px 12px;
+      font-size: 16px;
+
+    }
+    // Hide sidebar version on desktop
     @include uikit-media(sm) {
       display: none;
     }
+  }
+
+  #block-menu-block-2 {
+    clear: both;
+    @include uikit-clearfix;
   }
 }
 /** END For health professionals **/

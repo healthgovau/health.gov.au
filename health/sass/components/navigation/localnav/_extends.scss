@@ -8,19 +8,20 @@
 // Style guide: navigation.nav-menu
 
 // Default link styling
-.menu-block-wrapper.menu-name-main-menu.menu-block-2 {
+.page.menu-block-wrapper.menu-name-main-menu.menu-block-2 {
   @extend .uikit-link-list;
+  padding: 0;
 }
 
 // Local navigation
-.uikit-body .sidebar .block-menu-block {
+.uikit-body .sidebar #block-menu-block-2 {
+
+  @extend %uikit-localnav;
+
   // Drupal block title as link helper styles
   &__title {
     font-size: 18px;
     margin-bottom: 0;
-  }
-  .menu {
-    @extend %uikit-localnav;
   }
 }
 
@@ -37,7 +38,7 @@
     margin: 0;
     a {
       font-size: 18px;
-      @extend %uikit-localnav--link;
+      @extend %uikit-localnav__link;
       border-top: $uikit-borderize;
     }
   }
@@ -57,30 +58,23 @@
   }
 }
 
-// Mobile nav logic.
-.menu-block-wrapper.menu-name-main-menu.menu-block-2.mobilemenu-active {
-  visibility: visible;
-  opacity: 1;
-  height: auto;
+// Mobile toggle.
+.mobile-toggle.mobile-toggle__local-nav {
+  @extend %uikit-localnav__mobile-toggle;
+  a {
+    border-bottom: 0;
+  }
 }
 
-.menu-block-wrapper.menu-name-main-menu.menu-block-2 {
-  visibility: hidden;
-  height: 0;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.8s linear;
-
-  @include uikit-media(xs) {}
-
+// Fix overflow of content onto menu
+#content {
+  padding-top: uikit-space(1.5);
   @include uikit-media(sm) {
-    visibility: visible;
-    opacity: 1;
-    height: auto;
+    padding-top: 0;
   }
+}
 
-  // Hide external link in local nav bar.
-  .menu li.external-link {
-    display: none;
-  }
-
+.region-sidebar-second {
+  @include uikit-clearfix;
+  @extend %colour-Light-background;
 }
