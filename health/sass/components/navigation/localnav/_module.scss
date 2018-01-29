@@ -53,18 +53,32 @@
         border-bottom: none;
       }
     }
+    // Level 1
     a {
-      padding: uikit-space(.5) uikit-space(1);
+      padding: uikit-space(.5) 12px;
+      @include uikit-media(sm) {
+        padding: uikit-space(.5) uikit-space(1);
+      }
     }
+    // Level 2
     ul {
       font-size: 12px;
       a {
-        padding: uikit-space(.5) uikit-space(1.5);
+        padding: uikit-space(.5) uikit-space(1.75);
+        @include uikit-media(sm) {
+          padding: uikit-space(.5) uikit-space(2);
+        }
         border-bottom: 0;
+      }
+
+      // Level 3
+      ul {
+        a {
+          padding: uikit-space(.5) uikit-space(3);
+        }
       }
     }
   }
-
 
   a {
     @extend %uikit-localnav__link;
@@ -75,8 +89,7 @@
   @include uikit-media(sm) { // Always show on desktop.
     display: block;
   }
-
-  &.mobilemenu-active {
+  &.mobilemenu-active { // Show when toggled.
     display: block;
   }
 }

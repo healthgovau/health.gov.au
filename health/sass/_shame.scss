@@ -416,6 +416,9 @@ body:not(.node-type-health-topic) {
 
   @include uikit-clearfix;
   @extend %colour-Light-background;
+  @include uikit-media(sm) {
+    background: white;
+  }
 
   #block-bean-local-navigation-menu-toggle-for {
     float: left;
