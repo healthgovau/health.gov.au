@@ -136,6 +136,7 @@
     }
   };
 
+  /**
   // Remove required = true until form element has lost focus.
   Drupal.behaviors.formValidate = {
     attach: function (context, settings) {
@@ -156,6 +157,7 @@
       });
     }
   };
+   **/
 
   // Responsive tables.
   Drupal.behaviors.responsiveTables = {
