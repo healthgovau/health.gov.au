@@ -9667,12 +9667,20 @@ div.region-content .anchor {
       .uikit-body .sidebar #block-menu-block-2 ul li:last-child, .page .sidebar #block-menu-block-2 ul li:last-child, .rsbtn_colorskin .sidebar #block-menu-block-2 ul li:last-child {
         border-bottom: none; }
     .uikit-body .sidebar #block-menu-block-2 ul a, .page .sidebar #block-menu-block-2 ul a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul a {
-      padding: 0.8em 1.6em; }
+      padding: 0.8em 12px; }
+      @media (min-width: 768px) {
+        .uikit-body .sidebar #block-menu-block-2 ul a, .page .sidebar #block-menu-block-2 ul a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul a {
+          padding: 0.8em 1.6em; } }
     .uikit-body .sidebar #block-menu-block-2 ul ul, .page .sidebar #block-menu-block-2 ul ul, .rsbtn_colorskin .sidebar #block-menu-block-2 ul ul {
       font-size: 12px; }
       .uikit-body .sidebar #block-menu-block-2 ul ul a, .page .sidebar #block-menu-block-2 ul ul a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul ul a {
-        padding: 0.8em 2.4em;
+        padding: 0.8em 2.8em;
         border-bottom: 0; }
+        @media (min-width: 768px) {
+          .uikit-body .sidebar #block-menu-block-2 ul ul a, .page .sidebar #block-menu-block-2 ul ul a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul ul a {
+            padding: 0.8em 3.2em; } }
+      .uikit-body .sidebar #block-menu-block-2 ul ul ul a, .page .sidebar #block-menu-block-2 ul ul ul a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul ul ul a {
+        padding: 0.8em 4.8em; }
   @media (min-width: 768px) {
     .uikit-body .sidebar #block-menu-block-2, .page .sidebar #block-menu-block-2, .rsbtn_colorskin .sidebar #block-menu-block-2 {
       display: block; } }
@@ -10756,6 +10764,10 @@ body:not(.node-type-health-topic) .page-title__supp .region-title-supp .block-be
 
 .region-sidebar-second:after {
   clear: both; }
+
+@media (min-width: 768px) {
+  .region-sidebar-second {
+    background: white; } }
 
 .region-sidebar-second #block-bean-local-navigation-menu-toggle-for {
   float: left;
