@@ -413,6 +413,10 @@ body:not(.node-type-health-topic) {
 }
 
 .region-sidebar-second {
+
+  @include uikit-clearfix;
+  @extend %colour-Light-background;
+
   #block-bean-local-navigation-menu-toggle-for {
     float: left;
     width: 50%;
@@ -438,4 +442,12 @@ body:not(.node-type-health-topic) {
     @include uikit-clearfix;
   }
 }
+// Fix overflow of content onto menu
+#content {
+  padding-top: uikit-space(1.5);
+  @include uikit-media(sm) {
+    padding-top: 0;
+  }
+}
+
 /** END For health professionals **/

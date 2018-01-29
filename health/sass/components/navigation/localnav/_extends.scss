@@ -65,16 +65,3 @@
     border-bottom: 0;
   }
 }
-
-// Fix overflow of content onto menu
-#content {
-  padding-top: uikit-space(1.5);
-  @include uikit-media(sm) {
-    padding-top: 0;
-  }
-}
-
-.region-sidebar-second {
-  @include uikit-clearfix;
-  @extend %colour-Light-background;
-}
