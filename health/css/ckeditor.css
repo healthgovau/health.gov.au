@@ -4,7 +4,7 @@
   background-color: #1b2a57;
   background: linear-gradient(to right, #1b2a57, #153a6e); }
 
-.page-title.header.header--light, body.node-type-health-topic .para-container.paragraphs-item-para-content-text, body.node-type-health-topic-hp .para-container.paragraphs-item-para-content-text, body.node-type-landing-page .para-container.paragraphs-item-para-content-text, .paragraphs-item-para-taxonomies.para-container, .region-sidebar-second .block-menu-block, .front .paragraphs-item-para-block.para-container.block-id__feedback-band {
+.page-title.header.header--light, body.node-type-health-topic .para-container.paragraphs-item-para-content-text, body.node-type-health-topic-hp .para-container.paragraphs-item-para-content-text, body.node-type-landing-page .para-container.paragraphs-item-para-content-text, .paragraphs-item-para-taxonomies.para-container, .front .paragraphs-item-para-block.para-container.block-id__feedback-band, .region-sidebar-second {
   background-color: #ecedee;
   background: linear-gradient(to right, #ecedee, #f9f9f9); }
 
@@ -572,28 +572,28 @@ body.node-type-health-topic .paragraphs-item-two-columns.para-container, body.no
 /**
  * Block of links.
  */
-.uikit-link-list, .breadcrumbs__list, .uikit-inpage-nav-links .toc ul, .uikit-body .sidebar .block-menu-block .menu, .page .sidebar .block-menu-block .menu, .rsbtn_colorskin .sidebar .block-menu-block .menu, .cke_editable .sidebar .block-menu-block .menu, .menu-block-wrapper.menu-name-main-menu.menu-block-2, #block-menu-menu-sub-menu .menu, footer .menu, .region-navigation #block-superfish-1 ul, .tabs {
+.uikit-link-list, .breadcrumbs__list, .uikit-inpage-nav-links .toc ul, .uikit-body .sidebar #block-menu-block-2 ul, .page .sidebar #block-menu-block-2 ul, .rsbtn_colorskin .sidebar #block-menu-block-2 ul, .cke_editable .sidebar #block-menu-block-2 ul, .page.menu-block-wrapper.menu-name-main-menu.menu-block-2, #block-menu-menu-sub-menu .menu, footer .menu, .region-navigation #block-superfish-1 ul, .tabs {
   display: block;
   list-style-type: none; }
-  .uikit-body .uikit-link-list, .page .uikit-link-list, .rsbtn_colorskin .uikit-link-list, .cke_editable .uikit-link-list, .uikit-body .breadcrumbs__list, .page .breadcrumbs__list, .rsbtn_colorskin .breadcrumbs__list, .cke_editable .breadcrumbs__list, .uikit-body .uikit-inpage-nav-links .toc ul, .uikit-inpage-nav-links .toc .uikit-body ul, .page .uikit-inpage-nav-links .toc ul, .uikit-inpage-nav-links .toc .page ul, .rsbtn_colorskin .uikit-inpage-nav-links .toc ul, .uikit-inpage-nav-links .toc .rsbtn_colorskin ul, .cke_editable .uikit-inpage-nav-links .toc ul, .uikit-inpage-nav-links .toc .cke_editable ul, .uikit-body .sidebar .block-menu-block .menu, .page .sidebar .block-menu-block .menu, .rsbtn_colorskin .sidebar .block-menu-block .menu, .cke_editable .sidebar .block-menu-block .menu, .uikit-body .menu-block-wrapper.menu-name-main-menu.menu-block-2, .page .menu-block-wrapper.menu-name-main-menu.menu-block-2, .rsbtn_colorskin .menu-block-wrapper.menu-name-main-menu.menu-block-2, .cke_editable .menu-block-wrapper.menu-name-main-menu.menu-block-2, .uikit-body #block-menu-menu-sub-menu .menu, #block-menu-menu-sub-menu .uikit-body .menu, .page #block-menu-menu-sub-menu .menu, #block-menu-menu-sub-menu .page .menu, .rsbtn_colorskin #block-menu-menu-sub-menu .menu, #block-menu-menu-sub-menu .rsbtn_colorskin .menu, .cke_editable #block-menu-menu-sub-menu .menu, #block-menu-menu-sub-menu .cke_editable .menu, .uikit-body footer .menu, footer .uikit-body .menu, .page footer .menu, footer .page .menu, .rsbtn_colorskin footer .menu, footer .rsbtn_colorskin .menu, .cke_editable footer .menu, footer .cke_editable .menu, .uikit-body .region-navigation #block-superfish-1 ul, .region-navigation #block-superfish-1 .uikit-body ul, .page .region-navigation #block-superfish-1 ul, .region-navigation #block-superfish-1 .page ul, .rsbtn_colorskin .region-navigation #block-superfish-1 ul, .region-navigation #block-superfish-1 .rsbtn_colorskin ul, .cke_editable .region-navigation #block-superfish-1 ul, .region-navigation #block-superfish-1 .cke_editable ul, .uikit-body .tabs, .page .tabs, .rsbtn_colorskin .tabs, .cke_editable .tabs {
+  .uikit-body .uikit-link-list, .page .uikit-link-list, .rsbtn_colorskin .uikit-link-list, .cke_editable .uikit-link-list, .uikit-body .breadcrumbs__list, .page .breadcrumbs__list, .rsbtn_colorskin .breadcrumbs__list, .cke_editable .breadcrumbs__list, .uikit-body .uikit-inpage-nav-links .toc ul, .uikit-inpage-nav-links .toc .uikit-body ul, .page .uikit-inpage-nav-links .toc ul, .uikit-inpage-nav-links .toc .page ul, .rsbtn_colorskin .uikit-inpage-nav-links .toc ul, .uikit-inpage-nav-links .toc .rsbtn_colorskin ul, .cke_editable .uikit-inpage-nav-links .toc ul, .uikit-inpage-nav-links .toc .cke_editable ul, .uikit-body .sidebar #block-menu-block-2 ul, .page .sidebar #block-menu-block-2 ul, .rsbtn_colorskin .sidebar #block-menu-block-2 ul, .cke_editable .sidebar #block-menu-block-2 ul, .uikit-body .page.menu-block-wrapper.menu-name-main-menu.menu-block-2, .page .page.menu-block-wrapper.menu-name-main-menu.menu-block-2, .rsbtn_colorskin .page.menu-block-wrapper.menu-name-main-menu.menu-block-2, .cke_editable .page.menu-block-wrapper.menu-name-main-menu.menu-block-2, .uikit-body #block-menu-menu-sub-menu .menu, #block-menu-menu-sub-menu .uikit-body .menu, .page #block-menu-menu-sub-menu .menu, #block-menu-menu-sub-menu .page .menu, .rsbtn_colorskin #block-menu-menu-sub-menu .menu, #block-menu-menu-sub-menu .rsbtn_colorskin .menu, .cke_editable #block-menu-menu-sub-menu .menu, #block-menu-menu-sub-menu .cke_editable .menu, .uikit-body footer .menu, footer .uikit-body .menu, .page footer .menu, footer .page .menu, .rsbtn_colorskin footer .menu, footer .rsbtn_colorskin .menu, .cke_editable footer .menu, footer .cke_editable .menu, .uikit-body .region-navigation #block-superfish-1 ul, .region-navigation #block-superfish-1 .uikit-body ul, .page .region-navigation #block-superfish-1 ul, .region-navigation #block-superfish-1 .page ul, .rsbtn_colorskin .region-navigation #block-superfish-1 ul, .region-navigation #block-superfish-1 .rsbtn_colorskin ul, .cke_editable .region-navigation #block-superfish-1 ul, .region-navigation #block-superfish-1 .cke_editable ul, .uikit-body .tabs, .page .tabs, .rsbtn_colorskin .tabs, .cke_editable .tabs {
     margin: 0;
     padding: 0.4em 0; }
-  .uikit-link-list > li, .breadcrumbs__list > li, .uikit-inpage-nav-links .toc ul > li, .uikit-body .sidebar .block-menu-block .menu > li, .page .sidebar .block-menu-block .menu > li, .rsbtn_colorskin .sidebar .block-menu-block .menu > li, .cke_editable .sidebar .block-menu-block .menu > li, .menu-block-wrapper.menu-name-main-menu.menu-block-2 > li, #block-menu-menu-sub-menu .menu > li, footer .menu > li, .region-navigation #block-superfish-1 ul > li, .tabs > li {
+  .uikit-link-list > li, .breadcrumbs__list > li, .uikit-inpage-nav-links .toc ul > li, .uikit-body .sidebar #block-menu-block-2 ul > li, .page .sidebar #block-menu-block-2 ul > li, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li, .cke_editable .sidebar #block-menu-block-2 ul > li, .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li, #block-menu-menu-sub-menu .menu > li, footer .menu > li, .region-navigation #block-superfish-1 ul > li, .tabs > li {
     display: block;
     margin: 0.4em; }
-  .uikit-link-list.uikit-link-list--inline, .breadcrumbs__list, .uikit-inpage-nav-links .toc ul.uikit-link-list--inline, .uikit-inpage-nav-links .toc ul.breadcrumbs__list, .uikit-inpage-nav-links .toc ul.tabs, .uikit-body .sidebar .block-menu-block .breadcrumbs__list.menu, .page .sidebar .block-menu-block .breadcrumbs__list.menu, .rsbtn_colorskin .sidebar .block-menu-block .breadcrumbs__list.menu, .cke_editable .sidebar .block-menu-block .breadcrumbs__list.menu, .uikit-body .sidebar .block-menu-block .uikit-link-list--inline.menu, .page .sidebar .block-menu-block .uikit-link-list--inline.menu, .rsbtn_colorskin .sidebar .block-menu-block .uikit-link-list--inline.menu, .cke_editable .sidebar .block-menu-block .uikit-link-list--inline.menu, .uikit-body .sidebar .block-menu-block .menu.tabs, .page .sidebar .block-menu-block .menu.tabs, .rsbtn_colorskin .sidebar .block-menu-block .menu.tabs, .cke_editable .sidebar .block-menu-block .menu.tabs, .uikit-link-list--inline.menu-block-wrapper.menu-name-main-menu.menu-block-2, .menu-block-wrapper.menu-name-main-menu.menu-block-2.breadcrumbs__list, .menu-block-wrapper.menu-name-main-menu.menu-block-2.tabs, #block-menu-menu-sub-menu .menu, footer .uikit-link-list--inline.menu, footer .menu.breadcrumbs__list, footer .menu.tabs, .region-navigation #block-superfish-1 ul.uikit-link-list--inline, .region-navigation #block-superfish-1 ul.breadcrumbs__list, .region-navigation #block-superfish-1 ul.tabs, .tabs {
+  .uikit-link-list.uikit-link-list--inline, .breadcrumbs__list, .uikit-inpage-nav-links .toc ul.uikit-link-list--inline, .uikit-inpage-nav-links .toc ul.breadcrumbs__list, .uikit-inpage-nav-links .toc ul.tabs, .uikit-body .sidebar #block-menu-block-2 ul.uikit-link-list--inline, .page .sidebar #block-menu-block-2 ul.uikit-link-list--inline, .rsbtn_colorskin .sidebar #block-menu-block-2 ul.uikit-link-list--inline, .cke_editable .sidebar #block-menu-block-2 ul.uikit-link-list--inline, .uikit-body .sidebar #block-menu-block-2 ul.breadcrumbs__list, .page .sidebar #block-menu-block-2 ul.breadcrumbs__list, .rsbtn_colorskin .sidebar #block-menu-block-2 ul.breadcrumbs__list, .cke_editable .sidebar #block-menu-block-2 ul.breadcrumbs__list, .uikit-body .sidebar #block-menu-block-2 #block-menu-menu-sub-menu ul.menu, #block-menu-menu-sub-menu .uikit-body .sidebar #block-menu-block-2 ul.menu, .page .sidebar #block-menu-block-2 #block-menu-menu-sub-menu ul.menu, #block-menu-menu-sub-menu .page .sidebar #block-menu-block-2 ul.menu, .rsbtn_colorskin .sidebar #block-menu-block-2 #block-menu-menu-sub-menu ul.menu, #block-menu-menu-sub-menu .rsbtn_colorskin .sidebar #block-menu-block-2 ul.menu, .cke_editable .sidebar #block-menu-block-2 #block-menu-menu-sub-menu ul.menu, #block-menu-menu-sub-menu .cke_editable .sidebar #block-menu-block-2 ul.menu, .uikit-body .sidebar #block-menu-block-2 ul.tabs, .page .sidebar #block-menu-block-2 ul.tabs, .rsbtn_colorskin .sidebar #block-menu-block-2 ul.tabs, .cke_editable .sidebar #block-menu-block-2 ul.tabs, .uikit-link-list--inline.page.menu-block-wrapper.menu-name-main-menu.menu-block-2, .page.menu-block-wrapper.menu-name-main-menu.menu-block-2.breadcrumbs__list, .page.menu-block-wrapper.menu-name-main-menu.menu-block-2.tabs, #block-menu-menu-sub-menu .menu, footer .uikit-link-list--inline.menu, footer .menu.breadcrumbs__list, footer .menu.tabs, .region-navigation #block-superfish-1 ul.uikit-link-list--inline, .region-navigation #block-superfish-1 ul.breadcrumbs__list, .region-navigation #block-superfish-1 ul.tabs, .tabs {
     display: inline-block; }
-    .uikit-link-list.uikit-link-list--inline > li, .breadcrumbs__list > li, .uikit-inpage-nav-links .toc ul.uikit-link-list--inline > li, .uikit-inpage-nav-links .toc ul.breadcrumbs__list > li, #block-menu-menu-sub-menu .uikit-inpage-nav-links .toc ul.menu > li, .uikit-inpage-nav-links .toc ul.tabs > li, .uikit-body .sidebar .block-menu-block .breadcrumbs__list.menu > li, .page .sidebar .block-menu-block .breadcrumbs__list.menu > li, .rsbtn_colorskin .sidebar .block-menu-block .breadcrumbs__list.menu > li, .cke_editable .sidebar .block-menu-block .breadcrumbs__list.menu > li, .uikit-body .sidebar .block-menu-block .uikit-link-list--inline.menu > li, .page .sidebar .block-menu-block .uikit-link-list--inline.menu > li, .rsbtn_colorskin .sidebar .block-menu-block .uikit-link-list--inline.menu > li, .cke_editable .sidebar .block-menu-block .uikit-link-list--inline.menu > li, #block-menu-menu-sub-menu .uikit-body .sidebar .block-menu-block .menu > li, #block-menu-menu-sub-menu .page .sidebar .block-menu-block .menu > li, #block-menu-menu-sub-menu .rsbtn_colorskin .sidebar .block-menu-block .menu > li, #block-menu-menu-sub-menu .cke_editable .sidebar .block-menu-block .menu > li, .uikit-body .sidebar .block-menu-block .menu.tabs > li, .page .sidebar .block-menu-block .menu.tabs > li, .rsbtn_colorskin .sidebar .block-menu-block .menu.tabs > li, .cke_editable .sidebar .block-menu-block .menu.tabs > li, .uikit-link-list--inline.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li, .menu-block-wrapper.menu-name-main-menu.menu-block-2.breadcrumbs__list > li, .menu-block-wrapper.menu-name-main-menu.menu-block-2.tabs > li, #block-menu-menu-sub-menu .menu > li, footer .uikit-link-list--inline.menu > li, footer .menu.breadcrumbs__list > li, #block-menu-menu-sub-menu footer .menu > li, footer .menu.tabs > li, .region-navigation #block-superfish-1 ul.uikit-link-list--inline > li, .region-navigation #block-superfish-1 ul.breadcrumbs__list > li, #block-menu-menu-sub-menu .region-navigation #block-superfish-1 ul.menu > li, .region-navigation #block-superfish-1 ul.tabs > li, .tabs > li {
+    .uikit-link-list.uikit-link-list--inline > li, .breadcrumbs__list > li, .uikit-inpage-nav-links .toc ul.uikit-link-list--inline > li, .uikit-inpage-nav-links .toc ul.breadcrumbs__list > li, #block-menu-menu-sub-menu .uikit-inpage-nav-links .toc ul.menu > li, .uikit-inpage-nav-links .toc ul.tabs > li, .uikit-body .sidebar #block-menu-block-2 ul.uikit-link-list--inline > li, .page .sidebar #block-menu-block-2 ul.uikit-link-list--inline > li, .rsbtn_colorskin .sidebar #block-menu-block-2 ul.uikit-link-list--inline > li, .cke_editable .sidebar #block-menu-block-2 ul.uikit-link-list--inline > li, .uikit-body .sidebar #block-menu-block-2 ul.breadcrumbs__list > li, .page .sidebar #block-menu-block-2 ul.breadcrumbs__list > li, .rsbtn_colorskin .sidebar #block-menu-block-2 ul.breadcrumbs__list > li, .cke_editable .sidebar #block-menu-block-2 ul.breadcrumbs__list > li, .uikit-body .sidebar #block-menu-block-2 #block-menu-menu-sub-menu ul.menu > li, #block-menu-menu-sub-menu .uikit-body .sidebar #block-menu-block-2 ul.menu > li, .page .sidebar #block-menu-block-2 #block-menu-menu-sub-menu ul.menu > li, #block-menu-menu-sub-menu .page .sidebar #block-menu-block-2 ul.menu > li, .rsbtn_colorskin .sidebar #block-menu-block-2 #block-menu-menu-sub-menu ul.menu > li, #block-menu-menu-sub-menu .rsbtn_colorskin .sidebar #block-menu-block-2 ul.menu > li, .cke_editable .sidebar #block-menu-block-2 #block-menu-menu-sub-menu ul.menu > li, #block-menu-menu-sub-menu .cke_editable .sidebar #block-menu-block-2 ul.menu > li, .uikit-body .sidebar #block-menu-block-2 ul.tabs > li, .page .sidebar #block-menu-block-2 ul.tabs > li, .rsbtn_colorskin .sidebar #block-menu-block-2 ul.tabs > li, .cke_editable .sidebar #block-menu-block-2 ul.tabs > li, .uikit-link-list--inline.page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li, .page.menu-block-wrapper.menu-name-main-menu.menu-block-2.breadcrumbs__list > li, .page.menu-block-wrapper.menu-name-main-menu.menu-block-2.tabs > li, #block-menu-menu-sub-menu .menu > li, footer .uikit-link-list--inline.menu > li, footer .menu.breadcrumbs__list > li, #block-menu-menu-sub-menu footer .menu > li, footer .menu.tabs > li, .region-navigation #block-superfish-1 ul.uikit-link-list--inline > li, .region-navigation #block-superfish-1 ul.breadcrumbs__list > li, #block-menu-menu-sub-menu .region-navigation #block-superfish-1 ul.menu > li, .region-navigation #block-superfish-1 ul.tabs > li, .tabs > li {
       display: inline-block; }
-  .uikit-link-list.uikit-link-list--inverted, .uikit-link-list--inverted.breadcrumbs__list, .uikit-inpage-nav-links .toc ul.uikit-link-list--inverted, .uikit-body .sidebar .block-menu-block .uikit-link-list--inverted.menu, .page .sidebar .block-menu-block .uikit-link-list--inverted.menu, .rsbtn_colorskin .sidebar .block-menu-block .uikit-link-list--inverted.menu, .cke_editable .sidebar .block-menu-block .uikit-link-list--inverted.menu, .uikit-link-list--inverted.menu-block-wrapper.menu-name-main-menu.menu-block-2, #block-menu-menu-sub-menu .uikit-link-list--inverted.menu, footer .uikit-link-list--inverted.menu, .region-navigation #block-superfish-1 ul.uikit-link-list--inverted, .uikit-link-list--inverted.tabs {
+  .uikit-link-list.uikit-link-list--inverted, .uikit-link-list--inverted.breadcrumbs__list, .uikit-inpage-nav-links .toc ul.uikit-link-list--inverted, .uikit-body .sidebar #block-menu-block-2 ul.uikit-link-list--inverted, .page .sidebar #block-menu-block-2 ul.uikit-link-list--inverted, .rsbtn_colorskin .sidebar #block-menu-block-2 ul.uikit-link-list--inverted, .cke_editable .sidebar #block-menu-block-2 ul.uikit-link-list--inverted, .uikit-link-list--inverted.page.menu-block-wrapper.menu-name-main-menu.menu-block-2, #block-menu-menu-sub-menu .uikit-link-list--inverted.menu, footer .uikit-link-list--inverted.menu, .region-navigation #block-superfish-1 ul.uikit-link-list--inverted, .uikit-link-list--inverted.tabs {
     background-color: #313131;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
-    .uikit-link-list.uikit-link-list--inverted > li > a, .uikit-link-list--inverted.breadcrumbs__list > li > a, .uikit-inpage-nav-links .toc ul.uikit-link-list--inverted > li > a, .uikit-body .sidebar .block-menu-block .uikit-link-list--inverted.menu > li > a, .page .sidebar .block-menu-block .uikit-link-list--inverted.menu > li > a, .rsbtn_colorskin .sidebar .block-menu-block .uikit-link-list--inverted.menu > li > a, .cke_editable .sidebar .block-menu-block .uikit-link-list--inverted.menu > li > a, .uikit-link-list--inverted.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li > a, #block-menu-menu-sub-menu .uikit-link-list--inverted.menu > li > a, footer .uikit-link-list--inverted.menu > li > a, .region-navigation #block-superfish-1 ul.uikit-link-list--inverted > li > a, .uikit-link-list--inverted.tabs > li > a {
+    .uikit-link-list.uikit-link-list--inverted > li > a, .uikit-link-list--inverted.breadcrumbs__list > li > a, .uikit-inpage-nav-links .toc ul.uikit-link-list--inverted > li > a, .uikit-body .sidebar #block-menu-block-2 ul.uikit-link-list--inverted > li > a, .page .sidebar #block-menu-block-2 ul.uikit-link-list--inverted > li > a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul.uikit-link-list--inverted > li > a, .cke_editable .sidebar #block-menu-block-2 ul.uikit-link-list--inverted > li > a, .uikit-link-list--inverted.page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li > a, #block-menu-menu-sub-menu .uikit-link-list--inverted.menu > li > a, footer .uikit-link-list--inverted.menu > li > a, .region-navigation #block-superfish-1 ul.uikit-link-list--inverted > li > a, .uikit-link-list--inverted.tabs > li > a {
       color: #fff;
       border-color: #008998;
       transition: color 0.1s ease-in-out; }
-      .uikit-link-list.uikit-link-list--inverted > li > a:hover, .uikit-link-list--inverted.breadcrumbs__list > li > a:hover, .uikit-inpage-nav-links .toc ul.uikit-link-list--inverted > li > a:hover, .uikit-body .sidebar .block-menu-block .uikit-link-list--inverted.menu > li > a:hover, .page .sidebar .block-menu-block .uikit-link-list--inverted.menu > li > a:hover, .rsbtn_colorskin .sidebar .block-menu-block .uikit-link-list--inverted.menu > li > a:hover, .cke_editable .sidebar .block-menu-block .uikit-link-list--inverted.menu > li > a:hover, .uikit-link-list--inverted.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li > a:hover, #block-menu-menu-sub-menu .uikit-link-list--inverted.menu > li > a:hover, footer .uikit-link-list--inverted.menu > li > a:hover, .region-navigation #block-superfish-1 ul.uikit-link-list--inverted > li > a:hover, .uikit-link-list--inverted.tabs > li > a:hover, .uikit-link-list.uikit-link-list--inverted > li > a:focus, .uikit-link-list--inverted.breadcrumbs__list > li > a:focus, .uikit-inpage-nav-links .toc ul.uikit-link-list--inverted > li > a:focus, .uikit-body .sidebar .block-menu-block .uikit-link-list--inverted.menu > li > a:focus, .page .sidebar .block-menu-block .uikit-link-list--inverted.menu > li > a:focus, .rsbtn_colorskin .sidebar .block-menu-block .uikit-link-list--inverted.menu > li > a:focus, .cke_editable .sidebar .block-menu-block .uikit-link-list--inverted.menu > li > a:focus, .uikit-link-list--inverted.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li > a:focus, #block-menu-menu-sub-menu .uikit-link-list--inverted.menu > li > a:focus, footer .uikit-link-list--inverted.menu > li > a:focus, .region-navigation #block-superfish-1 ul.uikit-link-list--inverted > li > a:focus, .uikit-link-list--inverted.tabs > li > a:focus {
+      .uikit-link-list.uikit-link-list--inverted > li > a:hover, .uikit-link-list--inverted.breadcrumbs__list > li > a:hover, .uikit-inpage-nav-links .toc ul.uikit-link-list--inverted > li > a:hover, .uikit-body .sidebar #block-menu-block-2 ul.uikit-link-list--inverted > li > a:hover, .page .sidebar #block-menu-block-2 ul.uikit-link-list--inverted > li > a:hover, .rsbtn_colorskin .sidebar #block-menu-block-2 ul.uikit-link-list--inverted > li > a:hover, .cke_editable .sidebar #block-menu-block-2 ul.uikit-link-list--inverted > li > a:hover, .uikit-link-list--inverted.page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li > a:hover, #block-menu-menu-sub-menu .uikit-link-list--inverted.menu > li > a:hover, footer .uikit-link-list--inverted.menu > li > a:hover, .region-navigation #block-superfish-1 ul.uikit-link-list--inverted > li > a:hover, .uikit-link-list--inverted.tabs > li > a:hover, .uikit-link-list.uikit-link-list--inverted > li > a:focus, .uikit-link-list--inverted.breadcrumbs__list > li > a:focus, .uikit-inpage-nav-links .toc ul.uikit-link-list--inverted > li > a:focus, .uikit-body .sidebar #block-menu-block-2 ul.uikit-link-list--inverted > li > a:focus, .page .sidebar #block-menu-block-2 ul.uikit-link-list--inverted > li > a:focus, .rsbtn_colorskin .sidebar #block-menu-block-2 ul.uikit-link-list--inverted > li > a:focus, .cke_editable .sidebar #block-menu-block-2 ul.uikit-link-list--inverted > li > a:focus, .uikit-link-list--inverted.page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li > a:focus, #block-menu-menu-sub-menu .uikit-link-list--inverted.menu > li > a:focus, footer .uikit-link-list--inverted.menu > li > a:focus, .region-navigation #block-superfish-1 ul.uikit-link-list--inverted > li > a:focus, .uikit-link-list--inverted.tabs > li > a:focus {
         background-color: #008998;
         color: #313131; }
 
@@ -602,12 +602,12 @@ body.node-type-health-topic .paragraphs-item-two-columns.para-container, body.no
   .breadcrumbs > .uikit-link-list > li:after,
   .uikit-breadcrumbs > .uikit-link-list > li:after, .breadcrumbs > .breadcrumbs__list > li:after,
   .uikit-breadcrumbs > .breadcrumbs__list > li:after, .uikit-inpage-nav-links .toc .breadcrumbs > ul > li:after, .uikit-inpage-nav-links .toc
-  .uikit-breadcrumbs > ul > li:after, .uikit-body .sidebar .block-menu-block .breadcrumbs > .menu > li:after, .uikit-body .sidebar .block-menu-block
-  .uikit-breadcrumbs > .menu > li:after, .page .sidebar .block-menu-block .breadcrumbs > .menu > li:after, .page .sidebar .block-menu-block
-  .uikit-breadcrumbs > .menu > li:after, .rsbtn_colorskin .sidebar .block-menu-block .breadcrumbs > .menu > li:after, .rsbtn_colorskin .sidebar .block-menu-block
-  .uikit-breadcrumbs > .menu > li:after, .cke_editable .sidebar .block-menu-block .breadcrumbs > .menu > li:after, .cke_editable .sidebar .block-menu-block
-  .uikit-breadcrumbs > .menu > li:after, .breadcrumbs > .menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after,
-  .uikit-breadcrumbs > .menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after, #block-menu-menu-sub-menu .breadcrumbs > .menu > li:after, #block-menu-menu-sub-menu
+  .uikit-breadcrumbs > ul > li:after, .uikit-body .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after, .uikit-body .sidebar #block-menu-block-2
+  .uikit-breadcrumbs > ul > li:after, .page .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after, .page .sidebar #block-menu-block-2
+  .uikit-breadcrumbs > ul > li:after, .rsbtn_colorskin .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after, .rsbtn_colorskin .sidebar #block-menu-block-2
+  .uikit-breadcrumbs > ul > li:after, .cke_editable .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after, .cke_editable .sidebar #block-menu-block-2
+  .uikit-breadcrumbs > ul > li:after, .breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after,
+  .uikit-breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after, #block-menu-menu-sub-menu .breadcrumbs > .menu > li:after, #block-menu-menu-sub-menu
   .uikit-breadcrumbs > .menu > li:after, footer .breadcrumbs > .menu > li:after, footer
   .uikit-breadcrumbs > .menu > li:after, .region-navigation #block-superfish-1 .breadcrumbs > ul > li:after, .region-navigation #block-superfish-1
   .uikit-breadcrumbs > ul > li:after, .breadcrumbs > .tabs > li:after,
@@ -629,12 +629,12 @@ body.node-type-health-topic .paragraphs-item-two-columns.para-container, body.no
   .breadcrumbs > .uikit-link-list > li,
   .uikit-breadcrumbs > .uikit-link-list > li, .breadcrumbs > .breadcrumbs__list > li,
   .uikit-breadcrumbs > .breadcrumbs__list > li, .uikit-inpage-nav-links .toc .breadcrumbs > ul > li, .uikit-inpage-nav-links .toc
-  .uikit-breadcrumbs > ul > li, .uikit-body .sidebar .block-menu-block .breadcrumbs > .menu > li, .uikit-body .sidebar .block-menu-block
-  .uikit-breadcrumbs > .menu > li, .page .sidebar .block-menu-block .breadcrumbs > .menu > li, .page .sidebar .block-menu-block
-  .uikit-breadcrumbs > .menu > li, .rsbtn_colorskin .sidebar .block-menu-block .breadcrumbs > .menu > li, .rsbtn_colorskin .sidebar .block-menu-block
-  .uikit-breadcrumbs > .menu > li, .cke_editable .sidebar .block-menu-block .breadcrumbs > .menu > li, .cke_editable .sidebar .block-menu-block
-  .uikit-breadcrumbs > .menu > li, .breadcrumbs > .menu-block-wrapper.menu-name-main-menu.menu-block-2 > li,
-  .uikit-breadcrumbs > .menu-block-wrapper.menu-name-main-menu.menu-block-2 > li, #block-menu-menu-sub-menu .breadcrumbs > .menu > li, #block-menu-menu-sub-menu
+  .uikit-breadcrumbs > ul > li, .uikit-body .sidebar #block-menu-block-2 .breadcrumbs > ul > li, .uikit-body .sidebar #block-menu-block-2
+  .uikit-breadcrumbs > ul > li, .page .sidebar #block-menu-block-2 .breadcrumbs > ul > li, .page .sidebar #block-menu-block-2
+  .uikit-breadcrumbs > ul > li, .rsbtn_colorskin .sidebar #block-menu-block-2 .breadcrumbs > ul > li, .rsbtn_colorskin .sidebar #block-menu-block-2
+  .uikit-breadcrumbs > ul > li, .cke_editable .sidebar #block-menu-block-2 .breadcrumbs > ul > li, .cke_editable .sidebar #block-menu-block-2
+  .uikit-breadcrumbs > ul > li, .breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li,
+  .uikit-breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li, #block-menu-menu-sub-menu .breadcrumbs > .menu > li, #block-menu-menu-sub-menu
   .uikit-breadcrumbs > .menu > li, footer .breadcrumbs > .menu > li, footer
   .uikit-breadcrumbs > .menu > li, .region-navigation #block-superfish-1 .breadcrumbs > ul > li, .region-navigation #block-superfish-1
   .uikit-breadcrumbs > ul > li, .breadcrumbs > .tabs > li,
@@ -643,12 +643,12 @@ body.node-type-health-topic .paragraphs-item-two-columns.para-container, body.no
     .breadcrumbs > .uikit-link-list > li:after,
     .uikit-breadcrumbs > .uikit-link-list > li:after, .breadcrumbs > .breadcrumbs__list > li:after,
     .uikit-breadcrumbs > .breadcrumbs__list > li:after, .uikit-inpage-nav-links .toc .breadcrumbs > ul > li:after, .uikit-inpage-nav-links .toc
-    .uikit-breadcrumbs > ul > li:after, .uikit-body .sidebar .block-menu-block .breadcrumbs > .menu > li:after, .uikit-body .sidebar .block-menu-block
-    .uikit-breadcrumbs > .menu > li:after, .page .sidebar .block-menu-block .breadcrumbs > .menu > li:after, .page .sidebar .block-menu-block
-    .uikit-breadcrumbs > .menu > li:after, .rsbtn_colorskin .sidebar .block-menu-block .breadcrumbs > .menu > li:after, .rsbtn_colorskin .sidebar .block-menu-block
-    .uikit-breadcrumbs > .menu > li:after, .cke_editable .sidebar .block-menu-block .breadcrumbs > .menu > li:after, .cke_editable .sidebar .block-menu-block
-    .uikit-breadcrumbs > .menu > li:after, .breadcrumbs > .menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after,
-    .uikit-breadcrumbs > .menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after, #block-menu-menu-sub-menu .breadcrumbs > .menu > li:after, #block-menu-menu-sub-menu
+    .uikit-breadcrumbs > ul > li:after, .uikit-body .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after, .uikit-body .sidebar #block-menu-block-2
+    .uikit-breadcrumbs > ul > li:after, .page .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after, .page .sidebar #block-menu-block-2
+    .uikit-breadcrumbs > ul > li:after, .rsbtn_colorskin .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after, .rsbtn_colorskin .sidebar #block-menu-block-2
+    .uikit-breadcrumbs > ul > li:after, .cke_editable .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after, .cke_editable .sidebar #block-menu-block-2
+    .uikit-breadcrumbs > ul > li:after, .breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after,
+    .uikit-breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after, #block-menu-menu-sub-menu .breadcrumbs > .menu > li:after, #block-menu-menu-sub-menu
     .uikit-breadcrumbs > .menu > li:after, footer .breadcrumbs > .menu > li:after, footer
     .uikit-breadcrumbs > .menu > li:after, .region-navigation #block-superfish-1 .breadcrumbs > ul > li:after, .region-navigation #block-superfish-1
     .uikit-breadcrumbs > ul > li:after, .breadcrumbs > .tabs > li:after,
@@ -662,12 +662,12 @@ body.node-type-health-topic .paragraphs-item-two-columns.para-container, body.no
     .breadcrumbs > .uikit-link-list > li:last-child:after,
     .uikit-breadcrumbs > .uikit-link-list > li:last-child:after, .breadcrumbs > .breadcrumbs__list > li:last-child:after,
     .uikit-breadcrumbs > .breadcrumbs__list > li:last-child:after, .uikit-inpage-nav-links .toc .breadcrumbs > ul > li:last-child:after, .uikit-inpage-nav-links .toc
-    .uikit-breadcrumbs > ul > li:last-child:after, .uikit-body .sidebar .block-menu-block .breadcrumbs > .menu > li:last-child:after, .uikit-body .sidebar .block-menu-block
-    .uikit-breadcrumbs > .menu > li:last-child:after, .page .sidebar .block-menu-block .breadcrumbs > .menu > li:last-child:after, .page .sidebar .block-menu-block
-    .uikit-breadcrumbs > .menu > li:last-child:after, .rsbtn_colorskin .sidebar .block-menu-block .breadcrumbs > .menu > li:last-child:after, .rsbtn_colorskin .sidebar .block-menu-block
-    .uikit-breadcrumbs > .menu > li:last-child:after, .cke_editable .sidebar .block-menu-block .breadcrumbs > .menu > li:last-child:after, .cke_editable .sidebar .block-menu-block
-    .uikit-breadcrumbs > .menu > li:last-child:after, .breadcrumbs > .menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:last-child:after,
-    .uikit-breadcrumbs > .menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:last-child:after, #block-menu-menu-sub-menu .breadcrumbs > .menu > li:last-child:after, #block-menu-menu-sub-menu
+    .uikit-breadcrumbs > ul > li:last-child:after, .uikit-body .sidebar #block-menu-block-2 .breadcrumbs > ul > li:last-child:after, .uikit-body .sidebar #block-menu-block-2
+    .uikit-breadcrumbs > ul > li:last-child:after, .page .sidebar #block-menu-block-2 .breadcrumbs > ul > li:last-child:after, .page .sidebar #block-menu-block-2
+    .uikit-breadcrumbs > ul > li:last-child:after, .rsbtn_colorskin .sidebar #block-menu-block-2 .breadcrumbs > ul > li:last-child:after, .rsbtn_colorskin .sidebar #block-menu-block-2
+    .uikit-breadcrumbs > ul > li:last-child:after, .cke_editable .sidebar #block-menu-block-2 .breadcrumbs > ul > li:last-child:after, .cke_editable .sidebar #block-menu-block-2
+    .uikit-breadcrumbs > ul > li:last-child:after, .breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:last-child:after,
+    .uikit-breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:last-child:after, #block-menu-menu-sub-menu .breadcrumbs > .menu > li:last-child:after, #block-menu-menu-sub-menu
     .uikit-breadcrumbs > .menu > li:last-child:after, footer .breadcrumbs > .menu > li:last-child:after, footer
     .uikit-breadcrumbs > .menu > li:last-child:after, .region-navigation #block-superfish-1 .breadcrumbs > ul > li:last-child:after, .region-navigation #block-superfish-1
     .uikit-breadcrumbs > ul > li:last-child:after, .breadcrumbs > .tabs > li:last-child:after,
@@ -677,16 +677,16 @@ body.node-type-health-topic .paragraphs-item-two-columns.para-container, body.no
     .uikit-breadcrumbs > .uikit-link-list > li:after, .ie8 .breadcrumbs > .breadcrumbs__list > li:after, .ie8
     .uikit-breadcrumbs > .breadcrumbs__list > li:after, .ie8 .uikit-inpage-nav-links .toc .breadcrumbs > ul > li:after, .uikit-inpage-nav-links .toc .ie8 .breadcrumbs > ul > li:after, .ie8 .uikit-inpage-nav-links .toc
     .uikit-breadcrumbs > ul > li:after, .uikit-inpage-nav-links .toc .ie8
-    .uikit-breadcrumbs > ul > li:after, .ie8 .uikit-body .sidebar .block-menu-block .breadcrumbs > .menu > li:after, .uikit-body .sidebar .block-menu-block .ie8 .breadcrumbs > .menu > li:after, .ie8 .uikit-body .sidebar .block-menu-block
-    .uikit-breadcrumbs > .menu > li:after, .uikit-body .sidebar .block-menu-block .ie8
-    .uikit-breadcrumbs > .menu > li:after, .ie8 .page .sidebar .block-menu-block .breadcrumbs > .menu > li:after, .page .sidebar .block-menu-block .ie8 .breadcrumbs > .menu > li:after, .ie8 .page .sidebar .block-menu-block
-    .uikit-breadcrumbs > .menu > li:after, .page .sidebar .block-menu-block .ie8
-    .uikit-breadcrumbs > .menu > li:after, .ie8 .rsbtn_colorskin .sidebar .block-menu-block .breadcrumbs > .menu > li:after, .rsbtn_colorskin .sidebar .block-menu-block .ie8 .breadcrumbs > .menu > li:after, .ie8 .rsbtn_colorskin .sidebar .block-menu-block
-    .uikit-breadcrumbs > .menu > li:after, .rsbtn_colorskin .sidebar .block-menu-block .ie8
-    .uikit-breadcrumbs > .menu > li:after, .ie8 .cke_editable .sidebar .block-menu-block .breadcrumbs > .menu > li:after, .cke_editable .sidebar .block-menu-block .ie8 .breadcrumbs > .menu > li:after, .ie8 .cke_editable .sidebar .block-menu-block
-    .uikit-breadcrumbs > .menu > li:after, .cke_editable .sidebar .block-menu-block .ie8
-    .uikit-breadcrumbs > .menu > li:after, .ie8 .breadcrumbs > .menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after, .ie8
-    .uikit-breadcrumbs > .menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after, .ie8 #block-menu-menu-sub-menu .breadcrumbs > .menu > li:after, #block-menu-menu-sub-menu .ie8 .breadcrumbs > .menu > li:after, .ie8 #block-menu-menu-sub-menu
+    .uikit-breadcrumbs > ul > li:after, .ie8 .uikit-body .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after, .uikit-body .sidebar #block-menu-block-2 .ie8 .breadcrumbs > ul > li:after, .ie8 .uikit-body .sidebar #block-menu-block-2
+    .uikit-breadcrumbs > ul > li:after, .uikit-body .sidebar #block-menu-block-2 .ie8
+    .uikit-breadcrumbs > ul > li:after, .ie8 .page .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after, .page .sidebar #block-menu-block-2 .ie8 .breadcrumbs > ul > li:after, .ie8 .page .sidebar #block-menu-block-2
+    .uikit-breadcrumbs > ul > li:after, .page .sidebar #block-menu-block-2 .ie8
+    .uikit-breadcrumbs > ul > li:after, .ie8 .rsbtn_colorskin .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after, .rsbtn_colorskin .sidebar #block-menu-block-2 .ie8 .breadcrumbs > ul > li:after, .ie8 .rsbtn_colorskin .sidebar #block-menu-block-2
+    .uikit-breadcrumbs > ul > li:after, .rsbtn_colorskin .sidebar #block-menu-block-2 .ie8
+    .uikit-breadcrumbs > ul > li:after, .ie8 .cke_editable .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after, .cke_editable .sidebar #block-menu-block-2 .ie8 .breadcrumbs > ul > li:after, .ie8 .cke_editable .sidebar #block-menu-block-2
+    .uikit-breadcrumbs > ul > li:after, .cke_editable .sidebar #block-menu-block-2 .ie8
+    .uikit-breadcrumbs > ul > li:after, .ie8 .breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after, .ie8
+    .uikit-breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after, .ie8 #block-menu-menu-sub-menu .breadcrumbs > .menu > li:after, #block-menu-menu-sub-menu .ie8 .breadcrumbs > .menu > li:after, .ie8 #block-menu-menu-sub-menu
     .uikit-breadcrumbs > .menu > li:after, #block-menu-menu-sub-menu .ie8
     .uikit-breadcrumbs > .menu > li:after, .ie8 footer .breadcrumbs > .menu > li:after, footer .ie8 .breadcrumbs > .menu > li:after, .ie8 footer
     .uikit-breadcrumbs > .menu > li:after, footer .ie8
@@ -706,33 +706,33 @@ body.node-type-health-topic .paragraphs-item-two-columns.para-container, body.no
     .uikit-breadcrumbs > ul > li:after, .uikit-inpage-nav-links .toc
     .lt-ie8
     .uikit-breadcrumbs > ul > li:after,
-    .lt-ie8 .uikit-body .sidebar .block-menu-block .breadcrumbs > .menu > li:after, .uikit-body .sidebar .block-menu-block
-    .lt-ie8 .breadcrumbs > .menu > li:after,
-    .lt-ie8 .uikit-body .sidebar .block-menu-block
-    .uikit-breadcrumbs > .menu > li:after, .uikit-body .sidebar .block-menu-block
+    .lt-ie8 .uikit-body .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after, .uikit-body .sidebar #block-menu-block-2
+    .lt-ie8 .breadcrumbs > ul > li:after,
+    .lt-ie8 .uikit-body .sidebar #block-menu-block-2
+    .uikit-breadcrumbs > ul > li:after, .uikit-body .sidebar #block-menu-block-2
     .lt-ie8
-    .uikit-breadcrumbs > .menu > li:after,
-    .lt-ie8 .page .sidebar .block-menu-block .breadcrumbs > .menu > li:after, .page .sidebar .block-menu-block
-    .lt-ie8 .breadcrumbs > .menu > li:after,
-    .lt-ie8 .page .sidebar .block-menu-block
-    .uikit-breadcrumbs > .menu > li:after, .page .sidebar .block-menu-block
+    .uikit-breadcrumbs > ul > li:after,
+    .lt-ie8 .page .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after, .page .sidebar #block-menu-block-2
+    .lt-ie8 .breadcrumbs > ul > li:after,
+    .lt-ie8 .page .sidebar #block-menu-block-2
+    .uikit-breadcrumbs > ul > li:after, .page .sidebar #block-menu-block-2
     .lt-ie8
-    .uikit-breadcrumbs > .menu > li:after,
-    .lt-ie8 .rsbtn_colorskin .sidebar .block-menu-block .breadcrumbs > .menu > li:after, .rsbtn_colorskin .sidebar .block-menu-block
-    .lt-ie8 .breadcrumbs > .menu > li:after,
-    .lt-ie8 .rsbtn_colorskin .sidebar .block-menu-block
-    .uikit-breadcrumbs > .menu > li:after, .rsbtn_colorskin .sidebar .block-menu-block
+    .uikit-breadcrumbs > ul > li:after,
+    .lt-ie8 .rsbtn_colorskin .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after, .rsbtn_colorskin .sidebar #block-menu-block-2
+    .lt-ie8 .breadcrumbs > ul > li:after,
+    .lt-ie8 .rsbtn_colorskin .sidebar #block-menu-block-2
+    .uikit-breadcrumbs > ul > li:after, .rsbtn_colorskin .sidebar #block-menu-block-2
     .lt-ie8
-    .uikit-breadcrumbs > .menu > li:after,
-    .lt-ie8 .cke_editable .sidebar .block-menu-block .breadcrumbs > .menu > li:after, .cke_editable .sidebar .block-menu-block
-    .lt-ie8 .breadcrumbs > .menu > li:after,
-    .lt-ie8 .cke_editable .sidebar .block-menu-block
-    .uikit-breadcrumbs > .menu > li:after, .cke_editable .sidebar .block-menu-block
+    .uikit-breadcrumbs > ul > li:after,
+    .lt-ie8 .cke_editable .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after, .cke_editable .sidebar #block-menu-block-2
+    .lt-ie8 .breadcrumbs > ul > li:after,
+    .lt-ie8 .cke_editable .sidebar #block-menu-block-2
+    .uikit-breadcrumbs > ul > li:after, .cke_editable .sidebar #block-menu-block-2
     .lt-ie8
-    .uikit-breadcrumbs > .menu > li:after,
-    .lt-ie8 .breadcrumbs > .menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after,
+    .uikit-breadcrumbs > ul > li:after,
+    .lt-ie8 .breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after,
     .lt-ie8
-    .uikit-breadcrumbs > .menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after,
+    .uikit-breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after,
     .lt-ie8 #block-menu-menu-sub-menu .breadcrumbs > .menu > li:after, #block-menu-menu-sub-menu
     .lt-ie8 .breadcrumbs > .menu > li:after,
     .lt-ie8 #block-menu-menu-sub-menu
@@ -763,12 +763,12 @@ body.node-type-health-topic .paragraphs-item-two-columns.para-container, body.no
     .uikit-breadcrumbs--inverted.breadcrumbs > .uikit-link-list > li:not(:last-child):after,
     .uikit-breadcrumbs--inverted.uikit-breadcrumbs > .uikit-link-list > li:not(:last-child):after, .uikit-breadcrumbs--inverted.breadcrumbs > .breadcrumbs__list > li:not(:last-child):after,
     .uikit-breadcrumbs--inverted.uikit-breadcrumbs > .breadcrumbs__list > li:not(:last-child):after, .uikit-inpage-nav-links .toc .uikit-breadcrumbs--inverted.breadcrumbs > ul > li:not(:last-child):after, .uikit-inpage-nav-links .toc
-    .uikit-breadcrumbs--inverted.uikit-breadcrumbs > ul > li:not(:last-child):after, .uikit-body .sidebar .block-menu-block .uikit-breadcrumbs--inverted.breadcrumbs > .menu > li:not(:last-child):after, .uikit-body .sidebar .block-menu-block
-    .uikit-breadcrumbs--inverted.uikit-breadcrumbs > .menu > li:not(:last-child):after, .page .sidebar .block-menu-block .uikit-breadcrumbs--inverted.breadcrumbs > .menu > li:not(:last-child):after, .page .sidebar .block-menu-block
-    .uikit-breadcrumbs--inverted.uikit-breadcrumbs > .menu > li:not(:last-child):after, .rsbtn_colorskin .sidebar .block-menu-block .uikit-breadcrumbs--inverted.breadcrumbs > .menu > li:not(:last-child):after, .rsbtn_colorskin .sidebar .block-menu-block
-    .uikit-breadcrumbs--inverted.uikit-breadcrumbs > .menu > li:not(:last-child):after, .cke_editable .sidebar .block-menu-block .uikit-breadcrumbs--inverted.breadcrumbs > .menu > li:not(:last-child):after, .cke_editable .sidebar .block-menu-block
-    .uikit-breadcrumbs--inverted.uikit-breadcrumbs > .menu > li:not(:last-child):after, .uikit-breadcrumbs--inverted.breadcrumbs > .menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:not(:last-child):after,
-    .uikit-breadcrumbs--inverted.uikit-breadcrumbs > .menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:not(:last-child):after, #block-menu-menu-sub-menu .uikit-breadcrumbs--inverted.breadcrumbs > .menu > li:not(:last-child):after, #block-menu-menu-sub-menu
+    .uikit-breadcrumbs--inverted.uikit-breadcrumbs > ul > li:not(:last-child):after, .uikit-body .sidebar #block-menu-block-2 .uikit-breadcrumbs--inverted.breadcrumbs > ul > li:not(:last-child):after, .uikit-body .sidebar #block-menu-block-2
+    .uikit-breadcrumbs--inverted.uikit-breadcrumbs > ul > li:not(:last-child):after, .page .sidebar #block-menu-block-2 .uikit-breadcrumbs--inverted.breadcrumbs > ul > li:not(:last-child):after, .page .sidebar #block-menu-block-2
+    .uikit-breadcrumbs--inverted.uikit-breadcrumbs > ul > li:not(:last-child):after, .rsbtn_colorskin .sidebar #block-menu-block-2 .uikit-breadcrumbs--inverted.breadcrumbs > ul > li:not(:last-child):after, .rsbtn_colorskin .sidebar #block-menu-block-2
+    .uikit-breadcrumbs--inverted.uikit-breadcrumbs > ul > li:not(:last-child):after, .cke_editable .sidebar #block-menu-block-2 .uikit-breadcrumbs--inverted.breadcrumbs > ul > li:not(:last-child):after, .cke_editable .sidebar #block-menu-block-2
+    .uikit-breadcrumbs--inverted.uikit-breadcrumbs > ul > li:not(:last-child):after, .uikit-breadcrumbs--inverted.breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:not(:last-child):after,
+    .uikit-breadcrumbs--inverted.uikit-breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:not(:last-child):after, #block-menu-menu-sub-menu .uikit-breadcrumbs--inverted.breadcrumbs > .menu > li:not(:last-child):after, #block-menu-menu-sub-menu
     .uikit-breadcrumbs--inverted.uikit-breadcrumbs > .menu > li:not(:last-child):after, footer .uikit-breadcrumbs--inverted.breadcrumbs > .menu > li:not(:last-child):after, footer
     .uikit-breadcrumbs--inverted.uikit-breadcrumbs > .menu > li:not(:last-child):after, .region-navigation #block-superfish-1 .uikit-breadcrumbs--inverted.breadcrumbs > ul > li:not(:last-child):after, .region-navigation #block-superfish-1
     .uikit-breadcrumbs--inverted.uikit-breadcrumbs > ul > li:not(:last-child):after, .uikit-breadcrumbs--inverted.breadcrumbs > .tabs > li:not(:last-child):after,
@@ -1754,7 +1754,7 @@ html [type='button'],
 /**
  * Footer `nav` navigation styling.
  */
-.uikit-footer__navigation .uikit-link-list > li, .uikit-footer__navigation .breadcrumbs__list > li, .uikit-footer__navigation .uikit-inpage-nav-links .toc ul > li, .uikit-inpage-nav-links .toc .uikit-footer__navigation ul > li, .uikit-footer__navigation .uikit-body .sidebar .block-menu-block .menu > li, .uikit-body .sidebar .block-menu-block .uikit-footer__navigation .menu > li, .uikit-footer__navigation .page .sidebar .block-menu-block .menu > li, .page .sidebar .block-menu-block .uikit-footer__navigation .menu > li, .uikit-footer__navigation .rsbtn_colorskin .sidebar .block-menu-block .menu > li, .rsbtn_colorskin .sidebar .block-menu-block .uikit-footer__navigation .menu > li, .uikit-footer__navigation .cke_editable .sidebar .block-menu-block .menu > li, .cke_editable .sidebar .block-menu-block .uikit-footer__navigation .menu > li, .uikit-footer__navigation .menu-block-wrapper.menu-name-main-menu.menu-block-2 > li, .uikit-footer__navigation #block-menu-menu-sub-menu .menu > li, #block-menu-menu-sub-menu .uikit-footer__navigation .menu > li, .uikit-footer__navigation footer .menu > li, footer .uikit-footer__navigation .menu > li, .uikit-footer__navigation .region-navigation #block-superfish-1 ul > li, .region-navigation #block-superfish-1 .uikit-footer__navigation ul > li, .uikit-footer__navigation .tabs > li {
+.uikit-footer__navigation .uikit-link-list > li, .uikit-footer__navigation .breadcrumbs__list > li, .uikit-footer__navigation .uikit-inpage-nav-links .toc ul > li, .uikit-inpage-nav-links .toc .uikit-footer__navigation ul > li, .uikit-footer__navigation .uikit-body .sidebar #block-menu-block-2 ul > li, .uikit-body .sidebar #block-menu-block-2 .uikit-footer__navigation ul > li, .uikit-footer__navigation .page .sidebar #block-menu-block-2 ul > li, .page .sidebar #block-menu-block-2 .uikit-footer__navigation ul > li, .uikit-footer__navigation .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li, .rsbtn_colorskin .sidebar #block-menu-block-2 .uikit-footer__navigation ul > li, .uikit-footer__navigation .cke_editable .sidebar #block-menu-block-2 ul > li, .cke_editable .sidebar #block-menu-block-2 .uikit-footer__navigation ul > li, .uikit-footer__navigation .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li, .uikit-footer__navigation #block-menu-menu-sub-menu .menu > li, #block-menu-menu-sub-menu .uikit-footer__navigation .menu > li, .uikit-footer__navigation footer .menu > li, footer .uikit-footer__navigation .menu > li, .uikit-footer__navigation .region-navigation #block-superfish-1 ul > li, .region-navigation #block-superfish-1 .uikit-footer__navigation ul > li, .uikit-footer__navigation .tabs > li {
   margin-left: 0; }
 
 .uikit-footer__navigation + .uikit-footer__end {
@@ -5574,7 +5574,7 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
 .page-title.header.header--light {
   padding-top: 0;
   padding-bottom: 0;
-  margin-bottom: 1.6em; }
+  margin-bottom: 0; }
   @media (min-width: 768px) {
     .page-title.header.header--light {
       margin-bottom: 3.2em; } }
@@ -5592,12 +5592,13 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
     display: inline; }
   .page-title__core .section-header {
     font-weight: 700;
+    font-size: 16px;
     margin-bottom: 0.4em; }
     @media (min-width: 768px) {
       .page-title__core .section-header {
         display: none; } }
     .page-title__core .section-header .back-icon {
-      margin-right: 8px; }
+      margin-right: -14px; }
   .page-title__core .summary {
     margin-top: 0.4em;
     margin-bottom: 0.4rem; }
@@ -7177,48 +7178,76 @@ h1[class*="fa-"]:before, .node-statistic.view-mode-feature .statistic .group-sta
 div.region-content .anchor {
   display: none; }
 
-.uikit-body .sidebar .block-menu-block .menu a, .page .sidebar .block-menu-block .menu a, .rsbtn_colorskin .sidebar .block-menu-block .menu a, .cke_editable .sidebar .block-menu-block .menu a, .uikit-body .sidebar .block-menu-block--title-link .block__title a, .page .sidebar .block-menu-block--title-link .block__title a, .rsbtn_colorskin .sidebar .block-menu-block--title-link .block__title a, .cke_editable .sidebar .block-menu-block--title-link .block__title a {
+.uikit-body .sidebar #block-menu-block-2 a, .page .sidebar #block-menu-block-2 a, .rsbtn_colorskin .sidebar #block-menu-block-2 a, .cke_editable .sidebar #block-menu-block-2 a, .uikit-body .sidebar .block-menu-block--title-link .block__title a, .page .sidebar .block-menu-block--title-link .block__title a, .rsbtn_colorskin .sidebar .block-menu-block--title-link .block__title a, .cke_editable .sidebar .block-menu-block--title-link .block__title a {
   display: block;
   border: none;
   border-left: 4px solid transparent;
   border-bottom: none;
   text-decoration: none;
   padding: 0.8em; }
-  .uikit-body .sidebar .block-menu-block .menu a:hover, .page .sidebar .block-menu-block .menu a:hover, .rsbtn_colorskin .sidebar .block-menu-block .menu a:hover, .cke_editable .sidebar .block-menu-block .menu a:hover, .uikit-body .sidebar .block-menu-block--title-link .block__title a:hover, .page .sidebar .block-menu-block--title-link .block__title a:hover, .rsbtn_colorskin .sidebar .block-menu-block--title-link .block__title a:hover, .cke_editable .sidebar .block-menu-block--title-link .block__title a:hover {
+  .uikit-body .sidebar #block-menu-block-2 a:hover, .page .sidebar #block-menu-block-2 a:hover, .rsbtn_colorskin .sidebar #block-menu-block-2 a:hover, .cke_editable .sidebar #block-menu-block-2 a:hover, .uikit-body .sidebar .block-menu-block--title-link .block__title a:hover, .page .sidebar .block-menu-block--title-link .block__title a:hover, .rsbtn_colorskin .sidebar .block-menu-block--title-link .block__title a:hover, .cke_editable .sidebar .block-menu-block--title-link .block__title a:hover {
     border-left-color: #006e7a; }
-  .uikit-body .sidebar .block-menu-block .menu a.active-trail, .page .sidebar .block-menu-block .menu a.active-trail, .rsbtn_colorskin .sidebar .block-menu-block .menu a.active-trail, .cke_editable .sidebar .block-menu-block .menu a.active-trail, .uikit-body .sidebar .block-menu-block--title-link .block__title a.active-trail, .page .sidebar .block-menu-block--title-link .block__title a.active-trail, .rsbtn_colorskin .sidebar .block-menu-block--title-link .block__title a.active-trail, .cke_editable .sidebar .block-menu-block--title-link .block__title a.active-trail {
+  .uikit-body .sidebar #block-menu-block-2 a.active-trail, .page .sidebar #block-menu-block-2 a.active-trail, .rsbtn_colorskin .sidebar #block-menu-block-2 a.active-trail, .cke_editable .sidebar #block-menu-block-2 a.active-trail, .uikit-body .sidebar .block-menu-block--title-link .block__title a.active-trail, .page .sidebar .block-menu-block--title-link .block__title a.active-trail, .rsbtn_colorskin .sidebar .block-menu-block--title-link .block__title a.active-trail, .cke_editable .sidebar .block-menu-block--title-link .block__title a.active-trail {
     font-weight: 700; }
-  .uikit-body .sidebar .block-menu-block .menu a.active, .page .sidebar .block-menu-block .menu a.active, .rsbtn_colorskin .sidebar .block-menu-block .menu a.active, .cke_editable .sidebar .block-menu-block .menu a.active, .uikit-body .sidebar .block-menu-block--title-link .block__title a.active, .page .sidebar .block-menu-block--title-link .block__title a.active, .rsbtn_colorskin .sidebar .block-menu-block--title-link .block__title a.active, .cke_editable .sidebar .block-menu-block--title-link .block__title a.active {
+  .uikit-body .sidebar #block-menu-block-2 a.active, .page .sidebar #block-menu-block-2 a.active, .rsbtn_colorskin .sidebar #block-menu-block-2 a.active, .cke_editable .sidebar #block-menu-block-2 a.active, .uikit-body .sidebar .block-menu-block--title-link .block__title a.active, .page .sidebar .block-menu-block--title-link .block__title a.active, .rsbtn_colorskin .sidebar .block-menu-block--title-link .block__title a.active, .cke_editable .sidebar .block-menu-block--title-link .block__title a.active {
     background: #f0f3f5;
     border-left-color: #006e7a; }
-    .uikit-body .sidebar .block-menu-block .menu a.active:hover, .page .sidebar .block-menu-block .menu a.active:hover, .rsbtn_colorskin .sidebar .block-menu-block .menu a.active:hover, .cke_editable .sidebar .block-menu-block .menu a.active:hover, .uikit-body .sidebar .block-menu-block--title-link .block__title a.active:hover, .page .sidebar .block-menu-block--title-link .block__title a.active:hover, .rsbtn_colorskin .sidebar .block-menu-block--title-link .block__title a.active:hover, .cke_editable .sidebar .block-menu-block--title-link .block__title a.active:hover {
+    .uikit-body .sidebar #block-menu-block-2 a.active:hover, .page .sidebar #block-menu-block-2 a.active:hover, .rsbtn_colorskin .sidebar #block-menu-block-2 a.active:hover, .cke_editable .sidebar #block-menu-block-2 a.active:hover, .uikit-body .sidebar .block-menu-block--title-link .block__title a.active:hover, .page .sidebar .block-menu-block--title-link .block__title a.active:hover, .rsbtn_colorskin .sidebar .block-menu-block--title-link .block__title a.active:hover, .cke_editable .sidebar .block-menu-block--title-link .block__title a.active:hover {
       background: white; }
-    .uikit-body .sidebar .block-menu-block .menu a.active:focus, .page .sidebar .block-menu-block .menu a.active:focus, .rsbtn_colorskin .sidebar .block-menu-block .menu a.active:focus, .cke_editable .sidebar .block-menu-block .menu a.active:focus, .uikit-body .sidebar .block-menu-block--title-link .block__title a.active:focus, .page .sidebar .block-menu-block--title-link .block__title a.active:focus, .rsbtn_colorskin .sidebar .block-menu-block--title-link .block__title a.active:focus, .cke_editable .sidebar .block-menu-block--title-link .block__title a.active:focus {
+    .uikit-body .sidebar #block-menu-block-2 a.active:focus, .page .sidebar #block-menu-block-2 a.active:focus, .rsbtn_colorskin .sidebar #block-menu-block-2 a.active:focus, .cke_editable .sidebar #block-menu-block-2 a.active:focus, .uikit-body .sidebar .block-menu-block--title-link .block__title a.active:focus, .page .sidebar .block-menu-block--title-link .block__title a.active:focus, .rsbtn_colorskin .sidebar .block-menu-block--title-link .block__title a.active:focus, .cke_editable .sidebar .block-menu-block--title-link .block__title a.active:focus {
       background-color: #0091a0;
       color: white; }
 
-.uikit-body .sidebar .block-menu-block .menu, .page .sidebar .block-menu-block .menu, .rsbtn_colorskin .sidebar .block-menu-block .menu, .cke_editable .sidebar .block-menu-block .menu {
-  padding: 0; }
-  .uikit-body .sidebar .block-menu-block .menu ul, .page .sidebar .block-menu-block .menu ul, .rsbtn_colorskin .sidebar .block-menu-block .menu ul, .cke_editable .sidebar .block-menu-block .menu ul {
+.uikit-body .sidebar #block-menu-block-2, .page .sidebar #block-menu-block-2, .rsbtn_colorskin .sidebar #block-menu-block-2, .cke_editable .sidebar #block-menu-block-2 {
+  padding: 0;
+  display: none; }
+  .uikit-body .sidebar #block-menu-block-2 ul, .page .sidebar #block-menu-block-2 ul, .rsbtn_colorskin .sidebar #block-menu-block-2 ul, .cke_editable .sidebar #block-menu-block-2 ul {
+    padding: 0;
     font-size: 14px;
     text-transform: none; }
-    .uikit-body .sidebar .block-menu-block .menu ul li:last-child, .page .sidebar .block-menu-block .menu ul li:last-child, .rsbtn_colorskin .sidebar .block-menu-block .menu ul li:last-child, .cke_editable .sidebar .block-menu-block .menu ul li:last-child {
-      border-bottom: none; }
-    .uikit-body .sidebar .block-menu-block .menu ul a, .page .sidebar .block-menu-block .menu ul a, .rsbtn_colorskin .sidebar .block-menu-block .menu ul a, .cke_editable .sidebar .block-menu-block .menu ul a {
+    .uikit-body .sidebar #block-menu-block-2 ul li, .page .sidebar #block-menu-block-2 ul li, .rsbtn_colorskin .sidebar #block-menu-block-2 ul li, .cke_editable .sidebar #block-menu-block-2 ul li {
+      margin: 0;
+      padding: 0;
+      border-bottom: 1px solid #CCC; }
+      .uikit-body .sidebar #block-menu-block-2 ul li:first-child, .page .sidebar #block-menu-block-2 ul li:first-child, .rsbtn_colorskin .sidebar #block-menu-block-2 ul li:first-child, .cke_editable .sidebar #block-menu-block-2 ul li:first-child {
+        border-top: 1px solid #CCC; }
+      .uikit-body .sidebar #block-menu-block-2 ul li:last-child, .page .sidebar #block-menu-block-2 ul li:last-child, .rsbtn_colorskin .sidebar #block-menu-block-2 ul li:last-child, .cke_editable .sidebar #block-menu-block-2 ul li:last-child {
+        border-bottom: none; }
+    .uikit-body .sidebar #block-menu-block-2 ul a, .page .sidebar #block-menu-block-2 ul a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul a, .cke_editable .sidebar #block-menu-block-2 ul a {
       padding: 0.8em 1.6em; }
-    .uikit-body .sidebar .block-menu-block .menu ul ul, .page .sidebar .block-menu-block .menu ul ul, .rsbtn_colorskin .sidebar .block-menu-block .menu ul ul, .cke_editable .sidebar .block-menu-block .menu ul ul {
+    .uikit-body .sidebar #block-menu-block-2 ul ul, .page .sidebar #block-menu-block-2 ul ul, .rsbtn_colorskin .sidebar #block-menu-block-2 ul ul, .cke_editable .sidebar #block-menu-block-2 ul ul {
       font-size: 12px; }
-      .uikit-body .sidebar .block-menu-block .menu ul ul a, .page .sidebar .block-menu-block .menu ul ul a, .rsbtn_colorskin .sidebar .block-menu-block .menu ul ul a, .cke_editable .sidebar .block-menu-block .menu ul ul a {
+      .uikit-body .sidebar #block-menu-block-2 ul ul a, .page .sidebar #block-menu-block-2 ul ul a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul ul a, .cke_editable .sidebar #block-menu-block-2 ul ul a {
         padding: 0.8em 2.4em;
         border-bottom: 0; }
-  .uikit-body .sidebar .block-menu-block .menu li, .page .sidebar .block-menu-block .menu li, .rsbtn_colorskin .sidebar .block-menu-block .menu li, .cke_editable .sidebar .block-menu-block .menu li {
-    margin: 0;
-    padding: 0;
-    border-bottom: 1px solid #CCC; }
-    .uikit-body .sidebar .block-menu-block .menu li:first-child, .page .sidebar .block-menu-block .menu li:first-child, .rsbtn_colorskin .sidebar .block-menu-block .menu li:first-child, .cke_editable .sidebar .block-menu-block .menu li:first-child {
-      border-top: 1px solid #CCC; }
+  @media (min-width: 768px) {
+    .uikit-body .sidebar #block-menu-block-2, .page .sidebar #block-menu-block-2, .rsbtn_colorskin .sidebar #block-menu-block-2, .cke_editable .sidebar #block-menu-block-2 {
+      display: block; } }
+  .uikit-body .sidebar .mobilemenu-active#block-menu-block-2, .page .sidebar .mobilemenu-active#block-menu-block-2, .rsbtn_colorskin .sidebar .mobilemenu-active#block-menu-block-2, .cke_editable .sidebar .mobilemenu-active#block-menu-block-2 {
+    display: block; }
 
-.uikit-body .sidebar .block-menu-block__title, .page .sidebar .block-menu-block__title, .rsbtn_colorskin .sidebar .block-menu-block__title, .cke_editable .sidebar .block-menu-block__title {
+.mobile-toggle.mobile-toggle__local-nav {
+  font-weight: 700;
+  font-size: 18px;
+  display: block;
+  border-bottom: 0; }
+  @media (min-width: 768px) {
+    .mobile-toggle.mobile-toggle__local-nav {
+      display: none; } }
+  .mobile-toggle.mobile-toggle__local-nav .mobile-toggle__close, .mobile-toggle.mobile-toggle__local-nav .mobile-toggle__open {
+    padding: 6px 12px;
+    display: block; }
+  .mobile-toggle.mobile-toggle__local-nav .mobile-toggle__close {
+    display: none; }
+  .mobilemenu-active.mobile-toggle.mobile-toggle__local-nav .mobile-toggle__open {
+    display: none; }
+  .mobilemenu-active.mobile-toggle.mobile-toggle__local-nav .mobile-toggle__close {
+    display: block; }
+
+.page.menu-block-wrapper.menu-name-main-menu.menu-block-2 {
+  padding: 0; }
+
+.uikit-body .sidebar #block-menu-block-2__title, .page .sidebar #block-menu-block-2__title, .rsbtn_colorskin .sidebar #block-menu-block-2__title, .cke_editable .sidebar #block-menu-block-2__title {
   font-size: 18px;
   margin-bottom: 0; }
 
@@ -7241,23 +7270,8 @@ div.region-content .anchor {
 .uikit-body .sidebar .block-menu-block--title-link .menu ul ul a, .page .sidebar .block-menu-block--title-link .menu ul ul a, .rsbtn_colorskin .sidebar .block-menu-block--title-link .menu ul ul a, .cke_editable .sidebar .block-menu-block--title-link .menu ul ul a {
   padding-left: 3.2em; }
 
-.menu-block-wrapper.menu-name-main-menu.menu-block-2.mobilemenu-active {
-  visibility: visible;
-  opacity: 1;
-  height: auto; }
-
-.menu-block-wrapper.menu-name-main-menu.menu-block-2 {
-  visibility: hidden;
-  height: 0;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.8s linear; }
-  @media (min-width: 768px) {
-    .menu-block-wrapper.menu-name-main-menu.menu-block-2 {
-      visibility: visible;
-      opacity: 1;
-      height: auto; } }
-  .menu-block-wrapper.menu-name-main-menu.menu-block-2 .menu li.external-link {
-    display: none; }
+.mobile-toggle.mobile-toggle__local-nav a {
+  border-bottom: 0; }
 
 #block-menu-menu-sub-menu {
   display: none; }
@@ -7284,17 +7298,6 @@ div.region-content .anchor {
   @media (min-width: 768px) {
     #block-menu-menu-sub-menu {
       display: block; } }
-
-.region-sidebar-second {
-  margin-top: -1.6em;
-  padding-bottom: 1.6em; }
-  @media (min-width: 768px) {
-    .region-sidebar-second {
-      padding-bottom: 3.2em;
-      margin-top: 0; } }
-  @media (min-width: 768px) {
-    .region-sidebar-second .block-menu-block {
-      background: transparent; } }
 
 .more-link,
 .more-help-link {
@@ -7351,6 +7354,10 @@ ul.links {
       border-bottom: 1px solid #e5e5e5; }
       .region-navigation #block-superfish-1 ul li:first-child {
         border-top: 1px solid #e5e5e5; }
+      .region-navigation #block-superfish-1 ul li.active-trail {
+        border-bottom: 6px solid #008998; }
+        .region-navigation #block-superfish-1 ul li.active-trail a {
+          font-weight: bold; }
       .region-navigation #block-superfish-1 ul li a {
         padding: 0.6em 0;
         display: block;
@@ -7386,13 +7393,13 @@ ul.links {
           display: block;
           padding: 0.8em 0;
           border-bottom: 0; }
-          .region-navigation #block-superfish-1 ul li a:hover, .region-navigation #block-superfish-1 ul li a:focus, .region-navigation #block-superfish-1 ul li a:active, .region-navigation #block-superfish-1 ul li a.active {
+          .region-navigation #block-superfish-1 ul li a:hover, .region-navigation #block-superfish-1 ul li a:focus, .region-navigation #block-superfish-1 ul li a:active {
             border-bottom: 6px solid #008998;
             background-color: transparent;
             transition: none;
             color: #313131; }
         .region-navigation #block-superfish-1 ul li.active-trail a {
-          border-bottom: 6px solid #008998;
+          border-bottom: 0;
           background-color: transparent;
           transition: none;
           color: #313131; }
@@ -8119,23 +8126,47 @@ td p:last-of-type, th p:last-of-type,
     margin-left: 5px; }
 
 /** START For health professionals **/
-.topic-subpage .region-sidebar-second .block-menu-block {
-  float: left;
-  width: 50%; }
-  @media (min-width: 768px) {
-    .topic-subpage .region-sidebar-second .block-menu-block {
-      float: none;
-      width: 100%; } }
-
 body:not(.node-type-health-topic) .page-title__supp .region-title-supp .block-bean-call-to-action {
   display: none; }
   @media (min-width: 768px) {
     body:not(.node-type-health-topic) .page-title__supp .region-title-supp .block-bean-call-to-action {
       display: block; } }
 
-@media (min-width: 768px) {
-  .region-sidebar-second .bean-public-hp-switcher {
-    display: none; } }
+.region-sidebar-second:before, .region-sidebar-second:after {
+  content: " ";
+  display: table; }
+
+.region-sidebar-second:after {
+  clear: both; }
+
+.region-sidebar-second #block-bean-local-navigation-menu-toggle-for {
+  float: left;
+  width: 50%; }
+
+.region-sidebar-second .bean-public-hp-switcher {
+  float: left;
+  width: 50%; }
+  .region-sidebar-second .bean-public-hp-switcher .field-name-field-link-to a.button {
+    display: block;
+    padding: 6px 12px;
+    font-size: 16px; }
+  @media (min-width: 768px) {
+    .region-sidebar-second .bean-public-hp-switcher {
+      display: none; } }
+
+.region-sidebar-second #block-menu-block-2 {
+  clear: both; }
+  .region-sidebar-second #block-menu-block-2:before, .region-sidebar-second #block-menu-block-2:after {
+    content: " ";
+    display: table; }
+  .region-sidebar-second #block-menu-block-2:after {
+    clear: both; }
+
+#content {
+  padding-top: 2.4em; }
+  @media (min-width: 768px) {
+    #content {
+      padding-top: 0; } }
 
 /** END For health professionals **/
 .cke_editable {
