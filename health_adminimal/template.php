@@ -7,6 +7,9 @@
  * @see https://drupal.org/node/1728096
  */
 
+// Include inc files.
+include_once drupal_get_path('theme', 'health') . '/includes/helper.inc';
+
 /**
  * Implement THEME_toc_filter().
  */
@@ -76,6 +79,12 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
   // Add logic to invalid the form if last updated date is not later than publication date.
   if ($form_id == 'publication_node_form') {
     $form['#validate'][] = '_health_adminimal_publication_date_validator';
+  }
+
+  // Assert last updated field value to be the first published date.
+  if ($form_id == 'news_article_node_form') {
+    $form['field_date_updated']['#access'] = FALSE;
+    $form['#submit'][] = '_health_adminimal_news_update_date_submitter';
   }
 
   // Target audience group - disable for some content types.
@@ -229,6 +238,25 @@ function _health_adminimal_publication_date_validator($form, &$form_state) {
   if (isset($form_state['values']['field_date_updated'][LANGUAGE_NONE]) && isset($form_state['values']['field_publication_date'][LANGUAGE_NONE])) {
     if (strtotime($form_state['values']['field_date_updated'][LANGUAGE_NONE][0]['value']) < strtotime($form_state['values']['field_publication_date'][LANGUAGE_NONE][0]['value'])) {
       form_set_error('field_date_updated', t('Last updated date must be later than publication date.'));
+    }
+  }
+}
+
+/**
+ * Custom submit handler to hard code last updated value to be the first
+ * published date value for news content type.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function _health_adminimal_news_update_date_submitter($form, &$form_state) {
+  $nid = $form['nid']['#value'];
+  if ($nid != NULL) {
+    // When editing an existing node, which may have a first published date.
+    $first_published = _health_find_first_publish_date($nid);
+    if ($first_published != 'Unpublished') {
+      $date = format_date(strtotime($first_published), 'custom', 'Y-m-d H:i:s');
+      $form_state['values']['field_date_updated'][LANGUAGE_NONE][0]['value'] = $date;
     }
   }
 }
