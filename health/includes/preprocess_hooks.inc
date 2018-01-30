@@ -169,10 +169,8 @@ function health_preprocess_page(&$variables) {
     // News and events
     // Set title to be the third level menu trail.
     if ($active_trail[1]['href'] == 'news-and-events') {
-      if (count($active_trail) == 3) {
+      if (count($active_trail) > 3) {
         $variables['section_title'] = theme('health_section_link', ['title' => 'News and events', 'path' => 'news-and-events']);
-      } else if (count($active_trail) > 3) {
-        $variables['section_title'] = theme('health_section_link', ['title' => node_type_get_name($variables['node']), 'path' => $active_trail[count($active_trail)-2]['href']]);
         $variables['summary'] = NULL;
       }
     }
