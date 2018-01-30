@@ -36,6 +36,7 @@
 
 // Menu with indentation
 %uikit-localnav {
+
   padding: 0;
   ul {
     @extend .uikit-link-list;
@@ -47,7 +48,9 @@
       padding: 0;
       border-bottom: $uikit-borderize;
       &:first-child {
-        border-top: $uikit-borderize;
+        @include uikit-media(sm) {
+          border-top: $uikit-borderize;
+        }
       }
       &:last-child {
         border-bottom: none;
@@ -96,13 +99,18 @@
 
 // Mobile toggle.
 %uikit-localnav__mobile-toggle {
-  font-weight: 700;
+
+  @include uikit-media(sm) { // Hide on desktop.
+    display: none;
+  }
+
+  //font-weight: 700;
   font-size: 18px;
   display: block;
   border-bottom: 0;
-  @include uikit-media(sm) {
-    display: none;
-  }
+
+  border-top: $uikit-borderize;
+  border-bottom: $uikit-borderize;
 
   // Toggles
   .mobile-toggle__close,

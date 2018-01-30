@@ -23,30 +23,51 @@
   // Section title (large)
   .uikit-header-heading {
     line-height: 1.4;
-    margin-top: 0.2em;
-    margin-bottom: 0.6rem;
-    display: inline;
+    margin-top: 0;
+    @include uikit-media(sm) {
+      display: inline;
+      margin-top: 0.2em;
+      margin-bottom: 0.6rem;
+    }
   }
 
-  // Section title (small)
+  // Section header link
   .section-header {
-    @extend .uikit-display-2;
-    font-weight: 700;
-    font-size: 16px;
-    margin-bottom: 0.4em;
-    @include uikit-media(sm) {
+
+    @include uikit-media(sm) { // Hide on desktop
       display: none;
     }
+
+    @extend .uikit-display-2;
+    //font-weight: 700;
+    font-size: 16px;
+    margin-bottom: uikit-space(0.65);
+
     .back-icon {
-      margin-right: -14px;
+      float: left;
     }
+    a {
+      margin-left: 20px;
+      margin-right: 90px;
+      float: left;
+      border-bottom: 0;
+      span {
+        border-bottom: 1px solid $colour-Secondary;
+      }
+    }
+
+    @include uikit-clearfix;
   }
 
   // Summary
   .summary {
     @extend .uikit-header-subline;
-    margin-top: 0.4em;
-    margin-bottom: 0.4rem;
+    font-size: 17px;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+    @include uikit-media(sm) {
+      font-size: 18px;
+    }
   }
 
 }
