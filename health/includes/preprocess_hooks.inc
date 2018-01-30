@@ -530,16 +530,6 @@ function health_preprocess_field(&$variables) {
       // Apply logic only to resources content types.
       if (isset($variables['element']['#items'][0])) {
         $last_updated = strtotime($variables['element']['#items'][0]['value']);
-        $first_published = strtotime(_health_find_first_publish_date($variables['element']['#object']->nid));
-
-        // There has not been any update once published.
-        if ($last_updated <= $first_published) {
-          // Do not render this field.
-          $variables['#access'] = FALSE;
-          $variables['classes_array'][] = 'sr-only';
-        }
-
-        // Hide the field if last updated is not later than publication date in
         // publication content type.
         if ($variables['element']['#bundle'] == 'publication') {
           $node = $variables['element']['#object'];
@@ -678,18 +668,6 @@ function health_preprocess_node(&$variables) {
           '#markup' => $preprocess($variables),
           '#weight' => _health_get_ds_field_weight($variables, $field)
         );
-      }
-    }
-  }
-
-  // Publications.
-  if ($variables['type'] == 'publication') {
-    // If publication date is the same as last modified, hide the last modified.
-    if (isset($variables['content']['changed_date'])) {
-      $changed = strtotime($variables['content']['changed_date']['#items'][0]['value']);
-      $published = strtotime($variables['field_date_published'][0]['value']);
-      if ($changed == $published) {
-        $variables['content']['changed_date']['#access'] = FALSE;
       }
     }
   }
