@@ -5587,21 +5587,39 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
       padding: 1.6em 0 1.6em 0; } }
   .page-title__core .uikit-header-heading {
     line-height: 1.4;
-    margin-top: 0.2em;
-    margin-bottom: 0.6rem;
-    display: inline; }
+    margin-top: 0; }
+    @media (min-width: 768px) {
+      .page-title__core .uikit-header-heading {
+        display: inline;
+        margin-top: 0.2em;
+        margin-bottom: 0.6rem; } }
   .page-title__core .section-header {
-    font-weight: 700;
     font-size: 16px;
-    margin-bottom: 0.4em; }
+    margin-bottom: 1.04em; }
     @media (min-width: 768px) {
       .page-title__core .section-header {
         display: none; } }
     .page-title__core .section-header .back-icon {
-      margin-right: -14px; }
+      float: left; }
+    .page-title__core .section-header a {
+      margin-left: 20px;
+      margin-right: 90px;
+      float: left;
+      border-bottom: 0; }
+      .page-title__core .section-header a span {
+        border-bottom: 1px solid #008998; }
+    .page-title__core .section-header:before, .page-title__core .section-header:after {
+      content: " ";
+      display: table; }
+    .page-title__core .section-header:after {
+      clear: both; }
   .page-title__core .summary {
-    margin-top: 0.4em;
-    margin-bottom: 0.4rem; }
+    font-size: 17px;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em; }
+    @media (min-width: 768px) {
+      .page-title__core .summary {
+        font-size: 18px; } }
 
 @media (min-width: 992px) {
   .page-title__supp {
@@ -5688,23 +5706,36 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
       color: white; }
 
 #readspeaker {
-  display: inline; }
+  display: inline-block;
+  float: right;
+  position: absolute;
+  top: 12px;
+  right: 12px; }
   #readspeaker a {
     border-bottom: none; }
   #readspeaker .rsbtn {
     margin-bottom: 0; }
+  @media (min-width: 768px) {
+    #readspeaker {
+      display: inline;
+      position: relative;
+      float: none;
+      top: 0;
+      right: 0; } }
 
 .rsbtn_colorskin {
   position: relative;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.3em;
   display: inline-block;
-  padding: 4px;
+  padding: 2px;
   margin-bottom: -1px;
   background: white;
   border: 1px solid #008998; }
   .rsbtn_colorskin:hover {
     background-color: #e5e5e5; }
+  .rsbtn_colorskin i {
+    font-size: 12px; }
   .rsbtn_colorskin a {
     color: #008998; }
   .rsbtn_colorskin a, .rsbtn_colorskin span {
@@ -7209,8 +7240,9 @@ div.region-content .anchor {
       margin: 0;
       padding: 0;
       border-bottom: 1px solid #CCC; }
-      .uikit-body .sidebar #block-menu-block-2 ul li:first-child, .page .sidebar #block-menu-block-2 ul li:first-child, .rsbtn_colorskin .sidebar #block-menu-block-2 ul li:first-child, .cke_editable .sidebar #block-menu-block-2 ul li:first-child {
-        border-top: 1px solid #CCC; }
+      @media (min-width: 768px) {
+        .uikit-body .sidebar #block-menu-block-2 ul li:first-child, .page .sidebar #block-menu-block-2 ul li:first-child, .rsbtn_colorskin .sidebar #block-menu-block-2 ul li:first-child, .cke_editable .sidebar #block-menu-block-2 ul li:first-child {
+          border-top: 1px solid #CCC; } }
       .uikit-body .sidebar #block-menu-block-2 ul li:last-child, .page .sidebar #block-menu-block-2 ul li:last-child, .rsbtn_colorskin .sidebar #block-menu-block-2 ul li:last-child, .cke_editable .sidebar #block-menu-block-2 ul li:last-child {
         border-bottom: none; }
     .uikit-body .sidebar #block-menu-block-2 ul a, .page .sidebar #block-menu-block-2 ul a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul a, .cke_editable .sidebar #block-menu-block-2 ul a {
@@ -7235,10 +7267,11 @@ div.region-content .anchor {
     display: block; }
 
 .mobile-toggle.mobile-toggle__local-nav {
-  font-weight: 700;
   font-size: 18px;
   display: block;
-  border-bottom: 0; }
+  border-bottom: 0;
+  border-top: 1px solid #CCC;
+  border-bottom: 1px solid #CCC; }
   @media (min-width: 768px) {
     .mobile-toggle.mobile-toggle__local-nav {
       display: none; } }
@@ -7445,7 +7478,7 @@ ul.links {
   background: black;
   opacity: 0.7;
   width: 100%;
-  height: 100%;
+  height: 150%;
   z-index: 499; }
   .active.nav-overlay {
     display: block; }
@@ -8078,9 +8111,6 @@ body {
 .front .paragraphs-item-para-block.para-container.block-id__feedback-band {
   color: black; }
 
-.page dl {
-  margin-bottom: 0; }
-
 .page-initiatives-and-programs.page-views .bean-image-and-text {
   margin: 0 0 1.6em 0; }
   .page-initiatives-and-programs.page-views .bean-image-and-text .group-left {
@@ -8120,6 +8150,7 @@ body {
   float: none;
   margin: 0; }
 
+/** START UIKIT overrides */
 .node-type-health-topic p:last-of-type,
 .node-type-health-topic-hp p:last-of-type,
 .node-type-landing-page p:last-of-type,
@@ -8128,16 +8159,20 @@ td p:last-of-type, th p:last-of-type,
 .document-accessibility-form p:last-of-type {
   margin-bottom: 0; }
 
+.page dl {
+  margin-bottom: 0; }
+
+/** END UIKIT overrides */
 #owInviteSnippet {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
   #owInviteSnippet a[rel~='external'] svg {
     margin-left: 5px; }
 
-/** START For health professionals **/
-body:not(.node-type-health-topic) .page-title__supp .region-title-supp .block-bean-call-to-action {
+/** START Local nav and HP link **/
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp) .page-title__supp .region-title-supp .block-bean-call-to-action {
   display: none; }
   @media (min-width: 768px) {
-    body:not(.node-type-health-topic) .page-title__supp .region-title-supp .block-bean-call-to-action {
+    body:not(.node-type-health-topic):not(.node-type-health-topic-hp) .page-title__supp .region-title-supp .block-bean-call-to-action {
       display: block; } }
 
 .region-sidebar-second:before, .region-sidebar-second:after {
@@ -8167,20 +8202,29 @@ body:not(.node-type-health-topic) .page-title__supp .region-title-supp .block-be
       display: none; } }
 
 .region-sidebar-second #block-menu-block-2 {
-  clear: both; }
+  clear: both;
+  background: white;
+  border-bottom: 1px solid #CCC; }
   .region-sidebar-second #block-menu-block-2:before, .region-sidebar-second #block-menu-block-2:after {
     content: " ";
     display: table; }
   .region-sidebar-second #block-menu-block-2:after {
     clear: both; }
+  @media (min-width: 768px) {
+    .region-sidebar-second #block-menu-block-2 {
+      border-bottom: 0; } }
 
-#content {
+body:not(.topic-subpage) .region-sidebar-second #block-bean-local-navigation-menu-toggle-for {
+  float: none;
+  width: 100%; }
+
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #content {
   padding-top: 2.4em; }
   @media (min-width: 768px) {
-    #content {
+    body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #content {
       padding-top: 0; } }
 
-/** END For health professionals **/
+/** END Local nav and HP link **/
 .cke_editable {
   padding: 20px; }
 
