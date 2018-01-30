@@ -98,12 +98,10 @@
         $('.nav-overlay').toggleClass('active');
       });
 
-      // Handle switch between active toggles.
-      $('.mobile-toggle.mobile-toggle__search.mobilemenu-active', context).click(function (e) {
-        if ($('.mobile-toggle.mobile-toggle__main-menu', context).hasClass('mobilemenu-active')) {
-          $('.mobile-toggle.mobile-toggle__main-menu', context).removeClass('mobilemenu-active');
-          $('.region-navigation .block-superfish').removeClass('mobilemenu-active');
-        }
+      // Clicking outside the active site nav should close the nav.
+      $('.nav-overlay', context).click(function() {
+        $('.mobilemenu-active').removeClass('mobilemenu-active');
+        $(this).removeClass('active');
       });
 
       // Local navigation
