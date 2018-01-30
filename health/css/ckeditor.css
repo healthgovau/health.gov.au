@@ -7393,7 +7393,7 @@ ul.links {
 
 .region-navigation #block-superfish-1 {
   display: none;
-  padding: 0 12px;
+  padding: 0;
   position: absolute;
   background: white;
   width: 100%; }
@@ -7403,15 +7403,16 @@ ul.links {
     padding: 0 0 20px 0 !important; }
     .region-navigation #block-superfish-1 ul li {
       margin: 0;
-      border-bottom: 1px solid #e5e5e5; }
+      border-bottom: 1px solid #e5e5e5;
+      border-left: 6px solid transparent; }
       .region-navigation #block-superfish-1 ul li:first-child {
         border-top: 1px solid #e5e5e5; }
       .region-navigation #block-superfish-1 ul li.active-trail {
-        border-bottom: 6px solid #008998; }
+        border-left: 6px solid #008998; }
         .region-navigation #block-superfish-1 ul li.active-trail a {
           font-weight: bold; }
       .region-navigation #block-superfish-1 ul li a {
-        padding: 0.6em 0;
+        padding: 0.6em 1em;
         display: block;
         border: 0; }
   @media (min-width: 768px) {
@@ -7450,11 +7451,13 @@ ul.links {
             background-color: transparent;
             transition: none;
             color: #313131; }
-        .region-navigation #block-superfish-1 ul li.active-trail a {
-          border-bottom: 0;
-          background-color: transparent;
-          transition: none;
-          color: #313131; }
+        .region-navigation #block-superfish-1 ul li.active-trail {
+          border-left: 0; }
+          .region-navigation #block-superfish-1 ul li.active-trail a {
+            border-bottom: 6px solid #008998;
+            background-color: transparent;
+            transition: none;
+            color: #313131; }
       .region-navigation #block-superfish-1:before, .region-navigation #block-superfish-1:after {
         content: " ";
         display: table; }
