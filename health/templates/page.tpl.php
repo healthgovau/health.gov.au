@@ -75,9 +75,7 @@ endif;
         <?php print $breadcrumb; ?>
 
         <?php if (isset($section_title)): ?>
-          <p class="section-header">
-            <?php print $section_title; ?>
-          </p>
+          <?php print $section_title; ?>
         <?php endif; ?>
 
         <?php if ($title): ?>

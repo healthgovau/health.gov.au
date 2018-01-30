@@ -1,25 +1,46 @@
 #readspeaker {
-  display: inline;
+
+  // Mobile
+  display: inline-block;
+  float: right;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
   a {
     border-bottom: none;
   }
   .rsbtn {
     margin-bottom: 0;
   }
+
+  // Desktop
+  @include uikit-media(sm) {
+    display: inline;
+    position: relative;
+    float: none;
+    top: 0;
+    right: 0;
+  }
+
 }
 
 .rsbtn_colorskin {
   @extend .uikit-body;
   position: relative;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.3em;
   display: inline-block;
-  padding: 4px;
+  padding: 2px;
   margin-bottom: -1px;
   background: white;
   border: 1px solid $colour-Secondary;
   &:hover {
     background-color: $colour-light-dark;
+  }
+
+  i {
+    font-size: 12px;
   }
 
   a {
