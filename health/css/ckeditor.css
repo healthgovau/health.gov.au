@@ -7216,50 +7216,61 @@ div.region-content .anchor {
   border-bottom: none;
   text-decoration: none;
   padding: 0.8em; }
-  .uikit-body .sidebar #block-menu-block-2 a:hover, .page .sidebar #block-menu-block-2 a:hover, .rsbtn_colorskin .sidebar #block-menu-block-2 a:hover, .cke_editable .sidebar #block-menu-block-2 a:hover, .uikit-body .sidebar .block-menu-block--title-link .block__title a:hover, .page .sidebar .block-menu-block--title-link .block__title a:hover, .rsbtn_colorskin .sidebar .block-menu-block--title-link .block__title a:hover, .cke_editable .sidebar .block-menu-block--title-link .block__title a:hover {
-    border-left-color: #006e7a; }
+  @media (min-width: 768px) {
+    .uikit-body .sidebar #block-menu-block-2 a:hover, .page .sidebar #block-menu-block-2 a:hover, .rsbtn_colorskin .sidebar #block-menu-block-2 a:hover, .cke_editable .sidebar #block-menu-block-2 a:hover, .uikit-body .sidebar .block-menu-block--title-link .block__title a:hover, .page .sidebar .block-menu-block--title-link .block__title a:hover, .rsbtn_colorskin .sidebar .block-menu-block--title-link .block__title a:hover, .cke_editable .sidebar .block-menu-block--title-link .block__title a:hover {
+      border-left-color: #008998; } }
   .uikit-body .sidebar #block-menu-block-2 a.active-trail, .page .sidebar #block-menu-block-2 a.active-trail, .rsbtn_colorskin .sidebar #block-menu-block-2 a.active-trail, .cke_editable .sidebar #block-menu-block-2 a.active-trail, .uikit-body .sidebar .block-menu-block--title-link .block__title a.active-trail, .page .sidebar .block-menu-block--title-link .block__title a.active-trail, .rsbtn_colorskin .sidebar .block-menu-block--title-link .block__title a.active-trail, .cke_editable .sidebar .block-menu-block--title-link .block__title a.active-trail {
     font-weight: 700; }
   .uikit-body .sidebar #block-menu-block-2 a.active, .page .sidebar #block-menu-block-2 a.active, .rsbtn_colorskin .sidebar #block-menu-block-2 a.active, .cke_editable .sidebar #block-menu-block-2 a.active, .uikit-body .sidebar .block-menu-block--title-link .block__title a.active, .page .sidebar .block-menu-block--title-link .block__title a.active, .rsbtn_colorskin .sidebar .block-menu-block--title-link .block__title a.active, .cke_editable .sidebar .block-menu-block--title-link .block__title a.active {
-    background: #f0f3f5;
-    border-left-color: #006e7a; }
+    background: #ecedee;
+    border-left-color: #008998; }
     .uikit-body .sidebar #block-menu-block-2 a.active:hover, .page .sidebar #block-menu-block-2 a.active:hover, .rsbtn_colorskin .sidebar #block-menu-block-2 a.active:hover, .cke_editable .sidebar #block-menu-block-2 a.active:hover, .uikit-body .sidebar .block-menu-block--title-link .block__title a.active:hover, .page .sidebar .block-menu-block--title-link .block__title a.active:hover, .rsbtn_colorskin .sidebar .block-menu-block--title-link .block__title a.active:hover, .cke_editable .sidebar .block-menu-block--title-link .block__title a.active:hover {
       background: white; }
     .uikit-body .sidebar #block-menu-block-2 a.active:focus, .page .sidebar #block-menu-block-2 a.active:focus, .rsbtn_colorskin .sidebar #block-menu-block-2 a.active:focus, .cke_editable .sidebar #block-menu-block-2 a.active:focus, .uikit-body .sidebar .block-menu-block--title-link .block__title a.active:focus, .page .sidebar .block-menu-block--title-link .block__title a.active:focus, .rsbtn_colorskin .sidebar .block-menu-block--title-link .block__title a.active:focus, .cke_editable .sidebar .block-menu-block--title-link .block__title a.active:focus {
-      background-color: #0091a0;
-      color: white; }
+      color: white;
+      background: #008998; }
 
 .uikit-body .sidebar #block-menu-block-2, .page .sidebar #block-menu-block-2, .rsbtn_colorskin .sidebar #block-menu-block-2, .cke_editable .sidebar #block-menu-block-2 {
   padding: 0;
   display: none; }
   .uikit-body .sidebar #block-menu-block-2 ul, .page .sidebar #block-menu-block-2 ul, .rsbtn_colorskin .sidebar #block-menu-block-2 ul, .cke_editable .sidebar #block-menu-block-2 ul {
     padding: 0;
-    font-size: 14px;
+    font-size: 15px;
     text-transform: none; }
-    .uikit-body .sidebar #block-menu-block-2 ul li, .page .sidebar #block-menu-block-2 ul li, .rsbtn_colorskin .sidebar #block-menu-block-2 ul li, .cke_editable .sidebar #block-menu-block-2 ul li {
+    .uikit-body .sidebar #block-menu-block-2 ul > li, .page .sidebar #block-menu-block-2 ul > li, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li, .cke_editable .sidebar #block-menu-block-2 ul > li {
       margin: 0;
       padding: 0;
       border-bottom: 1px solid #CCC; }
       @media (min-width: 768px) {
-        .uikit-body .sidebar #block-menu-block-2 ul li:first-child, .page .sidebar #block-menu-block-2 ul li:first-child, .rsbtn_colorskin .sidebar #block-menu-block-2 ul li:first-child, .cke_editable .sidebar #block-menu-block-2 ul li:first-child {
+        .uikit-body .sidebar #block-menu-block-2 ul > li:first-child, .page .sidebar #block-menu-block-2 ul > li:first-child, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li:first-child, .cke_editable .sidebar #block-menu-block-2 ul > li:first-child {
           border-top: 1px solid #CCC; } }
-      .uikit-body .sidebar #block-menu-block-2 ul li:last-child, .page .sidebar #block-menu-block-2 ul li:last-child, .rsbtn_colorskin .sidebar #block-menu-block-2 ul li:last-child, .cke_editable .sidebar #block-menu-block-2 ul li:last-child {
+      .uikit-body .sidebar #block-menu-block-2 ul > li:last-child, .page .sidebar #block-menu-block-2 ul > li:last-child, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li:last-child, .cke_editable .sidebar #block-menu-block-2 ul > li:last-child {
         border-bottom: none; }
-    .uikit-body .sidebar #block-menu-block-2 ul a, .page .sidebar #block-menu-block-2 ul a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul a, .cke_editable .sidebar #block-menu-block-2 ul a {
-      padding: 0.8em 12px; }
-      @media (min-width: 768px) {
-        .uikit-body .sidebar #block-menu-block-2 ul a, .page .sidebar #block-menu-block-2 ul a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul a, .cke_editable .sidebar #block-menu-block-2 ul a {
-          padding: 0.8em 1.6em; } }
-    .uikit-body .sidebar #block-menu-block-2 ul ul, .page .sidebar #block-menu-block-2 ul ul, .rsbtn_colorskin .sidebar #block-menu-block-2 ul ul, .cke_editable .sidebar #block-menu-block-2 ul ul {
-      font-size: 12px; }
-      .uikit-body .sidebar #block-menu-block-2 ul ul a, .page .sidebar #block-menu-block-2 ul ul a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul ul a, .cke_editable .sidebar #block-menu-block-2 ul ul a {
-        padding: 0.8em 2.8em;
+      .uikit-body .sidebar #block-menu-block-2 ul > li a, .page .sidebar #block-menu-block-2 ul > li a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li a, .cke_editable .sidebar #block-menu-block-2 ul > li a {
+        padding: 0.8em 12px; }
+        @media (min-width: 768px) {
+          .uikit-body .sidebar #block-menu-block-2 ul > li a, .page .sidebar #block-menu-block-2 ul > li a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li a, .cke_editable .sidebar #block-menu-block-2 ul > li a {
+            padding: 0.8em 1.6em; } }
+      .uikit-body .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a, .page .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a, .cke_editable .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a {
+        border-left-color: #cdcdcd; }
+        @media (min-width: 768px) {
+          .uikit-body .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a, .page .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a, .cke_editable .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a {
+            border-left-color: #f1f1f2; } }
+      .uikit-body .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail, .page .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail, .cke_editable .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail {
+        border-left-color: #6d6e70; }
+        @media (min-width: 768px) {
+          .uikit-body .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail, .page .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail, .cke_editable .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail {
+            border-left-color: #cdcdcd; } }
+      .uikit-body .sidebar #block-menu-block-2 ul > li ul li:first-child, .page .sidebar #block-menu-block-2 ul > li ul li:first-child, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li ul li:first-child, .cke_editable .sidebar #block-menu-block-2 ul > li ul li:first-child {
+        border-top: 1px solid #CCC; }
+      .uikit-body .sidebar #block-menu-block-2 ul > li ul li a, .page .sidebar #block-menu-block-2 ul > li ul li a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li ul li a, .cke_editable .sidebar #block-menu-block-2 ul > li ul li a {
+        padding: 0.8em 1.6em;
         border-bottom: 0; }
         @media (min-width: 768px) {
-          .uikit-body .sidebar #block-menu-block-2 ul ul a, .page .sidebar #block-menu-block-2 ul ul a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul ul a, .cke_editable .sidebar #block-menu-block-2 ul ul a {
-            padding: 0.8em 3.2em; } }
-      .uikit-body .sidebar #block-menu-block-2 ul ul ul a, .page .sidebar #block-menu-block-2 ul ul ul a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul ul ul a, .cke_editable .sidebar #block-menu-block-2 ul ul ul a {
-        padding: 0.8em 4.8em; }
+          .uikit-body .sidebar #block-menu-block-2 ul > li ul li a, .page .sidebar #block-menu-block-2 ul > li ul li a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li ul li a, .cke_editable .sidebar #block-menu-block-2 ul > li ul li a {
+            padding: 0.8em 2.8em; } }
+      .uikit-body .sidebar #block-menu-block-2 ul > li ul ul li a, .page .sidebar #block-menu-block-2 ul > li ul ul li a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li ul ul li a, .cke_editable .sidebar #block-menu-block-2 ul > li ul ul li a {
+        padding: 0.8em 4em; }
   @media (min-width: 768px) {
     .uikit-body .sidebar #block-menu-block-2, .page .sidebar #block-menu-block-2, .rsbtn_colorskin .sidebar #block-menu-block-2, .cke_editable .sidebar #block-menu-block-2 {
       display: block; } }
