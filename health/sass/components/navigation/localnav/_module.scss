@@ -13,8 +13,10 @@
   text-decoration: none;
   padding: uikit-space(.5);
 
-  &:hover {
-    border-left-color: $colour-Secondary-darker;
+  @include uikit-media(sm) {
+    &:hover {
+      border-left-color: $colour-Secondary;
+    }
   }
 
   &.active-trail {
@@ -22,14 +24,14 @@
   }
 
   &.active {
-    background: $uikit-colour-Background;
-    border-left-color: $colour-Secondary-darker;
+    background: $colour-light;
+    border-left-color: $colour-Secondary;
     &:hover {
       background: white;
     }
     &:focus {
-      background-color: $colour-Secondary-light;
       color: white;
+      background: $colour-Secondary;
     }
   }
 }
@@ -38,10 +40,11 @@
 %uikit-localnav {
 
   padding: 0;
+  // Level 1
   ul {
     @extend .uikit-link-list;
     padding: 0;
-    font-size: 14px;
+    font-size: 15px;
     text-transform: none;
     li {
       margin: 0;
@@ -55,32 +58,48 @@
       &:last-child {
         border-bottom: none;
       }
-    }
-    // Level 1
-    a {
-      padding: uikit-space(.5) 12px;
-      @include uikit-media(sm) {
-        padding: uikit-space(.5) uikit-space(1);
-      }
-    }
-    // Level 2
-    ul {
-      font-size: 12px;
+
       a {
-        padding: uikit-space(.5) uikit-space(1.75);
+        padding: uikit-space(.5) 12px;
         @include uikit-media(sm) {
-          padding: uikit-space(.5) uikit-space(2);
+          padding: uikit-space(.5) uikit-space(1);
         }
-        border-bottom: 0;
       }
 
-      // Level 3
+      &.active-trail {
+        ul {
+          li:not(.active-trail) a {
+            border-left-color: $colour-lighter;
+          }
+        }
+        a:not(.active).active-trail {
+          border-left-color: $colour-light-darker;
+        }
+      }
+
+      // Level 2
       ul {
-        a {
-          padding: uikit-space(.5) uikit-space(3);
+        &:first-child {
+          border-top: $uikit-borderize;
+        }
+        li a {
+          padding: uikit-space(.5) uikit-space(1);
+          @include uikit-media(sm) {
+            padding: uikit-space(.5) uikit-space(1.75);
+          }
+          border-bottom: 0;
+        }
+
+        // Level 3
+        ul {
+          li a {
+            padding: uikit-space(.5) uikit-space(2.5);
+          }
         }
       }
     }
+
+
   }
 
   a {

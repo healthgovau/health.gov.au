@@ -51,6 +51,8 @@ $colour-light: #ecedee;
 $colour-lighter: #f1f1f2;
 $colour-lightest: #f9f9f9;
 
+$colour-light-darker: #cdcdcd;
+
 %colour-Primary-background {
   background-color: $colour-Primary-darker;
   background: -webkit-linear-gradient(left, $colour-Primary-darker, $colour-Primary);
