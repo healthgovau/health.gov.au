@@ -46,7 +46,7 @@
     padding: 0;
     font-size: 15px;
     text-transform: none;
-    li {
+    > li {
       margin: 0;
       padding: 0;
       border-bottom: $uikit-borderize;
@@ -69,25 +69,33 @@
       &.active-trail {
         ul {
           li:not(.active-trail) a {
-            border-left-color: $colour-lighter;
+            border-left-color: $colour-light-darker;
+            @include uikit-media(sm) {
+              border-left-color: $colour-lighter;
+            }
           }
         }
         a:not(.active).active-trail {
-          border-left-color: $colour-light-darker;
+          border-left-color: $colour-dark;
+          @include uikit-media(sm) {
+            border-left-color: $colour-light-darker;
+          }
         }
       }
 
       // Level 2
       ul {
-        &:first-child {
-          border-top: $uikit-borderize;
-        }
-        li a {
-          padding: uikit-space(.5) uikit-space(1);
-          @include uikit-media(sm) {
-            padding: uikit-space(.5) uikit-space(1.75);
+        li {
+          &:first-child {
+            border-top: $uikit-borderize;
           }
-          border-bottom: 0;
+          a {
+            padding: uikit-space(.5) uikit-space(1);
+            @include uikit-media(sm) {
+              padding: uikit-space(.5) uikit-space(1.75);
+            }
+            border-bottom: 0;
+          }
         }
 
         // Level 3
