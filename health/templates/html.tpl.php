@@ -49,10 +49,18 @@
 
   <?php print $styles; ?>
   <?php print $scripts; ?>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112666492-1"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-112666492-1');
+  </script>
 </head>
 
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
-<?php print $google_tag_manager; ?>
   <nav class="skip-link" id="skip-link">
     <a class="skip-link__link" href="#content">Skip to main content</a>
     <a class="skip-link__link" href="#nav">Skip to main navigation</a>
