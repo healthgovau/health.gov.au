@@ -69,11 +69,11 @@ function _health_add_maxlength(&$form, $element_names) {
   drupal_add_js(drupal_get_path('theme', 'health') .'/js/health.fieldcounter.js', 'file');
 
   // Add in the fields that we want to have this functionality.
-  $form['#attached']['js']['(function ($) {$(document).ready(function(){'.$js.'});})(jQuery);'] = array(
+  $form['#attached']['js']['(function ($) {$(document).ready(function(){'.$js.'});})(jQuery);'] = [
     'type' => 'inline',
     'scope' => 'footer',
     'weight' => 0,
-  );
+  ];
 }
 
 /**
@@ -183,7 +183,7 @@ function _health_get_render_elements_for_public_topic_page($variables, $full) {
     $path = drupal_get_path_alias();
     $parts = explode('/',$path);
     $url = '/topics/' . $parts[1] . '/health-professionals';
-    $link = l('For health professionals', $url);
+    $link =  l('<i class="fas fa-user-md"></i> Visit HP hub', $url, ['attributes' => ['class' => ['button']], 'html' => TRUE]);
   }
 
   return [
@@ -220,7 +220,7 @@ function _health_get_render_elements_for_hp_topic_page($variables, $full) {
     $path = drupal_get_path_alias();
     $parts = explode('/',$path);
     $url = '/topics/' . $parts[1];
-    $link = l('For general public', $url);
+    $link = l('<i class="fas fa-medkit"></i> Patient focused info', $url, ['attributes' => ['class' => ['button']], 'html' => TRUE]);
   }
 
   return [
@@ -262,6 +262,21 @@ function _health_label_display($variables, $field, $field_variables) {
     }
   }
   return $field_variables;
+}
+
+/**
+ * Get the weight of a Display Suite field using the current view mode.
+ *
+ * @param $variables
+ *   Preprocess variables.
+ * @param $field
+ *   The field to get the weight for.
+ * @return int
+ *   The weight
+ */
+function _health_get_ds_field_weight($variables, $field) {
+  $field_settings = ds_get_field_settings('node', $variables['type'], $variables['view_mode']);
+  return $field_settings[$field]['weight'];
 }
 
 /**

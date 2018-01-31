@@ -4,7 +4,7 @@
     @extend %colour-Light-background;
     padding-top: 0;
     padding-bottom: 0;
-    margin-bottom: uikit-space(1);
+    margin-bottom: 0;
     @include uikit-media(sm){
       margin-bottom: uikit-space(2);
     }
@@ -18,31 +18,56 @@
     padding: uikit-space(1) 0 uikit-space(1) 0;
   }
 
+  max-width: 56em;
+
   // Section title (large)
   .uikit-header-heading {
     line-height: 1.4;
-    max-width: 42em;
-    margin-top: 0.2em;
-    margin-bottom: 0.6rem;
+    margin-top: 0;
+    @include uikit-media(sm) {
+      display: inline;
+      margin-top: 0.2em;
+      margin-bottom: 0.6rem;
+    }
   }
 
-  // Section title (small)
+  // Section header link
   .section-header {
-    @extend .uikit-display-2;
-    font-weight: 700;
-    margin-bottom: 0;
-    a {
-      border-bottom: 0;
-    }
-    @include uikit-media(sm) {
+
+    @include uikit-media(sm) { // Hide on desktop
       display: none;
     }
+
+    @extend .uikit-display-2;
+    //font-weight: 700;
+    font-size: 16px;
+    margin-bottom: uikit-space(0.65);
+
+    .back-icon {
+      float: left;
+    }
+    a {
+      margin-left: 20px;
+      margin-right: 90px;
+      float: left;
+      border-bottom: 0;
+      span {
+        border-bottom: 1px solid $colour-Secondary;
+      }
+    }
+
+    @include uikit-clearfix;
   }
 
   // Summary
   .summary {
     @extend .uikit-header-subline;
-    margin-bottom: 0.4rem;
+    font-size: 17px;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+    @include uikit-media(sm) {
+      font-size: 18px;
+    }
   }
 
 }
@@ -53,8 +78,6 @@
     display: table;
   }
   .region-title-supp {
-
-    @extend %colour-Dark-background;
 
     display: block;
     @include uikit-media( md ) {
@@ -73,11 +96,12 @@
       .field-name-field-link-to a {
         font-size: 16px;
         margin-bottom: 0;
-        color: white;
-        border-color: white;
-        &:after {
+        &:hover, &:focus {
           color: white;
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E   %3Cpath fill='white' d='M128 64l-64 64-16-16 64-64'/%3E   %3Cpath fill='white' d='M128 64l-16 16-64-64L64 0'/%3E  %3C/svg%3E");
+        }
+        svg {
+          font-size: 1.2em;
+          margin-right: 10px;
         }
       }
       .block__title {
@@ -91,6 +115,16 @@
   .field-name-field-image-featured {
       padding: uikit-space(1.5) 0 0 0;
       text-align: right;
+  }
+}
+
+// Hide page-title__supp.
+%page-title-no-supp {
+  .page-title__supp {
+    display: none;
+  }
+  .page-title__core {
+    @extend .col-xs-12;
   }
 }
 

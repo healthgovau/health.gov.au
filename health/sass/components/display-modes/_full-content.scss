@@ -1,5 +1,6 @@
 %dm-full-content {
   width: 100%;
+
   // layout
   .group-left {
     width: 100%;
@@ -32,7 +33,10 @@
   .view-mode-full {
     > .group-left {
       @include uikit-media(xs) {
-        padding-right: uikit-space(1);
+        padding-right: uikit-space(1.5);
+      }
+      @include uikit-media(md) {
+        padding-right: uikit-space(2.5);
       }
       padding-bottom: uikit-space(1);
     }

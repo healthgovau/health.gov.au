@@ -1,0 +1,41 @@
+// Default/full content
+.node-type-publication-collection {
+  @extend %dm-full-content;
+  @extend %page-help-only;
+  @extend %page-title-no-supp;
+}
+
+// Display modes
+.node-publication-collection {
+  background: transparent;
+
+  &.view-mode-full {
+
+    // Image
+    .field-name-field-image-featured {
+      @extend %image--full;
+    }
+
+    .paragraphs-item-publication-grouping {
+      @extend %date-and-tag;
+    }
+
+    // sub-document links
+    .grouping-title {
+      font-weight: bold;
+    }
+
+  }
+
+  // Major list
+  &.view-mode-listing_vertical {
+    @extend %dm-list-vertical;
+    .group-left {
+      display: block;
+    }
+  }
+  // Inline style
+  &.view-mode-inline {
+    @extend %dm-inline-2-col;
+  }
+}

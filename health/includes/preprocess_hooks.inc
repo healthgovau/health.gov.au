@@ -41,8 +41,7 @@ function health_preprocess_breadcrumb(&$variables, $hook) {
  */
 function health_preprocess_maintenance_page(&$variables, $hook) {
   health_preprocess_html($variables, $hook);
-  // There's nothing maintenance-related in health_preprocess_page(). Yet.
-  //health_preprocess_page($variables, $hook);
+  health_preprocess_page($variables);
 }
 
 /**
@@ -59,10 +58,12 @@ function health_preprocess_page(&$variables) {
   $exclude = [
     'health_topic',
     'health_topic_hp',
-    'listing'
+    'listing',
+    'landing_page'
   ];
   if (isset($variables['node']) && !in_array($variables['node']->type, $exclude)) {
     drupal_add_js(READSPEAKER_URL, 'external');
+    drupal_add_js(path_to_theme() . '/js/readspeaker/ReadSpeakerColorSkin.js');
     $variables['readspeaker'] = theme('readspeaker', []);
   }
 
@@ -100,7 +101,6 @@ function health_preprocess_page(&$variables) {
 
   // Pages under a topic or grand-parents pages should use the parents' title
   // in the title section and no summary.
-
   $active_trail = menu_get_active_trail();
   if (!empty($active_trail)) {
 
@@ -115,11 +115,11 @@ function health_preprocess_page(&$variables) {
 
             // Check if we are under a health professional section of the topic.
             if ($health_topic_hp && $health_topic_hp->type == 'health_topic_hp') {
-              $variables['section_title'] = $health_topic_hp->title;
+              $variables['section_title'] = theme('health_section_link', ['title' => $health_topic_hp->title, 'path' => 'node/' . $health_topic_hp->nid]);
               $variables['summary'] = NULL;
               // Check if we are under the general section of the topic.
             } else if ($health_topic) {
-              $variables['section_title'] = $health_topic->title;
+              $variables['section_title'] = theme('health_section_link', ['title' => $health_topic->title, 'path' => 'node/' . $health_topic->nid]);
               $variables['summary'] = NULL;
             }
           }
@@ -130,35 +130,39 @@ function health_preprocess_page(&$variables) {
     // Conditions and diseases
     // Title doesn't appear in the active trail, so set one manually.
     if ($active_trail[1]['href'] == 'conditions-and-diseases') {
-      if (count($active_trail) > 3) {
-        $variables['section_title'] = 'Conditions and diseases';
-        $variables['summary'] = NULL;
+      if (count($active_trail) > 2) {
+        $variables['section_title'] = theme('health_section_link', ['title' => 'Conditions and diseases', 'path' => 'conditions-and-diseases']);
       }
     }
 
     // Resources
     if ($active_trail[1]['href'] == 'resources') {
       if (isset($variables['node'])) {
-        $variables['section_title'] = ucfirst($variables['node']->type) . 's';
         $variables['summary'] = NULL;
+      }
+      if (count($active_trail) > 3) {
+        $variables['section_title'] = theme('health_section_link', ['title' => 'Resources', 'path' => 'resources/']);
+      } else {
+        $variables['section_title'] = NULL;
       }
     }
 
     // Services
     // Title doesn't appear in the active trail, so set one manually.
     if ($active_trail[1]['href'] == 'services') {
-      if (count($active_trail) > 3) {
-        $variables['section_title'] = 'Services';
-        $variables['summary'] = NULL;
+      if (count($active_trail) > 2) {
+        $variables['section_title'] = theme('health_section_link', ['title' => 'Services', 'path' => 'services']);
       }
     }
 
     // Initiatives and programs
     // Title doesn't appear in the active trail, so set one manually.
     if ($active_trail[1]['href'] == 'initiatives-and-programs') {
+      if (count($active_trail) > 2) {
+        $variables['section_title'] = theme('health_section_link', ['title' => 'Initiatives and programs', 'path' => 'initiatives-and-programs']);
+      }
       if (count($active_trail) > 3) {
-        $variables['section_title'] = 'Initiatives and programs';
-        $variables['summary'] = NULL;
+        $variables['summary'] = FALSE;
       }
     }
 
@@ -166,7 +170,7 @@ function health_preprocess_page(&$variables) {
     // Set title to be the third level menu trail.
     if ($active_trail[1]['href'] == 'news-and-events') {
       if (count($active_trail) > 3) {
-        $variables['section_title'] = ucfirst(explode('/', $active_trail[2]['href'])[1]);
+        $variables['section_title'] = theme('health_section_link', ['title' => 'News and events', 'path' => 'news-and-events']);
         $variables['summary'] = NULL;
       }
     }
@@ -174,7 +178,19 @@ function health_preprocess_page(&$variables) {
     // Committees and groups
     if ($active_trail[1]['href'] == 'committees-and-groups') {
       if (count($active_trail) > 2) {
-        $variables['section_title'] = 'Committees and groups';
+        $variables['section_title'] = theme('health_section_link', ['title' => 'Committees and groups', 'path' => 'committees-and-groups']);
+      }
+    }
+
+    // About us
+    if ($active_trail[1]['href'] == 'node/1' || $active_trail[1]['href'] == 'node/1946') {
+      if (count($active_trail) > 2) {
+        $variables['section_title'] = theme('health_section_link', [
+          'title' => $active_trail[1]['title'],
+          'path' => $active_trail[1]['href']
+        ]);
+      }
+      if (count($active_trail) > 3) {
         $variables['summary'] = NULL;
       }
     }
@@ -244,10 +260,7 @@ function health_preprocess_html(&$variables, $hook) {
   // Serialize RDF Namespaces into an RDFa 1.1 prefix attribute.
   if ($variables['rdf_namespaces']) {
     $prefixes = array();
-    foreach (explode(
-               "\n  ",
-               ltrim($variables['rdf_namespaces'])
-             ) as $namespace) {
+    foreach (explode("\n  ", ltrim($variables['rdf_namespaces'])) as $namespace) {
       // Remove xlmns: and ending quote and fix prefix formatting.
       $prefixes[] = str_replace('="', ': ', substr($namespace, 6, -1));
     }
@@ -265,14 +278,12 @@ function health_preprocess_html(&$variables, $hook) {
     if ($arg[0] == 'node' && isset($arg[1])) {
       if ($arg[1] == 'add') {
         $section = 'node-add';
-      } elseif (isset($arg[2]) && is_numeric(
-          $arg[1]
-        ) && ($arg[2] == 'edit' || $arg[2] == 'delete')
-      ) {
-        $section = 'node-'.$arg[2];
+      }
+      elseif (isset($arg[2]) && is_numeric($arg[1]) && ($arg[2] == 'edit' || $arg[2] == 'delete')) {
+        $section = 'node-' . $arg[2];
       }
     }
-    $variables['classes_array'][] = drupal_html_class('section-'.$section);
+    $variables['classes_array'][] = drupal_html_class('section-' . $section);
 
     // Store the menu item since it has some useful information.
     $variables['menu_item'] = menu_get_item();
@@ -285,76 +296,6 @@ function health_preprocess_html(&$variables, $hook) {
       }
     }
   }
-}
-
-/**
- * Override or insert variables into the comment templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("comment" in this case.)
- */
-function health_preprocess_comment(&$variables, $hook) {
-  // Add $unpublished variable.
-  $variables['unpublished'] = ($variables['status'] == 'comment-unpublished') ? true : false;
-
-  // Add $preview variable.
-  $variables['preview'] = ($variables['status'] == 'comment-preview') ? true : false;
-
-  // If comment subjects are disabled, don't display them.
-  if (variable_get('comment_subject_field_'.$variables['node']->type, 1) == 0) {
-    $variables['title'] = '';
-  }
-
-  // Add pubdate to submitted variable.
-  $variables['pubdate'] = '<time pubdate datetime="'.format_date(
-      $variables['comment']->created,
-      'custom',
-      'c'
-    ).'">'.$variables['created'].'</time>';
-  $variables['submitted'] = t(
-    '!username replied on !datetime',
-    array(
-      '!username' => $variables['author'],
-      '!datetime' => $variables['pubdate'],
-    )
-  );
-
-  // If the comment is unpublished/preview, add a "unpublished" watermark class.
-  if ($variables['unpublished'] || $variables['preview']) {
-    $variables['classes_array'][] = 'watermark__wrapper';
-  }
-
-  // Zebra striping.
-  if ($variables['id'] == 1) {
-    $variables['classes_array'][] = 'first';
-  }
-  if ($variables['id'] == $variables['node']->comment_count) {
-    $variables['classes_array'][] = 'last';
-  }
-  $variables['classes_array'][] = $variables['zebra'];
-
-  // Add the comment__permalink class.
-  // @todo Candidate for removal as we don't want to change markup just to add classes.
-  $uri = entity_uri('comment', $variables['comment']);
-  $uri_options = $uri['options'] + array(
-      'attributes' => array(
-        'class' => array('comment__permalink'),
-        'rel' => 'bookmark',
-      ),
-    );
-  $variables['permalink'] = l(t('Permalink'), $uri['path'], $uri_options);
-
-  // Remove core's permalink class and add the comment__title class.
-  // @todo Candidate for removal as we don't want to change markup just to add classes.
-  $variables['title_attributes_array']['class'][] = 'comment__title';
-  $uri_options = $uri['options'] + array('attributes' => array('rel' => 'bookmark'));
-  $variables['title'] = l(
-    $variables['comment']->subject,
-    $uri['path'],
-    $uri_options
-  );
 }
 
 /**
@@ -600,16 +541,6 @@ function health_preprocess_field(&$variables) {
       // Apply logic only to resources content types.
       if (isset($variables['element']['#items'][0])) {
         $last_updated = strtotime($variables['element']['#items'][0]['value']);
-        $first_published = strtotime(_health_find_first_publish_date($variables['element']['#object']->nid));
-
-        // There has not been any update once published.
-        if ($last_updated <= $first_published) {
-          // Do not render this field.
-          $variables['#access'] = FALSE;
-          $variables['classes_array'][] = 'sr-only';
-        }
-
-        // Hide the field if last updated is not later than publication date in
         // publication content type.
         if ($variables['element']['#bundle'] == 'publication') {
           $node = $variables['element']['#object'];
@@ -669,7 +600,7 @@ function health_preprocess_field(&$variables) {
   if ($variables['element']['#field_name'] == 'field_publication_date') {
     // Change the display of the date depending on the selected format for this node.
     if ($field = field_get_items('node', $variables['element']['#object'], 'field_publication_date_display')) {
-      $field_instance = field_info_instance('node', $variables['element']['#field_name'], 'publication');
+      $field_instance = field_info_instance('node', $variables['element']['#field_name'], $variables['element']['#bundle']);
       $display_settings = $field_instance['display'][$variables['element']['#view_mode']];
       switch ($field[0]['value']) {
         case 'month_year':
@@ -683,8 +614,6 @@ function health_preprocess_field(&$variables) {
       $variables['items'][0]['#markup'] = $rendered[0]['#markup'];
     }
   }
-
-
 }
 
 /**
@@ -699,6 +628,13 @@ function health_preprocess_field(&$variables) {
 function health_preprocess_node(&$variables) {
 
   $node = $variables['node'];
+
+  // Add title and alt to default image for image field.
+  if (isset($node->field_image_featured) && isset($node->field_image_featured[LANGUAGE_NONE][0]['is_default']) && $node->field_image_featured[LANGUAGE_NONE][0]['is_default'] == TRUE) {
+    $variables['content']['field_image_featured'][0]['#item']['alt'] = t('Default image');
+    $variables['content']['field_image_featured'][0]['#item']['title'] = t('Default image');
+  }
+
   // Add $unpublished variable.
   $variables['unpublished'] = (!$variables['status']) ? TRUE : FALSE;
 
@@ -739,19 +675,10 @@ function health_preprocess_node(&$variables) {
     foreach($variables['preprocess_fields'] as $field) {
       $preprocess = 'health_preprocess_ds_' . $field;
       if (function_exists($preprocess)) {
-        $variables[$field] = $preprocess($variables);
-      }
-    }
-  }
-
-  // Publications.
-  if ($variables['type'] == 'publication') {
-    // If publication date is the same as last modified, hide the last modified.
-    if (isset($variables['content']['changed_date'])) {
-      $changed = strtotime($variables['content']['changed_date']['#items'][0]['value']);
-      $published = strtotime($variables['field_date_published'][0]['value']);
-      if ($changed == $published) {
-        $variables['content']['changed_date']['#access'] = FALSE;
+        $variables['content'][$field] = array(
+          '#markup' => $preprocess($variables),
+          '#weight' => _health_get_ds_field_weight($variables, $field)
+        );
       }
     }
   }

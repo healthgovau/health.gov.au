@@ -14,6 +14,15 @@
 
   'use strict';
 
+  // Enable fontawesome pseudo element.
+  Drupal.behaviors.fontAwesome = {
+    attach: function (context, settings) {
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      };
+    }
+  };
+
   Drupal.behaviors.healthMatchHeight = {
     attach: function (context, settings) {
 
@@ -53,23 +62,53 @@
 
       // Homepage - In our portfolio
       $('#block-bean-ageing-and-aged-care .bean-image-and-text, #block-bean-homepage-portfolio-sport .bean-image-and-text', context).matchHeight();
+
+      // Immunisation more on immunisation band
+      $('.paragraphs-item-para-block.block-id__more-services-card .bean-image-and-text a', context).matchHeight();
     }
   };
 
   Drupal.behaviors.healthMobileMenu = {
     attach: function (context, settings) {
 
-      // Hide the alert when the close button is pressed.
-      $('.mobile-toggle', context).click(function (e) {
+      // Main menu navigation toggle.
+      $('.mobile-toggle.mobile-toggle__main-menu', context).click(function (e) {
         e.preventDefault();
-        $(this).next('div').toggleClass('mobilemenu-active');
+
+        // Deactivate search if it is currently active.
+        if ($('.mobile-toggle.mobile-toggle__search', context).hasClass('mobilemenu-active')) {
+          $('.mobile-toggle.mobile-toggle__search').click();
+        }
+
+        $('.region-navigation .block-superfish').toggleClass('mobilemenu-active');
         $(this).toggleClass('mobilemenu-active');
+        $('.nav-overlay').toggleClass('active');
       });
 
-      $('.mobile-nav-toggle', context).click(function (e) {
+      // Global search toggle.
+      $('.mobile-toggle.mobile-toggle__search', context).click(function (e) {
         e.preventDefault();
-        $(this).next('div').toggleClass('mobilemenu-active');
+
+        // Deactivate nav if it is currently active.
+        if ($('.mobile-toggle.mobile-toggle__main-menu', context).hasClass('mobilemenu-active')) {
+          $('.mobile-toggle.mobile-toggle__main-menu').click();
+        }
+        $('.region-navigation .block-search-api-page').toggleClass('mobilemenu-active');
         $(this).toggleClass('mobilemenu-active');
+        $('.nav-overlay').toggleClass('active');
+      });
+
+      // Clicking outside the active site nav should close the nav.
+      $('.nav-overlay', context).click(function() {
+        $('.mobilemenu-active').removeClass('mobilemenu-active');
+        $(this).removeClass('active');
+      });
+
+      // Local navigation
+      $('.mobile-toggle.mobile-toggle__local-nav a', context).click(function (e) {
+        e.preventDefault();
+        $("#block-menu-block-2", context).toggleClass('mobilemenu-active');
+        $(".mobile-toggle.mobile-toggle__local-nav").toggleClass('mobilemenu-active');
       });
 
       $('.filter__mobile-title', context).click(function (e) {
@@ -96,28 +135,6 @@
     }
   };
 
-  // Remove required = true until form element has lost focus.
-  Drupal.behaviors.formValidate = {
-    attach: function (context, settings) {
-
-      var reqItems = $(".node-form *:invalid");
-
-      reqItems.each(function () {
-        var element = $(this);
-        // Only apply to elements without a maxlength.
-        // Elements with maxlength are handled by vuejs.
-        if (element.attr('maxlength') == -1) {
-          element.removeAttr('required');
-
-          element.blur(function () {
-            element.attr("required", "true");
-          });
-        }
-      });
-    }
-  };
-
-
   // Responsive tables.
   Drupal.behaviors.responsiveTables = {
     attach: function (context, settings) {
@@ -133,8 +150,20 @@
       // Add external links.
       Drupal.health.externalLinks();
       // Add class to any li surrounding an external link.
-      $('a[rel=external]').parent('li').addClass('external-link');
+      $('a[rel=external]', context).parent('li').addClass('external-link');
     }
   };
 
+  // Use singular when there is only 1 result in the view list.
+  Drupal.behaviors.singularResult = {
+    attach: function (context, settings) {
+      var total = $('.view-header span', context).text();
+      if (total === '1') {
+        $('.view-header span', context).after(' result');
+      }
+      else {
+        $('.view-header span', context).after(' results');
+      }
+    }
+  };
 })(jQuery, Drupal, this, this.document);

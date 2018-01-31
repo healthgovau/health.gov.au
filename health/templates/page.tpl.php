@@ -19,6 +19,8 @@ $content_class = 'main-content';
 endif;
 ?>
 
+<div class="nav-overlay"></div>
+
 <div class="page">
   <div class="header-top">
     <div class="container">
@@ -66,27 +68,25 @@ endif;
   <div class="page-content" id="page-content">
 
   <?php if(!drupal_is_front_page()): ?>
-    <!-- Show the title and breadcrumbs when they are not on the homepage -->
     <div class="page-title header header--light">
     <div class="container">
       <div class="row">
       <div class="page-title__core col <?php print isset($section_title) ? 'section-title' : '' ?>">
         <?php print $breadcrumb; ?>
 
+        <?php if (isset($section_title)): ?>
+          <?php print $section_title; ?>
+        <?php endif; ?>
+
         <?php if ($title): ?>
         <?php print render($title_prefix); ?>
         <h1 class="uikit-header-heading">
           <?php print $title; ?>
-          <?php print $readspeaker; ?>
         </h1>
         <?php print render($title_suffix); ?>
         <?php endif; ?>
 
-
-
-        <?php if (isset($section_title)): ?>
-        <p class="section-header"><?php print $section_title; ?></p>
-        <?php endif; ?>
+        <?php print $readspeaker; ?>
 
         <?php if (isset($summary)): ?>
         <p class="summary"><?php print $summary; ?></p>

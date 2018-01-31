@@ -8,11 +8,17 @@
     border-bottom: 1px solid $colour-Secondary;
     &:hover {
       text-decoration: none;
-      background: none;
+      background-color: transparent;
     }
-    &:focus {
-      background-color: $colour-Secondary-light;
-      color: white;
-    }
+    @extend %link_focus;
+  }
+}
+
+%link_focus {
+  &:focus {
+    background-color: $colour-Secondary;
+    color: white;
+    outline: 1px solid $colour-Secondary-hover;
+    outline-offset: 0;
   }
 }

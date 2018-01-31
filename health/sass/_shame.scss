@@ -61,16 +61,22 @@
           img {
             width: 20%;
           }
+          svg {
+            path, rect {
+              fill: #000;
+            }
+          }
         }
-      }
-      h2 {
-        color: white;
       }
       a {
         display: block;
         border-bottom: none;
+        padding: uikit-space( 1 );
+        .field-name-field-bean-text {
+          color: $uikit-colour-Secondary;
+        }
         &:hover {
-          background: $colour-Secondary-hover;
+          background: $colour-light-dark;
           .field-name-field-link-internal {
             .field-item {
               border-bottom: none;
@@ -78,15 +84,28 @@
           }
         }
       }
-      @extend %colour-Secondary-background;
       .field-name-field-link-internal {
         .field-item {
           display: inline-block;
-          border-bottom: 1px solid white;
-          color: white;
+          border-bottom: 1px solid $uikit-colour-Secondary;
         }
       }
-      color: white;
+      color: $uikit-colour-Secondary;
+      .more-services-card {
+        a {
+          border-top: 10px solid $colour-Primary-dark;
+        }
+      }
+      .more-conditions-and-diseases-car {
+        a {
+          border-top: 10px solid $colour-Tertiary-dark;
+        }
+      }
+      .more-programs-and-initiatives-ca {
+        a {
+          border-top: 10px solid $colour-Secondary-dark;
+        }
+      }
     }
   }
 
@@ -94,13 +113,16 @@
   .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun {
     @extend %colour-Secondary-background;
     color: white;
+    a:after {
+      color: white;
+    }
     h2 {
       @extend .uikit-display-4;
       color: white;
     }
   }
 
-    // Immunisation topic page browse by lifestage band.
+  // Immunisation topic page browse by lifestage band.
   // Items
   // Wrapper title/summary
   .paragraphs-item-para-taxonomies {
@@ -290,10 +312,6 @@
   }
 }
 
-// Remove padding on dl set by UIKit
-.page dl {
-  margin-bottom: 0;
-}
 
 // For programs and initiatives listing page block above the view.
 .page-initiatives-and-programs.page-views {
@@ -353,17 +371,28 @@
   }
 }
 
+/** START UIKIT overrides */
+
 // Stop all last P tags from having a bottom margin, this happens across the
 // site in a number of places and is a UIKit style.
 .node-type-health-topic,
 .node-type-health-topic-hp,
 .node-type-landing-page,
 td, th,
-.view {
+.view,
+.document-accessibility-form {
   p:last-of-type {
     margin-bottom: 0;
   }
 }
+
+// Remove padding on dl set by UIKit
+.page dl {
+  margin-bottom: 0;
+}
+
+/** END UIKIT overrides */
+
 
 // For survey only - remove afterwards
 #owInviteSnippet {
@@ -372,3 +401,78 @@ td, th,
     margin-left: 5px;
   }
 }
+
+/** START Local nav and HP link **/
+// Include styles to support 'For health professionals' link.
+// Hide header version on mobile
+body:not(.node-type-health-topic, .node-type-health-topic-hp) {
+  .page-title__supp {
+    .region-title-supp {
+      .block-bean-call-to-action {
+        display: none;
+        @include uikit-media(sm) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.region-sidebar-second {
+  @include uikit-clearfix;
+  @extend %colour-Light-background;
+  @include uikit-media(sm) {
+    background: white;
+  }
+
+  #block-bean-local-navigation-menu-toggle-for {
+    float: left;
+    width: 50%;
+  }
+
+  .bean-public-hp-switcher {
+    float: left;
+    width: 50%;
+    .field-name-field-link-to a.button {
+      display: block;
+      padding: 6px 12px;
+      font-size: 16px;
+
+    }
+    // Hide sidebar version on desktop
+    @include uikit-media(sm) {
+      display: none;
+    }
+  }
+
+  #block-menu-block-2 {
+    clear: both;
+    @include uikit-clearfix;
+    background: white;
+    border-bottom: $uikit-borderize;
+    @include uikit-media(sm) {
+      border-bottom: 0;
+    }
+  }
+}
+
+body:not(.topic-subpage) {
+  .region-sidebar-second {
+    #block-bean-local-navigation-menu-toggle-for {
+      float: none;
+      width: 100%;
+    }
+  }
+}
+
+// Fix overflow of content onto menu
+body:not(.node-type-health-topic, .node-type-health-topic-hp, .node-type-landing-page) {
+  #content {
+    padding-top: uikit-space(1.5);
+    @include uikit-media(sm) {
+      padding-top: 0;
+    }
+  }
+}
+
+/** END Local nav and HP link **/

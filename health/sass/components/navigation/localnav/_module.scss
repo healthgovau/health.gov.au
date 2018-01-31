@@ -5,7 +5,7 @@
 //-------------------------------------------------------------
 
 // Individual menu items
-%uikit-localnav--link {
+%uikit-localnav__link {
   display: block;
   border: none;
   border-left: 4px solid transparent;
@@ -13,8 +13,10 @@
   text-decoration: none;
   padding: uikit-space(.5);
 
-  &:hover {
-    border-left-color: $colour-Secondary-darker;
+  @include uikit-media(sm) {
+    &:hover {
+      border-left-color: $colour-Secondary;
+    }
   }
 
   &.active-trail {
@@ -22,49 +24,139 @@
   }
 
   &.active {
-    background: $uikit-colour-Background;
-    border-left-color: $colour-Secondary-darker;
+    background: $colour-light;
+    border-left-color: $colour-Secondary;
     &:hover {
       background: white;
     }
     &:focus {
-      background-color: $colour-Secondary-light;
       color: white;
+      background: $colour-Secondary;
     }
   }
 }
 
 // Menu with indentation
 %uikit-localnav {
-  @extend .uikit-link-list;
-  padding: 0; 
+
+  padding: 0;
+  // Level 1
   ul {
-    font-size: 14px;
+    @extend .uikit-link-list;
+    padding: 0;
+    font-size: 15px;
     text-transform: none;
-    li:last-child {
-      border-bottom: none;
-    }
-    a {
-      padding: uikit-space(.5) uikit-space(1);
-    }
-    ul {
-      font-size: 12px;
+    > li {
+      margin: 0;
+      padding: 0;
+      border-bottom: $uikit-borderize;
+      &:first-child {
+        @include uikit-media(sm) {
+          border-top: $uikit-borderize;
+        }
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+
       a {
-        padding: uikit-space(.5) uikit-space(1.5);
-        border-bottom: 0;
+        padding: uikit-space(.5) 12px;
+        @include uikit-media(sm) {
+          padding: uikit-space(.5) uikit-space(1);
+        }
+      }
+
+      &.active-trail {
+        ul {
+          li:not(.active-trail) a {
+            border-left-color: $colour-light-darker;
+            @include uikit-media(sm) {
+              border-left-color: $colour-lighter;
+            }
+          }
+        }
+        a:not(.active).active-trail {
+          border-left-color: $colour-dark;
+          @include uikit-media(sm) {
+            border-left-color: $colour-light-darker;
+          }
+        }
+      }
+
+      // Level 2
+      ul {
+        li {
+          &:first-child {
+            border-top: $uikit-borderize;
+          }
+          a {
+            padding: uikit-space(.5) uikit-space(1);
+            @include uikit-media(sm) {
+              padding: uikit-space(.5) uikit-space(1.75);
+            }
+            border-bottom: 0;
+          }
+        }
+
+        // Level 3
+        ul {
+          li a {
+            padding: uikit-space(.5) uikit-space(2.5);
+          }
+        }
       }
     }
+
+
   }
 
-  li {
-    margin: 0;
-    padding: 0;
-    border-bottom: $uikit-borderize;
-    &:first-child {
-      border-top: $uikit-borderize;
-    }
-  }
   a {
-    @extend %uikit-localnav--link;
+    @extend %uikit-localnav__link;
+  }
+
+  // Hide on mobile initially.
+  display: none;
+  @include uikit-media(sm) { // Always show on desktop.
+    display: block;
+  }
+  &.mobilemenu-active { // Show when toggled.
+    display: block;
   }
 }
+
+// Mobile toggle.
+%uikit-localnav__mobile-toggle {
+
+  @include uikit-media(sm) { // Hide on desktop.
+    display: none;
+  }
+
+  //font-weight: 700;
+  font-size: 18px;
+  display: block;
+  border-bottom: 0;
+
+  border-top: $uikit-borderize;
+  border-bottom: $uikit-borderize;
+
+  // Toggles
+  .mobile-toggle__close,
+  .mobile-toggle__open {
+    padding: 6px 12px;
+    display: block;
+  }
+  .mobile-toggle__close {
+    display: none;
+  }
+
+  // When expanded.
+  &.mobilemenu-active {
+    .mobile-toggle__open {
+      display: none;
+    }
+    .mobile-toggle__close {
+      display: block;
+    }
+  }
+}
+

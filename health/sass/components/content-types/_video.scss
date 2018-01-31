@@ -5,10 +5,7 @@
 .node-type-video {
   @extend %dm-full-content;
   @extend %page-help-and-currency;
-
-	.region-content {
-		margin-top: uikit-space(1.5);
-	}
+  @extend %page-title-no-supp;
 }
 
 .node-video {

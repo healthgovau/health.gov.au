@@ -20,7 +20,7 @@
   @extend %uikit-search;
 }
 
-#search-api-page-search-form {
+.block-search-api-page {
   @extend %uikit-search;
   .search-form {
     margin: 0;

@@ -1,3 +1,13 @@
+%badge {
+  padding: 0 8px;
+  margin-right: 10px;
+  float: left;
+  text-transform: uppercase;
+  border-radius: 12px;
+  margin-top: 2px;
+  font-size: 14px;
+}
+
 .page {
   .header-top {
     background: $uikit-colour-Secondary;
@@ -22,14 +32,15 @@
         text-align: right;
       }
     }
+    .alpha-icon {
+      @extend %badge;
+      background: $alpha-background;
+      color: $alpha-text;
+    }
     .beta-icon {
-      background: $colour-Secondary;
-      padding: 0 8px;
-      margin-right: 10px;
-      color: white;
-      font-weight: bold;
-      float: left;
-      text-transform: uppercase;
+      @extend %badge;
+      background: $beta-background;
+      color: $beta-text;
     }
     .message {
       display: block;
@@ -38,6 +49,12 @@
     a {
       color: #fff;
       border-bottom-color: #fff;
+      &:hover {
+        border: none;
+      }
+      &:after {
+        color: white;
+      }
     }
 
     .mobile-hide {

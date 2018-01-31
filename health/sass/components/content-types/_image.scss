@@ -2,10 +2,7 @@
 .node-type-image{
     @extend %dm-full-content;
 	@extend %page-help-only;
-
-	.region-content {
-		margin-top: uikit-space(1.5);
-	}
+    @extend %page-title-no-supp;
 }
 
 // Display modes

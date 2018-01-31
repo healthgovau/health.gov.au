@@ -51,6 +51,8 @@ $colour-light: #ecedee;
 $colour-lighter: #f1f1f2;
 $colour-lightest: #f9f9f9;
 
+$colour-light-darker: #cdcdcd;
+
 %colour-Primary-background {
   background-color: $colour-Primary-darker;
   background: -webkit-linear-gradient(left, $colour-Primary-darker, $colour-Primary);
@@ -130,3 +132,10 @@ $colour-Statistics-red: $uikit-colour-Error;
 // Typography
 $colour-minorText: #6e6e6e;
 $aqua: #18788d;
+
+// Service delivery
+$alpha-background: #c22f73;
+$alpha-text: #FFF;
+
+$beta-background: #d34600;
+$beta-text: #FFF;

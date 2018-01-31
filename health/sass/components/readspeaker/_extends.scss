@@ -1,19 +1,275 @@
 #readspeaker {
-  display: inline;
-  div {
-    display: inline-block;
-  }
+
+  // Mobile
+  display: inline-block;
+  float: right;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
   a {
     border-bottom: none;
-    &:hover,
-    &:active {
-      background-color: inherit;
-    }
-    &:after {
-      display: none;
-    }
   }
   .rsbtn {
     margin-bottom: 0;
+  }
+
+  // Desktop
+  @include uikit-media(sm) {
+    display: inline;
+    position: relative;
+    float: none;
+    top: 0;
+    right: 0;
+  }
+
+}
+
+.rsbtn_colorskin {
+  @extend .uikit-body;
+  position: relative;
+  font-size: 13px;
+  line-height: 1.3em;
+  display: inline-block;
+  padding: 2px;
+  margin-bottom: -1px;
+  background: white;
+  border: 1px solid $colour-Secondary;
+  &:hover {
+    background-color: $colour-light-dark;
+  }
+
+  i {
+    font-size: 12px;
+  }
+
+  a {
+    color: $colour-Secondary;
+  }
+
+  a, span {
+    position: relative;
+    text-decoration: none;
+  }
+
+  span {
+    display: block;
+  }
+
+  .rsimg {
+    background: transparent url(../js/readspeaker/ReadSpeakerColorSkin.png) no-repeat scroll 0 0;
+  }
+
+  .rspart {
+    float: left;
+    margin-left: 2px;
+    &.rsbutton {
+      background-color: $colour-Secondary;
+      width: 18px;
+      height: 18px;
+
+      /*
+       * Add rounded corners to supported browsers
+       */
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+
+      /**
+       * This is just to make the rollover effect a little smoother.
+       */
+      -moz-transition: background-color .2s ease;
+      -webkit-transition: background-color .2s ease;
+      -o-transition: background-color .2s ease;
+      transition: background-color .2s ease;
+
+      &:hover, &:focus {
+        background-color: $colour-Secondary-hover;
+      }
+    }
+
+    .rsbtn_btnlabel {
+      display: none;
+    }
+  }
+
+  .rsdefloat {
+    clear: both;
+  }
+
+  .rsbtn_box {
+    margin: 1px;
+  }
+
+  .rsbtn_play {
+    margin: 1px 0;
+  }
+
+  .rsbtn_left {
+    &.rspart {
+      background: none;
+    }
+    .rsbtn_text {
+      span {
+        display: inline;
+      }
+    }
+  }
+
+  .rsbtn_exp.rsimg.rspart {
+    background: none;
+    float: left;
+    display: none;
+  }
+
+  &.rsexpanded {
+    //display: inline;
+    .rsbtn_exp.rsimg {
+      display: inline;
+    }
+  }
+
+  .rsbtn_pause {
+    background-position: -18px -18px;
+  }
+
+  &.rspaused, &.rsstopped {
+    .rsbtn_pause {
+      background-position: -18px 0px;
+    }
+  }
+
+  .rsbtn_stop {
+    background-position: -18px -36px;
+  }
+
+  .rsbtn_progress_container {
+    border: 1px solid $colour-Secondary;
+    width: 50px;
+    height: 10px;
+    margin-top: 3px;
+    margin-left: 4px;
+    background-image: none;
+    /*
+     * Add rounded corners to supported browsers
+     */
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+
+  .rsbtn_progress_handle.rsimg {
+    position: absolute;
+    background-color: $colour-Secondary;
+    top: -3px;
+    left: -3px;
+    width: 6px;
+    height: 16px;
+    background-image: none;
+  }
+
+  .rsbtn_progress_played {
+    position: absolute;
+    height: 100%;
+    background-color: #ccc;
+    background-image: none;
+  }
+
+  .rsbtn_volume {
+    margin-left: 4px;
+    background-position: -18px -54px;
+  }
+
+  .rsbtn_volume_container {
+    position: absolute;
+    display: none;
+    top: 100%;
+    width: 16px;
+    height: 40px;
+    border: 1px solid $colour-Secondary;
+    background: #fff;
+  }
+
+  .rsbtn_volume_slider {
+    width: 6px;
+    height: 30px;
+    margin: 5px;
+    background: #ccc;
+  }
+
+  .rsbtn_volume_handle.rsimg {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 12px;
+    height: 6px;
+    background: $colour-Secondary;
+  }
+
+  .rsbtn_dl {
+    background-position: -18px -72px;
+  }
+
+  .rsbtn_settings {
+    background-position: -18px -90px;
+  }
+
+  .rsbtn_closer {
+    margin-left: 2px;
+    background-position: -18px -108px;
+  }
+
+  &.rspopup {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #555;
+    box-shadow: 0 0 5px #777;
+    display: none;
+  }
+
+  .rsbtn_powered {
+    display: none;
+  }
+
+  &.rs_whitelogo {
+    .rsbtn_powered {
+      color: #fff;
+      .rsbtn_btnlabel a span {
+        &.rsbtn_label_read, &.rsbtn_label_speaker {
+          color: #fff;
+        }
+        &.rsbtn_label_icon.rsimg {
+          background-position: -285px -490px;
+        }
+      }
+    }
+  }
+
+  &.rs_blacklogo {
+    .rsbtn_powered {
+      color: $colour-Secondary;
+      .rsbtn_btnlabel a span {
+        &.rsbtn_label_read, &.rsbtn_label_speaker {
+          color: $colour-Secondary;
+        }
+        &.rsbtn_label_icon.rsimg {
+          background-position: -433px -490px;
+        }
+      }
+    }
+  }
+
+  a {
+    &.rsbtn_abouthelp {
+      background: url(../js/readspeaker/ReadSpeakerColorSkin.png) no-repeat scroll -20px -128px transparent;
+      background-color: $colour-Secondary;
+      border-radius: 7px;
+      transition: background-color 0.2s ease 0s;
+      height: 14px;
+      width: 14px;
+      float: left;
+      margin: 3px 1px 1px;
+      &:hover {
+        background-color: #ccc;
+      }
+    }
   }
 }

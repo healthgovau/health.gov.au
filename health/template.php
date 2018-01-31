@@ -11,6 +11,7 @@
 include_once drupal_get_path('theme', 'health') . '/includes/helper.inc';
 include_once drupal_get_path('theme', 'health') . '/includes/preprocess_hooks.inc';
 include_once drupal_get_path('theme', 'health') . '/includes/ds_preprocess_hooks.inc';
+include_once drupal_get_path('theme', 'health') . '/includes/process_hooks.inc';
 
 // Auto-rebuild the theme registry during theme development.
 if (theme_get_setting('health_rebuild_registry') && !defined('MAINTENANCE_MODE')) {
@@ -92,6 +93,23 @@ function health_theme() {
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
   ];
 
+  $theme['publication_collection'] = [
+    'variables' => [
+      'collection_list' => NULL,
+    ],
+    'template' => 'publication_collection',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
+  $theme['health_section_link'] = [
+    'variables' => [
+      'title' => NULL,
+      'path' => NULL
+    ],
+    'template' => 'section_link',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
   return $theme;
 }
 
@@ -128,43 +146,6 @@ function health_breadcrumb($variables) {
 
 }
 
-
-/**
- * Override or insert variables into the html templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("html" in this case.)
- */
-function health_process_html(&$variables, $hook) {
-  // Flatten out html_attributes.
-  $variables['html_attributes'] = drupal_attributes($variables['html_attributes_array']);
-}
-
-
-/**
- * Override or insert variables in the html_tag theme function.
- */
-function health_process_html_tag(&$variables) {
-  $tag = &$variables['element'];
-
-  if ($tag['#tag'] == 'style' || $tag['#tag'] == 'script') {
-    // Remove redundant CDATA comments.
-    unset($tag['#value_prefix'], $tag['#value_suffix']);
-
-    // Remove redundant type attribute.
-    if (isset($tag['#attributes']['type']) && $tag['#attributes']['type'] !== 'text/ng-template') {
-      unset($tag['#attributes']['type']);
-    }
-
-    // Remove media="all" but leave others unaffected.
-    if (isset($tag['#attributes']['media']) && $tag['#attributes']['media'] === 'all') {
-      unset($tag['#attributes']['media']);
-    }
-  }
-}
-
 /**
  * Implement hook_html_head_alter().
  */
@@ -173,38 +154,6 @@ function health_html_head_alter(&$head) {
   if (isset($head['system_meta_content_type']['#attributes']['content'])) {
     $head['system_meta_content_type']['#attributes'] = array('charset' => str_replace('text/html; charset=', '', $head['system_meta_content_type']['#attributes']['content']));
   }
-}
-
-/**
- * Override or insert variables into the maintenance page template.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("maintenance_page" in this case.)
- */
-function health_process_maintenance_page(&$variables, $hook) {
-  health_process_html($variables, $hook);
-  // Ensure default regions get a variable. Theme authors often forget to remove
-  // a deleted region's variable in maintenance-page.tpl.
-  foreach (array('header', 'navigation', 'highlighted', 'help', 'content', 'sidebar_first', 'sidebar_second', 'footer', 'bottom') as $region) {
-    if (!isset($variables[$region])) {
-      $variables[$region] = '';
-    }
-  }
-}
-
-/**
- * Override or insert variables into the block templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("block" in this case.)
- */
-function health_process_block(&$variables, $hook) {
-  // Drupal 7 should use a $title variable instead of $block->subject.
-  $variables['title'] = isset($variables['block']->subject) ? $variables['block']->subject : '';
 }
 
 /**
@@ -279,7 +228,7 @@ function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
       $links .= theme('selected_filter', [
           'url' => url('/' . current_path(), ['query' => $query_string_modified]),
           'classes' => 'facet-remove-link',
-          'text' => $query_string['search_api_views_fulltext'],
+          'text' => t('@text', ['@text' => $query_string['search_api_views_fulltext']]),
         ]
       );
     }
@@ -369,13 +318,8 @@ function health_form_search_api_page_search_form_alter(&$form, &$form_state) {
 }
 
 /**
- * Alters the default Panels render callback so it removes the panel separator.
- */
-function health_panels_default_style_render_region($variables) {
-  return implode('', $variables['panes']);
-}
-
-/**
+ * Implements THEME_form_element_lable().
+ *
  * Alters the checkbox and radio buttons so the markup is usable for the uikit.
  */
 function health_form_element_label($variables) {
@@ -426,6 +370,8 @@ function health_form_element_label($variables) {
 }
 
 /**
+ * Implements THEME_form_element().
+ *
  * Alters the checkbox and radio buttons so the markup is usable for the uikit.
  */
 function health_form_element(&$variables) {
@@ -538,6 +484,8 @@ function health_form_element(&$variables) {
 }
 
 /**
+ * Implements THEME_select()
+ *
  * Wraps a div around the select element so we can use the :after attribute to consistently style the element.
  */
 function health_select($variables) {
@@ -854,7 +802,7 @@ function health_crumbs_breadcrumb_link(array $item) {
  * Implements hook_block_view_alter().
  */
 function health_block_view_alter(&$data, $block) {
-  if ($block->title == 'Intended audience' && $block->module == 'facetapi') {
+  if ($block->title == 'Intended audience' && $block->module == 'facetapi' && isset($data)) {
     foreach ($data['content']['field_audience']['#items'] as $key => $item) {
       // Replace (0) with ''.
       $item['data'] = str_replace('(0)', '', $item['data']);

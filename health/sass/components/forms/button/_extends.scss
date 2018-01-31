@@ -13,7 +13,7 @@
 // Markup: forms-button.twig
 //
 // Style guide: forms.base.button
-.button,
+.button,a.button,
 %button,
 button,
 html [type='button'],
@@ -21,6 +21,13 @@ html [type='button'],
 [type='submit']{
   @extend .uikit-btn;
   border-radius: 0;
+  border: 0;
+  color: white;
+  background-color: $colour-Primary;
+  &:hover, &:focus {
+    background-color: $colour-Primary-hover;
+    color: white;
+  }
 }
 
 .button--secondary {
