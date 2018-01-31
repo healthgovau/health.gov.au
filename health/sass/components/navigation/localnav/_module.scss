@@ -67,7 +67,7 @@
       }
 
       &.active-trail {
-        ul {
+        /*ul {
           li:not(.active-trail) a {
             border-left-color: $colour-light-darker;
             @include uikit-media(sm) {
@@ -80,7 +80,7 @@
           @include uikit-media(sm) {
             border-left-color: $colour-light-darker;
           }
-        }
+        }*/
       }
 
       // Level 2
