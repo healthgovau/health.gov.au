@@ -183,7 +183,7 @@ function _health_get_render_elements_for_public_topic_page($variables, $full) {
     $path = drupal_get_path_alias();
     $parts = explode('/',$path);
     $url = '/topics/' . $parts[1] . '/health-professionals';
-    $link =  l('<i class="fas fa-user-md"></i> For health professionals', $url, ['attributes' => ['class' => ['button']], 'html' => TRUE]);
+    $link =  l('For health professionals', $url, ['attributes' => ['class' => ['button']], 'html' => TRUE]);
   }
 
   return [
@@ -220,7 +220,7 @@ function _health_get_render_elements_for_hp_topic_page($variables, $full) {
     $path = drupal_get_path_alias();
     $parts = explode('/',$path);
     $url = '/topics/' . $parts[1];
-    $link = l('<i class="fas fa-medkit"></i> For general public', $url, ['attributes' => ['class' => ['button']], 'html' => TRUE]);
+    $link = l('For general public', $url, ['attributes' => ['class' => ['button']], 'html' => TRUE]);
   }
 
   return [
