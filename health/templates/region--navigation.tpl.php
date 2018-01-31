@@ -8,17 +8,21 @@
  */
 ?>
 <?php if ($content): ?>
-  <nav id="nav" class="<?php print $classes; ?>" >
+  <nav id="nav" class="<?php print $classes; ?>">
     <div class="container">
       <div class="row">
-        <a class="mobile-toggle mobile-toggle__main-menu col-xs-6">
-          <span class="mobile-toggle__open"><i class="fas fa-bars"></i>Open menu</span>
-          <span class="mobile-toggle__close"><i class="fas fa-times"></i>Close menu</span>
-        </a>
-        <a class="mobile-toggle mobile-toggle__search col-xs-6">
-          <span class="mobile-toggle__open"><i class="fas fa-search"></i>Open search</span>
-          <span class="mobile-toggle__close"><i class="fas fa-times"></i>Close search</span>
-        </a>
+
+        <button class="mobile-toggle mobile-toggle__main-menu col-xs-6"
+                aria-controls="block-superfish-1" aria-expanded="false"
+                aria-selected="false" role="tab">
+          Open menu
+        </button>
+
+        <button class="mobile-toggle mobile-toggle__search col-xs-6"
+                aria-controls="search-api-page-search-form"
+                aria-expanded="false" aria-selected="false" role="tab">
+          Open search
+        </button>
       </div>
       <div class="row">
         <?php print $content; ?>

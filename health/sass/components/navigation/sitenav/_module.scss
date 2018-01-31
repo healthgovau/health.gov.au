@@ -126,33 +126,15 @@
   font-weight: 700;
   display: block;
   border-bottom: 0;
-
-  // Toggles
-  .mobile-toggle__open,
-  .mobile-toggle__close {
-    svg {
-      width: 16px;
-      margin-right: 5px;
-    }
-  }
-  .mobile-toggle__close {
-    display: none;
-  }
-
-  // When expanded.
-  &.mobilemenu-active {
-    .mobile-toggle__open {
-      display: none;
-    }
-    .mobile-toggle__close {
-      display: inline;
-    }
-  }
+  background-color: white;
+  color: black;
+  margin: 0;
 
   &:hover,
   &:focus {
     color: $uikit-colour-Text;
     background: transparent;
+    outline-offset: -1px;
   }
 }
 

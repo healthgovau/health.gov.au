@@ -71,6 +71,10 @@
   Drupal.behaviors.healthMobileMenu = {
     attach: function (context, settings) {
 
+      // Add accessibility elements.
+      $('#block-superfish-1').attr('aria-hidden', 'true');
+      $('.region-navigation .block-search-api-page').attr('aria-hidden', 'true');
+
       // Main menu navigation toggle.
       $('.mobile-toggle.mobile-toggle__main-menu', context).click(function (e) {
         e.preventDefault();
@@ -80,8 +84,25 @@
           $('.mobile-toggle.mobile-toggle__search').click();
         }
 
-        $('.region-navigation .block-superfish').toggleClass('mobilemenu-active');
+        // Show/hide the actual menu.
+        $('#block-superfish-1').toggleClass('mobilemenu-active');
+
+        // Update aria stuff.
+        Drupal.toggleAria('#block-superfish-1', 'aria-hidden');
+        Drupal.toggleAria(this, 'aria-selected');
+        Drupal.toggleAria(this, 'aria-expanded');
+
+        // Toggle class on the button.
         $(this).toggleClass('mobilemenu-active');
+
+        // Update text.
+        if ($(this).hasClass('mobilemenu-active')) {
+          $(this).text('Close menu');
+        } else {
+          $(this).text('Open menu');
+        }
+
+        // Toggle the overlay to hide elements below the menu.
         $('.nav-overlay').toggleClass('active');
       });
 
@@ -93,8 +114,23 @@
         if ($('.mobile-toggle.mobile-toggle__main-menu', context).hasClass('mobilemenu-active')) {
           $('.mobile-toggle.mobile-toggle__main-menu').click();
         }
+
         $('.region-navigation .block-search-api-page').toggleClass('mobilemenu-active');
+
+        // Update aria stuff.
+        Drupal.toggleAria('.region-navigation .block-search-api-page', 'aria-hidden');
+        Drupal.toggleAria(this, 'aria-selected');
+        Drupal.toggleAria(this, 'aria-expanded');
+
         $(this).toggleClass('mobilemenu-active');
+
+        // Update text.
+        if ($(this).hasClass('mobilemenu-active')) {
+          $(this).text('Close search');
+        } else {
+          $(this).text('Open search');
+        }
+
         $('.nav-overlay').toggleClass('active');
       });
 
@@ -166,4 +202,20 @@
       }
     }
   };
+
+  /**
+   * Toggle aria elements to true/false.
+   * @param element
+   *   The element to update, as a selector.
+   * @param aria
+   *   The aria attribute to update.
+   */
+  Drupal.toggleAria = function(element, aria) {
+    $(element).each(function(index, item) {
+      $(item).attr(aria, function (index, attr) {
+        return attr == 'true' ? 'false' : 'true';
+      });
+    });
+  };
+
 })(jQuery, Drupal, this, this.document);
