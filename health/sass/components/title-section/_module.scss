@@ -20,6 +20,15 @@
 
   max-width: 56em;
 
+  // In case no section-supp.
+  &.full {
+    @extend .col-sm-12;
+    max-width: 100%;
+    .summary {
+      max-width: 100%;
+    }
+  }
+
   // Section title (large)
   .uikit-header-heading {
     line-height: 1.4;

@@ -71,7 +71,8 @@ endif;
     <div class="page-title header header--light">
     <div class="container">
       <div class="row">
-      <div class="page-title__core col <?php print isset($section_title) ? 'section-title' : '' ?>">
+      <div class="page-title__core col<?php print isset($section_title) ? ' section-title' : '';
+      print count($page['title_supp']) == 0 ? ' full': ''; ?>">
         <?php print $breadcrumb; ?>
 
         <?php if (isset($section_title)): ?>
@@ -95,10 +96,12 @@ endif;
         <?php print render($page['title_core']); ?>
       </div>
 
-      <div class="page-title__supp col <?php print isset($section_title) ? 'section-title' : '' ?>">
-        <?php print render($page['title_supp']); ?>
-        <?php print isset($initiative_or_program_logo) ? $initiative_or_program_logo : ''?>
-      </div>
+      <?php if (count($page['title_supp']) > 0): ?>
+        <div class="page-title__supp col <?php print isset($section_title) ? 'section-title' : '' ?>">
+          <?php print render($page['title_supp']); ?>
+          <?php print isset($initiative_or_program_logo) ? $initiative_or_program_logo : ''?>
+        </div>
+      <?php endif; ?>
       </div>
     </div>
     </div>
