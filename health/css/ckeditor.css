@@ -5663,7 +5663,13 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
 
 .page-title h1, .page-title .node-statistic.view-mode-feature .statistic .group-statistic p.field-name-field-statistic-value .statistic-value, .node-statistic.view-mode-feature .statistic .group-statistic p.field-name-field-statistic-value .page-title .statistic-value, .page-title .node-statistic.view-mode-inline .statistic .group-statistic p.field-name-field-statistic-value .statistic-value, .node-statistic.view-mode-inline .statistic .group-statistic p.field-name-field-statistic-value .page-title .statistic-value {
   color: #313131;
-  background: none; }
+  background: none;
+  padding: 0;
+  margin-bottom: 0; }
+  @media (min-width: 768px) {
+    .page-title h1, .page-title .node-statistic.view-mode-feature .statistic .group-statistic p.field-name-field-statistic-value .statistic-value, .node-statistic.view-mode-feature .statistic .group-statistic p.field-name-field-statistic-value .page-title .statistic-value, .page-title .node-statistic.view-mode-inline .statistic .group-statistic p.field-name-field-statistic-value .statistic-value, .node-statistic.view-mode-inline .statistic .group-statistic p.field-name-field-statistic-value .page-title .statistic-value {
+      padding: 1.6em 0 2em 0;
+      margin-bottom: 1.6em; } }
 
 .page-title.header.header--light {
   padding-top: 0;

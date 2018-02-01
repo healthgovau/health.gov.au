@@ -4,6 +4,12 @@
     @extend .uikit-header;
     color: $uikit-colour-Text;
     background: none;
+    padding: 0;
+    margin-bottom: 0;
+    @include uikit-media(sm) {
+      padding: 1.6em 0 2em 0;
+      margin-bottom: 1.6em;
+    }
   }
   &.header.header--light {
     @extend %colour-Light-background;
