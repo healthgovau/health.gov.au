@@ -142,10 +142,12 @@
 // Overlay.
 %uikit-sitenav-overlay {
   position: fixed;
+  top: -9999px;
+  left: -9999px;
   background: transparent;
   opacity: 0.7;
   width: 100%;
-  height: 0;
+  height: 150%;
   z-index: 499;
   -webkit-transition: background 0.4s linear;
   -moz-transition: background 0.4s linear;
@@ -153,10 +155,15 @@
   -o-transition: background 0.4s linear;
   transition: background 0.4s linear;
   &.active {
-    height: 150%;
     background: black;
-    @include uikit-media(sm) {
-      display: none;
-    }
+  }
+  &.transition {
+    top:0;
+    left: 0;
+  }
+
+  // Hide on tablet +
+  @include uikit-media(sm) {
+    display: none;
   }
 }
