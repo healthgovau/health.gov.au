@@ -9707,16 +9707,6 @@ div.region-content .anchor {
         @media (min-width: 768px) {
           .uikit-body .sidebar #block-menu-block-2 ul > li a, .page .sidebar #block-menu-block-2 ul > li a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li a {
             padding: 0.8em 1.6em; } }
-      .uikit-body .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a, .page .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a {
-        border-left-color: #cdcdcd; }
-        @media (min-width: 768px) {
-          .uikit-body .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a, .page .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a {
-            border-left-color: #f1f1f2; } }
-      .uikit-body .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail, .page .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail {
-        border-left-color: #6d6e70; }
-        @media (min-width: 768px) {
-          .uikit-body .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail, .page .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail {
-            border-left-color: #cdcdcd; } }
       .uikit-body .sidebar #block-menu-block-2 ul > li ul li:first-child, .page .sidebar #block-menu-block-2 ul > li ul li:first-child, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li ul li:first-child {
         border-top: 1px solid #CCC; }
       .uikit-body .sidebar #block-menu-block-2 ul > li ul li a, .page .sidebar #block-menu-block-2 ul > li ul li a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li ul li a {
