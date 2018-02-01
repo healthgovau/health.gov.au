@@ -12,15 +12,16 @@
     <div class="container">
       <div class="row">
 
-        <button class="mobile-toggle mobile-toggle__main-menu col-xs-6"
-                aria-controls="block-superfish-1" aria-expanded="false"
-                aria-selected="false" role="tab">
+        <button
+          class="mobile-toggle mobile-toggle__main-menu col-xs-6 js-uikit-accordion"
+          aria-controls="block-superfish-1" role="tab">
           Open menu
         </button>
 
-        <button class="mobile-toggle mobile-toggle__search col-xs-6"
-                aria-controls="search-api-page-search-form"
-                aria-expanded="false" aria-selected="false" role="tab">
+        <button
+          class="mobile-toggle mobile-toggle__search col-xs-6 js-uikit-accordion"
+          aria-controls="block-search-api-page-default-search--2"
+          role="tab">
           Open search
         </button>
       </div>

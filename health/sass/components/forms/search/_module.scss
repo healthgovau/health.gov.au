@@ -10,7 +10,6 @@
   position: relative;
   border-radius: 3px;
   background: $colour-Secondary;
-  overflow: hidden;
 
   label {
     @include uikit-sronly();

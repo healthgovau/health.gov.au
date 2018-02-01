@@ -71,73 +71,50 @@
   Drupal.behaviors.healthMobileMenu = {
     attach: function (context, settings) {
 
-      // Add accessibility elements.
-      $('#block-superfish-1').attr('aria-hidden', 'true');
-      $('.region-navigation .block-search-api-page').attr('aria-hidden', 'true');
-
       // Main menu navigation toggle.
       $('.mobile-toggle.mobile-toggle__main-menu', context).click(function (e) {
-        e.preventDefault();
-
-        // Deactivate search if it is currently active.
-        if ($('.mobile-toggle.mobile-toggle__search', context).hasClass('mobilemenu-active')) {
-          $('.mobile-toggle.mobile-toggle__search').click();
-        }
-
-        // Show/hide the actual menu.
-        $('#block-superfish-1').toggleClass('mobilemenu-active');
-
-        // Update aria stuff.
-        Drupal.toggleAria('#block-superfish-1', 'aria-hidden');
-        Drupal.toggleAria(this, 'aria-selected');
-        Drupal.toggleAria(this, 'aria-expanded');
-
-        // Toggle class on the button.
-        $(this).toggleClass('mobilemenu-active');
-
-        // Update text.
-        if ($(this).hasClass('mobilemenu-active')) {
-          $(this).text('Close menu');
-        } else {
-          $(this).text('Open menu');
-        }
-
-        // Toggle the overlay to hide elements below the menu.
-        $('.nav-overlay').toggleClass('active');
+        Drupal.toggleText($(this), 'menu');
+        UIKIT.accordion.Toggle( $(this)[0], 400,
+          {
+            onOpen: function() {
+              Drupal.enableOverlay();
+              Drupal.handleNavTabbing('search');
+            },
+            afterOpen: function() {},
+            afterClose: function() {
+              Drupal.disableOverlay();
+            }
+          }
+        );
       });
 
       // Global search toggle.
       $('.mobile-toggle.mobile-toggle__search', context).click(function (e) {
-        e.preventDefault();
-
-        // Deactivate nav if it is currently active.
-        if ($('.mobile-toggle.mobile-toggle__main-menu', context).hasClass('mobilemenu-active')) {
-          $('.mobile-toggle.mobile-toggle__main-menu').click();
-        }
-
-        $('.region-navigation .block-search-api-page').toggleClass('mobilemenu-active');
-
-        // Update aria stuff.
-        Drupal.toggleAria('.region-navigation .block-search-api-page', 'aria-hidden');
-        Drupal.toggleAria(this, 'aria-selected');
-        Drupal.toggleAria(this, 'aria-expanded');
-
-        $(this).toggleClass('mobilemenu-active');
-
-        // Update text.
-        if ($(this).hasClass('mobilemenu-active')) {
-          $(this).text('Close search');
-        } else {
-          $(this).text('Open search');
-        }
-
-        $('.nav-overlay').toggleClass('active');
+        Drupal.toggleText($(this), 'search');
+        UIKIT.accordion.Toggle( $(this)[0], 200,
+          {
+            onOpen: function() {
+              Drupal.enableOverlay();
+              Drupal.handleNavTabbing('main-menu');
+            },
+            afterOpen: function() {},
+            afterClose: function() {
+              Drupal.disableOverlay();
+            }
+          }
+        );
       });
 
       // Clicking outside the active site nav should close the nav.
       $('.nav-overlay', context).click(function() {
-        $('.mobilemenu-active').removeClass('mobilemenu-active');
-        $(this).removeClass('active');
+        // Deactivate nav if it is currently active.
+        if ($('.mobile-toggle.mobile-toggle__main-menu', context).hasClass('uikit-accordion--open')) {
+          $('.mobile-toggle.mobile-toggle__main-menu').trigger('click');
+        }
+        // Deactivate search if it is currently active.
+        if ($('.mobile-toggle.mobile-toggle__search', context).hasClass('uikit-accordion--open')) {
+          $('.mobile-toggle.mobile-toggle__search').trigger('click');
+        }
       });
 
       // Local navigation
@@ -204,18 +181,48 @@
   };
 
   /**
-   * Toggle aria elements to true/false.
-   * @param element
-   *   The element to update, as a selector.
-   * @param aria
-   *   The aria attribute to update.
+   * Enable the overlay.
    */
-  Drupal.toggleAria = function(element, aria) {
-    $(element).each(function(index, item) {
-      $(item).attr(aria, function (index, attr) {
-        return attr == 'true' ? 'false' : 'true';
-      });
-    });
+  Drupal.enableOverlay = function() {
+    $('.nav-overlay').addClass('active');
+  };
+
+  /**
+   * Disable the overlay only if no tabs are currently active.
+   * Supports switching between tabs without the overlay disappearing.
+   */
+  Drupal.disableOverlay = function() {
+    if (!$('.mobile-toggle__search').hasClass('uikit-accordion--open') && !$('.mobile-toggle__main-menu').hasClass('uikit-accordion--open')) {
+      $('.nav-overlay').removeClass('active');
+    }
+  };
+
+  /**
+   * Swap text from Open to Close.
+   * @param $element
+   *   The element to change the text.
+   * @param text
+   *   The name of the button, eg search, menu etc to suffix to Open/Close
+   */
+  Drupal.toggleText = function ($element, text) {
+    // Update text.
+    if ($element.text().trim() === 'Open ' + text) {
+      $element.text('Close ' + text);
+    } else {
+      $element.text('Open ' + text);
+    }
+  };
+
+  /**
+   * Handle when a tab is already active and other tab is clicked.
+   * @param otherTab
+   *   The name of the other tab, eg search, main-menu
+   */
+  Drupal.handleNavTabbing = function(otherTab) {
+    if ($('.mobile-toggle.mobile-toggle__' + otherTab).hasClass('uikit-accordion--open')) {
+      $('.mobile-toggle.mobile-toggle__' + otherTab)
+        .trigger('click');
+    }
   };
 
 })(jQuery, Drupal, this, this.document);
