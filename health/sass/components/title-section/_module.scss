@@ -1,5 +1,10 @@
 // Section header + breadcrumbs
 .page-title {
+  h1 {
+    @extend .uikit-header;
+    color: $uikit-colour-Text;
+    background: none;
+  }
   &.header.header--light {
     @extend %colour-Light-background;
     padding-top: 0;
@@ -24,9 +29,6 @@
   &.full {
     @extend .col-sm-12;
     max-width: 100%;
-    .summary {
-      max-width: 100%;
-    }
   }
 
   // Section title (large)
@@ -71,12 +73,8 @@
   // Summary
   .summary {
     @extend .uikit-header-subline;
-    font-size: 17px;
     margin-top: 0.8em;
     margin-bottom: 0.8em;
-    @include uikit-media(sm) {
-      font-size: 18px;
-    }
   }
 
 }
