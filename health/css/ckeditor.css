@@ -7053,9 +7053,7 @@ th .checkbox {
     display: none; } }
 
 .uikit-header #search-block-form, #block-search-api-page-default-search, .uikit-header #block-search-api-page-default-search, .block-search-api-page, .view-filters .views-exposed-form {
-  position: relative;
-  border-radius: 3px;
-  background: #008998; }
+  position: relative; }
   .uikit-header #search-block-form:before, #block-search-api-page-default-search:before, .uikit-header #block-search-api-page-default-search:before, .block-search-api-page:before, .view-filters .views-exposed-form:before, .uikit-header #search-block-form:after, #block-search-api-page-default-search:after, .uikit-header #block-search-api-page-default-search:after, .block-search-api-page:after, .view-filters .views-exposed-form:after {
     content: " ";
     display: table; }
@@ -7118,11 +7116,11 @@ textarea {
   display: block; }
 
 ul.social__links .social__links-item a,
-.social__links .social__links-item a, .listing-back a, .listing-back .listing-back__icon, [class*="fa-"], .region-navigation .mobile-toggle {
+.social__links .social__links-item a, .listing-back a, .listing-back .listing-back__icon, [class*="fa-"], .region-navigation .mobile-toggle.mobile-toggle--main-menu .mobile-toggle__label, .region-navigation .mobile-toggle.mobile-toggle--search .mobile-toggle__label {
   position: relative;
   margin-left: 2em; }
   
-  .social__links .social__links-item a:before, .listing-back a:before, .listing-back .listing-back__icon:before, [class*="fa-"]:before, .region-navigation .mobile-toggle:before {
+  .social__links .social__links-item a:before, .listing-back a:before, .listing-back .listing-back__icon:before, [class*="fa-"]:before, .region-navigation .mobile-toggle.mobile-toggle--main-menu .mobile-toggle__label:before, .region-navigation .mobile-toggle.mobile-toggle--search .mobile-toggle__label:before {
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
@@ -7254,16 +7252,6 @@ div.region-content .anchor {
         @media (min-width: 768px) {
           .uikit-body .sidebar #block-menu-block-2 ul > li a, .page .sidebar #block-menu-block-2 ul > li a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li a, .cke_editable .sidebar #block-menu-block-2 ul > li a {
             padding: 0.8em 1.6em; } }
-      .uikit-body .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a, .page .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a, .cke_editable .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a {
-        border-left-color: #cdcdcd; }
-        @media (min-width: 768px) {
-          .uikit-body .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a, .page .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a, .cke_editable .sidebar #block-menu-block-2 ul > li.active-trail ul li:not(.active-trail) a {
-            border-left-color: #f1f1f2; } }
-      .uikit-body .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail, .page .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail, .cke_editable .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail {
-        border-left-color: #6d6e70; }
-        @media (min-width: 768px) {
-          .uikit-body .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail, .page .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail, .cke_editable .sidebar #block-menu-block-2 ul > li.active-trail a:not(.active).active-trail {
-            border-left-color: #cdcdcd; } }
       .uikit-body .sidebar #block-menu-block-2 ul > li ul li:first-child, .page .sidebar #block-menu-block-2 ul > li ul li:first-child, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li ul li:first-child, .cke_editable .sidebar #block-menu-block-2 ul > li ul li:first-child {
         border-top: 1px solid #CCC; }
       .uikit-body .sidebar #block-menu-block-2 ul > li ul li a, .page .sidebar #block-menu-block-2 ul > li ul li a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li ul li a, .cke_editable .sidebar #block-menu-block-2 ul > li ul li a {
@@ -7487,18 +7475,22 @@ ul.links {
 
 .nav-overlay {
   position: fixed;
+  top: -9999px;
+  left: -9999px;
   background: transparent;
   opacity: 0.7;
   width: 100%;
-  height: 0;
+  height: 150%;
   z-index: 499;
   transition: background 0.4s linear; }
   .active.nav-overlay {
-    height: 150%;
     background: black; }
-    @media (min-width: 768px) {
-      .active.nav-overlay {
-        display: none; } }
+  .transition.nav-overlay {
+    top: 0;
+    left: 0; }
+  @media (min-width: 768px) {
+    .nav-overlay {
+      display: none; } }
 
 .region-navigation {
   position: relative;
@@ -7517,17 +7509,19 @@ ul.links {
           border-bottom: 6px solid transparent; } }
   .region-navigation .mobile-toggle {
     margin-bottom: 6px; }
-    .region-navigation .mobile-toggle:before {
-      font-size: 22px; }
-    .region-navigation .mobile-toggle.mobile-toggle__main-menu:before {
-      margin-left: 0.5em;
-      content: "\f0c9"; }
-    .region-navigation .mobile-toggle.mobile-toggle__search {
+    .region-navigation .mobile-toggle.mobile-toggle--main-menu {
+      text-align: left; }
+      .region-navigation .mobile-toggle.mobile-toggle--main-menu .mobile-toggle__label {
+        margin-left: 28px; }
+        .region-navigation .mobile-toggle.mobile-toggle--main-menu .mobile-toggle__label:before {
+          font-size: 22px;
+          content: "\f0c9"; }
+    .region-navigation .mobile-toggle.mobile-toggle--search {
       text-align: right; }
-      .region-navigation .mobile-toggle.mobile-toggle__search:before {
-        margin-left: 1.5em;
+      .region-navigation .mobile-toggle.mobile-toggle--search .mobile-toggle__label:before {
+        font-size: 22px;
         content: "\f002"; }
-    .region-navigation .mobile-toggle.uikit-accordion--open:before {
+    .region-navigation .mobile-toggle.uikit-accordion--open .mobile-toggle__label:before {
       content: "\f00d"; }
 
 header, .header-top {

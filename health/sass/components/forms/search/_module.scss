@@ -8,8 +8,6 @@
 %uikit-search {
   @include uikit-clearfix();
   position: relative;
-  border-radius: 3px;
-  background: $colour-Secondary;
 
   label {
     @include uikit-sronly();

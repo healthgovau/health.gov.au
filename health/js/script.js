@@ -72,34 +72,40 @@
     attach: function (context, settings) {
 
       // Main menu navigation toggle.
-      $('.mobile-toggle.mobile-toggle__main-menu', context).click(function (e) {
+      $('.mobile-toggle.mobile-toggle--main-menu', context).click(function (e) {
         Drupal.toggleText($(this), 'menu');
         UIKIT.accordion.Toggle( $(this)[0], 400,
           {
             onOpen: function() {
-              Drupal.enableOverlay();
               Drupal.handleNavTabbing('search');
+              Drupal.enableOverlay();
             },
             afterOpen: function() {},
+            onClose: function() {
+              Drupal.disableOverlay(false);
+            },
             afterClose: function() {
-              Drupal.disableOverlay();
+              Drupal.disableOverlay(true);
             }
           }
         );
       });
 
       // Global search toggle.
-      $('.mobile-toggle.mobile-toggle__search', context).click(function (e) {
+      $('.mobile-toggle.mobile-toggle--search', context).click(function (e) {
         Drupal.toggleText($(this), 'search');
         UIKIT.accordion.Toggle( $(this)[0], 200,
           {
             onOpen: function() {
-              Drupal.enableOverlay();
               Drupal.handleNavTabbing('main-menu');
+              Drupal.enableOverlay();
             },
             afterOpen: function() {},
+            onClose: function() {
+              Drupal.disableOverlay(false);
+            },
             afterClose: function() {
-              Drupal.disableOverlay();
+              Drupal.disableOverlay(true);
             }
           }
         );
@@ -108,12 +114,12 @@
       // Clicking outside the active site nav should close the nav.
       $('.nav-overlay', context).click(function() {
         // Deactivate nav if it is currently active.
-        if ($('.mobile-toggle.mobile-toggle__main-menu', context).hasClass('uikit-accordion--open')) {
-          $('.mobile-toggle.mobile-toggle__main-menu').trigger('click');
+        if ($('.mobile-toggle.mobile-toggle--main-menu', context).hasClass('uikit-accordion--open')) {
+          $('.mobile-toggle.mobile-toggle--main-menu').trigger('click');
         }
         // Deactivate search if it is currently active.
-        if ($('.mobile-toggle.mobile-toggle__search', context).hasClass('uikit-accordion--open')) {
-          $('.mobile-toggle.mobile-toggle__search').trigger('click');
+        if ($('.mobile-toggle.mobile-toggle--search', context).hasClass('uikit-accordion--open')) {
+          $('.mobile-toggle.mobile-toggle--search').trigger('click');
         }
       });
 
@@ -184,16 +190,22 @@
    * Enable the overlay.
    */
   Drupal.enableOverlay = function() {
-    $('.nav-overlay').addClass('active');
+    $('.nav-overlay').addClass('transition').addClass('active');
   };
 
   /**
    * Disable the overlay only if no tabs are currently active.
    * Supports switching between tabs without the overlay disappearing.
+   *
+   * @param bool complete
+   *   Is this the start of end of the animation / transition.
+   *
    */
-  Drupal.disableOverlay = function() {
-    if (!$('.mobile-toggle__search').hasClass('uikit-accordion--open') && !$('.mobile-toggle__main-menu').hasClass('uikit-accordion--open')) {
+  Drupal.disableOverlay = function(complete) {
+    if (complete === false) {
       $('.nav-overlay').removeClass('active');
+    } else if (!$('.mobile-toggle--search').hasClass('uikit-accordion--open') && !$('.mobile-toggle--main-menu').hasClass('uikit-accordion--open')) {
+      $('.nav-overlay').removeClass('transition');
     }
   };
 
@@ -206,10 +218,10 @@
    */
   Drupal.toggleText = function ($element, text) {
     // Update text.
-    if ($element.text().trim() === 'Open ' + text) {
-      $element.text('Close ' + text);
+    if ($element.find('span').text().trim() === 'Open ' + text) {
+      $element.find('span').text('Close ' + text);
     } else {
-      $element.text('Open ' + text);
+      $element.find('span').text('Open ' + text);
     }
   };
 
@@ -219,8 +231,8 @@
    *   The name of the other tab, eg search, main-menu
    */
   Drupal.handleNavTabbing = function(otherTab) {
-    if ($('.mobile-toggle.mobile-toggle__' + otherTab).hasClass('uikit-accordion--open')) {
-      $('.mobile-toggle.mobile-toggle__' + otherTab)
+    if ($('.mobile-toggle.mobile-toggle--' + otherTab).hasClass('uikit-accordion--open')) {
+      $('.mobile-toggle.mobile-toggle--' + otherTab)
         .trigger('click');
     }
   };

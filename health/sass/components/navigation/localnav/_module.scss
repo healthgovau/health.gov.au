@@ -66,23 +66,6 @@
         }
       }
 
-      &.active-trail {
-        ul {
-          li:not(.active-trail) a {
-            border-left-color: $colour-light-darker;
-            @include uikit-media(sm) {
-              border-left-color: $colour-lighter;
-            }
-          }
-        }
-        a:not(.active).active-trail {
-          border-left-color: $colour-dark;
-          @include uikit-media(sm) {
-            border-left-color: $colour-light-darker;
-          }
-        }
-      }
-
       // Level 2
       ul {
         li {

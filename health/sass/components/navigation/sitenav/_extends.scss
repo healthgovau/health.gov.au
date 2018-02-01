@@ -34,30 +34,38 @@
     @extend %uikit-sitenav__mobile-toggle;
     margin-bottom: 6px; // Keyline fix for mobile.
 
-    @extend %baseicon;
-    &:before {
-      font-size: 22px;
-    }
-
-    &.mobile-toggle__main-menu {
-      &:before {
-        margin-left: 0.5em;
-        content: "\f0c9";
+    // Main menu.
+    &.mobile-toggle--main-menu {
+      text-align: left;
+      .mobile-toggle__label {
+        @extend %baseicon;
+        margin-left: 28px;
+        &:before {
+          font-size: 22px;
+          content: "\f0c9";
+        }
       }
     }
 
-    &.mobile-toggle__search {
-      &:before {
-        margin-left: 1.5em;
-        content: "\f002";
-      }
+    // Search.
+    &.mobile-toggle--search {
       text-align: right;
+      .mobile-toggle__label {
+        @extend %baseicon;
+        &:before {
+          font-size: 22px;
+          content: "\f002";
+
+        }
+      }
     }
 
     // When expanded.
     &.uikit-accordion--open {
-      &:before {
-        content: "\f00d";
+      .mobile-toggle__label {
+        &:before {
+          content: "\f00d";
+        }
       }
     }
   }
