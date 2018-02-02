@@ -17,6 +17,8 @@
   // Desktop
   @include uikit-media(sm) {
     display: inline;
+
+  display:none;
     position: relative;
     float: none;
     top: 0;

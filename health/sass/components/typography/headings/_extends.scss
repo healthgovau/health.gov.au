@@ -87,6 +87,7 @@ h6 {
 // Section header
 .uikit-header-heading {
   font-size: 28px;
+  line-height: 1.4;
   @include uikit-media(sm){
     font-size: 32px;
   }

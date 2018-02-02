@@ -381,8 +381,10 @@
 td, th,
 .view,
 .document-accessibility-form {
-  p:last-of-type {
-    margin-bottom: 0;
+  .page-layout { // only in content section
+    p:last-of-type {
+      margin-bottom: 0;
+    }
   }
 }
 

@@ -1,21 +1,17 @@
 // Section header + breadcrumbs
 .page-title {
   h1 {
-    @extend .uikit-header;
+    @extend .uikit-header-heading;
     color: $uikit-colour-Text;
     background: none;
-    padding: 0;
-    margin-bottom: 0;
-    @include uikit-media(sm) {
-      padding: 1.6em 0 2em 0;
-      margin-bottom: 1.6em;
-    }
+    font-family: $uikit-font-system;
   }
   &.header.header--light {
     @extend %colour-Light-background;
     padding-top: 0;
     padding-bottom: 0;
     margin-bottom: 0;
+    color: $uikit-colour-Text;
     @include uikit-media(sm){
       margin-bottom: uikit-space(2);
     }
@@ -35,17 +31,6 @@
   &.full {
     @extend .col-sm-12;
     max-width: 100%;
-  }
-
-  // Section title (large)
-  .uikit-header-heading {
-    line-height: 1.4;
-    margin-top: 0;
-    @include uikit-media(sm) {
-      display: inline;
-      margin-top: 0.2em;
-      margin-bottom: 0.6rem;
-    }
   }
 
   // Section header link
@@ -79,8 +64,7 @@
   // Summary
   .summary {
     @extend .uikit-header-subline;
-    margin-top: 0.8em;
-    margin-bottom: 0.8em;
+    margin-bottom: uikit-space(0.5);
   }
 
 }

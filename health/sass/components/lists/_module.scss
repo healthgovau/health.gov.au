@@ -6,7 +6,7 @@
     >li {
         vertical-align: top;
         position: relative;
-        margin: 0 0 12px;
+        margin: 0 0 uikit-space(1);
         padding: 15px 15px 15px 50px;
         background: $colour-lighter;
         &::before {
