@@ -1,3 +1,61 @@
+%block-card {
+  a {
+    padding: uikit-space(.5);
+    @include uikit-media(md) {
+      padding: uikit-space(1);
+    }
+    border-top: 10px solid $uikit-colour-Link;
+    border-bottom: none;
+    display: block;
+    overflow: hidden;
+    color: transparent;
+
+    .field-name-field-image {
+      svg {
+        path, rect {
+          fill: #000;
+        }
+      }
+    }
+
+    .field-name-field-bean-text {
+      display: none;
+    }
+
+    background: $colour-lightest;
+
+    &:hover,
+    &:focus {
+      background: $colour-light-dark;
+      .field-name-field-link-internal {
+        //color: #fff;
+        .field-item {
+          border-bottom: none;
+        }
+
+      }
+
+      // .field-name-field-image {
+      //   svg path, svg rect {
+      //     fill: white;
+      //   }
+      // }
+    }
+
+    .field-name-field-link-internal {
+      // &:hover,
+      // &:focus {
+      //   color: #fff;
+      // }
+      .field-item {
+        display: inline;
+        border-bottom: 1px solid $uikit-colour-Link;
+        font-weight: 700;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
 
 .block__count--5 .bean-image-and-text {
   width: 50%;

@@ -57,53 +57,22 @@
   .paragraphs-item-para-block.block-id__more-services-card {
     &.para-container {
       .bean-image-and-text.view-mode-full {
-        .field-name-field-image {
-          img {
-            width: 20%;
-          }
-          svg {
-            path, rect {
-              fill: #000;
-            }
+        @extend %block-card;
+        color: $uikit-colour-Secondary;
+        &.more-services-card {
+          a {
+            border-top: 10px solid $colour-Primary-dark;
           }
         }
-      }
-      a {
-        display: block;
-        border-bottom: none;
-        padding: uikit-space( 1 );
-        .field-name-field-bean-text {
-          color: $uikit-colour-Secondary;
-        }
-        &:hover {
-          background: $colour-light-dark;
-          .field-name-field-link-internal {
-            .field-item {
-              border-bottom: none;
-            }
+        &.more-conditions-and-diseases-car {
+          a {
+            border-top: 10px solid $colour-Tertiary-dark;
           }
         }
-      }
-      .field-name-field-link-internal {
-        .field-item {
-          display: inline-block;
-          border-bottom: 1px solid $uikit-colour-Secondary;
-        }
-      }
-      color: $uikit-colour-Secondary;
-      .more-services-card {
-        a {
-          border-top: 10px solid $colour-Primary-dark;
-        }
-      }
-      .more-conditions-and-diseases-car {
-        a {
-          border-top: 10px solid $colour-Tertiary-dark;
-        }
-      }
-      .more-programs-and-initiatives-ca {
-        a {
-          border-top: 10px solid $colour-Secondary-dark;
+        &.more-programs-and-initiatives-ca {
+          a {
+            border-top: 10px solid $colour-Secondary-dark;
+          }
         }
       }
     }
@@ -172,62 +141,7 @@
   &.block__count--5.block-id__topic-tile{
     background: white;
     .bean-image-and-text {
-      a {
-        padding: uikit-space(.5);
-        @include uikit-media(md) {
-          padding: uikit-space(1);
-        }
-        border-top: 10px solid $uikit-colour-Link;
-        border-bottom: none;
-        display: block;
-        overflow: hidden;
-        color: transparent;
-
-        .field-name-field-image {
-          svg {
-            path, rect {
-              fill: #000;
-            }
-          }
-        }
-
-        .field-name-field-bean-text {
-          display: none;
-        }
-
-        background: $colour-lightest;
-
-        &:hover,
-        &:focus {
-          background: $colour-light-dark;
-          .field-name-field-link-internal {
-            //color: #fff;
-            .field-item {
-              border-bottom: none;
-            }
-
-          }
-
-          // .field-name-field-image {
-          //   svg path, svg rect {
-          //     fill: white;
-          //   }
-          // }
-        }         
-
-        .field-name-field-link-internal {
-          // &:hover,
-          // &:focus {
-          //   color: #fff;
-          // }
-          .field-item {
-            display: inline;
-            border-bottom: 1px solid $uikit-colour-Link;
-            font-weight: 700;
-            margin-bottom: 0;
-          }
-        }
-      }
+      @extend %block-card;
       // Set colours for each accelerator
       &.topic-tile {
         a {
