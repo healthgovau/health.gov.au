@@ -15,11 +15,26 @@
 
 // A-Z topics
 .filter-topics-by-letter {
-  max-width: 15em;
+  text-align: center;
+  @include uikit-media(sm){
+    max-width: 20em;
+    text-align: left;
+  }
   li {
-    @extend %az-list__item;
-    a {
-      @extend %az-list__link;
+    @extend .uikit-tags__item;
+    > a {
+      //margin-right: uikit-space(0.4);
+      //display: inline-block;
+      text-align: center;
+      min-width: 2.5em;
+      padding: 0.4em 0;
+      border: 1px solid $colour-Secondary;
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $colour-Secondary;
+        color: #fff;
+      }
     }
   }
 }
