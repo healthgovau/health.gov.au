@@ -1,110 +1,28 @@
-%block-card {
-  a {
-    padding: uikit-space(.5);
-    @include uikit-media(md) {
-      padding: uikit-space(1);
+.block__count--5 {
+  .bean-image-and-text {
+    width: 50%;
+    float: left;
+    margin-bottom: 24px;
+    @include uikit-media(sm) {
+      width: 20%;
+      margin-bottom: 0;
     }
-    border-top: 10px solid $uikit-colour-Link;
-    border-bottom: none;
-    display: block;
-    overflow: hidden;
-    color: transparent;
 
     .field-name-field-image {
-      svg {
-        path, rect {
-          fill: #000;
-        }
-      }
-    }
-
-    .field-name-field-bean-text {
-      display: none;
-    }
-
-    background: $colour-lightest;
-
-    &:hover,
-    &:focus {
-      background: $colour-light-dark;
-      .field-name-field-link-internal {
-        //color: #fff;
-        .field-item {
-          border-bottom: none;
-        }
-
-      }
-
-      // .field-name-field-image {
-      //   svg path, svg rect {
-      //     fill: white;
-      //   }
-      // }
-    }
-
-    .field-name-field-link-internal {
-      // &:hover,
-      // &:focus {
-      //   color: #fff;
-      // }
-      .field-item {
-        display: inline;
-        border-bottom: 1px solid $uikit-colour-Link;
-        font-weight: 700;
-        margin-bottom: 0;
-      }
+      @include block-text-image-svg();
     }
   }
 }
 
-.block__count--5 .bean-image-and-text {
-  width: 50%;
-  float: left;
-  margin-bottom: 24px;
-  @include uikit-media(sm) {
-    width: 20%;
-    margin-bottom: 0;
-  }
-
-  .field-name-field-image {
-    svg {
-      max-width: 65%;
-      // IE doesn't handle max-width scaling correctly, so we have to specify width and height in px
-      max-width: 90px;
-      max-height: 90px;
-      @include uikit-media(sm) {
-        max-width: 75px;
-        max-height: 75px;
-      }
-      @include uikit-media(md) {
-        max-width: 105px;
-        max-height: 105px;
-      }
+.block__count--3 {
+  .bean-image-and-text {
+    @extend .col-xs-12;
+    @extend .col-sm-6;
+    @extend .col-md-4;
+    .field-name-field-image {
+      @include block-text-image-svg();
     }
   }
-}
-
-.block__count--3 .bean-image-and-text {
-  @extend .col-xs-12;
-  @extend .col-sm-6;
-  @extend .col-md-4;
-  .field-name-field-image {
-    svg {
-      max-width: 30%;
-      // IE doesn't handle max-width scaling correctly, so we have to specify width and height in px
-      max-width: 90px;
-      max-height: 90px;
-      @include uikit-media(sm) {
-        max-width: 75px;
-        max-height: 75px;
-      }
-      @include uikit-media(md) {
-        max-width: 105px;
-        max-height: 105px;
-      }
-    }
-  }
-
 }
 
 .block__count--1 .bean-image-and-text {
@@ -126,38 +44,10 @@
     min-height: 1px;
     padding-left: 12px;
     padding-right: 12px;
-    text-align: left;
+    text-align: center;
 
     .bean-block-content {
-      a {
-        .field-name-field-image {
-          .field-item {
-            line-height: 1;
-          }
-          svg {
-            max-width: 65%;
-          }
-          float: none;
-          width: 100%;
-          text-align: center;
-        }
-
-        .field-name-field-link-internal {
-          @extend %list-item-title;
-          // Resp
-          display: block;
-          margin-top: 10px;
-          margin-left: 0;
-          text-align: center;
-        }
-
-        .field-name-field-bean-text {
-          display: block;
-          color: white;
-          text-align: center;
-        }
-
-      }
+      @include block-card();
     }
   }
 
@@ -187,4 +77,3 @@
     @extend %dm-list-vertical;
   }
 }
-

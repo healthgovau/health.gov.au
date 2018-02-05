@@ -89,3 +89,73 @@
 
   }
 }
+
+// Mixin to apply card (border top colour) style to bean blocks.
+@mixin block-card($border-colour: $colour-Secondary, $border-hover-colour: $colour-Secondary-hover) {
+  a {
+    padding: uikit-space(.5);
+    @include uikit-media(md) {
+      padding: uikit-space(1);
+    }
+    border-top: 10px solid $uikit-colour-Link;
+    border-bottom: none;
+    display: block;
+    overflow: hidden;
+    color: transparent;
+
+    border-top: 10px solid $border-colour;
+
+    .field-name-field-image {
+      svg {
+        path, rect {
+          fill: #000;
+        }
+      }
+    }
+
+    .field-name-field-bean-text {
+      color: $uikit-colour-Secondary;
+    }
+
+    background: $colour-lightest;
+
+    &:hover,
+    &:focus {
+      background: $colour-light-dark;
+      border-color: $border-hover-colour;
+      .field-name-field-link-internal {
+        //color: #fff;
+        .field-item {
+          border-bottom: none;
+        }
+      }
+    }
+
+    .field-name-field-link-internal {
+      .field-item {
+        display: inline;
+        border-bottom: 1px solid $uikit-colour-Link;
+        font-weight: 700;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Mixin to apply responsive styles to SVGs in bean blocks.
+@mixin block-text-image-svg() {
+  svg {
+    max-width: 65%;
+    // IE doesn't handle max-width scaling correctly, so we have to specify width and height in px
+    max-width: 90px;
+    max-height: 90px;
+    @include uikit-media(sm) {
+      max-width: 75px;
+      max-height: 75px;
+    }
+    @include uikit-media(md) {
+      max-width: 105px;
+      max-height: 105px;
+    }
+  }
+}

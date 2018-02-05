@@ -57,22 +57,15 @@
   .paragraphs-item-para-block.block-id__more-services-card {
     &.para-container {
       .bean-image-and-text.view-mode-full {
-        @extend %block-card;
         color: $uikit-colour-Secondary;
         &.more-services-card {
-          a {
-            border-top: 10px solid $colour-Primary-dark;
-          }
+          @include block-card($colour-Primary-dark, $colour-Primary-hover);
         }
         &.more-conditions-and-diseases-car {
-          a {
-            border-top: 10px solid $colour-Tertiary-dark;
-          }
+          @include block-card($colour-Tertiary-dark, $colour-Tertiary-hover);
         }
         &.more-programs-and-initiatives-ca {
-          a {
-            border-top: 10px solid $colour-Secondary-dark;
-          }
+          @include block-card($colour-Secondary-dark, $colour-Secondary-hover);
         }
       }
     }
@@ -141,56 +134,25 @@
   &.block__count--5.block-id__topic-tile{
     background: white;
     .bean-image-and-text {
-      @extend %block-card;
       // Set colours for each accelerator
       &.topic-tile {
-        a {
-          border-color: $colour-Primary;
-          &:hover,
-          &:focus {
-            border-color: $colour-Primary-hover;
-          }
-        }
+        @include block-card($colour-Primary, $colour-Primary-hover);
       }
 
       &.conditions--diseases {
-        a {
-          border-color: $colour-Tertiary;
-          &:hover,
-          &:focus {
-            border-color: $colour-Tertiary-hover;
-          }
-        }
+        @include block-card($colour-Tertiary, $colour-Tertiary-hover);
       }
 
       &.medicare-tile {
-        a {
-          border-color: $colour-Secondary;
-          &:hover,
-          &:focus {
-            border-color: $colour-Secondary-hover;
-          }
-        }
+        @include block-card($colour-Secondary, $colour-Secondary-hover);
       }
 
       &.symptoms {
-        a {
-          border-color: $colour-Tertiary-2;
-          &:hover,
-          &:focus {
-            border-color: $colour-Tertiary-2-hover;
-          }
-        }
+        @include block-card($colour-Tertiary-2, $colour-Tertiary-2-hover);
       }
 
       &.services--support {
-        a {
-          border-color: $colour-dark;
-          &:hover,
-          &:focus {
-            border-color: $colour-dark-hover;
-          }
-        }
+        @include block-card($colour-dark, $colour-dark-hover);
       }
 
     }
