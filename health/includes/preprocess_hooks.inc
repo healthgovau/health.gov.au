@@ -838,6 +838,17 @@ function health_preprocess_entity(&$variables) {
 
     $bean = $variables['bean'];
 
+    // Add 'active' to classes array if it is the current page of the image and text block link.
+    if ($bean->type == 'image_and_text' && $bean->view_mode == 'full') {
+      $current_url = '/' . current_path();
+      if (isset($bean->field_link_internal[LANGUAGE_NONE][0])) {
+        $block_link = $bean->field_link_internal[LANGUAGE_NONE][0]['url'];
+        if ($current_url == drupal_get_normal_path($block_link)) {
+          $variables['classes_array'][] = 'active';
+        }
+      }
+    }
+
     // Add delta to class array.
     $variables['classes_array'][] = $bean->delta;
 

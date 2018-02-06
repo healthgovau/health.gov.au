@@ -30,3 +30,29 @@
     }
   }
 }
+
+// News and events listing page selector tile.
+.page-news-and-events {
+  .bean-image-and-text {
+    @extend .col-xs-12;
+    @extend .col-sm-6;
+    @extend .col-md-3;
+    .field-name-field-image {
+      @include block-text-image-svg();
+    }
+
+    &.news-card {
+      @include block-card($colour-Primary, $colour-Primary-hover);
+    }
+    &.events-card {
+      @include block-card($colour-Secondary, $colour-Secondary-hover);
+    }
+    &.media-releases-card {
+      @include block-card($colour-Tertiary-2, $colour-Tertiary-2-hover);
+    }
+    &.health-alerts-card {
+      @include block-card($colour-Tertiary, $colour-Tertiary-hover);
+    }
+  }
+
+}
