@@ -12,6 +12,7 @@ CONST RESOURCES_TYPE = [
   'app_or_tool',
 ];
 CONST THEME_PATH_TOKEN_GENERIC = '[theme-path]';
+CONST PUBLICATION_TYPE_INFOGRAPHIC = 2176;
 
 /**
  * Override or insert variables for the breadcrumb theme function.
@@ -691,6 +692,23 @@ function health_preprocess_node(&$variables) {
       if (key_exists(1, $user->roles)) {
         drupal_access_denied();
       }
+    }
+  }
+
+}
+
+/**
+ * Implements hook_entity_view_mode_alter().
+ *
+ * @param $view_mode
+ * @param $context
+ */
+function health_entity_view_mode_alter(&$view_mode, $context) {
+  // Change display mode from 'inline' to 'inline_full' for infographics
+  if ($context['entity_type'] == 'node' && $context['entity']->type == 'publication' && $view_mode == 'inline') {
+    $publication_type = field_get_items('node', $context['entity'], 'field_publication_type');
+    if ($publication_type[0]['tid'] == PUBLICATION_TYPE_INFOGRAPHIC) {
+      $view_mode = 'inline_full';
     }
   }
 }
