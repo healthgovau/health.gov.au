@@ -105,6 +105,11 @@
 
     border-top: 10px solid $border-colour;
 
+    // Hide icon as this is card link.
+    &:after {
+      display: none;
+    }
+
     .field-name-field-image {
       svg {
         path, rect {
@@ -116,8 +121,6 @@
     .field-name-field-bean-text {
       color: $uikit-colour-Secondary;
     }
-
-    background: $colour-lightest;
 
     &:hover,
     &:focus {

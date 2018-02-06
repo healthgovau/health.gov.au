@@ -51,6 +51,12 @@
     }
   }
 
+  &.active {
+    .bean-block-content {
+      background: $colour-light-dark;
+    }
+  }
+
   // Large feature
   &.view-mode-feature_large {
     float: left;
