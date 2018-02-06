@@ -50,4 +50,8 @@
 	&.view-mode-inline {
 		@extend %dm-inline-2-col;
 	}
+
+    &.view-mode-inline_large {
+        @extend %dm-inline-large;
+    }
 }
