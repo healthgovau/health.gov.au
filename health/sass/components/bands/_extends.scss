@@ -235,31 +235,6 @@ body {
       padding: 0;
     }
 
-    // contact hotline
-    .paragraphs-item-para-contact {
-      text-align: center;
-      p {
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .view-mode-hotline_bar {
-        .field-name-field-contact-telephone {
-          a {
-            &:before {
-              content: "\f095";
-              font-family: FontAwesome;
-              font-size: 1em;
-              font-style: normal;
-              font-weight: normal;
-              text-decoration: inherit;
-              z-index: 1;
-              margin-right: 5px;
-            }
-          }
-        }
-      }
-    }
-
     // 2 col resources.
     .paragraphs-2-columns-resources {
       // Style band

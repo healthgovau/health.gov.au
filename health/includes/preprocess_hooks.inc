@@ -12,6 +12,7 @@ CONST RESOURCES_TYPE = [
   'app_or_tool',
 ];
 CONST THEME_PATH_TOKEN_GENERIC = '[theme-path]';
+CONST PUBLICATION_TYPE_INFOGRAPHIC = 2176;
 
 /**
  * Override or insert variables for the breadcrumb theme function.
@@ -693,6 +694,7 @@ function health_preprocess_node(&$variables) {
       }
     }
   }
+
 }
 
 /**

@@ -1,28 +1,20 @@
 // Getting started
 .paragraphs-item-para-links {
-
-    // This creates .container and .row from band markup for BS grid
-    @include row-and-container;
-
-    // Band title
-    h2 {
-        @extend .col-xs-12;
-        @extend .uikit-display-4;
-        padding-bottom: uikit-space(.25);
-        margin-bottom: uikit-space(.5);
-    }
-
-    // Each item
-    .paragraphs-item-para-link {
-        @extend .col-sm-6;
-        @extend .col-md-3;
-    }
-
-    // Item link
-    .field-type-link-field {
-        @extend .tile__title;
-    }
-
+  // This creates .container and .row from band markup for BS grid
+  @include row-and-container; // Band title
+  h2 {
+    @extend .col-xs-12;
+    @extend .uikit-display-4;
+    padding-bottom: uikit-space(.25);
+    margin-bottom: uikit-space(.5);
+  } // Each item
+  .paragraphs-item-para-link {
+    @extend .col-sm-6;
+    @extend .col-md-3;
+  } // Item link
+  .field-type-link-field {
+    @extend .tile__title;
+  }
   .field-name-field-summary {
     margin-bottom: uikit-space(1);
   }
@@ -30,131 +22,174 @@
 
 // Browse by lifestage
 .paragraphs-item-para-taxonomies {
-    clear: both;
-    @include uikit-clearfix();
-    // This creates .container and .row from band markup for BS grid
-    &.para-container {
-        @extend %band--neutral;
-        padding-bottom: 0;
-        margin-bottom: -12px;
-        @include uikit-media(sm) {
-          margin-bottom: -24px;
+  clear: both;
+  @include uikit-clearfix(); // This creates .container and .row from band markup for BS grid
+  &.para-container {
+    @extend %band--neutral;
+    padding-bottom: 0;
+    margin-bottom: -12px;
+    @include uikit-media(sm) {
+      margin-bottom: -24px;
+    }
+  }
+  @include row-and-container;
+  overflow: hidden;
+  padding-bottom: uikit-space(0.75); // Band title
+  h2 {
+    @extend .col-xs-12;
+    @extend .uikit-display-4;
+    padding-bottom: uikit-space(.25);
+    margin-bottom: uikit-space(.5);
+  } // Items
+  // Wrapper title/summary
+  .field-name-field-taxonomy-paragraph {
+    >.field-items {
+      >.field-item {
+        @extend .col-sm-6;
+        @extend .col-md-3;
+        .para-container {
+          margin-bottom: 12px;
+          @include uikit-media(sm) {
+            margin-bottom: 24px;
+          }
+          padding: 0;
+        } // Hide external link label.
+        svg {
+          display: none;
         }
-    }
-    @include row-and-container;
-    overflow: hidden;
-    padding-bottom: uikit-space(0.75);
-
-    // Band title
-    h2 {
-        @extend .col-xs-12;
-        @extend .uikit-display-4;
-        padding-bottom: uikit-space(.25);
-        margin-bottom: uikit-space(.5);
-    }
-
-    // Items
-    // Wrapper title/summary
-    .field-name-field-taxonomy-paragraph {
-        > .field-items {
-            > .field-item {
-                @extend .col-sm-6;
-                @extend .col-md-3;
-
-                .para-container {
-                    margin-bottom: 12px;
-                    @include uikit-media(sm) {
-                      margin-bottom: 24px;
-                    }
-                    padding: 0;
-                }
-
-                // Hide external link label.
-                svg {
-                    display: none;
-                }
-                .field-type-entityreference {
-                    padding: uikit-space(1);
-                    max-height: 300px;
-                    display: block;
-                    overflow: hidden;
-
-                    @include card-colour($colour-Secondary);
-                    // Add mobile width 100% and odd/even handling
-                    // Title
-                    .field-name-title {
-                      margin-bottom: uikit-space(0.5);
-                      h3 {
-                        @extend %list-item-title;
-                        border-bottom: 1px solid white;
-                        display: inline;
-                      }
-                    }
-
-                  // Override drupal taxonomy term style.
-                  .taxonomy-term-description {
-                    padding: 0;
-                    margin: 0;
-                  }
-
-                    &:hover {
-                      h3 {
-                        border-bottom: none;
-                      }
-                    }
-                    .group-left,
-                    .group-right {
-                        display: block;
-                        width: 100%;
-                        margin-bottom: 0;
-                    }
-
-                    .group-left {
-                        margin-bottom: 0;
-                        max-width: 20%;
-                        float: right;
-                    }
-                }
-                &.even .field-type-entityreference {
-                    margin-left: 0;
-                }
-                &.odd .field-type-entityreference {
-                    margin-right: 0;
-                }
+        .field-type-entityreference {
+          padding: uikit-space(1);
+          max-height: 300px;
+          display: block;
+          overflow: hidden;
+          @include card-colour($colour-Secondary); // Add mobile width 100% and odd/even handling
+          // Title
+          .field-name-title {
+            margin-bottom: uikit-space(0.5);
+            h3 {
+              @extend %list-item-title;
+              border-bottom: 1px solid white;
+              display: inline;
             }
+          } // Override drupal taxonomy term style.
+          .taxonomy-term-description {
+            padding: 0;
+            margin: 0;
+          }
+          &:hover {
+            h3 {
+              border-bottom: none;
+            }
+          }
+          .group-left,
+          .group-right {
+            display: block;
+            width: 100%;
+            margin-bottom: 0;
+          }
+          .group-left {
+            margin-bottom: 0;
+            max-width: 20%;
+            float: right;
+          }
         }
+        &.even .field-type-entityreference {
+          margin-left: 0;
+        }
+        &.odd .field-type-entityreference {
+          margin-right: 0;
+        }
+      }
     }
+  } // Title
+  h2 {
+    @extend .uikit-display-4;
+  }
+}
 
-    // Title
-    h2 {
-        @extend .uikit-display-4;
-    }
+// contact hotline
+.paragraphs-item-para-contact {
+  text-align: center;
+  p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .view-mode-hotline_bar {}
 }
 
 // Contact
-.paragraphs-item-para-contact {
-    // This creates .container and .row from band markup for BS grid
-    &.para-container {
-        @extend %band; 
-    }
-    @include row-and-container;
+.page .paragraphs-item-para-contact {
+  // This creates .container and .row from band markup for BS grid
+  &.para-container {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  @include row-and-container;
 
+  // Layout
+  .group-left {
+    @extend .col-xs-12;
+    @extend .col-sm-4;
+    @extend .col-lg-3;
+    padding-top: uikit-space(1.5);
+    @include uikit-media(sm){
+      padding-bottom: uikit-space(1.5);
+      padding-left: uikit-space(1);
+      padding-right: uikit-space(1);
+      background: $colour-Secondary-darker;
+    }
+  }
+  .group-right {
+    @extend .col-xs-12;
+    @extend .col-sm-8;
+    @extend .col-lg-9;
+    padding-bottom: uikit-space(1.5);
+    @include uikit-media(sm){
+      padding-top: uikit-space(1.5);
+      padding-left: uikit-space(2);
+    }
+  }
+
+  // Text align
+  text-align: center;
+  p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include uikit-media(sm) {
+    text-align: left;
+    p {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
   .field-name-field-related-contact {
     @extend .col-sm-12;
-  }
-    // display mode
-    .view-mode-hotline_bar {
-        h2 {
-            @extend .uikit-display-4;
-        }
-        .paragraphs-item-para-telephone {
-            padding: 0;
-            .field-name-field-contact-telephone {
-                @extend .uikit-display-3;
-                font-weight: 700;
-            }
-        }
+  } // display mode
+  .view-mode-hotline_bar {
+    h2 {
+      @extend .uikit-display-4;
     }
+    .paragraphs-item-para-telephone {
+      padding: 0;
+      .field-name-field-contact-telephone {
+        @extend .uikit-display-3;
+        font-weight: 700;
+        a {
+          &:before {
+            content: "\f095";
+            font-family: FontAwesome;
+            font-size: 1em;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: inherit;
+            z-index: 1;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
 }
 
 // Statistics
@@ -168,43 +203,35 @@
     h2 {
       @extend .uikit-display-4;
     }
-  }
-  // Wrapper title/summary
+  } // Wrapper title/summary
   h2,
-  .field-name-field-summary, .field-name-field-link-internal {
+  .field-name-field-summary,
+  .field-name-field-link-internal {
     @extend .col-xs-12;
   }
-
   .field-name-field-summary {
     p {
       margin-top: uikit-space(0.5);
       margin-bottom: uikit-space(0.5);
     }
   }
-
   .field-name-field-link-internal {
     a {
       @extend .uikit-cta-link;
     }
-  }
-
-  // 2 in a row.
+  } // 2 in a row.
   &.listing__count--2 {
-    .field-name-field-statistics > .field-items > .field-item {
+    .field-name-field-statistics>.field-items>.field-item {
       @extend .col-md-6;
     }
-  }
-
-  // 3 in a row.
+  } // 3 in a row.
   &.listing__count--3 {
-    .field-name-field-statistics > .field-items > .field-item {
+    .field-name-field-statistics>.field-items>.field-item {
       @extend .col-md-4;
     }
-  }
-
-  // 4 in a row.
+  } // 4 in a row.
   &.listing__count--4 {
-    .field-name-field-statistics > .field-items > .field-item {
+    .field-name-field-statistics>.field-items>.field-item {
       @extend .col-md-3;
     }
   }
@@ -214,20 +241,19 @@
 .paragraphs-item-two-columns {
   // Layout
   @include row-and-container;
-  > .para-row {
-    > .group-header,
-    > .group-footer {
+  >.para-row {
+    >.group-header,
+    >.group-footer {
       @extend .col-xs-12;
     }
-    > .group-left,
-    > .group-right {
+    >.group-left,
+    >.group-right {
       @extend .col-xs-12;
       @extend .col-sm-6;
     }
-  }
-  // Prevent nested block paragraphs in two column from using container and row.
+  } // Prevent nested block paragraphs in two column from using container and row.
   // @todo Should we remove paragraphs-item-para-block container and row by default, and just let each individual one decide on a case by case basis?
-  > .para-row {
+  >.para-row {
     .paragraphs-item-para-block {
       .inside-para-container {
         box-sizing: inherit;
@@ -243,11 +269,10 @@
       }
     }
   }
-
   &.view-mode-full {
-    > .para-row {
-      > h2,
-      > .group-header > h2 {
+    >.para-row {
+      >h2,
+      >.group-header>h2 {
         @extend .uikit-display-4;
       }
       .group-header {
@@ -255,16 +280,14 @@
           margin-bottom: uikit-space(1);
         }
       }
-      > .group-left,
-      > .group-right {
+      >.group-left,
+      >.group-right {
         margin-bottom: uikit-space(1);
         @include uikit-media(sm) {
           margin: 0;
         }
-      }
-
-      // Shame!
-      > .group-footer {
+      } // Shame!
+      >.group-footer {
         .paragraphs-item-para-link {
           a {
             @extend .uikit-cta-link;
@@ -279,19 +302,15 @@
 .paragraphs-item-para-block {
   &.para-container {
     @extend %band;
-  }
-  // @todo Should we remove paragraphs-item-para-block container and row by default, and just let each individual one decide on a case by case basis?
+  } // @todo Should we remove paragraphs-item-para-block container and row by default, and just let each individual one decide on a case by case basis?
   @include row-and-container;
-
   .field-name-field-title {
     @extend .uikit-display-4;
   }
-
   .field-name-field-title,
   .field-name-field-summary {
     @extend .col-xs-12;
   }
-
   .bean-basic-content {
     @extend .col-xs-12;
   }
@@ -299,9 +318,17 @@
 
 // View para
 .paragraphs-item-para-view {
-    .para-row {
-        > a {
-            @extend .uikit-cta-link;
-        }
+  .para-row {
+    >a {
+      @extend .uikit-cta-link;
     }
+  }
+}
+
+// Image
+.paragraphs-item-para-content-image {
+  .field-name-field-image {
+    line-height: 0;
+  }
+  margin-bottom: uikit-space(1);
 }

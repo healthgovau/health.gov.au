@@ -1,5 +1,9 @@
 .uikit-inpage-nav-links {
   margin-top: 0;
+  margin-bottom: uikit-space( 1.5 );
+  @include uikit-media(sm) {
+    margin-bottom: uikit-space( 2 );
+  }
   .toc {
     border: 0;
     background: transparent;
