@@ -63,6 +63,7 @@
         // Text.
         p.field-name-field-statistic-value-text {
           @extend %stat__text;
+          font-weight: normal;
           // Reset UIKit p margin styles.
           margin: 0;
         }
