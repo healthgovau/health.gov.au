@@ -111,15 +111,19 @@ function health_preprocess_page(&$variables) {
         if (count($active_trail) > 3) {
           if ($variables['node']->type != 'health_topic_hp') {
 
-            $health_topic_hp = node_load(str_replace('node/', '', $active_trail[3]['link_path']));
-            $health_topic = node_load(str_replace('node/', '', $active_trail[2]['link_path']));
+            if (key_exists('link_path', $active_trail['3'])) {
+              $health_topic_hp = node_load(str_replace('node/', '', $active_trail[3]['link_path']));
+            }
+            if (key_exists('link_path', $active_trail['2'])) {
+              $health_topic = node_load(str_replace('node/', '', $active_trail[2]['link_path']));
+            }
 
             // Check if we are under a health professional section of the topic.
-            if ($health_topic_hp && $health_topic_hp->type == 'health_topic_hp') {
+            if (isset($health_topic_hp) && $health_topic_hp && $health_topic_hp->type == 'health_topic_hp') {
               $variables['section_title'] = theme('health_section_link', ['title' => $health_topic_hp->title, 'path' => 'node/' . $health_topic_hp->nid]);
               $variables['summary'] = NULL;
               // Check if we are under the general section of the topic.
-            } else if ($health_topic) {
+            } else if (isset($health_topic) && $health_topic) {
               $variables['section_title'] = theme('health_section_link', ['title' => $health_topic->title, 'path' => 'node/' . $health_topic->nid]);
               $variables['summary'] = NULL;
             }
