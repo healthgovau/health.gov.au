@@ -173,7 +173,7 @@ function _health_get_render_elements_for_public_topic_page($variables, $full) {
     $path = drupal_get_path_alias();
     $parts = explode('/',$path);
     $url = '/topics/' . $parts[1] . '/health-professionals';
-    $link = l('Find out more', $url);
+    $link_text = t('Find out more');
   }
   else {
     $title = '';
@@ -183,13 +183,15 @@ function _health_get_render_elements_for_public_topic_page($variables, $full) {
     $path = drupal_get_path_alias();
     $parts = explode('/',$path);
     $url = '/topics/' . $parts[1] . '/health-professionals';
-    $link =  l('<i class="fas fa-user-md"></i> Visit HP hub', $url, ['attributes' => ['class' => ['button']], 'html' => TRUE]);
+    $link_text = t('Visit HP hub');
   }
 
   return [
     'title' => $title,
     'text' => $text,
-    'link' => $link,
+    'link_text' => $link_text,
+    'url' => $url,
+    'font' => 'fa-user-md',
   ];
 }
 
@@ -210,7 +212,7 @@ function _health_get_render_elements_for_hp_topic_page($variables, $full) {
     $path = drupal_get_path_alias();
     $parts = explode('/',$path);
     $url = '/topics/' . $parts[1];
-    $link = l('Find out more', $url);
+    $link_text = t('Find out more');
   }
   else {
     $title = '';
@@ -220,13 +222,15 @@ function _health_get_render_elements_for_hp_topic_page($variables, $full) {
     $path = drupal_get_path_alias();
     $parts = explode('/',$path);
     $url = '/topics/' . $parts[1];
-    $link = l('<i class="fas fa-medkit"></i> Patient focused info', $url, ['attributes' => ['class' => ['button']], 'html' => TRUE]);
+    $link_text = t('Patient focused info');
   }
 
   return [
     'title' => $title,
     'text' => $text,
-    'link' => $link,
+    'link_text' => $link_text,
+    'url' => $url,
+    'font' => 'fa-medkit',
   ];
 }
 
