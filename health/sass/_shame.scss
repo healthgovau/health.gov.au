@@ -103,7 +103,7 @@
               @include card-colour($colour-Tertiary, $colour-Tertiary-hover);
             }
             &.item-676 {
-              @include card-colour($colour-Secondary-light, $colour-Secondary-hover);
+              @include card-colour($colour-Tertiary-2-darker, $colour-Secondary-hover);
             }
             &.item-681 {
               @include card-colour($colour-Secondary-dark, $colour-Secondary-hover);

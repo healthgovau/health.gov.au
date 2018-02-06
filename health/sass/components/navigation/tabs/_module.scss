@@ -68,7 +68,7 @@
 %tabs__tab__link--active {
   @extend %tabs__tab__link;
   border-bottom: 4px solid $colour-Secondary-darker;
-  background-color: $uikit-colour-Link;
+  background-color: $colour-Secondary-dark;
   color: white;
   font-weight: bold;
 }
