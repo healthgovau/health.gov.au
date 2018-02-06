@@ -6054,7 +6054,8 @@ ul.social__links,
   font-weight: normal;
   text-decoration: inherit;
   color: #008998;
-  z-index: 1; }
+  z-index: 1;
+  margin-right: 5px; }
 
 .page-node, .node-type-news-article, .node-type-event, .node-type-publication, .node-type-publication-collection, .node-type-image, .node-type-video, .node-type-campaign, .node-type-committee-or-group, .node-type-condition-or-disease, .node-type-contact, .node-type-initiative-or-program, .node-type-statistic, .node-type-service, .node-type-health-topic,
 .node-type-health-topic-hp {
@@ -7319,7 +7320,11 @@ h1[class*="fa-"]:before, .node-statistic.view-mode-feature .statistic .group-sta
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E   %3Cpath fill='%23313131' d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E   %3Cpath fill='none' d='M0 0h24v24H0z'/%3E  %3C/svg%3E"); }
 
 .uikit-inpage-nav-links {
-  margin-top: 0; }
+  margin-top: 0;
+  margin-bottom: 2.4em; }
+  @media (min-width: 768px) {
+    .uikit-inpage-nav-links {
+      margin-bottom: 3.2em; } }
   .uikit-inpage-nav-links .toc {
     border: 0;
     background: transparent;
