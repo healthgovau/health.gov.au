@@ -76,7 +76,9 @@ function health_theme() {
     'variables' => [
       'text' => NULL,
       'title' => NULL,
-      'link' => NULL,
+      'link_text' => NULL,
+      'url' => NULL,
+      'font' => NULL,
     ],
     'template' => 'public_hp_switcher',
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
@@ -826,4 +828,20 @@ function health_image($variables) {
 
   // Otherwise, do the normal stuff.
   return theme_image($variables);
+}
+
+/**
+ * Implements hook_entity_view_mode_alter().
+ *
+ * @param $view_mode
+ * @param $context
+ */
+function health_entity_view_mode_alter(&$view_mode, $context) {
+  // Change display mode from 'inline' to 'inline_full' for infographics
+  if ($context['entity_type'] == 'node' && $context['entity']->type == 'publication' && $view_mode == 'inline') {
+    $publication_type = field_get_items('node', $context['entity'], 'field_publication_type');
+    if ($publication_type[0]['tid'] == PUBLICATION_TYPE_INFOGRAPHIC) {
+      $view_mode = 'inline_large';
+    }
+  }
 }

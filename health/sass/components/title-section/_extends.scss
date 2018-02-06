@@ -4,23 +4,13 @@
 
   .page-title__supp {
     .region-title-supp {
-      @extend %colour-Primary-background;
-
       .block-bean-call-to-action {
-        padding: uikit-space(1);
-      }
-
-      color: white;
-      .field-name-field-link-to a {
-        color: white;
-        border-color: white;
-        font-size: 1.2em;
-        &:after {
-          color: white;
+        @include block-card();
+        .block-bean-call-to-action {
+          padding: uikit-space(1);
         }
-      }
-      .block__title {
-        color: white;
+
+        color: $uikit-colour-Secondary;
       }
     }
   }

@@ -29,6 +29,7 @@
 
 .view-filters .views-exposed-form {
   @extend %uikit-search;
+  overflow: hidden;
   margin-bottom: uikit-space(1);
   @include uikit-media(md){
     max-width: 400px;
