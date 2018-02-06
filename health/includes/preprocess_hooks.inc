@@ -843,9 +843,11 @@ function health_preprocess_entity(&$variables) {
     // Add 'active' to classes array if it is the current page of the image and text block link.
     if ($bean->type == 'image_and_text' && $bean->view_mode == 'full') {
       $current_url = '/' . current_path();
+      $query_string = array_values(drupal_get_query_parameters()['f']);
       if (isset($bean->field_link_internal[LANGUAGE_NONE][0])) {
         $block_link = $bean->field_link_internal[LANGUAGE_NONE][0]['url'];
-        if ($current_url == drupal_get_normal_path($block_link)) {
+        $block_query_string = array_values($bean->field_link_internal[LANGUAGE_NONE][0]['query']);
+        if ($current_url == drupal_get_normal_path($block_link) && $query_string == $block_query_string) {
           $variables['classes_array'][] = 'active';
         }
       }
