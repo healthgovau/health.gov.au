@@ -51,7 +51,6 @@ stylesheets[all][] = superfish.css
 
 ; Then we add our own stylesheet.
 stylesheets[all][] = css/styles.css
-stylesheets[print][] = css/print.css
 
 ; Optionally add some JavaScripts to your theme.
 scripts[] = js/matchHeight.min.js
