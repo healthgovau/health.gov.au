@@ -76,7 +76,9 @@ function health_theme() {
     'variables' => [
       'text' => NULL,
       'title' => NULL,
-      'link' => NULL,
+      'link_text' => NULL,
+      'url' => NULL,
+      'font' => NULL,
     ],
     'template' => 'public_hp_switcher',
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
