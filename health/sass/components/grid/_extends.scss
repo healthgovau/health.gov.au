@@ -1,7 +1,6 @@
 // Grid
 //
 // A grid.
-
 .page {
   @extend .uikit-grid;
 }
@@ -27,3 +26,5 @@ body:not(.node-type-landing-page):not(.node-type-health-topic):not(.node-type-he
 // If need to differentiate
 //.sidebar-right,
 //.sidebar-left {}
+
+@import "_print.scss";

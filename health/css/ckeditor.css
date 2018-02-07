@@ -19,11 +19,15 @@ body.node-type-health-topic .paragraphs-item-two-columns.para-container, body.no
   background-color: #e5e5e5;
   background: linear-gradient(to left, #e5e5e5, #f9f9f9); }
 
-.taskbar .taskbar__item, .taskbar.view ul > .views-row .node, .taskbar--tiled--2 .taskbar__item, .taskbar--2 .taskbar__item, .taskbar--tiled--3 .taskbar__item, .taskbar--3 .taskbar__item, .taskbar--tiled--4 .taskbar__item, .taskbar--4 .taskbar__item, .taskbar--tiled--5 .taskbar__item, .taskbar--5 .taskbar__item, .taskbar--tiled--6 .taskbar__item, .taskbar--6 .taskbar__item, .taskbar--tiled--2.view ul > .views-row .node, .taskbar--tiled--3.view ul > .views-row .node, .taskbar--tiled--4.view ul > .views-row .node, .taskbar--tiled--5.view ul > .views-row .node, .taskbar--tiled--6.view ul > .views-row .node, .listing-back, .page-node-1021 .paragraphs-item-para-contact.para-container,
-.page-node-1156 .paragraphs-item-para-contact.para-container, .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun,
+.taskbar .taskbar__item, .taskbar.view ul > .views-row .node, .taskbar--tiled--2 .taskbar__item, .taskbar--2 .taskbar__item, .taskbar--tiled--3 .taskbar__item, .taskbar--3 .taskbar__item, .taskbar--tiled--4 .taskbar__item, .taskbar--4 .taskbar__item, .taskbar--tiled--5 .taskbar__item, .taskbar--5 .taskbar__item, .taskbar--tiled--6 .taskbar__item, .taskbar--6 .taskbar__item, .taskbar--tiled--2.view ul > .views-row .node, .taskbar--tiled--3.view ul > .views-row .node, .taskbar--tiled--4.view ul > .views-row .node, .taskbar--tiled--5.view ul > .views-row .node, .taskbar--tiled--6.view ul > .views-row .node, .listing-back, .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun,
 .page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun {
   background-color: #006e7a;
   background: linear-gradient(to right, #006e7a, #008998); }
+
+.page-node-1021 .paragraphs-item-para-contact.para-container,
+.page-node-1156 .paragraphs-item-para-contact.para-container {
+  background-color: #007cb5;
+  background: linear-gradient(to right, #007cb5, #0099d9); }
 
 /**
  * Breakpoints
@@ -4644,7 +4648,7 @@ p.summary, .field-name-field-summary {
     border-bottom: none;
     display: block;
     overflow: hidden;
-    color: transparent;
+    background: #f9f9f9;
     border-top: 10px solid #0099d9; }
     @media (min-width: 992px) {
       .bean-image-and-text.view-mode-full .bean-block-content a {
@@ -4713,7 +4717,7 @@ p.summary, .field-name-field-summary {
   border-bottom: none;
   display: block;
   overflow: hidden;
-  color: transparent;
+  background: #f9f9f9;
   border-top: 10px solid #153a6e; }
   @media (min-width: 992px) {
     .page-resources .bean-image-and-text.corporate-publications-card a {
@@ -4741,7 +4745,7 @@ p.summary, .field-name-field-summary {
   border-bottom: none;
   display: block;
   overflow: hidden;
-  color: transparent;
+  background: #f9f9f9;
   border-top: 10px solid #008998; }
   @media (min-width: 992px) {
     .page-resources .bean-image-and-text.publications-card a {
@@ -4769,7 +4773,7 @@ p.summary, .field-name-field-summary {
   border-bottom: none;
   display: block;
   overflow: hidden;
-  color: transparent;
+  background: #f9f9f9;
   border-top: 10px solid #0099d9; }
   @media (min-width: 992px) {
     .page-resources .bean-image-and-text.videos-card a {
@@ -4810,7 +4814,7 @@ p.summary, .field-name-field-summary {
   border-bottom: none;
   display: block;
   overflow: hidden;
-  color: transparent;
+  background: #f9f9f9;
   border-top: 10px solid #153a6e; }
   @media (min-width: 992px) {
     .page-news-and-events .bean-image-and-text.news-card a {
@@ -4838,7 +4842,7 @@ p.summary, .field-name-field-summary {
   border-bottom: none;
   display: block;
   overflow: hidden;
-  color: transparent;
+  background: #f9f9f9;
   border-top: 10px solid #008998; }
   @media (min-width: 992px) {
     .page-news-and-events .bean-image-and-text.events-card a {
@@ -4866,7 +4870,7 @@ p.summary, .field-name-field-summary {
   border-bottom: none;
   display: block;
   overflow: hidden;
-  color: transparent;
+  background: #f9f9f9;
   border-top: 10px solid #0099d9; }
   @media (min-width: 992px) {
     .page-news-and-events .bean-image-and-text.media-releases-card a {
@@ -4894,7 +4898,7 @@ p.summary, .field-name-field-summary {
   border-bottom: none;
   display: block;
   overflow: hidden;
-  color: transparent;
+  background: #f9f9f9;
   border-top: 10px solid #df2f3b; }
   @media (min-width: 992px) {
     .page-news-and-events .bean-image-and-text.health-alerts-card a {
@@ -5828,6 +5832,10 @@ fieldset .fieldset-legend {
   outline: 1px solid #006570;
   outline-offset: 0; }
 
+@media print {
+  .page .main-content {
+    width: 100%; } }
+
 .uikit-header.uikit-header--light {
   background-color: white; }
 
@@ -5911,6 +5919,12 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
 .node-type-news-article .page-title__supp, .node-type-publication .page-title__supp, .node-type-publication-collection .page-title__supp, .node-type-image .page-title__supp, .node-type-video .page-title__supp, .node-type-condition-or-disease .page-title__supp, .node-type-service .page-title__supp {
   display: none; }
 
+@media print {
+  .page-title__core .section-header {
+    display: none; }
+  .page-title__supp {
+    display: none; } }
+
 .node-type-health-topic .page-title__supp .region-title-supp .block-bean-call-to-action,
 .node-type-health-topic-hp .page-title__supp .region-title-supp .block-bean-call-to-action {
   color: #313131; }
@@ -5921,7 +5935,7 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
     border-bottom: none;
     display: block;
     overflow: hidden;
-    color: transparent;
+    background: #FFF;
     border-top: 10px solid #0099d9; }
     @media (min-width: 992px) {
       .node-type-health-topic .page-title__supp .region-title-supp .block-bean-call-to-action a,
@@ -6161,6 +6175,10 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
     margin: 3px 1px 1px; }
     .rsbtn_colorskin a.rsbtn_abouthelp:hover {
       background-color: #ccc; }
+
+@media print {
+  #readspeaker {
+    display: none; } }
 
 ul.social__links,
 .social__links {
@@ -6975,7 +6993,7 @@ body.node-type-health-topic .para-container.paragraphs-item-image, body.node-typ
         padding-bottom: 2.4em;
         padding-left: 1.6em;
         padding-right: 1.6em;
-        background: #006e7a; } }
+        background: #0070a3; } }
   .page .paragraphs-item-para-contact .group-right {
     padding-bottom: 2.4em; }
     @media (min-width: 768px) {
@@ -8333,7 +8351,7 @@ body {
     border-bottom: none;
     display: block;
     overflow: hidden;
-    color: transparent;
+    background: #f9f9f9;
     border-top: 10px solid #213363; }
     @media (min-width: 992px) {
       .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card a,
@@ -8371,7 +8389,7 @@ body {
     border-bottom: none;
     display: block;
     overflow: hidden;
-    color: transparent;
+    background: #f9f9f9;
     border-top: 10px solid #d42b38; }
     @media (min-width: 992px) {
       .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car a,
@@ -8409,7 +8427,7 @@ body {
     border-bottom: none;
     display: block;
     overflow: hidden;
-    color: transparent;
+    background: #f9f9f9;
     border-top: 10px solid #007b89; }
     @media (min-width: 992px) {
       .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca a,
@@ -8512,7 +8530,7 @@ body {
     border-bottom: none;
     display: block;
     overflow: hidden;
-    color: transparent;
+    background: #f9f9f9;
     border-top: 10px solid #153a6e; }
     @media (min-width: 992px) {
       .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.topic-tile a {
@@ -8539,7 +8557,7 @@ body {
     border-bottom: none;
     display: block;
     overflow: hidden;
-    color: transparent;
+    background: #f9f9f9;
     border-top: 10px solid #df2f3b; }
     @media (min-width: 992px) {
       .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.conditions--diseases a {
@@ -8566,7 +8584,7 @@ body {
     border-bottom: none;
     display: block;
     overflow: hidden;
-    color: transparent;
+    background: #f9f9f9;
     border-top: 10px solid #008998; }
     @media (min-width: 992px) {
       .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.medicare-tile a {
@@ -8593,7 +8611,7 @@ body {
     border-bottom: none;
     display: block;
     overflow: hidden;
-    color: transparent;
+    background: #f9f9f9;
     border-top: 10px solid #0099d9; }
     @media (min-width: 992px) {
       .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.symptoms a {
@@ -8620,7 +8638,7 @@ body {
     border-bottom: none;
     display: block;
     overflow: hidden;
-    color: transparent;
+    background: #f9f9f9;
     border-top: 10px solid #6d6e70; }
     @media (min-width: 992px) {
       .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.services--support a {
