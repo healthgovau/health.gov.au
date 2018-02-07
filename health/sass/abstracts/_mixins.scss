@@ -91,7 +91,7 @@
 }
 
 // Mixin to apply card (border top colour) style to bean blocks.
-@mixin block-card($border-colour: $colour-Secondary, $border-hover-colour: $colour-Secondary-hover) {
+@mixin block-card($border-colour: $colour-Tertiary-2, $border-hover-colour: $colour-Tertiary-2-hover) {
   a {
     padding: uikit-space(.5);
     @include uikit-media(md) {
