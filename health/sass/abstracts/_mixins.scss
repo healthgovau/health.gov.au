@@ -145,19 +145,38 @@
 }
 
 // Mixin to apply responsive styles to SVGs in bean blocks.
-@mixin block-text-image-svg() {
-  svg {
-    max-width: 65%;
-    // IE doesn't handle max-width scaling correctly, so we have to specify width and height in px
-    max-width: 90px;
-    max-height: 90px;
-    @include uikit-media(sm) {
-      max-width: 75px;
-      max-height: 75px;
+@mixin block-text-image-svg($icon-size: '') {
+  
+  @if $icon-size == 'large' {
+    svg {
+      max-width: 65%;
+      // IE doesn't handle max-width scaling correctly, so we have to specify width and height in px
+      max-width: 90px;
+      max-height: 90px;
+      @include uikit-media(sm) {
+        max-width: 75px;
+        max-height: 75px;
+      }
+      @include uikit-media(md) {
+        max-width: 105px;
+        max-height: 105px;
+      }
     }
-    @include uikit-media(md) {
-      max-width: 105px;
-      max-height: 105px;
+  } @else {
+    svg {
+      max-width: 35%;
+      // IE doesn't handle max-width scaling correctly, so we have to specify width and height in px
+      max-width: 50px;
+      max-height: 50px;
+      @include uikit-media(sm) {
+        max-width: 30px;
+        max-height: 30px;
+      }
+      @include uikit-media(md) {
+        max-width: 40px;
+        max-height: 40px;
+      }
     }
   }
+  
 }
