@@ -31,8 +31,8 @@
 // Listing back button band.
 .listing-back {
   @extend %band;
-  @extend %colour-Secondary-background;
   padding: uikit-space(0.8) 0 uikit-space(0.8) 0;
+  border-top: 1px solid $colour-light-darker;
   .wrapper {
     @extend .container;
     text-align: center;
@@ -42,16 +42,10 @@
     @include uikit-media(md) {
       font-size: 1.1em;
     }
-    @extend %baseicon;
-    color: white;
-    border-color: white;
   }
   .listing-back__icon {
-    @extend %baseicon;
-    color: white;
     font-size: 1.25em;
     line-height: 1.25;
-    margin-right: 5px;
   }
 }
 
