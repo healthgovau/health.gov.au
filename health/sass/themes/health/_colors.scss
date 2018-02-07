@@ -107,6 +107,14 @@ $colour-light-darker: #cdcdcd;
   background: linear-gradient(to right, $colour-Secondary-darker, $colour-Secondary);
 }
 
+%colour-Tertiary-2-background {
+  background-color: $colour-Tertiary-2-darker;
+  background: -webkit-linear-gradient(left, $colour-Tertiary-2-darker, $colour-Tertiary-2);
+  background: -o-linear-gradient(right, $colour-Tertiary-2-darker, $colour-Tertiary-2);
+  background: -moz-linear-gradient(right, $colour-Tertiary-2-darker, $colour-Tertiary-2);
+  background: linear-gradient(to right, $colour-Tertiary-2-darker, $colour-Tertiary-2);
+}
+
 %colour-Dark-background {
   background-color: $colour-darker;
   background: -webkit-linear-gradient(left, $colour-darker, $colour-dark);
