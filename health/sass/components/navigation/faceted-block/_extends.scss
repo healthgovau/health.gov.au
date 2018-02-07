@@ -81,15 +81,3 @@ p.filter__help {
   }
 }
 
-%mobile-menu {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.8s linear;
-  height: 0;
-  @include uikit-media(sm) {
-    visibility: visible;
-    opacity: 1;
-    height: auto;
-    padding-right: uikit-space(1);
-  }
-}

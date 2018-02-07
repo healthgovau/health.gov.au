@@ -1,0 +1,8 @@
+@media print {
+  .region-header-top,
+  .region-header,
+  .region-navigation,
+  .region-content-bottom {
+    display: none;
+  }
+}

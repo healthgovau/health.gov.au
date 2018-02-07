@@ -62,9 +62,9 @@ $colour-light-darker: #cdcdcd;
 
 %colour-Primary-background {
   background-color: $colour-Primary-darker;
-  // background: -webkit-linear-gradient(left, $colour-Primary-darker, $colour-Primary);
-  // background: -o-linear-gradient(right, $colour-Primary-darker, $colour-Primary);
-  // background: -moz-linear-gradient(right, $colour-Primary-darker, $colour-Primary);
+  background: -webkit-linear-gradient(left, $colour-Primary-darker, $colour-Primary);
+  background: -o-linear-gradient(right, $colour-Primary-darker, $colour-Primary);
+  background: -moz-linear-gradient(right, $colour-Primary-darker, $colour-Primary);
   background: linear-gradient(to right, $colour-Primary-darker, $colour-Primary);
 }
 
