@@ -57,7 +57,6 @@ $colour-light-dark: #e5e5e5;
 $colour-light: #ecedee;
 $colour-lighter: #f1f1f2;
 $colour-lightest: #f9f9f9;
-
 $colour-light-darker: #cdcdcd;
 
 %colour-Primary-background {
@@ -106,6 +105,14 @@ $colour-light-darker: #cdcdcd;
   background: -o-linear-gradient(right, $colour-Secondary-darker, $colour-Secondary);
   background: -moz-linear-gradient(right, $colour-Secondary-darker, $colour-Secondary);
   background: linear-gradient(to right, $colour-Secondary-darker, $colour-Secondary);
+}
+
+%colour-Tertiary-2-background {
+  background-color: $colour-Tertiary-2-darker;
+  background: -webkit-linear-gradient(left, $colour-Tertiary-2-darker, $colour-Tertiary-2);
+  background: -o-linear-gradient(right, $colour-Tertiary-2-darker, $colour-Tertiary-2);
+  background: -moz-linear-gradient(right, $colour-Tertiary-2-darker, $colour-Tertiary-2);
+  background: linear-gradient(to right, $colour-Tertiary-2-darker, $colour-Tertiary-2);
 }
 
 %colour-Dark-background {

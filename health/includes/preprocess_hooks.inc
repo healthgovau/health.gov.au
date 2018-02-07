@@ -96,7 +96,7 @@ function health_preprocess_page(&$variables) {
   } else {
     // Check if this is a views page.
     if ($view = views_get_page_view()) {
-      $variables['summary'] = $view->display_handler->get_option('display_comment');
+      $variables['summary'] = $view->display_handler->get_option('display_description');
     }
   }
 
