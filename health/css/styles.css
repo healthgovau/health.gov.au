@@ -9913,11 +9913,11 @@ textarea {
   display: block; }
 
 ul.social__links .social__links-item a,
-.social__links .social__links-item a, .listing-back .listing-back__icon, [class*="fa-"], .region-navigation .mobile-toggle.mobile-toggle--main-menu .mobile-toggle__label, .region-navigation .mobile-toggle.mobile-toggle--search .mobile-toggle__label {
+.social__links .social__links-item a, [class*="fa-"], .region-navigation .mobile-toggle.mobile-toggle--main-menu .mobile-toggle__label, .region-navigation .mobile-toggle.mobile-toggle--search .mobile-toggle__label {
   position: relative;
   margin-left: 2em; }
   
-  .social__links .social__links-item a:before, .listing-back .listing-back__icon:before, [class*="fa-"]:before, .region-navigation .mobile-toggle.mobile-toggle--main-menu .mobile-toggle__label:before, .region-navigation .mobile-toggle.mobile-toggle--search .mobile-toggle__label:before {
+  .social__links .social__links-item a:before, [class*="fa-"]:before, .region-navigation .mobile-toggle.mobile-toggle--main-menu .mobile-toggle__label:before, .region-navigation .mobile-toggle.mobile-toggle--search .mobile-toggle__label:before {
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
