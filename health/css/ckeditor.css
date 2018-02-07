@@ -5920,6 +5920,8 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
   display: none; }
 
 @media print {
+  .page-title__core .section-header {
+    display: none; }
   .page-title__supp {
     display: none; } }
 
@@ -6173,6 +6175,10 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
     margin: 3px 1px 1px; }
     .rsbtn_colorskin a.rsbtn_abouthelp:hover {
       background-color: #ccc; }
+
+@media print {
+  #readspeaker {
+    display: none; } }
 
 ul.social__links,
 .social__links {
