@@ -39,5 +39,13 @@
   width: 100%;
 }
 
+.region-content-top {
+  @extend %clearfix;
+  padding-bottom: uikit-space(1.5);
+  .row {
+    margin-left: 0; // to fix outdent for view selector tool
+  }
+}
+
 @import '_print.scss';
 

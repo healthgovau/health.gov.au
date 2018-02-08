@@ -222,7 +222,6 @@ body {
       &.inside-para-container {
         padding: 0;
       }
-
     }
     // Sub features
     .paragraphs-item-para-view {
@@ -235,10 +234,11 @@ body {
       &.para-container {
         @extend %band--primary;
       }
-      // Title/summary
-      .group-header {
-        @extend .col-xs-12;
-      }
+    }
+
+    // Title/summary
+    .group-header {
+      @extend .col-xs-12;
     }
 
     // Home page

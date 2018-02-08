@@ -65,6 +65,9 @@
 
       // Immunisation more on immunisation band
       $('.paragraphs-item-para-block.block-id__more-services-card .bean-image-and-text a', context).matchHeight();
+
+      // Front page feedback band.
+      $('.view-mode-view_selector .bean-block-content a', context).matchHeight();
     }
   };
 

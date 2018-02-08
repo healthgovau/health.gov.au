@@ -91,18 +91,17 @@
 }
 
 // Mixin to apply card (border top colour) style to bean blocks.
-@mixin block-card($border-colour: $colour-Tertiary-2, $border-hover-colour: $colour-Tertiary-2-hover, $bg-colour: $colour-lightest, $bg-hover-colour: $colour-light-dark) {
+@mixin block-card($border-colour-top: $colour-Tertiary-2, $border-hover-colour: $colour-Tertiary-2-hover, $bg-colour: $colour-lightest, $bg-hover-colour: $colour-light-dark) {
   a {
     padding: uikit-space(.5);
     @include uikit-media(md) {
       padding: uikit-space(1);
     }
-    border-top: 10px solid $uikit-colour-Link;
     border-bottom: none;
     display: block;
     overflow: hidden;
     background: $bg-colour;
-    border-top: 10px solid $border-colour;
+    border-top: 10px solid $border-colour-top;
 
     // Hide icon as this is card link.
     &:after {
@@ -124,7 +123,7 @@
     &:hover,
     &:focus {
       background: $bg-hover-colour;
-      border-color: $border-hover-colour;
+      border-top-color: $border-hover-colour;
       .field-name-field-link-internal {
         //color: #fff;
         .field-item {

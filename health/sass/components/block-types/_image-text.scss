@@ -1,31 +1,3 @@
-
-// Set width for variable counts of blocks
-.block__count--5 {
-  .bean-image-and-text {
-    width: 50%;
-    float: left;
-    margin-bottom: 24px;
-    @include uikit-media(sm) {
-      width: 20%;
-      margin-bottom: 0;
-    }
-  }
-}
-
-.block__count--3 {
-  .bean-image-and-text {
-    @extend .col-xs-12;
-    @extend .col-sm-6;
-    @extend .col-md-4;
-  }
-}
-
-.block__count--1 {
-  .bean-image-and-text {
-    width: 100%;
-  }
-}
-
 // Image and text
 .bean-image-and-text {
   .field-name-field-link-internal {
@@ -77,19 +49,64 @@
     box-sizing: border-box;
     position: relative;
     min-height: 1px;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 0;
+    padding-right: 0;
+    //margin-left: -12px;
     text-align: center;
     .field-name-field-image {
       @include block-text-image-svg();
     }
+    .field-bean-text {
+      display: none;
+      @include uikit-media(sm){
+        font-size: 14px;
+        margin: 0 auto;
+        max-width: 75%;
+        display: block;
+      }
+    }
     .bean-block-content {
-      @include block-card($border-colour: $uikit-colour-Border);
+      @include block-card($border-colour-top: $colour-light-dark, $bg-hover-colour: #fff);
+      a {
+       border-left: 1px solid $colour-light-dark;
+       border-right: 1px solid $colour-light-dark;
+       border-bottom: 1px solid $colour-light-dark;
+      }
     }
   }
   &.active {
     .bean-block-content {
-      background: $colour-light-dark;
+      a {
+        background: #fff;
+        border-top-color: $colour-Tertiary-2;
+      }
+    }
+  }
+}
+
+// ===== LAYOUTS ======
+// Set width for variable counts of blocks
+// Used for home page type selector
+.block__count--1 {
+  .bean-image-and-text {
+    width: 100%;
+  }
+}
+.block__count--3 {
+  .bean-image-and-text {
+    @extend .col-xs-12;
+    @extend .col-sm-6;
+    @extend .col-md-4;
+  }
+}
+.block__count--5 {
+  .bean-image-and-text {
+    width: 50%;
+    float: left;
+    margin-bottom: 24px;
+    @include uikit-media(sm) {
+      width: 20%;
+      margin-bottom: 0;
     }
   }
 }
