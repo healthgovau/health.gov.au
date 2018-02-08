@@ -19,7 +19,7 @@ body.node-type-health-topic .paragraphs-item-two-columns.para-container, body.no
   background-color: #e5e5e5;
   background: linear-gradient(to left, #e5e5e5, #f9f9f9); }
 
-.taskbar .taskbar__item, .taskbar.view ul > .views-row .node, .taskbar--tiled--2 .taskbar__item, .taskbar--2 .taskbar__item, .taskbar--tiled--3 .taskbar__item, .taskbar--3 .taskbar__item, .taskbar--tiled--4 .taskbar__item, .taskbar--4 .taskbar__item, .taskbar--tiled--5 .taskbar__item, .taskbar--5 .taskbar__item, .taskbar--tiled--6 .taskbar__item, .taskbar--6 .taskbar__item, .taskbar--tiled--2.view ul > .views-row .node, .taskbar--tiled--3.view ul > .views-row .node, .taskbar--tiled--4.view ul > .views-row .node, .taskbar--tiled--5.view ul > .views-row .node, .taskbar--tiled--6.view ul > .views-row .node, .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun,
+.taskbar .taskbar__item, .taskbar.view ul > .views-row .node, .taskbar--tiled--2 .taskbar__item, .taskbar--2 .taskbar__item, .taskbar--tiled--3 .taskbar__item, .taskbar--3 .taskbar__item, .taskbar--tiled--4 .taskbar__item, .taskbar--4 .taskbar__item, .taskbar--tiled--5 .taskbar__item, .taskbar--5 .taskbar__item, .taskbar--tiled--6 .taskbar__item, .taskbar--6 .taskbar__item, .taskbar--tiled--2.view ul > .views-row .node, .taskbar--tiled--3.view ul > .views-row .node, .taskbar--tiled--4.view ul > .views-row .node, .taskbar--tiled--5.view ul > .views-row .node, .taskbar--tiled--6.view ul > .views-row .node, .listing-back, .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun,
 .page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun {
   background-color: #006e7a;
   background: linear-gradient(to right, #006e7a, #008998); }
@@ -6474,40 +6474,48 @@ ul.social__links,
 .node-news-article.view-mode-full .field-name-field-related-health-topics .field-label {
   width: auto; }
 
-.node-news-article.view-mode-listing_vertical_small {
-  background: #fff;
-  display: block;
-  margin-bottom: 0;
-  overflow: hidden; }
-  .node-news-article.view-mode-listing_vertical_small .group-right {
-    padding: 0.45em 0.8em; }
-    @media (min-width: 992px) {
+@media (min-width: 768px) {
+  .node-news-article.view-mode-listing_vertical_small {
+    background: #fff;
+    display: block;
+    margin-bottom: 0;
+    overflow: hidden; }
+    .node-news-article.view-mode-listing_vertical_small .group-right {
+      padding: 0.45em 0.8em; } }
+    @media (min-width: 768px) and (min-width: 992px) {
       .node-news-article.view-mode-listing_vertical_small .group-right {
         padding: 0.57em 1.05em; } }
-  .node-news-article.view-mode-listing_vertical_small .field-name-title h3, .node-news-article.view-mode-listing_vertical_small .field-name-title h2, .node-news-article.view-mode-listing_vertical_small .field-name-title .video--left .video__title, .video--left .node-news-article.view-mode-listing_vertical_small .field-name-title .video__title, .node-news-article.view-mode-listing_vertical_small .field-name-title .video--right .video__title, .video--right .node-news-article.view-mode-listing_vertical_small .field-name-title .video__title {
-    font-size: 14px; }
-    @media (min-width: 992px) {
+
+@media (min-width: 768px) {
+    .node-news-article.view-mode-listing_vertical_small .field-name-title h3, .node-news-article.view-mode-listing_vertical_small .field-name-title h2, .node-news-article.view-mode-listing_vertical_small .field-name-title .video--left .video__title, .video--left .node-news-article.view-mode-listing_vertical_small .field-name-title .video__title, .node-news-article.view-mode-listing_vertical_small .field-name-title .video--right .video__title, .video--right .node-news-article.view-mode-listing_vertical_small .field-name-title .video__title {
+      font-size: 14px; } }
+    @media (min-width: 768px) and (min-width: 992px) {
       .node-news-article.view-mode-listing_vertical_small .field-name-title h3, .node-news-article.view-mode-listing_vertical_small .field-name-title h2, .node-news-article.view-mode-listing_vertical_small .field-name-title .video--left .video__title, .video--left .node-news-article.view-mode-listing_vertical_small .field-name-title .video__title, .node-news-article.view-mode-listing_vertical_small .field-name-title .video--right .video__title, .video--right .node-news-article.view-mode-listing_vertical_small .field-name-title .video__title {
         font-size: 18px; } }
-  .node-news-article.view-mode-listing_vertical_small img {
-    border: 0 !important; }
-  @media (min-width: 992px) {
-    .node-news-article.view-mode-listing_vertical_small .group-details {
-      position: absolute;
-      bottom: 10px; } }
 
-.node-news-article.view-mode-feature {
-  background: #fff;
-  display: block;
-  margin-bottom: 0;
-  overflow: hidden; }
-  .node-news-article.view-mode-feature .group-right {
-    padding-top: 0; }
-  .node-news-article.view-mode-feature .group-left {
-    padding: 0; }
-  .node-news-article.view-mode-feature .group-right {
-    padding: 0.96em; }
-    @media (min-width: 992px) {
+@media (min-width: 768px) {
+    .node-news-article.view-mode-listing_vertical_small img {
+      border: 0 !important; } }
+
+@media (min-width: 992px) {
+  .node-news-article.view-mode-listing_vertical_small .group-details {
+    position: absolute;
+    bottom: 10px; } }
+
+.node-news-article.view-mode-feature .group-right {
+  padding-top: 0; }
+
+@media (min-width: 768px) {
+  .node-news-article.view-mode-feature {
+    background: #fff;
+    display: block;
+    margin-bottom: 0;
+    overflow: hidden; }
+    .node-news-article.view-mode-feature .group-left {
+      padding: 0; }
+    .node-news-article.view-mode-feature .group-right {
+      padding: 0.96em; } }
+    @media (min-width: 768px) and (min-width: 992px) {
       .node-news-article.view-mode-feature .group-right {
         padding: 1.6em; } }
 
@@ -6767,18 +6775,21 @@ body.node-type-health-topic .para-container.paragraphs-item-para-content-text, b
   padding: 0 0 1.6em 0; }
 
 .listing-back {
-  padding: 1.28em 0 1.28em 0;
-  border-top: 1px solid #cdcdcd; }
+  padding: 1.28em 0 1.28em 0; }
   .listing-back .wrapper {
     text-align: center; }
   .listing-back a {
-    font-size: 1em; }
+    font-size: 1em;
+    color: white;
+    border-color: white; }
     @media (min-width: 992px) {
       .listing-back a {
         font-size: 1.1em; } }
   .listing-back .listing-back__icon {
+    color: white;
     font-size: 1.25em;
-    line-height: 1.25; }
+    line-height: 1.25;
+    margin-right: 5px; }
 
 #block-bean-feedback-band h2, #block-bean-feedback-band .video--left .video__title, .video--left #block-bean-feedback-band .video__title, #block-bean-feedback-band .video--right .video__title, .video--right #block-bean-feedback-band .video__title,
 #block-bean-homepage-about-us h2,
@@ -7452,11 +7463,11 @@ textarea {
   display: block; }
 
 ul.social__links .social__links-item a,
-.social__links .social__links-item a, [class*="fa-"], .region-navigation .mobile-toggle.mobile-toggle--main-menu .mobile-toggle__label, .region-navigation .mobile-toggle.mobile-toggle--search .mobile-toggle__label {
+.social__links .social__links-item a, .listing-back a, .listing-back .listing-back__icon, [class*="fa-"], .region-navigation .mobile-toggle.mobile-toggle--main-menu .mobile-toggle__label, .region-navigation .mobile-toggle.mobile-toggle--search .mobile-toggle__label {
   position: relative;
   margin-left: 2em; }
   
-  .social__links .social__links-item a:before, [class*="fa-"]:before, .region-navigation .mobile-toggle.mobile-toggle--main-menu .mobile-toggle__label:before, .region-navigation .mobile-toggle.mobile-toggle--search .mobile-toggle__label:before {
+  .social__links .social__links-item a:before, .listing-back a:before, .listing-back .listing-back__icon:before, [class*="fa-"]:before, .region-navigation .mobile-toggle.mobile-toggle--main-menu .mobile-toggle__label:before, .region-navigation .mobile-toggle.mobile-toggle--search .mobile-toggle__label:before {
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
