@@ -17,6 +17,7 @@
         .go-to-download-link {
           @extend %baseicon;
           line-height: 2;
+          margin-top: 10px;
           &:before {
             content: '\f063';
           }

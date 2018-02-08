@@ -8849,7 +8849,8 @@ ul.social__links,
 .node-publication {
   background: transparent; }
   .node-publication.view-mode-full .field-name-field-image-featured .go-to-download-link {
-    line-height: 2; }
+    line-height: 2;
+    margin-top: 10px; }
     .node-publication.view-mode-full .field-name-field-image-featured .go-to-download-link:before {
       content: '\f063'; }
   .node-publication.view-mode-full .paragraphs-item-documents {
