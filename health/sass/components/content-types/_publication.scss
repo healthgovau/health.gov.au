@@ -15,12 +15,12 @@
       .field-name-field-image-featured {
         @extend %image--full;
         .go-to-download-link {
-          @extend %baseicon;
+          a {
+            @extend %link;
+          }
           line-height: 2;
           margin-top: 10px;
-          &:before {
-            content: '\f063';
-          }
+
         }
       }
 

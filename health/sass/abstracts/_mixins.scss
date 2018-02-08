@@ -65,6 +65,9 @@
 // UI-Kit link style
 %link {
   border-bottom: 1px solid $colour-Secondary;
+  &:hover {
+    border: none;
+  }
 }
 
 // Mixin to apply row and container
