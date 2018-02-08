@@ -10870,7 +10870,7 @@ header.uikit-header, header.region-featured {
     width: 100%; }
     @media (min-width: 768px) {
       header.uikit-header .region-header, header.region-featured .region-header {
-        max-width: 360px;
+        max-width: 420px;
         margin-top: -0.8em;
         float: right; } }
 
