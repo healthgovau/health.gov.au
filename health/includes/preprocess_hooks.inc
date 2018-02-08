@@ -619,6 +619,19 @@ function health_preprocess_field(&$variables) {
       $variables['items'][0]['#markup'] = $rendered[0]['#markup'];
     }
   }
+
+  // For resources with featured image and document download link, add anchor
+  // link under the featured image field.
+  if ($variables['element']['#bundle'] == 'publication') {
+    // Add JS.
+    $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/health.imageAnchor.js';
+
+    // Add link wrapper and link to the image field.
+    if ($variables['element']['#field_name'] == 'field_image_featured') {
+      $variables['items'][0]['#prefix'] = '<div class="link-wrapper"><a href="#" class="link-wrapper">';
+      $variables['items'][0]['#suffix'] = '</a></div><div class="go-to-download-link"><a href="#" class="link-wrapper" role="button">Go to download</a></div>';
+    }
+  }
 }
 
 /**
