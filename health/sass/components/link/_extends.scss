@@ -11,7 +11,8 @@
 }
 
 // Override external link icon with font awesome.
-.page a[rel~='external']:after {
+.page a[rel~='external']:after,
+%ext-link {
   background-image: none;
   content: "\f08e";
   font-family: FontAwesome;
