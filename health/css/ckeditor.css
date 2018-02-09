@@ -4635,7 +4635,8 @@ p.summary, .field-name-field-summary {
       display: inline;
       border-bottom: 1px solid #008998;
       font-weight: 700;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
 
 .bean-image-and-text.active .bean-block-content {
   background: #e5e5e5; }
@@ -4713,7 +4714,8 @@ p.summary, .field-name-field-summary {
       display: inline;
       border-bottom: 1px solid #008998;
       font-weight: 700;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
   .bean-image-and-text.view-mode-view_selector .bean-block-content a {
     border-left: 1px solid #e5e5e5;
     border-right: 1px solid #e5e5e5;
@@ -5829,7 +5831,8 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
       display: inline;
       border-bottom: 1px solid #008998;
       font-weight: 700;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
   .node-type-health-topic .page-title__supp .region-title-supp .block-bean-call-to-action .block-bean-call-to-action,
   .node-type-health-topic-hp .page-title__supp .region-title-supp .block-bean-call-to-action .block-bean-call-to-action {
     padding: 1.6em; }
@@ -5873,9 +5876,7 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
       color: white; }
 
 #readspeaker {
-  display: inline-block;
   float: right;
-  position: absolute;
   top: 12px;
   right: 12px; }
   #readspeaker a {
@@ -5884,19 +5885,16 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
     margin-bottom: 0; }
   @media (min-width: 768px) {
     #readspeaker {
-      display: inline;
-      display: none;
-      position: relative;
-      float: none;
       top: 0;
-      right: 0; } }
+      right: 0;
+      margin-right: 5em; } }
 
 .rsbtn_colorskin {
   position: relative;
   font-size: 13px;
   line-height: 1.3em;
   display: inline-block;
-  padding: 2px;
+  padding: 10px;
   margin-bottom: -1px;
   background: white;
   border: 1px solid #008998; }
@@ -6093,7 +6091,23 @@ ul.social__links,
   color: #008998;
   z-index: 1; }
 
-.page a[rel~='external']:after {
+.page a[rel~='external']:after,
+.external-link-url,
+.bean-image-and-text.view-mode-full .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.node-type-health-topic .page-title__supp .region-title-supp .block-bean-call-to-action a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.node-type-health-topic-hp .page-title__supp .region-title-supp .block-bean-call-to-action a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.topic-tile a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.conditions--diseases a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.medicare-tile a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.symptoms a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.services--support a[rel~='external'] .field-name-field-link-internal .field-item:after {
   background-image: none;
   content: "\f08e";
   font-family: FontAwesome;
@@ -7837,7 +7851,11 @@ header, .header-top {
   .field-name-field-link-external .field-items a {
     font-weight: bold; }
 
-.external-link-url {
+.external-link-url, .bean-image-and-text.view-mode-full .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after, .node-type-health-topic .page-title__supp .region-title-supp .block-bean-call-to-action a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.node-type-health-topic-hp .page-title__supp .region-title-supp .block-bean-call-to-action a[rel~='external'] .field-name-field-link-internal .field-item:after, .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card a[rel~='external'] .field-name-field-link-internal .field-item:after, .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car a[rel~='external'] .field-name-field-link-internal .field-item:after, .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca a[rel~='external'] .field-name-field-link-internal .field-item:after, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.topic-tile a[rel~='external'] .field-name-field-link-internal .field-item:after, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.conditions--diseases a[rel~='external'] .field-name-field-link-internal .field-item:after, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.medicare-tile a[rel~='external'] .field-name-field-link-internal .field-item:after, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.symptoms a[rel~='external'] .field-name-field-link-internal .field-item:after, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.services--support a[rel~='external'] .field-name-field-link-internal .field-item:after {
   color: #18788d;
   font-size: 14px;
   word-break: break-all; }
@@ -8236,7 +8254,8 @@ body {
       display: inline;
       border-bottom: 1px solid #008998;
       font-weight: 700;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
   .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car a,
   .page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car a {
     padding: 0.8em;
@@ -8273,7 +8292,8 @@ body {
       display: inline;
       border-bottom: 1px solid #008998;
       font-weight: 700;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
   .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca a,
   .page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca a {
     padding: 0.8em;
@@ -8310,7 +8330,8 @@ body {
       display: inline;
       border-bottom: 1px solid #008998;
       font-weight: 700;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
 
 .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun,
 .page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun {
@@ -8402,7 +8423,8 @@ body {
       display: inline;
       border-bottom: 1px solid #008998;
       font-weight: 700;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
   .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.conditions--diseases a {
     padding: 0.8em;
     border-bottom: none;
@@ -8428,7 +8450,8 @@ body {
       display: inline;
       border-bottom: 1px solid #008998;
       font-weight: 700;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
   .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.medicare-tile a {
     padding: 0.8em;
     border-bottom: none;
@@ -8454,7 +8477,8 @@ body {
       display: inline;
       border-bottom: 1px solid #008998;
       font-weight: 700;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
   .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.symptoms a {
     padding: 0.8em;
     border-bottom: none;
@@ -8480,7 +8504,8 @@ body {
       display: inline;
       border-bottom: 1px solid #008998;
       font-weight: 700;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
   .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.services--support a {
     padding: 0.8em;
     border-bottom: none;
@@ -8506,7 +8531,8 @@ body {
       display: inline;
       border-bottom: 1px solid #008998;
       font-weight: 700;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
 
 .front .paragraphs-item-para-block.para-container.block-id__homepage-about-us {
   padding: 0; }
