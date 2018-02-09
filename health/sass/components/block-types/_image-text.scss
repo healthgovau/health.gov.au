@@ -56,7 +56,7 @@
     .field-name-field-image {
       @include block-text-image-svg();
     }
-    .field-bean-text {
+    .field-name-field-bean-text {
       display: none;
       @include uikit-media(sm){
         font-size: 14px;
