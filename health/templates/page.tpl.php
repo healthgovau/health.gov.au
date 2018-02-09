@@ -87,8 +87,6 @@ endif;
         <?php print render($title_suffix); ?>
         <?php endif; ?>
 
-        <?php print $readspeaker; ?>
-
         <?php if (isset($summary)): ?>
         <p class="summary"><?php print $summary; ?></p>
         <?php endif; ?>
@@ -132,6 +130,8 @@ endif;
       <?php endif; ?>
 
       <?php print $messages; ?>
+
+      <?php print $readspeaker; ?>
 
       <?php print render($page['content']); ?>
       <?php print $feed_icons; ?>
