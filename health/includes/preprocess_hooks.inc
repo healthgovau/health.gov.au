@@ -858,7 +858,7 @@ function health_preprocess_entity(&$variables) {
     $bean = $variables['bean'];
 
     // Add 'active' to classes array if it is the current page of the image and text block link.
-    if ($bean->type == 'image_and_text' && $bean->view_mode == 'full') {
+    if ($bean->type == 'image_and_text' && $bean->view_mode == 'view_selector') {
       $current_url = '/' . current_path();
       if (isset(drupal_get_query_parameters()['f'])) {
         $query_string = array_values(drupal_get_query_parameters()['f']);
