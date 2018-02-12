@@ -532,7 +532,7 @@ function health_js_alter(&$javascript) {
   if ($replace_jquery) {
     $javascript['misc/jquery.js']['data'] = drupal_get_path('theme', 'health') . '/js/jquery.min.js';
     // Add pancake JS for none admin pages.
-    drupal_add_js(drupal_get_path('theme', 'health') . '/pancake/js/pancake.js');
+    // drupal_add_js(drupal_get_path('theme', 'health') . '/pancake/js/pancake.js');
   }
 }
 
