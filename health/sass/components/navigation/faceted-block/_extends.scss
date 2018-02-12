@@ -4,9 +4,9 @@
   margin-bottom: uikit-space(.5);
   @extend .uikit-display-1;
   font-weight: 700;
-  background: $colour-Primary-darker;
+  background: #fff;
+  border-bottom: 6px solid $colour-Tertiary-2-darker;
   padding: uikit-space(.5);
-  color: #fff;
   @include uikit-media(sm) {
     display: none;
   }
@@ -17,7 +17,7 @@
     display: inline-block;
     margin-left: 10px;
     background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="5 2 15 15">
-    <path fill="#FFFFFF" d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+    <path fill="#000000" d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
     <path d="M0-.75h24v24H0z" fill="none"/>
   </svg>');
     background-repeat: no-repeat;
