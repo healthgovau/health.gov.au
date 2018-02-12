@@ -346,7 +346,7 @@ body:not(.topic-subpage) {
 // Fix overflow of content onto menu
 body:not(.node-type-health-topic, .node-type-health-topic-hp, .node-type-landing-page) {
   #content {
-    padding-top: uikit-space(1.5);
+    padding-top: uikit-space(1);
     @include uikit-media(sm) {
       padding-top: 0;
     }

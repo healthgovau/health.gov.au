@@ -47,4 +47,16 @@
       margin-top: 0;
     }
   }
+  .form-item {
+    input {
+      border-color: $colour-Tertiary-2-darker;
+    }
+  }
+  .form-submit {
+    background-color: $colour-Tertiary-2-darker;
+    &:hover,
+    &:focus {
+      background-color: $colour-Tertiary-2-hover;
+    }
+  }
 }
