@@ -62,4 +62,9 @@
     &.view-mode-inline_large {
         @extend %dm-inline-large;
     }
+
+    // Search
+    &.view-mode-search_result {
+        @extend %dm-search-index;
+    }
 }
