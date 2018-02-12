@@ -54,6 +54,9 @@ p.filter__help {
 }
 .block-facetapi {
   @extend %mobile-menu;
+  @include uikit-media(sm){
+    margin-top: uikit-space(0.5);
+  }
   .uikit-accordion__title {
     padding-top: 0.8em;
     padding-bottom: 0.8em;
@@ -68,6 +71,7 @@ p.filter__help {
     visibility: visible;
     opacity: 1;
     height: auto;
+    margin-top: uikit-space(0.5);
   }
 }
 
@@ -77,6 +81,7 @@ p.filter__help {
     visibility: visible;
     opacity: 1;
     height: auto;
+    margin-top: uikit-space(0.5);
   }
 }
 

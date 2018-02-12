@@ -2,7 +2,6 @@
 .bean-image-and-text {
   .field-name-field-link-internal {
     @extend %list-item-title;
-    word-break: break-word;
   } // Full display
   // Used for home page function selector
   &.view-mode-full {
@@ -54,6 +53,13 @@
     padding-right: 0;
     //margin-left: -12px;
     text-align: center;
+    .field-name-field-link-internal {
+      font-size: 14px;
+      word-break: break-word;
+      @include uikit-media(sm){
+        font-size: 16px;
+      }
+    }
     .field-name-field-image {
       @include block-text-image-svg();
     }
