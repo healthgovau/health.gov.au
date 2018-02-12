@@ -2,6 +2,7 @@
 .bean-image-and-text {
   .field-name-field-link-internal {
     @extend %list-item-title;
+    word-break: break-word;
   } // Full display
   // Used for home page function selector
   &.view-mode-full {

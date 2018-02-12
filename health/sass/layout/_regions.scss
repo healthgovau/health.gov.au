@@ -41,7 +41,12 @@
 
 .region-content-top {
   @extend %clearfix;
-  padding-bottom: uikit-space(1.5);
+  padding-top: uikit-space(.5);
+  padding-bottom: 0;
+  @include uikit-media(sm){
+    padding-top: 0;
+    padding-bottom: uikit-space(1.5);
+  }
   .row {
     margin-left: 0; // to fix outdent for view selector tool
     margin-right: 0;
