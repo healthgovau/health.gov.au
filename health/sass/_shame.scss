@@ -272,13 +272,13 @@ td, th,
 /** END UIKIT overrides */
 
 
-// For survey only - remove afterwards
-#owInviteSnippet {
-  font-family: $uikit-font-system;
-  a[rel~='external'] svg {
-    margin-left: 5px;
-  }
-}
+// For survey only - Uncomment when implmenting
+// #owInviteSnippet {
+//   font-family: $uikit-font-system;
+//   a[rel~='external'] svg {
+//     margin-left: 5px;
+//   }
+// }
 
 /** START Local nav and HP link **/
 // Include styles to support 'For health professionals' link.

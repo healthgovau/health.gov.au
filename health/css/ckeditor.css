@@ -8600,11 +8600,6 @@ td .page-layout p:last-of-type, th .page-layout p:last-of-type,
   margin-bottom: 0; }
 
 /** END UIKIT overrides */
-#owInviteSnippet {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
-  #owInviteSnippet a[rel~='external'] svg {
-    margin-left: 5px; }
-
 /** START Local nav and HP link **/
 body:not(.node-type-health-topic):not(.node-type-health-topic-hp) .page-title__supp .region-title-supp .block-bean-call-to-action {
   display: none; }
