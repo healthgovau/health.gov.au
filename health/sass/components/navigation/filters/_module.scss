@@ -1,8 +1,9 @@
 // Facet filter styles
 %filter {
-    margin-bottom: uikit-space(.5);
+    margin-bottom: 0;
 }
 %filter__title-container {
+    margin-top: uikit-space(.5);
     padding-top: uikit-space(.5);
     padding-bottom: uikit-space(.5);
 }
