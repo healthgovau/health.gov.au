@@ -161,37 +161,21 @@ function _health_find_first_publish_date($nid) {
  * page.
  *
  * @param $variables
- * @param $full
  * @return array
  */
-function _health_get_render_elements_for_public_topic_page($variables, $full) {
-  if ($full == TRUE) {
-    $title = 'Health professionals';
-    $text = $variables['bean']->field_bean_body[LANGUAGE_NONE][0]['value'];
+function _health_get_render_elements_for_public_topic_page($variables) {
+  $title = 'Health professionals';
+  $text = $variables['bean']->field_bean_body[LANGUAGE_NONE][0]['value'];
 
-    // Get the current path and work back to the topic element.
-    $path = drupal_get_path_alias();
-    $parts = explode('/',$path);
-    $url = '/topics/' . $parts[1] . '/health-professionals';
-    $link_text = t('Find out more');
-  }
-  else {
-    $title = '';
-    $text = '';
-
-    // Get the current path and work back to the topic element.
-    $path = drupal_get_path_alias();
-    $parts = explode('/',$path);
-    $url = '/topics/' . $parts[1] . '/health-professionals';
-    $link_text = t('Visit HP hub');
-  }
+  // Get the current path and work back to the topic element.
+  $path = drupal_get_path_alias();
+  $parts = explode('/',$path);
+  $url = '/topics/' . $parts[1] . '/health-professionals';
 
   return [
     'title' => $title,
     'text' => $text,
-    'link_text' => $link_text,
     'url' => $url,
-    'font' => 'fa-user-md',
   ];
 }
 
@@ -203,32 +187,18 @@ function _health_get_render_elements_for_public_topic_page($variables, $full) {
  * @param $full
  * @return array
  */
-function _health_get_render_elements_for_hp_topic_page($variables, $full) {
-  if ($full == TRUE) {
-    $title = 'General public';
-    $text = $variables['bean']->field_bean_text[LANGUAGE_NONE][0]['value'];
+function _health_get_render_elements_for_hp_topic_page($variables) {
+  $title = 'General public';
+  $text = $variables['bean']->field_bean_text[LANGUAGE_NONE][0]['value'];
 
-    // Get the current path and work back to the topic element.
-    $path = drupal_get_path_alias();
-    $parts = explode('/',$path);
-    $url = '/topics/' . $parts[1];
-    $link_text = t('Find out more');
-  }
-  else {
-    $title = '';
-    $text = '';
-
-    // Get the current path and work back to the topic element.
-    $path = drupal_get_path_alias();
-    $parts = explode('/',$path);
-    $url = '/topics/' . $parts[1];
-    $link_text = t('Patient focused info');
-  }
+  // Get the current path and work back to the topic element.
+  $path = drupal_get_path_alias();
+  $parts = explode('/',$path);
+  $url = '/topics/' . $parts[1];
 
   return [
     'title' => $title,
     'text' => $text,
-    'link_text' => $link_text,
     'url' => $url,
     'font' => 'fa-medkit',
   ];

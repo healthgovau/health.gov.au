@@ -75,6 +75,8 @@ endif;
       print count($page['title_supp']) == 0 ? ' full': ''; ?>">
         <?php print $breadcrumb; ?>
 
+        <?php print render($page['title_core']); ?>
+
         <?php if (isset($section_title)): ?>
           <?php print $section_title; ?>
         <?php endif; ?>
@@ -91,7 +93,6 @@ endif;
         <p class="summary"><?php print $summary; ?></p>
         <?php endif; ?>
 
-        <?php print render($page['title_core']); ?>
       </div>
 
       <?php if (count($page['title_supp']) > 0): ?>

@@ -205,20 +205,20 @@ function health_preprocess_ds_public_hp_switcher(&$variables) {
   // Check what is the current page for.
   $attached_node = node_load(arg(1));
   if ($attached_node->type == 'health_topic') {
-    $render_elements = _health_get_render_elements_for_public_topic_page($variables, TRUE);
+    $render_elements = _health_get_render_elements_for_public_topic_page($variables);
   }
   else if ($attached_node->type == 'health_topic_hp') {
-    $render_elements = _health_get_render_elements_for_hp_topic_page($variables, TRUE);
+    $render_elements = _health_get_render_elements_for_hp_topic_page($variables);
   }
   else {
     if (isset($attached_node->field_audience[LANGUAGE_NONE])) {
       if ($attached_node->field_audience[LANGUAGE_NONE][0]['tid'] == '451') {
         // This is a page for public.
-        $render_elements = _health_get_render_elements_for_public_topic_page($variables, FALSE);
+        $render_elements = _health_get_render_elements_for_public_topic_page($variables);
       }
       else {
         // This is a page for health professionals.
-        $render_elements = _health_get_render_elements_for_hp_topic_page($variables, FALSE);
+        $render_elements = _health_get_render_elements_for_hp_topic_page($variables);
       }
     }
 
