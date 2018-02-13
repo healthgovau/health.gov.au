@@ -78,7 +78,9 @@ endif;
         <?php print render($page['title_core']); ?>
 
         <?php if (isset($section_title)): ?>
-          <?php print $section_title; ?>
+          <div class="section-header rs_skip <?php print count($page['title_supp']) > 0 ? '' : 'full'; ?>">
+            <?php print $section_title; ?>
+          </div>
         <?php endif; ?>
 
         <?php if ($title): ?>
