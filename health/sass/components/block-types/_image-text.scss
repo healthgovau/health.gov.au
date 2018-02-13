@@ -28,6 +28,12 @@
       @extend .col-xs-12;
       @extend .col-sm-6;
     }
+    .group-right {
+      padding-top: uikit-space(1);
+      @include uikit-media(sm){
+        padding-top: 0;
+      }
+    }
     .field-name-field-image {
       @extend %image--full;
     }

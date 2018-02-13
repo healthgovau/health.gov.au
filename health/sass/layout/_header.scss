@@ -12,13 +12,14 @@ header.uikit-header {
   }
   .uikit-header__logo {
     display: block;
+    margin: auto;
     padding: uikit-space(.75);
     width: 100%;
+    max-width: 400px;
     // For IE 9, 10.
     color: transparent;
     @include uikit-media(md) {
       float: left;
-      width: 70%;
     }
     &-image {
       display: block;

@@ -1,20 +1,3 @@
-// For Topic landing pages.
-.node-type-health-topic,
-.node-type-health-topic-hp {
-
-  .page-title__supp {
-    .region-title-supp {
-      .block-bean-call-to-action {
-        @include block-card($bg-colour: #FFF);
-        .block-bean-call-to-action {
-          padding: uikit-space(1);
-        }
-
-        color: $uikit-colour-Secondary;
-      }
-    }
-  }
-}
 
 // For all landing pages.
 .node-type-health-topic,

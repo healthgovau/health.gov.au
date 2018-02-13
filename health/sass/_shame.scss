@@ -280,60 +280,6 @@ td, th,
 //   }
 // }
 
-/** START Local nav and HP link **/
-// Include styles to support 'For health professionals' link.
-// Hide header version on mobile
-body:not(.node-type-health-topic, .node-type-health-topic-hp) {
-  .page-title__supp {
-    .region-title-supp {
-      .block-bean-call-to-action {
-        display: none;
-        @include uikit-media(sm) {
-          display: block;
-        }
-      }
-    }
-  }
-}
-
-.region-sidebar-second {
-  @include uikit-clearfix;
-  @extend %colour-Light-background;
-  @include uikit-media(sm) {
-    background: white;
-  }
-
-  // #block-bean-local-navigation-menu-toggle-for {
-  //   float: left;
-  //   width: 50%;
-  // }
-
-  .bean-public-hp-switcher {
-    float: left;
-    width: 50%;
-    .field-name-field-link-to a.button {
-      display: block;
-      padding: 6px 12px;
-      font-size: 16px;
-
-    }
-    // Hide sidebar version on desktop
-    @include uikit-media(sm) {
-      display: none;
-    }
-  }
-
-  #block-menu-block-2 {
-    clear: both;
-    @include uikit-clearfix;
-    background: white;
-    border-bottom: $uikit-borderize;
-    @include uikit-media(sm) {
-      border-bottom: 0;
-    }
-  }
-}
-
 body:not(.topic-subpage) {
   .region-sidebar-second {
     #block-bean-local-navigation-menu-toggle-for {

@@ -125,5 +125,76 @@
   }
 }
 
-@import "_print.scss";
+// HP/GP switcher --------------------------------------------
 
+// Breadcrumb version
+.region-title-core {
+  .block-bean-call-to-action {
+    display: block;
+    float: right;
+    width: 50%;
+    @include uikit-media(sm){
+      display: none;
+    }
+
+    // Text summary
+    .bean-block-content {
+      display: none;
+    }
+  }
+}
+
+// Right-pane larger version
+.region-title-supp {
+  .block-bean-call-to-action {
+    display: none;
+    @include uikit-media(sm){
+      padding: uikit-space(0.25) 0 uikit-space(0.5) uikit-space(1);
+      border-left: 3px solid #DDD;
+      .bean-block-content {
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+/** START Local nav and HP link **/
+// Include styles to support 'For health professionals' link.
+// Hide header version on mobile
+// body:not(.node-type-health-topic, .node-type-health-topic-hp) {
+//   .page-title__supp {
+//     .region-title-supp {
+//       .block-bean-call-to-action {
+//         display: none;
+//         @include uikit-media(sm) {
+//           display: block;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .region-sidebar-second {}
+
+//   .bean-public-hp-switcher {
+//     float: left;
+//     width: 50%;
+//     .field-name-field-link-to a.button {
+//       display: block;
+//       padding: 6px 12px;
+//       font-size: 16px;
+
+//     }
+//     // Hide sidebar version on desktop
+//     @include uikit-media(sm) {
+//       display: none;
+//     }
+//   }
+  
+// }
+
+// End HP/GP switcher --------------------------------------------
+
+
+@import "_print.scss";

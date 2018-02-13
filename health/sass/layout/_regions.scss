@@ -53,5 +53,22 @@
   }
 }
 
+.region-sidebar-second {
+  @include uikit-clearfix;
+  @extend %colour-Light-background;
+  @include uikit-media(sm) {
+    background: white;
+  }
+  #block-menu-block-2 {
+    clear: both;
+    @include uikit-clearfix;
+    background: white;
+    border-bottom: $uikit-borderize;
+    @include uikit-media(sm) {
+      border-bottom: 0;
+    }
+  }
+}
+
 @import '_print.scss';
 
