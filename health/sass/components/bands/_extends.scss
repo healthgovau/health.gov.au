@@ -131,7 +131,8 @@
   @extend %colour-Light-dark-background-reverse;
   #block-bean-homepage-healthcare-system {
     .group-left {
-      @extend .col-sm-8;
+      @extend .col-sm-6;
+      @extend .col-md-8;
       img {
         border: 0;
       }
@@ -140,17 +141,18 @@
       }
     }
     .group-right {
-      @extend .col-sm-4;
-      @include uikit-media(sm) {
-        margin-left: -12px;
-        background: white;
-      }
       .field-name-field-bean-text {
         background: white;
         padding: uikit-space(.6);
-        @include uikit-media(sm) {
+        @include uikit-media(md) {
           background: transparent;
           padding: uikit-space(1) uikit-space(1) uikit-space(1.75) uikit-space(1);
+          h2 {
+            font-size: 24px;
+          }
+          p:nth-of-type(1) {
+            font-size: 19px;
+          }
         }
       }
       p:nth-of-type(1) {
@@ -159,6 +161,18 @@
       }
       position: relative;
 
+      @extend .col-sm-6;
+      @extend .col-md-4;
+      @include uikit-media(sm) {
+        margin-left: -12px;
+        background: white;
+        h2 {
+          font-size: 18px;
+        }
+        p:nth-of-type(1) {
+          font-size: 14px;
+        }
+      }
     }
   }
 }
