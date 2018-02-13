@@ -2,6 +2,9 @@
 .page-title {
   h1 {
     @extend .uikit-header-heading;
+    @extend .clearfix;
+    display: block;
+    clear: both;
     color: $uikit-colour-Text;
     background: none;
     font-family: $uikit-font-system;
@@ -105,26 +108,19 @@
 
 // HP/GP switcher --------------------------------------------
 
-.block-bean-call-to-action {
-  .block__title {
-    @extend .uikit-display-3;
-  }
-}
-
 // Breadcrumb version
 .region-title-core {
-  .block-bean-call-to-action {
-    display: block;
-    float: right;
-    width: 50%;
-    @include uikit-media(sm){
-      display: none;
-    }
+  display: block;
+  float: right;
+  width: 50%;
+  text-align: right;
+  @include uikit-media(sm){
+    display: none;
+  }
 
-    // Text summary
-    .bean-block-content {
-      display: none;
-    }
+  // Text summary
+  .bean-block-content {
+    display: none;
   }
 }
 
@@ -141,6 +137,22 @@
           margin-bottom: 0;
         }
       }
+    }
+
+    // Extend onto title
+    .bean-call-to-action__title {
+      @extend .uikit-display-3;
+      @extend .uikit-cta-link;
+      // Need to fix .uikit-cta-link override in /extends/call-to-action :(
+      // This is awful
+      font-size: 24px;
+      margin-bottom: 0.5em;
+      display: block;
+    }
+
+    // Icon
+    .forward-icon {
+      display: none;
     }
   }
 }
