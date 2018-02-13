@@ -227,7 +227,7 @@
   } // 3 in a row.
   &.listing__count--3 {
     .field-name-field-statistics>.field-items>.field-item {
-      @extend .col-md-4;
+      @extend .col-sm-4;
     }
   } // 4 in a row.
   &.listing__count--4 {
