@@ -49,15 +49,6 @@
 
   <?php print $styles; ?>
   <?php print $scripts; ?>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112666492-1"></script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-112666492-1');
-  </script>
 </head>
 
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
