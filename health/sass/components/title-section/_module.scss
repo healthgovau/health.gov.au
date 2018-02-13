@@ -39,6 +39,13 @@
   // Section header link
   .section-header {
 
+    width: 50%;
+    float: left;
+    &.full {
+      width: 100%;
+      float: none;
+    }
+
     @include uikit-media(sm) { // Hide on desktop
       display: none;
     }
@@ -121,6 +128,10 @@
   // Text summary
   .bean-block-content {
     display: none;
+  }
+
+  .bean-call-to-action__title {
+    margin-bottom: 0;
   }
 }
 
