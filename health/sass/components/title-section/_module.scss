@@ -71,44 +71,22 @@
 
 .page-title__supp {
   @extend .col-sm-4;
-  @include uikit-media( md ) {
+  display: block; // default unless over-ridden
+  @include uikit-media( sm ) {
     display: table;
   }
   .region-title-supp {
-
-    display: block;
-    @include uikit-media( md ) {
+    padding-top: 0;
+    padding-bottom: 0;
+    @include uikit-media(sm){
       display: table-cell;
       vertical-align: middle;
+      padding-top: uikit-space(1);
+      padding-bottom: uikit-space(1);
     }
-
-    .block-bean-call-to-action {
-      padding: uikit-space(0.5) uikit-space(1);
-
-      .main-content {
-        padding-left: 0;
-        padding-right: 0;
-        width: 100%;
-      }
-      .field-name-field-link-to a {
-        font-size: 16px;
-        margin-bottom: 0;
-        &:hover, &:focus {
-          color: white;
-        }
-        svg {
-          font-size: 1.2em;
-          margin-right: 10px;
-        }
-      }
-      .block__title {
-        @extend .uikit-display-3;
-      }
-    }
-
   }
 
-  // Program logo
+  // Program logo - CHECK
   .field-name-field-image-featured {
       padding: uikit-space(1.5) 0 0 0;
       text-align: right;
@@ -126,6 +104,12 @@
 }
 
 // HP/GP switcher --------------------------------------------
+
+.block-bean-call-to-action {
+  .block__title {
+    @extend .uikit-display-3;
+  }
+}
 
 // Breadcrumb version
 .region-title-core {
@@ -149,6 +133,7 @@
   .block-bean-call-to-action {
     display: none;
     @include uikit-media(sm){
+      display: block;
       padding: uikit-space(0.25) 0 uikit-space(0.5) uikit-space(1);
       border-left: 3px solid #DDD;
       .bean-block-content {
@@ -159,40 +144,17 @@
     }
   }
 }
-/** START Local nav and HP link **/
-// Include styles to support 'For health professionals' link.
-// Hide header version on mobile
-// body:not(.node-type-health-topic, .node-type-health-topic-hp) {
-//   .page-title__supp {
-//     .region-title-supp {
-//       .block-bean-call-to-action {
-//         display: none;
-//         @include uikit-media(sm) {
-//           display: block;
-//         }
-//       }
-//     }
-//   }
-// }
 
-// .region-sidebar-second {}
-
-//   .bean-public-hp-switcher {
-//     float: left;
-//     width: 50%;
-//     .field-name-field-link-to a.button {
-//       display: block;
-//       padding: 6px 12px;
-//       font-size: 16px;
-
-//     }
-//     // Hide sidebar version on desktop
-//     @include uikit-media(sm) {
-//       display: none;
-//     }
-//   }
-  
-// }
+// Topic page visibility
+// Show on topic home page for mobiles
+.node-type-health-topic,
+.node-type-health-topic-hp {
+  .region-title-supp {
+    .block-bean-call-to-action {
+      display: block;
+    }
+  }
+}
 
 // End HP/GP switcher --------------------------------------------
 
