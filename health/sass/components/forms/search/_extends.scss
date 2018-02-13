@@ -29,6 +29,7 @@
 
 .view-filters .views-exposed-form {
   @extend %uikit-search;
+  overflow: hidden;
   margin-bottom: uikit-space(1);
   @include uikit-media(md){
     max-width: 400px;
@@ -44,6 +45,18 @@
     padding: 0;
     .form-submit {
       margin-top: 0;
+    }
+  }
+  .form-item {
+    input {
+      border-color: $colour-Tertiary-2-darker;
+    }
+  }
+  .form-submit {
+    background-color: $colour-Tertiary-2-darker;
+    &:hover,
+    &:focus {
+      background-color: $colour-Tertiary-2-hover;
     }
   }
 }

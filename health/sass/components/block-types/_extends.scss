@@ -8,3 +8,52 @@
     float: right;
   }
 }
+
+.node-type-landing-page {
+  .field-name-field-image {
+    @include block-text-image-svg('large');
+  }
+}
+
+// More on topic
+.node-type-health-topic,
+.node-type-health-topic-hp {
+  .field-name-field-image {
+    @include block-text-image-svg('large');
+  }
+}
+
+// To calculate widths based on number of items for view selector beans
+// Pass in number of items
+@mixin view-selector-width($i){
+  width: 50%; //default
+  margin-right: -1px;
+  
+  // Change columns on mobile if too many
+  @if( $i > 4 ) {
+    width: percentage(1/3);
+      @include uikit-media(sm){
+      width: percentage(1/$i);
+    }
+  } @else {
+    width: percentage(1/$i);
+  }
+}
+
+// View selector component widths
+// Use the parent view class (e.g. .page-resources) to target parent and child views
+// This allows use to explicitly apply widths based on new elements
+
+// Resources listing page selector tile.
+.page-resources {
+  .bean-image-and-text {
+    @include view-selector-width(3);
+  }
+}
+
+// News and events listing page selector tile.
+.page-news-and-events {
+  .bean-image-and-text {
+    @include view-selector-width(5);
+  }
+}

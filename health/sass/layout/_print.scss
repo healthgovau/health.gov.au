@@ -1,0 +1,14 @@
+@media print {
+  .region-header-top,
+  .region-header,
+  .region-navigation,
+  .region-content-bottom,
+  .page-content .sidebar-right {
+    display: none;
+  }
+
+  header.uikit-header .uikit-header__logo {
+    float: left;
+    width: 70%;
+  }
+}

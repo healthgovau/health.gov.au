@@ -44,7 +44,6 @@
   ul {
     @extend .uikit-link-list;
     padding: 0;
-    font-size: 15px;
     text-transform: none;
     > li {
       margin: 0;
@@ -64,23 +63,6 @@
         @include uikit-media(sm) {
           padding: uikit-space(.5) uikit-space(1);
         }
-      }
-
-      &.active-trail {
-        /*ul {
-          li:not(.active-trail) a {
-            border-left-color: $colour-light-darker;
-            @include uikit-media(sm) {
-              border-left-color: $colour-lighter;
-            }
-          }
-        }
-        a:not(.active).active-trail {
-          border-left-color: $colour-dark;
-          @include uikit-media(sm) {
-            border-left-color: $colour-light-darker;
-          }
-        }*/
       }
 
       // Level 2
@@ -131,12 +113,7 @@
     display: none;
   }
 
-  //font-weight: 700;
-  font-size: 18px;
   display: block;
-  border-bottom: 0;
-
-  border-top: $uikit-borderize;
   border-bottom: $uikit-borderize;
 
   // Toggles

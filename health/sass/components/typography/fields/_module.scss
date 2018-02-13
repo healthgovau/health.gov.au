@@ -1,3 +1,5 @@
+@import "_print.scss";
+
 // Date
 .meta-date {
     color: $colour-minorText;
@@ -9,16 +11,21 @@
 %date-and-tag {
 
   .field-type-datetime,
-  .field-type-taxonomy-term-reference {
+  .field-type-taxonomy-term-reference,
+  .field-name-field-related-health-topics {
     @extend .meta-date;
     float: left;
+    .tags__item {
+      font-weight: normal;
+    }
   }
 
   .field-type-datetime {
     padding-right: uikit-space(.5);
   }
 
-  .field-type-taxonomy-term-reference {
+  .field-type-taxonomy-term-reference,
+  .field-name-field-related-health-topics {
     padding-left: uikit-space(.5);
     border-left: 1px solid $colour-minorText;
   }

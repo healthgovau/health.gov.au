@@ -76,7 +76,7 @@ function health_theme() {
     'variables' => [
       'text' => NULL,
       'title' => NULL,
-      'link' => NULL,
+      'url' => NULL,
     ],
     'template' => 'public_hp_switcher',
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
@@ -530,7 +530,7 @@ function health_js_alter(&$javascript) {
   if ($replace_jquery) {
     $javascript['misc/jquery.js']['data'] = drupal_get_path('theme', 'health') . '/js/jquery.min.js';
     // Add pancake JS for none admin pages.
-    drupal_add_js(drupal_get_path('theme', 'health') . '/pancake/js/pancake.js');
+    // drupal_add_js(drupal_get_path('theme', 'health') . '/pancake/js/pancake.js');
   }
 }
 
@@ -826,4 +826,44 @@ function health_image($variables) {
 
   // Otherwise, do the normal stuff.
   return theme_image($variables);
+}
+
+/**
+ * Implements hook_entity_view_mode_alter().
+ *
+ * @param $view_mode
+ * @param $context
+ */
+function health_entity_view_mode_alter(&$view_mode, $context) {
+  // Change display mode from 'inline' to 'inline_full' for infographics
+  if ($context['entity_type'] == 'node' && $context['entity']->type == 'publication' && $view_mode == 'inline') {
+    $publication_type = field_get_items('node', $context['entity'], 'field_publication_type');
+    if ($publication_type[0]['tid'] == PUBLICATION_TYPE_INFOGRAPHIC) {
+      $view_mode = 'inline_large';
+    }
+  }
+}
+
+/**
+ * Alter metatags before being cached.
+ *
+ * This hook is invoked prior to the meta tags for a given page are cached.
+ *
+ * @param array $output
+ *   All of the meta tags to be output for this page in their raw format. This
+ *   is a heavily nested array.
+ * @param string $instance
+ *   An identifier for the current page's page type, typically a combination
+ *   of the entity name and bundle name, e.g. "node:story".
+ * @param array $options
+ *   All of the options used to generate the meta tags.
+ */
+function health_metatag_metatags_view_alter(&$output, $instance, $options) {
+  // Replace [theme-path] token in metatag output.
+  foreach($output as &$metatag) {
+    if (isset($metatag['#attached']['drupal_add_html_head'])) {
+      $value = &$metatag['#attached']['drupal_add_html_head'][0][0]['#value'];
+      $value = str_replace(urlencode(THEME_PATH_TOKEN_GENERIC), path_to_theme(), $value);
+    }
+  }
 }

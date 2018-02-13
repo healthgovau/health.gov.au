@@ -1,10 +1,20 @@
 // Section header + breadcrumbs
 .page-title {
+  h1 {
+    @extend .uikit-header-heading;
+    @extend .clearfix;
+    display: block;
+    clear: both;
+    color: $uikit-colour-Text;
+    background: none;
+    font-family: $uikit-font-system;
+  }
   &.header.header--light {
     @extend %colour-Light-background;
     padding-top: 0;
     padding-bottom: 0;
     margin-bottom: 0;
+    color: $uikit-colour-Text;
     @include uikit-media(sm){
       margin-bottom: uikit-space(2);
     }
@@ -20,19 +30,21 @@
 
   max-width: 56em;
 
-  // Section title (large)
-  .uikit-header-heading {
-    line-height: 1.4;
-    margin-top: 0;
-    @include uikit-media(sm) {
-      display: inline;
-      margin-top: 0.2em;
-      margin-bottom: 0.6rem;
-    }
+  // In case no section-supp.
+  &.full {
+    @extend .col-sm-12;
+    max-width: 100%;
   }
 
   // Section header link
   .section-header {
+
+    width: 50%;
+    float: left;
+    &.full {
+      width: 100%;
+      float: none;
+    }
 
     @include uikit-media(sm) { // Hide on desktop
       display: none;
@@ -62,56 +74,29 @@
   // Summary
   .summary {
     @extend .uikit-header-subline;
-    font-size: 17px;
-    margin-top: 0.8em;
-    margin-bottom: 0.8em;
-    @include uikit-media(sm) {
-      font-size: 18px;
-    }
+    margin-bottom: uikit-space(0.5);
   }
 
 }
 
 .page-title__supp {
   @extend .col-sm-4;
-  @include uikit-media( md ) {
+  display: block; // default unless over-ridden
+  @include uikit-media( sm ) {
     display: table;
   }
   .region-title-supp {
-
-    display: block;
-    @include uikit-media( md ) {
+    padding-top: 0;
+    padding-bottom: 0;
+    @include uikit-media(sm){
       display: table-cell;
       vertical-align: middle;
+      padding-top: uikit-space(1);
+      padding-bottom: uikit-space(1);
     }
-
-    .block-bean-call-to-action {
-      padding: uikit-space(0.5) uikit-space(1);
-
-      .main-content {
-        padding-left: 0;
-        padding-right: 0;
-        width: 100%;
-      }
-      .field-name-field-link-to a {
-        font-size: 16px;
-        margin-bottom: 0;
-        &:hover, &:focus {
-          color: white;
-        }
-        svg {
-          font-size: 1.2em;
-          margin-right: 10px;
-        }
-      }
-      .block__title {
-        @extend .uikit-display-3;
-      }
-    }
-
   }
 
-  // Program logo
+  // Program logo - CHECK
   .field-name-field-image-featured {
       padding: uikit-space(1.5) 0 0 0;
       text-align: right;
@@ -128,3 +113,73 @@
   }
 }
 
+// HP/GP switcher --------------------------------------------
+
+// Breadcrumb version
+.region-title-core {
+  display: block;
+  float: right;
+  width: 50%;
+  text-align: right;
+  @include uikit-media(sm){
+    display: none;
+  }
+
+  // Text summary
+  .bean-block-content {
+    display: none;
+  }
+
+  .bean-call-to-action__title {
+    margin-bottom: 0;
+  }
+}
+
+// Right-pane larger version
+.region-title-supp {
+  .block-bean-call-to-action {
+    display: none;
+    @include uikit-media(sm){
+      display: block;
+      padding: uikit-space(0.25) 0 uikit-space(0.5) uikit-space(1);
+      border-left: 3px solid #DDD;
+      .bean-block-content {
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    // Extend onto title
+    .bean-call-to-action__title {
+      @extend .uikit-display-3;
+      @extend .uikit-cta-link;
+      // Need to fix .uikit-cta-link override in /extends/call-to-action :(
+      // This is awful
+      font-size: 24px;
+      margin-bottom: 0.5em;
+      display: block;
+    }
+
+    // Icon
+    .forward-icon {
+      display: none;
+    }
+  }
+}
+
+// Topic page visibility
+// Show on topic home page for mobiles
+.node-type-health-topic,
+.node-type-health-topic-hp {
+  .region-title-supp {
+    .block-bean-call-to-action {
+      display: block;
+    }
+  }
+}
+
+// End HP/GP switcher --------------------------------------------
+
+
+@import "_print.scss";

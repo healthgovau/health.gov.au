@@ -68,19 +68,7 @@
 %tabs__tab__link--active {
   @extend %tabs__tab__link;
   border-bottom: 4px solid $colour-Secondary-darker;
-  background-color: $uikit-colour-Link;
+  background-color: $colour-Secondary-dark;
   color: white;
   font-weight: bold;
-}
-
-// A-Z
-%az-list__item {
-  margin: 0 0.4em 0.4em 0;
-}
-
-%az-list__link {
-  margin-right: uikit-space(0.4);
-  display: inline-block;
-  text-align: center;
-  min-width: 1.25em;
 }

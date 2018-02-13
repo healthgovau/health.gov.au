@@ -98,6 +98,12 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
       $form['field_audience']['#disabled'] = TRUE;
     }
   }
+
+  // Allow more than 128 characters for view descriptions.
+  if ($form['#form_id'] == 'views_ui_edit_display_form') {
+    $form['options']['display_description']['#maxlength'] = 512;
+  }
+
 }
 
 /**

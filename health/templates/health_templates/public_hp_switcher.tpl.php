@@ -1,25 +1,19 @@
-<div class="block block-bean contextual-links-region first last odd block-bean-call-to-action rs_skip" id="block-bean-professionals-hub-additional-inf">
-    <?php if ($title): ?>
-  <h3 class="block__title"><?php print $title; ?></h3>
-    <?php endif; ?>
-  <div class="entity entity-bean bean-call-to-action clearfix" typeof="">
+<div class="block block-bean block-bean-call-to-action">
+  <?php if ($title): ?>
+  <p class="bean-call-to-action__title">
+    <a href="<?php print $url; ?>">
+      <?php print $title; ?>
+    </a> 
+    <i class="fas fa-angle-right forward-icon"></i>
+</p>
+  <?php endif; ?>
+  <div class="entity entity-bean clearfix" typeof="">
     <div class="bean-block-content">
-        <?php if($text): ?>
-      <div class="field field-name-field-bean-body field-type-text-long field-label-hidden">
-          <div class="field-items">
-              <div class="field-item even">
-                  <p><?php print $text; ?></p>
-              </div>
-          </div>
-      </div>
-        <?php endif; ?>
-        <div class="field field-name-field-link-to field-type-link-field field-label-hidden">
-            <div class="field-items">
-                <div class="field-item even">
-                    <?php print $link; ?>
-                </div>
-            </div>
-        </div>
+      <?php if($text): ?>
+      <p>
+        <?php print $text; ?>
+      </p>
+      <?php endif; ?>
     </div>
   </div>
 </div>

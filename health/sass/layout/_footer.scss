@@ -4,6 +4,9 @@
 
   .menu {
     padding: 0.4em 0 1em 0;
+    li:last-of-type {
+      margin-bottom: 0;
+    }
 
     @include uikit-media( sm ) {
       padding: 0.4em 0;
@@ -12,7 +15,12 @@
   &__navigation {
     .block {
       @extend .col-md-3;
+      margin-bottom: uikit-space(1);
+      @include uikit-media(md) {
+        margin-bottom: 0;
+      }
     }
+
   }
   &__logo {
     max-width: 157px;
@@ -35,9 +43,7 @@
     margin-left: 0;
   }
   .footer__navigation {
-    p:last-of-type {
-      margin: uikit-space(.5) 0;
-    }
+
   }
   
   .field-name-field-link-to {

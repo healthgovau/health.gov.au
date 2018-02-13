@@ -7,14 +7,11 @@
 
 %uikit-sitenav {
 
-  // Mobile first.
-  display: none;
-  &.mobilemenu-active {
-    display: block;
-  }
+  // Mobile first
   ul {
     @extend .uikit-link-list;
     padding: 0 0 20px 0 !important;
+    border-bottom: 6px solid #e5e5e5;
     li {
       margin: 0;
       border-bottom: 1px solid $colour-light-dark;
@@ -58,54 +55,58 @@
     position: relative;
     border-bottom: 0;
     background: transparent;
+    height: auto;
 
-    ul li {
-      float: left;
-      padding: 0;
+    ul {
+      border-bottom: 0;
+      li {
+        float: left;
+        padding: 0;
 
-      margin: 0 uikit-space(0.4);
-      font-size: 0.9em;
+        margin: 0 uikit-space(0.4);
+        font-size: 0.9em;
 
-      border: 0;
-      &:first-child {
-        border-top: 0;
-      }
-
-      @include uikit-media(md) {
-        margin: 0 uikit-space(0.8);
-        font-size: 1em;
-      }
-
-      @include uikit-media(lg) {
-        margin: 0 uikit-space(1.5);
-      }
-
-      &:first-child {
-        margin-left: 12px;
-      }
-
-      a {
-        display: block;
-        padding: uikit-space(.5) 0;
-        border-bottom: 0;
-
-        &:hover,
-        &:focus,
-        &:active {
-          border-bottom: 6px solid $colour-Secondary;
-          background-color: transparent;
-          transition: none;
-          color: $uikit-colour-Text;
+        border: 0;
+        &:first-child {
+          border-top: 0;
         }
-      }
 
-      &.active-trail {
-        border-left: 0;
+        @include uikit-media(md) {
+          margin: 0 uikit-space(0.8);
+          font-size: 1em;
+        }
+
+        @include uikit-media(lg) {
+          margin: 0 uikit-space(1.5);
+        }
+
+        &:first-child {
+          margin-left: 12px;
+        }
+
         a {
-          border-bottom: 6px solid $colour-Secondary;
-          background-color: transparent;
-          transition: none;
-          color: $uikit-colour-Text;
+          display: block;
+          padding: uikit-space(.5) 0;
+          border-bottom: 0;
+
+          &:hover,
+          &:focus,
+          &:active {
+            border-bottom: 6px solid $colour-Secondary;
+            background-color: transparent;
+            transition: none;
+            color: $uikit-colour-Text;
+          }
+        }
+
+        &.active-trail {
+          border-left: 0;
+          a {
+            border-bottom: 6px solid $colour-Secondary;
+            background-color: transparent;
+            transition: none;
+            color: $uikit-colour-Text;
+          }
         }
       }
     }
@@ -126,46 +127,43 @@
   font-weight: 700;
   display: block;
   border-bottom: 0;
-
-  // Toggles
-  .mobile-toggle__open,
-  .mobile-toggle__close {
-    svg {
-      width: 16px;
-      margin-right: 5px;
-    }
-  }
-  .mobile-toggle__close {
-    display: none;
-  }
-
-  // When expanded.
-  &.mobilemenu-active {
-    .mobile-toggle__open {
-      display: none;
-    }
-    .mobile-toggle__close {
-      display: inline;
-    }
-  }
+  background-color: white;
+  color: black;
+  margin: 0;
 
   &:hover,
   &:focus {
     color: $uikit-colour-Text;
     background: transparent;
+    outline-offset: -1px;
   }
 }
 
 // Overlay.
 %uikit-sitenav-overlay {
-  display: none;
   position: fixed;
-  background: black;
+  top: -9999px;
+  left: -9999px;
+  background: transparent;
   opacity: 0.7;
   width: 100%;
   height: 150%;
   z-index: 499;
+  -webkit-transition: background 0.4s linear;
+  -moz-transition: background 0.4s linear;
+  -ms-transition: background 0.4s linear;
+  -o-transition: background 0.4s linear;
+  transition: background 0.4s linear;
   &.active {
-    display: block;
+    background: black;
+  }
+  &.transition {
+    top:0;
+    left: 0;
+  }
+
+  // Hide on tablet +
+  @include uikit-media(sm) {
+    display: none;
   }
 }

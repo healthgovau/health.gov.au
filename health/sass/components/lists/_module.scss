@@ -6,9 +6,9 @@
     >li {
         vertical-align: top;
         position: relative;
-        margin: 0 0 12px;
+        margin: 0 0 uikit-space(1);
         padding: 15px 15px 15px 50px;
-        background: $colour-light-dark;
+        background: $colour-lighter;
         &::before {
             content: counter(standard-counter, decimal);
             counter-increment: standard-counter;
@@ -20,6 +20,9 @@
             top: 9px;
             padding-top: 0;
             font-size: 24px;
+        }
+        a {
+            font-weight: bold;
         }
     }
 }

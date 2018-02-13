@@ -21,7 +21,7 @@
 .page-node-1156 {
   // Contact hot line bar for immunisation.
   .paragraphs-item-para-contact.para-container {
-    @extend %colour-Secondary-background;
+    @extend %colour-Tertiary-2-background;
     color: white;
     h2 {
       color: white;
@@ -57,53 +57,15 @@
   .paragraphs-item-para-block.block-id__more-services-card {
     &.para-container {
       .bean-image-and-text.view-mode-full {
-        .field-name-field-image {
-          img {
-            width: 20%;
-          }
-          svg {
-            path, rect {
-              fill: #000;
-            }
-          }
+        color: $uikit-colour-Secondary;
+        &.more-services-card {
+          @include block-card($colour-Primary-dark, $colour-Primary-hover);
         }
-      }
-      a {
-        display: block;
-        border-bottom: none;
-        padding: uikit-space( 1 );
-        .field-name-field-bean-text {
-          color: $uikit-colour-Secondary;
+        &.more-conditions-and-diseases-car {
+          @include block-card($colour-Tertiary-dark, $colour-Tertiary-hover);
         }
-        &:hover {
-          background: $colour-light-dark;
-          .field-name-field-link-internal {
-            .field-item {
-              border-bottom: none;
-            }
-          }
-        }
-      }
-      .field-name-field-link-internal {
-        .field-item {
-          display: inline-block;
-          border-bottom: 1px solid $uikit-colour-Secondary;
-        }
-      }
-      color: $uikit-colour-Secondary;
-      .more-services-card {
-        a {
-          border-top: 10px solid $colour-Primary-dark;
-        }
-      }
-      .more-conditions-and-diseases-car {
-        a {
-          border-top: 10px solid $colour-Tertiary-dark;
-        }
-      }
-      .more-programs-and-initiatives-ca {
-        a {
-          border-top: 10px solid $colour-Secondary-dark;
+        &.more-programs-and-initiatives-ca {
+          @include block-card($colour-Secondary-dark, $colour-Secondary-hover);
         }
       }
     }
@@ -141,7 +103,7 @@
               @include card-colour($colour-Tertiary, $colour-Tertiary-hover);
             }
             &.item-676 {
-              @include card-colour($colour-Secondary-light, $colour-Secondary-hover);
+              @include card-colour($colour-Tertiary-2-darker, $colour-Tertiary-2-hover);
             }
             &.item-681 {
               @include card-colour($colour-Secondary-dark, $colour-Secondary-hover);
@@ -172,111 +134,25 @@
   &.block__count--5.block-id__topic-tile{
     background: white;
     .bean-image-and-text {
-      a {
-        padding: uikit-space(.5);
-        @include uikit-media(md) {
-          padding: uikit-space(1);
-        }
-        border-top: 10px solid $uikit-colour-Link;
-        border-bottom: none;
-        display: block;
-        overflow: hidden;
-        color: transparent;
-
-        .field-name-field-image {
-          svg {
-            path, rect {
-              fill: #000;
-            }
-          }
-        }
-
-        .field-name-field-bean-text {
-          display: none;
-        }
-
-        background: $colour-lightest;
-
-        &:hover,
-        &:focus {
-          background: $colour-light-dark;
-          .field-name-field-link-internal {
-            //color: #fff;
-            .field-item {
-              border-bottom: none;
-            }
-
-          }
-
-          // .field-name-field-image {
-          //   svg path, svg rect {
-          //     fill: white;
-          //   }
-          // }
-        }         
-
-        .field-name-field-link-internal {
-          // &:hover,
-          // &:focus {
-          //   color: #fff;
-          // }
-          .field-item {
-            display: inline;
-            border-bottom: 1px solid $uikit-colour-Link;
-            font-weight: 700;
-            margin-bottom: 0;
-          }
-        }
-      }
       // Set colours for each accelerator
       &.topic-tile {
-        a {
-          border-color: $colour-Primary;
-          &:hover,
-          &:focus {
-            border-color: $colour-Primary-hover;
-          }
-        }
+        @include block-card($colour-Primary, $colour-Primary-hover);
       }
 
       &.conditions--diseases {
-        a {
-          border-color: $colour-Tertiary;
-          &:hover,
-          &:focus {
-            border-color: $colour-Tertiary-hover;
-          }
-        }
+        @include block-card($colour-Tertiary, $colour-Tertiary-hover);
       }
 
       &.medicare-tile {
-        a {
-          border-color: $colour-Secondary;
-          &:hover,
-          &:focus {
-            border-color: $colour-Secondary-hover;
-          }
-        }
+        @include block-card($colour-Secondary, $colour-Secondary-hover);
       }
 
       &.symptoms {
-        a {
-          border-color: $colour-Primary-light;
-          &:hover,
-          &:focus {
-            border-color: $colour-Primary-hover;
-          }
-        }
+        @include block-card($colour-Tertiary-2, $colour-Tertiary-2-hover);
       }
 
       &.services--support {
-        a {
-          border-color: $colour-dark;
-          &:hover,
-          &:focus {
-            border-color: $colour-dark-hover;
-          }
-        }
+        @include block-card($colour-dark, $colour-dark-hover);
       }
 
     }
@@ -381,8 +257,10 @@
 td, th,
 .view,
 .document-accessibility-form {
-  p:last-of-type {
-    margin-bottom: 0;
+  .page-layout { // only in content section
+    p:last-of-type {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -394,67 +272,13 @@ td, th,
 /** END UIKIT overrides */
 
 
-// For survey only - remove afterwards
-#owInviteSnippet {
-  font-family: $uikit-font-system;
-  a[rel~='external'] svg {
-    margin-left: 5px;
-  }
-}
-
-/** START Local nav and HP link **/
-// Include styles to support 'For health professionals' link.
-// Hide header version on mobile
-body:not(.node-type-health-topic, .node-type-health-topic-hp) {
-  .page-title__supp {
-    .region-title-supp {
-      .block-bean-call-to-action {
-        display: none;
-        @include uikit-media(sm) {
-          display: block;
-        }
-      }
-    }
-  }
-}
-
-.region-sidebar-second {
-  @include uikit-clearfix;
-  @extend %colour-Light-background;
-  @include uikit-media(sm) {
-    background: white;
-  }
-
-  #block-bean-local-navigation-menu-toggle-for {
-    float: left;
-    width: 50%;
-  }
-
-  .bean-public-hp-switcher {
-    float: left;
-    width: 50%;
-    .field-name-field-link-to a.button {
-      display: block;
-      padding: 6px 12px;
-      font-size: 16px;
-
-    }
-    // Hide sidebar version on desktop
-    @include uikit-media(sm) {
-      display: none;
-    }
-  }
-
-  #block-menu-block-2 {
-    clear: both;
-    @include uikit-clearfix;
-    background: white;
-    border-bottom: $uikit-borderize;
-    @include uikit-media(sm) {
-      border-bottom: 0;
-    }
-  }
-}
+// For survey only - Uncomment when implmenting
+// #owInviteSnippet {
+//   font-family: $uikit-font-system;
+//   a[rel~='external'] svg {
+//     margin-left: 5px;
+//   }
+// }
 
 body:not(.topic-subpage) {
   .region-sidebar-second {
@@ -468,7 +292,7 @@ body:not(.topic-subpage) {
 // Fix overflow of content onto menu
 body:not(.node-type-health-topic, .node-type-health-topic-hp, .node-type-landing-page) {
   #content {
-    padding-top: uikit-space(1.5);
+    padding-top: uikit-space(1);
     @include uikit-media(sm) {
       padding-top: 0;
     }

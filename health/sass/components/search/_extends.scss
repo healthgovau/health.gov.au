@@ -51,21 +51,30 @@
   }
 }
 
+// Global search in header
+#block-search-api-page-default-search {
+  @include uikit-media(sm) {
+    display: block;
+    height: auto;
+  }
+}
+
 
 // Mobile search
 .region-navigation {
-  #search-api-page-search-form {
-    display: none;
+  #block-search-api-page-default-search--2 {
     position: absolute;
     background: white;
     width: 100%;
-    overflow: visible;
-    padding: 12px;
     margin-top: -6px;
-    &.mobilemenu-active { // Hide the search until triggered. Only triggers on mobile.
-      display: block;
+    .search-wrapper {
+      @include uikit-clearfix;
+      border-bottom: 6px solid #cccccc;
+      padding: 12px;
+      form > div {
+        position: relative;
+      }
     }
-    border-bottom: 6px solid #cccccc;
     border-radius: 0;
     @include uikit-media(sm) {
       border-bottom: 0;

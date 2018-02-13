@@ -71,11 +71,16 @@ endif;
     <div class="page-title header header--light">
     <div class="container">
       <div class="row">
-      <div class="page-title__core col <?php print isset($section_title) ? 'section-title' : '' ?>">
+      <div class="page-title__core col<?php print isset($section_title) ? ' section-title' : '';
+      print count($page['title_supp']) == 0 ? ' full': ''; ?>">
         <?php print $breadcrumb; ?>
 
+        <?php print render($page['title_core']); ?>
+
         <?php if (isset($section_title)): ?>
-          <?php print $section_title; ?>
+          <div class="section-header rs_skip <?php print count($page['title_supp']) > 0 ? '' : 'full'; ?>">
+            <?php print $section_title; ?>
+          </div>
         <?php endif; ?>
 
         <?php if ($title): ?>
@@ -86,19 +91,18 @@ endif;
         <?php print render($title_suffix); ?>
         <?php endif; ?>
 
-        <?php print $readspeaker; ?>
-
         <?php if (isset($summary)): ?>
         <p class="summary"><?php print $summary; ?></p>
         <?php endif; ?>
 
-        <?php print render($page['title_core']); ?>
       </div>
 
-      <div class="page-title__supp col <?php print isset($section_title) ? 'section-title' : '' ?>">
-        <?php print render($page['title_supp']); ?>
-        <?php print isset($initiative_or_program_logo) ? $initiative_or_program_logo : ''?>
-      </div>
+      <?php if (count($page['title_supp']) > 0): ?>
+        <div class="page-title__supp col <?php print isset($section_title) ? 'section-title' : '' ?>">
+          <?php print render($page['title_supp']); ?>
+          <?php print isset($initiative_or_program_logo) ? $initiative_or_program_logo : ''?>
+        </div>
+      <?php endif; ?>
       </div>
     </div>
     </div>
@@ -129,6 +133,8 @@ endif;
       <?php endif; ?>
 
       <?php print $messages; ?>
+
+      <?php print $readspeaker; ?>
 
       <?php print render($page['content']); ?>
       <?php print $feed_icons; ?>

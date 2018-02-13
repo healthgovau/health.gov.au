@@ -14,6 +14,14 @@
       // Image
       .field-name-field-image-featured {
         @extend %image--full;
+        .go-to-download-link {
+          a {
+            @extend %link;
+          }
+          line-height: 2;
+          margin-top: 10px;
+
+        }
       }
 
       // Document download
@@ -50,4 +58,13 @@
 	&.view-mode-inline {
 		@extend %dm-inline-2-col;
 	}
+
+    &.view-mode-inline_large {
+        @extend %dm-inline-large;
+    }
+
+    // Search
+    &.view-mode-search_result {
+        @extend %dm-search-index;
+    }
 }

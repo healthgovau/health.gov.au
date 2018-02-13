@@ -9,7 +9,6 @@
 
 %table {
   margin-bottom: uikit-space(1);
-  width: 100%;
   border-collapse: collapse;
   border: $uikit-borderize;
 
@@ -41,16 +40,17 @@
     border-bottom: 2px solid $uikit-colour-Border;
   }
 
-  @include media-max( md ) {
-    min-width: 43em;
+  min-width: 43em;
+  @include uikit-media( md ) {
+    min-width: auto;
   }
 }
 
 %table__responsive-wrapper {
-  @include media-max( md ) {
-    overflow: scroll;
+  overflow: scroll;
+  @include uikit-media( md ) {
+    overflow: auto;
   }
-
 }
 
 @import 'print';

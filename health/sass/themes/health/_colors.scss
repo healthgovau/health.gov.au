@@ -41,6 +41,13 @@ $colour-Tertiary-darker: #c42832;
 $colour-Tertiary-light: #ee303b;
 $colour-Tertiary-hover: #a31f26;
 
+// Dummy values to be replaced with real values
+$colour-Tertiary-2: #0099d9; // light
+$colour-Tertiary-2-dark: #0092d6; // mid
+$colour-Tertiary-2-darker: #007cb5; // dark - constrast compliant
+$colour-Tertiary-2-light: #28a9e0; // lightest
+$colour-Tertiary-2-hover: #0070a3; // darkest - constrast compliant
+
 $colour-dark: #6d6e70;
 $colour-darker: #626366;
 $colour-darkest: #58585b;
@@ -50,7 +57,6 @@ $colour-light-dark: #e5e5e5;
 $colour-light: #ecedee;
 $colour-lighter: #f1f1f2;
 $colour-lightest: #f9f9f9;
-
 $colour-light-darker: #cdcdcd;
 
 %colour-Primary-background {
@@ -101,6 +107,14 @@ $colour-light-darker: #cdcdcd;
   background: linear-gradient(to right, $colour-Secondary-darker, $colour-Secondary);
 }
 
+%colour-Tertiary-2-background {
+  background-color: $colour-Tertiary-2-darker;
+  background: -webkit-linear-gradient(left, $colour-Tertiary-2-darker, $colour-Tertiary-2);
+  background: -o-linear-gradient(right, $colour-Tertiary-2-darker, $colour-Tertiary-2);
+  background: -moz-linear-gradient(right, $colour-Tertiary-2-darker, $colour-Tertiary-2);
+  background: linear-gradient(to right, $colour-Tertiary-2-darker, $colour-Tertiary-2);
+}
+
 %colour-Dark-background {
   background-color: $colour-darker;
   background: -webkit-linear-gradient(left, $colour-darker, $colour-dark);
@@ -136,6 +150,5 @@ $aqua: #18788d;
 // Service delivery
 $alpha-background: #c22f73;
 $alpha-text: #FFF;
-
 $beta-background: #d34600;
 $beta-text: #FFF;

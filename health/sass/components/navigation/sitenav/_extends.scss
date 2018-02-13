@@ -11,10 +11,8 @@
   // Main menu.
   #block-superfish-1 {
     @extend %uikit-sitenav;
-    &.mobilemenu-active {
-      margin-top: -6px; // Keyline fix for mobile.
-    }
-    border-bottom: 6px solid #e5e5e5;
+
+    margin-top: -6px; // Keyline fix for mobile.
 
     // uikit-sitenav makes the links block for contextual links, they need to be hidden by default.
     ul.contextual-links {
@@ -23,10 +21,11 @@
 
     @include uikit-media(sm) {
       border-bottom: 0;
-      margin-bottom: -7px;
+      margin-top: 0;
       ul li a {
         border-bottom: 6px solid transparent;
       }
+      display: block;
     }
   }
 
@@ -34,9 +33,40 @@
   .mobile-toggle {
     @extend %uikit-sitenav__mobile-toggle;
     margin-bottom: 6px; // Keyline fix for mobile.
-    
-    &.mobile-toggle__search {
+
+    // Main menu.
+    &.mobile-toggle--main-menu {
+      text-align: left;
+      .mobile-toggle__label {
+        @extend %baseicon;
+        margin-left: 28px;
+        &:before {
+          font-size: 22px;
+          content: "\f0c9";
+        }
+      }
+    }
+
+    // Search.
+    &.mobile-toggle--search {
       text-align: right;
+      .mobile-toggle__label {
+        @extend %baseicon;
+        &:before {
+          font-size: 22px;
+          content: "\f002";
+
+        }
+      }
+    }
+
+    // When expanded.
+    &.uikit-accordion--open {
+      .mobile-toggle__label {
+        &:before {
+          content: "\f00d";
+        }
+      }
     }
   }
 

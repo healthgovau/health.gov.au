@@ -65,6 +65,9 @@
 // UI-Kit link style
 %link {
   border-bottom: 1px solid $colour-Secondary;
+  &:hover {
+    border: none;
+  }
 }
 
 // Mixin to apply row and container
@@ -88,4 +91,107 @@
     background: $colour-hover;
 
   }
+}
+
+// Mixin to apply card (border top colour) style to bean blocks.
+@mixin block-card($border-colour-top: $colour-Tertiary-2, $border-hover-colour: $colour-Tertiary-2-hover, $bg-colour: $colour-lightest, $bg-hover-colour: $colour-light-dark) {
+  a {
+    padding: uikit-space(.5);
+    @include uikit-media(md) {
+      padding: uikit-space(1);
+    }
+    border-bottom: none;
+    display: block;
+    overflow: hidden;
+    background: $bg-colour;
+    border-top: 10px solid $border-colour-top;
+
+    // Move external link icon to title not whole <a>
+    &:after {
+      display: none;
+    }
+
+
+    .field-name-field-image {
+      svg {
+        path, rect {
+          fill: #000;
+        }
+      }
+    }
+
+    .field-name-field-bean-text {
+      color: $uikit-colour-Secondary;
+    }
+
+    &:hover,
+    &:focus {
+      background: $bg-hover-colour;
+      border-top-color: $border-hover-colour;
+      .field-name-field-link-internal {
+        //color: #fff;
+        .field-item {
+          border-bottom: none;
+        }
+      }
+    }
+
+    .field-name-field-link-internal {
+      .field-item {
+        display: inline;
+        border-bottom: 1px solid $uikit-colour-Link;
+        font-weight: 700;
+        margin-bottom: 0;
+        font-family: $uikit-font-system;
+      }
+    }
+    &[rel~='external'] {
+      .field-name-field-link-internal {
+        .field-item:after {
+          @extend %ext-link;
+          // Move into corner as breaks mobile layout
+          position: absolute;
+          top: uikit-space(.75);
+          right: uikit-space(.25);
+        }
+      }
+    }
+  }
+}
+
+// Mixin to apply responsive styles to SVGs in bean blocks.
+@mixin block-text-image-svg($icon-size: '') {
+  
+  @if $icon-size == 'large' {
+    svg {
+      max-width: 65%;
+      // IE doesn't handle max-width scaling correctly, so we have to specify width and height in px
+      max-width: 75px;
+      max-height: 75px;
+      // @include uikit-media(sm) {
+      //   max-width: 75px;
+      //   max-height: 75px;
+      // }
+      @include uikit-media(md) {
+        max-width: 105px;
+        max-height: 105px;
+      }
+    }
+  } @else {
+    svg {
+      max-width: 35%;
+      // IE doesn't handle max-width scaling correctly, so we have to specify width and height in px
+      max-width: 30px;
+      max-height: 30px;
+      // @include uikit-media(sm) {
+      //   max-width: 30px;
+      //   max-height: 30px;
+      // }
+      @include uikit-media(md) {
+        max-width: 40px;
+        max-height: 40px;
+      }
+    }
+  }
+  
 }

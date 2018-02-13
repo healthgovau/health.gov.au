@@ -1,3 +1,5 @@
+@import "_print.scss";
+
 // Generic band styles
 %band {
   @include uikit-clearfix();

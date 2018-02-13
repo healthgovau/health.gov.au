@@ -43,9 +43,12 @@
 // Applied filters
 #edit-custom-remove {
   label {
-    margin-right: uikit-space(0.5);
-    float: left;
     @extend .uikit-display-1;
+    display: block;
+    @include uikit-media(sm){
+      margin-right: uikit-space(0.5);
+      display: inline;
+    }
   }
   .facet-clear {
     color: $colour-minorText;
