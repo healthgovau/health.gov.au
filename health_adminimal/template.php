@@ -45,6 +45,14 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
     if (($key = array_search('Collection', $form['field_publication_type'][LANGUAGE_NONE]['#options'])) !== false) {
       unset($form['field_publication_type'][LANGUAGE_NONE]['#options'][$key]);
     }
+
+    // Toggle publication NMM text field based on the value in publication
+    // orderable field.
+    $form['field_publication_nmm_text'][LANGUAGE_NONE][0]['value']['#states'] = [
+      'visible' => [
+        ':input[id="edit-field-publication-orderable-und"]' => ['checked' => TRUE],
+      ],
+    ];
   }
 }
 
