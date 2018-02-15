@@ -48,7 +48,7 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
 
     // Toggle publication NMM text field based on the value in publication
     // orderable field.
-    $form['field_publication_nmm_text'][LANGUAGE_NONE][0]['value']['#states'] = [
+    $form['field_publication_nmm_text']['#states'] = [
       'visible' => [
         ':input[id="edit-field-publication-orderable-und"]' => ['checked' => TRUE],
       ],
