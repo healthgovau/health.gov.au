@@ -52,8 +52,8 @@ See http://api.drupal.org/api/function/theme_field/7 for details.
 After copying this file to your theme's folder and customizing it, remove this
 HTML comment.
 -->
-<h3>Order this resource</h3>
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
+    <h2>Order this resource</h2>
   <?php if (!$label_hidden): ?>
     <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</div>
   <?php endif; ?>
@@ -62,12 +62,12 @@ HTML comment.
       <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
     <?php endforeach; ?>
   </div>
-</div>
-<p>
-    You can order this resource by contacting National Mailing and Marketing:
+    <p>
+        You can order this resource by contacting National Mailing and Marketing:
     <ul>
-    <li>Email – <a href="mailto:health@nationalmailing.com.au">health@nationalmailing.com.au</a></li>
-    <li>Phone - <a href="tele:0262691000">02 6269 1000</a></li>
+        <li>Email – <a href="mailto:health@nationalmailing.com.au">health@nationalmailing.com.au</a></li>
+        <li>Phone - <a href="tele:0262691000">02 6269 1000</a></li>
     </ul>
     Quote the order ID number above and the quantity of the resource you wish to order
-</p>
+    </p>
+</div>
