@@ -217,7 +217,7 @@
   }
   .field-name-field-link-internal {
     a {
-      @extend .uikit-cta-link;
+      @extend .health-cta-link;
     }
   } // 2 in a row.
   &.listing__count--2 {
@@ -290,7 +290,7 @@
       >.group-footer {
         .paragraphs-item-para-link {
           a {
-            @extend .uikit-cta-link;
+            @extend .health-cta-link;
           }
         }
       }
@@ -320,7 +320,7 @@
 .paragraphs-item-para-view {
   .para-row {
     >a {
-      @extend .uikit-cta-link;
+      @extend .health-cta-link;
     }
   }
 }

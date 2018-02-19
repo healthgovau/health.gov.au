@@ -1581,23 +1581,23 @@ html [type='button'],
 
 /*! @gov.au/cta-link v0.1.0 */
 @media print {
-  .block-bean-call-to-action .field-name-field-link-to a:after,
-  .bean-call-to-action .field-name-field-link-to a:after, .uikit-cta-link:after, .video__cta:after, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:after, .paragraphs-item-para-statistics .field-name-field-link-internal a:after, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:after, .paragraphs-item-para-view .para-row > a:after {
+  .uikit-cta-link:after, .health-cta-link:after, .block-bean-call-to-action .field-name-field-link-to a:after,
+  .bean-call-to-action .field-name-field-link-to a:after, .video__cta:after, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:after, .paragraphs-item-para-statistics .field-name-field-link-internal a:after, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:after, .paragraphs-item-para-view .para-row > a:after {
     content: ' > ' !important;
     border: none !important;
     -webkit-transform: rotate(0deg) !important;
         -ms-transform: rotate(0deg) !important;
             transform: rotate(0deg) !important; } }
 
-.block-bean-call-to-action .field-name-field-link-to a,
-.bean-call-to-action .field-name-field-link-to a, .uikit-cta-link, .video__cta, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title, .paragraphs-item-para-statistics .field-name-field-link-internal a, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a, .paragraphs-item-para-view .para-row > a {
+.uikit-cta-link, .health-cta-link, .block-bean-call-to-action .field-name-field-link-to a,
+.bean-call-to-action .field-name-field-link-to a, .video__cta, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title, .paragraphs-item-para-statistics .field-name-field-link-internal a, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a, .paragraphs-item-para-view .para-row > a {
   display: inline-block;
   position: relative;
   font-size: 21px;
   margin-bottom: 1.6em;
   font-weight: bold; }
-  .block-bean-call-to-action .field-name-field-link-to a:after,
-  .bean-call-to-action .field-name-field-link-to a:after, .uikit-cta-link:after, .video__cta:after, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:after, .paragraphs-item-para-statistics .field-name-field-link-internal a:after, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:after, .paragraphs-item-para-view .para-row > a:after {
+  .uikit-cta-link:after, .health-cta-link:after, .block-bean-call-to-action .field-name-field-link-to a:after,
+  .bean-call-to-action .field-name-field-link-to a:after, .video__cta:after, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:after, .paragraphs-item-para-statistics .field-name-field-link-internal a:after, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:after, .paragraphs-item-para-view .para-row > a:after {
     content: ' ';
     display: inline-block;
     width: 0.8em;
@@ -1605,16 +1605,17 @@ html [type='button'],
     margin: 0 0.4em 0 0.4em;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E   %3Cpath fill='%23153a6e' d='M128 64l-64 64-16-16 64-64'/%3E   %3Cpath fill='%23153a6e' d='M128 64l-16 16-64-64L64 0'/%3E  %3C/svg%3E");
     transition: margin 0.1s ease-in; }
-    .ie8 .block-bean-call-to-action .field-name-field-link-to a:after, .block-bean-call-to-action .field-name-field-link-to .ie8 a:after, .ie8
+    .ie8 .uikit-cta-link:after, .ie8 .health-cta-link:after, .ie8 .block-bean-call-to-action .field-name-field-link-to a:after, .block-bean-call-to-action .field-name-field-link-to .ie8 a:after, .ie8
     .bean-call-to-action .field-name-field-link-to a:after,
-    .bean-call-to-action .field-name-field-link-to .ie8 a:after, .ie8 .uikit-cta-link:after, .ie8 .video__cta:after, .ie8 .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:after, .region-title-supp .block-bean-call-to-action .ie8 .bean-call-to-action__title:after, .ie8 .paragraphs-item-para-statistics .field-name-field-link-internal a:after, .paragraphs-item-para-statistics .field-name-field-link-internal .ie8 a:after, .ie8 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:after, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link .ie8 a:after, .ie8 .paragraphs-item-para-view .para-row > a:after, .paragraphs-item-para-view .ie8 .para-row > a:after,
+    .bean-call-to-action .field-name-field-link-to .ie8 a:after, .ie8 .video__cta:after, .ie8 .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:after, .region-title-supp .block-bean-call-to-action .ie8 .bean-call-to-action__title:after, .ie8 .paragraphs-item-para-statistics .field-name-field-link-internal a:after, .paragraphs-item-para-statistics .field-name-field-link-internal .ie8 a:after, .ie8 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:after, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link .ie8 a:after, .ie8 .paragraphs-item-para-view .para-row > a:after, .paragraphs-item-para-view .ie8 .para-row > a:after,
+    .lt-ie8 .uikit-cta-link:after,
+    .lt-ie8 .health-cta-link:after,
     .lt-ie8 .block-bean-call-to-action .field-name-field-link-to a:after, .block-bean-call-to-action .field-name-field-link-to
     .lt-ie8 a:after,
     .lt-ie8
     .bean-call-to-action .field-name-field-link-to a:after,
     .bean-call-to-action .field-name-field-link-to
     .lt-ie8 a:after,
-    .lt-ie8 .uikit-cta-link:after,
     .lt-ie8 .video__cta:after,
     .lt-ie8 .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:after, .region-title-supp .block-bean-call-to-action
     .lt-ie8 .bean-call-to-action__title:after,
@@ -1626,13 +1627,13 @@ html [type='button'],
     .lt-ie8 .para-row > a:after {
       content: ' > ';
       border: none; }
-  .block-bean-call-to-action .field-name-field-link-to a:hover,
-  .bean-call-to-action .field-name-field-link-to a:hover, .uikit-cta-link:hover, .video__cta:hover, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:hover, .paragraphs-item-para-statistics .field-name-field-link-internal a:hover, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:hover, .paragraphs-item-para-view .para-row > a:hover, .block-bean-call-to-action .field-name-field-link-to a:focus,
-  .bean-call-to-action .field-name-field-link-to a:focus, .uikit-cta-link:focus, .video__cta:focus, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:focus, .paragraphs-item-para-statistics .field-name-field-link-internal a:focus, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:focus, .paragraphs-item-para-view .para-row > a:focus {
+  .uikit-cta-link:hover, .health-cta-link:hover, .block-bean-call-to-action .field-name-field-link-to a:hover,
+  .bean-call-to-action .field-name-field-link-to a:hover, .video__cta:hover, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:hover, .paragraphs-item-para-statistics .field-name-field-link-internal a:hover, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:hover, .paragraphs-item-para-view .para-row > a:hover, .uikit-cta-link:focus, .health-cta-link:focus, .block-bean-call-to-action .field-name-field-link-to a:focus,
+  .bean-call-to-action .field-name-field-link-to a:focus, .video__cta:focus, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:focus, .paragraphs-item-para-statistics .field-name-field-link-internal a:focus, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:focus, .paragraphs-item-para-view .para-row > a:focus {
     color: #313131; }
-    .block-bean-call-to-action .field-name-field-link-to a:hover:after,
-    .bean-call-to-action .field-name-field-link-to a:hover:after, .uikit-cta-link:hover:after, .video__cta:hover:after, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:hover:after, .paragraphs-item-para-statistics .field-name-field-link-internal a:hover:after, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:hover:after, .paragraphs-item-para-view .para-row > a:hover:after, .block-bean-call-to-action .field-name-field-link-to a:focus:after,
-    .bean-call-to-action .field-name-field-link-to a:focus:after, .uikit-cta-link:focus:after, .video__cta:focus:after, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:focus:after, .paragraphs-item-para-statistics .field-name-field-link-internal a:focus:after, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:focus:after, .paragraphs-item-para-view .para-row > a:focus:after {
+    .uikit-cta-link:hover:after, .health-cta-link:hover:after, .block-bean-call-to-action .field-name-field-link-to a:hover:after,
+    .bean-call-to-action .field-name-field-link-to a:hover:after, .video__cta:hover:after, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:hover:after, .paragraphs-item-para-statistics .field-name-field-link-internal a:hover:after, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:hover:after, .paragraphs-item-para-view .para-row > a:hover:after, .uikit-cta-link:focus:after, .health-cta-link:focus:after, .block-bean-call-to-action .field-name-field-link-to a:focus:after,
+    .bean-call-to-action .field-name-field-link-to a:focus:after, .video__cta:focus:after, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:focus:after, .paragraphs-item-para-statistics .field-name-field-link-internal a:focus:after, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:focus:after, .paragraphs-item-para-view .para-row > a:focus:after {
       margin: 0 0.16em 0 0.64em; }
 
 /*! @gov.au/direction-links v0.1.0 */
@@ -7341,14 +7342,14 @@ p.summary, .field-name-field-summary {
   z-index: 9999;
   transition: all .4s ease-in; }
 
-.block-bean-call-to-action .field-name-field-link-to a,
-.bean-call-to-action .field-name-field-link-to a, .uikit-cta-link, .video__cta, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title, .paragraphs-item-para-statistics .field-name-field-link-internal a, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a, .paragraphs-item-para-view .para-row > a {
+.health-cta-link, .block-bean-call-to-action .field-name-field-link-to a,
+.bean-call-to-action .field-name-field-link-to a, .video__cta, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title, .paragraphs-item-para-statistics .field-name-field-link-internal a, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a, .paragraphs-item-para-view .para-row > a {
   display: inline;
   margin-bottom: 0;
   font-size: 1.1em; }
   @media (min-width: 768px) {
-    .block-bean-call-to-action .field-name-field-link-to a,
-    .bean-call-to-action .field-name-field-link-to a, .uikit-cta-link, .video__cta, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title, .paragraphs-item-para-statistics .field-name-field-link-internal a, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a, .paragraphs-item-para-view .para-row > a {
+    .health-cta-link, .block-bean-call-to-action .field-name-field-link-to a,
+    .bean-call-to-action .field-name-field-link-to a, .video__cta, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title, .paragraphs-item-para-statistics .field-name-field-link-internal a, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a, .paragraphs-item-para-view .para-row > a {
       font-size: 1.2em; } }
 
 .uikit-cta-link--light,
@@ -8178,8 +8179,8 @@ fieldset .fieldset-legend {
     text-decoration: none;
     background-color: transparent; }
 
-.block-bean-call-to-action .field-name-field-link-to a:focus,
-.bean-call-to-action .field-name-field-link-to a:focus, .uikit-cta-link:focus, .video__cta:focus, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:focus, .paragraphs-item-para-statistics .field-name-field-link-internal a:focus, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:focus, .paragraphs-item-para-view .para-row > a:focus, .page a:focus, .skip-link__link:focus {
+.health-cta-link:focus, .block-bean-call-to-action .field-name-field-link-to a:focus,
+.bean-call-to-action .field-name-field-link-to a:focus, .video__cta:focus, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:focus, .paragraphs-item-para-statistics .field-name-field-link-internal a:focus, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:focus, .paragraphs-item-para-view .para-row > a:focus, .page a:focus, .skip-link__link:focus {
   background-color: #008998;
   color: white;
   outline: 1px solid #006570;
@@ -8552,8 +8553,8 @@ ul.social__links,
       .social__links .social__links-item a:after {
         display: none; }
 
-.block-bean-call-to-action .field-name-field-link-to a:after,
-.bean-call-to-action .field-name-field-link-to a:after, .uikit-cta-link:after, .video__cta:after, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:after, .paragraphs-item-para-statistics .field-name-field-link-internal a:after, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:after, .paragraphs-item-para-view .para-row > a:after {
+.health-cta-link:after, .block-bean-call-to-action .field-name-field-link-to a:after,
+.bean-call-to-action .field-name-field-link-to a:after, .video__cta:after, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:after, .paragraphs-item-para-statistics .field-name-field-link-internal a:after, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:after, .paragraphs-item-para-view .para-row > a:after {
   background-image: none;
   content: "\f061";
   font-family: FontAwesome;

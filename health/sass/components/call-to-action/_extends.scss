@@ -1,12 +1,12 @@
 .block-bean-call-to-action,
 .bean-call-to-action {
   .field-name-field-link-to a {
-    @extend .uikit-cta-link;
+    @extend .health-cta-link;
   }
 }
 
 // Our overrides for call to action link.
-.uikit-cta-link {
+.health-cta-link {
   @extend .uikit-cta-link;
   display: inline;
   margin-bottom: 0;

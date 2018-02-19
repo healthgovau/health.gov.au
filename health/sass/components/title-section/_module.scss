@@ -153,7 +153,7 @@
     // Extend onto title
     .bean-call-to-action__title {
       @extend .uikit-display-3;
-      @extend .uikit-cta-link;
+      @extend .health-cta-link;
       // Need to fix .uikit-cta-link override in /extends/call-to-action :(
       // This is awful
       font-size: 24px;
