@@ -132,3 +132,31 @@ fieldset:not(.filter-wrapper) > legend > span {
     color: #2196F3;
 }
 
+.maintenance-notification {
+    border: 1px solid #940000;
+    background: #ffd4da;
+    color: black;
+    font-size: 1.2em;
+    padding: 26px;
+    max-width: 42em;
+    margin-bottom: 20px;
+}
+body div.maintenance-notification a {
+    color: #940000;
+    font-weight: bold;
+}
+
+.maintenance-notification p:last-of-type {
+    margin-bottom: 0;
+}
+
+.maintenance-notification .title {
+    font-size: 1.5em;
+    color: #940000;
+    font-weight: bold;
+}
+
+.maintenance-notification .subtitle {
+    font-size: 1.3em;
+    font-weight: bold;
+}
