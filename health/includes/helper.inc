@@ -121,42 +121,6 @@ function _health_find_facet_filter_name($param) {
 }
 
 /**
- * Find the first publish date by given node ID.
- *
- * @param $nid
- *   Node ID.
- *
- * @return mixed|string
- */
-function _health_find_first_publish_date($nid) {
-  // Find the fist published date for current node.
-  // Not a good way to implement, no API from workbench_moderation module
-  // available.
-  $result = db_query('
-    SELECT m.stamp
-    FROM {node_revision} r
-    LEFT JOIN {node} n ON n.vid = r.vid
-    INNER JOIN {workbench_moderation_node_history} m ON m.vid = r.vid
-    WHERE r.nid = :nid
-    AND m.state = :published_state
-    ORDER BY m.stamp ASC
-    LIMIT 1',
-    [
-      ':nid' => $nid,
-      ':published_state' => workbench_moderation_state_published(),
-    ])
-    ->fetchObject();
-  if (empty($result->stamp)) {
-    $date = "Unpublished";
-  }
-  else {
-    $date = format_date($result->stamp, 'custom', 'd F Y');
-  }
-
-  return $date;
-}
-
-/**
  * Helper function to generate public hp switcher render array for public topic
  * page.
  *

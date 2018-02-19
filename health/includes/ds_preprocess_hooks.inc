@@ -126,43 +126,6 @@ function health_preprocess_ds_document_accessibility_form_link($variables) {
 }
 
 /**
- * Implements DS preprocess field -- date published.
- *
- * @param $variable
- *
- * @return string
- */
-function health_preprocess_ds_date_published(&$variables) {
-  $date = _health_find_first_publish_date($variables['nid']);
-  $date_render = [
-    'date' => $date,
-    'attributes' => [
-      'content' => strtotime($date),
-      'property' => 'dc:date',
-    ],
-  ];
-
-  // Setup the field.
-  $field_variables = [
-    'label_hidden' => FALSE,
-    'title_attributes' => '',
-    'content_attributes' => '',
-    'item_attributes' => [0 => ''],
-    'attributes' => '',
-    'classes' => 'field-name-field-date-published field-type-datetime',
-    'items' => [
-      [
-        '#markup' => theme('date_display_single', $date_render),
-      ]
-    ],
-  ];
-  $field_variables = _health_label_display($variables, 'date_published', $field_variables);
-  $field_variables['classes'] .= ' field-name-field-date-published';
-
-  return theme_field($field_variables);
-}
-
-/**
  * Implements DS preprocess field -- para_blocks.
  *
  * @param $variable

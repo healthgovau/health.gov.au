@@ -89,10 +89,18 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
     $form['#validate'][] = '_health_adminimal_publication_date_validator';
   }
 
-  // Assert last updated field value to be the first published date.
-  if ($form_id == 'news_article_node_form') {
+
+  // Update date published if the user is changing moderation states.
+  if ($form_id == 'workbench-moderation-moderate-form') {
+    $form['#submit'][] = '_health_adminimal_date_published_submitter';
+  }
+
+  // Handle updates to dates for all nodes.
+  if (key_exists('#node', $form)) {
     $form['field_date_updated']['#access'] = FALSE;
-    $form['#submit'][] = '_health_adminimal_news_update_date_submitter';
+    $form['field_date_published']['#access'] = FALSE;
+    $form['#submit'][] = '_health_adminimal_date_updated_submitter';
+    $form['#submit'][] = '_health_adminimal_date_published_submitter';
   }
 
   // Target audience group - disable for some content types.
@@ -257,22 +265,40 @@ function _health_adminimal_publication_date_validator($form, &$form_state) {
 }
 
 /**
- * Custom submit handler to hard code last updated value to be the first
- * published date value for news content type.
+ * Update date published to the current day if this is the first time it is being published.
  *
  * @param $form
  * @param $form_state
  */
-function _health_adminimal_news_update_date_submitter($form, &$form_state) {
-  $nid = $form['nid']['#value'];
-  if ($nid != NULL) {
-    // When editing an existing node, which may have a first published date.
-    $first_published = _health_find_first_publish_date($nid);
-    if ($first_published != 'Unpublished') {
-      $date = format_date(strtotime($first_published), 'custom', 'Y-m-d H:i:s');
-      $form_state['values']['field_date_updated'][LANGUAGE_NONE][0]['value'] = $date;
+function _health_adminimal_date_published_submitter($form, &$form_state) {
+  // Standard node edit form.
+  if (key_exists('nid', $form_state['values'])) {
+    if (key_exists('workbench_moderation_state_new', $form_state['values'])) { // If this is using workbench moderation
+      if ($form_state['values']['workbench_moderation_state_new'] == 'published' && $form_state['values']['status'] == 0) {
+        $form_state['values']['field_date_published'][LANGUAGE_NONE][0]['value'] = format_date(time(), 'custom', 'Y-m-d H:i:s');
+      }
     }
   }
+
+  // Workbench moderation state change.
+  if ($form['#id'] == 'workbench-moderation-moderate-form') {
+    if ($form_state['values']['state'] == 'published' && $form_state['values']['node']->status == 0) {
+      // Load the node, change the date and save.
+      $node = node_load($form_state['values']['node']->nid);
+      $node->field_date_published[LANGUAGE_NONE][0]['value'] = format_date(time(), 'custom', 'Y-m-d H:i:s');
+      node_save($node);
+    }
+  }
+}
+
+/**
+ * Set the last updated date to today every time a node is saved.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function _health_adminimal_date_updated_submitter($form, &$form_state) {
+  $form_state['values']['field_date_updated'][LANGUAGE_NONE][0]['value'] = format_date(time(), 'custom', 'Y-m-d H:i:s');
 }
 
 /**
