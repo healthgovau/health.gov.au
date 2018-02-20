@@ -91,14 +91,16 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
 
 
   // Update date published if the user is changing moderation states.
-  if ($form_id == 'workbench-moderation-moderate-form') {
+  if ($form_id == 'workbench_moderation_moderate_form') {
     $form['#submit'][] = '_health_adminimal_date_published_submitter';
   }
 
   // Handle updates to dates for all nodes.
   if (key_exists('#node', $form)) {
     $form['field_date_updated']['#access'] = FALSE;
-    $form['field_date_published']['#access'] = FALSE;
+    if (!theme_get_setting('edit_date_published')) {
+      $form['field_date_published']['#access'] = FALSE;
+    }
     $form['#submit'][] = '_health_adminimal_date_updated_submitter';
     $form['#submit'][] = '_health_adminimal_date_published_submitter';
   }
@@ -271,6 +273,11 @@ function _health_adminimal_publication_date_validator($form, &$form_state) {
  * @param $form_state
  */
 function _health_adminimal_date_published_submitter($form, &$form_state) {
+  // If date editing is enabled, don't automatically update.
+  if (theme_get_setting('edit_date_published')) {
+    return;
+  }
+
   // Standard node edit form.
   if (key_exists('nid', $form_state['values'])) {
     if (key_exists('workbench_moderation_state_new', $form_state['values'])) { // If this is using workbench moderation
