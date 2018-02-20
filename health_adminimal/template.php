@@ -97,9 +97,9 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
 
   // Handle updates to dates for all nodes.
   if (key_exists('#node', $form)) {
-    $form['field_date_updated']['#access'] = FALSE;
-    if (!theme_get_setting('edit_date_published')) {
+    if (!theme_get_setting('manually_edit_dates')) {
       $form['field_date_published']['#access'] = FALSE;
+      $form['field_date_updated']['#access'] = FALSE;
     }
     $form['#submit'][] = '_health_adminimal_date_updated_submitter';
     $form['#submit'][] = '_health_adminimal_date_published_submitter';
@@ -274,7 +274,7 @@ function _health_adminimal_publication_date_validator($form, &$form_state) {
  */
 function _health_adminimal_date_published_submitter($form, &$form_state) {
   // If date editing is enabled, don't automatically update.
-  if (theme_get_setting('edit_date_published')) {
+  if (theme_get_setting('manually_edit_dates')) {
     return;
   }
 
@@ -305,6 +305,10 @@ function _health_adminimal_date_published_submitter($form, &$form_state) {
  * @param $form_state
  */
 function _health_adminimal_date_updated_submitter($form, &$form_state) {
+  // If date editing is enabled, don't automatically update.
+  if (theme_get_setting('manually_edit_dates')) {
+    return;
+  }
   $form_state['values']['field_date_updated'][LANGUAGE_NONE][0]['value'] = format_date(time(), 'custom', 'Y-m-d H:i:s');
 }
 

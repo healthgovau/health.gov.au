@@ -35,10 +35,10 @@ function health_adminimal_form_system_theme_settings_alter(&$form, &$form_state)
     '#default_value' => theme_get_setting('dual_author_environment'),
   );
 
-  $form['health_adminimal']['edit_date_published'] = array(
+  $form['health_adminimal']['manually_edit_dates'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Enable manual editing of the date published field'),
-    '#description' => t('If there is a need to back date the date published field (migrations etc), enable this, update the dates, then disable.'),
+    '#title' => t('Enable manual editing of dates'),
+    '#description' => t('If there is a need to manually back date dates (eg for migrations etc), enable this, update the dates, then disable.'),
     '#default_value' => theme_get_setting('edit_date_published'),
   );
 }

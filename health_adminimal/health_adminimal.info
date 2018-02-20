@@ -9,4 +9,4 @@ scripts[] = script.js
 
 settings[content_freeze_flag] = 0
 settings[dual_author_environment] = 'https://betarelease-site.govcms.gov.au'
-settings[edit_date_published] = 0
+settings[manually_edit_dates] = 0
