@@ -55,6 +55,7 @@ stylesheets[all][] = css/styles.css
 ; Optionally add some JavaScripts to your theme.
 scripts[] = js/matchHeight.min.js
 scripts[] = js/health.extlink.js
+scripts[] = js/health.mobilenav.js
 scripts[] = js/script.js
 scripts[] = pancake/js/pancake.js
 
