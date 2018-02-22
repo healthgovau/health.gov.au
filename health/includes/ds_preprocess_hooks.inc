@@ -48,33 +48,45 @@ function health_preprocess_ds_content_type(&$variables) {
  * @return string
  */
 function health_preprocess_ds_table_of_content(&$variables) {
-  if ((isset($variables['field_generate_on_this_page'][LANGUAGE_NONE]) && $variables['field_generate_on_this_page'][LANGUAGE_NONE][0]['value'] == 1)) {
+  if ((isset($variables['field_generate_on_this_page'][LANGUAGE_NONE]) && $variables['field_generate_on_this_page'][LANGUAGE_NONE][0]['value'] == 1) ||
+  (isset($variables['field_generate_in_collection'][LANGUAGE_NONE]) && $variables['field_generate_in_collection'][LANGUAGE_NONE][0]['value'] == 1)) {
     // This node is flagged to display table of content.
-    drupal_add_js(drupal_get_path('theme', 'health') . '/js/anchorific.js');
-    drupal_add_js(drupal_get_path('theme', 'health') . '/js/health.toc.js');
+    $render_array = [
+      '#theme' => 'toc',
+    ];
+
+    $render_array['#attached']['js'][] = [
+      'data' => drupal_get_path('theme', 'health') . '/js/anchorific.js',
+      'type' => 'file',
+    ];
+    $render_array['#attached']['js'][] = [
+      'data' => drupal_get_path('theme', 'health') . '/js/health.toc.js',
+      'type' => 'file',
+    ];
 
     // Pass title text.
-    drupal_add_js([
-      'toc' => [
-        'title' => t('On this page'),
-      ],
-    ], 'setting');
+    if ($variables['field_generate_on_this_page'][LANGUAGE_NONE][0]['value'] == 1) {
+      $render_array['#attached']['js'][] = [
+        'data' => [
+          'toc' => [
+            'title' => t('On this page'),
+          ],
+        ],
+        'type' => 'setting',
+      ];
+    }
+    else {
+      $render_array['#attached']['js'][] = [
+        'data' => [
+          'toc' => [
+            'title' => t('In this collection'),
+          ],
+        ],
+        'type' => 'setting',
+      ];
+    }
 
-    return theme('toc', []);
-  }
-  elseif (isset($variables['field_generate_in_collection'][LANGUAGE_NONE]) && $variables['field_generate_in_collection'][LANGUAGE_NONE][0]['value'] == 1) {
-    // This node is flagged to display table of content.
-    drupal_add_js(drupal_get_path('theme', 'health') . '/js/anchorific.js');
-    drupal_add_js(drupal_get_path('theme', 'health') . '/js/health.toc.js');
-
-    // Pass title text.
-    drupal_add_js([
-      'toc' => [
-        'title' => t('In this collection'),
-      ],
-    ], 'setting');
-
-    return theme('toc', []);
+    return drupal_render($render_array);
   }
 }
 
