@@ -129,6 +129,15 @@ function health_theme() {
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
   ];
 
+  $theme['health_breadcrumb'] = [
+    'variables' => [
+      'title' => NULL,
+      'breadcrumb' => array()
+    ],
+    'template' => 'health_breadcrumb',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
   return $theme;
 }
 
@@ -141,28 +150,8 @@ function health_breadcrumb($variables) {
   $crumbs_trail = array_keys($variables['crumbs_trail']);
   if ($crumbs_trail[1] == 'search' && !empty($crumbs_trail[2])) {
     $variables['breadcrumb'][2] = 'Search - ' . arg(1);
-    $output = '<nav class="breadcrumbs uikit-breadcrumbs rs_skip" role="navigation">';
-    $output .= '<ol class="uikit-link-list uikit-link-list--inline"><li>';
-    $output .= implode('</li><li>', $variables['breadcrumb']);
-    $output .= '</li></ol></nav>';
-
-    return $output;
   }
-  else {
-    // Build the breadcrumb trail.
-    // We replace the default breadcrumb output for a couple of key reasons:
-    //  - should be wrapped in a nav tag
-    //  - breadcrumb items should be in an ordered list
-    $output = '<nav class="breadcrumbs rs_skip" role="navigation">';
-    $output .= '<h2 class="element-invisible">' . $variables['title'] . '</h2>';
-    $output .= '<ol class="breadcrumbs__list"><li>';
-    $output .= implode('</li><li>', $variables['breadcrumb']);
-    $output .= '</li></ol></nav>';
-
-    return $output;
-
-  }
-
+  return theme('health_breadcrumb', $variables);
 }
 
 /**
