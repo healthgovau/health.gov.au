@@ -51,11 +51,11 @@
       $('.nav-overlay', context).click(function () {
         // Deactivate nav if it is currently active.
         if ($('.mobile-toggle.mobile-toggle--main-menu', context).hasClass('uikit-accordion--open')) {
-          $('.mobile-toggle.mobile-toggle--main-menu').trigger('click');
+          $('.mobile-toggle.mobile-toggle--main-menu', context).trigger('click');
         }
         // Deactivate search if it is currently active.
         if ($('.mobile-toggle.mobile-toggle--search', context).hasClass('uikit-accordion--open')) {
-          $('.mobile-toggle.mobile-toggle--search').trigger('click');
+          $('.mobile-toggle.mobile-toggle--search', context).trigger('click');
         }
       });
 
@@ -63,7 +63,7 @@
       $('.mobile-toggle.mobile-toggle__local-nav a', context).click(function (e) {
         e.preventDefault();
         $("#block-menu-block-2", context).toggleClass('mobilemenu-active');
-        $(".mobile-toggle.mobile-toggle__local-nav").toggleClass('mobilemenu-active');
+        $(".mobile-toggle.mobile-toggle__local-nav", context).toggleClass('mobilemenu-active');
       });
 
       $('.filter__mobile-title', context).click(function (e) {
@@ -82,7 +82,7 @@
    * Enable the overlay.
    */
   Drupal.enableOverlay = function() {
-    $('.nav-overlay').addClass('transition').addClass('active');
+    $('.nav-overlay', context).addClass('transition').addClass('active');
   };
 
   /**
@@ -95,9 +95,9 @@
    */
   Drupal.disableOverlay = function(complete) {
     if (complete === false) {
-      $('.nav-overlay').removeClass('active');
-    } else if (!$('.mobile-toggle--search').hasClass('uikit-accordion--open') && !$('.mobile-toggle--main-menu').hasClass('uikit-accordion--open')) {
-      $('.nav-overlay').removeClass('transition');
+      $('.nav-overlay', context).removeClass('active');
+    } else if (!$('.mobile-toggle--search', context).hasClass('uikit-accordion--open') && !$('.mobile-toggle--main-menu', context).hasClass('uikit-accordion--open')) {
+      $('.nav-overlay', context).removeClass('transition');
     }
   };
 
@@ -123,8 +123,8 @@
    *   The name of the other tab, eg search, main-menu
    */
   Drupal.handleNavTabbing = function(otherTab) {
-    if ($('.mobile-toggle.mobile-toggle--' + otherTab).hasClass('uikit-accordion--open')) {
-      $('.mobile-toggle.mobile-toggle--' + otherTab)
+    if ($('.mobile-toggle.mobile-toggle--' + otherTab, context).hasClass('uikit-accordion--open')) {
+      $('.mobile-toggle.mobile-toggle--' + otherTab, context)
         .trigger('click');
     }
   };

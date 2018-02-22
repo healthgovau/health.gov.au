@@ -77,7 +77,7 @@
       // Hide the alert when the close button is pressed.
       $('#close-health-alert', context).click(function(e){
         e.preventDefault();
-        $('body').toggleClass('health-alert-inactive');
+        $('body', context).toggleClass('health-alert-inactive');
       });
 
     }
