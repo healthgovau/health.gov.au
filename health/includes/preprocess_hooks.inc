@@ -101,21 +101,6 @@ function health_preprocess_block(&$variables, $hook) {
       break;
   }
 
-  // For bean blocks.
-  if ($variables['block']->module == 'bean') {
-    // Get the bean elements.
-    $beans = $variables['elements']['bean'];
-    // There is only 1 bean per block.
-    $bean_keys = element_children($beans);
-    $bean = $beans[reset($bean_keys)];
-    // Add bean type classes to the block.
-    $variables['classes_array'][] = drupal_html_class(
-      'block-bean-'.$bean['#bundle']
-    );
-    // Add template suggestions for bean types.
-    $variables['theme_hook_suggestions'][] = 'block__bean__'.$bean['#bundle'];
-  }
-
   // Add a class to the block if it is a block menu with the title as a link.
   if ($variables['elements']['#block']->module == 'menu_block' && $variables['elements']['#config']['title_link']) {
     $variables['classes_array'][] = 'block-menu-block--title-link';
@@ -302,6 +287,9 @@ function health_preprocess_entity(&$variables) {
 
     $bean = $variables['bean'];
 
+    // Add template suggestions for bean types.
+    $variables['theme_hook_suggestions'][] = 'block__bean__' . $bean->bundle;
+
     // Add 'active' to classes array if it is the current page of the image and text block link.
     if ($bean->type == 'image_and_text' && $bean->view_mode == 'view_selector') {
       $current_url = '/' . current_path();
@@ -377,7 +365,7 @@ function health_preprocess_field(&$variables) {
     $youtube_code = $video_node->field_video_youtubeid[LANGUAGE_NONE][0]['value'];
     $variables['youtube_code'] = $youtube_code;
     // Add JS to embed video.
-    drupal_add_js(drupal_get_path('theme', 'health') . '/js/health.video.js');
+    $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/health.video.js';
   }
 
   // Statistic value - split up the value into parts so they can be styled.
@@ -621,19 +609,6 @@ function health_preprocess_html(&$variables, $hook) {
       }
     }
   }
-}
-
-/**
- * Override or insert variables into the maintenance page template.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("maintenance_page" in this case.)
- */
-function health_preprocess_maintenance_page(&$variables, $hook) {
-  health_preprocess_html($variables, $hook);
-  health_preprocess_page($variables);
 }
 
 /**

@@ -50,17 +50,30 @@ function health_preprocess_ds_content_type(&$variables) {
 function health_preprocess_ds_table_of_content(&$variables) {
   if ((isset($variables['field_generate_on_this_page'][LANGUAGE_NONE]) && $variables['field_generate_on_this_page'][LANGUAGE_NONE][0]['value'] == 1)) {
     // This node is flagged to display table of content.
-    drupal_add_js(drupal_get_path('theme', 'health') . '/js/anchorific.js');
-    drupal_add_js(drupal_get_path('theme', 'health') . '/js/health.toc.js');
+    $render_array = [
+      '#theme' => 'toc',
+    ];
+
+    $render_array['#attached']['js'][] = [
+      'data' => drupal_get_path('theme', 'health') . '/js/anchorific.js',
+      'type' => 'file',
+    ];
+    $render_array['#attached']['js'][] = [
+      'data' => drupal_get_path('theme', 'health') . '/js/health.toc.js',
+      'type' => 'file',
+    ];
 
     // Pass title text.
-    drupal_add_js([
-      'toc' => [
-        'title' => t('On this page'),
+    $render_array['#attached']['js'][] = [
+      'data' => [
+        'toc' => [
+          'title' => t('On this page'),
+        ],
       ],
-    ], 'setting');
+      'type' => 'setting',
+    ];
 
-    return theme('toc', []);
+    return drupal_render($render_array);
   }
   elseif (isset($variables['field_generate_in_collection'][LANGUAGE_NONE]) && $variables['field_generate_in_collection'][LANGUAGE_NONE][0]['value'] == 1) {
     // This node is flagged to display table of content.
