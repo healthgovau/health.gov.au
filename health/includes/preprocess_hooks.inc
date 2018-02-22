@@ -539,8 +539,14 @@ function health_preprocess_field(&$variables) {
  */
 function health_preprocess_html(&$variables, $hook) {
   // Add google tag manager.
-  drupal_add_js(drupal_get_path('theme', 'health') . '/js/health.gtm.js');
-  $variables['google_tag_manager'] = theme('google_tag_manager', []);
+  $render_gtm = [
+    '#theme' => 'google_tag_manager',
+  ];
+  $render_gtm['#attached']['js'][] = [
+    'data' => drupal_get_path('theme', 'health') . '/js/health.gtm.js',
+    'type' => 'file',
+  ];
+  $variables['google_tag_manager'] = drupal_render($render_gtm);
 
   // Add variables and paths needed for HTML5 and responsive support.
   $variables['base_path'] = base_path();
