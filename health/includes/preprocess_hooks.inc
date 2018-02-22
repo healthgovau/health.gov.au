@@ -291,13 +291,24 @@ function health_preprocess_entity(&$variables) {
     // Add template suggestions for bean types.
     $variables['theme_hook_suggestions'][] = 'block__bean__' . $bean->type;
 
-    // Add 'active' to classes array if it is the current page of the image and text block link.
-    if ($bean->type == 'image_and_text' && $bean->view_mode == 'view_selector') {
-      $current_url = '/' . current_path();
-      if (isset($bean->field_link_internal[LANGUAGE_NONE][0])) {
-        $block_link = $bean->field_link_internal[LANGUAGE_NONE][0]['url'];
-        if ($current_url == drupal_get_normal_path($block_link)) {
-          $variables['classes_array'][] = 'active';
+    if ($bean->type == 'image_and_text') {
+      // Compose block wrapper link url.
+      if ($bean->field_link_internal[LANGUAGE_NONE][0]['query']) {
+        $variables['wrapper_link_url'] = $bean->field_link_internal[LANGUAGE_NONE][0]['url'] . '?' . drupal_http_build_query(
+            $bean->field_link_internal[LANGUAGE_NONE][0]['query']);
+      }
+      else {
+        $variables['wrapper_link_url'] = $bean->field_link_internal[LANGUAGE_NONE][0]['url'];
+      }
+
+      // Add 'active' to classes array if it is the current page of the image and text block link.
+      if ($bean->view_mode == 'view_selector') {
+        $current_url = '/'.current_path();
+        if (isset($bean->field_link_internal[LANGUAGE_NONE][0])) {
+          $block_link = $bean->field_link_internal[LANGUAGE_NONE][0]['url'];
+          if ($current_url == drupal_get_normal_path($block_link)) {
+            $variables['classes_array'][] = 'active';
+          }
         }
       }
     }
