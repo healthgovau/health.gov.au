@@ -56,7 +56,7 @@ function health_preprocess_ds_table_of_content(&$variables) {
     ];
 
     $render_array['#attached']['js'][] = [
-      'data' => drupal_get_path('theme', 'health') . '/js/anchorific.js',
+      'data' => drupal_get_path('theme', 'health') . '/js/anchorific.min.js',
       'type' => 'file',
     ];
     $render_array['#attached']['js'][] = [
