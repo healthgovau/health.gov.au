@@ -24,8 +24,6 @@
 
 <head>
   <?php print $head; ?>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700"
-        rel="stylesheet">
   <title><?php print $head_title; ?></title>
 
   <?php if ($default_mobile_metatags): ?>
@@ -33,20 +31,6 @@
     <meta name="HandheldFriendly" content="true">
     <meta name="viewport" content="width=device-width">
   <?php endif; ?>
-  <script type="text/javascript">
-    var $html = document.documentElement;
-    if ($html.classList) $html.classList.remove("no-js"), $html.classList.add("js"); else {
-      var className = "no-js";
-      $html.className = $html.className.replace(new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"), " "), $html.className += " js"
-    }
-  </script>
-  <?php if ($add_html5_shim): ?>
-    <!--[if lt IE 9]>
-    <script
-      src="<?php print $base_path . $path_to_health; ?>/js/html5shiv.min.js"></script>
-    <![endif]-->
-  <?php endif; ?>
-
   <?php print $styles; ?>
   <?php print $scripts; ?>
 </head>

@@ -13,6 +13,7 @@ CONST RESOURCES_TYPE = [
 ];
 CONST THEME_PATH_TOKEN_GENERIC = '[theme-path]';
 CONST PUBLICATION_TYPE_INFOGRAPHIC = 2176;
+CONST GOOGLE_FONT_API = '//fonts.googleapis.com/css?family=Open+Sans:400,700';
 
 /**
  * Override or insert variables into the block templates.
@@ -554,7 +555,21 @@ function health_preprocess_html(&$variables, $hook) {
   // Get settings for HTML5 and responsive support. array_filter() removes
   // items from the array that have been disabled.
   $meta = array_filter((array)theme_get_setting('health_meta'));
-  $variables['add_html5_shim'] = in_array('html5', $meta);
+
+  // Add html5 shim for lt IE 9.
+  if (in_array('html5', $meta)) {
+    $variables['page']['content']['#attached']['js'][] = [
+      'data' =>  drupal_get_path('theme', 'health') . '/js/html5shiv.min.js',
+      'type' => 'file',
+    ];
+  }
+
+  // Add no-js logic.
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => drupal_get_path('theme', 'health') . '/js/health.nojs.js',
+    'type' => 'file',
+  ];
+
   $variables['default_mobile_metatags'] = in_array('meta', $meta);
 
   // Attributes for html element.
@@ -701,6 +716,12 @@ function health_preprocess_node(&$variables) {
  * Implements THEME_preprocess_page().
  */
 function health_preprocess_page(&$variables) {
+  // Add google font api.
+  $variables['page']['content']['#attached']['css'][] = [
+    'data' => GOOGLE_FONT_API,
+    'type' => 'external',
+  ];
+
   // Add vuejs.
   $variables['page']['content']['#attached']['js'][] = [
     'data' => path_to_theme() . '/js/vue.min.js',
