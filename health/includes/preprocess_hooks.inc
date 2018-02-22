@@ -537,6 +537,14 @@ function health_preprocess_field(&$variables) {
       $variables['items'][0]['#suffix'] = '</a></div><div class="go-to-download-link">Go to <a href="#" class="link-wrapper" role="button">downloads</a></div>';
     }
   }
+
+  // Render publication orderable nmm contact details.
+  if ($variables['element']['#field_name'] == 'field_publication_nmm_id') {
+    $render_array = [
+      '#theme' => 'publication_nmm_contact',
+    ];
+    $variables['publication_nmm_contact'] = drupal_render($render_array);
+  }
 }
 
 /**

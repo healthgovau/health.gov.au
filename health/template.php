@@ -138,6 +138,12 @@ function health_theme() {
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
   ];
 
+  $theme['publication_nmm_contact'] = [
+    'variables' => [],
+    'template' => 'publication_nmm_contact',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
   return $theme;
 }
 
