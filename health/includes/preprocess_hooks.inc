@@ -695,10 +695,21 @@ function health_preprocess_node(&$variables) {
  * Implements THEME_preprocess_page().
  */
 function health_preprocess_page(&$variables) {
-  // Add vuejs and backtotop JS to all pages.
-  drupal_add_js(path_to_theme() . '/js/vue.min.js');
-  drupal_add_js(path_to_theme() . '/js/health.backtotop.js');
-  $variables['backtotop'] = theme('backtotop', []);
+  // Add vuejs.
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/vue.min.js',
+    'type' => 'file',
+  ];
+
+  // Add backtotop JS.
+  $render_backtotop = [
+    '#theme' => 'backtotop',
+  ];
+  $render_backtotop['#attached']['js'] = [
+    'data' => path_to_theme() . '/js/health.backtotop.js',
+    'type' => 'file',
+  ];
+  $variables['backtotop'] = drupal_render($render_backtotop);
   
   // Add readspeaker JS to all pages except listing, homepage, topic and hp topic.
   $variables['readspeaker'] = '';
@@ -709,14 +720,23 @@ function health_preprocess_page(&$variables) {
     'landing_page'
   ];
   if (isset($variables['node']) && !in_array($variables['node']->type, $exclude)) {
-    drupal_add_js(READSPEAKER_URL, 'external');
-    drupal_add_js(path_to_theme() . '/js/readspeaker/ReadSpeakerColorSkin.js');
-    $variables['readspeaker'] = theme('readspeaker', []);
+    $render_readspeaker = [
+      '#theme' => 'readspeaker',
+    ];
+    $render_readspeaker['#attached']['js'][] = [
+      'data' => READSPEAKER_URL,
+      'type' => 'external',
+    ];
+    $render_readspeaker['#attached']['js'][] = [
+      'data' => path_to_theme() . '/js/readspeaker/ReadSpeakerColorSkin.js',
+      'type' => 'file',
+    ];
+    $variables['readspeaker'] = drupal_render($render_readspeaker);
   }
 
   // Add parameters to JS.
-  drupal_add_js(
-    [
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => [
       'health' => [
         'theme_path' => drupal_get_path('theme', 'health'),
         'current_path' => url(
@@ -725,13 +745,11 @@ function health_preprocess_page(&$variables) {
             'absolute' => TRUE,
             'query' => drupal_get_query_parameters()
           ]
-        ), 
+        ),
       ]
     ],
-    [
-      'type' => 'setting'
-    ]
-  );
+    'type' => 'setting',
+  ];
 
   // Always add summary. If it is not needed, it will be removed.
   if (isset($variables['node'])) {
