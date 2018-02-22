@@ -288,7 +288,7 @@ function health_preprocess_entity(&$variables) {
     $bean = $variables['bean'];
 
     // Add template suggestions for bean types.
-    $variables['theme_hook_suggestions'][] = 'block__bean__' . $bean->bundle;
+    $variables['theme_hook_suggestions'][] = 'block__bean__' . $bean->type;
 
     // Add 'active' to classes array if it is the current page of the image and text block link.
     if ($bean->type == 'image_and_text' && $bean->view_mode == 'view_selector') {
