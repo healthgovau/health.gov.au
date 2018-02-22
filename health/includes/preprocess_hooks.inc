@@ -374,17 +374,17 @@ function health_preprocess_field(&$variables) {
     $matches = array();
     preg_match_all("/(\D?)([\d\.]*)(.*)/", $variables['items'][0]['#markup'], $matches);
 
-    $output = '';
+    $theme_vars = array();
     if (!empty($matches[1][0])) {
-      $output .= '<span class="statistic-value-prefix">' . trim($matches[1][0]) . '</span>';
+      $theme_vars['prefix'] = trim($matches[1][0]);
     }
     if (!empty($matches[2][0])) {
-      $output .= '<span class="statistic-value">' . trim($matches[2][0]) . '</span>';
+      $theme_vars['value'] = trim($matches[2][0]);
     }
     if (!empty($matches[3][0])) {
-      $output .= '<span class="statistic-value-suffix">' . trim($matches[3][0]) . '</span>';
+      $theme_vars['suffix'] = trim($matches[3][0]);
     }
-    $variables['items'][0]['#markup'] = $output;
+    $variables['items'][0]['#markup'] = theme('statistic_value', $theme_vars);
   }
 
   // Statistic trend icon - replace with an actual icon.
@@ -396,16 +396,16 @@ function health_preprocess_field(&$variables) {
           $variables['items'][0]['#markup'] = '<span></span>';
           break;
         case 'up-positive';
-          $variables['items'][0]['#markup'] = '<i class="fas fa-arrow-up statistic-icon positive" aria-hidden="true"></i>';
+          $variables['items'][0]['#markup'] = theme('statistic_trend_icon', ['direction' => 'up', 'indication' => 'positive']);
           break;
         case 'down-positive';
-          $variables['items'][0]['#markup'] = '<i class="fas fa-arrow-down statistic-icon positive" aria-hidden="true"></i>';
+          $variables['items'][0]['#markup'] = theme('statistic_trend_icon', ['direction' => 'down', 'indication' => 'positive']);
           break;
         case 'up-negative';
-          $variables['items'][0]['#markup'] = '<i class="fas fa-arrow-up statistic-icon negative" aria-hidden="true"></i>';
+          $variables['items'][0]['#markup'] = theme('statistic_trend_icon', ['direction' => 'up', 'indication' => 'negative']);
           break;
         case 'down-negative';
-          $variables['items'][0]['#markup'] = '<i class="fas fa-arrow-down statistic-icon negative" aria-hidden="true"></i>';
+          $variables['items'][0]['#markup'] = theme('statistic_trend_icon', ['direction' => 'down', 'indication' => 'negative']);
           break;
       }
     }

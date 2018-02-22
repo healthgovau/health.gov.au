@@ -110,6 +110,25 @@ function health_theme() {
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
   ];
 
+  $theme['statistic_value'] = [
+    'variables' => [
+      'prefix' => NULL,
+      'value' => NULL,
+      'suffix' => NULL
+    ],
+    'template' => 'statistic_value',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
+  $theme['statistic_trend_icon'] = [
+    'variables' => [
+      'direction' => NULL,
+      'indication' => NULL
+    ],
+    'template' => 'statistic_trend_icon',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
   return $theme;
 }
 
