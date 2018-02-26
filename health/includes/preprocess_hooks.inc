@@ -747,6 +747,19 @@ function health_preprocess_page(&$variables) {
     'type' => 'file',
   ];
 
+  // Add lazy load images.
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => 'https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.6.0/lazyload.min.js',
+    'type' => 'external',
+  ];
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => 'var myLazyLoad = new LazyLoad();',
+    'type' => 'inline',
+  ];
+
+
+
+
   // Add backtotop JS.
   $render_backtotop = [
     '#theme' => 'backtotop',

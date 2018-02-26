@@ -157,7 +157,7 @@ endif;
       <div class="footer__end row">
       <?php print render($page['footer_bottom']); ?>
         <div class="footer__logo">
-          <img src="/<?php print path_to_theme(); ?>/images/GovCrest.svg" alt="Commonwealth Coat of Arms crest logo">
+          <img data-src="/<?php print path_to_theme(); ?>/images/GovCrest.svg" alt="Commonwealth Coat of Arms crest logo">
         </div>
         <p class="footer__attribution">
           <small>© Commonwealth of Australia</small>

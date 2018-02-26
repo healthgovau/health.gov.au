@@ -17,3 +17,8 @@
     line-height: 0;
   }
 }
+
+// Hide images until they have been lazy loaded.
+img:not([src]) {
+  visibility: hidden;
+}

@@ -819,8 +819,23 @@ function health_image($variables) {
     return file_get_contents(drupal_realpath($variables['path']));
   }
 
-  // Otherwise, do the normal stuff.
-  return theme_image($variables);
+  // If not an SVG, load normally with lazy loading.
+  $attributes = $variables['attributes'];
+  $attributes['src'] = file_create_url($variables['path']);
+  foreach (array(
+             'width',
+             'height',
+             'alt',
+             'title',
+           ) as $key) {
+    if (isset($variables[$key])) {
+      $attributes[$key] = $variables[$key];
+    }
+  }
+  $attributes['data-src'] = $attributes['src'];
+  unset($attributes['src']);
+  return '<img' . drupal_attributes($attributes) . ' />';
+
 }
 
 /**
