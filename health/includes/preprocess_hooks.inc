@@ -578,8 +578,8 @@ function health_preprocess_html(&$variables, $hook) {
   // Add html5 shim for lt IE 9.
   if (in_array('html5', $meta)) {
     $variables['page']['content']['#attached']['js'][] = [
-      'data' =>  drupal_get_path('theme', 'health') . '/js/html5shiv.min.js',
-      'type' => 'file',
+      'data' =>  'https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js',
+      'type' => 'external',
     ];
   }
 
@@ -743,8 +743,8 @@ function health_preprocess_page(&$variables) {
 
   // Add vuejs.
   $variables['page']['content']['#attached']['js'][] = [
-    'data' => path_to_theme() . '/js/vue.min.js',
-    'type' => 'file',
+    'data' => 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.min.js',
+    'type' => 'external',
   ];
 
   // Add lazy load images.
@@ -757,8 +757,27 @@ function health_preprocess_page(&$variables) {
     'type' => 'inline',
   ];
 
-
-
+  // Add our javascript.
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => 'https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js',
+    'type' => 'external',
+  ];
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/health.extlink.js',
+    'type' => 'file',
+  ];
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/health.mobilenav.js',
+    'type' => 'file',
+  ];
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => path_to_theme() . '/pancake/js/pancake.js',
+    'type' => 'file',
+  ];
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/script.js',
+    'type' => 'file',
+  ];
 
   // Add backtotop JS.
   $render_backtotop = [

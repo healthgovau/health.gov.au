@@ -56,8 +56,8 @@ function health_preprocess_ds_table_of_content(&$variables) {
     ];
 
     $render_array['#attached']['js'][] = [
-      'data' => drupal_get_path('theme', 'health') . '/js/anchorific.min.js',
-      'type' => 'file',
+      'data' => 'https://cdnjs.cloudflare.com/ajax/libs/anchorific/1.1/min/anchorific.min.js',
+      'type' => 'external',
     ];
     $render_array['#attached']['js'][] = [
       'data' => drupal_get_path('theme', 'health') . '/js/health.toc.js',
