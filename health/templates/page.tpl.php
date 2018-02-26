@@ -27,6 +27,7 @@ endif;
       <?php print render($page['header-top']); ?>
     </div>
   </div>
+  <?php print $health_alert_bar; ?>
   <header class="uikit-header uikit-header--light" role="banner">
     <div class="container">
       <div class="row">

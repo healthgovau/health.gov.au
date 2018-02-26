@@ -751,7 +751,7 @@ function health_preprocess_page(&$variables) {
   $render_backtotop = [
     '#theme' => 'backtotop',
   ];
-  $render_backtotop['#attached']['js'] = [
+  $render_backtotop['#attached']['js'][] = [
     'data' => path_to_theme() . '/js/health.backtotop.js',
     'type' => 'file',
   ];
@@ -781,6 +781,7 @@ function health_preprocess_page(&$variables) {
   }
 
   // Add parameters to JS.
+  global $base_url;
   $variables['page']['content']['#attached']['js'][] = [
     'data' => [
       'health' => [
@@ -792,6 +793,7 @@ function health_preprocess_page(&$variables) {
             'query' => drupal_get_query_parameters()
           ]
         ),
+        'base_url' => $base_url,
       ]
     ],
     'type' => 'setting',
@@ -927,6 +929,19 @@ function health_preprocess_page(&$variables) {
     }
   }
 
+  // Add global health alert block to the top.
+  $render_health_alert_bar = [
+    '#theme' => 'health_alert_bar',
+  ];
+  $render_health_alert_bar['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/vue-spinner.min.js',
+    'type' => 'file',
+  ];
+  $render_health_alert_bar['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/health.ajaxAlert.js',
+    'type' => 'file',
+  ];
+  $variables['health_alert_bar'] = drupal_render($render_health_alert_bar);
 }
 
 /**

@@ -144,6 +144,12 @@ function health_theme() {
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
   ];
 
+  $theme['health_alert_bar'] = [
+    'variables' => [],
+    'template' => 'health_alert_bar',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
   return $theme;
 }
 
