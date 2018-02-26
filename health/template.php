@@ -521,6 +521,12 @@ function health_js_alter(&$javascript) {
   if ($replace_jquery) {
     $javascript['misc/jquery.js']['data'] = drupal_get_path('theme', 'health') . '/js/jquery.min.js';
   }
+
+  // Move all JS to the footer, to improve page load.
+  foreach($javascript as $key => $js) {
+    $javascript[$key]['scope'] = 'footer';
+  }
+
 }
 
 /**
