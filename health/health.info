@@ -49,8 +49,6 @@ stylesheets[all][] = comment.css
 stylesheets[all][] = node.css
 stylesheets[all][] = superfish.css
 
-; Then we add our own stylesheet.
-stylesheets[all][] = css/styles.css
 
 ; This section lists the regions defined in Zen's default page.tpl.php and
 ; maintenance-page.tpl.php files. The name in brackets is the machine name of

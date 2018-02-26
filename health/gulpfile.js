@@ -4,6 +4,12 @@ var gulpLoadPlugins    = require('gulp-load-plugins');
 var bs                 = require('browser-sync');
 var kss                = require('kss');
 var path               = require('path');
+var gcmq               = require('gulp-group-css-media-queries');
+var gemq               = require('gulp-extract-media-queries');
+var cleanCSS           = require('gulp-clean-css');
+var runSequence        = require('run-sequence');
+var del                = require('del');
+var fs                 = require('fs');
 
 var options = {};
 
@@ -55,7 +61,7 @@ options.styleGuide = {
 
   homepage: 'homepage.md',
   title: 'Parkes Style Guide'
-}
+};
 
 var $ = gulpLoadPlugins();
 
@@ -94,8 +100,52 @@ gulp.task('clean:css', function() {
     ], {force: true});
 });
 
-// Compile and automatically prefix stylesheets
-gulp.task('styles', ['clean:css'], function(){
+/**
+ * Generate styles with soucemap and uncompressed.
+ */
+gulp.task('styles:dev', function(callback) {
+  runSequence(
+    'clean:css',
+    'styles:generate:dev',
+    'css:break-at-media',
+    callback);
+});
+
+/**
+ * Generate styles without sourcemap and compress them.
+ */
+gulp.task('styles:prod', function(callback) {
+  runSequence(
+    'clean:css',
+    'styles:generate:prod',
+    'css:break-at-media',
+    'css:compress',
+    callback);
+});
+
+/**
+ * Compress the css.
+ */
+gulp.task('css:compress', function(){
+  return gulp.src(options.theme.css + '/*.css')
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest(options.theme.css));
+});
+
+/**
+ * Break a css into separate files for each break point.
+ */
+gulp.task('css:break-at-media', function() {
+  return gulp.src(options.theme.css + '/styles.css')
+    .pipe(gcmq())
+    .pipe(gemq())
+    .pipe(gulp.dest(options.theme.css));
+});
+
+/**
+ * Generate css with source map.
+ */
+gulp.task('styles:generate:dev', function(){
   return gulp.src(sassFiles)
     .pipe($.sourcemaps.init())
     .pipe($.sass({
@@ -108,11 +158,14 @@ gulp.task('styles', ['clean:css'], function(){
     .pipe(gulp.dest(options.theme.css));
 });
 
-gulp.task('styles:prod', ['clean:css'], function(){
+/**
+ * Generate css without soucemap.
+ */
+gulp.task('styles:generate:prod', function(){
   return gulp.src(sassFiles)
     .pipe($.sass({
       precision: 10,
-      outputStyle: 'compressed'
+      sourcemap: false
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe($.size({title: 'Styles (production)'}))
@@ -121,7 +174,7 @@ gulp.task('styles:prod', ['clean:css'], function(){
 
 gulp.task('styleguide', ['clean:styleguide'], function() {
   return kss(options.styleGuide);
-})
+});
 
 gulp.task('browser-sync', function() {
   bs.init({
@@ -137,4 +190,4 @@ gulp.task('watch', ['browser-sync'], function(){
 });
 
 // Watch and reload
-gulp.task('default', ['styles', 'watch']);
+gulp.task('default', ['styles:dev', 'watch']);

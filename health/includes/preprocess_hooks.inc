@@ -829,6 +829,70 @@ function health_preprocess_page(&$variables) {
     'type' => 'setting',
   ];
 
+  // Add our css for each media breakpoints
+  $variables['page']['content']['#attached']['css'][] = [
+    'data' => drupal_get_path('theme', 'health') . '/css/styles.css',
+    'media' => 'all',
+    'type' => 'file',
+    'preprocess' => TRUE,
+    'group' => CSS_THEME,
+    'every_page' => TRUE
+  ];
+  $variables['page']['content']['#attached']['css'][] = [
+    'data' => drupal_get_path('theme', 'health') . '/css/min-width-576px.css',
+    'media' => 'screen and (min-width: 576px)',
+    'type' => 'file',
+    'preprocess' => FALSE,
+    'group' => CSS_THEME,
+    'every_page' => TRUE,
+    'weight' => 50
+  ];
+  $variables['page']['content']['#attached']['css'][] = [
+    'data' => drupal_get_path('theme', 'health') . '/css/min-width-768px.css',
+    'media' => 'screen and (min-width: 768px)',
+    'type' => 'file',
+    'preprocess' => FALSE,
+    'group' => CSS_THEME,
+    'every_page' => TRUE,
+    'weight' => 60
+  ];
+  $variables['page']['content']['#attached']['css'][] = [
+    'data' => drupal_get_path('theme', 'health') . '/css/min-width-768px-and-min-width-992px.css',
+    'media' => 'screen and (min-width: 768px) and (min-width:992px)',
+    'type' => 'file',
+    'preprocess' => FALSE,
+    'group' => CSS_THEME,
+    'every_page' => TRUE,
+    'weight' => 70
+  ];
+  $variables['page']['content']['#attached']['css'][] = [
+    'data' => drupal_get_path('theme', 'health') . '/css/min-width-992px.css',
+    'media' => 'screen and (min-width: 922px)',
+    'type' => 'file',
+    'preprocess' => FALSE,
+    'group' => CSS_THEME,
+    'every_page' => TRUE,
+    'weight' => 80
+  ];
+  $variables['page']['content']['#attached']['css'][] = [
+    'data' => drupal_get_path('theme', 'health') . '/css/min-width-768px-and-min-width-1200px.css',
+    'media' => 'screen and (min-width: 768px) and (min-width:1200px)',
+    'type' => 'file',
+    'preprocess' => FALSE,
+    'group' => CSS_THEME,
+    'every_page' => TRUE,
+    'weight' => 90
+  ];
+  $variables['page']['content']['#attached']['css'][] = [
+    'data' => drupal_get_path('theme', 'health') . '/css/min-width-1200px.css',
+    'media' => 'screen and (min-width: 1200px)',
+    'type' => 'file',
+    'preprocess' => FALSE,
+    'group' => CSS_THEME,
+    'every_page' => TRUE,
+    'weight' => 100
+  ];
+
   // Always add summary. If it is not needed, it will be removed.
   if (isset($variables['node'])) {
     $summary = field_get_items('node', $variables['node'], 'field_summary');
