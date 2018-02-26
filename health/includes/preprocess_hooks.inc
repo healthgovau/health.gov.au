@@ -751,7 +751,7 @@ function health_preprocess_page(&$variables) {
   $render_backtotop = [
     '#theme' => 'backtotop',
   ];
-  $render_backtotop['#attached']['js'] = [
+  $render_backtotop['#attached']['js'][] = [
     'data' => path_to_theme() . '/js/health.backtotop.js',
     'type' => 'file',
   ];
