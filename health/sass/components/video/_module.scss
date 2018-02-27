@@ -21,12 +21,10 @@
     position: relative;
     a {
       border-bottom: 0;
-      background-color: white;
       &:hover,
       &:active,
       &:focus {
         border-bottom: 0;
-        background-color: white;
         .video__play-button {
           @include transition(all 0.3s ease-in-out);
           @include opacity(1);
