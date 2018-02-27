@@ -530,6 +530,25 @@ function health_js_alter(&$javascript) {
 
 }
 
+function health_css_alter(&$css) {
+  // Remove unused css.
+  unset($css['modules/book/book.css']);
+  unset($css['profiles/govcms/modules/contrib/ctools/css/ctools.css']);
+  unset($css['profiles/govcms/modules/contrib/date/date_api/date.css']);
+  unset($css['profiles/govcms/modules/contrib/date/date_popup/themes/datepicker.1.7.css']);
+  unset($css['modules/field/theme/field.css']);
+  unset($css['profiles/govcms/modules/contrib/panels/css/panels.css']);
+  unset($css['profiles/govcms/modules/contrib/picture/picture_wysiwyg.css']);
+  unset($css['modules/search/search.css']);
+  unset($css['modules/user/user.css']);
+  unset($css['profiles/govcms/modules/contrib/video_filter/video_filter.css']);
+  unset($css['profiles/govcms/modules/contrib/toc_filter/toc_filter.css']);
+  unset($css['profiles/govcms/libraries/superfish/css/superfish.css']);
+  unset($css['sites/default/themes/site/health/superfish.css']);
+  unset($css['profiles/govcms/modules/contrib/views/css/views.css']);
+  unset($css['profiles/govcms/modules/contrib/facetapi/facetapi.css']);
+}
+
 /**
  * Implements hook_file_entity_download_link().
  *
