@@ -1823,6 +1823,10 @@ h6 {
   padding: 1.6em 0.8em;
 }
 
+.node-video.view-mode-listing_vertical .field-name-field-resource-duration .field-item {
+  margin-bottom: 2px;
+}
+
 .paragraphs-view-news_and_events .views-row,
 .paragraphs-view-display-latest_resources_hp .views-row,
 .paragraphs-view-display-resources_for_public_in_hp .views-row,
