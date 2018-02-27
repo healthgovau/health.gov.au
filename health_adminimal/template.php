@@ -65,13 +65,6 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
 
   if (in_array($form['#id'], $media_forms)) {
 
-    // Make alt text mandatory.
-    if (key_exists('field_file_image_alt_text', $form)) {
-      $form['field_file_image_alt_text'][$form['field_file_image_alt_text']['#language']][0]['value']['#required'] = TRUE;
-      $form['field_file_image_alt_text'][$form['field_file_image_alt_text']['#language']][0]['#required'] = TRUE;
-      $form['field_file_image_alt_text'][$form['field_file_image_alt_text']['#language']]['#required'] = TRUE;
-    }
-
     // Clear filename from title to force users to enter a sensible title.
     if (key_exists('filename', $form)) {
       $form['filename']['#default_value'] = '';
