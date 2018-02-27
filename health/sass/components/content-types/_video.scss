@@ -14,12 +14,23 @@
   &.view-mode-listing_vertical {
     @extend %dm-list-vertical;
     @extend %video__extend--small;
+    .field-name-field-resource-duration .field-item {
+      margin-right: 14px;
+      margin-bottom: 22px;
+      @include uikit-media(sm) {
+        margin-bottom: 2px;
+      }
+    }
   }
 
   // List vertical small
   &.view-mode-listing_vertical_small {
 	@extend %dm-list-vertical--small;
     @extend %video__extend--small;
+    .field-name-field-resource-duration .field-item {
+      margin-right: 2px;
+      margin-bottom: 2px;
+    }
   }
 
   // List horizontal
@@ -134,8 +145,6 @@
   @extend %video__extend;
   .field-name-field-resource-duration .field-item {
     @extend %video__length--small;
-    margin-right: 14px;
-    margin-bottom: 10px;
   }
 }
 
