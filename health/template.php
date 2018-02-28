@@ -528,6 +528,12 @@ function health_js_alter(&$javascript) {
     $javascript[$key]['scope'] = 'footer';
   }
 
+  // Remove unused js.
+  unset($javascript['profiles/govcms/modules/contrib/field_group/field_group.js']);
+  unset($javascript['profiles/govcms/modules/contrib/superfish/superfish.js']);
+  unset($javascript['profiles/govcms/libraries/superfish/superfish.js']);
+  unset($javascript['profiles/govcms/libraries/superfish/supersubs.js']);
+  unset($javascript['profiles/govcms/libraries/superfish/supposition.js']);
 }
 
 function health_css_alter(&$css) {
