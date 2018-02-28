@@ -824,7 +824,7 @@ function health_image($variables) {
   }
 
   // Output an empty alt tag if an alt value hasn't been specified.
-  if ($attributes['alt'] === NULL) {
+  if (!key_exists('alt', $attributes)) {
     $attributes['alt'] = '';
   }
 
