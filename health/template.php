@@ -842,20 +842,23 @@ function health_image($variables) {
   // If not an SVG, load normally with lazy loading.
   $attributes = $variables['attributes'];
   $attributes['src'] = file_create_url($variables['path']);
-  foreach (array(
-             'width',
-             'height',
-             'alt',
-             'title',
-           ) as $key) {
+  foreach (array('width', 'height', 'alt', 'title') as $key) {
     if (isset($variables[$key])) {
       $attributes[$key] = $variables[$key];
     }
   }
+
+  // Output an empty alt tag if an alt value hasn't been specified.
+  if ($attributes['alt'] === NULL) {
+    $attributes['alt'] = '';
+  }
+
+  // Set data-src instead of src for lazy loading.
   $attributes['data-src'] = $attributes['src'];
   unset($attributes['src']);
-  return '<img' . drupal_attributes($attributes) . ' />';
 
+  // Output the image.
+  return '<img' . drupal_attributes($attributes) . ' />';
 }
 
 /**
