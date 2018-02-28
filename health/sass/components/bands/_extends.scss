@@ -7,6 +7,9 @@
   @include uikit-media(sm) {
     padding: uikit-space(1) 0;
   }
+  @include uikit-media(md) {
+    padding: uikit-space(1) 0;
+  }
 
   background-color: $colour-light;
   .block__title {
