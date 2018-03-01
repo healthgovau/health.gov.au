@@ -866,7 +866,8 @@ function health_image($variables) {
   // Provide a default padding space for images, so that they take up the correct
   // space on the screen to prevent reflow and improve lazy loading.
   $path = $variables['path'];
-  $path = str_replace('http://beta-saas.local/sites/default/files/', 'public://', $path);
+  global $base_url;
+  $path = str_replace($base_url, '', $path);
   if (strpos($path, '?') !== FALSE) {
     $path = substr($path, 0, strpos($path, '?'));
   }
