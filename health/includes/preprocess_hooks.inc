@@ -754,10 +754,6 @@ function health_preprocess_page(&$variables) {
     'data' => 'https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.6.0/lazyload.min.js',
     'type' => 'external',
   ];
-  $variables['page']['content']['#attached']['js'][] = [
-    'data' => 'var myLazyLoad = new LazyLoad();',
-    'type' => 'inline',
-  ];
 
   // Add our javascript.
   $variables['page']['content']['#attached']['js'][] = [

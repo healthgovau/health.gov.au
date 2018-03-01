@@ -863,8 +863,32 @@ function health_image($variables) {
   $attributes['data-src'] = $attributes['src'];
   unset($attributes['src']);
 
-  // Output the image.
-  return '<img' . drupal_attributes($attributes) . ' />';
+  // Provide a default padding space for images, so that they take up the correct
+  // space on the screen to prevent reflow and improve lazy loading.
+  $path = $variables['path'];
+  $path = str_replace('http://beta-saas.local/sites/default/files/', 'public://', $path);
+  if (strpos($path, '?') !== FALSE) {
+    $path = substr($path, 0, strpos($path, '?'));
+  }
+  $file_path = drupal_realpath($path);
+  if (!empty($file_path)) {
+    $size = image_get_info($file_path);
+    if (isset($size['width']) && isset($size['height'])) {
+      $attributes['width'] = $size['width'];
+      $attributes['height'] = $size['height'];
+      $ratio = round(($attributes['height'] / $attributes['width']) * 100);
+    }
+  }
+  if (isset($ratio)) {
+    // Output the image.
+    return '<div class="image-wrapper image-loading" style="padding-bottom: ' . $ratio . '%">
+      <div class="image"><img' . drupal_attributes($attributes) . ' /></div></div>';
+  } else {
+    // If we cannot find the image size, we just output a normal image with no
+    // fancy lazy loading and reserved space.
+    return '<img' . drupal_attributes($attributes) . ' />';
+  }
+
 }
 
 /**

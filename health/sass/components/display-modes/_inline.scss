@@ -23,12 +23,6 @@
   .field-name-field-image-featured {
     img {
       border: $health-borderize;
-      max-height: 200px;
-      width: auto;
-      @include uikit-media(sm) {
-        width: 100%;
-        max-height: none;
-      }
     }
   }
   // date
