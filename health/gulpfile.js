@@ -185,7 +185,7 @@ gulp.task('browser-sync', function() {
 
 // Watch files for changes & reload
 gulp.task('watch', ['browser-sync'], function(){
-  gulp.watch([options.theme.sass + '/**/*.scss'], ['styles', bs.reload]);
+  gulp.watch([options.theme.sass + '/**/*.scss'], ['styles:dev', bs.reload]);
   gulp.watch(['./templates/*.php', './*.php']).on('change', bs.reload);
 });
 
