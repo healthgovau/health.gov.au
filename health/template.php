@@ -866,12 +866,13 @@ function health_image($variables) {
   // Provide a default padding space for images, so that they take up the correct
   // space on the screen to prevent reflow and improve lazy loading.
   $path = $variables['path'];
-  global $base_url;
-  $path = str_replace($base_url, '', $path);
+  $public = file_create_url("public://");
+  $path = str_replace($public, 'public://', $path);
   if (strpos($path, '?') !== FALSE) {
     $path = substr($path, 0, strpos($path, '?'));
   }
   $file_path = drupal_realpath($path);
+
   if (!empty($file_path)) {
     $size = image_get_info($file_path);
     if (isset($size['width']) && isset($size['height'])) {
