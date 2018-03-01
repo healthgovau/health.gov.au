@@ -933,10 +933,7 @@ function health_preprocess_page(&$variables) {
   $render_health_alert_bar = [
     '#theme' => 'health_alert_bar',
   ];
-  $render_health_alert_bar['#attached']['js'][] = [
-    'data' => path_to_theme() . '/js/vue-spinner.min.js',
-    'type' => 'file',
-  ];
+  $render_health_alert_bar['#attached']['library'][] = ['system', 'ui.datepicker'];
   $render_health_alert_bar['#attached']['js'][] = [
     'data' => path_to_theme() . '/js/health.ajaxAlert.js',
     'type' => 'file',
@@ -994,4 +991,19 @@ function health_preprocess_views_view_list(&$variables) {
       $variables['classes_array'][$key] .= ' health-icon--'.end($custom_class);
     }
   }
+}
+
+/**
+ * Implement THEME_preprocess_views_view_row_rss().
+ *
+ * Add node ID to the feed.
+ * Fix link format.
+ */
+function health_preprocess_views_view_row_rss(&$variables) {
+  $result = $variables['view']->result;
+  $id = $variables['id'];
+  $nid = $result[$id - 1]->nid;
+  $variables['nid'] = $nid;
+  $variables['link'] = str_replace('%3Ca%20href%3D%22/', '', $variables['link']);
+  $variables['link'] = str_replace('%22%3Eview%3C/a%3E', '', $variables['link']);
 }

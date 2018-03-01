@@ -27,7 +27,6 @@ endif;
       <?php print render($page['header-top']); ?>
     </div>
   </div>
-  <?php print $health_alert_bar; ?>
   <header class="uikit-header uikit-header--light" role="banner">
     <div class="container">
       <div class="row">
@@ -63,6 +62,8 @@ endif;
   <?php print render($page['alerts']); ?>
 
   <?php print render($page['navigation']); ?>
+
+  <?php print $health_alert_bar; ?>
 
   <?php print render($page['highlighted']); ?>
 

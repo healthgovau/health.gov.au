@@ -5,15 +5,17 @@
   // To understand behaviors, see https://drupal.org/node/756722#behaviors
   Drupal.behaviors.ajaxAlert = {
     attach: function (context, settings) {
-      var url = settings.health.base_url + '/test-feed';
+      var url = settings.health.base_url + '/news-and-events/health-alerts/active-feed';
 
-      // define a mixin object
-      var myMixin = {
+      // Function to call feed and assign values to array.
+      var ajaxMixin = {
         methods: {
           callFeed: function ( url ) {
-            var titles = [];
+            // No cookie is set to hide block.
+            var items = [];
             var scope = this;
 
+            // Make AJAX call.
             $.ajax({
               type: 'GET',
               url: url,
@@ -21,54 +23,91 @@
               success: function (response) {
                 var xml = $(response);
                 xml.find('item').each(function () {
-                  titles.push(
-                    {
-                      'id': $(this).find('title').text(),
-                      'title': $(this).find('title').text(),
-                    });
+
+                  // Check if the node list appears in cookies already.
+                  var datetime = $.datepicker.formatDate('@', new Date($(this).find('pubDate').text()));
+                  var cookie = 'HideHealthAlert-' + $(this).find('id').text() + '-' + datetime;
+                  var hideAlert = scope.getCookie(cookie);
+                  if (!hideAlert) {
+                    // Cookie is set to hide the block.
+                    items.push(
+                      {
+                        'id': $(this).find('id').text(),
+                        'title': $(this).find('title').text(),
+                        'link': $(this).find('link').text(),
+                        'date': datetime,
+                      });
+                  }
                 });
-                scope.loading = false;
-                scope.titles = titles;
+
+                // Check if there is data returned.
+                if (items.length === 0) {
+                  scope.show = false;
+                }
+                else {
+                  // Set global variable data.
+                  scope.show = true;
+                  scope.items = items;
+                }
               },
               error: function (error) {
-                scope.loading = true;
               }
             });
           }
         }
       };
 
-      var PulseLoader = VueSpinner.PulseLoader;
+      // Functions to hide alert block and set cookie to hide alert block.
+      var cookieMixin = {
+        methods: {
+          hideAlert: function (event) {
+            this.show = false;
+            var scope = this;
 
-      var resultItem = Vue.component('result-item', {
-        template: '\
-          <li >\
-            {{ title }}\
-          </li>\
-        ',
-        props: ['title'],
+            $.each(this.items, function (index, value) {
+              // Set cookie to hide alert for 100 years.
+              scope.setCookie('HideHealthAlert' + '-' + value.id + '-' + value.date, true, 100)
+            });
+          },
+          setCookie: function (name, value, years) {
+            var expires = "";
+            if (years) {
+              var date = new Date();
+              date.setTime(date.getTime() + (years*365*24*60*60*1000));
+              expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+          },
+          getCookie: function( name ) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+              var c = ca[i];
+              while (c.charAt(0)==' ') c = c.substring(1,c.length);
+              if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+          },
+        }
+      };
+
+      // Vue filter to convert timestamp to dd MM yy format.
+      Vue.filter('formatDate', function(value) {
+        if (value) {
+          return $.datepicker.formatDate('dd MM yy', new Date(parseInt(value)));
+        }
       });
 
       new Vue({
-        el: '#ajax-container',
+        el: '#health-alert-ajax-container',
         data: {
-          loading: true,
-          titles: [],
-          size: '1em',
-          color: '#3AB982',
-          height: '35px',
-          width: '4px',
-          margin: '2px',
-          radius: '2px'
+          items: [],
+          show: false
         },
-        mounted: function () {
+        created: function () {
           this.callFeed(url)
         },
-        mixins: [myMixin],
-        components: {
-          PulseLoader,
-          resultItem
-        }
+        mixins: [ajaxMixin, cookieMixin],
       });
     }
   }
