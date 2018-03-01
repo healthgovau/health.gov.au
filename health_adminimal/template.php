@@ -65,13 +65,6 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
 
   if (in_array($form['#id'], $media_forms)) {
 
-    // Make alt text mandatory.
-    if (key_exists('field_file_image_alt_text', $form)) {
-      $form['field_file_image_alt_text'][$form['field_file_image_alt_text']['#language']][0]['value']['#required'] = TRUE;
-      $form['field_file_image_alt_text'][$form['field_file_image_alt_text']['#language']][0]['#required'] = TRUE;
-      $form['field_file_image_alt_text'][$form['field_file_image_alt_text']['#language']]['#required'] = TRUE;
-    }
-
     // Clear filename from title to force users to enter a sensible title.
     if (key_exists('filename', $form)) {
       $form['filename']['#default_value'] = '';
@@ -120,6 +113,11 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
   // Allow more than 128 characters for view descriptions.
   if ($form['#form_id'] == 'views_ui_edit_display_form') {
     $form['options']['display_description']['#maxlength'] = 512;
+  }
+
+  // Video duration validation
+  if (isset($form['field_resource_duration'])) {
+    $form['field_resource_duration']['#element_validate'][] = '_health_adminimal_resource_duration_validator';
   }
 
 }
@@ -263,6 +261,20 @@ function _health_adminimal_publication_date_validator($form, &$form_state) {
     if (strtotime($form_state['values']['field_date_updated'][LANGUAGE_NONE][0]['value']) < strtotime($form_state['values']['field_publication_date'][LANGUAGE_NONE][0]['value'])) {
       form_set_error('field_date_updated', t('Last updated date must be later than publication date.'));
     }
+  }
+}
+
+/**
+ * Video duration validator.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function _health_adminimal_resource_duration_validator($element, &$form_state) {
+  $field_name = $element[LANGUAGE_NONE]['#field_name'];
+  $value = $form_state['values'][$field_name][LANGUAGE_NONE][0]['value'];
+  if (!empty($value) && preg_match('/^([1-9])?[0-9]:([1-5]?[0-9]:)?[0-5][0-9]/', $value) == 0) {
+    form_error($element, t('Duration must be in the format HH:MM:SS with no leading spaces, for example <strong>2:26</strong> (2 minutes and 26 seconds) or <strong>1:43:59</strong> (one hour, 43 minutes and 59 seconds).'));
   }
 }
 

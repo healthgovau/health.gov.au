@@ -75,58 +75,59 @@
         $(this).toggleClass('expanded');
         $('.filter-topics-by-letter', context).toggleClass('facetshow');
       });
+
+      /**
+       * Enable the overlay.
+       */
+      Drupal.enableOverlay = function() {
+        $('.nav-overlay', context).addClass('transition').addClass('active');
+      };
+
+      /**
+       * Disable the overlay only if no tabs are currently active.
+       * Supports switching between tabs without the overlay disappearing.
+       *
+       * @param bool complete
+       *   Is this the start of end of the animation / transition.
+       *
+       */
+      Drupal.disableOverlay = function(complete) {
+        if (complete === false) {
+          $('.nav-overlay', context).removeClass('active');
+        } else if (!$('.mobile-toggle--search', context).hasClass('uikit-accordion--open') && !$('.mobile-toggle--main-menu', context).hasClass('uikit-accordion--open')) {
+          $('.nav-overlay', context).removeClass('transition');
+        }
+      };
+
+      /**
+       * Swap text from Open to Close.
+       * @param $element
+       *   The element to change the text.
+       * @param text
+       *   The name of the button, eg search, menu etc to suffix to Open/Close
+       */
+      Drupal.toggleText = function ($element, text) {
+        // Update text.
+        if ($element.find('span').text().trim() === 'Open ' + text) {
+          $element.find('span').text('Close ' + text);
+        } else {
+          $element.find('span').text('Open ' + text);
+        }
+      };
+
+      /**
+       * Handle when a tab is already active and other tab is clicked.
+       * @param otherTab
+       *   The name of the other tab, eg search, main-menu
+       */
+      Drupal.handleNavTabbing = function(otherTab) {
+        if ($('.mobile-toggle.mobile-toggle--' + otherTab, context).hasClass('uikit-accordion--open')) {
+          $('.mobile-toggle.mobile-toggle--' + otherTab, context)
+            .trigger('click');
+        }
+      };
     }
   };
 
-  /**
-   * Enable the overlay.
-   */
-  Drupal.enableOverlay = function() {
-    $('.nav-overlay', context).addClass('transition').addClass('active');
-  };
-
-  /**
-   * Disable the overlay only if no tabs are currently active.
-   * Supports switching between tabs without the overlay disappearing.
-   *
-   * @param bool complete
-   *   Is this the start of end of the animation / transition.
-   *
-   */
-  Drupal.disableOverlay = function(complete) {
-    if (complete === false) {
-      $('.nav-overlay', context).removeClass('active');
-    } else if (!$('.mobile-toggle--search', context).hasClass('uikit-accordion--open') && !$('.mobile-toggle--main-menu', context).hasClass('uikit-accordion--open')) {
-      $('.nav-overlay', context).removeClass('transition');
-    }
-  };
-
-  /**
-   * Swap text from Open to Close.
-   * @param $element
-   *   The element to change the text.
-   * @param text
-   *   The name of the button, eg search, menu etc to suffix to Open/Close
-   */
-  Drupal.toggleText = function ($element, text) {
-    // Update text.
-    if ($element.find('span').text().trim() === 'Open ' + text) {
-      $element.find('span').text('Close ' + text);
-    } else {
-      $element.find('span').text('Open ' + text);
-    }
-  };
-
-  /**
-   * Handle when a tab is already active and other tab is clicked.
-   * @param otherTab
-   *   The name of the other tab, eg search, main-menu
-   */
-  Drupal.handleNavTabbing = function(otherTab) {
-    if ($('.mobile-toggle.mobile-toggle--' + otherTab, context).hasClass('uikit-accordion--open')) {
-      $('.mobile-toggle.mobile-toggle--' + otherTab, context)
-        .trigger('click');
-    }
-  };
 
 })(jQuery, Drupal, this, this.document);

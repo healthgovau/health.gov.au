@@ -819,8 +819,22 @@ function health_image($variables) {
     return file_get_contents(drupal_realpath($variables['path']));
   }
 
-  // Otherwise, do the normal stuff.
-  return theme_image($variables);
+  // Normal image output.
+  $attributes = $variables['attributes'];
+  $attributes['src'] = file_create_url($variables['path']);
+
+  foreach (array('width', 'height', 'alt', 'title') as $key) {
+    if (isset($variables[$key])) {
+      $attributes[$key] = $variables[$key];
+    }
+  }
+
+  // Output an empty alt tag if an alt value hasn't been specified.
+  if (!key_exists('alt', $attributes)) {
+    $attributes['alt'] = '';
+  }
+
+  return '<img' . drupal_attributes($attributes) . ' />';
 }
 
 /**
