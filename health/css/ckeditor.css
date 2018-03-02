@@ -6477,6 +6477,9 @@ ul.social__links,
 .node-health-alert.view-mode-full .field-name-field-related-health-topics .field-label {
   width: auto; }
 
+.node-health-alert.view-mode-listing_vertical .field-type-taxonomy-term-reference {
+  padding-right: 0.8em; }
+
 .node-publication {
   background: transparent; }
   .node-publication.view-mode-full .field-name-field-image-featured .go-to-download-link {

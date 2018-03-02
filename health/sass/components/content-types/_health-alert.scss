@@ -28,7 +28,10 @@
 
 	// Major list
 	&.view-mode-listing_vertical {
-		@extend %dm-list-vertical;
+      @extend %dm-list-vertical;
+      .field-type-taxonomy-term-reference {
+        padding-right: uikit-space(.5);
+      }
 	}
 
     // List vertical small

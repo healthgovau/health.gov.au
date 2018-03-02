@@ -1009,3 +1009,14 @@ function health_preprocess_views_view_row_rss(&$variables) {
   $variables['link'] = str_replace('%3Ca%20href%3D%22/', '', $variables['link']);
   $variables['link'] = str_replace('%22%3Eview%3C/a%3E', '', $variables['link']);
 }
+
+/**
+ * Implements THEME_preprocess_views_view_rss().
+ */
+function health_preprocess_views_view_rss(&$variables) {
+  // Disable caching for health alert RSS feed.
+  if ($variables['view']->plugin_name == 'rss' && $variables['view']->name == 'health_alerts') {
+    drupal_add_http_header('Cache-Control', 'no-cache, no-store');
+    drupal_page_is_cacheable(FALSE);
+  }
+}
