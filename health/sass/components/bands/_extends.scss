@@ -35,6 +35,9 @@
 .listing-back {
   @extend %band;
   padding: uikit-space(0.8) 0 uikit-space(0.8) 0;
+  @include uikit-media(md) {
+    padding: uikit-space(0.8) 0 uikit-space(0.8) 0;
+  }
   border-top: 1px solid $colour-light-darker;
   .wrapper {
     @extend .container;
