@@ -167,3 +167,7 @@ endif;
   </footer>
   <?php print $backtotop; ?>
 </div>
+
+<!--[if IE 8]>
+<script src="<?php print path_to_theme(); ?>/js/script-ie8.js"></script>
+<![endif]-->
