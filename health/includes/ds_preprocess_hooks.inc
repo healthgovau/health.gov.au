@@ -20,6 +20,11 @@ function health_preprocess_ds_content_type(&$variables) {
   $names = node_type_get_names();
   $label = $names[$variables['node']->type];
 
+  // Do not display standard page.
+  if ($label == 'Standard page') {
+    $label = '';
+  }
+
   // Setup the field.
   $field_variables = [
     'label_hidden' => FALSE,
