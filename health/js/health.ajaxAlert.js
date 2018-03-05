@@ -5,7 +5,7 @@
   // To understand behaviors, see https://drupal.org/node/756722#behaviors
   Drupal.behaviors.ajaxAlert = {
     attach: function (context, settings) {
-      var url = settings.health.base_url + '/news-and-events/health-alerts/active-feed';
+      var url = settings.health.base_url + '/news-and-events/health-alerts.xml';
 
       // Function to call feed and assign values to array.
       var ajaxMixin = {

@@ -1004,7 +1004,7 @@ function health_preprocess_views_view_list(&$variables) {
 function health_preprocess_views_view_row_rss(&$variables) {
   $result = $variables['view']->result;
   $id = $variables['id'];
-  $nid = $result[$id - 1]->nid;
+  $nid = $result[$id - 1]->entity;
   $variables['nid'] = $nid;
   $variables['link'] = str_replace('%3Ca%20href%3D%22/', '', $variables['link']);
   $variables['link'] = str_replace('%22%3Eview%3C/a%3E', '', $variables['link']);
