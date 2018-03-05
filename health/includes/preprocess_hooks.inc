@@ -891,6 +891,12 @@ function health_preprocess_page(&$variables) {
     'weight' => 100
   ];
 
+  $variables['page']['content']['#attached']['css'][] = [
+    'data' => drupal_get_path('theme', 'health') . '/css/ie8.css',
+    'type' => 'file',
+    'browsers' => array('IE' => 'IE 8', '!IE' => FALSE)
+  ];
+
   // Always add summary. If it is not needed, it will be removed.
   if (isset($variables['node'])) {
     $summary = field_get_items('node', $variables['node'], 'field_summary');
