@@ -894,6 +894,34 @@ function health_image($variables) {
 }
 
 /**
+ * Returns HTML for a source tag.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - media: The media query to use.
+ *   - src: Either the path of the image file (relative to base_path()) or a
+ *     full URL.
+ *   - dimensions: The width and height of the image (if known).
+ *
+ * @ingroup themeable
+ */
+function health_picture_source(array $variables) {
+
+  $attributes['data-srcset'] = $variables['srcset'];
+
+  if (isset($variables['media']) && !empty($variables['media'])) {
+    $attributes['media'] = $variables['media'];
+  }
+
+  if (isset($variables['mime_type']) && !empty($variables['mime_type'])) {
+    $attributes['type'] = $variables['mime_type'];
+  }
+  if (isset($variables['sizes']) && !empty($variables['sizes'])) {
+    $attributes['sizes'] = $variables['sizes'];
+  }
+}
+
+/**
  * Implements hook_entity_view_mode_alter().
  *
  * @param $view_mode

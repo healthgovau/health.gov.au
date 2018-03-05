@@ -104,9 +104,8 @@ features[] = favicon
 features[] = main_menu
 features[] = secondary_menu
 
-
-
 ; Set the default values of settings on the theme-settings.php form.
+
 settings[health_breadcrumb]           = yes
 settings[health_breadcrumb_home]      = 1
 settings[health_breadcrumb_trailing]  = 0
@@ -117,11 +116,9 @@ settings[health_meta][]               = html5
 settings[health_meta][]               = meta
 settings[health_rebuild_registry]     = 1
 
-; To make this sub-theme an admin theme with shortcut links next to titles,
-; uncomment the line below.
+; Breakpoints
 
-;settings[shortcut_module_link]    = 1
-
-; To add a Panels layout (which can also be used by Display Suite), uncomment
-; the line below and see the documentation at: https://drupal.org/node/495654
-plugins[panels][layouts] = panels-layouts
+breakpoints[lg] = (min-width: 992px)
+breakpoints[md] = (min-width: 768px)
+breakpoints[sm] = (min-width: 576px)
+breakpoints[xs] = (min-width: 0px)
