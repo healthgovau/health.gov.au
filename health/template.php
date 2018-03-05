@@ -919,6 +919,8 @@ function health_picture_source(array $variables) {
   if (isset($variables['sizes']) && !empty($variables['sizes'])) {
     $attributes['sizes'] = $variables['sizes'];
   }
+
+  return '<source' . drupal_attributes($attributes) . ' />';
 }
 
 /**
