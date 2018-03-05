@@ -5913,6 +5913,10 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
 .node-type-health-topic-hp .page-title.header.header--light {
   margin-bottom: 0; }
 
+.page-news-and-events .region-title-supp {
+  padding: 1em;
+  background: #e5e5e5; }
+
 @media print {
   .footer {
     display: none; } }
