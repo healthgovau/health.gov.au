@@ -29,10 +29,15 @@
 	// Major list
 	&.view-mode-listing_vertical {
       @extend %dm-list-vertical;
+	}
+
+    // list vertical three tags
+    &.view-mode-listing_vertical_three_tags {
+      @extend %dm-list-vertical;
       .field-type-taxonomy-term-reference {
         padding-right: uikit-space(.5);
       }
-	}
+    }
 
     // List vertical small
     &.view-mode-listing_vertical_small {
