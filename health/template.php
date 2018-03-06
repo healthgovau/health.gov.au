@@ -553,6 +553,14 @@ function health_css_alter(&$css) {
   unset($css['sites/default/themes/site/health/superfish.css']);
   unset($css['profiles/govcms/modules/contrib/views/css/views.css']);
   unset($css['profiles/govcms/modules/contrib/facetapi/facetapi.css']);
+
+  // Make sure some css is not rendered on IE8.
+  if (key_exists('profiles/govcms/modules/contrib/ds/layouts/ds_2col/ds_2col.css', $css)) {
+    $css['profiles/govcms/modules/contrib/ds/layouts/ds_2col/ds_2col.css']['browsers'] = array('IE' => 'gt IE 8');
+  }
+  if (key_exists('profiles/govcms/modules/contrib/ds/layouts/ds_2col_stacked/ds_2col_stacked.css', $css)) {
+    $css['profiles/govcms/modules/contrib/ds/layouts/ds_2col_stacked/ds_2col_stacked.css']['browsers'] = array('IE' => 'gt IE 8');
+  }
 }
 
 /**

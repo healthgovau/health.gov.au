@@ -35,7 +35,7 @@ endif;
             <a href="<?php print $front_page; ?>"
              title="<?php print t('Home'); ?>" rel="home"
              class="uikit-header__logo">
-              <img src="/<?php print path_to_theme(); ?>/images/DoHCrest.png"
+              <img data-src="/<?php print path_to_theme(); ?>/images/DoHCrest.png"
                 alt="<?php print t('Australia government Department of Health'); ?>"
                 class="uikit-header__logo-image uikit-responsive-media-img"/>
             </a>
@@ -169,5 +169,5 @@ endif;
 </div>
 
 <!--[if IE 8]>
-<script src="<?php print path_to_theme(); ?>/js/script-ie8.js"></script>
+<script src="/<?php print path_to_theme(); ?>/js/script-ie8.js"></script>
 <![endif]-->

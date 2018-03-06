@@ -840,61 +840,63 @@ function health_preprocess_page(&$variables) {
     'data' => drupal_get_path('theme', 'health') . '/css/min-width-576px.css',
     'media' => 'screen and (min-width: 576px)',
     'type' => 'file',
-    'preprocess' => FALSE,
     'group' => CSS_THEME,
     'every_page' => TRUE,
-    'weight' => 50
+    'weight' => 50,
+    'browsers' => array('IE' => 'gt IE 8'),
   ];
   $variables['page']['content']['#attached']['css'][] = [
     'data' => drupal_get_path('theme', 'health') . '/css/min-width-768px.css',
     'media' => 'screen and (min-width: 768px)',
     'type' => 'file',
-    'preprocess' => FALSE,
     'group' => CSS_THEME,
     'every_page' => TRUE,
-    'weight' => 60
+    'weight' => 60,
+    'browsers' => array('IE' => 'gt IE 8'),
   ];
   $variables['page']['content']['#attached']['css'][] = [
     'data' => drupal_get_path('theme', 'health') . '/css/min-width-768px-and-min-width-992px.css',
     'media' => 'screen and (min-width: 768px) and (min-width:992px)',
     'type' => 'file',
-    'preprocess' => FALSE,
     'group' => CSS_THEME,
     'every_page' => TRUE,
-    'weight' => 70
+    'weight' => 70,
+    'browsers' => array('IE' => 'gt IE 8'),
   ];
   $variables['page']['content']['#attached']['css'][] = [
     'data' => drupal_get_path('theme', 'health') . '/css/min-width-992px.css',
     'media' => 'screen and (min-width: 922px)',
     'type' => 'file',
-    'preprocess' => FALSE,
     'group' => CSS_THEME,
     'every_page' => TRUE,
-    'weight' => 80
+    'weight' => 80,
+    'browsers' => array('IE' => 'gt IE 8'),
   ];
   $variables['page']['content']['#attached']['css'][] = [
     'data' => drupal_get_path('theme', 'health') . '/css/min-width-768px-and-min-width-1200px.css',
     'media' => 'screen and (min-width: 768px) and (min-width:1200px)',
     'type' => 'file',
-    'preprocess' => FALSE,
     'group' => CSS_THEME,
     'every_page' => TRUE,
-    'weight' => 90
+    'weight' => 90,
+    'browsers' => array('IE' => 'gt IE 8'),
   ];
   $variables['page']['content']['#attached']['css'][] = [
     'data' => drupal_get_path('theme', 'health') . '/css/min-width-1200px.css',
     'media' => 'screen and (min-width: 1200px)',
     'type' => 'file',
-    'preprocess' => FALSE,
     'group' => CSS_THEME,
     'every_page' => TRUE,
-    'weight' => 100
+    'weight' => 100,
+    'browsers' => array('IE' => 'gt IE 8'),
   ];
 
   $variables['page']['content']['#attached']['css'][] = [
     'data' => drupal_get_path('theme', 'health') . '/css/ie8.css',
     'type' => 'file',
-    'browsers' => array('IE' => 'IE 8', '!IE' => FALSE)
+    'browsers' => array('IE' => 'IE 8', '!IE' => FALSE),
+    'group' => CSS_THEME,
+    'weight' => 999 // Load first.
   ];
 
   // Always add summary. If it is not needed, it will be removed.
