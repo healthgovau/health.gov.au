@@ -117,17 +117,19 @@
 
   Drupal.behaviors.lazyLoadImages = {
     attach: function (context, settings) {
-      var myLazyLoad = new LazyLoad({
-        callback_load: function(el) {
-          // Remove all the space reserving class and styles.
-          $(el).parents('.image-wrapper')
-            .removeClass('image-loading')
-            .removeClass('image-wrapper')
-            .css('padding-bottom', '')
-            .find('.image')
-            .removeClass('image');
-        }
-      });
+      if (typeof LazyLoad !== 'undefined') {
+        var myLazyLoad = new LazyLoad({
+          callback_load: function (el) {
+            // Remove all the space reserving class and styles.
+            $(el).parents('.image-wrapper')
+              .removeClass('image-loading')
+              .removeClass('image-wrapper')
+              .css('padding-bottom', '')
+              .find('.image')
+              .removeClass('image');
+          }
+        });
+      }
     }
   };
 
