@@ -11,6 +11,31 @@ $fa-border-color:     #eee !default;
 $fa-inverse:          #fff !default;
 $fa-li-width:         (30em / 14) !default;
 
+// Icons we use
+
+
+$fa-var-search: "\f002";
+$fa-var-envelope-o: "\f003";
+$fa-var-volume-up: "\f028";
+$fa-var-times: "\f00d";
+$fa-var-times-circle: "\f057";
+$fa-var-arrow-down: "\f063";
+$fa-var-arrow-left: "\f060";
+$fa-var-arrow-right: "\f061";
+$fa-var-arrow-up: "\f062";
+$fa-var-external-link: "\f08e";
+$fa-var-phone: "\f095";
+$fa-var-twitter: "\f099";
+$fa-var-facebook: "\f09a";
+$fa-var-bars: "\f0c9";
+$fa-var-angle-down: "\f107";
+$fa-var-angle-left: "\f104";
+$fa-var-angle-right: "\f105";
+$fa-var-angle-up: "\f106";
+
+// Icons we don't use
+/*
+
 $fa-var-500px: "\f26e";
 $fa-var-address-book: "\f2b9";
 $fa-var-address-book-o: "\f2ba";
@@ -32,10 +57,6 @@ $fa-var-angle-double-down: "\f103";
 $fa-var-angle-double-left: "\f100";
 $fa-var-angle-double-right: "\f101";
 $fa-var-angle-double-up: "\f102";
-$fa-var-angle-down: "\f107";
-$fa-var-angle-left: "\f104";
-$fa-var-angle-right: "\f105";
-$fa-var-angle-up: "\f106";
 $fa-var-apple: "\f179";
 $fa-var-archive: "\f187";
 $fa-var-area-chart: "\f1fe";
@@ -47,10 +68,6 @@ $fa-var-arrow-circle-o-right: "\f18e";
 $fa-var-arrow-circle-o-up: "\f01b";
 $fa-var-arrow-circle-right: "\f0a9";
 $fa-var-arrow-circle-up: "\f0aa";
-$fa-var-arrow-down: "\f063";
-$fa-var-arrow-left: "\f060";
-$fa-var-arrow-right: "\f061";
-$fa-var-arrow-up: "\f062";
 $fa-var-arrows: "\f047";
 $fa-var-arrows-alt: "\f0b2";
 $fa-var-arrows-h: "\f07e";
@@ -69,7 +86,6 @@ $fa-var-bank: "\f19c";
 $fa-var-bar-chart: "\f080";
 $fa-var-bar-chart-o: "\f080";
 $fa-var-barcode: "\f02a";
-$fa-var-bars: "\f0c9";
 $fa-var-bath: "\f2cd";
 $fa-var-bathtub: "\f2cd";
 $fa-var-battery: "\f240";
@@ -234,7 +250,6 @@ $fa-var-ellipsis-h: "\f141";
 $fa-var-ellipsis-v: "\f142";
 $fa-var-empire: "\f1d1";
 $fa-var-envelope: "\f0e0";
-$fa-var-envelope-o: "\f003";
 $fa-var-envelope-open: "\f2b6";
 $fa-var-envelope-open-o: "\f2b7";
 $fa-var-envelope-square: "\f199";
@@ -249,13 +264,11 @@ $fa-var-exclamation-circle: "\f06a";
 $fa-var-exclamation-triangle: "\f071";
 $fa-var-expand: "\f065";
 $fa-var-expeditedssl: "\f23e";
-$fa-var-external-link: "\f08e";
 $fa-var-external-link-square: "\f14c";
 $fa-var-eye: "\f06e";
 $fa-var-eye-slash: "\f070";
 $fa-var-eyedropper: "\f1fb";
 $fa-var-fa: "\f2b4";
-$fa-var-facebook: "\f09a";
 $fa-var-facebook-f: "\f09a";
 $fa-var-facebook-official: "\f230";
 $fa-var-facebook-square: "\f082";
@@ -506,7 +519,6 @@ $fa-var-pencil: "\f040";
 $fa-var-pencil-square: "\f14b";
 $fa-var-pencil-square-o: "\f044";
 $fa-var-percent: "\f295";
-$fa-var-phone: "\f095";
 $fa-var-phone-square: "\f098";
 $fa-var-photo: "\f03e";
 $fa-var-picture-o: "\f03e";
@@ -573,7 +585,7 @@ $fa-var-safari: "\f267";
 $fa-var-save: "\f0c7";
 $fa-var-scissors: "\f0c4";
 $fa-var-scribd: "\f28a";
-$fa-var-search: "\f002";
+
 $fa-var-search-minus: "\f010";
 $fa-var-search-plus: "\f00e";
 $fa-var-sellsy: "\f213";
@@ -693,7 +705,6 @@ $fa-var-thumbs-o-down: "\f088";
 $fa-var-thumbs-o-up: "\f087";
 $fa-var-thumbs-up: "\f164";
 $fa-var-ticket: "\f145";
-$fa-var-times: "\f00d";
 $fa-var-times-circle: "\f057";
 $fa-var-times-circle-o: "\f05c";
 $fa-var-times-rectangle: "\f2d3";
@@ -723,7 +734,7 @@ $fa-var-tumblr-square: "\f174";
 $fa-var-turkish-lira: "\f195";
 $fa-var-tv: "\f26c";
 $fa-var-twitch: "\f1e8";
-$fa-var-twitter: "\f099";
+
 $fa-var-twitter-square: "\f081";
 $fa-var-umbrella: "\f0e9";
 $fa-var-underline: "\f0cd";
@@ -762,7 +773,7 @@ $fa-var-vk: "\f189";
 $fa-var-volume-control-phone: "\f2a0";
 $fa-var-volume-down: "\f027";
 $fa-var-volume-off: "\f026";
-$fa-var-volume-up: "\f028";
+
 $fa-var-warning: "\f071";
 $fa-var-wechat: "\f1d7";
 $fa-var-weibo: "\f18a";
@@ -797,4 +808,4 @@ $fa-var-yoast: "\f2b1";
 $fa-var-youtube: "\f167";
 $fa-var-youtube-play: "\f16a";
 $fa-var-youtube-square: "\f166";
-
+*/
