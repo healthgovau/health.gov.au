@@ -10,6 +10,8 @@ var cleanCSS           = require('gulp-clean-css');
 var runSequence        = require('run-sequence');
 var del                = require('del');
 var fs                 = require('fs');
+var minify             = require('gulp-minify');
+var rename             = require("gulp-rename");
 
 var options = {};
 
@@ -124,6 +126,26 @@ gulp.task('styles:prod', function(callback) {
 });
 
 /**
+ * Generate styles without sourcemap and compress them.
+ */
+gulp.task('js:dev', function(callback) {
+  runSequence(
+    'js:clean',
+    'js:compress:dev',
+    callback);
+});
+
+/**
+ * Generate styles without sourcemap and compress them.
+ */
+gulp.task('js:prod', function(callback) {
+  runSequence(
+    'js:clean',
+    'js:compress:prod',
+    callback);
+});
+
+/**
  * Compress the css.
  */
 gulp.task('css:compress', function(){
@@ -140,6 +162,32 @@ gulp.task('css:break-at-media', function() {
     .pipe(gcmq())
     .pipe(gemq())
     .pipe(gulp.dest(options.theme.css));
+});
+
+gulp.task('js:clean', function() {
+  return del([
+    options.theme.js + 'dist/*.js',
+  ], {force: true});
+});
+
+gulp.task('js:compress:dev', function() {
+  gulp.src(options.theme.js + 'src/*.js')
+    .pipe(rename(function (path) {
+      path.basename += ".min";
+      path.extname = ".js";
+    }))
+    .pipe(gulp.dest(options.theme.js + 'dist'))
+});
+
+gulp.task('js:compress:prod', function() {
+  gulp.src(options.theme.js + 'src/*.js')
+    .pipe(minify({
+      ext: {
+        min:'.min.js'
+      },
+      noSource: true,
+    }))
+    .pipe(gulp.dest(options.theme.js + 'dist'))
 });
 
 /**
@@ -186,8 +234,8 @@ gulp.task('browser-sync', function() {
 // Watch files for changes & reload
 gulp.task('watch', ['browser-sync'], function(){
   gulp.watch([options.theme.sass + '/**/*.scss'], ['styles:dev', bs.reload]);
-  gulp.watch(['./templates/*.php', './*.php']).on('change', bs.reload);
+  gulp.watch([options.theme.js + '/src/*.js'], ['js:dev', bs.reload]);
 });
 
 // Watch and reload
-gulp.task('default', ['styles:dev', 'watch']);
+gulp.task('default', ['styles:dev', 'js:dev', 'watch']);

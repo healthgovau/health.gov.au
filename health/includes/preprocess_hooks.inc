@@ -379,7 +379,7 @@ function health_preprocess_field(&$variables) {
     $youtube_code = $video_node->field_video_youtubeid[LANGUAGE_NONE][0]['value'];
     $variables['youtube_code'] = $youtube_code;
     // Add JS to embed video.
-    $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/health.video.js';
+    $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.video.min.js';
   }
 
   // Statistic value - split up the value into parts so they can be styled.
@@ -529,7 +529,7 @@ function health_preprocess_field(&$variables) {
   // link under the featured image field.
   if ($variables['element']['#bundle'] == 'publication') {
     // Add JS.
-    $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/health.imageAnchor.js';
+    $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.imageAnchor.min.js';
 
     // Add link wrapper and link to the image field.
     if ($variables['element']['#field_name'] == 'field_image_featured' &&
@@ -565,7 +565,7 @@ function health_preprocess_html(&$variables, $hook) {
     '#theme' => 'google_tag_manager',
   ];
   $render_gtm['#attached']['js'][] = [
-    'data' => drupal_get_path('theme', 'health') . '/js/health.gtm.js',
+    'data' => drupal_get_path('theme', 'health') . '/js/dist/health.gtm.min.js',
     'type' => 'file',
   ];
   $variables['google_tag_manager'] = drupal_render($render_gtm);
@@ -587,7 +587,7 @@ function health_preprocess_html(&$variables, $hook) {
 
   // Add no-js logic.
   $variables['page']['content']['#attached']['js'][] = [
-    'data' => drupal_get_path('theme', 'health') . '/js/health.nojs.js',
+    'data' => drupal_get_path('theme', 'health') . '/js/dist/health.nojs.min.js',
     'type' => 'file',
   ];
 
@@ -761,19 +761,19 @@ function health_preprocess_page(&$variables) {
     'type' => 'external',
   ];
   $variables['page']['content']['#attached']['js'][] = [
-    'data' => path_to_theme() . '/js/health.extlink.js',
+    'data' => path_to_theme() . '/js/dist/health.extlink.min.js',
     'type' => 'file',
   ];
   $variables['page']['content']['#attached']['js'][] = [
-    'data' => path_to_theme() . '/js/health.mobilenav.js',
+    'data' => path_to_theme() . '/js/dist/health.mobilenav.min.js',
     'type' => 'file',
   ];
   $variables['page']['content']['#attached']['js'][] = [
-    'data' => path_to_theme() . '/pancake/js/pancake.js',
+    'data' => path_to_theme() . '/pancake/js/pancake.js', // Already minified.
     'type' => 'file',
   ];
   $variables['page']['content']['#attached']['js'][] = [
-    'data' => path_to_theme() . '/js/script.js',
+    'data' => path_to_theme() . '/js/dist/script.min.js',
     'type' => 'file',
   ];
 
@@ -782,7 +782,7 @@ function health_preprocess_page(&$variables) {
     '#theme' => 'backtotop',
   ];
   $render_backtotop['#attached']['js'][] = [
-    'data' => path_to_theme() . '/js/health.backtotop.js',
+    'data' => path_to_theme() . '/js/dist/health.backtotop.min.js',
     'type' => 'file',
   ];
   $variables['backtotop'] = drupal_render($render_backtotop);
@@ -804,7 +804,7 @@ function health_preprocess_page(&$variables) {
       'type' => 'external',
     ];
     $render_readspeaker['#attached']['js'][] = [
-      'data' => path_to_theme() . '/js/readspeaker/ReadSpeakerColorSkin.js',
+      'data' => path_to_theme() . '/js/libraries/readspeaker/ReadSpeakerColorSkin.js',
       'type' => 'file',
     ];
     $variables['readspeaker'] = drupal_render($render_readspeaker);
