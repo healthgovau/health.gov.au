@@ -743,17 +743,8 @@ function health_preprocess_page(&$variables) {
     'type' => 'external',
   ];
 
-  // Add vuejs.
-  $variables['page']['content']['#attached']['js'][] = [
-    'data' => 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.min.js',
-    'type' => 'external',
-  ];
-
-  // Add lazy load images.
-  $variables['page']['content']['#attached']['js'][] = [
-    'data' => 'https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.6.0/lazyload.min.js',
-    'type' => 'external',
-  ];
+  // Vuejs is added in html.tpl.php as its the only way to exclude it from IE8.
+  // LazyLoad is added in html.tpl.php as its the only way to exclude it from IE8.
 
   // Add our javascript.
   $variables['page']['content']['#attached']['js'][] = [
@@ -836,6 +827,7 @@ function health_preprocess_page(&$variables) {
     'group' => CSS_THEME,
     'every_page' => TRUE
   ];
+
   $variables['page']['content']['#attached']['css'][] = [
     'data' => drupal_get_path('theme', 'health') . '/css/min-width-576px.css',
     'media' => 'screen and (min-width: 576px)',
