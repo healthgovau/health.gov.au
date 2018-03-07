@@ -65,12 +65,7 @@
     }
     img {
       border: $health-borderize--thin;
-      max-height: 275px;
-      width: auto;
       @include uikit-media(md) {
-        height: auto;
-        max-height: none;
-        width: 100%;
         &:hover, &:focus, &:active {
           opacity: 0.75;
         }

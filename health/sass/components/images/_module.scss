@@ -17,3 +17,27 @@
     line-height: 0;
   }
 }
+
+// Lazy loaded images.
+.image-wrapper {
+  width: 100%;
+  height: 0;
+  position: relative;
+
+  &.image-loading {
+    background-color: white;
+  }
+
+  .image {
+    width: 100%;
+    position: absolute;
+
+    img {
+      // Hide initially, until loaded.
+      visibility: hidden;
+      &.loaded {
+        visibility: visible;
+      }
+    }
+  }
+}
