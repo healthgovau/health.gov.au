@@ -1029,7 +1029,7 @@ function health_preprocess_page(&$variables) {
   ];
   $render_health_alert_bar['#attached']['library'][] = ['system', 'ui.datepicker'];
   $render_health_alert_bar['#attached']['js'][] = [
-    'data' => path_to_theme() . '/js/health.ajaxAlert.js',
+    'data' => path_to_theme() . '/js/dist/health.ajaxAlert.min.js',
     'type' => 'file',
   ];
   $variables['health_alert_bar'] = drupal_render($render_health_alert_bar);
