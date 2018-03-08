@@ -4,6 +4,14 @@ var gulpLoadPlugins    = require('gulp-load-plugins');
 var bs                 = require('browser-sync');
 var kss                = require('kss');
 var path               = require('path');
+var gcmq               = require('gulp-group-css-media-queries');
+var gemq               = require('gulp-extract-media-queries');
+var cleanCSS           = require('gulp-clean-css');
+var runSequence        = require('run-sequence');
+var del                = require('del');
+var fs                 = require('fs');
+var minify             = require('gulp-minify');
+var rename             = require("gulp-rename");
 
 var options = {};
 
@@ -48,6 +56,7 @@ options.styleGuide = {
   css: [
     path.relative(options.rootPath.styleGuide, options.theme.css + 'styles.css'),
     path.relative(options.rootPath.styleGuide, options.theme.css + 'ckeditor.css'),
+    path.relative(options.rootPath.styleGuide, options.theme.css + 'ie8.css'),
     path.relative(options.rootPath.styleGuide, options.theme.css + 'style-guide/kss-only.css')
   ],
   js: [
@@ -55,7 +64,7 @@ options.styleGuide = {
 
   homepage: 'homepage.md',
   title: 'Parkes Style Guide'
-}
+};
 
 var $ = gulpLoadPlugins();
 
@@ -94,8 +103,98 @@ gulp.task('clean:css', function() {
     ], {force: true});
 });
 
-// Compile and automatically prefix stylesheets
-gulp.task('styles', ['clean:css'], function(){
+/**
+ * Generate styles with soucemap and uncompressed.
+ */
+gulp.task('styles:dev', function(callback) {
+  runSequence(
+    'clean:css',
+    'styles:generate:dev',
+    'css:break-at-media',
+    callback);
+});
+
+/**
+ * Generate styles without sourcemap and compress them.
+ */
+gulp.task('styles:prod', function(callback) {
+  runSequence(
+    'clean:css',
+    'styles:generate:prod',
+    'css:break-at-media',
+    'css:compress',
+    callback);
+});
+
+/**
+ * Generate styles without sourcemap and compress them.
+ */
+gulp.task('js:dev', function(callback) {
+  runSequence(
+    'js:clean',
+    'js:compress:dev',
+    callback);
+});
+
+/**
+ * Generate styles without sourcemap and compress them.
+ */
+gulp.task('js:prod', function(callback) {
+  runSequence(
+    'js:clean',
+    'js:compress:prod',
+    callback);
+});
+
+/**
+ * Compress the css.
+ */
+gulp.task('css:compress', function(){
+  return gulp.src(options.theme.css + '/*.css')
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest(options.theme.css));
+});
+
+/**
+ * Break a css into separate files for each break point.
+ */
+gulp.task('css:break-at-media', function() {
+  return gulp.src(options.theme.css + '/styles.css')
+    .pipe(gcmq())
+    .pipe(gemq())
+    .pipe(gulp.dest(options.theme.css));
+});
+
+gulp.task('js:clean', function() {
+  return del([
+    options.theme.js + 'dist/*.js',
+  ], {force: true});
+});
+
+gulp.task('js:compress:dev', function() {
+  gulp.src(options.theme.js + 'src/*.js')
+    .pipe(rename(function (path) {
+      path.basename += ".min";
+      path.extname = ".js";
+    }))
+    .pipe(gulp.dest(options.theme.js + 'dist'))
+});
+
+gulp.task('js:compress:prod', function() {
+  gulp.src(options.theme.js + 'src/*.js')
+    .pipe(minify({
+      ext: {
+        min:'.min.js'
+      },
+      noSource: true,
+    }))
+    .pipe(gulp.dest(options.theme.js + 'dist'))
+});
+
+/**
+ * Generate css with source map.
+ */
+gulp.task('styles:generate:dev', function(){
   return gulp.src(sassFiles)
     .pipe($.sourcemaps.init())
     .pipe($.sass({
@@ -108,11 +207,14 @@ gulp.task('styles', ['clean:css'], function(){
     .pipe(gulp.dest(options.theme.css));
 });
 
-gulp.task('styles:prod', ['clean:css'], function(){
+/**
+ * Generate css without soucemap.
+ */
+gulp.task('styles:generate:prod', function(){
   return gulp.src(sassFiles)
     .pipe($.sass({
       precision: 10,
-      outputStyle: 'compressed'
+      sourcemap: false
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe($.size({title: 'Styles (production)'}))
@@ -121,7 +223,7 @@ gulp.task('styles:prod', ['clean:css'], function(){
 
 gulp.task('styleguide', ['clean:styleguide'], function() {
   return kss(options.styleGuide);
-})
+});
 
 gulp.task('browser-sync', function() {
   bs.init({
@@ -132,9 +234,9 @@ gulp.task('browser-sync', function() {
 
 // Watch files for changes & reload
 gulp.task('watch', ['browser-sync'], function(){
-  gulp.watch([options.theme.sass + '/**/*.scss'], ['styles', bs.reload]);
-  gulp.watch(['./templates/*.php', './*.php']).on('change', bs.reload);
+  gulp.watch([options.theme.sass + '/**/*.scss'], ['styles:dev', bs.reload]);
+  gulp.watch([options.theme.js + '/src/*.js'], ['js:dev', bs.reload]);
 });
 
 // Watch and reload
-gulp.task('default', ['styles', 'watch']);
+gulp.task('default', ['styles:dev', 'js:dev', 'watch']);

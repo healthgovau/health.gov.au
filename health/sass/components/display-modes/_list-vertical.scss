@@ -36,12 +36,7 @@
         }
       }
       img {
-        //max-height: 240px;
-        //width: auto;
-        width: 100%;
         @include uikit-media(sm) {
-          max-height: none;
-          width: 100%;
           &:hover, &:focus, &:active {
             opacity: 0.75;
           }
@@ -108,10 +103,7 @@
         }
       }
       img {
-        max-height: 240px;
-        width: auto;
         @include uikit-media(sm) {
-          max-height: 130px;
           &:hover, &:focus, &:active {
             opacity: 0.75;
           }

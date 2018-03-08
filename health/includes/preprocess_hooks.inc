@@ -379,7 +379,7 @@ function health_preprocess_field(&$variables) {
     $youtube_code = $video_node->field_video_youtubeid[LANGUAGE_NONE][0]['value'];
     $variables['youtube_code'] = $youtube_code;
     // Add JS to embed video.
-    $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/health.video.js';
+    $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.video.min.js';
   }
 
   // Statistic value - split up the value into parts so they can be styled.
@@ -529,7 +529,7 @@ function health_preprocess_field(&$variables) {
   // link under the featured image field.
   if ($variables['element']['#bundle'] == 'publication') {
     // Add JS.
-    $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/health.imageAnchor.js';
+    $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.imageAnchor.min.js';
 
     // Add link wrapper and link to the image field.
     if ($variables['element']['#field_name'] == 'field_image_featured' &&
@@ -565,7 +565,7 @@ function health_preprocess_html(&$variables, $hook) {
     '#theme' => 'google_tag_manager',
   ];
   $render_gtm['#attached']['js'][] = [
-    'data' => drupal_get_path('theme', 'health') . '/js/health.gtm.js',
+    'data' => drupal_get_path('theme', 'health') . '/js/dist/health.gtm.min.js',
     'type' => 'file',
   ];
   $variables['google_tag_manager'] = drupal_render($render_gtm);
@@ -580,14 +580,14 @@ function health_preprocess_html(&$variables, $hook) {
   // Add html5 shim for lt IE 9.
   if (in_array('html5', $meta)) {
     $variables['page']['content']['#attached']['js'][] = [
-      'data' =>  drupal_get_path('theme', 'health') . '/js/html5shiv.min.js',
-      'type' => 'file',
+      'data' =>  'https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js',
+      'type' => 'external',
     ];
   }
 
   // Add no-js logic.
   $variables['page']['content']['#attached']['js'][] = [
-    'data' => drupal_get_path('theme', 'health') . '/js/health.nojs.js',
+    'data' => drupal_get_path('theme', 'health') . '/js/dist/health.nojs.min.js',
     'type' => 'file',
   ];
 
@@ -743,9 +743,28 @@ function health_preprocess_page(&$variables) {
     'type' => 'external',
   ];
 
-  // Add vuejs.
+  // Vuejs is added in html.tpl.php as its the only way to exclude it from IE8.
+  // LazyLoad is added in html.tpl.php as its the only way to exclude it from IE8.
+
+  // Add our javascript.
   $variables['page']['content']['#attached']['js'][] = [
-    'data' => path_to_theme() . '/js/vue.min.js',
+    'data' => 'https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js',
+    'type' => 'external',
+  ];
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/dist/health.extlink.min.js',
+    'type' => 'file',
+  ];
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/dist/health.mobilenav.min.js',
+    'type' => 'file',
+  ];
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => path_to_theme() . '/pancake/js/pancake.js', // Already minified.
+    'type' => 'file',
+  ];
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/dist/script.min.js',
     'type' => 'file',
   ];
 
@@ -754,7 +773,7 @@ function health_preprocess_page(&$variables) {
     '#theme' => 'backtotop',
   ];
   $render_backtotop['#attached']['js'][] = [
-    'data' => path_to_theme() . '/js/health.backtotop.js',
+    'data' => path_to_theme() . '/js/dist/health.backtotop.min.js',
     'type' => 'file',
   ];
   $variables['backtotop'] = drupal_render($render_backtotop);
@@ -776,7 +795,7 @@ function health_preprocess_page(&$variables) {
       'type' => 'external',
     ];
     $render_readspeaker['#attached']['js'][] = [
-      'data' => path_to_theme() . '/js/readspeaker/ReadSpeakerColorSkin.js',
+      'data' => path_to_theme() . '/js/libraries/readspeaker/ReadSpeakerColorSkin.js',
       'type' => 'file',
     ];
     $variables['readspeaker'] = drupal_render($render_readspeaker);
@@ -799,6 +818,79 @@ function health_preprocess_page(&$variables) {
       ]
     ],
     'type' => 'setting',
+  ];
+
+  // Add our css for each media breakpoints
+  $variables['page']['content']['#attached']['css'][] = [
+    'data' => drupal_get_path('theme', 'health') . '/css/styles.css',
+    'media' => 'all',
+    'type' => 'file',
+    'preprocess' => TRUE,
+    'group' => CSS_THEME,
+    'every_page' => TRUE
+  ];
+
+  $variables['page']['content']['#attached']['css'][] = [
+    'data' => drupal_get_path('theme', 'health') . '/css/min-width-576px.css',
+    'media' => 'screen and (min-width: 576px)',
+    'type' => 'file',
+    'group' => CSS_THEME,
+    'every_page' => TRUE,
+    'weight' => 50,
+    'browsers' => array('IE' => 'gt IE 8'),
+  ];
+  $variables['page']['content']['#attached']['css'][] = [
+    'data' => drupal_get_path('theme', 'health') . '/css/min-width-768px.css',
+    'media' => 'screen and (min-width: 768px)',
+    'type' => 'file',
+    'group' => CSS_THEME,
+    'every_page' => TRUE,
+    'weight' => 60,
+    'browsers' => array('IE' => 'gt IE 8'),
+  ];
+  $variables['page']['content']['#attached']['css'][] = [
+    'data' => drupal_get_path('theme', 'health') . '/css/min-width-768px-and-min-width-992px.css',
+    'media' => 'screen and (min-width: 768px) and (min-width:992px)',
+    'type' => 'file',
+    'group' => CSS_THEME,
+    'every_page' => TRUE,
+    'weight' => 70,
+    'browsers' => array('IE' => 'gt IE 8'),
+  ];
+  $variables['page']['content']['#attached']['css'][] = [
+    'data' => drupal_get_path('theme', 'health') . '/css/min-width-992px.css',
+    'media' => 'screen and (min-width: 922px)',
+    'type' => 'file',
+    'group' => CSS_THEME,
+    'every_page' => TRUE,
+    'weight' => 80,
+    'browsers' => array('IE' => 'gt IE 8'),
+  ];
+  $variables['page']['content']['#attached']['css'][] = [
+    'data' => drupal_get_path('theme', 'health') . '/css/min-width-768px-and-min-width-1200px.css',
+    'media' => 'screen and (min-width: 768px) and (min-width:1200px)',
+    'type' => 'file',
+    'group' => CSS_THEME,
+    'every_page' => TRUE,
+    'weight' => 90,
+    'browsers' => array('IE' => 'gt IE 8'),
+  ];
+  $variables['page']['content']['#attached']['css'][] = [
+    'data' => drupal_get_path('theme', 'health') . '/css/min-width-1200px.css',
+    'media' => 'screen and (min-width: 1200px)',
+    'type' => 'file',
+    'group' => CSS_THEME,
+    'every_page' => TRUE,
+    'weight' => 100,
+    'browsers' => array('IE' => 'gt IE 8'),
+  ];
+
+  $variables['page']['content']['#attached']['css'][] = [
+    'data' => drupal_get_path('theme', 'health') . '/css/ie8.css',
+    'type' => 'file',
+    'browsers' => array('IE' => 'IE 8', '!IE' => FALSE),
+    'group' => CSS_THEME,
+    'weight' => 999 // Load first.
   ];
 
   // Always add summary. If it is not needed, it will be removed.

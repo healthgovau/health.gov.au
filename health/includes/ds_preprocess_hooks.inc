@@ -20,6 +20,11 @@ function health_preprocess_ds_content_type(&$variables) {
   $names = node_type_get_names();
   $label = $names[$variables['node']->type];
 
+  // Do not display standard page.
+  if ($label == 'Standard page') {
+    $label = '';
+  }
+
   // Setup the field.
   $field_variables = [
     'label_hidden' => FALSE,
@@ -56,11 +61,11 @@ function health_preprocess_ds_table_of_content(&$variables) {
     ];
 
     $render_array['#attached']['js'][] = [
-      'data' => drupal_get_path('theme', 'health') . '/js/anchorific.min.js',
+      'data' => drupal_get_path('theme', 'health') . '/js/libraries/anchorific.min.js',
       'type' => 'file',
     ];
     $render_array['#attached']['js'][] = [
-      'data' => drupal_get_path('theme', 'health') . '/js/health.toc.js',
+      'data' => drupal_get_path('theme', 'health') . '/js/dist/health.toc.min.js',
       'type' => 'file',
     ];
 

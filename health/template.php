@@ -525,7 +525,47 @@ function health_js_alter(&$javascript) {
   }
 
   if ($replace_jquery) {
-    $javascript['misc/jquery.js']['data'] = drupal_get_path('theme', 'health') . '/js/jquery.min.js';
+    $javascript['misc/jquery.js']['data'] = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js';
+    $javascript['misc/jquery.js']['type'] = 'external';
+  }
+
+  // Move all JS to the footer, to improve page load.
+  foreach($javascript as $key => $js) {
+    $javascript[$key]['scope'] = 'footer';
+  }
+
+  // Remove unused js.
+  unset($javascript['profiles/govcms/modules/contrib/field_group/field_group.js']);
+  unset($javascript['profiles/govcms/modules/contrib/superfish/superfish.js']);
+  unset($javascript['profiles/govcms/libraries/superfish/superfish.js']);
+  unset($javascript['profiles/govcms/libraries/superfish/supersubs.js']);
+  unset($javascript['profiles/govcms/libraries/superfish/supposition.js']);
+}
+
+function health_css_alter(&$css) {
+  // Remove unused css.
+  unset($css['modules/book/book.css']);
+  unset($css['profiles/govcms/modules/contrib/ctools/css/ctools.css']);
+  unset($css['profiles/govcms/modules/contrib/date/date_api/date.css']);
+  unset($css['profiles/govcms/modules/contrib/date/date_popup/themes/datepicker.1.7.css']);
+  unset($css['modules/field/theme/field.css']);
+  unset($css['profiles/govcms/modules/contrib/panels/css/panels.css']);
+  unset($css['profiles/govcms/modules/contrib/picture/picture_wysiwyg.css']);
+  unset($css['modules/search/search.css']);
+  unset($css['modules/user/user.css']);
+  unset($css['profiles/govcms/modules/contrib/video_filter/video_filter.css']);
+  unset($css['profiles/govcms/modules/contrib/toc_filter/toc_filter.css']);
+  unset($css['profiles/govcms/libraries/superfish/css/superfish.css']);
+  unset($css['sites/default/themes/site/health/superfish.css']);
+  unset($css['profiles/govcms/modules/contrib/views/css/views.css']);
+  unset($css['profiles/govcms/modules/contrib/facetapi/facetapi.css']);
+
+  // Make sure some css is not rendered on IE8.
+  if (key_exists('profiles/govcms/modules/contrib/ds/layouts/ds_2col/ds_2col.css', $css)) {
+    $css['profiles/govcms/modules/contrib/ds/layouts/ds_2col/ds_2col.css']['browsers'] = array('IE' => 'gt IE 8');
+  }
+  if (key_exists('profiles/govcms/modules/contrib/ds/layouts/ds_2col_stacked/ds_2col_stacked.css', $css)) {
+    $css['profiles/govcms/modules/contrib/ds/layouts/ds_2col_stacked/ds_2col_stacked.css']['browsers'] = array('IE' => 'gt IE 8');
   }
 }
 
@@ -819,10 +859,9 @@ function health_image($variables) {
     return file_get_contents(drupal_realpath($variables['path']));
   }
 
-  // Normal image output.
+  // If not an SVG, load normally with lazy loading.
   $attributes = $variables['attributes'];
   $attributes['src'] = file_create_url($variables['path']);
-
   foreach (array('width', 'height', 'alt', 'title') as $key) {
     if (isset($variables[$key])) {
       $attributes[$key] = $variables[$key];
@@ -834,7 +873,68 @@ function health_image($variables) {
     $attributes['alt'] = '';
   }
 
-  return '<img' . drupal_attributes($attributes) . ' />';
+  // Set data-src instead of src for lazy loading.
+  $attributes['data-src'] = $attributes['src'];
+  unset($attributes['src']);
+
+  // Provide a default padding space for images, so that they take up the correct
+  // space on the screen to prevent reflow and improve lazy loading.
+  $path = $variables['path'];
+  $public = file_create_url("public://");
+  $path = str_replace($public, 'public://', $path);
+  if (strpos($path, '?') !== FALSE) {
+    $path = substr($path, 0, strpos($path, '?'));
+  }
+  $file_path = drupal_realpath($path);
+
+  if (!empty($file_path)) {
+    $size = image_get_info($file_path);
+    if (isset($size['width']) && isset($size['height'])) {
+      $attributes['width'] = $size['width'];
+      $attributes['height'] = $size['height'];
+      $ratio = round(($attributes['height'] / $attributes['width']) * 100);
+    }
+  }
+  if (isset($ratio)) {
+    // Output the image.
+    return '<div class="image-wrapper image-loading" style="padding-bottom: ' . $ratio . '%">
+      <div class="image"><img' . drupal_attributes($attributes) . ' /></div></div>';
+  } else {
+    // If we cannot find the image size, we just output a normal image with no
+    // fancy lazy loading and reserved space.
+    return '<img' . drupal_attributes($attributes) . ' />';
+  }
+
+}
+
+/**
+ * Returns HTML for a source tag.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - media: The media query to use.
+ *   - src: Either the path of the image file (relative to base_path()) or a
+ *     full URL.
+ *   - dimensions: The width and height of the image (if known).
+ *
+ * @ingroup themeable
+ */
+function health_picture_source(array $variables) {
+
+  $attributes['data-srcset'] = $variables['srcset'];
+
+  if (isset($variables['media']) && !empty($variables['media'])) {
+    $attributes['media'] = $variables['media'];
+  }
+
+  if (isset($variables['mime_type']) && !empty($variables['mime_type'])) {
+    $attributes['type'] = $variables['mime_type'];
+  }
+  if (isset($variables['sizes']) && !empty($variables['sizes'])) {
+    $attributes['sizes'] = $variables['sizes'];
+  }
+
+  return '<source' . drupal_attributes($attributes) . ' />';
 }
 
 /**
