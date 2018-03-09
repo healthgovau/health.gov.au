@@ -33,6 +33,34 @@
 	&.view-mode-inline {
 		@extend %dm-inline-2-col;
     }
+
+  // Inline style
+  &.view-mode-inline_large {
+    .contact__intro {
+      color: $colour-minorText;
+    }
+
+    label {
+      width: 7em;
+    }
+
+    label, .contact__title {
+      float: left;
+      font-weight: bold;
+    }
+
+    .contact__name,
+    .paragraphs-items-field-para-telephone,
+    .paragraphs-items-field-para-email
+    {
+      clear: both;
+      margin-left: 7em;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
     
     // Search
     &.view-mode-search_result {

@@ -1,0 +1,78 @@
+// Content type styles by display mode (defined in /display-modes/*)
+// ========================================
+
+// Default/full content
+.node-type-departmental-media {
+  @extend %dm-full-content;
+  @extend %page-title-no-supp;
+  @extend %page-help-only-no-border;
+
+  .field-name-field-reference-contact {
+    @extend %bottom-border;
+    margin-bottom: uikit-space(1);
+  }
+}
+
+// Display modes
+.node-departmental-media {
+
+  // Full
+  &.view-mode-full {
+    .field-label-inline {
+      .field-label {
+        width: 11em;
+      }
+    }
+    .field-name-field-image-featured {
+      margin-bottom: uikit-space(1);
+    }
+    .field-name-field-related-health-topics {
+      .field-label {
+        width: auto;
+      }
+    }
+  }
+
+  // Major list
+  &.view-mode-listing_vertical {
+    @extend %dm-list-vertical;
+  }
+
+  // List vertical small
+  &.view-mode-listing_vertical_small {
+    @extend %dm-list-vertical--small;
+    @include cardify-small();
+    img {
+      border: 0 !important;
+    }
+    @include uikit-media(md) {
+      .group-details {
+        position: absolute;
+        bottom: 10px;
+      }
+    }
+  }
+
+  // Feature
+  &.view-mode-feature {
+    @extend %dm-feature;
+    .field-name-field-image-featured {
+      @extend %image--full;
+    }
+    .group-right {
+      padding-top: 0;
+    }
+    @include cardify();
+
+  }
+
+  // Inline style
+  &.view-mode-inline {
+    @extend %dm-inline-2-col;
+  }
+
+  // Search
+  &.view-mode-search_result {
+    @extend %dm-search-index;
+  }
+}
