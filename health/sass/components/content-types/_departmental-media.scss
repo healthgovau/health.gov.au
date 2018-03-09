@@ -5,13 +5,10 @@
 .node-type-departmental-media {
   @extend %dm-full-content;
   @extend %page-title-no-supp;
-  @extend %page-help-only-no-border;
-
-  .field-name-field-related-contact {
-    @extend %bottom-border;
-    margin-bottom: uikit-space(1);
-  }
+  @extend %page-help-only--no-border;
+  @extend %media-enquiry;
 }
+
 
 // Display modes
 .node-departmental-media {

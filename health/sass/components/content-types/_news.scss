@@ -5,8 +5,9 @@
 // Default/full content
 .node-type-news-article {
   @extend %dm-full-content;
-  @extend %page-help-only;
   @extend %page-title-no-supp;
+  @extend %page-help-only--no-border;
+  @extend %media-enquiry;
 }
 
 // Display modes

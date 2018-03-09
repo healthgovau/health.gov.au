@@ -221,7 +221,7 @@ function health_preprocess_ds_public_hp_switcher(&$variables) {
  * @return string
  */
 function health_preprocess_ds_media_enquiry(&$variables) {
-  return theme('media_enquiry', ['nid' => $variables['node']->nid]);
+  return theme('media_enquiry');
 }
 
 /**

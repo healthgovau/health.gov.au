@@ -36,27 +36,16 @@
 
   // Inline style
   &.view-mode-inline_large {
-    .contact__intro {
-      color: $colour-minorText;
-    }
-
-    label {
-      width: 7em;
-    }
-
-    label, .contact__title {
-      float: left;
+    .field-name-title {
       font-weight: bold;
     }
-
-    .contact__name,
-    .paragraphs-items-field-para-telephone,
-    .paragraphs-items-field-para-email
-    {
-      clear: both;
-      margin-left: 7em;
+    .group-name {
+      .field {
+        float: left;
+        margin-right: 4px;
+      }
+      @include uikit-clearfix;
     }
-
     p {
       margin-bottom: 0;
     }
