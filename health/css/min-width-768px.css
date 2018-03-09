@@ -3088,7 +3088,6 @@ h6 {
 }
 
 .page-node-landing-page .field-name-field-related-health-topics,
-.node-type-news-article .field-name-field-related-health-topics,
 .node-type-event .field-name-field-related-health-topics,
 .node-type-health-alert .field-name-field-related-health-topics,
 .node-type-publication .field-name-field-related-health-topics,
@@ -3096,7 +3095,8 @@ h6 {
 .node-type-health-topic .field-name-field-related-health-topics,
 .node-type-health-topic-hp .field-name-field-related-health-topics,
 .page-views .field-name-field-related-health-topics,
-.node-type-departmental-media .field-name-field-related-contact {
+.node-type-news-article .media-enquiry,
+.node-type-departmental-media .media-enquiry {
   margin-top: 3.2em;
 }
 
@@ -3273,14 +3273,7 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
   margin-bottom: 0;
 }
 
-#readspeaker {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-right: 12px;
-}
-
-.rsbtn_colorskin {
+.rsbtn_colorskin a {
   margin: 0 0 1.6em 2.4em;
 }
 
@@ -3570,34 +3563,34 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
 
 .uikit-body .sidebar #block-menu-block-2 a:hover,
 .page .sidebar #block-menu-block-2 a:hover,
-.rsbtn_colorskin .sidebar #block-menu-block-2 a:hover,
+.rsbtn_colorskin a .sidebar #block-menu-block-2 a:hover,
 .uikit-body .sidebar .block-menu-block--title-link .block__title a:hover,
 .page .sidebar .block-menu-block--title-link .block__title a:hover,
-.rsbtn_colorskin .sidebar .block-menu-block--title-link .block__title a:hover {
+.rsbtn_colorskin a .sidebar .block-menu-block--title-link .block__title a:hover {
   border-left-color: #008998;
 }
 
 .uikit-body .sidebar #block-menu-block-2 ul > li:first-child,
 .page .sidebar #block-menu-block-2 ul > li:first-child,
-.rsbtn_colorskin .sidebar #block-menu-block-2 ul > li:first-child {
+.rsbtn_colorskin a .sidebar #block-menu-block-2 ul > li:first-child {
   border-top: 1px solid #CCC;
 }
 
 .uikit-body .sidebar #block-menu-block-2 ul > li a,
 .page .sidebar #block-menu-block-2 ul > li a,
-.rsbtn_colorskin .sidebar #block-menu-block-2 ul > li a {
+.rsbtn_colorskin a .sidebar #block-menu-block-2 ul > li a {
   padding: 0.8em 1.6em;
 }
 
 .uikit-body .sidebar #block-menu-block-2 ul > li ul li a,
 .page .sidebar #block-menu-block-2 ul > li ul li a,
-.rsbtn_colorskin .sidebar #block-menu-block-2 ul > li ul li a {
+.rsbtn_colorskin a .sidebar #block-menu-block-2 ul > li ul li a {
   padding: 0.8em 2.8em;
 }
 
 .uikit-body .sidebar #block-menu-block-2,
 .page .sidebar #block-menu-block-2,
-.rsbtn_colorskin .sidebar #block-menu-block-2 {
+.rsbtn_colorskin a .sidebar #block-menu-block-2 {
   display: block;
 }
 
