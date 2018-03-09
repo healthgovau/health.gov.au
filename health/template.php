@@ -542,6 +542,9 @@ function health_js_alter(&$javascript) {
   unset($javascript['profiles/govcms/libraries/superfish/supposition.js']);
 }
 
+/**
+ * Implements hook_css_alter().
+ */
 function health_css_alter(&$css) {
   // Remove unused css.
   unset($css['modules/book/book.css']);
