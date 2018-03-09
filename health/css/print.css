@@ -409,6 +409,10 @@ table thead {
   display: none;
 }
 
+.page a:after {
+  display: none;
+}
+
 #block-bean-share-this {
   display: none;
 }

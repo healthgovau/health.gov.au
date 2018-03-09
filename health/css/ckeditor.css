@@ -6194,6 +6194,10 @@ ul.social__links,
       .social__links .social__links-item a:after {
         display: none; }
 
+@media print {
+  .page a:after {
+    display: none; } }
+
 .health-cta-link:after, .block-bean-call-to-action .field-name-field-link-to a:after,
 .bean-call-to-action .field-name-field-link-to a:after, .video__cta:after, .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:after, .paragraphs-item-para-statistics .field-name-field-link-internal a:after, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:after, .paragraphs-item-para-view .para-row > a:after {
   background-image: none;

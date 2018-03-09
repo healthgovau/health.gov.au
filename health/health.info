@@ -48,6 +48,7 @@ stylesheets[all][] = system.theme.css
 stylesheets[all][] = comment.css
 stylesheets[all][] = node.css
 stylesheets[all][] = superfish.css
+stylesheets[print][] = css/print.css
 
 
 ; This section lists the regions defined in Zen's default page.tpl.php and
