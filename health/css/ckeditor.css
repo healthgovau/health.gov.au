@@ -4908,7 +4908,7 @@ p.summary, .field-name-field-summary {
   bottom: -100%; }
 
 @media print {
-  .backtotop {
+  #backtotop {
     display: none; } }
 
 .goTop {
