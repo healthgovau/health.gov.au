@@ -38,7 +38,7 @@ var sassFiles = [
 
 // Set the URL used to access the Drupal website under development. This will
 // allow Browser Sync to serve the website and update CSS changes on the fly.
-options.drupalURL = 'http://beta-sass.local';
+options.drupalURL = 'http://beta-saas.local';
 
 // Define the style guide paths and options.
 options.styleGuide = {
