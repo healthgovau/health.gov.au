@@ -1,29 +1,11 @@
-#readspeaker {
-
-  // Mobile
-
-  a {
-    border-bottom: none;
-  }
-  .rsbtn {
-    margin-bottom: 0;
-  }
-
-  // Desktop
-  @include uikit-media(sm) {
-    position: absolute;
-    top:0;
-    right: 0;
-    margin-right: 12px;
-  }
-
-}
-
-.rsbtn_colorskin {
+.rsbtn_colorskin a {
   @extend .uikit-body;
   position: relative;
-  font-size: 13px;
-  line-height: 1.3em;
+  font-size: 14px;
+  color: $colour-Secondary;
+  position: relative;
+  text-decoration: none;
+  line-height: 1.4em;
   display: inline-block;
   padding: 10px;
   margin: 0 0 uikit-space(1) 0;
@@ -32,24 +14,19 @@
   }
   background: white;
   border: 1px solid $colour-Secondary;
-  &:hover {
-    background-color: $colour-light-dark;
+  &:hover,
+  &:focus {
+    background-color: $colour-Secondary;
+    color: #fff;
   }
 
   i {
     font-size: 12px;
   }
 
-  a {
-    color: $colour-Secondary;
-  }
-
-  a, span {
+  span {
     position: relative;
     text-decoration: none;
-  }
-
-  span {
     display: block;
   }
 
