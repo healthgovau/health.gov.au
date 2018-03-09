@@ -167,15 +167,30 @@ p.summary, .field-name-field-summary {
       }
     }
     .field-name-field-related-health-topics {
-        border-top: $uikit-borderize;
-        padding-top: uikit-space(1);
-        margin-top: uikit-space(1);
-        @include uikit-media(sm){
-            margin-top: uikit-space(2);
-        }
-        @include uikit-media(md){
-            margin-top: uikit-space(3);
-        }
+        @extend %bottom-border;
     }
+}
 
+%page-help-only-no-border {
+
+  .field-name-field-date-updated,
+  .field-name-field-date-published {
+    &.field-label-inline, &.field-label-above {
+      border: 0;
+      padding-top: 0;
+      margin-top: 0;
+    }
+  }
+}
+
+%bottom-border {
+  border-top: $uikit-borderize;
+  padding-top: uikit-space(1);
+  margin-top: uikit-space(1);
+  @include uikit-media(sm){
+    margin-top: uikit-space(2);
+  }
+  @include uikit-media(md){
+    margin-top: uikit-space(3);
+  }
 }

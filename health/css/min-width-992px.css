@@ -605,6 +605,7 @@ h6 {
 .node-health-alert.view-mode-listing_vertical_small .field-name-title h2,
 .node-publication.view-mode-listing_vertical_small .field-name-title h2,
 .node-video.view-mode-listing_vertical_small .field-name-title h2,
+.node-departmental-media.view-mode-listing_vertical_small .field-name-title h2,
 .node-news-article.view-mode-listing_vertical_small .field-name-title .video--left .video__title,
 .video--left .node-news-article.view-mode-listing_vertical_small .field-name-title .video__title,
 .node-event.view-mode-listing_vertical_small .field-name-title .video--left .video__title,
@@ -615,6 +616,8 @@ h6 {
 .video--left .node-publication.view-mode-listing_vertical_small .field-name-title .video__title,
 .node-video.view-mode-listing_vertical_small .field-name-title .video--left .video__title,
 .video--left .node-video.view-mode-listing_vertical_small .field-name-title .video__title,
+.node-departmental-media.view-mode-listing_vertical_small .field-name-title .video--left .video__title,
+.video--left .node-departmental-media.view-mode-listing_vertical_small .field-name-title .video__title,
 .node-news-article.view-mode-listing_vertical_small .field-name-title .video--right .video__title,
 .video--right .node-news-article.view-mode-listing_vertical_small .field-name-title .video__title,
 .node-event.view-mode-listing_vertical_small .field-name-title .video--right .video__title,
@@ -625,11 +628,14 @@ h6 {
 .video--right .node-publication.view-mode-listing_vertical_small .field-name-title .video__title,
 .node-video.view-mode-listing_vertical_small .field-name-title .video--right .video__title,
 .video--right .node-video.view-mode-listing_vertical_small .field-name-title .video__title,
+.node-departmental-media.view-mode-listing_vertical_small .field-name-title .video--right .video__title,
+.video--right .node-departmental-media.view-mode-listing_vertical_small .field-name-title .video__title,
 .node-news-article.view-mode-listing_vertical_small .field-name-title h3,
 .node-event.view-mode-listing_vertical_small .field-name-title h3,
 .node-health-alert.view-mode-listing_vertical_small .field-name-title h3,
 .node-publication.view-mode-listing_vertical_small .field-name-title h3,
 .node-video.view-mode-listing_vertical_small .field-name-title h3,
+.node-departmental-media.view-mode-listing_vertical_small .field-name-title h3,
 .node-campaign.view-mode-listing_vertical_small .field-name-title h2,
 .node-committee-or-group.view-mode-listing_vertical_small .field-name-title h2,
 .node-condition-or-disease.view-mode-listing_vertical_small .field-name-title h2,
@@ -873,11 +879,13 @@ h6 {
 .node-health-alert.view-mode-listing_vertical_small .field-type-datetime,
 .node-publication.view-mode-listing_vertical_small .field-type-datetime,
 .node-video.view-mode-listing_vertical_small .field-type-datetime,
+.node-departmental-media.view-mode-listing_vertical_small .field-type-datetime,
 .node-news-article.view-mode-listing_vertical_small .field-type-taxonomy-term-reference,
 .node-event.view-mode-listing_vertical_small .field-type-taxonomy-term-reference,
 .node-health-alert.view-mode-listing_vertical_small .field-type-taxonomy-term-reference,
 .node-publication.view-mode-listing_vertical_small .field-type-taxonomy-term-reference,
-.node-video.view-mode-listing_vertical_small .field-type-taxonomy-term-reference {
+.node-video.view-mode-listing_vertical_small .field-type-taxonomy-term-reference,
+.node-departmental-media.view-mode-listing_vertical_small .field-type-taxonomy-term-reference {
   font-size: 14px;
 }
 
@@ -910,7 +918,8 @@ h6 {
 .node-type-publication-collection .field-name-field-related-health-topics,
 .node-type-health-topic .field-name-field-related-health-topics,
 .node-type-health-topic-hp .field-name-field-related-health-topics,
-.page-views .field-name-field-related-health-topics {
+.page-views .field-name-field-related-health-topics,
+.node-type-departmental-media .field-name-field-related-contact {
   margin-top: 4.8em;
 }
 
@@ -1089,7 +1098,8 @@ table {
 .node-type-statistic .view-mode-full > .group-left,
 .node-type-service .view-mode-full > .group-left,
 .node-type-health-topic .view-mode-full > .group-left,
-.node-type-health-topic-hp .view-mode-full > .group-left {
+.node-type-health-topic-hp .view-mode-full > .group-left,
+.node-type-departmental-media .view-mode-full > .group-left {
   padding-right: 4em;
 }
 
@@ -1157,6 +1167,28 @@ table {
 
 .node-video.view-mode-full > .group-left {
   width: 60%;
+}
+
+.node-departmental-media.view-mode-listing_vertical_small .group-right {
+  padding: 0.57em 1.05em;
+}
+
+.node-departmental-media.view-mode-listing_vertical_small .field-name-title h3,
+.node-departmental-media.view-mode-listing_vertical_small .field-name-title h2,
+.node-departmental-media.view-mode-listing_vertical_small .field-name-title .video--left .video__title,
+.video--left .node-departmental-media.view-mode-listing_vertical_small .field-name-title .video__title,
+.node-departmental-media.view-mode-listing_vertical_small .field-name-title .video--right .video__title,
+.video--right .node-departmental-media.view-mode-listing_vertical_small .field-name-title .video__title {
+  font-size: 18px;
+}
+
+.node-departmental-media.view-mode-listing_vertical_small .group-details {
+  position: absolute;
+  bottom: 10px;
+}
+
+.node-departmental-media.view-mode-feature .group-right {
+  padding: 1.6em;
 }
 
 .page-views .view-content .views-row {

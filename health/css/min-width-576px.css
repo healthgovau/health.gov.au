@@ -113,7 +113,8 @@
 .node-type-statistic .group-left,
 .node-type-service .group-left,
 .node-type-health-topic .group-left,
-.node-type-health-topic-hp .group-left {
+.node-type-health-topic-hp .group-left,
+.node-type-departmental-media .group-left {
   width: 30%;
 }
 
@@ -132,7 +133,8 @@
 .node-type-statistic .group-right,
 .node-type-service .group-right,
 .node-type-health-topic .group-right,
-.node-type-health-topic-hp .group-right {
+.node-type-health-topic-hp .group-right,
+.node-type-departmental-media .group-right {
   width: 70%;
 }
 
@@ -151,7 +153,8 @@
 .node-type-statistic .view-mode-full > .group-left,
 .node-type-service .view-mode-full > .group-left,
 .node-type-health-topic .view-mode-full > .group-left,
-.node-type-health-topic-hp .view-mode-full > .group-left {
+.node-type-health-topic-hp .view-mode-full > .group-left,
+.node-type-departmental-media .view-mode-full > .group-left {
   padding-right: 2.4em;
 }
 
