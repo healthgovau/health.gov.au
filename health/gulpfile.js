@@ -38,8 +38,7 @@ var sassFiles = [
 
 // Set the URL used to access the Drupal website under development. This will
 // allow Browser Sync to serve the website and update CSS changes on the fly.
-options.drupalURL = 'http://health.local';
-// options.drupalURL = 'http://localhost'
+options.drupalURL = 'http://beta-sass.local';
 
 // Define the style guide paths and options.
 options.styleGuide = {
@@ -239,4 +238,4 @@ gulp.task('watch', ['browser-sync'], function(){
 });
 
 // Watch and reload
-gulp.task('default', ['styles:dev', 'js:dev', 'watch']);
+gulp.task('default', ['styles:dev', 'js:dev']);

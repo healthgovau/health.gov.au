@@ -139,7 +139,12 @@ function health_preprocess_ds_document_accessibility_form_link($variables) {
   Global $base_url;
   $current_url = drupal_encode_path($base_url . '/' . drupal_get_path_alias(current_path()));
 
-  return theme('document_accessibility_link', ['current_page' => $current_url]);
+  $render_array = [
+    '#theme' => 'document_accessibility_link',
+    '#current_page' => $current_url,
+  ];
+
+  return drupal_render($render_array);
 }
 
 /**
@@ -167,7 +172,6 @@ function health_preprocess_ds_para_rendered_blocks($variable) {
  * Display suite preprocessor - download image link.
  *
  * @param $variables
- * @param $hook
  *
  * @return string
  */
@@ -179,36 +183,44 @@ function health_preprocess_ds_download_image_link(&$variables) {
  * Display suite preprocessor - public hp switcher.
  *
  * @param $variables
+ *
  * @return string
  */
 function health_preprocess_ds_public_hp_switcher(&$variables) {
-  // Check what is the current page for.
-  $attached_node = node_load(arg(1));
-  if ($attached_node->type == 'health_topic') {
-    $render_elements = _health_get_render_elements_for_public_topic_page($variables);
-  }
-  else if ($attached_node->type == 'health_topic_hp') {
-    $render_elements = _health_get_render_elements_for_hp_topic_page($variables);
-  }
-  else {
-    if (isset($attached_node->field_audience[LANGUAGE_NONE])) {
-      if ($attached_node->field_audience[LANGUAGE_NONE][0]['tid'] == '451') {
-        // This is a page for public.
-        $render_elements = _health_get_render_elements_for_public_topic_page($variables);
-      }
-      else {
-        // This is a page for health professionals.
-        $render_elements = _health_get_render_elements_for_hp_topic_page($variables);
-      }
+  if (arg(0) == 'node' && is_numeric(arg(1))) {
+    // Check what is the current page for.
+    $attached_node = node_load(arg(1));
+    if ($attached_node->type == 'health_topic') {
+      $render_elements = _health_get_render_elements_for_public_topic_page($variables);
     }
+    else if ($attached_node->type == 'health_topic_hp') {
+      $render_elements = _health_get_render_elements_for_hp_topic_page($variables);
+    }
+    else {
+      if (isset($attached_node->field_audience[LANGUAGE_NONE])) {
+        if ($attached_node->field_audience[LANGUAGE_NONE][0]['tid'] == '451') {
+          // This is a page for public.
+          $render_elements = _health_get_render_elements_for_public_topic_page($variables);
+        }
+        else {
+          // This is a page for health professionals.
+          $render_elements = _health_get_render_elements_for_hp_topic_page($variables);
+        }
+      }
 
+    }
   }
 
   if (isset($render_elements)) {
-    return theme('public_hp_switcher', $render_elements);
+    $render_array = [
+      '#theme' => 'public_hp_switcher',
+      '#text' => $render_elements['text'],
+      '#title' => $render_elements['title'],
+      '#url' => $render_elements['url'],
+    ];
+    return drupal_render($render_array);
   }
   else {
-    // Should not have this case.
     return '';
   }
 }
@@ -221,13 +233,17 @@ function health_preprocess_ds_public_hp_switcher(&$variables) {
  * @return string
  */
 function health_preprocess_ds_media_enquiry(&$variables) {
-  return theme('media_enquiry');
+  $render_array = [
+    '#theme' => 'media_enquiry',
+  ];
+  return drupal_render($render_array);
 }
 
 /**
  * Display suite preprocessor -- publication collection
  *
  * @param $variables
+ *
  * @return string
  */
 function health_preprocess_ds_related_publication_collections(&$variables) {
@@ -258,12 +274,20 @@ function health_preprocess_ds_related_publication_collections(&$variables) {
           }
         }
       }
-      $output = theme('item_list', [
-        'items' => $links,
-        'type' => 'ul',
-      ]);
 
-      return theme('publication_collection', ['collection_list' => $output]);
+      $list_render_array = [
+        '#theme' => 'item_list',
+        '#items' => $links,
+        '#type' => 'ul',
+      ];
+      $output = drupal_render($list_render_array);
+
+      $render_array = [
+        '#theme' => 'publication_collection',
+        '#collection_list' => $output,
+      ];
+
+      return drupal_render($render_array);
     }
   }
 }
