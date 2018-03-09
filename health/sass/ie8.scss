@@ -1,0 +1,81 @@
+@import 'themes/health/colors';
+.ie8 {
+
+  // Everything is bunched up, so give it some space.
+  body {
+    margin: 24px;
+  }
+
+  .page {
+
+    // Combat the grid negative margins.
+    div {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    // Show the main nav.
+    #block-superfish-1,
+    #block-search-api-page-default-search {
+      display: block;
+      height: auto;
+    }
+
+    // Hide elements that should be hidden.
+    .skip-link,
+    .element-invisible,
+    #block-menu-menu-sub-menu .block__title,
+    .mobile-toggle,
+    .page-title__core .section-header {
+      display: none !important;
+    }
+
+    // Make the logo a reasonable size.
+    .uikit-responsive-media-img {
+      max-width: 400px !important;
+      border: none !important;
+      padding-top: 20px;
+    }
+
+    // Make main nav look like a main nav :)
+    #block-superfish-1 {
+      padding-top: 20px;
+      li {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+
+    h1 {
+      font-size: 36px !important;
+      font-weight: bold !important;
+    }
+
+    .footer__logo img {
+      background-color: $colour-Primary;
+      padding: 10px;
+    }
+
+    // Doesn't work in IE8 for some reason...
+    #﻿﻿block-bean-share-this {
+      padding-top: 30px;
+    }
+    .﻿field-label {
+      font-weight: bold;
+    }
+  }
+
+  &.js {
+    .uikit-accordion--closed.uikit-accordion__body {
+      height: auto;
+      display: block;
+    }
+  }
+}
+
+// health alert global bar.
+.health-alert-content {
+  a {
+    color: white;
+  }
+}

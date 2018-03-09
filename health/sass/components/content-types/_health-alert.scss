@@ -1,0 +1,61 @@
+// Content type styles by display mode (defined in /display-modes/*)
+// ========================================
+
+
+// Default/full content
+.node-type-health-alert {
+  @extend %dm-full-content;
+  @extend %page-help-only;
+  @extend %page-title-no-supp;
+}
+
+// Display modes
+.node-health-alert {
+
+    // Full
+    &.view-mode-full {
+      .field-label-inline {
+        .field-label {
+          width: 11em;
+        }
+      }
+      .field-name-field-related-health-topics {
+        .field-label {
+          width: auto;
+        }
+      }
+    }
+
+	// Major list
+	&.view-mode-listing_vertical {
+      @extend %dm-list-vertical;
+	}
+
+    // list vertical three tags
+    &.view-mode-listing_vertical_three_tags {
+      @extend %dm-list-vertical;
+      .field-type-taxonomy-term-reference {
+        padding-right: uikit-space(.5);
+      }
+    }
+
+    // List vertical small
+    &.view-mode-listing_vertical_small {
+      @extend %dm-list-vertical--small;
+    }
+
+	// Feature
+	&.view-mode-feature {
+		@extend %dm-feature;
+	}
+	
+	// Inline style
+	&.view-mode-inline {
+		@extend %dm-inline-2-col;
+	}
+
+    // Search
+    &.view-mode-search_result {
+      @extend %dm-search-index;
+    }
+}

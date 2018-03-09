@@ -31,7 +31,12 @@
     <meta name="HandheldFriendly" content="true">
     <meta name="viewport" content="width=device-width">
   <?php endif; ?>
+
   <?php print $styles; ?>
+
+  <!--[if IE 8]>
+  <script src="/<?php print path_to_theme(); ?>/js/script-ie8.js"></script>
+  <![endif]-->
   <?php print $scripts; ?>
 </head>
 
@@ -44,7 +49,12 @@
 
   <?php print $page_top; ?>
   <?php print $page; ?>
-  <?php print $page_bottom; ?>
 
+  <!--[if gt IE 8]><!-->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.6.0/lazyload.min.js"></script>
+  <!--<![endif]-->
+
+  <?php print $page_bottom; ?>
 </body>
 </html>
