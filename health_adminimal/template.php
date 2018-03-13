@@ -82,7 +82,6 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
     $form['#validate'][] = '_health_adminimal_publication_date_validator';
   }
 
-
   // Update date published if the user is changing moderation states.
   if ($form_id == 'workbench_moderation_moderate_form') {
     $form['#submit'][] = '_health_adminimal_date_published_submitter';
@@ -121,6 +120,35 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
     $form['field_resource_duration']['#element_validate'][] = '_health_adminimal_resource_duration_validator';
   }
 
+  // Email address validation.
+  if (isset($form['field_contact_email'])) {
+    $form['field_contact_email']['#element_validate'][] = '_health_adminimal_email_validator';
+  }
+
+  // Telephone number validation.
+  if (isset($form['field_contact_telephone'])) {
+    $form['field_contact_telephone']['#element_validate'][] = '_health_adminimal_telephone_validator';
+  }
+
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ *
+ * @param $element
+ * @param $form_state
+ * @param $context
+ */
+function health_adminimal_field_widget_form_alter(&$element, &$form_state, $context) {
+  // Add email validator to email paragraph.
+  if (isset($element['#field_name']) && $element['#field_name'] == 'field_contact_email') {
+    $element['#element_validate'][] = '_health_adminimal_email_validator';
+  }
+
+  // Add telephone validator to telephone paragraph.
+  if (isset($element['#field_name']) && $element['#field_name'] == 'field_contact_telephone') {
+    $element['#element_validate'][] = '_health_adminimal_telephone_validator';
+  }
 }
 
 /**
@@ -156,8 +184,6 @@ function health_adminimal_fieldset($variables) {
   $output .= "</fieldset>\n";
   return $output;
 }
-
-
 
 /**
  * Implements theme_form_element().
@@ -276,6 +302,43 @@ function _health_adminimal_resource_duration_validator($element, &$form_state) {
   $value = $form_state['values'][$field_name][LANGUAGE_NONE][0]['value'];
   if (!empty($value) && preg_match('/^([1-9])?[0-9]:([1-5]?[0-9]:)?[0-5][0-9]/', $value) == 0) {
     form_error($element, t('Duration must be in the format HH:MM:SS with no leading spaces, for example <strong>2:26</strong> (2 minutes and 26 seconds) or <strong>1:43:59</strong> (one hour, 43 minutes and 59 seconds).'));
+  }
+}
+
+/**
+ * Email address validator.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function _health_adminimal_email_validator($element, &$form_state) {
+  if ($element['#entity_type'] == 'paragraphs_item') {
+    $value = $element['value']['#value'];
+  } else {
+    $field_name = $element[LANGUAGE_NONE]['#field_name'];
+    $value = $form_state['values'][$field_name][LANGUAGE_NONE][0]['value'];
+  }
+  if (!empty($value) && !filter_var($value, FILTER_VALIDATE_EMAIL)) {
+    form_error($element, t('Email address is not in a valid format.'));
+  }
+}
+
+
+/**
+ * Telephone number validator.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function _health_adminimal_telephone_validator($element, &$form_state) {
+  if ($element['#entity_type'] == 'paragraphs_item') {
+    $value = $element['value']['#value'];
+  } else {
+    $field_name = $element[LANGUAGE_NONE]['#field_name'];
+    $value = $form_state['values'][$field_name][LANGUAGE_NONE][0]['value'];
+  }
+  if (!empty($value) && preg_match('/^(\(\d{2}\)|\d{4}) ?(\d{4}|\d{3}) ?(\d{4}|\d{3})$/', $value) == 0) {
+    form_error($element, t('Telephone number is not in a valid format, eg:<br/>Local: (02) 1234 5678 <br/>Mobile: 0412 345 678 <br/>Hotline: 1300 123 456'));
   }
 }
 
