@@ -39,6 +39,6 @@ function health_adminimal_form_system_theme_settings_alter(&$form, &$form_state)
     '#type' => 'checkbox',
     '#title' => t('Enable manual editing of dates'),
     '#description' => t('If there is a need to manually back date dates (eg for migrations etc), enable this, update the dates, then disable.'),
-    '#default_value' => theme_get_setting('edit_date_published'),
+    '#default_value' => theme_get_setting('manually_edit_dates'),
   );
 }
