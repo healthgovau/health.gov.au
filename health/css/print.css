@@ -16,7 +16,7 @@
 
 .uikit-body *,
 .page *,
-.rsbtn_colorskin * {
+.rsbtn_colorskin a * {
   text-shadow: none !important;
   color: #000 !important;
   background: #fff !important;
@@ -26,46 +26,46 @@
 
 .uikit-body a,
 .page a,
-.rsbtn_colorskin a,
+.rsbtn_colorskin a a,
 .uikit-body a:visited,
 .page a:visited,
-.rsbtn_colorskin a:visited {
+.rsbtn_colorskin a a:visited {
   text-decoration: underline;
 }
 
 .uikit-body a[href]:after,
 .page a[href]:after,
-.rsbtn_colorskin a[href]:after {
+.rsbtn_colorskin a a[href]:after {
   content: " (" attr(href) ")";
 }
 
 .uikit-body abbr[title]:after,
 .page abbr[title]:after,
-.rsbtn_colorskin abbr[title]:after {
+.rsbtn_colorskin a abbr[title]:after {
   content: " (" attr(title) ")";
 }
 
 .uikit-body a[href^="javascript:"]:after,
 .page a[href^="javascript:"]:after,
-.rsbtn_colorskin a[href^="javascript:"]:after,
+.rsbtn_colorskin a a[href^="javascript:"]:after,
 .uikit-body a[href^="#"]:after,
 .page a[href^="#"]:after,
-.rsbtn_colorskin a[href^="#"]:after {
+.rsbtn_colorskin a a[href^="#"]:after {
   content: "";
 }
 
 .uikit-body a[rel~='external']:after,
 .page a[rel~='external']:after,
-.rsbtn_colorskin a[rel~='external']:after {
+.rsbtn_colorskin a a[rel~='external']:after {
   display: none !important;
 }
 
 .uikit-body pre,
 .page pre,
-.rsbtn_colorskin pre,
+.rsbtn_colorskin a pre,
 .uikit-body blockquote,
 .page blockquote,
-.rsbtn_colorskin blockquote {
+.rsbtn_colorskin a blockquote {
   border: 1px solid #000;
   padding: 6px;
   page-break-inside: avoid;
@@ -73,82 +73,82 @@
 
 .uikit-body thead,
 .page thead,
-.rsbtn_colorskin thead {
+.rsbtn_colorskin a thead {
   display: table-header-group;
 }
 
 .uikit-body tr,
 .page tr,
-.rsbtn_colorskin tr,
+.rsbtn_colorskin a tr,
 .uikit-body img,
 .page img,
-.rsbtn_colorskin img {
+.rsbtn_colorskin a img {
   page-break-inside: avoid;
 }
 
 .uikit-body img,
 .page img,
-.rsbtn_colorskin img {
+.rsbtn_colorskin a img {
   max-width: 100% !important;
 }
 
 .uikit-body p,
 .page p,
-.rsbtn_colorskin p,
+.rsbtn_colorskin a p,
 .uikit-body h2,
 .page h2,
-.rsbtn_colorskin h2,
+.rsbtn_colorskin a h2,
 .uikit-body .video--left .video__title,
 .video--left
   .uikit-body .video__title,
 .page .video--left .video__title,
 .video--left .page .video__title,
-.rsbtn_colorskin .video--left .video__title,
-.video--left .rsbtn_colorskin .video__title,
+.rsbtn_colorskin a .video--left .video__title,
+.video--left .rsbtn_colorskin a .video__title,
 .uikit-body .video--right .video__title,
 .video--right
   .uikit-body .video__title,
 .page .video--right .video__title,
 .video--right .page .video__title,
-.rsbtn_colorskin .video--right .video__title,
-.video--right .rsbtn_colorskin .video__title,
+.rsbtn_colorskin a .video--right .video__title,
+.video--right .rsbtn_colorskin a .video__title,
 .uikit-body h3,
 .page h3,
-.rsbtn_colorskin h3 {
+.rsbtn_colorskin a h3 {
   orphans: 3;
   widows: 3;
 }
 
 .uikit-body h2,
 .page h2,
-.rsbtn_colorskin h2,
+.rsbtn_colorskin a h2,
 .uikit-body .video--left .video__title,
 .video--left .uikit-body .video__title,
 .page .video--left .video__title,
 .video--left .page .video__title,
-.rsbtn_colorskin .video--left .video__title,
-.video--left .rsbtn_colorskin .video__title,
+.rsbtn_colorskin a .video--left .video__title,
+.video--left .rsbtn_colorskin a .video__title,
 .uikit-body .video--right .video__title,
 .video--right .uikit-body .video__title,
 .page .video--right .video__title,
 .video--right .page .video__title,
-.rsbtn_colorskin .video--right .video__title,
-.video--right .rsbtn_colorskin .video__title,
+.rsbtn_colorskin a .video--right .video__title,
+.video--right .rsbtn_colorskin a .video__title,
 .uikit-body h3,
 .page h3,
-.rsbtn_colorskin h3 {
+.rsbtn_colorskin a h3 {
   page-break-after: avoid;
 }
 
 .uikit-body p a,
 .page p a,
-.rsbtn_colorskin p a {
+.rsbtn_colorskin a p a {
   word-wrap: break-word;
 }
 
 .uikit-body select,
 .page select,
-.rsbtn_colorskin select {
+.rsbtn_colorskin a select {
   background: #fff !important;
 }
 
@@ -165,8 +165,8 @@
 .page .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after,
 .page .sidebar #block-menu-block-2
   .uikit-breadcrumbs > ul > li:after,
-.rsbtn_colorskin .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after,
-.rsbtn_colorskin .sidebar #block-menu-block-2
+.rsbtn_colorskin a .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after,
+.rsbtn_colorskin a .sidebar #block-menu-block-2
   .uikit-breadcrumbs > ul > li:after,
 .breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after,
 .uikit-breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after,
