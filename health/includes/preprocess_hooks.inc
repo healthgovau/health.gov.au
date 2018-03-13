@@ -549,7 +549,7 @@ function health_preprocess_field(&$variables) {
   }
 
   // Email address.
-  if ($variables['element']['#field_name'] == 'field_email') {
+  if ($variables['element']['#field_name'] == 'field_contact_email') {
     // If we are on a media page, add in the news id and title.
     if ($variables['element']['#bundle'] == 'para_email') {
       $nid = ($node = menu_get_object()) ? $node->nid : NULL;
