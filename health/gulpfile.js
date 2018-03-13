@@ -62,7 +62,7 @@ options.styleGuide = {
   ],
 
   homepage: 'homepage.md',
-  title: 'Parkes Style Guide'
+  title: 'health.gov.au style guide'
 };
 
 var $ = gulpLoadPlugins();
@@ -207,7 +207,7 @@ gulp.task('styles:generate:dev', function(){
 });
 
 /**
- * Generate css without soucemap.
+ * Generate css without sourcemap.
  */
 gulp.task('styles:generate:prod', function(){
   return gulp.src(sassFiles)
@@ -236,6 +236,9 @@ gulp.task('watch', ['browser-sync'], function(){
   gulp.watch([options.theme.sass + '/**/*.scss'], ['styles:dev', bs.reload]);
   gulp.watch([options.theme.js + '/src/*.js'], ['js:dev', bs.reload]);
 });
+
+// Watch and reload
+gulp.task('prod', ['styles:prod', 'js:prod']);
 
 // Watch and reload
 gulp.task('default', ['styles:dev', 'js:dev']);
