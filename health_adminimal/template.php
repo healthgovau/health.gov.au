@@ -130,6 +130,11 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
     $form['field_contact_telephone']['#element_validate'][] = '_health_adminimal_telephone_validator';
   }
 
+  // Fax number validation.
+  if (isset($form['field_contact_fax_number'])) {
+    $form['field_contact_fax_number']['#element_validate'][] = '_health_adminimal_telephone_validator';
+  }
+
 }
 
 /**
@@ -331,7 +336,7 @@ function _health_adminimal_email_validator($element, &$form_state) {
  * @param $form_state
  */
 function _health_adminimal_telephone_validator($element, &$form_state) {
-  if ($element['#entity_type'] == 'paragraphs_item') {
+  if (isset($element['#entity_type']) && $element['#entity_type'] == 'paragraphs_item') {
     $value = $element['value']['#value'];
   } else {
     $field_name = $element[LANGUAGE_NONE]['#field_name'];
