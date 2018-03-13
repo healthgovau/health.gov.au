@@ -28,6 +28,10 @@
         width: auto;
       }
     }
+
+    .field-name-field-link-internal {
+      @extend %ext-link-wrapper;
+    }
   }
 
   // Major list

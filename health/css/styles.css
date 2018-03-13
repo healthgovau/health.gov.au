@@ -16293,11 +16293,6 @@ a.uikit-header__logo:focus {
   margin-bottom: 0;
 }
 
-.page-news-and-events .region-title-supp {
-  padding: 1em;
-  background: #e5e5e5;
-}
-
 .page .footer {
   background-color: #1b2a57;
   padding-left: 0;
@@ -19565,13 +19560,15 @@ header,
   margin-bottom: 0;
 }
 
-.field-name-field-link-external .field-items {
+.field-name-field-link-external .field-items,
+.node-departmental-media.view-mode-full .field-name-field-link-internal {
   border-left: 6px solid #006e7a;
   padding-left: 20px;
   padding-top: 0.8em;
 }
 
-.field-name-field-link-external .field-items a {
+.field-name-field-link-external .field-items a,
+.node-departmental-media.view-mode-full .field-name-field-link-internal a {
   font-weight: bold;
 }
 

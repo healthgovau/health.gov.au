@@ -549,7 +549,7 @@ function health_preprocess_field(&$variables) {
   }
 
   // Email address.
-  if ($variables['element']['#field_name'] == 'field_email') {
+  if ($variables['element']['#field_name'] == 'field_contact_email') {
     // If we are on a media page, add in the news id and title.
     if ($variables['element']['#bundle'] == 'para_email') {
       $nid = ($node = menu_get_object()) ? $node->nid : NULL;
@@ -558,7 +558,7 @@ function health_preprocess_field(&$variables) {
       $variables['items'][0]['#markup'] = l($variables['items'][0]['#markup'], 'mailto:' . $variables['items'][0]['#markup'] . '?subject=' . $subject . '&body=' . $body);
     }
 
-    // Make sure email addresses are being it is being spamspanned
+    // Make sure email addresses are being spam-spanned.
     if ($variables['items']) {
       $variables['items'][0]['#markup'] = _spamspan_filter_process($variables['items'][0]['#markup'], null);
     }

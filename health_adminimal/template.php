@@ -82,7 +82,6 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
     $form['#validate'][] = '_health_adminimal_publication_date_validator';
   }
 
-
   // Update date published if the user is changing moderation states.
   if ($form_id == 'workbench_moderation_moderate_form') {
     $form['#submit'][] = '_health_adminimal_date_published_submitter';
@@ -104,6 +103,7 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
       'health_topic',
       'health_topic_hp',
       'condition_or_disease',
+      'committee_or_group'
     ];
     if (in_array($form['#bundle'], $disabled)) {
       $form['field_audience']['#disabled'] = TRUE;
@@ -120,6 +120,40 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
     $form['field_resource_duration']['#element_validate'][] = '_health_adminimal_resource_duration_validator';
   }
 
+  // Email address validation.
+  if (isset($form['field_contact_email'])) {
+    $form['field_contact_email']['#element_validate'][] = '_health_adminimal_email_validator';
+  }
+
+  // Telephone number validation.
+  if (isset($form['field_contact_telephone'])) {
+    $form['field_contact_telephone']['#element_validate'][] = '_health_adminimal_telephone_validator';
+  }
+
+  // Fax number validation.
+  if (isset($form['field_contact_fax_number'])) {
+    $form['field_contact_fax_number']['#element_validate'][] = '_health_adminimal_telephone_validator';
+  }
+
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ *
+ * @param $element
+ * @param $form_state
+ * @param $context
+ */
+function health_adminimal_field_widget_form_alter(&$element, &$form_state, $context) {
+  // Add email validator to email paragraph.
+  if (isset($element['#field_name']) && $element['#field_name'] == 'field_contact_email') {
+    $element['#element_validate'][] = '_health_adminimal_email_validator';
+  }
+
+  // Add telephone validator to telephone paragraph.
+  if (isset($element['#field_name']) && $element['#field_name'] == 'field_contact_telephone') {
+    $element['#element_validate'][] = '_health_adminimal_telephone_validator';
+  }
 }
 
 /**
@@ -155,8 +189,6 @@ function health_adminimal_fieldset($variables) {
   $output .= "</fieldset>\n";
   return $output;
 }
-
-
 
 /**
  * Implements theme_form_element().
@@ -279,6 +311,43 @@ function _health_adminimal_resource_duration_validator($element, &$form_state) {
 }
 
 /**
+ * Email address validator.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function _health_adminimal_email_validator($element, &$form_state) {
+  if ($element['#entity_type'] == 'paragraphs_item') {
+    $value = $element['value']['#value'];
+  } else {
+    $field_name = $element[LANGUAGE_NONE]['#field_name'];
+    $value = $form_state['values'][$field_name][LANGUAGE_NONE][0]['value'];
+  }
+  if (!empty($value) && !filter_var($value, FILTER_VALIDATE_EMAIL)) {
+    form_error($element, t('Email address is not in a valid format.'));
+  }
+}
+
+
+/**
+ * Telephone number validator.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function _health_adminimal_telephone_validator($element, &$form_state) {
+  if (isset($element['#entity_type']) && $element['#entity_type'] == 'paragraphs_item') {
+    $value = $element['value']['#value'];
+  } else {
+    $field_name = $element[LANGUAGE_NONE]['#field_name'];
+    $value = $form_state['values'][$field_name][LANGUAGE_NONE][0]['value'];
+  }
+  if (!empty($value) && preg_match('/^(\(\d{2}\)|\d{4}) ?(\d{4}|\d{3}) ?(\d{4}|\d{3})$/', $value) == 0) {
+    form_error($element, t('Telephone number is not in a valid format, eg:<br/>Local: (02) 1234 5678 <br/>Mobile: 0412 345 678 <br/>Hotline: 1300 123 456'));
+  }
+}
+
+/**
  * Update date published to the current day if this is the first time it is being published.
  *
  * @param $form
@@ -292,20 +361,41 @@ function _health_adminimal_date_published_submitter($form, &$form_state) {
 
   // Standard node edit form.
   if (key_exists('nid', $form_state['values'])) {
+
+    // Check if date published is empty - this should only happen on nodes that existed before date published field was added.
+    if (empty($form_state['values']['field_date_published'][LANGUAGE_NONE][0])) {
+      // If it has already been published, fill in the date.
+      if ($first_published = _health_adminimal_find_first_publish_date($form_state['values']['nid'])) {
+        $date = format_date(strtotime($first_published), 'custom', 'Y-m-d H:i:s');
+        $form_state['values']['field_date_published'][LANGUAGE_NONE][0]['value'] = $date;
+      }
+    }
+
+    // If this is being published from an unpublished state.
     if (key_exists('workbench_moderation_state_new', $form_state['values'])) { // If this is using workbench moderation
       if ($form_state['values']['workbench_moderation_state_new'] == 'published' && $form_state['values']['status'] == 0) {
-        $form_state['values']['field_date_published'][LANGUAGE_NONE][0]['value'] = format_date(time(), 'custom', 'Y-m-d H:i:s');
+        // Check if this has already been published, if not, then set date published to today.
+        if (_health_adminimal_find_first_publish_date($form_state['values']['nid']) == FALSE) {
+          $date = format_date(time(), 'custom', 'Y-m-d') . '00:00:00';
+          $form_state['values']['field_date_published'][LANGUAGE_NONE][0]['value'] = $date;
+        }
       }
     }
   }
 
   // Workbench moderation state change.
   if ($form['#id'] == 'workbench-moderation-moderate-form') {
+
+    // If this is the being published from an unpublished state.
     if ($form_state['values']['state'] == 'published' && $form_state['values']['node']->status == 0) {
-      // Load the node, change the date and save.
       $node = node_load($form_state['values']['node']->nid);
-      $node->field_date_published[LANGUAGE_NONE][0]['value'] = format_date(time(), 'custom', 'Y-m-d H:i:s');
-      node_save($node);
+      // Set the date published to when it was first published.
+      if ($first_published = _health_adminimal_find_first_publish_date($node->nid)) {
+        $date = format_date(strtotime($first_published), 'custom', 'Y-m-d H:i:s');
+        $node->field_date_published[LANGUAGE_NONE][0]['value'] = $date;
+        node_save($node);
+      }
+
     }
   }
 }
@@ -334,4 +424,41 @@ function _health_adminimal_process_date($form, &$form_state) {
       $form_state['values']['field_last_reviewed'][LANGUAGE_NONE][0] = $form_state['values']['field_last_updated'][LANGUAGE_NONE][0];
     }
   }
+}
+
+
+/**
+ * Find the first publish date by given node ID.
+ *
+ * @param $nid
+ *   Node ID.
+ *
+ * @return mixed|string
+ */
+function _health_adminimal_find_first_publish_date($nid) {
+  // Find the fist published date for current node.
+  // Not a good way to implement, no API from workbench_moderation module
+  // available.
+  $result = db_query('
+    SELECT m.stamp
+    FROM {node_revision} r
+    LEFT JOIN {node} n ON n.vid = r.vid
+    INNER JOIN {workbench_moderation_node_history} m ON m.vid = r.vid
+    WHERE r.nid = :nid
+    AND m.state = :published_state
+    ORDER BY m.stamp ASC
+    LIMIT 1',
+    [
+      ':nid' => $nid,
+      ':published_state' => workbench_moderation_state_published(),
+    ])
+    ->fetchObject();
+  if (empty($result->stamp)) {
+    $date = FALSE;
+  }
+  else {
+    $date = format_date($result->stamp, 'custom', 'd F Y');
+  }
+
+  return $date;
 }
