@@ -104,6 +104,7 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
       'health_topic',
       'health_topic_hp',
       'condition_or_disease',
+      'committee_or_group'
     ];
     if (in_array($form['#bundle'], $disabled)) {
       $form['field_audience']['#disabled'] = TRUE;
