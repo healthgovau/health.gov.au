@@ -21,21 +21,25 @@
       // If the user tries to print, then try to load all the images so printing works :)
       // https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeprint
 
-
-
       // Webkit browsers.
-      if(typeof window.webkitConvertPointFromNodeToPage === 'function') {
+      if (typeof window.webkitConvertPointFromNodeToPage === 'function') {
+        // Onbeforeprint equivalent for webkit browsers (Safari etc)
         var mediaQueryList = window.matchMedia('print');
-        mediaQueryList.addListener('change', function (mql) {
+        mediaQueryList.addListener(function (mql) {
           if (mql.matches) {
-            // Onbeforeprint equivalent for webkit browsers (Safari etc)
+            myLazyLoad._settings.threshold = 999999999;
+            myLazyLoad.update();
+            $(window).scroll();
           }
         });
-      } else {
-        //window.onbeforeprint
-        $(window).on('onbeforeprint', function() {
-          console.log('onbeforeprint');
-        });
+      }
+      // Normal browsers.
+      else {
+        window.onbeforeprint = function () {
+          myLazyLoad._settings.threshold = 999999999;
+          myLazyLoad.update();
+          $(window).scroll();
+        }
       }
     }
   };
