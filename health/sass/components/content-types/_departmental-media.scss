@@ -5,10 +5,8 @@
 .node-type-departmental-media {
   @extend %dm-full-content;
   @extend %page-title-no-supp;
-  @extend %page-help-only--no-border;
-  @extend %media-enquiry;
+  @extend %page-help-only;
 }
-
 
 // Display modes
 .node-departmental-media {
