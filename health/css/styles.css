@@ -19563,15 +19563,13 @@ header,
   margin-bottom: 0;
 }
 
-.field-name-field-link-external .field-items,
-.node-departmental-media.view-mode-full .field-name-field-link-internal {
+.field-name-field-link-external .field-items {
   border-left: 6px solid #006e7a;
   padding-left: 20px;
   padding-top: 0.8em;
 }
 
-.field-name-field-link-external .field-items a,
-.node-departmental-media.view-mode-full .field-name-field-link-internal a {
+.field-name-field-link-external .field-items a {
   font-weight: bold;
 }
 
