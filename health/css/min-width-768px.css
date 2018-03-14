@@ -3088,6 +3088,7 @@ h6 {
 }
 
 .page-node-landing-page .page .field-name-field-related-health-topics,
+.node-type-news-article .page .field-name-field-related-health-topics,
 .node-type-event .page .field-name-field-related-health-topics,
 .node-type-publication .page .field-name-field-related-health-topics,
 .node-type-publication-collection .page .field-name-field-related-health-topics,
@@ -3095,7 +3096,6 @@ h6 {
 .node-type-health-topic-hp .page .field-name-field-related-health-topics,
 .node-type-departmental-media .page .field-name-field-related-health-topics,
 .page-views .page .field-name-field-related-health-topics,
-.node-type-news-article .media-enquiry,
 .node-type-health-alert .media-enquiry {
   margin-top: 3.2em;
 }
