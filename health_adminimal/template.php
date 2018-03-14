@@ -54,6 +54,11 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
       ],
     ];
   }
+
+  // Prevent users from being able to change the default image for media releases.
+  if ($form_id == 'departmental_media_node_form') {
+    $form['field_image_featured']['#access'] = FALSE;
+  }
 }
 
 /**
