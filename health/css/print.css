@@ -389,6 +389,14 @@ table thead {
   background: #fff !important;
 }
 
+.image-wrapper.image-loading {
+  border: 1px solid black;
+}
+
+.image-wrapper.image-loading:before {
+  content: "This image hasn't loaded yet. Close the print dialog and try again.";
+}
+
 .page .main-content {
   width: 100%;
 }
