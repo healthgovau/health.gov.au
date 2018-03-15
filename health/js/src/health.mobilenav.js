@@ -76,6 +76,11 @@
         $('.filter-topics-by-letter', context).toggleClass('facetshow');
       });
 
+      // Because we are outputting 2 search forms, one for desktop and one for mobile.
+      // It uses the same ID, which causes an accessibility issue.
+      // So update the ID of the mobile one so it is different.
+      $('.region-navigation #search-api-page-search-form').attr('id', 'search-api-page-search-form-mobile');
+
       /**
        * Enable the overlay.
        */
