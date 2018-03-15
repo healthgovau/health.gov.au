@@ -3273,8 +3273,12 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
   margin-bottom: 0;
 }
 
-.rsbtn_colorskin a {
-  margin: 0 0 1.6em 2.4em;
+#readspeaker {
+  float: right;
+}
+
+.rsbtn_colorskin {
+  margin: 0 0 0 1.6em;
 }
 
 .page-node .group-footer,
@@ -3563,34 +3567,34 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
 
 .uikit-body .sidebar #block-menu-block-2 a:hover,
 .page .sidebar #block-menu-block-2 a:hover,
-.rsbtn_colorskin a .sidebar #block-menu-block-2 a:hover,
+.rsbtn_colorskin .sidebar #block-menu-block-2 a:hover,
 .uikit-body .sidebar .block-menu-block--title-link .block__title a:hover,
 .page .sidebar .block-menu-block--title-link .block__title a:hover,
-.rsbtn_colorskin a .sidebar .block-menu-block--title-link .block__title a:hover {
+.rsbtn_colorskin .sidebar .block-menu-block--title-link .block__title a:hover {
   border-left-color: #008998;
 }
 
 .uikit-body .sidebar #block-menu-block-2 ul > li:first-child,
 .page .sidebar #block-menu-block-2 ul > li:first-child,
-.rsbtn_colorskin a .sidebar #block-menu-block-2 ul > li:first-child {
+.rsbtn_colorskin .sidebar #block-menu-block-2 ul > li:first-child {
   border-top: 1px solid #CCC;
 }
 
 .uikit-body .sidebar #block-menu-block-2 ul > li a,
 .page .sidebar #block-menu-block-2 ul > li a,
-.rsbtn_colorskin a .sidebar #block-menu-block-2 ul > li a {
+.rsbtn_colorskin .sidebar #block-menu-block-2 ul > li a {
   padding: 0.8em 1.6em;
 }
 
 .uikit-body .sidebar #block-menu-block-2 ul > li ul li a,
 .page .sidebar #block-menu-block-2 ul > li ul li a,
-.rsbtn_colorskin a .sidebar #block-menu-block-2 ul > li ul li a {
+.rsbtn_colorskin .sidebar #block-menu-block-2 ul > li ul li a {
   padding: 0.8em 2.8em;
 }
 
 .uikit-body .sidebar #block-menu-block-2,
 .page .sidebar #block-menu-block-2,
-.rsbtn_colorskin a .sidebar #block-menu-block-2 {
+.rsbtn_colorskin .sidebar #block-menu-block-2 {
   display: block;
 }
 
