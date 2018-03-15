@@ -157,7 +157,7 @@ p.summary, .field-name-field-summary {
     }
 }
 %page-help-only {
-
+  .page {
     .field-name-field-date-updated,
     .field-name-field-date-published {
       &.field-label-inline, &.field-label-above {
@@ -167,8 +167,9 @@ p.summary, .field-name-field-summary {
       }
     }
     .field-name-field-related-health-topics {
-        @extend %bottom-border;
+      @extend %bottom-border;
     }
+  }
 }
 
 %page-help-only--no-border {

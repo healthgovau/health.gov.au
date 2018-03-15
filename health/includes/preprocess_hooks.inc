@@ -780,6 +780,10 @@ function health_preprocess_page(&$variables) {
     'type' => 'file',
   ];
   $variables['page']['content']['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/dist/health.lazyload.min.js',
+    'type' => 'file',
+  ];
+  $variables['page']['content']['#attached']['js'][] = [
     'data' => path_to_theme() . '/js/dist/script.min.js',
     'type' => 'file',
   ];

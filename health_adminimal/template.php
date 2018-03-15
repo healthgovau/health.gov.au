@@ -56,6 +56,16 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
 
     $form['#validate'][] = '_health_adminimal_publication_validate';
   }
+
+  // Prevent users from being able to change the default image for media releases.
+  if ($form_id == 'departmental_media_node_form') {
+    $form['field_image_featured']['#access'] = FALSE;
+  }
+
+  // Prevent users from being able to change the default related contact for news and departmental media releases.
+  if ($form_id == 'departmental_media_node_form' || $form_id == 'news_article_node_form') {
+    $form['field_related_contact']['#access'] = FALSE;
+  }
 }
 
 /**
@@ -378,7 +388,7 @@ function _health_adminimal_date_published_submitter($form, &$form_state) {
       if ($form_state['values']['workbench_moderation_state_new'] == 'published' && $form_state['values']['status'] == 0) {
         // Check if this has already been published, if not, then set date published to today.
         if (_health_adminimal_find_first_publish_date($form_state['values']['nid']) == FALSE) {
-          $date = format_date(time(), 'custom', 'Y-m-d') . '00:00:00';
+          $date = format_date(time(), 'custom', 'Y-m-d') . ' 00:00:00';
           $form_state['values']['field_date_published'][LANGUAGE_NONE][0]['value'] = $date;
         }
       }

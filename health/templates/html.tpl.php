@@ -34,9 +34,7 @@
 
   <?php print $styles; ?>
 
-  <!--[if IE 8]>
-  <script src="/<?php print path_to_theme(); ?>/js/script-ie8.js"></script>
-  <![endif]-->
+
   <?php print $scripts; ?>
 </head>
 
@@ -49,6 +47,10 @@
 
   <?php print $page_top; ?>
   <?php print $page; ?>
+
+  <!--[if IE 8]>
+  <script src="/<?php print path_to_theme(); ?>/js/dist/script-ie8.min.js"></script>
+  <![endif]-->
 
   <!--[if gt IE 8]><!-->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.min.js"></script>
