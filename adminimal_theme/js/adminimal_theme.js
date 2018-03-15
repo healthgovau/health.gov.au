@@ -98,4 +98,20 @@ Drupal.behaviors.adminimal_move_active_primary_tab = {
   }
 };
 
+// Add required label to nmm ID field for orderable publication.
+Drupal.behaviors.adminimal_orderable_publication = {
+  attach: function (context, settings) {
+    $('#edit-field-publication-orderable-und', context).on('click', function() {
+      if ($(this).is(':checked')) {
+        if (!$('.form-item-field-publication-nmm-id-und-0-value .form-required', context).length) {
+          $('.form-item-field-publication-nmm-id-und-0-value label', context).append('<span class="form-required" title="This field is required.">(mandatory)</span>');
+        }
+      }
+      else {
+        $('.form-item-field-publication-nmm-id-und-0-value .form-required', context).remove();
+      }
+    });
+  }
+};
+
 })(jQuery);
