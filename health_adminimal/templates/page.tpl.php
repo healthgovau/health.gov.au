@@ -43,7 +43,7 @@
           both here and in <?php print l(theme_get_setting('dual_author_environment'), theme_get_setting('dual_author_environment')  ) ?>
           until maintenance has finished.
         </p>
-        <p>We <strong>strongly recommend</strong> waiting till maintenance has finished unless the <strong>content
+        <p>We <strong>strongly recommend</strong> waiting until maintenance has finished unless the <strong>content
           change is urgent</strong>.</p>
         <p>Contact <a href="http://my.central.health/Person.aspx?accountname=CENTRAL%5CFinlas">Stuart Finlayson</a> for further information.</>
       </div>
