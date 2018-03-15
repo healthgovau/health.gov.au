@@ -3739,17 +3739,13 @@ p.filter__help {
   width: 50%;
 }
 
-#block-search-api-page-default-search {
-  display: block;
-  height: auto;
-}
-
 .region-navigation #block-search-api-page-default-search--2 {
   border-bottom: 0;
 }
 
-.region-header div.block-search-api-page {
+.js .region-header div.block-search-api-page {
   display: block;
+  height: auto;
 }
 
 .page-content .sidebar-right {

@@ -19928,7 +19928,7 @@ p.filter__help {
   position: relative;
 }
 
-.region-header div.block-search-api-page {
+.js .region-header div.block-search-api-page {
   display: none;
 }
 
