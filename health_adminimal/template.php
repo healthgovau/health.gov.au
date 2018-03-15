@@ -53,6 +53,8 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
         ':input[id="edit-field-publication-orderable-und"]' => ['checked' => TRUE],
       ],
     ];
+
+    $form['#validate'][] = '_health_adminimal_publication_validate';
   }
 }
 
@@ -461,4 +463,28 @@ function _health_adminimal_find_first_publish_date($nid) {
   }
 
   return $date;
+}
+
+/**
+ * Custom form validator for publication node form.
+ *
+ * Make publication nmm id field required if publication orderable field is
+ * checked.
+ *
+ * Remove publication nmm id value if publication orderable field is unchecked.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function _health_adminimal_publication_validate($form, &$form_state) {
+  if ($form_state['values']['field_publication_orderable'][LANGUAGE_NONE][0]['value'] == TRUE) {
+    if ($form_state['values']['field_publication_nmm_id'][LANGUAGE_NONE][0]['value'] == NULL) {
+      form_set_error('field_publication_nmm_id', 'Please fill in publication nmm id');
+    }
+  }
+  else {
+    if ($form_state['values']['field_publication_nmm_id'][LANGUAGE_NONE][0]['value'] != NULL) {
+      $form_state['values']['field_publication_nmm_id'][LANGUAGE_NONE][0]['value'] = NULL;
+    }
+  }
 }
