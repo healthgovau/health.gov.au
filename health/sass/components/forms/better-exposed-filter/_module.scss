@@ -75,7 +75,9 @@
     padding-left: 0.5em;
     &:before {
       position: relative;
+      margin-left: 0;
     }
     bottom: -3px;
+    margin-left: 0;
   }
 }
