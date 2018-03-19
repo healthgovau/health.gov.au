@@ -27,8 +27,8 @@
                   xml.find('item').each(function () {
 
                     // Check if the node list appears in cookies already.
-                    var datetime = $.datepicker.formatDate('@', new Date($(this).find('pubDate').text()));
-                    var cookie = 'HideHealthAlert-' + $(this).find('id').text() + '-' + datetime;
+                    var updated_date = $.datepicker.formatDate('@', new Date($(this).find('pubDate').text().replace(/\s/, 'T')));
+                    var cookie = 'HideHealthAlert-' + $(this).find('id').text() + '-' + updated_date;
                     var hideAlert = scope.getCookie(cookie);
                     if (!hideAlert) {
                       // Cookie is set to hide the block.
@@ -37,7 +37,7 @@
                           'id': $(this).find('id').text(),
                           'title': $(this).find('title').text(),
                           'link': $(this).find('link').text(),
-                          'date': datetime,
+                          'updated_date': updated_date,
                         });
                     }
                   });
@@ -69,7 +69,7 @@
 
               $.each(this.items, function (index, value) {
                 // Set cookie to hide alert for 100 years.
-                scope.setCookie('HideHealthAlert' + '-' + value.id + '-' + value.date, true, 100)
+                scope.setCookie('HideHealthAlert' + '-' + value.id + '-' + value.updated_date, true, 100)
               });
             },
             setCookie: function (name, value, years) {
