@@ -56,7 +56,13 @@
 
 .uikit-body a[rel~='external']:after,
 .page a[rel~='external']:after,
-.rsbtn_colorskin a[rel~='external']:after {
+.rsbtn_colorskin a[rel~='external']:after,
+.uikit-body .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .uikit-body .field-item:after,
+.page .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page .field-item:after,
+.rsbtn_colorskin .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .rsbtn_colorskin .field-item:after {
   display: none !important;
 }
 

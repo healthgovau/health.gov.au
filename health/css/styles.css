@@ -577,7 +577,13 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 
 .uikit-body a[rel~='external']:after,
 .page a[rel~='external']:after,
-.rsbtn_colorskin a[rel~='external']:after {
+.rsbtn_colorskin a[rel~='external']:after,
+.uikit-body .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .uikit-body .field-item:after,
+.page .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page .field-item:after,
+.rsbtn_colorskin .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .rsbtn_colorskin .field-item:after {
   content: ' ';
   display: inline-block;
   width: 0.7em;
@@ -591,9 +597,24 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 .ie8 .uikit-body a[rel~='external']:after,
 .ie8 .page a[rel~='external']:after,
 .ie8 .rsbtn_colorskin a[rel~='external']:after,
+.ie8 .uikit-body .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .ie8 .uikit-body .field-item:after,
+.ie8 .page .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .ie8 .page .field-item:after,
+.ie8 .rsbtn_colorskin .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .ie8 .rsbtn_colorskin .field-item:after,
 .lt-ie8 .uikit-body a[rel~='external']:after,
 .lt-ie8 .page a[rel~='external']:after,
-.lt-ie8 .rsbtn_colorskin a[rel~='external']:after {
+.lt-ie8 .rsbtn_colorskin a[rel~='external']:after,
+.lt-ie8 .uikit-body .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal
+      .lt-ie8 .uikit-body .field-item:after,
+.lt-ie8 .page .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal
+      .lt-ie8 .page .field-item:after,
+.lt-ie8 .rsbtn_colorskin .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal
+      .lt-ie8 .rsbtn_colorskin .field-item:after {
   content: '⇗';
   color: #153a6e;
 }
@@ -14394,7 +14415,8 @@ p.resource-title {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
-.bean-image-and-text.view-mode-full .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after {
+.bean-image-and-text.view-mode-full .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .bean-image-and-text.view-mode-full .bean-block-content .field-item .field-name-field-link-internal .field-item:after {
   position: absolute;
   top: 1.2em;
   right: 0.4em;
@@ -14499,7 +14521,8 @@ p.resource-title {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
-.bean-image-and-text.view-mode-view_selector .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after {
+.bean-image-and-text.view-mode-view_selector .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .bean-block-content .field-item .field-name-field-link-internal .field-item:after {
   position: absolute;
   top: 1.2em;
   right: 0.4em;
@@ -16287,7 +16310,9 @@ a.uikit-header__logo:focus {
   border-bottom: none;
 }
 
-.page .footer a[rel~='external']:after {
+.page .footer a[rel~='external']:after,
+.page .footer .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page .footer .field-item:after {
   color: white;
 }
 
@@ -16635,7 +16660,9 @@ ul.social__links .social__links-item a:after,
   z-index: 1;
 }
 
-.page a[rel~='external']:after {
+.page a[rel~='external']:after,
+.page .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page .field-item:after {
   background-image: none;
   content: "\f08e";
   font-family: FontAwesome;
@@ -19560,17 +19587,32 @@ header,
 .external-link-url,
 .bean-image-and-text.view-mode-full .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after,
 .bean-image-and-text.view-mode-view_selector .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .bean-block-content .field-item .field-name-field-link-internal .field-item:after,
 .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card .field-item .field-name-field-link-internal .field-item:after,
 .page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal
+.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card .field-item .field-name-field-link-internal .field-item:after,
 .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car .field-item .field-name-field-link-internal .field-item:after,
 .page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal
+.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car .field-item .field-name-field-link-internal .field-item:after,
 .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca .field-item .field-name-field-link-internal .field-item:after,
 .page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal
+.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca .field-item .field-name-field-link-internal .field-item:after,
 .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.topic-tile a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.topic-tile .field-item .field-name-field-link-internal .field-item:after,
 .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.conditions--diseases a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.conditions--diseases .field-item .field-name-field-link-internal .field-item:after,
 .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.medicare-tile a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.medicare-tile .field-item .field-name-field-link-internal .field-item:after,
 .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.symptoms a[rel~='external'] .field-name-field-link-internal .field-item:after,
-.front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.services--support a[rel~='external'] .field-name-field-link-internal .field-item:after {
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.symptoms .field-item .field-name-field-link-internal .field-item:after,
+.front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.services--support a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.services--support .field-item .field-name-field-link-internal .field-item:after {
   color: #18788d;
   font-size: 14px;
   word-break: break-all;
@@ -20406,7 +20448,10 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .r
 }
 
 .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card a[rel~='external'] .field-name-field-link-internal .field-item:after,
-.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card a[rel~='external'] .field-name-field-link-internal .field-item:after {
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card .field-item .field-name-field-link-internal .field-item:after,
+.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal
+    .page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card .field-item .field-name-field-link-internal .field-item:after {
   position: absolute;
   top: 1.2em;
   right: 0.4em;
@@ -20464,7 +20509,10 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .r
 }
 
 .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car a[rel~='external'] .field-name-field-link-internal .field-item:after,
-.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car a[rel~='external'] .field-name-field-link-internal .field-item:after {
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car .field-item .field-name-field-link-internal .field-item:after,
+.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal
+    .page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car .field-item .field-name-field-link-internal .field-item:after {
   position: absolute;
   top: 1.2em;
   right: 0.4em;
@@ -20522,7 +20570,10 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .r
 }
 
 .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca a[rel~='external'] .field-name-field-link-internal .field-item:after,
-.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca a[rel~='external'] .field-name-field-link-internal .field-item:after {
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca .field-item .field-name-field-link-internal .field-item:after,
+.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal
+    .page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca .field-item .field-name-field-link-internal .field-item:after {
   position: absolute;
   top: 1.2em;
   right: 0.4em;
@@ -20678,7 +20729,8 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .r
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
-.front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.topic-tile a[rel~='external'] .field-name-field-link-internal .field-item:after {
+.front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.topic-tile a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.topic-tile .field-item .field-name-field-link-internal .field-item:after {
   position: absolute;
   top: 1.2em;
   right: 0.4em;
@@ -20725,7 +20777,8 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .r
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
-.front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.conditions--diseases a[rel~='external'] .field-name-field-link-internal .field-item:after {
+.front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.conditions--diseases a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.conditions--diseases .field-item .field-name-field-link-internal .field-item:after {
   position: absolute;
   top: 1.2em;
   right: 0.4em;
@@ -20772,7 +20825,8 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .r
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
-.front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.medicare-tile a[rel~='external'] .field-name-field-link-internal .field-item:after {
+.front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.medicare-tile a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.medicare-tile .field-item .field-name-field-link-internal .field-item:after {
   position: absolute;
   top: 1.2em;
   right: 0.4em;
@@ -20819,7 +20873,8 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .r
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
-.front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.symptoms a[rel~='external'] .field-name-field-link-internal .field-item:after {
+.front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.symptoms a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.symptoms .field-item .field-name-field-link-internal .field-item:after {
   position: absolute;
   top: 1.2em;
   right: 0.4em;
@@ -20866,7 +20921,8 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .r
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
-.front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.services--support a[rel~='external'] .field-name-field-link-internal .field-item:after {
+.front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.services--support a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.services--support .field-item .field-name-field-link-internal .field-item:after {
   position: absolute;
   top: 1.2em;
   right: 0.4em;

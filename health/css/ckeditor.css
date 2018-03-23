@@ -325,7 +325,7 @@ body.node-type-health-topic .paragraphs-item-two-columns.para-container, body.no
   .uikit-body a[href^="javascript:"]:after, .page a[href^="javascript:"]:after, .rsbtn_colorskin a[href^="javascript:"]:after, .cke_editable a[href^="javascript:"]:after,
   .uikit-body a[href^="#"]:after, .page a[href^="#"]:after, .rsbtn_colorskin a[href^="#"]:after, .cke_editable a[href^="#"]:after {
     content: ""; }
-  .uikit-body a[rel~='external']:after, .page a[rel~='external']:after, .rsbtn_colorskin a[rel~='external']:after, .cke_editable a[rel~='external']:after {
+  .uikit-body a[rel~='external']:after, .page a[rel~='external']:after, .rsbtn_colorskin a[rel~='external']:after, .cke_editable a[rel~='external']:after, .uikit-body .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .uikit-body .field-item:after, .page .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page .field-item:after, .rsbtn_colorskin .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .rsbtn_colorskin .field-item:after, .cke_editable .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .cke_editable .field-item:after {
     display: none !important; }
   .uikit-body pre, .page pre, .rsbtn_colorskin pre, .cke_editable pre,
   .uikit-body blockquote, .page blockquote, .rsbtn_colorskin blockquote, .cke_editable blockquote {
@@ -433,7 +433,7 @@ body.node-type-health-topic .paragraphs-item-two-columns.para-container, body.no
     .uikit-body a:focus, .page a:focus, .rsbtn_colorskin a:focus, .cke_editable a:focus {
       outline: 1px solid #313131;
       outline-offset: 1px; }
-    .uikit-body a[rel~='external']:after, .page a[rel~='external']:after, .rsbtn_colorskin a[rel~='external']:after, .cke_editable a[rel~='external']:after {
+    .uikit-body a[rel~='external']:after, .page a[rel~='external']:after, .rsbtn_colorskin a[rel~='external']:after, .cke_editable a[rel~='external']:after, .uikit-body .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .uikit-body .field-item:after, .page .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page .field-item:after, .rsbtn_colorskin .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .rsbtn_colorskin .field-item:after, .cke_editable .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .cke_editable .field-item:after {
       content: ' ';
       display: inline-block;
       width: 0.7em;
@@ -442,11 +442,19 @@ body.node-type-health-topic .paragraphs-item-two-columns.para-container, body.no
       background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E   %3Cpath fill='%23153a6e' d='M24.002 8C15.155 8 8 15.164 8 24.002v79.996C8 112.845 15.164 120 24.002 120h79.996c8.847 0 16.002-7.164    16.002-16.002V82.005c0-1.107-.895-2.005-1.994-2.005h-12.012c-1.1 0-1.994.893-1.994 1.995v16.008c0 3.312-2.685 5.997-5.997 5.997H29.997C26.685    104 24 101.315 24 98.003V29.997C24 26.685 26.685 24 29.997 24h16.008C47.107 24 48 23.105 48 22.006V9.994C48 8.894 47.103 8 45.995 8H24.002z'/%3E   %3Cpath fill='%23153a6e' d='M127.416.584c-.36-.36-.86-.584-1.41-.584H73.994C72.904 0 72 .893 72 1.994v12.012c0 1.1.892 1.994 1.993 1.994H96L49.41    62.59c-.777.777-.774 2.046.01 2.83l13.16 13.16c.793.793 2.052.788 2.83.01L112 32v22.007c0 1.09.893 1.993 1.994 1.993h12.012c1.1 0 1.994-.892    1.994-1.993V1.993c0-.545-.223-1.043-.584-1.405V.584z'/%3E   %3C/svg%3E");
       background-repeat: no-repeat;
       background-position-y: 0.12em; }
-      .ie8 .uikit-body a[rel~='external']:after, .ie8 .page a[rel~='external']:after, .ie8 .rsbtn_colorskin a[rel~='external']:after, .ie8 .cke_editable a[rel~='external']:after,
+      .ie8 .uikit-body a[rel~='external']:after, .ie8 .page a[rel~='external']:after, .ie8 .rsbtn_colorskin a[rel~='external']:after, .ie8 .cke_editable a[rel~='external']:after, .ie8 .uikit-body .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .ie8 .uikit-body .field-item:after, .ie8 .page .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .ie8 .page .field-item:after, .ie8 .rsbtn_colorskin .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .ie8 .rsbtn_colorskin .field-item:after, .ie8 .cke_editable .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .ie8 .cke_editable .field-item:after,
       .lt-ie8 .uikit-body a[rel~='external']:after,
       .lt-ie8 .page a[rel~='external']:after,
       .lt-ie8 .rsbtn_colorskin a[rel~='external']:after,
-      .lt-ie8 .cke_editable a[rel~='external']:after {
+      .lt-ie8 .cke_editable a[rel~='external']:after,
+      .lt-ie8 .uikit-body .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal
+      .lt-ie8 .uikit-body .field-item:after,
+      .lt-ie8 .page .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal
+      .lt-ie8 .page .field-item:after,
+      .lt-ie8 .rsbtn_colorskin .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal
+      .lt-ie8 .rsbtn_colorskin .field-item:after,
+      .lt-ie8 .cke_editable .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal
+      .lt-ie8 .cke_editable .field-item:after {
         content: '⇗';
         color: #153a6e; }
   .uikit-body [tabindex="0"]:focus, .page [tabindex="0"]:focus, .rsbtn_colorskin [tabindex="0"]:focus, .cke_editable [tabindex="0"]:focus,
@@ -4722,7 +4730,7 @@ p.summary, .field-name-field-summary {
       font-weight: 700;
       margin-bottom: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
-    .bean-image-and-text.view-mode-full .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after {
+    .bean-image-and-text.view-mode-full .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .bean-image-and-text.view-mode-full .bean-block-content .field-item .field-name-field-link-internal .field-item:after {
       position: absolute;
       top: 1.2em;
       right: 0.4em; }
@@ -4812,7 +4820,7 @@ p.summary, .field-name-field-summary {
       font-weight: 700;
       margin-bottom: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
-    .bean-image-and-text.view-mode-view_selector .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after {
+    .bean-image-and-text.view-mode-view_selector .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .bean-block-content .field-item .field-name-field-link-internal .field-item:after {
       position: absolute;
       top: 1.2em;
       right: 0.4em; }
@@ -5980,7 +5988,7 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
     .page .footer a:hover {
       background: none;
       border-bottom: none; }
-    .page .footer a[rel~='external']:after {
+    .page .footer a[rel~='external']:after, .page .footer .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page .footer .field-item:after {
       color: white; }
   .page .footer h3.block__title {
     color: white; }
@@ -6217,7 +6225,7 @@ ul.social__links,
   color: #008998;
   z-index: 1; }
 
-.page a[rel~='external']:after {
+.page a[rel~='external']:after, .page .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page .field-item:after {
   background-image: none;
   content: "\f08e";
   font-family: FontAwesome;
@@ -8028,10 +8036,13 @@ header, .header-top {
   .field-name-field-link-external .field-items a {
     font-weight: bold; }
 
-.external-link-url, .bean-image-and-text.view-mode-full .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after, .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card a[rel~='external'] .field-name-field-link-internal .field-item:after,
-.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card a[rel~='external'] .field-name-field-link-internal .field-item:after, .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car a[rel~='external'] .field-name-field-link-internal .field-item:after,
-.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car a[rel~='external'] .field-name-field-link-internal .field-item:after, .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca a[rel~='external'] .field-name-field-link-internal .field-item:after,
-.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca a[rel~='external'] .field-name-field-link-internal .field-item:after, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.topic-tile a[rel~='external'] .field-name-field-link-internal .field-item:after, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.conditions--diseases a[rel~='external'] .field-name-field-link-internal .field-item:after, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.medicare-tile a[rel~='external'] .field-name-field-link-internal .field-item:after, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.symptoms a[rel~='external'] .field-name-field-link-internal .field-item:after, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.services--support a[rel~='external'] .field-name-field-link-internal .field-item:after {
+.external-link-url, .bean-image-and-text.view-mode-full .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .bean-block-content .field-item .field-name-field-link-internal .field-item:after, .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card .field-item .field-name-field-link-internal .field-item:after,
+.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal
+.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card .field-item .field-name-field-link-internal .field-item:after, .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car .field-item .field-name-field-link-internal .field-item:after,
+.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal
+.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car .field-item .field-name-field-link-internal .field-item:after, .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca .field-item .field-name-field-link-internal .field-item:after,
+.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal
+.page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca .field-item .field-name-field-link-internal .field-item:after, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.topic-tile a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.topic-tile .field-item .field-name-field-link-internal .field-item:after, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.conditions--diseases a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.conditions--diseases .field-item .field-name-field-link-internal .field-item:after, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.medicare-tile a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.medicare-tile .field-item .field-name-field-link-internal .field-item:after, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.symptoms a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.symptoms .field-item .field-name-field-link-internal .field-item:after, .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.services--support a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.services--support .field-item .field-name-field-link-internal .field-item:after {
   color: #18788d;
   font-size: 14px;
   word-break: break-all; }
@@ -8433,8 +8444,9 @@ body {
       font-weight: 700;
       margin-bottom: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
-    .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card a[rel~='external'] .field-name-field-link-internal .field-item:after,
-    .page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card a[rel~='external'] .field-name-field-link-internal .field-item:after {
+    .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card .field-item .field-name-field-link-internal .field-item:after,
+    .page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal
+    .page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card .field-item .field-name-field-link-internal .field-item:after {
       position: absolute;
       top: 1.2em;
       right: 0.4em; }
@@ -8476,8 +8488,9 @@ body {
       font-weight: 700;
       margin-bottom: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
-    .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car a[rel~='external'] .field-name-field-link-internal .field-item:after,
-    .page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car a[rel~='external'] .field-name-field-link-internal .field-item:after {
+    .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car .field-item .field-name-field-link-internal .field-item:after,
+    .page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal
+    .page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-conditions-and-diseases-car .field-item .field-name-field-link-internal .field-item:after {
       position: absolute;
       top: 1.2em;
       right: 0.4em; }
@@ -8519,8 +8532,9 @@ body {
       font-weight: 700;
       margin-bottom: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
-    .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca a[rel~='external'] .field-name-field-link-internal .field-item:after,
-    .page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca a[rel~='external'] .field-name-field-link-internal .field-item:after {
+    .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca .field-item .field-name-field-link-internal .field-item:after,
+    .page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal
+    .page-node-1156 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-programs-and-initiatives-ca .field-item .field-name-field-link-internal .field-item:after {
       position: absolute;
       top: 1.2em;
       right: 0.4em; }
@@ -8617,7 +8631,7 @@ body {
       font-weight: 700;
       margin-bottom: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
-    .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.topic-tile a[rel~='external'] .field-name-field-link-internal .field-item:after {
+    .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.topic-tile a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.topic-tile .field-item .field-name-field-link-internal .field-item:after {
       position: absolute;
       top: 1.2em;
       right: 0.4em; }
@@ -8648,7 +8662,7 @@ body {
       font-weight: 700;
       margin-bottom: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
-    .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.conditions--diseases a[rel~='external'] .field-name-field-link-internal .field-item:after {
+    .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.conditions--diseases a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.conditions--diseases .field-item .field-name-field-link-internal .field-item:after {
       position: absolute;
       top: 1.2em;
       right: 0.4em; }
@@ -8679,7 +8693,7 @@ body {
       font-weight: 700;
       margin-bottom: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
-    .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.medicare-tile a[rel~='external'] .field-name-field-link-internal .field-item:after {
+    .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.medicare-tile a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.medicare-tile .field-item .field-name-field-link-internal .field-item:after {
       position: absolute;
       top: 1.2em;
       right: 0.4em; }
@@ -8710,7 +8724,7 @@ body {
       font-weight: 700;
       margin-bottom: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
-    .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.symptoms a[rel~='external'] .field-name-field-link-internal .field-item:after {
+    .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.symptoms a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.symptoms .field-item .field-name-field-link-internal .field-item:after {
       position: absolute;
       top: 1.2em;
       right: 0.4em; }
@@ -8741,7 +8755,7 @@ body {
       font-weight: 700;
       margin-bottom: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
-    .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.services--support a[rel~='external'] .field-name-field-link-internal .field-item:after {
+    .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.services--support a[rel~='external'] .field-name-field-link-internal .field-item:after, .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .front .paragraphs-item-para-block.para-container.block__count--5.block-id__topic-tile .bean-image-and-text.services--support .field-item .field-name-field-link-internal .field-item:after {
       position: absolute;
       top: 1.2em;
       right: 0.4em; }
