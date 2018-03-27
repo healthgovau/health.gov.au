@@ -4623,6 +4623,11 @@ ul + h6 {
   .field-name-field-link-external .field-label {
     font-weight: normal; }
 
+.field-name-field-email i:before,
+.field-name-field-contact-telephone i:before {
+  position: relative;
+  font-size: 1em; }
+
 .document-accessibility-form {
   padding: 2.4em 0 0.8em 0;
   color: #6e6e6e;

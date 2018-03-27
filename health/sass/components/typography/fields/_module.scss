@@ -109,6 +109,16 @@
         @extend %ext-link-wrapper;
     }
 }
+
+// Email telephone field
+.field-name-field-email,
+.field-name-field-contact-telephone {
+    i:before {
+      position: relative;
+      font-size: 1em;
+    }
+}
+
 .external-link-url {
     @extend %ext-link;
 }

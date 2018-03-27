@@ -58,8 +58,7 @@ HTML comment.
   <?php endif; ?>
   <div class="field-items"<?php print $content_attributes; ?>>
     <?php foreach ($items as $delta => $item): ?>
-      <?php $item_without_spaces = str_replace(' ', '', $item); ?>
-      <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><i class="fa fa-phone" aria-hidden="true"></i><?php print l(render($item), 'tel:' . render($item_without_spaces)); ?></div>
+      <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><i class="fa fa-envelope-o" aria-hidden="true"></i><?php print l(render($item), 'mailto:' . render($item)); ?></div>
     <?php endforeach; ?>
   </div>
 </div>
