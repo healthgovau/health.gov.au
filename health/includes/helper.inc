@@ -191,11 +191,11 @@ function _health_label_display($variables, $field, $field_variables) {
         break;
       case 'above':
         $field_variables['label_hidden'] = FALSE;
-        $field_variables['classes'] = 'field-label-above';
+        $field_variables['classes'] .= ' field-label-above';
         break;
       case 'inline':
         $field_variables['label_hidden'] = FALSE;
-        $field_variables['classes'] = 'field-label-inline';
+        $field_variables['classes'] .= ' field-label-inline';
         break;
     }
   }

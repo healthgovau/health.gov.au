@@ -25,11 +25,6 @@
       border: $health-borderize;
     }
   }
-  // date
-  .field-type-datetime {
-    @extend .meta-date;
-    margin-bottom: uikit-space(0.5);
-  }
 }
 
 %dm-inline-2-col {

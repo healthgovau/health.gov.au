@@ -32,7 +32,7 @@ function health_preprocess_ds_content_type(&$variables) {
     'content_attributes' => '',
     'item_attributes' => [0 => ''],
     'attributes' => '',
-    'classes' => 'field-type-taxonomy-term-reference',
+    'classes' => 'field field-name-ds-content-type field-type-taxonomy-term-reference clearfix',
     'items' => [
       [
         '#markup' => $label

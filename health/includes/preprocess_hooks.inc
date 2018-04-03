@@ -494,7 +494,6 @@ function health_preprocess_field(&$variables) {
   // Add p tags around plain text fields.
   $fields = [
     'field_summary',
-    'field_title'
   ];
   foreach($fields as $field) {
     if ($variables['element']['#field_name'] == $field) {
@@ -561,6 +560,14 @@ function health_preprocess_field(&$variables) {
     // Make sure email addresses are being spam-spanned.
     if ($variables['items']) {
       $variables['items'][0]['#markup'] = _spamspan_filter_process($variables['items'][0]['#markup'], null);
+    }
+  }
+
+  // External link.
+  if ($variables['element']['#field_name'] == 'field_link_external') {
+    // If it is on the survey page, add button class.
+    if ($variables['element']['#object']->type == 'survey') {
+      $variables['items'][0]['#element']['attributes']['class'] = 'button button--large';
     }
   }
 }
