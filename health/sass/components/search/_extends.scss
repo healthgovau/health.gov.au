@@ -35,6 +35,9 @@
       .search-results {
         padding-left: 0;
       }
+      #funnelback-curator {
+        clear: both;
+      }
       .view-mode-search_result {
         @extend %dm-search-index;
         @include uikit-clearfix();
@@ -50,6 +53,10 @@
     .pager {
       border: none;
     }
+  }
+  .contextual-navigation-wrapper {
+    @extend .col-xs-12;
+    @extend .col-sm-6;
   }
 }
 

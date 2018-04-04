@@ -4365,6 +4365,16 @@ body.node-type-landing-page .page .paragraphs-item-two-columns > .para-row > .gr
 .paragraphs-item-two-columns > .para-row > .group-right,
 .page
 .paragraphs-item-two-columns > .para-row > .group-right,
+.uikit-grid .page-search .contextual-navigation-wrapper,
+.page-search .uikit-grid .contextual-navigation-wrapper,
+.page .page-search .contextual-navigation-wrapper,
+.page-search .page .contextual-navigation-wrapper,
+.uikit-grid
+.page-funnelback-search .contextual-navigation-wrapper,
+.page-funnelback-search .uikit-grid .contextual-navigation-wrapper,
+.page
+.page-funnelback-search .contextual-navigation-wrapper,
+.page-funnelback-search .page .contextual-navigation-wrapper,
 .uikit-grid .col-md-6,
 .page .col-md-6,
 .uikit-grid .node-publication.view-mode-feature .group-left,
@@ -5223,6 +5233,16 @@ body.node-type-landing-page .page .group-header,
 .page
 .page-funnelback-search main,
 .page-funnelback-search .page main,
+.uikit-grid .page-search .contextual-navigation-wrapper,
+.page-search .uikit-grid .contextual-navigation-wrapper,
+.page .page-search .contextual-navigation-wrapper,
+.page-search .page .contextual-navigation-wrapper,
+.uikit-grid
+.page-funnelback-search .contextual-navigation-wrapper,
+.page-funnelback-search .uikit-grid .contextual-navigation-wrapper,
+.page
+.page-funnelback-search .contextual-navigation-wrapper,
+.page-funnelback-search .page .contextual-navigation-wrapper,
 .uikit-grid .col-sm-12,
 .page .col-sm-12,
 .uikit-grid .page-title__core.full,
@@ -5684,7 +5704,17 @@ body.node-type-landing-page .page .group-header,
 .page-funnelback-search .uikit-grid main,
 .page
 .page-funnelback-search main,
-.page-funnelback-search .page main {
+.page-funnelback-search .page main,
+.uikit-grid .page-search .contextual-navigation-wrapper,
+.page-search .uikit-grid .contextual-navigation-wrapper,
+.page .page-search .contextual-navigation-wrapper,
+.page-search .page .contextual-navigation-wrapper,
+.uikit-grid
+.page-funnelback-search .contextual-navigation-wrapper,
+.page-funnelback-search .uikit-grid .contextual-navigation-wrapper,
+.page
+.page-funnelback-search .contextual-navigation-wrapper,
+.page-funnelback-search .page .contextual-navigation-wrapper {
   float: left;
 }
 
@@ -6046,7 +6076,17 @@ body.node-type-landing-page .page .group-header,
 .page-funnelback-search .uikit-grid main,
 .page
 .page-funnelback-search main,
-.page-funnelback-search .page main {
+.page-funnelback-search .page main,
+.uikit-grid .page-search .contextual-navigation-wrapper,
+.page-search .uikit-grid .contextual-navigation-wrapper,
+.page .page-search .contextual-navigation-wrapper,
+.page-search .page .contextual-navigation-wrapper,
+.uikit-grid
+.page-funnelback-search .contextual-navigation-wrapper,
+.page-funnelback-search .uikit-grid .contextual-navigation-wrapper,
+.page
+.page-funnelback-search .contextual-navigation-wrapper,
+.page-funnelback-search .page .contextual-navigation-wrapper {
   width: 100%;
 }
 
@@ -20086,6 +20126,13 @@ p.filter__help {
 .page-funnelback-search main .search-api-page-results .search-results,
 .page-funnelback-search main .funnelback-results-page .search-results {
   padding-left: 0;
+}
+
+.page-search main .search-api-page-results #funnelback-curator,
+.page-search main .funnelback-results-page #funnelback-curator,
+.page-funnelback-search main .search-api-page-results #funnelback-curator,
+.page-funnelback-search main .funnelback-results-page #funnelback-curator {
+  clear: both;
 }
 
 .page-search main .search-api-page-results .view-mode-search_result,

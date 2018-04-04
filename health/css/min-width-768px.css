@@ -672,6 +672,16 @@ body.node-type-landing-page .page .paragraphs-item-two-columns > .para-row > .gr
   .paragraphs-item-two-columns > .para-row > .group-right,
 .page
   .paragraphs-item-two-columns > .para-row > .group-right,
+.uikit-grid .page-search .contextual-navigation-wrapper,
+.page-search .uikit-grid .contextual-navigation-wrapper,
+.page .page-search .contextual-navigation-wrapper,
+.page-search .page .contextual-navigation-wrapper,
+.uikit-grid
+  .page-funnelback-search .contextual-navigation-wrapper,
+.page-funnelback-search .uikit-grid .contextual-navigation-wrapper,
+.page
+  .page-funnelback-search .contextual-navigation-wrapper,
+.page-funnelback-search .page .contextual-navigation-wrapper,
 .uikit-grid .col-sm-7,
 .page .col-sm-7,
 .uikit-grid .col-sm-8,
@@ -1856,7 +1866,17 @@ body.node-type-landing-page .page .paragraphs-item-two-columns > .para-row > .gr
 .uikit-grid
   .paragraphs-item-two-columns > .para-row > .group-right,
 .page
-  .paragraphs-item-two-columns > .para-row > .group-right {
+  .paragraphs-item-two-columns > .para-row > .group-right,
+.uikit-grid .page-search .contextual-navigation-wrapper,
+.page-search .uikit-grid .contextual-navigation-wrapper,
+.page .page-search .contextual-navigation-wrapper,
+.page-search .page .contextual-navigation-wrapper,
+.uikit-grid
+  .page-funnelback-search .contextual-navigation-wrapper,
+.page-funnelback-search .uikit-grid .contextual-navigation-wrapper,
+.page
+  .page-funnelback-search .contextual-navigation-wrapper,
+.page-funnelback-search .page .contextual-navigation-wrapper {
   width: 50%;
 }
 
