@@ -15705,7 +15705,8 @@ p.resource-title {
 .node-survey.view-mode-full .field-name-field-status .field-label,
 .node-survey.view-mode-full .field-name-field-date-end .field-label,
 .node-survey.view-mode-full .field-name-field-time-required .field-label,
-.node-survey.view-mode-full .field-name-field-audience .field-label {
+.node-survey.view-mode-full .field-name-field-audience .field-label,
+.node-survey.view-mode-full .field-name-ds-associated-release .field-label {
   width: 11em;
 }
 

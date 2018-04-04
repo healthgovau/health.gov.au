@@ -16,7 +16,8 @@
     .field-name-field-status,
     .field-name-field-date-end,
     .field-name-field-time-required,
-    .field-name-field-audience {
+    .field-name-field-audience,
+    .field-name-ds-associated-release {
       @extend %spaced-inline-label;
     }
 
@@ -35,7 +36,6 @@
       padding-bottom: uikit-space(1);
     }
   }
-
 
   // List vertical
   &.view-mode-listing_vertical {
