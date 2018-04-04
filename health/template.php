@@ -308,8 +308,18 @@ function health_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_form_FORM_ID_alter().
  */
 function health_form_search_api_page_search_form_alter(&$form, &$form_state) {
-  // Add wrapper to apply the uikit search form style.
+  // Add wrapper to apply the uikit search form style for search api form.
   $form['#prefix'] = '<div class="block block-search-api-page contextual-links-region last even" id="search-api-page-search-form">';
+  $form['#suffix'] = '</div>';
+  $form['keys_1']['#attributes']['placeholder'] = t('Enter your search term');
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function health_form_funnelback_search_block_form_alter(&$form, $form_state) {
+  // Add wrapper to apply the uikit search form style for funnelback form.
+  $form['#prefix'] = '<div class="block block-search-api-page contextual-links-region last even" id="funnelback-search-form">';
   $form['#suffix'] = '</div>';
   $form['keys_1']['#attributes']['placeholder'] = t('Enter your search term');
 }

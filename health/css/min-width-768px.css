@@ -685,6 +685,12 @@ body.node-type-landing-page .page .paragraphs-item-two-columns > .para-row > .gr
 .page-search .uikit-grid main,
 .page .page-search main,
 .page-search .page main,
+.uikit-grid
+  .page-funnelback-search main,
+.page-funnelback-search .uikit-grid main,
+.page
+  .page-funnelback-search main,
+.page-funnelback-search .page main,
 .uikit-grid .col-sm-9,
 .page .col-sm-9,
 .uikit-grid #health-alert-ajax-container .container .health-alert-content,
@@ -1869,7 +1875,13 @@ body.node-type-landing-page .page .paragraphs-item-two-columns > .para-row > .gr
 .uikit-grid .page-search main,
 .page-search .uikit-grid main,
 .page .page-search main,
-.page-search .page main {
+.page-search .page main,
+.uikit-grid
+  .page-funnelback-search main,
+.page-funnelback-search .uikit-grid main,
+.page
+  .page-funnelback-search main,
+.page-funnelback-search .page main {
   width: 66.6666666667%;
 }
 
@@ -2974,6 +2986,9 @@ h6 {
 .node-health-topic.view-mode-search_result .field-name-title h2,
 .node-departmental-media.view-mode-search_result .field-name-title h2,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-title h2,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title h2,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title h2,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title h2,
 .node-news-article.view-mode-search_result .field-name-title .video--left .video__title,
 .video--left .node-news-article.view-mode-search_result .field-name-title .video__title,
 .node-event.view-mode-search_result .field-name-title .video--left .video__title,
@@ -3004,6 +3019,15 @@ h6 {
 .video--left .node-departmental-media.view-mode-search_result .field-name-title .video__title,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-title .video--left .video__title,
 .video--left .page-search main .search-api-page-results .view-mode-search_result .field-name-title .video__title,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title .video--left .video__title,
+.video--left
+    .page-search main .funnelback-results-page .view-mode-search_result .field-name-title .video__title,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title .video--left .video__title,
+.video--left
+    .page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title .video__title,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title .video--left .video__title,
+.video--left
+    .page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title .video__title,
 .node-news-article.view-mode-search_result .field-name-title .video--right .video__title,
 .video--right .node-news-article.view-mode-search_result .field-name-title .video__title,
 .node-event.view-mode-search_result .field-name-title .video--right .video__title,
@@ -3034,6 +3058,15 @@ h6 {
 .video--right .node-departmental-media.view-mode-search_result .field-name-title .video__title,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-title .video--right .video__title,
 .video--right .page-search main .search-api-page-results .view-mode-search_result .field-name-title .video__title,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title .video--right .video__title,
+.video--right
+    .page-search main .funnelback-results-page .view-mode-search_result .field-name-title .video__title,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title .video--right .video__title,
+.video--right
+    .page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title .video__title,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title .video--right .video__title,
+.video--right
+    .page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title .video__title,
 .node-news-article.view-mode-search_result .field-name-title h3,
 .node-event.view-mode-search_result .field-name-title h3,
 .node-health-alert.view-mode-search_result .field-name-title h3,
@@ -3048,7 +3081,10 @@ h6 {
 .node-service.view-mode-search_result .field-name-title h3,
 .node-health-topic.view-mode-search_result .field-name-title h3,
 .node-departmental-media.view-mode-search_result .field-name-title h3,
-.page-search main .search-api-page-results .view-mode-search_result .field-name-title h3 {
+.page-search main .search-api-page-results .view-mode-search_result .field-name-title h3,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title h3,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title h3,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title h3 {
   font-size: 24px;
 }
 
@@ -3739,7 +3775,8 @@ p.filter__help {
   margin-top: 8px;
 }
 
-.page-search main .block-search-api-page {
+.page-search main .block-search-api-page,
+.page-funnelback-search main .block-search-api-page {
   width: 50%;
 }
 

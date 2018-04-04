@@ -1259,7 +1259,10 @@ body.node-type-landing-page .paragraphs-item-para-reference-video.para-container
   margin: -1.2em 0 2.4em;
 }
 
-.page-search main .search-api-page-results .view-mode-search_result {
+.page-search main .search-api-page-results .view-mode-search_result,
+.page-search main .funnelback-results-page .view-mode-search_result,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result {
   padding-top: 2.4em;
   padding-bottom: 2.4em;
 }

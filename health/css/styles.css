@@ -4404,6 +4404,12 @@ body.node-type-landing-page .page .paragraphs-item-two-columns > .para-row > .gr
 .page-search .uikit-grid main,
 .page .page-search main,
 .page-search .page main,
+.uikit-grid
+.page-funnelback-search main,
+.page-funnelback-search .uikit-grid main,
+.page
+.page-funnelback-search main,
+.page-funnelback-search .page main,
 .uikit-grid .col-md-8,
 .page .col-md-8,
 .uikit-grid .video--left .video__left,
@@ -5211,6 +5217,12 @@ body.node-type-landing-page .page .group-header,
 .page-search .uikit-grid main,
 .page .page-search main,
 .page-search .page main,
+.uikit-grid
+.page-funnelback-search main,
+.page-funnelback-search .uikit-grid main,
+.page
+.page-funnelback-search main,
+.page-funnelback-search .page main,
 .uikit-grid .col-sm-12,
 .page .col-sm-12,
 .uikit-grid .page-title__core.full,
@@ -5666,7 +5678,13 @@ body.node-type-landing-page .page .group-header,
 .uikit-grid .page-search main,
 .page-search .uikit-grid main,
 .page .page-search main,
-.page-search .page main {
+.page-search .page main,
+.uikit-grid
+.page-funnelback-search main,
+.page-funnelback-search .uikit-grid main,
+.page
+.page-funnelback-search main,
+.page-funnelback-search .page main {
   float: left;
 }
 
@@ -6022,7 +6040,13 @@ body.node-type-landing-page .page .group-header,
 .uikit-grid .page-search main,
 .page-search .uikit-grid main,
 .page .page-search main,
-.page-search .page main {
+.page-search .page main,
+.uikit-grid
+.page-funnelback-search main,
+.page-funnelback-search .uikit-grid main,
+.page
+.page-funnelback-search main,
+.page-funnelback-search .page main {
   width: 100%;
 }
 
@@ -7210,6 +7234,9 @@ h4,
 .node-health-topic.view-mode-search_result .field-name-title h2,
 .node-departmental-media.view-mode-search_result .field-name-title h2,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-title h2,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title h2,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title h2,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title h2,
 .node-news-article.view-mode-search_result .field-name-title .video--left .video__title,
 .video--left .node-news-article.view-mode-search_result .field-name-title .video__title,
 .node-event.view-mode-search_result .field-name-title .video--left .video__title,
@@ -7240,6 +7267,15 @@ h4,
 .video--left .node-departmental-media.view-mode-search_result .field-name-title .video__title,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-title .video--left .video__title,
 .video--left .page-search main .search-api-page-results .view-mode-search_result .field-name-title .video__title,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title .video--left .video__title,
+.video--left
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title .video__title,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title .video--left .video__title,
+.video--left
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title .video__title,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title .video--left .video__title,
+.video--left
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title .video__title,
 .node-news-article.view-mode-search_result .field-name-title .video--right .video__title,
 .video--right .node-news-article.view-mode-search_result .field-name-title .video__title,
 .node-event.view-mode-search_result .field-name-title .video--right .video__title,
@@ -7270,6 +7306,15 @@ h4,
 .video--right .node-departmental-media.view-mode-search_result .field-name-title .video__title,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-title .video--right .video__title,
 .video--right .page-search main .search-api-page-results .view-mode-search_result .field-name-title .video__title,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title .video--right .video__title,
+.video--right
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title .video__title,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title .video--right .video__title,
+.video--right
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title .video__title,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title .video--right .video__title,
+.video--right
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title .video__title,
 .node-news-article.view-mode-search_result .field-name-title h3,
 .node-event.view-mode-search_result .field-name-title h3,
 .node-health-alert.view-mode-search_result .field-name-title h3,
@@ -7285,6 +7330,9 @@ h4,
 .node-health-topic.view-mode-search_result .field-name-title h3,
 .node-departmental-media.view-mode-search_result .field-name-title h3,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-title h3,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title h3,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title h3,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title h3,
 .field-name-field-link-external .field-label,
 .region-title-supp .block-bean-call-to-action .bean-call-to-action__title,
 .node-news-article.view-mode-inline .field-name-title h2,
@@ -7648,6 +7696,9 @@ p + h4,
 .node-health-topic.view-mode-search_result .field-name-title p + h2,
 .node-departmental-media.view-mode-search_result .field-name-title p + h2,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-title p + h2,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title p + h2,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title p + h2,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title p + h2,
 .node-news-article.view-mode-search_result .field-name-title .video--left p + .video__title,
 .video--left .node-news-article.view-mode-search_result .field-name-title p + .video__title,
 .node-event.view-mode-search_result .field-name-title .video--left p + .video__title,
@@ -7678,6 +7729,15 @@ p + h4,
 .video--left .node-departmental-media.view-mode-search_result .field-name-title p + .video__title,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-title .video--left p + .video__title,
 .video--left .page-search main .search-api-page-results .view-mode-search_result .field-name-title p + .video__title,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title .video--left p + .video__title,
+.video--left
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title p + .video__title,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title .video--left p + .video__title,
+.video--left
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title p + .video__title,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title .video--left p + .video__title,
+.video--left
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title p + .video__title,
 .node-news-article.view-mode-search_result .field-name-title .video--right p + .video__title,
 .video--right .node-news-article.view-mode-search_result .field-name-title p + .video__title,
 .node-event.view-mode-search_result .field-name-title .video--right p + .video__title,
@@ -7708,6 +7768,15 @@ p + h4,
 .video--right .node-departmental-media.view-mode-search_result .field-name-title p + .video__title,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-title .video--right p + .video__title,
 .video--right .page-search main .search-api-page-results .view-mode-search_result .field-name-title p + .video__title,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title .video--right p + .video__title,
+.video--right
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title p + .video__title,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title .video--right p + .video__title,
+.video--right
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title p + .video__title,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title .video--right p + .video__title,
+.video--right
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title p + .video__title,
 .node-news-article.view-mode-search_result .field-name-title p + h3,
 .node-event.view-mode-search_result .field-name-title p + h3,
 .node-health-alert.view-mode-search_result .field-name-title p + h3,
@@ -7723,6 +7792,9 @@ p + h4,
 .node-health-topic.view-mode-search_result .field-name-title p + h3,
 .node-departmental-media.view-mode-search_result .field-name-title p + h3,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-title p + h3,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title p + h3,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title p + h3,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title p + h3,
 .field-name-field-link-external p + .field-label,
 .region-title-supp .block-bean-call-to-action p + .bean-call-to-action__title,
 .node-news-article.view-mode-inline .field-name-title p + h2,
@@ -8544,6 +8616,9 @@ h4,
 .node-health-topic.view-mode-search_result .field-name-title h2,
 .node-departmental-media.view-mode-search_result .field-name-title h2,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-title h2,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title h2,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title h2,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title h2,
 .node-news-article.view-mode-search_result .field-name-title .video--left .video__title,
 .video--left .node-news-article.view-mode-search_result .field-name-title .video__title,
 .node-event.view-mode-search_result .field-name-title .video--left .video__title,
@@ -8574,6 +8649,15 @@ h4,
 .video--left .node-departmental-media.view-mode-search_result .field-name-title .video__title,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-title .video--left .video__title,
 .video--left .page-search main .search-api-page-results .view-mode-search_result .field-name-title .video__title,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title .video--left .video__title,
+.video--left
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title .video__title,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title .video--left .video__title,
+.video--left
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title .video__title,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title .video--left .video__title,
+.video--left
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title .video__title,
 .node-news-article.view-mode-search_result .field-name-title .video--right .video__title,
 .video--right .node-news-article.view-mode-search_result .field-name-title .video__title,
 .node-event.view-mode-search_result .field-name-title .video--right .video__title,
@@ -8604,6 +8688,15 @@ h4,
 .video--right .node-departmental-media.view-mode-search_result .field-name-title .video__title,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-title .video--right .video__title,
 .video--right .page-search main .search-api-page-results .view-mode-search_result .field-name-title .video__title,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title .video--right .video__title,
+.video--right
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title .video__title,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title .video--right .video__title,
+.video--right
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title .video__title,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title .video--right .video__title,
+.video--right
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title .video__title,
 .node-news-article.view-mode-search_result .field-name-title h3,
 .node-event.view-mode-search_result .field-name-title h3,
 .node-health-alert.view-mode-search_result .field-name-title h3,
@@ -8619,6 +8712,9 @@ h4,
 .node-health-topic.view-mode-search_result .field-name-title h3,
 .node-departmental-media.view-mode-search_result .field-name-title h3,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-title h3,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title h3,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title h3,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title h3,
 .field-name-field-link-external .field-label,
 .region-title-supp .block-bean-call-to-action .bean-call-to-action__title,
 .node-news-article.view-mode-inline .field-name-title h2,
@@ -13279,6 +13375,9 @@ ul + h6 {
 .node-health-topic.view-mode-search_result .field-name-title h2,
 .node-departmental-media.view-mode-search_result .field-name-title h2,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-title h2,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title h2,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title h2,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title h2,
 .node-news-article.view-mode-search_result .field-name-title .video--left .video__title,
 .video--left .node-news-article.view-mode-search_result .field-name-title .video__title,
 .node-event.view-mode-search_result .field-name-title .video--left .video__title,
@@ -13309,6 +13408,15 @@ ul + h6 {
 .video--left .node-departmental-media.view-mode-search_result .field-name-title .video__title,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-title .video--left .video__title,
 .video--left .page-search main .search-api-page-results .view-mode-search_result .field-name-title .video__title,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title .video--left .video__title,
+.video--left
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title .video__title,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title .video--left .video__title,
+.video--left
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title .video__title,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title .video--left .video__title,
+.video--left
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title .video__title,
 .node-news-article.view-mode-search_result .field-name-title .video--right .video__title,
 .video--right .node-news-article.view-mode-search_result .field-name-title .video__title,
 .node-event.view-mode-search_result .field-name-title .video--right .video__title,
@@ -13339,6 +13447,15 @@ ul + h6 {
 .video--right .node-departmental-media.view-mode-search_result .field-name-title .video__title,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-title .video--right .video__title,
 .video--right .page-search main .search-api-page-results .view-mode-search_result .field-name-title .video__title,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title .video--right .video__title,
+.video--right
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title .video__title,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title .video--right .video__title,
+.video--right
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title .video__title,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title .video--right .video__title,
+.video--right
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title .video__title,
 .node-news-article.view-mode-search_result .field-name-title h3,
 .node-event.view-mode-search_result .field-name-title h3,
 .node-health-alert.view-mode-search_result .field-name-title h3,
@@ -13353,7 +13470,10 @@ ul + h6 {
 .node-service.view-mode-search_result .field-name-title h3,
 .node-health-topic.view-mode-search_result .field-name-title h3,
 .node-departmental-media.view-mode-search_result .field-name-title h3,
-.page-search main .search-api-page-results .view-mode-search_result .field-name-title h3 {
+.page-search main .search-api-page-results .view-mode-search_result .field-name-title h3,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-title h3,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-title h3,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-title h3 {
   font-size: 20px;
   font-weight: 700;
 }
@@ -13420,6 +13540,9 @@ ul + h6 {
 .node-health-topic.view-mode-search_result .field-type-datetime,
 .node-departmental-media.view-mode-search_result .field-type-datetime,
 .page-search main .search-api-page-results .view-mode-search_result .field-type-datetime,
+.page-search main .funnelback-results-page .view-mode-search_result .field-type-datetime,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-type-datetime,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-type-datetime,
 .node-publication-collection.view-mode-full .paragraphs-item-publication-grouping .field-type-datetime,
 .bean-image-and-text.view-mode-listing_vertical .field-type-taxonomy-term-reference,
 .node-news-article.view-mode-listing_vertical .field-type-taxonomy-term-reference,
@@ -13482,6 +13605,9 @@ ul + h6 {
 .node-health-topic.view-mode-search_result .field-type-taxonomy-term-reference,
 .node-departmental-media.view-mode-search_result .field-type-taxonomy-term-reference,
 .page-search main .search-api-page-results .view-mode-search_result .field-type-taxonomy-term-reference,
+.page-search main .funnelback-results-page .view-mode-search_result .field-type-taxonomy-term-reference,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-type-taxonomy-term-reference,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-type-taxonomy-term-reference,
 .node-publication-collection.view-mode-full .paragraphs-item-publication-grouping .field-type-taxonomy-term-reference,
 .bean-image-and-text.view-mode-listing_vertical .field-name-field-related-health-topics,
 .node-news-article.view-mode-listing_vertical .field-name-field-related-health-topics,
@@ -13544,6 +13670,9 @@ ul + h6 {
 .node-health-topic.view-mode-search_result .field-name-field-related-health-topics,
 .node-departmental-media.view-mode-search_result .field-name-field-related-health-topics,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-field-related-health-topics,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-field-related-health-topics,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-field-related-health-topics,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-field-related-health-topics,
 .node-publication-collection.view-mode-full .paragraphs-item-publication-grouping .field-name-field-related-health-topics,
 .node-news-article.view-mode-listing_vertical_small .field-type-datetime,
 .node-event.view-mode-listing_vertical_small .field-type-datetime,
@@ -13637,6 +13766,9 @@ ul + h6 {
 .node-health-topic.view-mode-search_result .field-type-datetime,
 .node-departmental-media.view-mode-search_result .field-type-datetime,
 .page-search main .search-api-page-results .view-mode-search_result .field-type-datetime,
+.page-search main .funnelback-results-page .view-mode-search_result .field-type-datetime,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-type-datetime,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-type-datetime,
 .node-publication-collection.view-mode-full .paragraphs-item-publication-grouping .field-type-datetime,
 .bean-image-and-text.view-mode-listing_vertical .field-type-taxonomy-term-reference,
 .node-news-article.view-mode-listing_vertical .field-type-taxonomy-term-reference,
@@ -13699,6 +13831,9 @@ ul + h6 {
 .node-health-topic.view-mode-search_result .field-type-taxonomy-term-reference,
 .node-departmental-media.view-mode-search_result .field-type-taxonomy-term-reference,
 .page-search main .search-api-page-results .view-mode-search_result .field-type-taxonomy-term-reference,
+.page-search main .funnelback-results-page .view-mode-search_result .field-type-taxonomy-term-reference,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-type-taxonomy-term-reference,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-type-taxonomy-term-reference,
 .node-publication-collection.view-mode-full .paragraphs-item-publication-grouping .field-type-taxonomy-term-reference,
 .bean-image-and-text.view-mode-listing_vertical .field-name-field-related-health-topics,
 .node-news-article.view-mode-listing_vertical .field-name-field-related-health-topics,
@@ -13761,6 +13896,9 @@ ul + h6 {
 .node-health-topic.view-mode-search_result .field-name-field-related-health-topics,
 .node-departmental-media.view-mode-search_result .field-name-field-related-health-topics,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-field-related-health-topics,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-field-related-health-topics,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-field-related-health-topics,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-field-related-health-topics,
 .node-publication-collection.view-mode-full .paragraphs-item-publication-grouping .field-name-field-related-health-topics {
   float: left;
 }
@@ -13826,6 +13964,9 @@ ul + h6 {
 .node-health-topic.view-mode-search_result .field-type-datetime .tags__item,
 .node-departmental-media.view-mode-search_result .field-type-datetime .tags__item,
 .page-search main .search-api-page-results .view-mode-search_result .field-type-datetime .tags__item,
+.page-search main .funnelback-results-page .view-mode-search_result .field-type-datetime .tags__item,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-type-datetime .tags__item,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-type-datetime .tags__item,
 .node-publication-collection.view-mode-full .paragraphs-item-publication-grouping .field-type-datetime .tags__item,
 .bean-image-and-text.view-mode-listing_vertical .field-type-taxonomy-term-reference .tags__item,
 .node-news-article.view-mode-listing_vertical .field-type-taxonomy-term-reference .tags__item,
@@ -13888,6 +14029,9 @@ ul + h6 {
 .node-health-topic.view-mode-search_result .field-type-taxonomy-term-reference .tags__item,
 .node-departmental-media.view-mode-search_result .field-type-taxonomy-term-reference .tags__item,
 .page-search main .search-api-page-results .view-mode-search_result .field-type-taxonomy-term-reference .tags__item,
+.page-search main .funnelback-results-page .view-mode-search_result .field-type-taxonomy-term-reference .tags__item,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-type-taxonomy-term-reference .tags__item,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-type-taxonomy-term-reference .tags__item,
 .node-publication-collection.view-mode-full .paragraphs-item-publication-grouping .field-type-taxonomy-term-reference .tags__item,
 .bean-image-and-text.view-mode-listing_vertical .field-name-field-related-health-topics .tags__item,
 .node-news-article.view-mode-listing_vertical .field-name-field-related-health-topics .tags__item,
@@ -13950,6 +14094,9 @@ ul + h6 {
 .node-health-topic.view-mode-search_result .field-name-field-related-health-topics .tags__item,
 .node-departmental-media.view-mode-search_result .field-name-field-related-health-topics .tags__item,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-field-related-health-topics .tags__item,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-field-related-health-topics .tags__item,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-field-related-health-topics .tags__item,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-field-related-health-topics .tags__item,
 .node-publication-collection.view-mode-full .paragraphs-item-publication-grouping .field-name-field-related-health-topics .tags__item {
   font-weight: normal;
 }
@@ -14015,6 +14162,9 @@ ul + h6 {
 .node-health-topic.view-mode-search_result .field-type-datetime,
 .node-departmental-media.view-mode-search_result .field-type-datetime,
 .page-search main .search-api-page-results .view-mode-search_result .field-type-datetime,
+.page-search main .funnelback-results-page .view-mode-search_result .field-type-datetime,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-type-datetime,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-type-datetime,
 .node-publication-collection.view-mode-full .paragraphs-item-publication-grouping .field-type-datetime {
   padding-right: 0.8em;
 }
@@ -14080,6 +14230,9 @@ ul + h6 {
 .node-health-topic.view-mode-search_result .field-type-taxonomy-term-reference,
 .node-departmental-media.view-mode-search_result .field-type-taxonomy-term-reference,
 .page-search main .search-api-page-results .view-mode-search_result .field-type-taxonomy-term-reference,
+.page-search main .funnelback-results-page .view-mode-search_result .field-type-taxonomy-term-reference,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-type-taxonomy-term-reference,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-type-taxonomy-term-reference,
 .node-publication-collection.view-mode-full .paragraphs-item-publication-grouping .field-type-taxonomy-term-reference,
 .bean-image-and-text.view-mode-listing_vertical .field-name-field-related-health-topics,
 .node-news-article.view-mode-listing_vertical .field-name-field-related-health-topics,
@@ -14142,6 +14295,9 @@ ul + h6 {
 .node-health-topic.view-mode-search_result .field-name-field-related-health-topics,
 .node-departmental-media.view-mode-search_result .field-name-field-related-health-topics,
 .page-search main .search-api-page-results .view-mode-search_result .field-name-field-related-health-topics,
+.page-search main .funnelback-results-page .view-mode-search_result .field-name-field-related-health-topics,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result .field-name-field-related-health-topics,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result .field-name-field-related-health-topics,
 .node-publication-collection.view-mode-full .paragraphs-item-publication-grouping .field-name-field-related-health-topics {
   padding-left: 0.8em;
   border-left: 1px solid #6e6e6e;
@@ -17331,7 +17487,10 @@ ul.social__links .social__links-item a:after,
 .node-service.view-mode-search_result,
 .node-health-topic.view-mode-search_result,
 .node-departmental-media.view-mode-search_result,
-.page-search main .search-api-page-results .view-mode-search_result {
+.page-search main .search-api-page-results .view-mode-search_result,
+.page-search main .funnelback-results-page .view-mode-search_result,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result {
   width: 100%;
 }
 
@@ -19903,39 +20062,62 @@ p.filter__help {
   z-index: 1;
 }
 
-.page-search main .block-search-api-page {
+.page-search main .block-search-api-page,
+.page-funnelback-search main .block-search-api-page {
   width: 100%;
 }
 
-.page-search main .search-api-page-results {
+.page-search main .search-api-page-results,
+.page-search main .funnelback-results-page,
+.page-funnelback-search main .search-api-page-results,
+.page-funnelback-search main .funnelback-results-page {
   margin: 1.6em 0 1.6em 0;
 }
 
-.page-search main .search-api-page-results .search-performance {
+.page-search main .search-api-page-results .search-performance,
+.page-search main .funnelback-results-page .search-performance,
+.page-funnelback-search main .search-api-page-results .search-performance,
+.page-funnelback-search main .funnelback-results-page .search-performance {
   font-size: 1.5em;
 }
 
-.page-search main .search-api-page-results .search-results {
+.page-search main .search-api-page-results .search-results,
+.page-search main .funnelback-results-page .search-results,
+.page-funnelback-search main .search-api-page-results .search-results,
+.page-funnelback-search main .funnelback-results-page .search-results {
   padding-left: 0;
 }
 
-.page-search main .search-api-page-results .view-mode-search_result {
+.page-search main .search-api-page-results .view-mode-search_result,
+.page-search main .funnelback-results-page .view-mode-search_result,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result {
   border-bottom: 1px solid #CCC;
   padding-top: 0.8em;
   padding-bottom: 0.8em;
 }
 
 .page-search main .search-api-page-results .view-mode-search_result:before,
-.page-search main .search-api-page-results .view-mode-search_result:after {
+.page-search main .search-api-page-results .view-mode-search_result:after,
+.page-search main .funnelback-results-page .view-mode-search_result:before,
+.page-search main .funnelback-results-page .view-mode-search_result:after,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result:before,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result:after,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result:before,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result:after {
   content: " ";
   display: table;
 }
 
-.page-search main .search-api-page-results .view-mode-search_result:after {
+.page-search main .search-api-page-results .view-mode-search_result:after,
+.page-search main .funnelback-results-page .view-mode-search_result:after,
+.page-funnelback-search main .search-api-page-results .view-mode-search_result:after,
+.page-funnelback-search main .funnelback-results-page .view-mode-search_result:after {
   clear: both;
 }
 
-.page-search main .pager {
+.page-search main .pager,
+.page-funnelback-search main .pager {
   border: none;
 }
 
@@ -19968,6 +20150,11 @@ p.filter__help {
 
 .js .region-header div.block-search-api-page {
   display: none;
+}
+
+#autocomplete {
+  padding: 0.8em;
+  background-color: white;
 }
 
 ol.list--large,
