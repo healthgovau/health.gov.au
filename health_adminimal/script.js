@@ -15,8 +15,7 @@
       });
 
       // Provide a collapse all button for paragraph blocks.
-
-      if ($('body').hasClass('node-type-page')) {
+      if (!$('body').hasClass('node-type-health-topic')) {
         var collapse = '<a href="#" class="collapse-all-link">Collapse all</a> | ';
         var expand = '<a href="#" class="expand-all-link">Expand all</a>';
 
@@ -73,15 +72,31 @@
           }
           $(this).find('legend a').first().text(summary);
         });
-        $(paraSelector + ' ' + input).blur(function() {
-          var inputElement = $(this), summary = '';
-          if (input == 'img') {
-            summary = createSummary($(this).attr('alt'), initialText);
-          } else {
-            summary = createSummary($(this).val(), initialText);
-          }
-          $(this).parents(paraSelector).find('legend a').text(summary);
-        });
+
+
+        /*if (input == 'textarea') {
+          $(paraSelector + ' ' + input).once('textarea-ckeditor').each(function() {
+            var $this = $(this);
+            CKEDITOR.on( 'instanceReady', function( evt ) {
+              if (evt.editor.name == $(paraSelector + ' ' + input).attr('id')) {
+                evt.editor.on('blur', function (evt) {
+                  var summary = createSummary(evt.editor.getData(), initialText);
+                  $this.parents(paraSelector).find('legend a').first().text(summary);
+                });
+              }
+            });
+          });
+        } else {*/
+          $(paraSelector + ' ' + input).blur(function () {
+            var inputElement = $(this), summary = '';
+            if (input == 'img') {
+              summary = createSummary($(this).attr('alt'), initialText);
+            } else {
+              summary = createSummary($(this).val(), initialText);
+            }
+            $(this).parents(paraSelector).find('legend a').text(summary);
+          });
+        //}
       }
 
       function createSummary(text, initialText) {

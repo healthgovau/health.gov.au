@@ -210,6 +210,9 @@ body .field-name-field-components .field-multiple-table fieldset legend {
     top: 5px;
     width: 100%;
 }
+body .field-name-field-components .field-multiple-table fieldset legend span, body .field-name-field-components .field-multiple-table fieldset legend span a {
+    width: 90%;
+}
 
 .field-name-field-components thead {
     display: none !important;
