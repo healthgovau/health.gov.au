@@ -100,7 +100,11 @@
       }
 
       function createSummary(text, initialText) {
-        return initialText + ' (' + strip(text).substr(0,30) + '...)';
+        if (text.length > 30) {
+          return initialText + ' (<span title=" ' + text + '">' + strip(text).substr(0,30) + '…</span>)';
+        } else {
+          return initialText + ' (' + text + ')';
+        }
       }
 
       function strip(html)
