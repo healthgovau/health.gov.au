@@ -55,12 +55,18 @@
       function legendSummary(paraSelector, initialText, input) {
         $(paraSelector).each(function() {
           var inputElement = $(this).find(input), summary = '';
-          if (input == 'img') {
-            summary = createSummary($(this).find(input).attr('alt'), initialText);
-          } else {
-            summary = createSummary($(this).find(input).val(), initialText);
+          if ($(this).find(input).length) {
+            if (input == 'img') {
+              var alt = $(this).find(input).attr('alt');
+              if (alt == '') {
+                alt = $(this).find(input).parents('.media-item').attr('title');
+              }
+              summary = createSummary(alt, initialText);
+            } else {
+              summary = createSummary($(this).find(input).val(), initialText);
+            }
+            $(this).find('legend a').first().html(summary);
           }
-          $(this).find('legend a').first().text(summary);
         });
 
 
@@ -79,21 +85,26 @@
         } else {*/
           $(paraSelector + ' ' + input).blur(function () {
             var inputElement = $(this), summary = '';
-            if (input == 'img') {
-              summary = createSummary($(this).attr('alt'), initialText);
-            } else {
-              summary = createSummary($(this).val(), initialText);
+            if ($(this).find(input).length) {
+              if (input == 'img') {
+                summary = createSummary($(this).attr('alt'), initialText);
+              } else {
+                summary = createSummary($(this).val(), initialText);
+              }
+              $(this).parents(paraSelector).find('legend a').text(summary);
             }
-            $(this).parents(paraSelector).find('legend a').text(summary);
           });
         //}
       }
 
       function createSummary(text, initialText) {
-        if (text.length > 30) {
-          return initialText + ' (<span title=" ' + text + '">' + strip(text).substr(0,30) + '…</span>)';
+        if (text == '') {
+          return initialText;
+        }
+        if (text.length > 50) {
+          return initialText + ' (' + strip(text).substr(0, 50) + '… )';
         } else {
-          return initialText + ' (' + text + ')';
+          return initialText + ' (' + strip(text) + ')';
         }
       }
 
