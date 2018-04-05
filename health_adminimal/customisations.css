@@ -208,10 +208,11 @@ body .field-name-field-components .field-multiple-table fieldset:not(.filter-wra
 }
 body .field-name-field-components .field-multiple-table fieldset legend {
     top: 5px;
-    width: 100%;
-}
-body .field-name-field-components .field-multiple-table fieldset legend span, body .field-name-field-components .field-multiple-table fieldset legend span a {
     width: 90%;
+}
+body .field-name-field-components .field-multiple-table fieldset > legend > span, body .field-name-field-components .field-multiple-table fieldset:not(.filter-wrapper) > legend > span > a {
+    width: 95%;
+    font-size: 0.9em;
 }
 
 .field-name-field-components thead {
@@ -251,4 +252,10 @@ body .field-name-field-components .field-multiple-table fieldset legend span, bo
 }
 .field-name-field-components .field-name-field-reference-conditions-and-d label {
     display: none;
+}
+
+.field-name-field-components .form-actions.collapsed {
+    position: absolute;
+    right: 47px;
+    margin-top: -36px;
 }
