@@ -27,7 +27,7 @@
 
         $('.collapse-all-link').click(function (e) {
           e.preventDefault();
-          $('.field-name-field-components fieldset:not(.collapsed) :not(.filter-wrapper) .fieldset-legend a').trigger('click');
+          $('.field-name-field-components fieldset:not(.collapsed) .fieldset-legend a').trigger('click');
           if ($(".group-standard-page").length) {
             $('html, body').animate({
               scrollTop: $(".group-standard-page").offset().top - 100
@@ -36,7 +36,7 @@
         });
         $('.expand-all-link').click(function (e) {
           e.preventDefault();
-          $('.field-name-field-components fieldset.collapsed :not(.filter-wrapper) .fieldset-legend a').trigger('click');
+          $('.field-name-field-components fieldset.collapsed:not(.filter-wrapper) .fieldset-legend a').trigger('click');
           if ($(".group-standard-page").length) {
             $('html, body').animate({
               scrollTop: $(".group-standard-page").offset().top - 100
