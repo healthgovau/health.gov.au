@@ -1,5 +1,7 @@
 (function($, Drupal) {
 
+  var collapsed = false;
+
   Drupal.behaviors.health_adminimal = {
     attach: function(context) {
 
@@ -28,10 +30,12 @@
         $('.collapse-all-link').click(function (e) {
           e.preventDefault();
           $('.field-name-field-components fieldset:not(.collapsed) .fieldset-legend a').trigger('click');
+          collapsed = true;
         });
         $('.expand-all-link').click(function (e) {
           e.preventDefault();
           $('.field-name-field-components fieldset.collapsed:not(.filter-wrapper) .fieldset-legend a').trigger('click');
+          collapsed = false;
         });
 
         legendSummary('.paragraphs-item-type-para-reference-video', 'Video', 'input');
@@ -50,18 +54,10 @@
         legendSummary('.paragraphs-item-type-para-content-image', 'Image', 'img');
         legendSummary('.paragraphs-item-type-para-content-external-link', 'External link', 'input');
 
-        $('.field-name-field-components legend a').click(function() {
-          var $this = $(this);
-          // Wait for animation to finish.
-          window.setTimeout(function() {
-            if ($this.parents('fieldset').hasClass('collapsed')) {
-              $this.parents('td').find('.form-actions').addClass('collapsed');
-            } else {
-              $this.parents('td').find('.form-actions').removeClass('collapsed');
-            }
-          }, 300);
-
-        });
+        // If we had previously set collapsed, trigger it off again.
+        if (collapsed) {
+          $('.collapse-all-link').trigger('click');
+        }
       }
 
 

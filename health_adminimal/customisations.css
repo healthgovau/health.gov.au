@@ -254,8 +254,11 @@ body .field-name-field-components .field-multiple-table fieldset > legend > span
     display: none;
 }
 
-.field-name-field-components .form-actions.collapsed {
+.field-name-field-components td {
+    position: relative;
+}
+.field-name-field-components .form-actions input[value='Remove'] {
     position: absolute;
-    right: 47px;
-    margin-top: -36px;
+    right: -8px;
+    top: 8px;
 }
