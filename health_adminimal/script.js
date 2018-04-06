@@ -1,6 +1,7 @@
 (function($, Drupal) {
 
-  var collapsed = false;
+  // Store the collapsed state of the fieldsets, so they can be restored later.
+  var collapsed = [];
 
   Drupal.behaviors.health_adminimal = {
     attach: function(context) {
@@ -16,28 +17,31 @@
         }
       });
 
-      // Provide a collapse all button for paragraph blocks.
+      // Collapse and expand buttons for field components paragraph blocks  .
       if (!$('body').hasClass('node-type-health-topic')) {
+        // Create buttons.
         var collapse = '<a href="#" class="collapse-all-link">Collapse all</a> | ';
         var expand = '<a href="#" class="expand-all-link">Expand all</a>';
 
         var links = '<div>' + collapse + expand + '</div>';
 
-        $('.tabledrag-toggle-weight-wrapper').first().once('collapse-all-link').append(' | ' + collapse);
-        $('.tabledrag-toggle-weight-wrapper').first().once('expand-all-link').append(expand);
-        $('.paragraphs-add-more-submit').once('links').after(links);
+        // Add to dom.
+        $('.field-name-field-components .tabledrag-toggle-weight-wrapper').first().once('collapse-all-link').append(' | ' + collapse);
+        $('.field-name-field-components .tabledrag-toggle-weight-wrapper').first().once('expand-all-link').append(expand);
+        $('.field-name-field-components .paragraphs-add-more-submit').once('links').after(links);
 
-        $('.collapse-all-link').click(function (e) {
+        // Collapse handler.
+        $('.collapse-all-link').once('collapse-all-link-handler').click(function (e) {
           e.preventDefault();
           $('.field-name-field-components fieldset:not(.collapsed) .fieldset-legend a').trigger('click');
-          collapsed = true;
         });
-        $('.expand-all-link').click(function (e) {
+        // Expand handler.
+        $('.expand-all-link').once('expand-all-link-handler').click(function (e) {
           e.preventDefault();
           $('.field-name-field-components fieldset.collapsed:not(.filter-wrapper) .fieldset-legend a').trigger('click');
-          collapsed = false;
         });
 
+        // Add a summary to the legend of what content is in a block.
         legendSummary('.paragraphs-item-type-para-reference-video', 'Video', 'input');
         legendSummary('.paragraphs-item-type-para-reference-publication', 'Publication', 'input');
         legendSummary('.paragraphs-item-type-para-reference-service', 'Service', 'input');
@@ -54,58 +58,76 @@
         legendSummary('.paragraphs-item-type-para-content-image', 'Image', 'img');
         legendSummary('.paragraphs-item-type-para-content-external-link', 'External link', 'input');
 
-        // If we had previously set collapsed, trigger it off again.
-        if (collapsed) {
-          $('.collapse-all-link').trigger('click');
+        // If collapsed already has saved states in it, restore those states.
+        if (collapsed.length > 0) {
+          $('.field-name-field-components .field-multiple-table tbody tr').each(function (index) {
+            if (collapsed[index] == true) {
+              $(this).find('td > fieldset').addClass('collapsed');
+            }
+          });
         }
+
+        // When the add more button is clicked, save the current state of the collapsed sections.
+        $('.paragraphs-add-more-submit').once('add-another-paragraph').mousedown(function() {
+          collapsed = [];
+          $('.field-name-field-components .field-multiple-table tbody tr').each(function (index) {
+            if ($(this).find('td fieldset').first().hasClass('collapsed')) {
+              collapsed[index] = true;
+            } else {
+              collapsed[index] = false;
+            }
+          });
+        });
       }
 
-
-      function legendSummary(paraSelector, initialText, input) {
+      /**
+       * Generate a summary of the content in a block and put it in the legend.
+       * Triggers when content is changed.
+       *
+       * @param paraSelector
+       *   The selector for the paragraph element.
+       * @param initialText
+       *   The default text for the legend.
+       * @param inputSelector
+       *    The selector for the element to watch for on blur.
+       */
+      function legendSummary(paraSelector, initialText, inputSelector) {
         $(paraSelector).each(function() {
-          var inputElement = $(this).find(input), summary = '';
-          if ($(this).find(input).length) {
-            if (input == 'img') {
-              var alt = $(this).find(input).attr('alt');
+          var inputElement = $(this).find(inputSelector), summary = '';
+          if ($(this).find(inputSelector).length) {
+            if (inputSelector == 'img') {
+              var alt = $(this).find(inputSelector).attr('alt');
               if (alt == '') {
-                alt = $(this).find(input).parents('.media-item').attr('title');
+                alt = $(this).find(inputSelector).parents('.media-item').attr('title');
               }
               summary = createSummary(alt, initialText);
             } else {
-              summary = createSummary($(this).find(input).val(), initialText);
+              summary = createSummary($(this).find(inputSelector).val(), initialText);
             }
             $(this).find('legend a').first().html(summary);
           }
         });
 
-
-        /*if (input == 'textarea') {
-          $(paraSelector + ' ' + input).once('textarea-ckeditor').each(function() {
-            var $this = $(this);
-            CKEDITOR.on( 'instanceReady', function( evt ) {
-              if (evt.editor.name == $(paraSelector + ' ' + input).attr('id')) {
-                evt.editor.on('blur', function (evt) {
-                  var summary = createSummary(evt.editor.getData(), initialText);
-                  $this.parents(paraSelector).find('legend a').first().text(summary);
-                });
-              }
-            });
-          });
-        } else {*/
-          $(paraSelector + ' ' + input).blur(function () {
-            var inputElement = $(this), summary = '';
-            if ($(this).find(input).length) {
-              if (input == 'img') {
-                summary = createSummary($(this).attr('alt'), initialText);
-              } else {
-                summary = createSummary($(this).val(), initialText);
-              }
-              $(this).parents(paraSelector).find('legend a').text(summary);
-            }
-          });
-        //}
+        $(paraSelector + ' ' + inputSelector).once(initialText).blur(function () {
+          var inputElement = $(this), summary = '';
+          if (input == 'img') {
+            summary = createSummary($(this).attr('alt'), initialText);
+          } else {
+            summary = createSummary($(this).val(), initialText);
+          }
+          $(this).parents(paraSelector).find('legend a').text(summary);
+        });
       }
 
+      /**
+       * Create the summary text.
+       *
+       * @param text
+       *   The value of the content in the paragraph.
+       * @param initialText
+       *   The default text for the legend.
+       * @returns string
+       */
       function createSummary(text, initialText) {
         if (text == '') {
           return initialText;
@@ -117,8 +139,13 @@
         }
       }
 
-      function strip(html)
-      {
+      /**
+       * Remove HTML from a string.
+       *
+       * @param html
+       * @returns {string|string}
+       */
+      function strip(html) {
         var tmp = document.createElement("DIV");
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || "";

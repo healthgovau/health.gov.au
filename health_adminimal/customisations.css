@@ -203,6 +203,9 @@ body .field-name-field-components .field-multiple-table fieldset {
     margin-bottom: 5px;
     padding-top: 35px !important;
 }
+body .field-name-field-components .field-multiple-table fieldset.filter-wrapper {
+    padding-top: 22px !important;
+}
 body .field-name-field-components .field-multiple-table fieldset:not(.filter-wrapper).collapsed {
     padding-top: 8px !important;
 }
@@ -261,4 +264,8 @@ body .field-name-field-components .field-multiple-table fieldset > legend > span
     position: absolute;
     right: -8px;
     top: 8px;
+}
+
+.field-name-field-components .warning.tabledrag-changed {
+    display: none;
 }
