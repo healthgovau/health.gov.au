@@ -42,17 +42,17 @@
         });
 
         // Add a summary to the legend of what content is in a block.
-        legendSummary('.paragraphs-item-type-para-reference-video', 'Video', 'input');
-        legendSummary('.paragraphs-item-type-para-reference-publication', 'Publication', 'input');
-        legendSummary('.paragraphs-item-type-para-reference-service', 'Service', 'input');
-        legendSummary('.paragraphs-item-type-para-reference-campaign', 'Campaign', 'input');
-        legendSummary('.paragraphs-item-type-para-reference-conditions-and-di', 'Conditions and diseases', 'input');
-        legendSummary('.paragraphs-item-type-para-reference-contact', 'Contact', 'input');
-        legendSummary('.paragraphs-item-type-para-reference-event', 'Event', 'input');
-        legendSummary('.paragraphs-item-type-para-reference-program-and-initi', 'Programs and initiatives', 'input');
-        legendSummary('.paragraphs-item-type-para-reference-news', 'News', 'input');
-        legendSummary('.paragraphs-item-type-para-reference-health-alert', 'Health alert', 'input');
-        legendSummary('.paragraphs-item-type-reference-statistic', 'Statistic', 'input');
+        legendSummary('.paragraphs-item-type-para-reference-video', 'Video', 'input[type="text"]');
+        legendSummary('.paragraphs-item-type-para-reference-publication', 'Publication', 'input[type="text"]');
+        legendSummary('.paragraphs-item-type-para-reference-service', 'Service', 'input[type="text"]');
+        legendSummary('.paragraphs-item-type-para-reference-campaign', 'Campaign', 'input[type="text"]');
+        legendSummary('.paragraphs-item-type-para-reference-conditions-and-di', 'Conditions and diseases', 'input[type="text"]');
+        legendSummary('.paragraphs-item-type-para-reference-contact', 'Contact', 'input[type="text"]');
+        legendSummary('.paragraphs-item-type-para-reference-event', 'Event', 'input[type="text"]');
+        legendSummary('.paragraphs-item-type-para-reference-program-and-initi', 'Programs and initiatives', 'input[type="text"]');
+        legendSummary('.paragraphs-item-type-para-reference-news', 'News', 'input[type="text"]');
+        legendSummary('.paragraphs-item-type-para-reference-health-alert', 'Health alert', 'input[type="text"]');
+        legendSummary('.paragraphs-item-type-reference-statistic', 'Statistic', 'input[type="text"]');
 
         legendSummary('.paragraphs-item-type-para-content-text', 'Text', 'textarea');
         legendSummary('.paragraphs-item-type-para-content-image', 'Image', 'img');
@@ -92,7 +92,9 @@
        *    The selector for the element to watch for on blur.
        */
       function legendSummary(paraSelector, initialText, inputSelector) {
-        $(paraSelector).each(function() {
+
+        // Update the summary on load.
+        $(paraSelector).each(function () {
           var inputElement = $(this).find(inputSelector), summary = '';
           if ($(this).find(inputSelector).length) {
             if (inputSelector == 'img') {
@@ -108,15 +110,32 @@
           }
         });
 
-        $(paraSelector + ' ' + inputSelector).once(initialText).blur(function () {
-          var inputElement = $(this), summary = '';
-          if (input == 'img') {
-            summary = createSummary($(this).attr('alt'), initialText);
-          } else {
-            summary = createSummary($(this).val(), initialText);
-          }
-          $(this).parents(paraSelector).find('legend a').text(summary);
-        });
+        // Handlers for when the content changes.
+        if (inputSelector.indexOf('textarea') !== -1 && $(inputSelector).hasClass('wysiwyg')) {
+          // CKEditor.
+          CKEDITOR.on('instanceReady', function (evt) {
+            $(paraSelector + ' ' + inputSelector).each(function() {
+              var id = $(this).attr('id');
+              if (evt.editor.name == id) {
+                evt.editor.on('blur', function (evt2) {
+                  var summary = createSummary(evt2.editor.getData(), initialText);
+                  $('#' + id).parents('fieldset').first().find('legend a').first().text(summary);
+                });
+              }
+            });
+          });
+        } else {
+          // If the input changes, update the summary.
+          $(paraSelector + ' ' + inputSelector).once(initialText).blur(function () {
+            var inputElement = $(this), summary = '';
+            if (inputSelector == 'img') {
+              summary = createSummary($(this).attr('alt'), initialText);
+            } else {
+              summary = createSummary($(this).val(), initialText);
+            }
+            $(this).parents(paraSelector).find('legend a').text(summary);
+          });
+        }
       }
 
       /**
