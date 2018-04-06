@@ -230,3 +230,11 @@ p.summary, .field-name-field-summary {
     width: 11em;
   }
 }
+
+// Override the line height from UIKit on image fields.
+.field-name-field-image,
+.field-name-field-image-featured {
+  div {
+    line-height: 0;
+  }
+}

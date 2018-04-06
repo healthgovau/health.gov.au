@@ -15710,6 +15710,11 @@ p.resource-title {
   width: 11em;
 }
 
+.field-name-field-image div,
+.field-name-field-image-featured div {
+  line-height: 0;
+}
+
 .tile {
   padding: 0;
 }
