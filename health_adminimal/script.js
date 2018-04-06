@@ -152,9 +152,9 @@
           return initialText;
         }
         if (text.length > 50) {
-          return initialText + ' (' + strip(text).substr(0, 50) + '… )';
+          return initialText + ': ' + strip(text).replace(/(\(\d+\))/, '').substr(0, 50) + '…';
         } else {
-          return initialText + ' (' + strip(text) + ')';
+          return initialText + ': ' + strip(text).replace(/(\(\d+\))/, '');
         }
       }
 
