@@ -5,10 +5,8 @@
   Drupal.behaviors.lazyLoadImages = {
     attach: function (context, settings) {
       if (typeof LazyLoad !== 'undefined') {
-        console.log('lazyload');
         var myLazyLoad = new LazyLoad({
           callback_load: function (el) {
-            console.log('callback_load');
             // Remove all the space reserving class and styles.
             $(el).parents('.image-wrapper')
               .removeClass('image-loading')

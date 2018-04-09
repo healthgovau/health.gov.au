@@ -15,7 +15,7 @@ include_once drupal_get_path('theme', 'health') . '/includes/helper.inc';
  */
 function health_adminimal_toc_filter($variables) {
   $output = '';
-  $output .= '<nav class="index-links">';
+  $output .= '<nav class="index-links rs_preserve rs_skip">';
   $output .= '<h2 id="index-links">' . t('In this section') . '</h2>';
   $output .= $variables['content'];
   $output .= '</nav>';
