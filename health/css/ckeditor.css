@@ -4757,8 +4757,13 @@ p.summary, .field-name-field-summary {
 .node-news-article.view-mode-full .field-name-field-audience .field-label, .node-survey.view-mode-full .field-name-field-status .field-label,
 .node-survey.view-mode-full .field-name-field-date-end .field-label,
 .node-survey.view-mode-full .field-name-field-time-required .field-label,
-.node-survey.view-mode-full .field-name-field-audience .field-label {
+.node-survey.view-mode-full .field-name-field-audience .field-label,
+.node-survey.view-mode-full .field-name-ds-associated-release .field-label {
   width: 11em; }
+
+.field-name-field-image div,
+.field-name-field-image-featured div {
+  line-height: 0; }
 
 .tile {
   padding: 0; }
@@ -6084,6 +6089,13 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
   #readspeaker {
     float: right; } }
 
+@media (min-width: 768px) {
+  .node-type-publication #readspeaker,
+  .node-type-video #readspeaker {
+    float: none;
+    position: absolute;
+    right: 12px; } }
+
 .rsbtn_colorskin {
   position: relative;
   font-size: 13px;
@@ -6098,10 +6110,14 @@ a.uikit-header__logo:hover, a.uikit-header__logo:focus {
       margin: 0 0 0 1.6em; } }
   .rsbtn_colorskin:hover {
     background-color: #e5e5e5; }
+  .rsbtn_colorskin:active, .rsbtn_colorskin:focus {
+    background-color: #cdcdcd; }
   .rsbtn_colorskin i {
     font-size: 12px; }
   .rsbtn_colorskin a {
     color: #008998; }
+    .rsbtn_colorskin a:active, .rsbtn_colorskin a:focus {
+      color: #006570; }
   .rsbtn_colorskin a, .rsbtn_colorskin span {
     position: relative;
     text-decoration: none; }

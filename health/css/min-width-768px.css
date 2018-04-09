@@ -3387,6 +3387,13 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
   float: right;
 }
 
+.node-type-publication #readspeaker,
+.node-type-video #readspeaker {
+  float: none;
+  position: absolute;
+  right: 12px;
+}
+
 .rsbtn_colorskin {
   margin: 0 0 0 1.6em;
 }

@@ -17722,12 +17722,22 @@ a.uikit-header__logo:focus {
   background-color: #e5e5e5;
 }
 
+.rsbtn_colorskin:active,
+.rsbtn_colorskin:focus {
+  background-color: #cdcdcd;
+}
+
 .rsbtn_colorskin i {
   font-size: 12px;
 }
 
 .rsbtn_colorskin a {
   color: #008998;
+}
+
+.rsbtn_colorskin a:active,
+.rsbtn_colorskin a:focus {
+  color: #006570;
 }
 
 .rsbtn_colorskin a,
