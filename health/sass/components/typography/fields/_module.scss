@@ -36,7 +36,11 @@
 %date-and-tag--small {
 
   .field-type-datetime,
-  .field-type-taxonomy-term-reference {
+  .field-name-field-status,
+  .field-name-field-time-required,
+  .field-name-ds-content-type,
+  .field-name-field-publication-type,
+  .field-name-field-video-type {
     @extend %meta-date;
     font-size: 12px;
     @include uikit-media(md) {
@@ -44,13 +48,13 @@
     }
     float: left;
     margin-bottom: 0;
-  }
-
-  .field-type-datetime {
     padding-right: uikit-space(.5);
   }
 
-  .field-type-taxonomy-term-reference {
+  .field-name-ds-content-type,
+  .field-name-field-time-required,
+  .field-name-field-publication-type,
+  .field-name-field-video-type {
     padding-left: uikit-space(.5);
     border-left: 1px solid $colour-minorText;
   }
