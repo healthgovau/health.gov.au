@@ -505,6 +505,18 @@ function health_preprocess_field(&$variables) {
     }
   }
 
+  // Add rs_preserve class to any H2's
+  $fields = [
+    'field_body',
+  ];
+  foreach($fields as $field) {
+    if ($variables['element']['#field_name'] == $field) {
+      if (isset($variables['element']['#items'][0])) {
+        $variables['items'][0]['#markup'] = preg_replace("/<h2>(.*?)<\/h2>/", '<h2 class="rs_preserve">$1</h2>', $variables['items'][0]['#markup']);
+      }
+    }
+  }
+
   // Publication date
   if ($variables['element']['#field_name'] == 'field_publication_date') {
     // Change the display of the date depending on the selected format for this node.
