@@ -37,6 +37,10 @@
         navigation: '.toc',
         headers: 'h2',
       });
+      // Add rs_preserve to all h2 tags so readspeaker doesn't break them.
+      $('.region-content h2', context).each(function() {
+        $(this).addClass('rs_preserve');
+      });
     }
   }
 
