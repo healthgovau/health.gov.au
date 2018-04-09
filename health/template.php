@@ -900,7 +900,7 @@ function health_image($variables) {
   }
   if (isset($ratio)) {
     // Output the image.
-    return '<div class="image-wrapper image-loading" style="padding-bottom: ' . $ratio . '%">
+    return '<div class="image-wrapper image-loading rs_preserve" style="padding-bottom: ' . $ratio . '%">
       <div class="image"><img' . drupal_attributes($attributes) . ' /></div></div>';
   } else {
     // If we cannot find the image size, we just output a normal image with no
