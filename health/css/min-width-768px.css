@@ -3600,6 +3600,10 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
   margin-bottom: 2px;
 }
 
+.node-contact.view-mode-inline_large {
+  margin-bottom: 3.2em;
+}
+
 .paragraphs-view-news_and_events .views-row,
 .paragraphs-view-display-latest_resources_hp .views-row,
 .paragraphs-view-display-resources_for_public_in_hp .views-row,
