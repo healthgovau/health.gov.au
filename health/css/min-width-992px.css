@@ -1257,6 +1257,10 @@ table {
   width: 60%;
 }
 
+.node-contact.view-mode-inline_large {
+  margin-bottom: 4.8em;
+}
+
 .node-departmental-media.view-mode-listing_vertical_small .group-right {
   padding: 0.57em 1.05em;
 }

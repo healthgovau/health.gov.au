@@ -6523,6 +6523,9 @@ ul.social__links,
 .node-news-article.view-mode-full .field-name-field-image-featured {
   margin-bottom: 1.6em; }
 
+.node-news-article.view-mode-full .field-name-field-related-health-topics {
+  margin-top: 0; }
+
 .node-news-article.view-mode-listing_vertical_small {
   background: #fff;
   display: block;
@@ -6704,22 +6707,26 @@ ul.social__links,
   .node-video.view-mode-feature .field-name-field-image-featured img, .node-video.view-mode-full .field-name-field-image-featured img, .node-video.view-mode-listing_vertical .field-name-field-image-featured img, .node-video.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-video.view-mode-inline .field-name-field-image-featured img {
     width: 100%; }
 
-.node-contact.view-mode-inline_large .field-name-title {
-  font-weight: bold; }
-
-.node-contact.view-mode-inline_large .group-name .field {
-  float: left;
-  margin-right: 4px; }
-
-.node-contact.view-mode-inline_large .group-name:before, .node-contact.view-mode-inline_large .group-name:after {
-  content: " ";
-  display: table; }
-
-.node-contact.view-mode-inline_large .group-name:after {
-  clear: both; }
-
-.node-contact.view-mode-inline_large p {
-  margin-bottom: 0; }
+.node-contact.view-mode-inline_large {
+  margin-bottom: 1.6em; }
+  .node-contact.view-mode-inline_large .field-name-title {
+    font-weight: bold; }
+  .node-contact.view-mode-inline_large .group-name .field {
+    float: left;
+    margin-right: 4px; }
+  .node-contact.view-mode-inline_large .group-name:before, .node-contact.view-mode-inline_large .group-name:after {
+    content: " ";
+    display: table; }
+  .node-contact.view-mode-inline_large .group-name:after {
+    clear: both; }
+  .node-contact.view-mode-inline_large p {
+    margin-bottom: 0; }
+  @media (min-width: 768px) {
+    .node-contact.view-mode-inline_large {
+      margin-bottom: 3.2em; } }
+  @media (min-width: 992px) {
+    .node-contact.view-mode-inline_large {
+      margin-bottom: 4.8em; } }
 
 .node-statistic.view-mode-feature, .node-statistic.view-mode-inline {
   max-width: 25em; }
