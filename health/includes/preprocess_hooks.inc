@@ -806,6 +806,10 @@ function health_preprocess_page(&$variables) {
     'data' => path_to_theme() . '/js/dist/script.min.js',
     'type' => 'file',
   ];
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/dist/health.facetapi.min.js',
+    'type' => 'file',
+  ];
 
   // Add backtotop JS.
   $render_backtotop = [
