@@ -3387,11 +3387,18 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
   float: right;
 }
 
-.node-type-publication #readspeaker,
-.node-type-video #readspeaker {
+.node-type-publication #readspeaker {
   float: none;
   position: absolute;
   right: 12px;
+}
+
+.node-type-video #readspeaker {
+  float: none;
+}
+
+.node-type-video #readspeaker .rsbtn_colorskin {
+  margin: 0 0 0.8em 0;
 }
 
 .rsbtn_colorskin {

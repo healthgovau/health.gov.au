@@ -1169,6 +1169,12 @@ table {
   width: 16.6666666667%;
 }
 
+.node-type-video #readspeaker {
+  float: none;
+  position: absolute;
+  right: 12px;
+}
+
 .page-node .view-mode-full > .group-left,
 .node-type-news-article .view-mode-full > .group-left,
 .node-type-event .view-mode-full > .group-left,
@@ -1253,8 +1259,9 @@ table {
   width: 40%;
 }
 
-.node-video.view-mode-full > .group-left {
+.node-video.view-mode-full.node-video > .group-left {
   width: 60%;
+  padding-right: 4em;
 }
 
 .node-contact.view-mode-inline_large {

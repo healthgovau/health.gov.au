@@ -18985,17 +18985,18 @@ ul.social__links .social__links-item a:after,
   clear: both;
 }
 
-.node-video.view-mode-full > .group-left {
+.node-video.view-mode-full.node-video > .group-left {
   width: 100%;
+  padding-right: 0;
 }
 
-.node-video.view-mode-full > .group-left:before,
-.node-video.view-mode-full > .group-left:after {
+.node-video.view-mode-full.node-video > .group-left:before,
+.node-video.view-mode-full.node-video > .group-left:after {
   content: " ";
   display: table;
 }
 
-.node-video.view-mode-full > .group-left:after {
+.node-video.view-mode-full.node-video > .group-left:after {
   clear: both;
 }
 
