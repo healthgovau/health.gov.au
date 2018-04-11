@@ -83,15 +83,6 @@
     }
   };
 
-  // Responsive tables.
-  Drupal.behaviors.responsiveTables = {
-    attach: function (context, settings) {
-      // Find any tables.
-      // Add a div around them with with 'responsive-table-wrapper' class.
-      $('table', context).wrap('<div class="responsive-table-wrapper"></div>');
-    }
-  };
-
   // Add classes and elements to external links.
   Drupal.behaviors.externalLinks = {
     attach: function (context, settings) {

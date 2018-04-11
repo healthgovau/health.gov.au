@@ -505,14 +505,20 @@ function health_preprocess_field(&$variables) {
     }
   }
 
-  // Add rs_preserve class to any H2's
+  // Markup changes to content.
+  // We would use text format filters for this, but we don't have access via GovCMS.
+  // We also cannot do this via JS because Readspeaker uses the original HTML and will ignore changes made via JS.
   $fields = [
     'field_body',
   ];
   foreach($fields as $field) {
     if ($variables['element']['#field_name'] == $field) {
       if (isset($variables['element']['#items'][0])) {
+        // Add rs_preserve class to any H2's
         $variables['items'][0]['#markup'] = preg_replace("/<h2>(.*?)<\/h2>/", '<h2 class="rs_preserve">$1</h2>', $variables['items'][0]['#markup']);
+        // Add a div around tables so they can be made responsive.
+        $variables['items'][0]['#markup'] = str_replace('<table', '<div class="responsive-table-wrapper"><table', $variables['items'][0]['#markup']);
+        $variables['items'][0]['#markup'] = str_replace('</table>', '</table></div>', $variables['items'][0]['#markup']);
       }
     }
   }
