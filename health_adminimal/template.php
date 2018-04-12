@@ -85,8 +85,8 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
     // Clear filename from title to force users to enter a sensible title.
     if (key_exists('filename', $form)) {
       $form['filename']['#default_value'] = '';
+      $form['#submit'][] = '_health_adminimal_file_rename_submitter';
     }
-
   }
 
   // Add logic of if a news or event node is marked as featured, it should be validated with value in featured image field. 
@@ -152,6 +152,34 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
     $form['field_contact_fax_number']['#element_validate'][] = '_health_adminimal_telephone_validator';
   }
 
+}
+
+/**
+ * Submit handler to rename the file to what the user has entered for the file title.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function _health_adminimal_file_rename_submitter($form, &$form_state) {
+  // Get the file.
+  $file = $form_state['file'];
+  // Replace anything not normal with a hyphen.
+  $new_name = strtolower(preg_replace('/[^a-zA-Z\d]+/', '-', $form_state['values']['filename']));
+  // Remove any hyphens at the start.
+  $new_name = preg_replace('/^-/', '', $new_name);
+  // Remove any hyphens at the end.
+  $new_name = preg_replace('/-$/', '', $new_name);
+  // Get the file extension.
+  $path_info = pathinfo($file->uri);
+  $new_name .= '.' . $path_info['extension'];
+  // Generate the filename, this checks if the file already exists and adds to it.
+  $new_name = file_create_filename($new_name, file_uri_scheme($file->uri) . '://');
+  // Rename the file (move it).
+  file_move($file, $new_name);
+  // Moving sets the actual file name as the title, so revert that back to what it should be.
+  $file = file_load($file->fid);
+  $file->filename = $form_state['values']['filename'];
+  file_save($file);
 }
 
 /**
