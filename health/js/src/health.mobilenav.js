@@ -8,7 +8,7 @@
       // Main menu navigation toggle.
       $('.mobile-toggle.mobile-toggle--main-menu', context).click(function (e) {
         Drupal.toggleText($(this), 'menu');
-        /*UIKIT.accordion.Toggle($(this)[0], 400,
+        UIKIT.accordion.Toggle($(this)[0], 400,
           {
             onOpen: function () {
               Drupal.handleNavTabbing('search');
@@ -23,15 +23,13 @@
               Drupal.disableOverlay(true);
             }
           }
-        );*/
-        Drupal.handleNavTabbing('search');
-        $('#block-superfish-1').toggle().css('height', 'auto');
+        );
       });
 
       // Global search toggle.
       $('.mobile-toggle.mobile-toggle--search', context).click(function (e) {
         Drupal.toggleText($(this), 'search');
-        /*UIKIT.accordion.Toggle($(this)[0], 200,
+        UIKIT.accordion.Toggle($(this)[0], 200,
           {
             onOpen: function () {
               Drupal.handleNavTabbing('main-menu');
@@ -46,10 +44,7 @@
               Drupal.disableOverlay(true);
             }
           }
-        );*/
-        Drupal.handleNavTabbing('search');
-        $('#search-api-page-search-form-mobile').show().css('height', 'auto');
-        $('#block-search-api-page-default-search--2').show().css('height', 'auto');
+        );
       });
 
       // Clicking outside the active site nav should close the nav.
@@ -90,7 +85,7 @@
        * Enable the overlay.
        */
       Drupal.enableOverlay = function() {
-        $('.nav-overlay', context).addClass('transition').addClass('active');
+        //$('.nav-overlay', context).addClass('transition').addClass('active');
       };
 
       /**
@@ -102,11 +97,11 @@
        *
        */
       Drupal.disableOverlay = function(complete) {
-        if (complete === false) {
+        /*if (complete === false) {
           $('.nav-overlay', context).removeClass('active');
         } else if (!$('.mobile-toggle--search', context).hasClass('uikit-accordion--open') && !$('.mobile-toggle--main-menu', context).hasClass('uikit-accordion--open')) {
           $('.nav-overlay', context).removeClass('transition');
-        }
+        }*/
       };
 
       /**
