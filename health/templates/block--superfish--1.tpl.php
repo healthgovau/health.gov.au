@@ -8,7 +8,7 @@
  */
 ?>
 <div
-  class="<?php print $classes; ?> uikit-accordion__body uikit-accordion--closed"<?php print $attributes; ?>
+  class="<?php print $classes; ?> health-accordion health-accordion--closed"<?php print $attributes; ?>
   id="<?php print $block_html_id; ?>">
   <?php print $content; ?>
 </div>

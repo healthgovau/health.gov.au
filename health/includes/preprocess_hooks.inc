@@ -801,6 +801,10 @@ function health_preprocess_page(&$variables) {
     'type' => 'file',
   ];
   $variables['page']['content']['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/dist/health.accordion.min.js',
+    'type' => 'file',
+  ];
+  $variables['page']['content']['#attached']['js'][] = [
     'data' => path_to_theme() . '/pancake/js/pancake.js', // Already minified.
     'type' => 'file',
   ];
