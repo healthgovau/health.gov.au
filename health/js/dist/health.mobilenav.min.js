@@ -85,7 +85,7 @@
        * Enable the overlay.
        */
       Drupal.enableOverlay = function() {
-        $('.nav-overlay', context).addClass('transition').addClass('active');
+        //$('.nav-overlay', context).addClass('transition').addClass('active');
       };
 
       /**
@@ -97,11 +97,11 @@
        *
        */
       Drupal.disableOverlay = function(complete) {
-        if (complete === false) {
+        /*if (complete === false) {
           $('.nav-overlay', context).removeClass('active');
         } else if (!$('.mobile-toggle--search', context).hasClass('uikit-accordion--open') && !$('.mobile-toggle--main-menu', context).hasClass('uikit-accordion--open')) {
           $('.nav-overlay', context).removeClass('transition');
-        }
+        }*/
       };
 
       /**
