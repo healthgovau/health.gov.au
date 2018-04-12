@@ -525,7 +525,7 @@ function health_js_alter(&$javascript) {
   }
 
   if ($replace_jquery) {
-    $javascript['misc/jquery.js']['data'] = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js';
+    $javascript['misc/jquery.js']['data'] = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js';
     $javascript['misc/jquery.js']['type'] = 'external';
   }
 
