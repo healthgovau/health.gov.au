@@ -788,14 +788,14 @@ function health_preprocess_page(&$variables) {
   // LazyLoad is added in html.tpl.php as its the only way to exclude it from IE8.
 
   // Add our javascript.
-  $variables['page']['content']['#attached']['js'][] = [
+  /*$variables['page']['content']['#attached']['js'][] = [
     'data' => 'https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js',
     'type' => 'external',
   ];
   $variables['page']['content']['#attached']['js'][] = [
     'data' => path_to_theme() . '/js/dist/health.extlink.min.js',
     'type' => 'file',
-  ];
+  ];*/
   $variables['page']['content']['#attached']['js'][] = [
     'data' => path_to_theme() . '/js/dist/health.mobilenav.min.js',
     'type' => 'file',
@@ -804,7 +804,7 @@ function health_preprocess_page(&$variables) {
     'data' => path_to_theme() . '/pancake/js/pancake.js', // Already minified.
     'type' => 'file',
   ];
-  $variables['page']['content']['#attached']['js'][] = [
+  /*$variables['page']['content']['#attached']['js'][] = [
     'data' => path_to_theme() . '/js/dist/health.lazyload.min.js',
     'type' => 'file',
   ];
@@ -815,16 +815,16 @@ function health_preprocess_page(&$variables) {
   $variables['page']['content']['#attached']['js'][] = [
     'data' => path_to_theme() . '/js/dist/health.facetapi.min.js',
     'type' => 'file',
-  ];
+  ];*/
 
   // Add backtotop JS.
   $render_backtotop = [
     '#theme' => 'backtotop',
   ];
-  $render_backtotop['#attached']['js'][] = [
+  /*$render_backtotop['#attached']['js'][] = [
     'data' => path_to_theme() . '/js/dist/health.backtotop.min.js',
     'type' => 'file',
-  ];
+  ];*/
   $variables['backtotop'] = drupal_render($render_backtotop);
   
   // Add readspeaker JS to all pages except listing, homepage, topic and hp topic.
@@ -839,14 +839,14 @@ function health_preprocess_page(&$variables) {
     $render_readspeaker = [
       '#theme' => 'readspeaker',
     ];
-    $render_readspeaker['#attached']['js'][] = [
+    /*$render_readspeaker['#attached']['js'][] = [
       'data' => READSPEAKER_URL,
       'type' => 'external',
     ];
     $render_readspeaker['#attached']['js'][] = [
       'data' => path_to_theme() . '/js/libraries/readspeaker/ReadSpeakerColorSkin.js',
       'type' => 'file',
-    ];
+    ];*/
     $variables['readspeaker'] = drupal_render($render_readspeaker);
   }
 
