@@ -1,23 +1,28 @@
-(function ($, Drupal, window, document) {
+(function ($) {
 
   'use strict';
 
-  Drupal.health = Drupal.health || {};
-  Drupal.health.accordion = {};
+  $.fn.healthAccordion = function( options ) {
+    var settings = $.extend({
+      speed: 500,
+      onOpen: null,
+      onClose: null,
+      this: this
+    }, options );
 
-  Drupal.health.accordion.toggle = function($element, speed, openCallback, closeCallback) {
-    if (!$('#' + $element.attr('aria-controls')).hasClass("health-accordion--open")) {
-      openCallback();
+    if (settings.onOpen && !$('#' + settings.this.attr('aria-controls')).hasClass("health-accordion--open")) {
+      settings.onOpen();
     }
-    $element.toggleClass("health-accordion--open");
-    $('#' + $element.attr('aria-controls')).toggleClass("health-accordion--open");
-    $('#' + $element.attr('aria-controls')).animate({
+    settings.this.toggleClass("health-accordion--open");
+    $('#' + settings.this.attr('aria-controls')).toggleClass("health-accordion--open");
+    $('#' + settings.this.attr('aria-controls')).animate({
       height: "toggle"
-    },speed, function () {
-      if (!$('#' + $element.attr('aria-controls')).hasClass("health-accordion--open")) {
-        closeCallback();
+    }, settings.speed, function () {
+      if (settings.onClose && !$('#' + settings.this.attr('aria-controls')).hasClass("health-accordion--open")) {
+        settings.onClose();
       }
     });
+
   };
 
-})(jQuery, Drupal, this, this.document);
+})(jQuery);

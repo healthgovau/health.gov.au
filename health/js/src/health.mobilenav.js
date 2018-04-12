@@ -11,17 +11,31 @@
       // Main menu navigation toggle.
       $('.mobile-toggle.mobile-toggle--main-menu', context).click(function (e) {
         Drupal.health.mobilenav.toggleText($(this), 'menu');
-        Drupal.health.accordion.toggle($(this), 500,
-          function() { Drupal.health.mobilenav.enableOverlay(); Drupal.health.mobilenav.handleNavTabbing('search'); },
-          function() { Drupal.health.mobilenav.disableOverlay(); });
+        $(this).healthAccordion({
+            speed: 500,
+            onOpen: function() {
+              //Drupal.health.mobilenav.enableOverlay();
+              //Drupal.health.mobilenav.handleNavTabbing('search');
+            },
+            onClose: function() {
+              //Drupal.health.mobilenav.disableOverlay();
+            }
+        });
       });
 
       // Global search toggle.
       $('.mobile-toggle.mobile-toggle--search', context).click(function (e) {
         Drupal.health.mobilenav.toggleText($(this), 'search');
-        Drupal.health.accordion.toggle($(this), 500,
-          function() { Drupal.health.mobilenav.enableOverlay(); Drupal.health.mobilenav.handleNavTabbing('main-menu'); },
-          function() { Drupal.health.mobilenav.disableOverlay(); });
+        $(this).healthAccordion({
+          speed: 300,
+          onOpen: function() {
+            //Drupal.health.mobilenav.enableOverlay();
+            //Drupal.health.mobilenav.handleNavTabbing('main-menu');
+          },
+          onClose: function() {
+            //Drupal.health.mobilenav.disableOverlay();
+          }
+        });
       });
 
       // Clicking outside the active site nav should close the nav.
