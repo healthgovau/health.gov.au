@@ -12,12 +12,9 @@
         <div class="field field-name-field-bean-body field-type-text-long field-label-hidden">
             <div class="field-items">
                 <div class="field-item even">
-                    <div class="mobile-toggle mobile-toggle__local-nav">
-                        <a href="#" class="mobile-toggle__open toc-filter-processed">
-                            In this section <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </a>
-                        <a href="#" class="mobile-toggle__close toc-filter-processed">
-                            Close <i class="fas fa-angle-up" aria-hidden="true"></i>
+                    <div class="mobile-toggle mobile-toggle__local-nav health-accordion">
+                        <a href="#" class="mobile-toggle__open toc-filter-processed health-accordion__title health_accordion--closed"  aria-controls="block-menu-block-2">
+                          <span>In this section</span>
                         </a>
                     </div>
                 </div>
@@ -25,7 +22,7 @@
         </div>
     </div>
 </div>
-<div class="<?php print $classes; ?>"<?php print $attributes; ?> id="<?php print $block_html_id; ?>">
+<div class="<?php print $classes; ?> health-accordion health-accordion__body health-accordion--closed"<?php print $attributes; ?> id="<?php print $block_html_id; ?>">
 
   <?php if ($block->region != 'sidebar_second') : ?>
     <?php print render($title_prefix); ?>

@@ -1,14 +1,19 @@
 .uikit-accordion__title,
+.health-accordion__title,
+.page .health-accordion__title,
 .video__transcript summary {
   background: #fff !important;
 }
 
 .uikit-accordion__title:after,
+.health-accordion__title:after,
+.page .health-accordion__title:after,
 .video__transcript summary:after {
   display: none;
 }
 
 .uikit-accordion__body,
+.health-accordion__body,
 .video__transcript .video__transcript-body {
   height: auto !important;
   display: block !important;

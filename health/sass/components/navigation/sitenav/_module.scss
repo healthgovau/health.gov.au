@@ -137,6 +137,10 @@
     background: transparent;
     outline-offset: -1px;
   }
+
+  &:after {
+    background: none;
+  }
 }
 
 // Overlay.

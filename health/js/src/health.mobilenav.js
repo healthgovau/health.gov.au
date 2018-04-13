@@ -12,36 +12,35 @@
       $('.mobile-toggle.mobile-toggle--main-menu', context).healthAccordion({
         speed: 500,
         beforeOpen: function() {
-          //Drupal.health.mobileNav.enableOverlay();
-          //Drupal.health.mobileNav.handleNavTabbing('search');
+          Drupal.health.mobileNav.enableOverlay();
+          Drupal.health.mobileNav.handleNavTabbing('search');
+          Drupal.health.mobileNav.toggleText($(this)[0].this, 'menu');
         },
         beforeClose: function() {
-          //Drupal.health.mobileNav.disableOverlay();
+          Drupal.health.mobileNav.disableOverlay();
+          Drupal.health.mobileNav.toggleText($(this)[0].this, 'menu');
         },
         afterClose: function() {
-          //Drupal.health.mobileNav.disableOverlay();
+          Drupal.health.mobileNav.disableOverlay(true);
+
         }
-      });
-      $('.mobile-toggle.mobile-toggle--main-menu', context).click(function (e) {
-        Drupal.health.mobileNav.toggleText($(this), 'menu');
       });
 
       // Global search toggle.
       $('.mobile-toggle.mobile-toggle--search', context).healthAccordion({
         speed: 300,
         beforeOpen: function() {
-          //Drupal.health.mobileNav.enableOverlay();
-         // Drupal.health.mobileNav.handleNavTabbing('main-menu');
+          Drupal.health.mobileNav.enableOverlay();
+          Drupal.health.mobileNav.handleNavTabbing('main-menu');
+          Drupal.health.mobileNav.toggleText($(this)[0].this, 'search');
         },
         beforeClose: function() {
-          //Drupal.health.mobileNav.disableOverlay();
+          Drupal.health.mobileNav.disableOverlay();
+          Drupal.health.mobileNav.toggleText($(this)[0].this, 'search');
         },
         afterClose: function() {
-          //Drupal.health.mobileNav.disableOverlay();
+          Drupal.health.mobileNav.disableOverlay(true);
         }
-      });
-      $('.mobile-toggle.mobile-toggle--search', context).click(function (e) {
-        Drupal.health.mobileNav.toggleText($(this), 'search');
       });
 
       // Clicking outside the active site nav should close the nav.
@@ -56,13 +55,6 @@
         }
       });
 
-      // Local navigation
-      $('.mobile-toggle.mobile-toggle__local-nav a', context).click(function (e) {
-        e.preventDefault();
-        $("#block-menu-block-2", context).toggleClass('mobilemenu-active');
-        $(".mobile-toggle.mobile-toggle__local-nav", context).toggleClass('mobilemenu-active');
-      });
-
       $('.filter__mobile-title', context).click(function (e) {
         $(this).toggleClass('expanded');
         $('.block-facetapi', context).toggleClass('facetshow');
@@ -73,7 +65,7 @@
         $('.filter-topics-by-letter', context).toggleClass('facetshow');
       });
 
-      // Because we are outputting 2 search forms, one for desktop and one for mobile.
+      // We are outputting 2 search forms, one for desktop and one for mobile.
       // It uses the same ID, which causes an accessibility issue.
       // So update the ID of the mobile one so it is different.
       $('.region-navigation #search-api-page-search-form').attr('id', 'search-api-page-search-form-mobile');
@@ -93,11 +85,13 @@
        *   Is this the start of end of the animation / transition.
        *
        */
-      Drupal.health.mobileNav.disableOverlay = function(complete) {
-        if (complete === false) {
-          $('.nav-overlay', context).removeClass('transition').removeClass('active');
-        } else if (!$('.mobile-toggle--search', context).hasClass('health-accordion--open') && !$('.mobile-toggle--main-menu', context).hasClass('health-accordion--open')) {
-          $('.nav-overlay', context).removeClass('active');
+      Drupal.health.mobileNav.disableOverlay = function(transition) {
+        if (!$('.mobile-toggle--search', context).hasClass('health-accordion--open') && !$('.mobile-toggle--main-menu', context).hasClass('health-accordion--open')) {
+          if (transition === true) {
+            $('.nav-overlay', context).removeClass('transition');
+          } else {
+            $('.nav-overlay', context).removeClass('active');
+          }
         }
       };
 

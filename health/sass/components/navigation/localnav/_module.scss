@@ -97,13 +97,13 @@
   }
 
   // Hide on mobile initially.
-  display: none;
+  /*display: none;
   @include uikit-media(sm) { // Always show on desktop.
     display: block;
   }
   &.mobilemenu-active { // Show when toggled.
     display: block;
-  }
+  }*/
 }
 
 // Mobile toggle.
