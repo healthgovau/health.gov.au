@@ -3,7 +3,7 @@
   background-color: #1b2a57;
   background: linear-gradient(to right, #1b2a57, #153a6e); }
 
-.page-title.header.header--light, body.node-type-health-topic .para-container.paragraphs-item-para-content-text, body.node-type-health-topic-hp .para-container.paragraphs-item-para-content-text, body.node-type-landing-page .para-container.paragraphs-item-para-content-text, .paragraphs-item-para-taxonomies.para-container, .front .paragraphs-item-para-block.para-container.block-id__feedback-band {
+.page-title.header.header--light, body.node-type-health-topic .para-container.paragraphs-item-para-content-text, body.node-type-health-topic-hp .para-container.paragraphs-item-para-content-text, body.node-type-landing-page .para-container.paragraphs-item-para-content-text, .paragraphs-item-para-taxonomies.para-container, .uikit-body a.localnav__mobile-toggle, .page a.localnav__mobile-toggle, .rsbtn_colorskin a.localnav__mobile-toggle, .cke_editable a.localnav__mobile-toggle, .front .paragraphs-item-para-block.para-container.block-id__feedback-band {
   background-color: #ecedee;
   background: linear-gradient(to right, #ecedee, #f9f9f9); }
 
@@ -7827,14 +7827,7 @@ div.region-content .anchor {
       background: #008998; }
 
 .uikit-body .sidebar #block-menu-block-2, .page .sidebar #block-menu-block-2, .rsbtn_colorskin .sidebar #block-menu-block-2, .cke_editable .sidebar #block-menu-block-2 {
-  padding: 0;
-  /*display: none;
-  @include uikit-media(sm) { // Always show on desktop.
-    display: block;
-  }
-  &.mobilemenu-active { // Show when toggled.
-    display: block;
-  }*/ }
+  padding: 0; }
   .uikit-body .sidebar #block-menu-block-2 ul, .page .sidebar #block-menu-block-2 ul, .rsbtn_colorskin .sidebar #block-menu-block-2 ul, .cke_editable .sidebar #block-menu-block-2 ul {
     padding: 0;
     text-transform: none; }
@@ -7863,21 +7856,20 @@ div.region-content .anchor {
       .uikit-body .sidebar #block-menu-block-2 ul > li ul ul li a, .page .sidebar #block-menu-block-2 ul > li ul ul li a, .rsbtn_colorskin .sidebar #block-menu-block-2 ul > li ul ul li a, .cke_editable .sidebar #block-menu-block-2 ul > li ul ul li a {
         padding: 0.8em 4em; }
 
-.mobile-toggle.mobile-toggle__local-nav {
+.uikit-body a.localnav__mobile-toggle, .page a.localnav__mobile-toggle, .rsbtn_colorskin a.localnav__mobile-toggle, .cke_editable a.localnav__mobile-toggle {
   display: block;
-  border-bottom: 1px solid #CCC; }
+  border-bottom: 1px solid #CCC;
+  padding: 6px 12px; }
   @media (min-width: 768px) {
-    .mobile-toggle.mobile-toggle__local-nav {
+    .uikit-body a.localnav__mobile-toggle, .page a.localnav__mobile-toggle, .rsbtn_colorskin a.localnav__mobile-toggle, .cke_editable a.localnav__mobile-toggle {
       display: none; } }
-  .mobile-toggle.mobile-toggle__local-nav .mobile-toggle__close, .mobile-toggle.mobile-toggle__local-nav .mobile-toggle__open {
-    padding: 6px 12px;
-    display: block; }
-  .mobile-toggle.mobile-toggle__local-nav .mobile-toggle__close {
-    display: none; }
-  .mobilemenu-active.mobile-toggle.mobile-toggle__local-nav .mobile-toggle__open {
-    display: none; }
-  .mobilemenu-active.mobile-toggle.mobile-toggle__local-nav .mobile-toggle__close {
-    display: block; }
+  .uikit-body a.localnav__mobile-toggle:after, .page a.localnav__mobile-toggle:after, .rsbtn_colorskin a.localnav__mobile-toggle:after, .cke_editable a.localnav__mobile-toggle:after {
+    right: auto;
+    margin-left: 1em;
+    font-size: 0.8em;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E %3Cpath fill='black' d='M64 0l64 64-16 16-64-64'/%3E %3Cpath fill='black' d='M64 0l16 16-64 64L0 64'/%3E%3C/svg%3E"); }
+  .uikit-body a.localnav__mobile-toggle:focus, .page a.localnav__mobile-toggle:focus, .rsbtn_colorskin a.localnav__mobile-toggle:focus, .cke_editable a.localnav__mobile-toggle:focus {
+    color: black; }
 
 .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 {
   padding: 0; }
@@ -7904,9 +7896,6 @@ div.region-content .anchor {
 
 .uikit-body .sidebar .block-menu-block--title-link .menu ul ul a, .page .sidebar .block-menu-block--title-link .menu ul ul a, .rsbtn_colorskin .sidebar .block-menu-block--title-link .menu ul ul a, .cke_editable .sidebar .block-menu-block--title-link .menu ul ul a {
   padding-left: 3.2em; }
-
-.mobile-toggle.mobile-toggle__local-nav a {
-  border-bottom: 0; }
 
 #block-menu-menu-sub-menu {
   display: none; }
