@@ -159,4 +159,11 @@ body div.maintenance-notification a {
 .maintenance-notification .subtitle {
     font-size: 1.3em;
     font-weight: bold;
+
+.page-admin-workbench .admin.my-workbench > div:first-child {
+    display: none;
+}
+
+.page-admin-workbench .admin.my-workbench > div {
+    width: 100%;
 }
