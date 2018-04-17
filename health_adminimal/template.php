@@ -78,18 +78,21 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
  */
 function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
 
-  $media_forms = array('file-entity-add-upload', 'media-internet-add-upload', 'file_entity_edit');
+  $add_media_forms = ['file_entity_add_upload', 'media_internet_add_upload'];
+  $edit_media_forms = ['file_entity_edit'];
 
-  if (in_array($form['#id'], $media_forms)) {
-
+  if (in_array($form['#form_id'], $add_media_forms)) {
     // Clear filename from title to force users to enter a sensible title.
     if (key_exists('filename', $form)) {
       $form['filename']['#default_value'] = '';
       $form['#submit'][] = '_health_adminimal_file_rename_submitter';
     }
   }
+  if (in_array($form['#form_id'], $edit_media_forms)) {
+    $form['actions']['submit']['#submit'][] = '_health_adminimal_file_rename_submitter';
+  }
 
-  // Add logic of if a news or event node is marked as featured, it should be validated with value in featured image field. 
+  // Add logic of if a news or event node is marked as featured, it should be validated with value in featured image field.
   if ($form_id == 'news_article_node_form' || $form_id == 'event_node_form') {
     $form['#validate'][] = 'health_adminimal_feature_validator';
   }
@@ -151,7 +154,6 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
   if (isset($form['field_contact_fax_number'])) {
     $form['field_contact_fax_number']['#element_validate'][] = '_health_adminimal_telephone_validator';
   }
-
 }
 
 /**
@@ -161,25 +163,36 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
  * @param $form_state
  */
 function _health_adminimal_file_rename_submitter($form, &$form_state) {
-  // Get the file.
-  $file = $form_state['file'];
+
+  $new_name = _health_adminimal_prepare_filename($form_state['values']['filename']);
+  $old_name = _health_adminimal_prepare_filename($form['filename']['#default_value']);
+
+  // First check if the filename actually needs renaming.
+  if ($new_name != $old_name || !empty($form_state['values']['replace_upload'])) {
+    // Get the file.
+    $file = $form_state['file'];
+    // Get the file extension.
+    $path_info = pathinfo($file->uri);
+    $new_name .= '.' . $path_info['extension'];
+    // Generate the filename, this checks if the file already exists and adds to it.
+    $new_name = file_create_filename($new_name, file_uri_scheme($file->uri) . '://');
+    // Rename the file (move it).
+    file_move($file, $new_name);
+    // Moving sets the actual file name as the title, so revert that back to what it should be.
+    $file = file_load($file->fid);
+    $file->filename = $form_state['values']['filename'];
+    file_save($file);
+  }
+}
+
+function _health_adminimal_prepare_filename($name) {
   // Replace anything not normal with a hyphen.
-  $new_name = strtolower(preg_replace('/[^a-zA-Z\d]+/', '-', $form_state['values']['filename']));
+  $name = strtolower(preg_replace('/[^a-zA-Z\d]+/', '-', $name));
   // Remove any hyphens at the start.
-  $new_name = preg_replace('/^-/', '', $new_name);
+  $name = preg_replace('/^-/', '', $name);
   // Remove any hyphens at the end.
-  $new_name = preg_replace('/-$/', '', $new_name);
-  // Get the file extension.
-  $path_info = pathinfo($file->uri);
-  $new_name .= '.' . $path_info['extension'];
-  // Generate the filename, this checks if the file already exists and adds to it.
-  $new_name = file_create_filename($new_name, file_uri_scheme($file->uri) . '://');
-  // Rename the file (move it).
-  file_move($file, $new_name);
-  // Moving sets the actual file name as the title, so revert that back to what it should be.
-  $file = file_load($file->fid);
-  $file->filename = $form_state['values']['filename'];
-  file_save($file);
+  $name = preg_replace('/-$/', '', $name);
+  return $name;
 }
 
 /**
