@@ -330,3 +330,36 @@ function _health_get_featured_item_nid($featured, $featured_bundle_type) {
   }
   return FALSE;
 }
+
+/**
+ * Helper function to add custom html head.
+ *
+ * @param $field
+ * @param $key
+ * @param $element
+ * @param $property_name
+ */
+function _health_add_html_head($field, $key, $element, $property_name) {
+  if (isset($field)) {
+    foreach ($field as $field_value) {
+      if (isset($field_value[$key])) {
+        if ($element) {
+          $value = $field_value[$key]->{$element};
+        }
+        else {
+          $value = $field_value[$key];
+        }
+        $head = [
+          '#type' => 'html_tag',
+          '#tag' => 'meta',
+          '#attributes' => [
+            'property' => $property_name,
+            'content' =>  $value,
+          ],
+        ];
+
+        drupal_add_html_head($head, $property_name);
+      }
+    }
+  }
+}

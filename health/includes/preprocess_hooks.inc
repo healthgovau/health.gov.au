@@ -671,16 +671,15 @@ function health_preprocess_html(&$variables, $hook) {
 
 /**
  * Implements THEME_preprocess_node().
- * Override or insert variables into the node templates.
- *
- * @param array $variables
- *   Variables to pass to the theme template.
- * @param string $hook
- *   The name of the template being rendered ("node" in this case.)
  */
 function health_preprocess_node(&$variables) {
 
   $node = $variables['node'];
+
+  // Add Health topic, intended audience, last updated date to HTML head.
+  _health_add_html_head($node->field_related_health_topics[LANGUAGE_NONE], 'entity', 'title', 'relatedTopic');
+  _health_add_html_head($node->field_audience[LANGUAGE_NONE], 'taxonomy_term', 'name', 'audience');
+  _health_add_html_head($node->field_date_updated[LANGUAGE_NONE], 'value', '', 'updateDate');
 
   // Add title and alt to default image for image field.
   if (isset($node->field_image_featured) && isset($node->field_image_featured[LANGUAGE_NONE][0]['is_default']) && $node->field_image_featured[LANGUAGE_NONE][0]['is_default'] == TRUE) {
