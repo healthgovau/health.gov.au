@@ -14,18 +14,16 @@
 
     // Full
     &.view-mode-full {
-      .field-label-inline {
-        .field-label {
-          width: 11em;
-        }
+      .field-name-field-date-updated,
+      .field-name-ds-content-type,
+      .field-name-field-audience {
+        @extend %spaced-inline-label;
       }
       .field-name-field-image-featured {
         margin-bottom: uikit-space(1);
       }
       .field-name-field-related-health-topics {
-        .field-label {
-          width: auto;
-        }
+        margin-top: 0;
       }
     }
 

@@ -15,7 +15,7 @@ include_once drupal_get_path('theme', 'health') . '/includes/helper.inc';
  */
 function health_adminimal_toc_filter($variables) {
   $output = '';
-  $output .= '<nav class="index-links">';
+  $output .= '<nav class="index-links rs_preserve rs_skip">';
   $output .= '<h2 id="index-links">' . t('In this section') . '</h2>';
   $output .= $variables['content'];
   $output .= '</nav>';
@@ -65,6 +65,11 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
   // Prevent users from being able to change the default related contact for news and departmental media releases.
   if ($form_id == 'departmental_media_node_form' || $form_id == 'news_article_node_form') {
     $form['field_related_contact']['#access'] = FALSE;
+  }
+
+  // Add character limit to 200 to summary field.
+  if ($form['field_summary']) {
+    $form['field_summary'][LANGUAGE_NONE][0]['value']['#attributes']['maxlength'] = 200;
   }
 }
 

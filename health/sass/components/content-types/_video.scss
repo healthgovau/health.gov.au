@@ -85,11 +85,13 @@
         width: 40%;
       }
     }
-    > .group-left {
+    &.node-video > .group-left {
       width: 100%;
+      padding-right: 0;
       @include uikit-clearfix;
       @include uikit-media(md){
         width: 60%;
+        padding-right: uikit-space(2.5);
       }
     }
 

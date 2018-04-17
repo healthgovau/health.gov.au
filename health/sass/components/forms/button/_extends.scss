@@ -23,6 +23,9 @@ html [type='button'],
   border-radius: 0;
   border: 0;
   color: white;
+  &[rel~='external']:after {
+    color: white;
+  }
   background-color: $colour-Primary;
   &:hover, &:focus {
     background-color: $colour-Primary-hover;
@@ -46,6 +49,11 @@ html [type='button'],
   font-size: 14px;
 }
 
+.button--large, a.button--large {
+  text-align: center;
+  padding: 1em 2em;
+  font-size: 24px;
+}
 
 .button--tertiary {
   @extend .uikit-btn--tertiary;

@@ -16,31 +16,16 @@ CONST GP_LINK_TOKEN = '[topic-gp-link]';
  * @return string
  */
 function health_preprocess_ds_content_type(&$variables) {
+  $field_variables = _health_label_display($variables, 'content_type');
+
   // Get the list of content type names.
   $names = node_type_get_names();
-  $label = $names[$variables['node']->type];
-
+  $name = $names[$variables['node']->type];
   // Do not display standard page.
-  if ($label == 'Standard page') {
-    $label = '';
+  if ($name == 'Standard page') {
+    $name = '';
   }
-
-  // Setup the field.
-  $field_variables = [
-    'label_hidden' => FALSE,
-    'title_attributes' => '',
-    'content_attributes' => '',
-    'item_attributes' => [0 => ''],
-    'attributes' => '',
-    'classes' => 'field-type-taxonomy-term-reference',
-    'items' => [
-      [
-        '#markup' => $label
-      ]
-    ],
-  ];
-
-  $field_variables = _health_label_display($variables, 'content_type', $field_variables);
+  $field_variables['items'] = [['#markup' => $name]];
 
   return theme_field($field_variables);
 }
@@ -290,4 +275,27 @@ function health_preprocess_ds_related_publication_collections(&$variables) {
       return drupal_render($render_array);
     }
   }
+}
+
+/**
+ * Display suite preprocessor -- associated release
+ *
+ * @param $variables
+ *
+ * @return string
+ */
+function health_preprocess_ds_associated_release(&$variables) {
+  $field_variables = _health_label_display($variables, 'associated_release');
+
+  // Load the view to get the associated release.
+  $view = views_get_view('releases');
+  $view->set_display('related_survey');
+  $view->set_arguments([$variables['nid']]);
+  $view->execute();
+  if (!empty($view->result)) {
+    $link = l($view->result[0]->node_title, 'node/' . $view->result[0]->nid);
+    $field_variables['items'] = [['#markup'=> $link]];
+    return theme_field($field_variables);
+  }
+  return '';
 }

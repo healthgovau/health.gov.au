@@ -1,7 +1,5 @@
 #readspeaker {
-
   // Mobile
-
   a {
     border-bottom: none;
   }
@@ -13,7 +11,37 @@
   @include uikit-media(sm) {
     float: right;
   }
+}
 
+// On pages with 2 columns, readspeaker pushes down the right column if we use
+// float:right.
+.node-type-publication {
+  #readspeaker {
+    // Desktop
+    @include uikit-media(sm) {
+      float: none;
+      position: absolute;
+      right: 12px;
+    }
+  }
+}
+
+// Video goes to full width at tablet, so use mobile styling for tablet.
+.node-type-video {
+  #readspeaker {
+    // Desktop
+    @include uikit-media(md) {
+      float: none;
+      position: absolute;
+      right: 12px;
+    }
+    @include uikit-media(sm) {
+      float: none;
+      .rsbtn_colorskin {
+        margin: 0 0 uikit-space(.5) 0;
+      }
+    }
+  }
 }
 
 .rsbtn_colorskin {
@@ -32,6 +60,9 @@
   &:hover {
     background-color: $colour-light-dark;
   }
+  &:active, &:focus {
+    background-color: $colour-light-darker;
+  }
 
   i {
     font-size: 12px;
@@ -39,6 +70,9 @@
 
   a {
     color: $colour-Secondary;
+    &:active, &:focus {
+      color: $colour-Secondary-hover;
+    }
   }
 
   a, span {

@@ -1,0 +1,42 @@
+// Content type styles by display mode (defined in /display-modes/*)
+// ========================================
+
+// Default/full content
+.node-type-release {
+  @extend %dm-full-content;
+  @extend %page-title-no-supp;
+  @extend %page-help-and-currency;
+}
+
+// Display modes
+.node-release {
+
+  // List vertical
+  &.view-mode-listing_vertical {
+    @extend %dm-list-vertical;
+  }
+  // List vertical small
+  &.view-mode-listing_vertical_small {
+    @extend %dm-list-vertical--small-noimage;
+  }
+
+  // List horizontal
+  &.view-mode-listing_horizontal {
+    @extend %dm-list-horizontal;
+  }
+
+  // Feature
+  &.view-mode-feature {
+    @extend %dm-list-horizontal;
+  }
+
+  // Inline style
+  &.view-mode-inline {
+    @extend %dm-inline;
+  }
+
+  // Search
+  &.view-mode-search_result {
+    @extend %dm-search-index;
+  }
+}

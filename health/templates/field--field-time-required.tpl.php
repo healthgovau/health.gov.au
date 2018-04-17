@@ -4,8 +4,10 @@
  * @file field.tpl.php
  * Default template implementation to display the value of a field.
  *
- * This file is not used and is here as a starting point for customization only.
- * @see theme_field()
+ * This file is not used by Drupal core, which uses theme functions instead for
+ * performance reasons. The markup is the same, though, so if you want to use
+ * template files rather than functions to extend field theming, copy this to
+ * your custom theme. See theme_field() for a discussion of performance.
  *
  * Available variables:
  * - $items: An array of field values. Use render() to output them.
@@ -44,19 +46,15 @@
  * @ingroup themeable
  */
 ?>
-<div class="<?php print $classes; ?> rs_preserve rs_skip"<?php print $attributes; ?>>
+<div class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <?php if (!$label_hidden): ?>
-    <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</div>
+    <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?></div>
   <?php endif; ?>
   <div class="field-items"<?php print $content_attributes; ?>>
     <?php foreach ($items as $delta => $item): ?>
-      <?php if ($element['#view_mode'] == 'full'): ?>
-        <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><a class="js-video-play" href="#" title="Play video" data-youtubeid="<?php print $youtube_code; ?>">
-          <?php print render($item); ?>
-        <div class="video__play-button"></div></a></div>
-      <?php else: ?>
-        <?php print render($item); ?>
-      <?php endif ?>
+      <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>>
+        <span class="circle-highlight"><?php print render($item); ?></span> minutes
+      </div>
     <?php endforeach; ?>
   </div>
 </div>
