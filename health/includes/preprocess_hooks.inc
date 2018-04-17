@@ -681,6 +681,17 @@ function health_preprocess_node(&$variables) {
   _health_add_html_head($node->field_audience[LANGUAGE_NONE], 'taxonomy_term', 'name', 'audience');
   _health_add_html_head($node->field_date_updated[LANGUAGE_NONE], 'value', '', 'updateDate');
 
+  // Add content type name to HTML head.
+  $content_type = $node->type;
+  $content_types = node_type_get_names();
+  $head = [
+    [
+      'name' => $content_types[$content_type],
+    ]
+  ];
+  _health_add_html_head($head, 'name', '', 'contentType');
+
+
   // Add title and alt to default image for image field.
   if (isset($node->field_image_featured) && isset($node->field_image_featured[LANGUAGE_NONE][0]['is_default']) && $node->field_image_featured[LANGUAGE_NONE][0]['is_default'] == TRUE) {
     $variables['content']['field_image_featured'][0]['#item']['alt'] = t('Default image');
