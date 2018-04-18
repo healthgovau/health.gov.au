@@ -299,21 +299,6 @@ function health_adminimal_feature_validator($form, &$form_state) {
 }
 
 /**
- * Node form validator for publication content type.
- *
- * @param $form
- * @param $form_state
- */
-function _health_adminimal_publication_date_validator($form, &$form_state) {
-  // Last updated field must be later than publication date.
-  if (isset($form_state['values']['field_date_updated'][LANGUAGE_NONE]) && isset($form_state['values']['field_publication_date'][LANGUAGE_NONE])) {
-    if (strtotime($form_state['values']['field_date_updated'][LANGUAGE_NONE][0]['value']) < strtotime($form_state['values']['field_publication_date'][LANGUAGE_NONE][0]['value'])) {
-      form_set_error('field_date_updated', t('Last updated date must be later than publication date.'));
-    }
-  }
-}
-
-/**
  * Video duration validator.
  *
  * @param $form
