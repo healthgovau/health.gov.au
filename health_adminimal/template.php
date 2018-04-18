@@ -94,11 +94,6 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
     $form['#validate'][] = 'health_adminimal_feature_validator';
   }
 
-  // Add logic to invalid the form if last updated date is not later than publication date.
-  if ($form_id == 'publication_node_form') {
-    $form['#validate'][] = '_health_adminimal_publication_date_validator';
-  }
-
   // Update date published if the user is changing moderation states.
   if ($form_id == 'workbench_moderation_moderate_form') {
     $form['#submit'][] = '_health_adminimal_date_published_submitter';
