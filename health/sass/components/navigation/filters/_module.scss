@@ -3,8 +3,8 @@
     margin-bottom: 0;
 }
 %filter__title-container {
-    padding-top: uikit-space(.5);
-    padding-bottom: uikit-space(.5);
+    @include AU-space('padding-top', .5unit);
+    @include AU-space('padding-bottom', .5unit);
 }
 %filter__title-text {
 }

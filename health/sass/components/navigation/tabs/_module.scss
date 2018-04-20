@@ -21,16 +21,16 @@
 
 .tabs,
 %tabs {
-  @extend .uikit-link-list;
-  @extend .uikit-link-list--inline;
-  border-bottom: $uikit-borderize;
+  @extend .au-link-list;
+  @extend .au-link-list--inline;
+  border-bottom: $AU-borderize;
   width: 100%;
   // Need to use body otherwise padding gets hit with uikitbody ul
-  .uikit-body & {
+  .au-body & {
     padding-bottom: 0;
-    margin-bottom: uikit-space(1);
+    @include AU-space('margin-bottom', 1unit);
     li {
-      margin: 0 uikit-space(.25) 0 0;
+      margin: 0 AU-space(.25) 0 0;
       &:last-of-type {
         margin-right: 0;
       }
@@ -54,12 +54,12 @@
 %tabs__tab__link {
   border: 0;
   display: block;
-  padding: uikit-space(.5) uikit-space(.5);
+  @include AU-space('padding', .5unit);
   border-bottom: 4px solid transparent;
   &:hover,
   &:focus {
     border-bottom: 4px solid $colour-Secondary-darker;
-    background-color: $uikit-colour-Link;
+    background-color: $AU-colour-Link;
     color: white;
   }
 }

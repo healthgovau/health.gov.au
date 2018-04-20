@@ -1,9 +1,9 @@
 %flat-tier {
-  padding-top: uikit-space(2);
+  @include AU-space('padding-top', 2unit);
   border-top: 3px solid $colour-Primary-darker;
 }
 
-.col-md-4 .uikit-card--featured-top .uikit-card--featured {
+.col-md-4 .au-card--featured-top .au-card--featured {
   min-height: 150px;
 }
 
@@ -12,7 +12,7 @@
   padding-bottom: 0;
 }
 
-.uikit-body .uikit-header__logo {
+.au-body .au-header__logo {
 	border-bottom: 0;
 }
 
@@ -44,7 +44,7 @@
   .paragraphs-item-para-block.block-id__more-services-card {
     &.para-container {
       .bean-image-and-text.view-mode-full {
-        color: $uikit-colour-Secondary;
+        color: $AU-colour-Secondary;
         &.more-services-card {
           @include block-card($colour-Primary-dark, $colour-Primary-hover);
         }
@@ -66,7 +66,7 @@
       color: white;
     }
     h2 {
-      @extend .uikit-display-4;
+      @include AU-fontgrid('xl');
       color: white;
     }
   }
@@ -180,15 +180,15 @@
 .page-initiatives-and-programs.page-views {
   .bean-image-and-text {
     @extend %colour-Light-background-reverse;
-    margin: 0 0 uikit-space( 1 ) 0;
+    margin: 0 0 AU-space( 1 ) 0;
 
 
 
     // Change the percentage of the regions with huge shame.
     .group-left {
       width: 100%;
-      padding: uikit-space(.5) uikit-space(.5) 0 uikit-space(.5);
-      @include uikit-media(sm) {
+      @include AU-space('padding', .5unit .5unit 0 .5unit);
+      @include AU-media(sm) {
         width: 25%;
         padding: 0;
       }
@@ -198,15 +198,15 @@
     }
     .group-right {
       width: 100%;
-      @include uikit-media(sm) {
+      @include AU-media(sm) {
         width: 75%;
       }
-      padding: uikit-space(.5);
-      @include uikit-media(sm) {
-        padding: uikit-space(0.5) uikit-space(1);
+      @include AU-space('padding', .5unit);
+      @include AU-media(sm) {
+        @include AU-space('padding', .5unit 1unit);
       }
       .field-name-field-link-external {
-        padding-bottom: uikit-space(0.5);
+        @include AU-space('padding-bottom', .5unit);
         .field-items {
           border: none;
           padding: 0;
@@ -233,7 +233,7 @@
     @include hotline-bar();
     padding-top: 0;
     padding-bottom: 0;
-    @include uikit-media(sm){
+    @include AU-media(sm){
       text-align: left;
     }
   }
@@ -284,7 +284,7 @@ td, th,
 
 // For survey only - Uncomment when implmenting
 // #owInviteSnippet {
-//   font-family: $uikit-font-system;
+//   font-family: $AU-font-system;
 //   a[rel~='external'] svg {
 //     margin-left: 5px;
 //   }
@@ -302,8 +302,8 @@ body:not(.topic-subpage) {
 // Fix overflow of content onto menu
 body:not(.node-type-landing-page):not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.page-node-3406) {
   #content {
-    padding-top: uikit-space(1);
-    @include uikit-media(sm) {
+    @include AU-space('padding-top', 1unit);
+    @include AU-media(sm) {
       padding-top: 0;
     }
   }

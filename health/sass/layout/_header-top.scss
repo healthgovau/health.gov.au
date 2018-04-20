@@ -10,14 +10,14 @@
 
 .page {
   .header-top {
-    background: $uikit-colour-Secondary;
+    background: $AU-colour-Secondary;
     color: #ffffff;
-    padding: uikit-space(.5) 0;
+    @include AU-space('padding', 0.5unit);
     .group-left {
       width: auto;
       display: inline;
       padding: 0;
-      @include uikit-media( md ) {
+      @include AU-media( md ) {
         float: left;
       }
     }
@@ -26,9 +26,9 @@
       display: inline;
       text-align: left;
       padding: 0;
-      @include uikit-media( md ) {
+      @include AU-media( md ) {
         float: right;
-        padding-right: uikit-space( 1 );
+        @include AU-space('padding-right', 1unit);
         text-align: right;
       }
     }
@@ -48,7 +48,6 @@
     }
     a {
       color: #fff;
-      border-bottom-color: #fff;
       &:hover {
         border: none;
       }
@@ -59,20 +58,20 @@
 
     .mobile-hide {
       display: none;
-      @include uikit-media(md) {
+      @include AU-media(md) {
         display: inline;
       }
     }
 
     .mobile-show {
       display: inline;
-      @include uikit-media(md) {
+      @include AU-media(md) {
         display: none;
       }
     }
 
     font-size: 13px;
-    @include uikit-media(md) {
+    @include AU-media(md) {
       font-size: inherit;
     }
 

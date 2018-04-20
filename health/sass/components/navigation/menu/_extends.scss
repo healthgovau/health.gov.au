@@ -9,13 +9,13 @@
 
 // Sub menu above search
 #block-menu-menu-sub-menu {
-  @include uikit-clearfix();
+  @include AU-clearfix;
   .block__title {
-    @include uikit-sronly;
+    @include AU-sronly;
   }
   .menu {
-    @extend .uikit-link-list;
-    @extend .uikit-link-list--inline;
+    @extend .au-link-list;
+    @extend .au-link-list--inline;
     float: right;
     background: transparent;
     padding-top: 0;
@@ -24,7 +24,7 @@
     }
   }
   display: none;
-  @include uikit-media(sm) {
+  @include AU-media(sm) {
     display: block;
   }
 }
@@ -32,6 +32,6 @@
 // Footer navigation.
 footer {
   .menu {
-    @extend .uikit-link-list;
+    @extend .au-link-list;
   }
 }

@@ -9,7 +9,7 @@
 //
 // Style guide: forms.table-drag
 
-%uikit-table-drag {
+%au-table-drag {
   &__wrapper {
     cursor: move;
   }
@@ -72,12 +72,12 @@
   }
 
   &__tree-child-last {
-    @extend %uikit-table-drag__tree-child;
+    @extend %au-table-drag__tree-child;
     background-image: url('../sass/components/table-drag/tree-child-last.png');
   }
 
   &__tree-child-horizontal {
-    @extend %uikit-table-drag__tree-child;
+    @extend %au-table-drag__tree-child;
     background-position: -11px center;
   }
 }

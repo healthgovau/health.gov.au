@@ -17,7 +17,7 @@
     .field-name-field-resource-duration .field-item {
       margin-right: 14px;
       margin-bottom: 22px;
-      @include uikit-media(sm) {
+      @include AU-media(sm) {
         margin-bottom: 2px;
       }
     }
@@ -44,8 +44,8 @@
 
     // Layout
     .group-left {
-      @include uikit-media(md){
-        padding-right: uikit-space(1);
+      @include AU-media(md){
+        @include AU-space('padding-right', 1unit);
       }
     }
 
@@ -53,13 +53,13 @@
       width: 100%;
       // Frustrating, cannot find the code that overrides this part to float:left.
       float: right!important;
-      @include uikit-clearfix;
+      @include AU-clearfix;
       @extend .col-md-7;
     }
     > .group-right {
       width: 100%;
       float: left;
-      @include uikit-clearfix;
+      @include AU-clearfix;
       @extend .col-md-5;
     }
 
@@ -70,26 +70,26 @@
   &.view-mode-full {
     @extend %video__extend;
     .group-right {
-      @include uikit-media(md){
-        padding-right: uikit-space(1);
+      @include AU-media(md){
+        @include AU-space('padding-right', 1unit);
       }
     }
 
     > .group-right {
       width: 100%;
       margin-top: 0;
-      @include uikit-clearfix;
-      @include uikit-media(md){
+      @include AU-clearfix;
+      @include AU-media(md){
         width: 40%;
       }
     }
     &.node-video > .group-left {
       width: 100%;
       padding-right: 0;
-      @include uikit-clearfix;
-      @include uikit-media(md){
+      @include AU-clearfix;
+      @include AU-media(md){
         width: 60%;
-        padding-right: uikit-space(2.5);
+        @include AU-space('padding-right', 2.5unit);
       }
     }
 

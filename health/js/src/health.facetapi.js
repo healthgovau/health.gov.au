@@ -21,8 +21,8 @@
       // The label is required for accessibility, but it duplicates information
       // in the link itself, so it should only be shown to screen reader users.
       var id = this.id + '--checkbox',
-        label = $('<label class="uikit-control-input" for="' + id + '"><div class="uikit-control-input__text"></div></label>'),
-        checkbox = $('<input type="checkbox" class="facetapi-checkbox uikit-control-input__input" id="' + id + '" />'),
+        label = $('<label class="au-control-input au-control-input--block" for="' + id + '"><span class="au-control-input__text"></span></label>'),
+        checkbox = $('<input type="checkbox" class="facetapi-checkbox au-control-input__input" id="' + id + '" />'),
         // Get the href of the link that is this DOM object.
         href = $link.attr('href'),
         redirect = new Drupal.facetapi.Redirect(href);
@@ -37,10 +37,10 @@
 
       if (active) {
         $link.remove();
-        label.find('div').text($li.text());
+        label.find('span').text($li.text());
       } else {
         $link.find('.element-invisible').remove();
-        label.find('div ').text($link.text());
+        label.find('span ').text($link.text());
         $link.remove();
       }
 

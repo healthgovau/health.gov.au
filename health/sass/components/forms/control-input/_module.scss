@@ -1,6 +1,6 @@
 %form-item {
   &--radio {
-    @extend %uikit-form-item--tight;
+    @extend %au-form-item--tight;
   }
 
   &--radio &__label,
@@ -11,6 +11,6 @@
 
   &--radio &__description,
   &--radio__description {
-    @extend .uikit-text-input__hint;
+    //@extend .au-text-input__hint;
   }
 }

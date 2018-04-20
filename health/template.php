@@ -214,7 +214,7 @@ function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
     // Append selected filters.
     $query_string = drupal_get_query_parameters();
 
-    $links = '';
+    $links = [];
 
     $form['#suffix'] = '';
 
@@ -222,9 +222,9 @@ function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
     if (isset($query_string['search_api_views_fulltext'])) {
       $query_string_modified = $query_string;
       unset($query_string_modified['search_api_views_fulltext']);
-      $links .= theme('selected_filter', [
+
+      $links[] = theme('selected_filter', [
           'url' => url('/' . current_path(), ['query' => $query_string_modified]),
-          'classes' => 'facet-remove-link',
           'text' => t('@text', ['@text' => $query_string['search_api_views_fulltext']]),
         ]
       );
@@ -248,9 +248,8 @@ function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
           $url .= '&f[' . $key_1 . ']=' . $item;
         }
 
-        $links .= theme('selected_filter', [
+        $links[] = theme('selected_filter', [
             'url' => '/' . current_path() . '?' . $url,
-            'classes' => 'facet-remove-link',
             'text' => $filter_name,
           ]
         );
@@ -270,7 +269,7 @@ function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
       );
 
       $form['#suffix'] .= theme('selected_filters_wrapper', [
-        'selected_filters' => $links,
+        'selected_filters' => theme_item_list(['items' => $links, 'type' => 'ul', 'attributes'=>['class' => 'au-tags'], 'title'=>'']),
         'clear_all' => $clear_all,
       ]);
     }

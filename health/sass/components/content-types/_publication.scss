@@ -15,9 +15,6 @@
       .field-name-field-image-featured {
         @extend %image--full;
         .go-to-download-link {
-          a {
-            @extend %link;
-          }
           line-height: 2;
           margin-top: 10px;
 
@@ -26,15 +23,15 @@
 
       // Document download
       .paragraphs-item-documents {
-        padding-bottom: uikit-space(1) !important;
+        @include AU-space('padding-bottom', 1unit);
         @extend %document-link;
       }
 
       .paragraphs-items-field-publication-files,
       .field-name-field-publication-nmm-id {
         > h2 {
-          @extend .uikit-display-3;
-          margin-bottom: uikit-space(1);
+          @include AU-fontgrid('lg');
+          @include AU-space('margin-bottom', 1unit);
         }
       }
 

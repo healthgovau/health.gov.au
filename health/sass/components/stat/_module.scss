@@ -24,7 +24,7 @@
   overflow: hidden;
   width: 100%;
   @include cardify();
-  @include uikit-media('md') {
+  @include AU-media('md') {
     %stat__text {
       border-bottom: 8px solid white;
     }
@@ -38,7 +38,7 @@
   @extend %stat__card;
   background-color: $colour-Primary-darker;
   color: white;
-  @include uikit-media('md') {
+  @include AU-media('md') {
     %stat__text {
       border-color: $colour-Primary;
     }
@@ -50,7 +50,7 @@
   @extend %stat__card;
   background-color: $colour-Secondary-darker;
   color: white;
-  @include uikit-media('md') {
+  @include AU-media('md') {
     %stat__text {
       border-color: $colour-Secondary;
     }
@@ -62,7 +62,7 @@
   @extend %stat__card;
   background-color: $colour-Tertiary-darker;
   color: white;
-  @include uikit-media('md') {
+  @include AU-media('md') {
     %stat__text {
       border-color: $colour-Tertiary;
     }
@@ -74,7 +74,7 @@
   @extend %stat__card;
   background-color: $colour-darker;
   color: white;
-  @include uikit-media('md') {
+  @include AU-media('md') {
     %stat__text {
       border-color: $colour-dark;
     }
@@ -87,10 +87,10 @@
 
   @extend .col-xs-12;
 
-  padding: uikit-space(0.5) 0 uikit-space(0.5) 0;
+  @include AU-space('padding', .5unit 0);
 
-  @include uikit-media('md') {
-    padding: uikit-space(1) 0 uikit-space(1) 0;
+  @include AU-media('md') {
+    @include AU-space('padding', 1unit 0);
   }
 }
 
@@ -102,7 +102,7 @@
   display: inline;
   color: white;
 
-  @include uikit-media('md') {
+  @include AU-media('md') {
     font-size: 4em;
   }
 }
@@ -110,7 +110,7 @@
 %stat__value-suffix,
 %stat__value-prefix {
   font-size: 1.5rem;
-  @include uikit-media('md') {
+  @include AU-media('md') {
     font-size: 2rem;
   }
 }
@@ -122,10 +122,10 @@
   line-height: 1.25em;
   font-weight: bold;
 
-  padding: 0 uikit-space(1) uikit-space(0.25) uikit-space(1);
+  padding: 0 AU-space(1) AU-space(0.25) AU-space(1);
 
-  @include uikit-media('md') {
-    padding-bottom: uikit-space(1);
+  @include AU-media('md') {
+    @include AU-space('padding-bottom', 1unit);
   }
 }
 

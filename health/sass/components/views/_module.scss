@@ -12,15 +12,15 @@
 .page-views,
 .view-generic-view {
     .view-content {
-        margin-bottom: uikit-space(1);
+        @include AU-space('margin-bottom', 1unit);
         .views-row {
-            @include uikit-clearfix();
-            border-bottom: $uikit-borderize;
-            padding-top: uikit-space(.5);
-            padding-bottom: uikit-space(.5);
-            @include uikit-media(md){
-                padding-top: uikit-space(1.5);
-                padding-bottom: uikit-space(1);
+            @include AU-clearfix;
+            border-bottom: $AU-borderize;
+            @include AU-space('padding-top', .5unit);
+            @include AU-space('padding-bottom', .5unit);
+            @include AU-media(md){
+                @include AU-space('padding-top', 1.5unit);
+                @include AU-space('padding-bottom', 1unit);
             }
             &:first-child,
             &.views-row-first {
@@ -58,11 +58,11 @@
 .paragraphs-view-latest_rsources
  {
     .views-row {
-        margin-bottom: uikit-space(.5);
-        @include uikit-media(sm) {
-          margin-bottom: uikit-space(1);
+        @include AU-space('margin-bottom', .5unit);;
+        @include AU-media(sm) {
+          @include AU-space('margin-bottom', 1unit);
         }
-        @include uikit-clearfix();
+        @include AU-clearfix;
         &:last-of-type {
           margin-bottom: 0;
         }
@@ -72,19 +72,19 @@
 // Popular resources
 .paragraphs-view-display-popular_resources {
     .views-row {
-        margin-bottom: uikit-space(1);
-        @include uikit-clearfix();
+        @include AU-space('margin-bottom', 1unit);
+        @include AU-clearfix;
     }
 }
 
 // Generic listing
 .view-header .view-result-summary {
-    @extend .uikit-display-2;
+    @include AU-fontgrid('md');
     span {
         font-size: 30px;
         font-weight: 700;
     }
-    @include uikit-media(sm) {
+    @include AU-media(sm) {
       float: left;
       margin-right: 45px;
     }

@@ -19,7 +19,7 @@ button,
 html [type='button'],
 [type='reset'],
 [type='submit']{
-  @extend .uikit-btn;
+  @extend .au-btn;
   border-radius: 0;
   border: 0;
   color: white;
@@ -34,12 +34,12 @@ html [type='button'],
 }
 
 .button--secondary {
-  @extend .uikit-btn--secondary;
+  @extend .au-btn--secondary;
 }
 
 .button--light, a.button--light {
   background-color: white;
-  color: $uikit-colour-Text;
+  color: $AU-colour-Text;
   &:hover, &:active, &:focus {
     background-color: $colour-light-dark;
   }
@@ -56,7 +56,7 @@ html [type='button'],
 }
 
 .button--tertiary {
-  @extend .uikit-btn--tertiary;
+  @extend .au-btn--tertiary;
   border-color: $colour-Secondary;
   color: $colour-Secondary;
   a {

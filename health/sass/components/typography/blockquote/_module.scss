@@ -4,20 +4,20 @@
 //
 //-------------------------------------------------------------
 
-%uikit-blockquote {
-  font-family: $uikit-font-system;
-  color: $uikit-colour-Text;
-  line-height: $uikit-leading;
-  margin: uikit-space(1) uikit-space(.25) uikit-space(1) 0;
-  padding: uikit-space(.75) uikit-space(.75) uikit-space(.75) uikit-space(3);
-  border-radius: $uikit-border-radius;
-  box-shadow: 2px 0 6px transparentize($uikit-colour-Text, 0.3);
-  max-width: $uikit-maxwidth;
-  border-left: 6px solid $uikit-colour-Border;
+%au-blockquote {
+
+  //color: $AU-colour-Text;
+  //line-height: $AU-leading;
+  @include AU-space('margin', 1unit .25unit 1unit 0);
+  @include AU-space('padding', .75unit .75unit .75unit 3unit);
+  border-radius: $AU-border-radius;
+  box-shadow: 2px 0 6px transparentize($AU-colour-Text, 0.3);
+  max-width: $AU-maxwidth;
+  border-left: 6px solid $AU-colour-Border;
   background-repeat: no-repeat;
   background-size: 70px;
   background-position: center left;
-  background-image: uikit-svguri('<svg fill="#{ $uikit-colour-Text }" xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 32 32">
+  background-image: AU-svguri('<svg fill="#{ $AU-colour-Text }" xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 32 32">
         <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
         <path d="M0 0h24v24H0z" fill="none"/>
       </svg>');
@@ -32,9 +32,9 @@
 
   .ie8 &,
   .lt-ie8 & {
-    border-top: $uikit-borderize;
-    border-right: $uikit-borderize;
-    border-bottom: $uikit-borderize;
+    border-top: $AU-borderize;
+    border-right: $AU-borderize;
+    border-bottom: $AU-borderize;
   }
 }
 

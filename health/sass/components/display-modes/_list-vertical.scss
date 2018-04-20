@@ -6,8 +6,8 @@
     }
     .group-left {
       @extend .col-sm-3;
-      padding-bottom: uikit-space(0.5);
-      @include uikit-media(sm) {
+      @include AU-space('padding-bottom', .5unit);
+      @include AU-media(sm) {
         padding-bottom: 0;
       }
 
@@ -27,7 +27,7 @@
       a {
         border-bottom: 0;
         line-height: 0;
-        @include uikit-media(sm) {
+        @include AU-media(sm) {
           background-color: black;
           display: block;
         }
@@ -36,7 +36,7 @@
         }
       }
       img {
-        @include uikit-media(sm) {
+        @include AU-media(sm) {
           &:hover, &:focus, &:active {
             opacity: 0.75;
           }
@@ -58,7 +58,7 @@
 
     // Collection link
     .field-name-field-publication-collection {
-      padding-top: uikit-space(.75);
+      @include AU-space('padding-top', .75unit);
     }
 }
 
@@ -72,9 +72,9 @@
       width: 60%;
       padding-top: 0;
       padding-bottom: 0;
-      padding-left: uikit-space(.5);
-      @include uikit-media(sm) {
-        padding-left: uikit-space(1);
+      @include AU-space('padding-left', .5unit);
+      @include AU-media(sm) {
+        @include AU-space('padding-left', 1unit);
       }
     }
     // Fields
@@ -94,7 +94,7 @@
       a {
         border-bottom: 0;
         line-height: 0;
-        @include uikit-media(sm) {
+        @include AU-media(sm) {
           background-color: black;
           display: block;
         }
@@ -103,7 +103,7 @@
         }
       }
       img {
-        @include uikit-media(sm) {
+        @include AU-media(sm) {
           &:hover, &:focus, &:active {
             opacity: 0.75;
           }
@@ -117,7 +117,7 @@
 
     // Collection link
     .field-name-field-publication-collection {
-      padding-top: uikit-space(.75);
+      @include AU-space('padding-top', .75unit);
     }
 }
 

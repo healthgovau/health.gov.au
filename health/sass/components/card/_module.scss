@@ -10,9 +10,9 @@
   }
   // Content pane
   .group-right {
-    padding: uikit-space(.6);
-    @include uikit-media(md) {
-      padding: uikit-space(1);
+    @include AU-space('padding', .6unit);
+    @include AU-media(md) {
+      @include AU-space('padding', 1unit);
     }
   }
 }
@@ -28,16 +28,8 @@
   // Content pane
   .group-right {
     padding: 0.45em 0.8em;
-    @include uikit-media(md) {
+    @include AU-media(md) {
       padding: 0.57em 1.05em;
-    }
-  }
-  .field-name-title {
-    h3, h2 {
-      font-size: 14px;
-      @include uikit-media(md) {
-        font-size: 18px;
-      }
     }
   }
 }

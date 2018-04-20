@@ -11,7 +11,7 @@
   text-align: right;
 
   a {
-    @extend .uikit-direction-link;
+    @extend .au-direction-link;
   }
 
   &__help-icon {
@@ -28,7 +28,7 @@ ul.links {
   margin: 0;
   padding: 0;
   .node-readmore {
-    @extend .uikit-direction-link;
+    @extend .au-direction-link;
   }
 }
 

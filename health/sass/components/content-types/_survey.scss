@@ -22,7 +22,7 @@
     }
 
     .field-name-field-link-external {
-      padding-bottom: uikit-space(1.5);
+      @include AU-space('padding-bottom', 1.5unit);
       .field-items {
         border: none;
         padding: 0;
@@ -33,7 +33,7 @@
     }
 
     .field-name-field-image-featured {
-      padding-bottom: uikit-space(1);
+      @include AU-space('padding-bottom', 1unit);
     }
   }
 
@@ -80,7 +80,7 @@
       font-weight: bold;
     }
     .survey-button {
-      margin-top: uikit-space(.5);
+      @include AU-space('margin-top', .5unit);
     }
   }
 

@@ -27,21 +27,17 @@ endif;
       <?php print render($page['header-top']); ?>
     </div>
   </div>
-  <header class="uikit-header uikit-header--light" role="banner">
+  <header class="au-header au-header--light" role="banner">
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
           <?php if ($logo): ?>
             <a href="<?php print $front_page; ?>"
              title="<?php print t('Home'); ?>" rel="home"
-             class="uikit-header__logo">
-              <div class="image-wrapper image-loading rs_preserve rs_skip" style="padding-bottom: 24%">
-                <div class="image">
-                  <img data-src="/<?php print path_to_theme(); ?>/images/DoHCrest.png" width="858" height="208"
-                       alt="<?php print t('Australia government Department of Health'); ?>"
-                       class="uikit-header__logo-image uikit-responsive-media-img"/>
-                </div>
-              </div>
+             class="au-header__logo">
+              <img data-src="/<?php print path_to_theme(); ?>/images/DoHCrest.png"
+                alt="<?php print t('Australia government Department of Health'); ?>"
+                class="au-header__logo-image au-responsive-media-img"/>
             </a>
           <?php endif; ?>
           <?php if ($site_name || $site_slogan): ?>
@@ -91,7 +87,7 @@ endif;
 
         <?php if ($title): ?>
         <?php print render($title_prefix); ?>
-        <h1 class="uikit-header-heading">
+        <h1 class="au-header-heading">
           <?php print $title; ?>
         </h1>
         <?php print render($title_suffix); ?>

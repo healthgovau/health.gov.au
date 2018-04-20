@@ -14,12 +14,12 @@
 // Style guide: base.responsive.img
 
 %responsive-media-img {
-  @extend .uikit-responsive-media-img;
+  @extend .au-responsive-media-img;
   height: auto;
 }
 
 %responsive-media-vid {
-  @extend .uikit-responsive-media-vid;
+  @extend .au-responsive-media-vid;
 }
 
 @import 'extends';

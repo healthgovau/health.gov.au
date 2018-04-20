@@ -3,13 +3,8 @@
 // The main body of the page.
 
 .page {
-  @extend .uikit-body;
+  @extend .au-body;
   a {
-    border-bottom: 1px solid $colour-Secondary;
-    &:hover {
-      text-decoration: none;
-      background-color: transparent;
-    }
     @extend %link_focus;
   }
 }

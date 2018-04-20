@@ -1,7 +1,7 @@
 // Alerts region
-%uikit-alertbar {
-  background-color: $uikit-colour-Error-10;
-  border-top: 6px solid $uikit-colour-Error;
+%au-alertbar {
+  background-color: $AU-colour-Error;
+  border-top: 6px solid $AU-colour-Error;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -10,16 +10,16 @@
   transition: all .3s ease-in-out;
   .close-toggle {
     position: absolute;
-    top: uikit-space(.5);
-    right: 12px; // size of spacing
+    @include AU-space('top', .5unit);
+    right: 12px; // sisze of spacing
   }
 }
 
 // Block in the footer
-%uikit-alert {
+%au-alert {
   max-width: none;
-  margin: uikit-space(.5) 0;
-  padding-right: uikit-space(3);
+  @include AU-space('margin', .5unit 0);
+  @include AU-space('padding-right', 3unit);
   .view-content,
   .more-link {
     display: inline-block;
@@ -36,8 +36,8 @@
       height: 25px;
       display: inline-block;
       content: " ";
-      background: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $uikit-colour-Text }" d="M71.99 12.78l54.796 99.458c1.665 2.997 1.617 7.993-.143 10.99-.808 1.38-1.914 2.473-3.317
+      background: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+				<path fill="#{ $AU-colour-Text }" d="M71.99 12.78l54.796 99.458c1.665 2.997 1.617 7.993-.143 10.99-.808 1.38-1.914 2.473-3.317
 					3.282-1.403.808-2.914 1.213-4.53 1.213H9.206c-1.62 0-3.13-.405-4.533-1.213-1.403-.81-2.51-1.903-3.317-3.282-1.76-2.997-1.808-7.993-.143-10.99L56.01
 					12.78c.808-1.474 1.925-2.64 3.352-3.496C60.79 8.428 62.335 8 64 8s3.21.428 4.638 1.284c1.427.856 2.544 2.022 3.353 3.496z"/>
 				<rect fill="#fff" width="16" height="16" x="56" y="96" rx="2"/>

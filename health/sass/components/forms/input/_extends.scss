@@ -2,7 +2,7 @@
 // The %text-form-element can be used to style `<input>` text types and
 // `<textarea>` elements at the same time.
 %text-form-element {
-  @extend .uikit-text-input;
+  @extend .au-text-input;
 }
 
 // Inputs
@@ -43,7 +43,7 @@
 
 .form-type-textfield {
   label {
-    @extend .uikit-control-input;
-    @extend .uikit-text-input__label;
+    @extend .au-control-input;
+    //@extend .au-text-input__label;
   }
 }

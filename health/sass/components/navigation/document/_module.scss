@@ -1,8 +1,8 @@
 %document-link {
-    padding-bottom: uikit-space(0.5);
+    @include AU-space('padding-bottom', .5unit);
     h2,h3 {
-        @extend .uikit-display-1;
-        margin-bottom: uikit-space(0.5);
+        @include AU-fontgrid('sm');
+        @include AU-space('margin-bottom', .5unit);
     }
     .file-icon {
         float: left;
@@ -14,17 +14,13 @@
     }
     .file__link {
         display: inline;
-        border-bottom: solid 1px $colour-Secondary-darker;
         span {
             @extend %visually-hidden;
         }
-      &:hover {
-        border-bottom: none;
-      }
     }
     .file__meta {
         display: inline;
-        color: $uikit-colour-Secondary;
+        color: $AU-colour-Secondary;
     }
     .field-name-field-file,
     .field-name-field-images .field-item {

@@ -6,18 +6,18 @@
 //
 // Style guide: sass.colors
 
-$uikit-colour-Hero: #115361 !default; //color variables (yes! the actual spelling doesn't have a u)
-$uikit-colour-Primary: #1B7991 !default;
-$uikit-colour-Secondary: #313131 !default;
-$uikit-colour-Background: #f0f3f5 !default;
-$uikit-colour-Border: #CCC;
-$uikit-colour-Text: #313131 !default;
-$uikit-colour-Link: #5bcbe3 !default;
+$AU-colour-Hero: #115361 !default; //color variables (yes! the actual spelling doesn't have a u)
+$AU-colour-Primary: #1B7991 !default;
+$AU-colour-Secondary: #313131 !default;
+$AU-colour-Background: #f0f3f5 !default;
+$AU-colour-Border: #CCC;
+$AU-colour-Text: #313131 !default;
+$AU-colour-Link: #5bcbe3 !default;
 
-$uikit-colour-Error: #ff635c !default;
-$uikit-colour-Success: #0cac78 !default;
-$uikit-colour-Warning: #f69900 !default;
-$uikit-colour-Info: #00bfe9 !default;
+$AU-colour-Error: #ff635c !default;
+$AU-colour-Success: #0cac78 !default;
+$AU-colour-Warning: #f69900 !default;
+$AU-colour-Info: #00bfe9 !default;
 
 // Health variables here
 $colour-Shadow: rgba(0,0,0,0.1);
@@ -245,14 +245,14 @@ $colour-light-darker: #cdcdcd;
   }
 }
 
-$uikit-colour-Link: $colour-Secondary; // Health override
-$uikit-colour-Primary: $colour-Primary; // Health override
+$AU-color-foreground-action: #313131; // Health override
+$AU-colour-Primary: $colour-Primary; // Health override
 
 // Statistics
 $colour-Statistics-blue: $colour-Primary-darker;
-$colour-Statistics-orange: $uikit-colour-Warning;
-$colour-Statistics-green: $uikit-colour-Success;
-$colour-Statistics-red: $uikit-colour-Error;
+$colour-Statistics-orange: $AU-colour-Warning;
+$colour-Statistics-green: $AU-colour-Success;
+$colour-Statistics-red: $AU-colour-Error;
 
 // Typography
 $colour-minorText: #6e6e6e;

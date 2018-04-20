@@ -6,7 +6,7 @@
     >li {
         vertical-align: top;
         position: relative;
-        margin: 0 0 uikit-space(1);
+        margin: 0 0 AU-space(1);
         padding: 15px 15px 15px 50px;
         background: $colour-lighter;
         &::before {
@@ -49,6 +49,6 @@ ul.list--large {
 // List items shouldn't be 100% as it is too long and hard to read, just like p tags.
 .main-content, .main-content-full {
   ul, ol {
-    max-width: $uikit-maxwidth;
+    max-width: $AU-maxwidth;
   }
 }

@@ -24,7 +24,7 @@
       @extend %visually-hidden;
     }
 
-    // Telephone and email paragraphs 
+    // Telephone and email paragraphs
     .inside-para-container,
     .field-name-field-summary {
       padding-bottom: uikit-space(.5);
@@ -60,30 +60,40 @@
       text-align: center;
       padding-top: uikit-space(1);
       padding-bottom: uikit-space(1);
-      
+
+    }
+    .group-name {
+      .field {
+        float: left;
+        margin-right: 4px;
+      }
+      @include AU-clearfix;
     }
     .group-right {
       @extend .col-xs-10;
       @extend .col-sm-10;
       @extend .col-md-10;
       @extend .col-lg-10;
-      padding: uikit-space(1) uikit-space(.5) uikit-space(.5) uikit-space(1.5) !important;
+      @include AU-space('padding', 1unit .5unit .5unit 1.5unit)!important;
     }
     // Styling
     border: 1px solid #ccc;
     background: none;
 
-    padding: 0;
-    @include uikit-media(sm) {
+    @include AU-space('margin-bottom', 1unit);
+    @include AU-media(sm) {
+      @include AU-space('margin-bottom', 2 unit);
       padding: 0;
     }
-
+    @include AU-media(md) {
+      @include AU-space('margin-bottom', 3 unit);
+    }
     // Labels
     .field-label {
       @extend %visually-hidden;
     }
 
-    // Telephone and email paragraphs 
+    // Telephone and email paragraphs
     .inside-para-container {
       padding-bottom: uikit-space(.5);
     }
@@ -93,7 +103,7 @@
   // &.view-mode-inline_large {
   //   @extend %dm-inline-large;
   // }
-    
+
   // Search
   &.view-mode-search_result {
       @extend %dm-search-index;
@@ -107,7 +117,7 @@
       @include uikit-media(md){
         max-width: 80%
       }
-    } 
+    }
   }
 
   // Apply circle style to default image and sleected ones regardless of upload
@@ -117,7 +127,7 @@
     .field-name-field-image-featured {
       img {
         @include circlefy;
-      } 
+      }
     }
   }
 
@@ -125,7 +135,7 @@
   .field-name-field-image-featured.default {
     img {
       @include circlefy;
-    } 
+    }
   }
-  
+
 }

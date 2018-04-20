@@ -2,12 +2,12 @@
 
 // Generic band styles
 %band {
-  @include uikit-clearfix();
-  padding-top: uikit-space(1);
-  padding-bottom: uikit-space(1);
-  @include uikit-media(md) {
-    padding-top: uikit-space(1.5);
-    padding-bottom: uikit-space(1.5);
+  @include AU-clearfix;
+  @include AU-space('padding-top', 1unit);
+  @include AU-space('padding-bottom', 1unit);
+  @include AU-media(md) {
+    @include AU-space('padding-top', 1.5unit);
+    @include AU-space('padding-bottom', 1.5unit);
   }
 }
 %band--neutral {

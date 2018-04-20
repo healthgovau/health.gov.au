@@ -1,6 +1,6 @@
 .views-exposed-form {
   label {
-    margin-bottom: uikit-space(.25);
+    @include AU-space('margin-bottom', .25unit);
     display: block;
   }
   .views-exposed-widget {
@@ -17,7 +17,7 @@
     }
   }
   .form-item {
-    margin-bottom: uikit-space(.25);
+    @include AU-space('margin-bottom', .25unit);
   }
   .views-exposed-widget .form-submit {
     margin-top: 0;
@@ -26,13 +26,13 @@
 
 .views-widget-sort-sort_bef_combine {
   border-bottom: solid 2px $colour-Primary-darker;
-  margin-bottom: uikit-space(.75);
+  @include AU-space('margin-bottom', .75unit);
 }
 
 .form-type-bef-link {
   display: inline-block;
   a {
-    @extend .uikit-tags__item;
+    @extend .au-tags__item;
     &.active {
       color: #fff;
       background: $colour-Primary-darker;
@@ -42,11 +42,15 @@
 
 // Applied filters
 #edit-custom-remove {
+  .item-list, ul {
+    display: inline;
+  }
+
   label {
-    @extend .uikit-display-1;
+    @include AU-fontgrid('sm');
     display: block;
-    @include uikit-media(sm){
-      margin-right: uikit-space(0.5);
+    @include AU-media(sm){
+      @include AU-space('top', .5unit);
       display: inline;
     }
   }
@@ -56,18 +60,7 @@
   .facet-remove {
     display: inline;
   }
-  .facet-remove-link {
-    @extend .uikit-tags__item;
-    border: 1px solid $colour-Secondary;
 
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: $colour-Secondary;
-      color: #fff;
-    }
-    font-weight: normal;
-  }
   // Fix the inline display of the icon.
   .fa {
     display: inline;

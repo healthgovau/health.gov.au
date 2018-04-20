@@ -5,18 +5,17 @@
 .form-type-checkboxes,
 .form-type-checkbox {
   label {
-    @extend .uikit-control-input;
-    @extend .uikit-text-input__label;
+    @extend .au-control-input;
     .input__text {
       font-weight: 400;
-      @extend .uikit-control-input__text;
+      @extend .au-control-input__text;
     }
   }
   input {
-    @extend .uikit-control-input__input;
+    @extend .au-control-input__input;
   }
   .description {
-    @extend %form-item--radio__description;
+    //@extend %form-item--radio__description;
   }
 }
 

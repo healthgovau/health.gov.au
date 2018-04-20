@@ -7,7 +7,7 @@
 
 .visually-hidden,
 %visually-hidden {
-  @include uikit-sronly();
+  @include AU-sronly();
   position: absolute !important;
 }
 

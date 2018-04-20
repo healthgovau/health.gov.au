@@ -10,7 +10,17 @@
 // :not() supported by IE9+ so polyfill
 body {
   &:not(.node-type-health-topic, .node-type-health-topic-hp, .node-type-landing-page, .page-node-3406){
-    .page-layout {
+
+  // Everything gets full width by default.
+  .page .page-layout {
+    @include AU-space('margin-bottom', 2 unit);
+    @extend .container-fluid;
+  }
+
+  // Non-landing pages then get the layout with a gutter on either side.
+  // Then they get columns within.
+  &:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) {
+    .page .page-layout {
       @extend .container;
     }
   }
@@ -51,12 +61,12 @@ body.page-node-3406
 //   }
 // }
 
-.uikit-body .view-popular ul > .views-row {
+.au-body .view-popular ul > .views-row {
   margin-bottom: 0;
 }
 
 .panel-featured .panel-middle-top {
-  margin-bottom: uikit-space(1);
+  @include AU-space('margin-bottom', 1unit);
 }
 
 %views-4col {
@@ -102,8 +112,8 @@ body.page-node-3406
     // More button
     .view-footer {
       @extend .col-md-12;
-      margin-top: uikit-space(1);
-      padding-bottom: uikit-space(1);
+      @include AU-space('margin-top', 1unit);
+      @include AU-space('padding-bottom', 1unit);
     }
   }
 }

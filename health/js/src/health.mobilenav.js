@@ -2,57 +2,68 @@
 
   'use strict';
 
-  Drupal.health = Drupal.health || {};
-  Drupal.health.mobileNav = {};
-
-  Drupal.behaviors.healthMobileNav = {
+  Drupal.behaviors.healthMobileMenu = {
     attach: function (context, settings) {
 
       // Main menu navigation toggle.
-      $('.mobile-toggle.mobile-toggle--main-menu', context).healthAccordion({
-        speed: 500,
-        beforeOpen: function() {
-          Drupal.health.mobileNav.enableOverlay();
-          Drupal.health.mobileNav.handleNavTabbing('search');
-          Drupal.health.mobileNav.toggleText($(this)[0].this, 'menu');
-        },
-        beforeClose: function() {
-          Drupal.health.mobileNav.disableOverlay();
-          Drupal.health.mobileNav.toggleText($(this)[0].this, 'menu');
-        },
-        afterClose: function() {
-          Drupal.health.mobileNav.disableOverlay(true);
-
-        }
+      $('.mobile-toggle.mobile-toggle--main-menu', context).click(function (e) {
+        Drupal.toggleText($(this), 'menu');
+        AU.accordion.Toggle($(this)[0], 400,
+          {
+            onOpen: function () {
+              Drupal.handleNavTabbing('search');
+              Drupal.enableOverlay();
+            },
+            afterOpen: function () {
+            },
+            onClose: function () {
+              Drupal.disableOverlay(false);
+            },
+            afterClose: function () {
+              Drupal.disableOverlay(true);
+            }
+          }
+        );
       });
 
       // Global search toggle.
-      $('.mobile-toggle.mobile-toggle--search', context).healthAccordion({
-        speed: 300,
-        beforeOpen: function() {
-          Drupal.health.mobileNav.enableOverlay();
-          Drupal.health.mobileNav.handleNavTabbing('main-menu');
-          Drupal.health.mobileNav.toggleText($(this)[0].this, 'search');
-        },
-        beforeClose: function() {
-          Drupal.health.mobileNav.disableOverlay();
-          Drupal.health.mobileNav.toggleText($(this)[0].this, 'search');
-        },
-        afterClose: function() {
-          Drupal.health.mobileNav.disableOverlay(true);
-        }
+      $('.mobile-toggle.mobile-toggle--search', context).click(function (e) {
+        Drupal.toggleText($(this), 'search');
+        AU.accordion.Toggle($(this)[0], 200,
+          {
+            onOpen: function () {
+              Drupal.handleNavTabbing('main-menu');
+              Drupal.enableOverlay();
+            },
+            afterOpen: function () {
+            },
+            onClose: function () {
+              Drupal.disableOverlay(false);
+            },
+            afterClose: function () {
+              Drupal.disableOverlay(true);
+            }
+          }
+        );
       });
 
       // Clicking outside the active site nav should close the nav.
       $('.nav-overlay', context).click(function () {
         // Deactivate nav if it is currently active.
-        if ($('.mobile-toggle.mobile-toggle--main-menu', context).hasClass('health-accordion--open')) {
+        if ($('.mobile-toggle.mobile-toggle--main-menu', context).hasClass('au-accordion--open')) {
           $('.mobile-toggle.mobile-toggle--main-menu', context).trigger('click');
         }
         // Deactivate search if it is currently active.
-        if ($('.mobile-toggle.mobile-toggle--search', context).hasClass('health-accordion--open')) {
+        if ($('.mobile-toggle.mobile-toggle--search', context).hasClass('au-accordion--open')) {
           $('.mobile-toggle.mobile-toggle--search', context).trigger('click');
         }
+      });
+
+      // Local navigation
+      $('.mobile-toggle.mobile-toggle__local-nav a', context).click(function (e) {
+        e.preventDefault();
+        $("#block-menu-block-2", context).toggleClass('mobilemenu-active');
+        $(".mobile-toggle.mobile-toggle__local-nav", context).toggleClass('mobilemenu-active');
       });
 
       $('.filter__mobile-title', context).click(function (e) {
@@ -65,7 +76,7 @@
         $('.filter-topics-by-letter', context).toggleClass('facetshow');
       });
 
-      // We are outputting 2 search forms, one for desktop and one for mobile.
+      // Because we are outputting 2 search forms, one for desktop and one for mobile.
       // It uses the same ID, which causes an accessibility issue.
       // So update the ID of the mobile one so it is different.
       $('.region-navigation #search-api-page-search-form').attr('id', 'search-api-page-search-form-mobile');
@@ -73,7 +84,7 @@
       /**
        * Enable the overlay.
        */
-      Drupal.health.mobileNav.enableOverlay = function() {
+      Drupal.enableOverlay = function() {
         $('.nav-overlay', context).addClass('transition').addClass('active');
       };
 
@@ -85,13 +96,11 @@
        *   Is this the start of end of the animation / transition.
        *
        */
-      Drupal.health.mobileNav.disableOverlay = function(transition) {
-        if (!$('.mobile-toggle--search', context).hasClass('health-accordion--open') && !$('.mobile-toggle--main-menu', context).hasClass('health-accordion--open')) {
-          if (transition === true) {
-            $('.nav-overlay', context).removeClass('transition');
-          } else {
-            $('.nav-overlay', context).removeClass('active');
-          }
+      Drupal.disableOverlay = function(complete) {
+        if (complete === false) {
+          $('.nav-overlay', context).removeClass('active');
+        } else if (!$('.mobile-toggle--search', context).hasClass('au-accordion--open') && !$('.mobile-toggle--main-menu', context).hasClass('au-accordion--open')) {
+          $('.nav-overlay', context).removeClass('transition');
         }
       };
 
@@ -102,7 +111,7 @@
        * @param text
        *   The name of the button, eg search, menu etc to suffix to Open/Close
        */
-      Drupal.health.mobileNav.toggleText = function ($element, text) {
+      Drupal.toggleText = function ($element, text) {
         // Update text.
         if ($element.find('span').text().trim() === 'Open ' + text) {
           $element.find('span').text('Close ' + text);
@@ -116,8 +125,8 @@
        * @param otherTab
        *   The name of the other tab, eg search, main-menu
        */
-      Drupal.health.mobileNav.handleNavTabbing = function(otherTab) {
-        if ($('.mobile-toggle.mobile-toggle--' + otherTab, context).hasClass('health-accordion--open')) {
+      Drupal.handleNavTabbing = function(otherTab) {
+        if ($('.mobile-toggle.mobile-toggle--' + otherTab, context).hasClass('au-accordion--open')) {
           $('.mobile-toggle.mobile-toggle--' + otherTab, context)
             .trigger('click');
         }

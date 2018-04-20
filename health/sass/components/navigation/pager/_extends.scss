@@ -13,8 +13,8 @@
 
 .item-list .pager,
 .pager {
-  @extend %uikit-pager;
-  border-top: $uikit-borderize;
+  @extend %au-pager;
+  border-top: $AU-borderize;
 }
 
 .pager-item,
@@ -23,9 +23,9 @@
 .pager-next,
 .pager-last,
 .pager-ellipsis {
-  @extend %uikit-pager__item;
+  @extend %au-pager__item;
 }
 
 .pager-current {
-  @extend %uikit-pager__current-item;
+  @extend %au-pager__current-item;
 }

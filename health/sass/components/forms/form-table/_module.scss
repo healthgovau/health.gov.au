@@ -9,7 +9,7 @@
 //
 // Style guide: forms.form-table
 
-%uikit-form-table {
+%au-form-table {
   &__sticky-header {
     position: fixed;
     visibility: hidden;
@@ -28,12 +28,12 @@
   }
 
   &__body {
-    border-top: $uikit-borderize;
+    border-top: $AU-borderize;
   }
 
   &__row {
     padding: .1em .6em;
-    border-bottom: $uikit-borderize;
+    border-bottom: $AU-borderize;
     background-color: #eee;
 
     &:nth-child(even) {
@@ -69,23 +69,23 @@
 
   // Automatically set styles on child HTML structure.
   th {
-    @extend %uikit-form-table__header;
+    @extend %au-form-table__header;
 
     // Override specificity. :-p
     &.form-table__narrow-column {
-      @extend %uikit-form-table__narrow-column;
+      @extend %au-form-table__narrow-column;
     }
   }
 
   tbody {
-    @extend %uikit-form-table__body;
+    @extend %au-form-table__body;
 
     tr {
-      @extend %uikit-form-table__row;
+      @extend %au-form-table__row;
     }
   }
 
   ul {
-    @extend %uikit-form-table__list;
+    @extend %au-form-table__list;
   }
 }

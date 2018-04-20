@@ -3,25 +3,25 @@
 //
 .collapsible-fieldset,
 .collapsible {
-  @extend %uikit-collapsible-fieldset;
+  @extend %au-collapsible-fieldset;
 
   .fieldset-legend {
-    @extend %uikit-collapsible-fieldset__legend;
+    @extend %au-collapsible-fieldset__legend;
 
     .summary {
-      @extend %uikit-collapsible-fieldset__summary;
+      @extend %au-collapsible-fieldset__summary;
     }
   }
 
   &.collapsed {
-    @extend %uikit-collapsible-fieldset--is-collapsed;
+    @extend %au-collapsible-fieldset--is-collapsed;
 
     .fieldset-legend {
-      @extend %uikit-collapsible-fieldset--is-collapsed__legend;
+      @extend %au-collapsible-fieldset--is-collapsed__legend;
     }
 
     .fieldset-wrapper {
-      @extend %uikit-collapsible-fieldset--is-collapsed__wrapper;
+      @extend %au-collapsible-fieldset--is-collapsed__wrapper;
     }
   }
 }

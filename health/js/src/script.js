@@ -31,12 +31,12 @@
       $('.region-content-bottom .pane-title', context).matchHeight();
 
       // Match the categories height
-      $('.view-categories .views-row .uikit-card', context).matchHeight();
-      $('.view-categories .views-row .uikit-card h3', context).matchHeight();
+      $('.view-categories .views-row .au-card', context).matchHeight();
+      $('.view-categories .views-row .au-card h3', context).matchHeight();
 
       // Home page highlighted
-      $('.region-highlighted .uikit-card .bean-title', context).matchHeight({byRow: false});
-      $('.region-highlighted .uikit-card', context).matchHeight();
+      $('.region-highlighted .au-card .bean-title', context).matchHeight({byRow: false});
+      $('.region-highlighted .au-card', context).matchHeight();
 
       // Listing page selector cards.
       $('.selector-card', context).matchHeight();

@@ -8,7 +8,7 @@
   }
 
   // Desktop
-  @include uikit-media(sm) {
+  @include AU-media(sm) {
     float: right;
   }
 }
@@ -18,7 +18,7 @@
 .node-type-publication {
   #readspeaker {
     // Desktop
-    @include uikit-media(sm) {
+    @include AU-media(sm) {
       float: none;
       position: absolute;
       right: 12px;
@@ -30,30 +30,30 @@
 .node-type-video {
   #readspeaker {
     // Desktop
-    @include uikit-media(md) {
+    @include AU-media(md) {
       float: none;
       position: absolute;
       right: 12px;
     }
-    @include uikit-media(sm) {
+    @include AU-media(sm) {
       float: none;
       .rsbtn_colorskin {
-        margin: 0 0 uikit-space(.5) 0;
+        margin: 0 0 AU-space(.5) 0;
       }
     }
   }
 }
 
 .rsbtn_colorskin {
-  @extend .uikit-body;
+  @extend .au-body;
   position: relative;
   font-size: 13px;
   line-height: 1.3em;
   display: inline-block;
   padding: 10px;
-  margin: 0 0 uikit-space(.5) 0;
-  @include uikit-media(sm) {
-    margin: 0 0 0 uikit-space(1);
+  margin: 0 0 AU-space(.5) 0;
+  @include AU-media(sm) {
+    margin: 0 0 0 AU-space(1);
   }
   background: white;
   border: 1px solid $colour-Secondary;

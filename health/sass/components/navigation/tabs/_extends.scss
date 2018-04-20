@@ -16,24 +16,19 @@
 // A-Z topics
 .filter-topics-by-letter {
   text-align: center;
-  @include uikit-media(sm){
+  @include AU-media(sm){
     max-width: 20em;
     text-align: left;
   }
-  li {
-    @extend .uikit-tags__item;
-    > a {
-      //margin-right: uikit-space(0.4);
-      //display: inline-block;
-      text-align: center;
-      min-width: 2.5em;
-      padding: 0.4em 0;
+  ol,ul {
+    @extend .au-tags;
+    li {
       border: 1px solid $colour-Secondary;
-      &:hover,
-      &:focus,
-      &:active {
-        background-color: $colour-Secondary;
-        color: #fff;
+      @include AU-space('margin-right', .5unit);
+      > a {
+        min-width: 2.5em;
+        padding: 0.4em 0;
+        text-align: center;
       }
     }
   }

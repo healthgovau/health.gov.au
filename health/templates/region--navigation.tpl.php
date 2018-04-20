@@ -13,13 +13,13 @@
       <div class="row health-accordion health-accordion--skip-auto">
 
         <button
-          class="mobile-toggle mobile-toggle--main-menu col-xs-6 health-accordion__title health-accordion--closed"
+          class="mobile-toggle mobile-toggle--main-menu col-xs-6 js-au-accordion"
           aria-controls="block-superfish-1" role="tab">
           <span class="mobile-toggle__label">Open menu</span>
         </button>
 
         <button
-          class="mobile-toggle mobile-toggle--search col-xs-6 health-accordion__title health-accordion--closed"
+          class="mobile-toggle mobile-toggle--search col-xs-6 js-au-accordion"
           aria-controls="block-search-api-page-default-search--2"
           role="tab">
           <span class="mobile-toggle__label">Open search</span>

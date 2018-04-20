@@ -8,13 +8,13 @@
 //
 // Style guide: forms.progress-bar
 
-%uikit-progress-bar {
+%au-progress-bar {
   font-weight: bold;
 
   &__bar {
     border-radius: 3px;
     margin: 0 .2em;
-    border: $uikit-borderize;
+    border: $AU-borderize;
     background-color: #eee;
   }
 

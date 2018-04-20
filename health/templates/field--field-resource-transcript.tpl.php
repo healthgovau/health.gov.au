@@ -45,8 +45,8 @@
  */
 ?>
 <details open data-label="video-transcript" aria-expanded="false" class="video__transcript <?php print $classes; ?>"<?php print $attributes; ?> id="view-transcript">
-  <summary aria-controls="transcript-body" aria-expanded="false" onclick="return UIKIT.accordion.Toggle( this )" class="uikit-accordion--closed">Read transcript</summary>
-  <div class="video__transcript-body uikit-accordion--closed" id="transcript-body">
+  <summary aria-controls="transcript-body" aria-expanded="false" onclick="return AU.accordion.Toggle( this )" class="au-accordion--closed">Read transcript</summary>
+  <div class="video__transcript-body au-accordion--closed" id="transcript-body">
     <div class="field-items video__transcript-body-wrapper"<?php print $content_attributes; ?>>
       <?php foreach ($items as $delta => $item): ?>
         <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
