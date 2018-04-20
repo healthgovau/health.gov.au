@@ -20,33 +20,33 @@
  */
 @mixin media-max( $breakpoint ) {
   @if type-of( $breakpoint ) != 'string' {
-    @error "Captain I’m giving it all she’s got but; the uikit-media mixin only takes a string!";
+    @error "Captain I’m giving it all she’s got but; the AU-media mixin only takes a string!";
   }
 
   @if $breakpoint != 'xs' and $breakpoint != 'sm' and $breakpoint != 'md' and $breakpoint != 'lg' {
-    @error "There’s no crying in baseball; the uikit-media mixin only takes the following breakpoint strings: xs, sm, md, lg";
+    @error "There’s no crying in baseball; the AU-media mixin only takes the following breakpoint strings: xs, sm, md, lg";
   }
 
   @if( $breakpoint == "xs" ) {
-    @media (max-width: $uikit-media-xs) {
+    @media (max-width: $AU-media-xs) {
       @content;
     }
   }
 
   @if( $breakpoint == "sm" ) {
-    @media (max-width: $uikit-media-sm) {
+    @media (max-width: $AU-media-sm) {
       @content;
     }
   }
 
   @if( $breakpoint == "md" ) {
-    @media (max-width: $uikit-media-md) {
+    @media (max-width: $AU-media-md) {
       @content;
     }
   }
 
   @if( $breakpoint == "lg" ) {
-    @media (max-width: $uikit-media-lg) {
+    @media (max-width: $AU-media-lg) {
       @content;
     }
   }
@@ -55,7 +55,7 @@
 @mixin link-pullout($border-width: 6px, $border-color: $colour-Secondary-darker, $pad: 20px){
   border-left: $border-width solid $border-color;
   padding-left: $pad;
-  padding-top: uikit-space(.5);
+  @include AU-space('padding-top', .5unit);
 }
 
 @mixin shadowfy($colour: $colour-Shadow){
@@ -64,10 +64,6 @@
 
 // UI-Kit link style
 %link {
-  border-bottom: 1px solid $colour-Secondary;
-  &:hover {
-    border: none;
-  }
 }
 
 // Mixin to apply row and container
@@ -96,9 +92,9 @@
 // Mixin to apply card (border top colour) style to bean blocks.
 @mixin block-card($border-colour-top: $colour-Tertiary-2, $border-hover-colour: $colour-Tertiary-2-hover, $bg-colour: $colour-lightest, $bg-hover-colour: $colour-light-dark) {
   a {
-    padding: uikit-space(.5);
-    @include uikit-media(md) {
-      padding: uikit-space(1);
+    @include AU-space('padding', 0.5unit);
+    @include AU-media(md) {
+      @include AU-space('padding', 1unit);
     }
     border-bottom: none;
     display: block;
@@ -121,7 +117,7 @@
     }
 
     .field-name-field-bean-text {
-      color: $uikit-colour-Secondary;
+      color: $AU-colour-Secondary;
     }
 
     &:hover,
@@ -139,10 +135,8 @@
     .field-name-field-link-internal {
       .field-item {
         display: inline;
-        border-bottom: 1px solid $uikit-colour-Link;
         font-weight: 700;
         margin-bottom: 0;
-        font-family: $uikit-font-system;
       }
     }
     &[rel~='external'] {
@@ -151,8 +145,8 @@
           @extend %ext-link;
           // Move into corner as breaks mobile layout
           position: absolute;
-          top: uikit-space(.75);
-          right: uikit-space(.25);
+          @include AU-space('top', .75unit);
+          @include AU-space('right', .75unit);
         }
       }
     }
@@ -168,11 +162,11 @@
       // IE doesn't handle max-width scaling correctly, so we have to specify width and height in px
       max-width: 75px;
       max-height: 75px;
-      // @include uikit-media(sm) {
+      // @include AU-media(sm) {
       //   max-width: 75px;
       //   max-height: 75px;
       // }
-      @include uikit-media(md) {
+      @include AU-media(md) {
         max-width: 105px;
         max-height: 105px;
       }
@@ -183,11 +177,11 @@
       // IE doesn't handle max-width scaling correctly, so we have to specify width and height in px
       max-width: 30px;
       max-height: 30px;
-      // @include uikit-media(sm) {
+      // @include AU-media(sm) {
       //   max-width: 30px;
       //   max-height: 30px;
       // }
-      @include uikit-media(md) {
+      @include AU-media(md) {
         max-width: 40px;
         max-height: 40px;
       }

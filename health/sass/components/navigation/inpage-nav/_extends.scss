@@ -1,20 +1,13 @@
-.uikit-inpage-nav-links {
+.au-inpage-nav-links {
   margin-top: 0;
-  margin-bottom: uikit-space( 1.5 );
-  @include uikit-media(sm) {
-    margin-bottom: uikit-space( 2 );
+  @include AU-space('margin-bottom', 1.5unit);
+  @include AU-media(sm) {
+    @include AU-space('margin-bottom', 3unit);
   }
-  .toc {
-    border: 0;
-    background: transparent;
-    padding: 0;
-    ul {
-      @extend .uikit-link-list;
-      a {
-        font-weight: bold;
-      }
-    }
+  ul {
+    @extend .au-link-list;
   }
+  //border-left: $health-borderize--fat;
 }
 div.region-content .anchor {
 	display: none;

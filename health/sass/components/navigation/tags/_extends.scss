@@ -14,7 +14,7 @@
 //   }
 
 //   .field-item {
-//     @extend .uikit-tags__item;
+//     @extend .au-tags__item;
 //   }
 // }
 
@@ -32,22 +32,10 @@
   .label-above,
   .label-inline {
     @extend %field-label;
-    margin-bottom: uikit-space(.5);
+    @include AU-space('margin-bottom', .5unit);
   }
 }
 
-.tags__item {
-  display: inline;
-  > a {
-    @extend .uikit-tags__item;
-    border: 1px solid $colour-Secondary;
-
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: $colour-Secondary;
-      color: #fff;
-    }
-    font-weight: normal;
-  }
+.tags {
+  @extend .au-tags;
 }

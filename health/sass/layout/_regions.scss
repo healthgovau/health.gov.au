@@ -1,6 +1,6 @@
 .region-featured {
-  @extend .uikit-header;
-  @extend .uikit-header--light;
+  @extend .au-header;
+  @extend .au-header--light;
   background: $colour-light;
   margin-bottom: 0;
   background: #fff;
@@ -13,9 +13,9 @@
 
 // .front {
 //   .region-content-top {
-//     @extend .uikit-header;
-//     @extend .uikit-header--light;
-//     padding: uikit-space(1) 0;
+//     @extend .au-header;
+//     @extend .au-header--light;
+//     padding: AU-space(1) 0;
 //   }
 //   .region-content-bottom {
 //     background-color: #fff;
@@ -23,7 +23,7 @@
 // }
 
 // .region .block__title {
-//   margin-bottom: uikit-space(.5);
+//   @include AU-space('margin-bottom', .5unit);;
 // }
 
 .item-list ul {
@@ -35,17 +35,17 @@
 // Listing pages
 .view-filters,
 .view-content {
-  @include uikit-clearfix();
+  @include AU-clearfix;
   width: 100%;
 }
 
 .region-content-top {
-  @extend %clearfix;
-  padding-top: uikit-space(.5);
+  @include AU-clearfix;
+  @include AU-space('padding-top', .5unit);
   padding-bottom: 0;
-  @include uikit-media(sm){
+  @include AU-media(sm){
     padding-top: 0;
-    padding-bottom: uikit-space(1.5);
+    @include AU-space('padding-bottom', 1.5unit);
   }
   .row {
     margin-left: 0; // to fix outdent for view selector tool
@@ -54,17 +54,17 @@
 }
 
 .region-sidebar-second {
-  @include uikit-clearfix;
+  @include AU-clearfix;
   @extend %colour-Light-background;
-  @include uikit-media(sm) {
+  @include AU-media(sm) {
     background: white;
   }
   #block-menu-block-2 {
     clear: both;
-    @include uikit-clearfix;
+    @include AU-clearfix;
     background: white;
-    border-bottom: $uikit-borderize;
-    @include uikit-media(sm) {
+    border-bottom: $AU-borderize;
+    @include AU-media(sm) {
       border-bottom: 0;
     }
   }

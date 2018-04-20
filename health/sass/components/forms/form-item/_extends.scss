@@ -2,24 +2,24 @@
 // Drupal selectors.
 //
 .form-item {
-  @extend %uikit-form-item;
+  @extend %au-form-item;
 }
 
 .form-item {
   label {
     font-weight: bold;
-    @extend .uikit-text-input__label;
+    //@extend .au-text-input__label;
   }
   input.error,
   textarea.error {
-    @extend .uikit-text-input--invalid;
+    @extend .au-text-input--invalid;
   }
   select.error {
-    border: $uikit-colour-Error;
+    border: $AU-colour-Error;
   }
   .description, .help-block {
-    @extend .uikit-text-input__hint;
-    margin-bottom: uikit-space(0.75);
+    //@extend .au-text-input__hint;
+    @include AU-space('margin-bottom', .75unit);
   }
   .resizable-textarea .grippie {
     height: 0px;
@@ -27,17 +27,17 @@
 }
 
 .form-required {
-  @extend %uikit-form-item__required;
+  @extend %au-form-item__required;
 }
 
 // Password confirmation.
 .password-parent,
 .confirm-parent {
-  @extend %uikit-form-item--tight;
+  @extend %au-form-item--tight;
 }
 
 table .form-item {
-  @extend %uikit-form-item--tight;
+  @extend %au-form-item--tight;
 }
 
 label.option {
@@ -47,29 +47,29 @@ label.option {
 
 .container-inline {
   .form-item {
-    @extend %uikit-form-item--inline;
+    @extend %au-form-item--inline;
   } // Fieldset contents always need to be rendered as block.
   .fieldset-wrapper {
-    @extend %uikit-form-item--inline__exception;
+    @extend %au-form-item--inline__exception;
   }
 }
 
 // Activity register form
 .node-form {
-  margin-bottom: uikit-space(2);
+  @include AU-space('margin-bottom', 2unit);
 }
 
 .form-wrapper, .form-item-title, .webform-component {
-  margin-bottom: uikit-space(1.75);
+  @include AU-space('margin-bottom', 1.75unit);
 }
 
 // Characters remaining
 .form-element-with-counter .form-element-length-counter {
-  margin: uikit-space(-1.25) 0 0 0;
-  padding-bottom: uikit-space(2);
-  @extend .uikit-text-input__hint;
+  @include AU-space('margin', -1.25unit 0 0 0);
+  @include AU-space('padding-bottom', 2unit);
+  //@extend .au-text-input__hint;
 }
 
 .form-actions {
-  margin-bottom: uikit-space(2);
+  @include AU-space('margin-bottom', 2unit);
 }

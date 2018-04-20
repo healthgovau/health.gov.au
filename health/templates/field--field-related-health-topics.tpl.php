@@ -52,7 +52,7 @@
   <?php endif; ?>
   <dl class="tags"<?php print $content_attributes; ?>>
     <?php foreach ($items as $delta => $item): ?>
-      <dt class="tags__item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></dt>
+      <dd class="tags__item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></dd>
     <?php endforeach; ?>
   </dl>
 </div>

@@ -1,40 +1,40 @@
 // Health header
-header.uikit-header {
-  @include uikit-clearfix();
+header.au-header {
+  @include AU-clearfix;
   margin-bottom: 0;
 
   padding: 0;
-  @include uikit-media(sm){
-    padding: uikit-space(1) 0 uikit-space(.5);
+  @include AU-media(sm){
+    @include AU-space('padding', 1unit 0 .5unit);
   }
-  @include uikit-media(md){
-    padding-bottom: uikit-space(1);
+  @include AU-media(md){
+    @include AU-space('padding-bottom', 1unit);
   }
-  .uikit-header__logo {
+  .au-header__logo {
     display: block;
     margin: auto;
-    padding: uikit-space(.75);
+    @include AU-space('padding', .75unit);
     width: 100%;
     max-width: 400px;
     // For IE 9, 10.
     color: transparent;
-    @include uikit-media(md) {
+    @include AU-media(md) {
       float: left;
     }
     &-image {
       display: block;
       width: 100%;
       margin: auto;
-      @include uikit-media(sm) {
+      @include AU-media(sm) {
         margin: 0;
       }
     }
   }
   .region-header {
     width: 100%;
-    @include uikit-media(sm) {
+    @include AU-media(sm) {
       max-width: 420px;
-      margin-top: uikit-space(-.5);
+      @include AU-space('margin-top', -.5unit);
       float: right;
     }
   }

@@ -7,9 +7,9 @@
 //
 // Style guide: navigation.pager
 
-%uikit-pager {
+%au-pager {
   clear: both;
-  padding: uikit-space(1) 0;
+  @include AU-space('padding', 1unit 0);
   //text-align: center;
 
   @media print {
@@ -26,7 +26,7 @@
 
   // The current page's list item.
   &__current-item {
-    @extend %uikit-pager__item;
+    @extend %au-pager__item;
     font-weight: bold;
   }
 }

@@ -4,34 +4,29 @@
 //
 //------------------------------------------------------------
 
-#search-block-form {
-  @extend .uikit-search;
+#search-block-form,
+.au-header #search-block-form {
+  @extend %au-search;
 }
 
-.uikit-header #search-block-form {
-  @extend %uikit-search;
-}
-
-#block-search-api-page-default-search {
-  @extend %uikit-search;
-}
-
-.uikit-header #block-search-api-page-default-search {
-  @extend %uikit-search;
+#block-search-api-page-default-search,
+.au-header #block-search-api-page-default-search {
+  @extend %au-search;
 }
 
 .block-search-api-page {
-  @extend %uikit-search;
+  @extend %au-search;
   .search-form {
     margin: 0;
   }
 }
 
+
 .view-filters .views-exposed-form {
-  @extend %uikit-search;
+  @extend %au-search;
   overflow: hidden;
-  margin-bottom: uikit-space(1);
-  @include uikit-media(md){
+  @include AU-space('margin-bottom', 1unit);
+  @include AU-media(md){
     max-width: 400px;
   }
   .views-exposed-widgets {

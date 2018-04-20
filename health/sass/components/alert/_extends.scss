@@ -1,6 +1,6 @@
 // Health alerts region
 .region-alerts {
-  @extend %uikit-alertbar;
+  @extend %au-alertbar;
 }
 
 // When close button is clicked hide the close button.
@@ -9,5 +9,5 @@
 }
 
 #block-views-health-alerts-block-1 {
-  @extend %uikit-alert;
+  @extend %au-alert;
 }

@@ -2,27 +2,14 @@
 //
 // A grid.
 .page {
-  @extend .uikit-grid;
+  @extend .au-grid;
 }
 
 // Apply grid to content and navigation based on single pane or left/right pane
 
-// Full width (no sidebar)
-// Non-landing pages only
-body:not(.node-type-landing-page):not(.node-type-health-topic):not(.node-type-health-topic-hp) {
-  .main-content-full {
-    @extend .col-xs-12;
-  }
-}
 
 // Content and sidebar
-.main-content {
-  @extend .col-sm-8;
-}
 
-.sidebar {
-  @extend .col-sm-4;
-}
 // If need to differentiate
 //.sidebar-right,
 //.sidebar-left {}

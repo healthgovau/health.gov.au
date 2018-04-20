@@ -4,17 +4,17 @@
 
 .progress-throbber,
 .ajax-progress {
-  @extend %uikit-progress-throbber;
+  @extend %au-progress-throbber;
 
   .throbber {
-    @extend %uikit-progress-throbber__widget;
+    @extend %au-progress-throbber__widget;
 
     tr & {
-      @extend %uikit-progress-throbber__widget-in-tr;
+      @extend %au-progress-throbber__widget-in-tr;
     }
   }
 
   .message {
-    @extend %uikit-progress-throbber__message;
+    @extend %au-progress-throbber__message;
   }
 }

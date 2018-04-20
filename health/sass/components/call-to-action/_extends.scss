@@ -7,22 +7,10 @@
 
 // Our overrides for call to action link.
 .health-cta-link {
-  @extend .uikit-cta-link;
-  display: inline;
-  margin-bottom: 0;
-  font-size: 1.1em;
-  @include uikit-media(sm) {
-    font-size: 1.2em;
-  }
-  @extend %link_focus;
+  @extend .au-cta-link;
 }
 
-.uikit-cta-link--light,
-.page a.uikit-cta-link--light { // Have to overide uikit
+.au-cta-link--light,
+.page a.au-cta-link--light { // Have to overide uikit
   color: white;
-  border-bottom: 1px solid white;
-  &:hover, &:focus {
-    border-bottom: none;
-  }
-
 }

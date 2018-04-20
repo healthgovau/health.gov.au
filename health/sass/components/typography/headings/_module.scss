@@ -1,0 +1,66 @@
+@import "_extends.scss";
+
+// Headings
+//
+// All HTML headings, `<h1>` through `<h6>`, are available. `%h1` through `%h6`
+// classes are also available, for when you want to match the font styling of a
+// heading but still want your text to be displayed inline.
+//
+// Markup: headings-h.twig
+//
+// Style guide: base.headings
+
+%display--xxl {
+  @include AU-fontgrid('xl');
+  @include AU-media(sm) {
+    @include AU-fontgrid('xxl');
+  }
+}
+%display--xl {
+  @include AU-fontgrid('lg');
+  @include AU-media(sm) {
+    @include AU-fontgrid('xl');
+  }
+}
+%display--lg {
+  @include AU-fontgrid('md');
+  @include AU-media(sm) {
+    @include AU-fontgrid('lg');
+  }
+}
+%display--md {
+  @include AU-fontgrid('sm');
+  @include AU-media(sm) {
+    @include AU-fontgrid('md');
+  }
+}
+
+%display--sm {
+  @include AU-fontgrid('xs');
+  @include AU-media(sm) {
+    @include AU-fontgrid('sm');
+  }
+}
+
+%display--xs {
+  @include AU-fontgrid('xs');
+  @include AU-media(sm) {
+    @include AU-fontgrid('xs');
+  }
+}
+%display--light {
+  font-weight: normal;
+}
+
+// Lists and auto-generated content
+%list-item-title {
+  @extend %display--sm;
+}
+
+%list-item-title--medium {
+  @extend %display--md;
+}
+
+%list-item-title--large {
+  @extend %display--lg;
+}

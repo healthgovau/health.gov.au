@@ -4,10 +4,10 @@
 
 .resizable-textarea {
   textarea {
-    @extend %uikit-resizable-textarea;
+    @extend %au-resizable-textarea;
   }
 
   .grippie {
-    @extend %uikit-resizable-textarea__grippie;
+    @extend %au-resizable-textarea__grippie;
   }
 }

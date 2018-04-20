@@ -4,7 +4,6 @@
 //
 // Style guide: sass.mixins.clearfix
 
-.clearfix,
-%clearfix {
-  @include uikit-clearfix();
+.clearfix{
+  @include AU-clearfix;
 }

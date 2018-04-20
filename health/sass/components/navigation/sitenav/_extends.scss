@@ -10,16 +10,16 @@
 
   // Main menu.
   #block-superfish-1 {
-    @extend %uikit-sitenav;
+    @extend %health-sitenav;
 
     margin-top: -6px; // Keyline fix for mobile.
 
-    // uikit-sitenav makes the links block for contextual links, they need to be hidden by default.
+    // au-sitenav makes the links block for contextual links, they need to be hidden by default.
     ul.contextual-links {
       display: none;
     }
 
-    @include uikit-media(sm) {
+    @include AU-media(sm) {
       border-bottom: 0;
       margin-top: 0;
       ul li a {
@@ -31,7 +31,7 @@
 
   // Toggles for main menu and search.
   .mobile-toggle {
-    @extend %uikit-sitenav__mobile-toggle;
+    @extend %health-sitenav__mobile-toggle;
     margin-bottom: 6px; // Keyline fix for mobile.
 
     // Main menu.
@@ -61,7 +61,7 @@
     }
 
     // When expanded.
-    &.uikit-accordion--open {
+    &.au-accordion--open {
       .mobile-toggle__label {
         &:before {
           content: "\f00d";
@@ -78,7 +78,7 @@
 
 // Overlay
 .nav-overlay {
-  @extend %uikit-sitenav-overlay;
+  @extend %health-sitenav-overlay;
 }
 
 // Make sure the header and menu is above the overlay.

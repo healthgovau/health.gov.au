@@ -1,22 +1,22 @@
 // Section header + breadcrumbs
 .page-title {
   h1 {
-    @extend .uikit-header-heading;
-    @extend .clearfix;
+    @extend .au-header-heading;
+    @include AU-clearfix;
     display: block;
     clear: both;
-    color: $uikit-colour-Text;
+    color: $AU-colour-Text;
     background: none;
-    font-family: $uikit-font-system;
+
   }
   &.header.header--light {
     @extend %colour-Light-background;
     padding-top: 0;
     padding-bottom: 0;
     margin-bottom: 0;
-    color: $uikit-colour-Text;
-    @include uikit-media(sm){
-      margin-bottom: uikit-space(2);
+    color: $AU-colour-Text;
+    @include AU-media(sm){
+      @include AU-space('margin-bottom', 2unit);
     }
   }
 }
@@ -24,8 +24,8 @@
 .page-title__core {
   @extend .col-sm-8;
   padding: 12px;
-  @include uikit-media(sm){
-    padding: uikit-space(1) 0 uikit-space(1) 0;
+  @include AU-media(sm){
+    @include AU-space('padding', 1unit 0 1unit 0);
   }
 
   max-width: 56em;
@@ -46,14 +46,14 @@
       float: none;
     }
 
-    @include uikit-media(sm) { // Hide on desktop
+    @include AU-media(sm) { // Hide on desktop
       display: none;
     }
 
-    @extend .uikit-display-2;
+    @include AU-fontgrid('md');
     //font-weight: 700;
     font-size: 16px;
-    margin-bottom: uikit-space(0.65);
+    @include AU-space('margin-bottom', .65unit);
 
     .back-icon {
       float: left;
@@ -62,19 +62,16 @@
       margin-left: 20px;
       margin-right: 90px;
       float: left;
-      border-bottom: 0;
-      span {
-        border-bottom: 1px solid $colour-Secondary;
-      }
     }
 
-    @include uikit-clearfix;
+    @include AU-clearfix;
   }
 
   // Summary
   .summary {
-    @extend .uikit-header-subline;
-    margin-bottom: uikit-space(0.5);
+    @extend .au-header-subline;
+    @include AU-space('margin-bottom', .5unit);
+    @include AU-space('margin-top', .5unit);
   }
 
 }
@@ -82,23 +79,23 @@
 .page-title__supp {
   @extend .col-sm-4;
   display: block; // default unless over-ridden
-  @include uikit-media( sm ) {
+  @include AU-media( sm ) {
     display: table;
   }
   .region-title-supp {
     padding-top: 0;
     padding-bottom: 0;
-    @include uikit-media(sm){
+    @include AU-media(sm){
       display: table-cell;
       vertical-align: middle;
-      padding-top: uikit-space(1);
-      padding-bottom: uikit-space(1);
+      @include AU-space('padding-top', 1unit);
+      @include AU-space('padding-bottom', 1unit);
     }
   }
 
   // Program logo - CHECK
   .field-name-field-image-featured {
-      padding: uikit-space(1.5) 0 0 0;
+    @include AU-space('padding', 1.5unit 0 0 0);
       text-align: right;
   }
 }
@@ -121,7 +118,7 @@
   float: right;
   width: 50%;
   text-align: right;
-  @include uikit-media(sm){
+  @include AU-media(sm){
     display: none;
   }
 
@@ -139,31 +136,32 @@
 .region-title-supp {
   .block-bean-call-to-action {
     display: none;
-    @include uikit-media(sm){
-      display: block;
-      padding: uikit-space(0.25) 0 uikit-space(0.5) uikit-space(1);
-      border-left: 3px solid #DDD;
-      .bean-block-content {
-        p {
-          margin-bottom: 0;
-        }
-      }
-    }
+    @include AU-space('padding',  0 0 1unit 0);
+    border-left: none;
 
     // Extend onto title
-    .bean-call-to-action__title {
-      @extend .uikit-display-3;
+    a {
+      @include AU-fontgrid('md');
       @extend .health-cta-link;
-      // Need to fix .uikit-cta-link override in /extends/call-to-action :(
-      // This is awful
-      font-size: 24px;
-      margin-bottom: 0.5em;
-      display: block;
+      font-weight: normal;
+    }
+
+    .bean-block-content {
+      p {
+        margin-bottom: 0;
+      }
     }
 
     // Icon
     .forward-icon {
       display: none;
+    }
+
+    @include AU-media(sm){
+      display: block;
+      @include AU-space('padding', .25unit 0 .5unit 1unit);
+      border-left: 3px solid #DDD;
+
     }
   }
 }

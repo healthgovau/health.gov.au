@@ -29,8 +29,8 @@
       @extend .col-sm-6;
     }
     .group-right {
-      padding-top: uikit-space(1);
-      @include uikit-media(sm){
+      @include AU-space('padding-top', 1unit);
+      @include AU-media(sm){
         padding-top: 0;
       }
     }
@@ -72,7 +72,7 @@
     .field-name-field-link-internal {
       font-size: 14px;
       word-break: break-word;
-      @include uikit-media(sm){
+      @include AU-media(sm){
         font-size: 16px;
       }
     }
@@ -81,11 +81,12 @@
     }
     .field-name-field-bean-text {
       display: none;
-      @include uikit-media(sm){
+      @include AU-media(sm){
         font-size: 14px;
         margin: 0 auto;
         max-width: 75%;
-        display: block;
+        text-decoration: none;
+        display: inline-block;
       }
     }
     .bean-block-content {
@@ -126,7 +127,7 @@
     width: 50%;
     float: left;
     margin-bottom: 24px;
-    @include uikit-media(sm) {
+    @include AU-media(sm) {
       width: 20%;
       margin-bottom: 0;
     }

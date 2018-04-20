@@ -34,10 +34,10 @@
   }
   .video__youtube,
   %video__youtube {
-    @extend .uikit-responsive-media-vid;
-    @extend .uikit-responsive-media-vid--16x9;
+    @extend .au-responsive-media-vid;
+    @extend .au-responsive-media-vid--16x9;
     iframe {
-      @extend .uikit-responsive-media-vid__item;
+      @extend .au-responsive-media-vid__item;
     }
   }
   .video__play-button {
@@ -79,24 +79,24 @@
   .video__length--small,
   %video__length--small {
     @extend %video__length;
-    padding: uikit-space(0.15);
+    @include AU-space('padding', .15unit);
     font-size: 0.85em;
   }
   .video__transcript {
-    @extend .uikit-accordion;
+    @extend .au-accordion;
     border-width: 0 0 1px 0;
     summary {
-      @extend .uikit-accordion__title;
+      @extend .au-accordion__title;
       background-color: transparent;
       font-size: 16px;
     }
     .video__transcript-body,
     %video__transcript-body {
-      @extend .uikit-accordion__body;
+      @extend .au-accordion__body;
     }
     .video__transcript-body-wrapper,
     %video__transcript-body-wrapper {
-      @extend .uikit-accordion__body-wrapper;
+      @extend .au-accordion__body-wrapper;
     }
   }
   .video__description,

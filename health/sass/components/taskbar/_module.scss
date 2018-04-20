@@ -21,7 +21,7 @@
 .taskbar,
 %taskbar {
   color: #000;
-  @include uikit-clearfix();
+  @include AU-clearfix;
   ul {
     list-style-type: none;
     margin: 0;
@@ -39,12 +39,12 @@
 
   .taskbar__item,
   %taskbar__item {
-    padding: uikit-space(1);
+    @include AU-space('padding', 1unit);
     margin: 0 3px 3px 0;
     display: block;
     border: 0;
     min-height: 0;
-    @include uikit-media('xs') {
+    @include AU-media('xs') {
       min-height: $minHeight-Taskbar;
     }
     @extend %colour-Secondary-background;
@@ -57,7 +57,7 @@
 
   .taskbar__img,
   %taskbar__img {
-    @extend .uikit-responsive-media-img;
+    @extend .au-responsive-media-img;
     border: 0;
   }
 
@@ -83,17 +83,17 @@
       >li {
         width: width-decimal(1);
       } // Responsive
-      @include uikit-media('xs') {
+      @include AU-media('xs') {
         >li {
           width: width-decimal(2);
         }
       } // Responsive
-      @include uikit-media('sm') {
+      @include AU-media('sm') {
         >li {
           width: width-decimal(3);
         }
       } // Responsive
-      @include uikit-media('md') {
+      @include AU-media('md') {
         >li {
           width: width-decimal($i);
         }
@@ -107,17 +107,17 @@
       >li {
         width: width-decimal(1);
       } // Responsive
-      @include uikit-media('xs') {
+      @include AU-media('xs') {
         >li {
           width: width-decimal(2);
         }
       } // Responsive
-      @include uikit-media('sm') {
+      @include AU-media('sm') {
         >li {
           width: width-decimal(3);
         }
       } // Responsive
-      @include uikit-media('md') {
+      @include AU-media('md') {
         >li {
           width: width-decimal($i);
         }

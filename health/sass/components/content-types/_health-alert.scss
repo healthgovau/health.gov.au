@@ -36,7 +36,7 @@
     &.view-mode-listing_vertical_three_tags {
       @extend %dm-list-vertical;
       .field-type-taxonomy-term-reference {
-        padding-right: uikit-space(.5);
+        @include AU-space('padding-right', .5unit);
       }
     }
 

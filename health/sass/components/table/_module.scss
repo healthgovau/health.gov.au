@@ -8,12 +8,12 @@
 @import '../../abstracts/mixins';
 
 %table {
-  margin-bottom: uikit-space(1);
+  @include AU-space('margin-bottom', 1unit);
   border-collapse: collapse;
-  border: $uikit-borderize;
+  border: $AU-borderize;
 
   tr:nth-child(even) {
-    background-color: $uikit-colour-Background;
+    background-color: $AU-colour-Background;
   }
 
   &.table__no-banding {
@@ -24,31 +24,31 @@
 
   td,
   th {
-    @include uikit-media('md') {
-      padding: uikit-space(.4);
+    @include AU-media('md') {
+      @include AU-space('padding', .4unit);
       font-size: initial;
     }
 
-    border-bottom: $uikit-borderize;
-    padding: uikit-space(.25);
+    border-bottom: $AU-borderize;
+    @include AU-space('padding', .25unit);
     text-align: left;
     vertical-align: top;
 
   }
 
   thead {
-    border-bottom: 2px solid $uikit-colour-Border;
+    border-bottom: 2px solid $AU-colour-Border;
   }
 
   min-width: 43em;
-  @include uikit-media( md ) {
+  @include AU-media( md ) {
     min-width: auto;
   }
 }
 
 %table__responsive-wrapper {
   overflow: scroll;
-  @include uikit-media( md ) {
+  @include AU-media( md ) {
     overflow: auto;
   }
 }

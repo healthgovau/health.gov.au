@@ -21,12 +21,12 @@
     @extend .col-sm-8;
     .block-search-api-page {
       width: 100%;
-      @include uikit-media(sm) {
+      @include AU-media(sm) {
         width: 50%;
       }
     }
     .search-api-page-results {
-      margin: uikit-space(1) 0 uikit-space(1) 0;
+      @include AU-space('margin', 1unit 0);
       .search-performance {
         font-size: 1.5em;
       }
@@ -35,13 +35,13 @@
       }
       .view-mode-search_result {
         @extend %dm-search-index;
-        @include uikit-clearfix();
-        border-bottom: $uikit-borderize;
-        padding-top: uikit-space(.5);
-        padding-bottom: uikit-space(.5);
-        @include uikit-media(md){
-          padding-top: uikit-space(1.5);
-          padding-bottom: uikit-space(1.5);
+        @include AU-clearfix;
+        border-bottom: $AU-borderize;
+        @include AU-space('padding-top', .5unit);
+        @include AU-space('padding-bottom', .5unit);
+        @include AU-media(md){
+          @include AU-space('padding-top', 1.5unit);
+          @include AU-space('padding-bottom', 1.5unit);
         }
       }
     }
@@ -53,13 +53,13 @@
 
 // Mobile search
 .region-navigation {
-  #block-search-api-page-default-search--2 {
+  #search-api-page-search-form-mobile {
     position: absolute;
     background: white;
     width: 100%;
     margin-top: -6px;
     .search-wrapper {
-      @include uikit-clearfix;
+      @include AU-clearfix;
       border-bottom: 6px solid #cccccc;
       padding: 12px;
       form > div {
@@ -67,8 +67,8 @@
       }
     }
     border-radius: 0;
-    @include uikit-media(sm) {
-      border-bottom: 0;
+    @include AU-media(sm) {
+      display: none;
     }
 
   }
@@ -78,7 +78,7 @@
 .js .region-header {
   div.block-search-api-page {
     display: none; // Hide the search in the header on mobile.
-    @include uikit-media(sm) {
+    @include AU-media(sm) {
       display: block;
       height: auto;
     }

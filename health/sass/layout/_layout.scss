@@ -4,14 +4,43 @@
 //
 //------------------------------------------------------------
 
-// Set page width based on content type
-// Default is to contain .page-layout unless content type is listed below
-// which will be full width to permit bands
-// :not() supported by IE9+ so polyfill
+
 body {
-  &:not(.node-type-health-topic, .node-type-health-topic-hp, .node-type-landing-page){
-    .page-layout {
+
+  // Everything gets full width by default.
+  .page .page-layout {
+    @include AU-space('margin-bottom', 2 unit);
+    @extend .container-fluid;
+  }
+
+  // Non-landing pages then get the layout with a gutter on either side.
+  // Then they get columns within.
+  &:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) {
+    .page .page-layout {
       @extend .container;
+
+      // Single column
+      .main-content-full {
+        @extend .col-sm-12;
+      }
+
+      // 2 columns
+      .main-content {
+        @extend .col-sm-8;
+      }
+
+      .sidebar-left,
+      .sidebar-right {
+        @extend .col-sm-4;
+      }
+
+      .sidebar-right {
+        // Right sidebar is in the markup first, but we want it to display on the right.
+        float: none;
+        @include AU-media(sm) {
+          float: right;
+        }
+      }
     }
   }
 }
@@ -27,12 +56,6 @@ body.node-type-health-topic-hp {
   }
 }
 
-// Default spacing for body elements
-.page-layout {
-  margin-bottom: uikit-space(2);
-  @extend .container-fluid;
-}
-
 // Global styling
 // .uikit-body .view ul > .views-row,
 // .node > .field,
@@ -43,12 +66,12 @@ body.node-type-health-topic-hp {
 //   }
 // }
 
-.uikit-body .view-popular ul > .views-row {
+.au-body .view-popular ul > .views-row {
   margin-bottom: 0;
 }
 
 .panel-featured .panel-middle-top {
-  margin-bottom: uikit-space(1);
+  @include AU-space('margin-bottom', 1unit);
 }
 
 %views-4col {
@@ -57,18 +80,6 @@ body.node-type-health-topic-hp {
   }
   .views-row {
     @extend .col-md-3;
-  }
-}
-
-// Float local nav right (reqd for source order)
-.page-content .sidebar-right {
-  float: none;
-  padding-left: 0;
-  padding-right: 0;
-  @include uikit-media(sm){
-    float: right;
-    padding-left: 12px;
-    padding-right: 12px;
   }
 }
 
@@ -94,8 +105,8 @@ body.node-type-health-topic-hp {
     // More button
     .view-footer {
       @extend .col-md-12;
-      margin-top: uikit-space(1);
-      padding-bottom: uikit-space(1);
+      @include AU-space('margin-top', 1unit);
+      @include AU-space('padding-bottom', 1unit);
     }
   }
 }

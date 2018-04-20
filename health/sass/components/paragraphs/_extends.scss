@@ -4,9 +4,10 @@
   @include row-and-container; // Band title
   h2 {
     @extend .col-xs-12;
-    @extend .uikit-display-4;
-    padding-bottom: uikit-space(.25);
-    margin-bottom: uikit-space(.5);
+    @extend %display--xl;
+    @extend %display--light;
+    @include AU-space('padding-bottom', .25unit);
+    @include AU-space('margin-bottom', .5unit);;
   } // Each item
   .paragraphs-item-para-link {
     @extend .col-sm-6;
@@ -16,30 +17,31 @@
     @extend .tile__title;
   }
   .field-name-field-summary {
-    margin-bottom: uikit-space(1);
+    @include AU-space('margin-bottom', 1unit);
   }
 }
 
 // Browse by lifestage
 .paragraphs-item-para-taxonomies {
   clear: both;
-  @include uikit-clearfix(); // This creates .container and .row from band markup for BS grid
+  @include AU-clearfix; // This creates .container and .row from band markup for BS grid
   &.para-container {
     @extend %band--neutral;
     padding-bottom: 0;
     margin-bottom: -12px;
-    @include uikit-media(sm) {
+    @include AU-media(sm) {
       margin-bottom: -24px;
     }
   }
   @include row-and-container;
   overflow: hidden;
-  padding-bottom: uikit-space(0.75); // Band title
+  @include AU-space('padding-bottom', .75unit); // Band title
   h2 {
     @extend .col-xs-12;
-    @extend .uikit-display-4;
-    padding-bottom: uikit-space(.25);
-    margin-bottom: uikit-space(.5);
+    @extend %display--xl;
+    @extend %display--light;
+    @include AU-space('padding-bottom', .25unit);
+    @include AU-space('margin-bottom', .5unit);;
   } // Items
   // Wrapper title/summary
   .field-name-field-taxonomy-paragraph {
@@ -49,7 +51,7 @@
         @extend .col-md-3;
         .para-container {
           margin-bottom: 12px;
-          @include uikit-media(sm) {
+          @include AU-media(sm) {
             margin-bottom: 24px;
           }
           padding: 0;
@@ -58,18 +60,21 @@
           display: none;
         }
         .field-type-entityreference {
-          padding: uikit-space(1);
+          @include AU-space('padding', 1unit);
           max-height: 300px;
           display: block;
           overflow: hidden;
           @include card-colour($colour-Secondary); // Add mobile width 100% and odd/even handling
           // Title
           .field-name-title {
-            margin-bottom: uikit-space(0.5);
+            @include AU-space('margin-bottom', .5unit);
             h3 {
               @extend %list-item-title;
-              border-bottom: 1px solid white;
+              text-decoration: underline;
               display: inline;
+              &:hover {
+                text-decoration: none;
+              }
             }
           } // Override drupal taxonomy term style.
           .taxonomy-term-description {
@@ -103,7 +108,8 @@
     }
   } // Title
   h2 {
-    @extend .uikit-display-4;
+    @extend %display--xl;
+    @extend %display--light;
   }
 }
 
@@ -131,11 +137,11 @@
     @extend .col-xs-12;
     @extend .col-sm-4;
     @extend .col-lg-3;
-    padding-top: uikit-space(1.5);
-    @include uikit-media(sm){
-      padding-bottom: uikit-space(1.5);
-      padding-left: uikit-space(1);
-      padding-right: uikit-space(1);
+    @include AU-space('padding-top', 1.5unit);
+    @include AU-media(sm){
+      @include AU-space('padding-bottom', 1.5unit);
+      @include AU-space('padding-left', 1unit);
+      @include AU-space('padding-right', 1unit);
       background: $colour-Tertiary-2-hover;
     }
   }
@@ -143,10 +149,10 @@
     @extend .col-xs-12;
     @extend .col-sm-8;
     @extend .col-lg-9;
-    padding-bottom: uikit-space(1.5);
-    @include uikit-media(sm){
-      padding-top: uikit-space(1.5);
-      padding-left: uikit-space(2);
+    @include AU-space('padding-bottom', 1.5unit);
+    @include AU-media(sm){
+      @include AU-space('padding-top', 1.5unit);
+      @include AU-space('padding-left', 2unit);
     }
   }
 
@@ -156,7 +162,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-  @include uikit-media(sm) {
+  @include AU-media(sm) {
     text-align: left;
     p {
       margin-left: 0;
@@ -168,13 +174,13 @@
   } // display mode
   .view-mode-hotline_bar {
     h2 {
-      @extend .uikit-display-4;
+      @extend %display--xl;
+      @extend %display--light;
     }
     .paragraphs-item-para-telephone {
       padding: 0;
       .field-name-field-contact-telephone {
-        @extend .uikit-display-3;
-        font-weight: 700;
+        @extend %display--xl;
         a {
           &:before {
             content: "\f095";
@@ -201,7 +207,8 @@
   @include row-and-container;
   .view-mode-full {
     h2 {
-      @extend .uikit-display-4;
+      @extend %display--xl;
+      @extend %display--light;
     }
   } // Wrapper title/summary
   h2,
@@ -211,8 +218,8 @@
   }
   .field-name-field-summary {
     p {
-      margin-top: uikit-space(0.5);
-      margin-bottom: uikit-space(0.5);
+      @include AU-space('margin-top', .5unit);
+      @include AU-space('margin-bottom', .5unit);
     }
   }
   .field-name-field-link-internal {
@@ -273,17 +280,18 @@
     >.para-row {
       >h2,
       >.group-header>h2 {
-        @extend .uikit-display-4;
+        @extend %display--xl;
+        @extend %display--light;
       }
       .group-header {
         .field-name-field-summary {
-          margin-bottom: uikit-space(1);
+          @include AU-space('margin-bottom', 1unit);
         }
       }
       >.group-left,
       >.group-right {
-        margin-bottom: uikit-space(1);
-        @include uikit-media(sm) {
+        @include AU-space('margin-bottom', 1unit);
+        @include AU-media(sm) {
           margin: 0;
         }
       } // Shame!
@@ -305,7 +313,8 @@
   } // @todo Should we remove paragraphs-item-para-block container and row by default, and just let each individual one decide on a case by case basis?
   @include row-and-container;
   .field-name-field-title {
-    @extend .uikit-display-4;
+    @extend %display--xl;
+    @extend %display--light;
   }
   .field-name-field-title,
   .field-name-field-summary {
@@ -326,7 +335,7 @@
 }
 .node-type-page {
   .paragraphs-item-para-view {
-    padding-bottom: uikit-space(1);
+    @include AU-space('padding-bottom', 1unit);
   }
 }
 
@@ -335,5 +344,5 @@
   .field-name-field-image {
     line-height: 0;
   }
-  margin-bottom: uikit-space(1);
+  @include AU-space('margin-bottom', 1unit);
 }

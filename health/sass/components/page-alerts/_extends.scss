@@ -3,19 +3,19 @@
 // Status messages to notify the user.
 
 .messages {
-  @extend .uikit-page-alerts;
+  @extend .au-page-alerts;
   &.error {
-    @extend .uikit-page-alerts--error;
+    @extend .au-page-alerts--error;
   }
   &.warning {
-    @extend .uikit-page-alerts--warning;
+    @extend .au-page-alerts--warning;
   }
   &.status {
-    @extend .uikit-page-alerts--success;
+    @extend .au-page-alerts--success;
   }
   &.info {
     h3 {
-      @extend .uikit-display-2;
+      @include AU-fontgrid('md');
     }
 
     border-color: $colour-Secondary-light;
@@ -33,7 +33,7 @@
 .page-initiatives-and-programs {
   .messages.info {
     margin: 0;
-    @include uikit-media(sm) {
+    @include AU-media(sm) {
       margin-top: 16em;
     }
   }
@@ -55,6 +55,8 @@
     padding: 0;
   }
 
+  /*
+  THIS IS CAUSING PROBLEMS WITH DOING @extend .container
   .container {
     padding: 1em;
 
@@ -80,12 +82,12 @@
         .alert-date {
           @extend .col-sm-3;
           text-align: left;
-          @include uikit-media(sm) {
+          @include AU-media(sm) {
             text-align: right;
           }
         }
       }
     }
-  }
+  }*/
 
 }

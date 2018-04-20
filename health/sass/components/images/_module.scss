@@ -4,8 +4,8 @@
 }
 
 %image--full {
-    margin-bottom: uikit-space(1);
-    @include uikit-media(sm) {
+    @include AU-space('margin-bottom', 1unit);
+    @include AU-media(sm) {
       margin-bottom: 0;
     }
     width: 100%;

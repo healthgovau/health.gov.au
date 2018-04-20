@@ -9,50 +9,42 @@
 
 // Default link styling
 .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 {
-  @extend .uikit-link-list;
+  @extend .au-link-list;
   padding: 0;
 }
 
 // Local navigation
-.uikit-body .sidebar #block-menu-block-2 {
-
-  @extend %uikit-localnav;
-
-  // Drupal block title as link helper styles
-  &__title {
-    font-size: 18px;
-    margin-bottom: 0;
-  }
+.au-body .sidebar #block-menu-block-2 .menu-block-wrapper {
+  @extend %health-localnav;
 }
 
 // UIkit override
-.uikit-body .uikit-accordion__title {
+.au-body .au-accordion__title {
   font-size: 16px;
   padding-left: 1em;
 }
 
-
 // When the block title is a link
-.uikit-body .sidebar .block-menu-block--title-link {
+.au-body .sidebar .block-menu-block--title-link {
   .block__title {
     margin: 0;
     a {
       font-size: 18px;
-      @extend %uikit-localnav__link;
-      border-top: $uikit-borderize;
+      @extend %health-localnav__link;
+      border-top: $AU-borderize;
     }
   }
   // The indent needs to adjust as the parent item is now a link
   .menu {
     a {
-      padding-left: uikit-space(1);
+      @include AU-space('padding-left', 1unit);
     }
     ul {
       a {
-        padding-left: uikit-space(1.5);
+        @include AU-space('padding-left', 1.5unit);
       }
       ul a {
-        padding-left: uikit-space(2);
+        @include AU-space('padding-left', 2unit);
       }
     }
   }
@@ -60,7 +52,7 @@
 
 // Mobile toggle.
 .mobile-toggle.mobile-toggle__local-nav {
-  @extend %uikit-localnav__mobile-toggle;
+  @extend %health-localnav__mobile-toggle;
   a {
     border-bottom: 0;
   }

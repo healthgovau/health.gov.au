@@ -1,21 +1,21 @@
 // Inline
 %dm-inline {
   border-left: $health-borderize--fat;
-  background: $uikit-colour-Background;
+  background: $AU-colour-Background;
 
-  padding: uikit-space(0.5);
-  @include uikit-media(sm) {
-    padding: uikit-space(1);
+  @include AU-space('padding', .5unit);
+  @include AU-media(sm) {
+    @include AU-space('padding', 1unit);
   }
 
-  margin-bottom: uikit-space(1);
+  @include AU-space('margin-bottom', 1unit);
 
   .field-name-title {
     h2 {
-      @extend .uikit-display-3;
+      @include AU-fontgrid('lg');
     }
     p {
-      @extend .uikit-display-2;
+      @include AU-fontgrid('md');
     }
   }
   // thumbnail
@@ -29,9 +29,9 @@
 
 %dm-inline-2-col {
   @extend %dm-inline;
-  padding: uikit-space(0.5) 0;
-  @include uikit-media(sm) {
-    padding: uikit-space(1) uikit-space(0.5);
+  @include AU-space('padding', .5unit 0);
+  @include AU-media(sm) {
+    @include AU-space('padding', 1unit 0.5unit);
   }
 
   // layout
@@ -44,5 +44,5 @@
 }
 
 %dm-inline-large {
-  margin-bottom: uikit-space(1);
+  @include AU-space('margin-bottom', 1unit);
 }

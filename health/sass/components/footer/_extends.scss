@@ -3,7 +3,7 @@
 // We all know what a footer is.
 .page {
   .footer {
-    @extend .uikit-footer;
+    @extend .au-footer;
 
     // for IE 9.
     background-color: $colour-Primary-darker;
@@ -16,7 +16,6 @@
 
     a {
       color: white;
-      border-bottom: solid 1px white;
       &:hover {
         background: none;
         border-bottom: none;

@@ -44,18 +44,18 @@
         float: left;
         margin-right: 4px;
       }
-      @include uikit-clearfix;
+      @include AU-clearfix;
     }
     p {
       margin-bottom: 0;
     }
 
-    margin-bottom: uikit-space(1);
-    @include uikit-media(sm){
-      margin-bottom: uikit-space(2);
+    @include AU-space('margin-bottom', 1unit);
+    @include AU-media(sm){
+      @include AU-space('margin-bottom', 2unit);
     }
-    @include uikit-media(md){
-      margin-bottom: uikit-space(3);
+    @include AU-media(md){
+      @include AU-space('margin-bottom', 3unit);
     }
   }
     

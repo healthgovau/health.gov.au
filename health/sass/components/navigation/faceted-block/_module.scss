@@ -5,10 +5,10 @@
   opacity: 0;
   transition: visibility 0s, opacity 0.8s linear;
   height: 0;
-  @include uikit-media(sm) {
+  @include AU-media(sm) {
     visibility: visible;
     opacity: 1;
     height: auto;
-    padding-right: uikit-space(1);
+    @include AU-space('padding-right', 1unit);
   }
 }

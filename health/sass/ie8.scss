@@ -31,7 +31,7 @@
     }
 
     // Make the logo a reasonable size.
-    .uikit-responsive-media-img {
+    .au-responsive-media-img {
       max-width: 400px !important;
       border: none !important;
       padding-top: 20px;
@@ -66,7 +66,7 @@
   }
 
   &.js {
-    .uikit-accordion--closed.uikit-accordion__body {
+    .au-accordion--closed.au-accordion__body {
       height: auto;
       display: block;
     }

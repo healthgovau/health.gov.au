@@ -11,7 +11,7 @@ ul.social__links, // Getting specific with it nah nah nah nah na na na!
     float: left;
 
     list-style-type: none;
-    margin-right: uikit-space(1);
+    @include AU-space('margin-right', 1unit);
     margin-bottom: 0;
     display: inline;
 

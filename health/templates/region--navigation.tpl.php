@@ -13,13 +13,13 @@
       <div class="row">
 
         <button
-          class="mobile-toggle mobile-toggle--main-menu col-xs-6 js-uikit-accordion"
+          class="mobile-toggle mobile-toggle--main-menu col-xs-6 js-au-accordion"
           aria-controls="block-superfish-1" role="tab">
           <span class="mobile-toggle__label">Open menu</span>
         </button>
 
         <button
-          class="mobile-toggle mobile-toggle--search col-xs-6 js-uikit-accordion"
+          class="mobile-toggle mobile-toggle--search col-xs-6 js-au-accordion"
           aria-controls="block-search-api-page-default-search--2"
           role="tab">
           <span class="mobile-toggle__label">Open search</span>

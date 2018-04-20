@@ -1,51 +1,51 @@
-.uikit-card--bottom {
-  @extend %uikit-card--bottom;
+.au-card--bottom {
+  @extend %au-card--bottom;
 }
 
-.uikit-card--featured img {
-  @extend %uikit-card--featured-img;
+.au-card--featured img {
+  @extend %au-card--featured-img;
 }
 
-.uikit-card--featured-top {
-  @extend %uikit-card--featured-top;
+.au-card--featured-top {
+  @extend %au-card--featured-top;
 }
 
-.uikit-card--featured-left .uikit-card--featured {
-  @extend %uikit-card--featured-left;
+.au-card--featured-left .au-card--featured {
+  @extend %au-card--featured-left;
 }
 
-.uikit-card-compact {
-  @extend %uikit-card-compact;
+.au-card-compact {
+  @extend %au-card-compact;
 }
 
-.uikit-card {
-  padding: uikit-space(1) uikit-space(1);
-  @extend %uikit-card;
+.au-card {
+  @include AU-space('padding', 1unit);
+  @extend %au-card;
   h2 {
-    @extend .uikit-display-3;
+    @include AU-fontgrid('lg');
   }
 
   img {
-    margin-bottom: uikit-space(0.5);
+    @include AU-space('margin-bottom', .5unit);
   }
 }
 
-.uikit-body .region-content-bottom .pane-related-content {
-  @extend %uikit-card--list;
-  padding-bottom: uikit-space(2); // More link height
+.au-body .region-content-bottom .pane-related-content {
+  @extend %au-card--list;
+  @include AU-space('padding-bottom', 2unit); // More link height
   position: relative;
   .views-row,
   .view-footer {
-    @extend %uikit-card--list--item;
+    @extend %au-card--list--item;
     &:last-of-type {
-      border-bottom: $uikit-borderize;
+      border-bottom: $AU-borderize;
     }
   }
   // Customisations for view/panels output
   .pane-title {
-    @extend .uikit-display-4;
+    @include AU-fontgrid('xl');
     text-align: center;
-    margin-bottom: uikit-space(.5);
+    @include AU-space('margin-bottom', .5unit);;
   }
   .views-row .node-title {
     font-size: 16px;
@@ -60,10 +60,10 @@
     right: 0;
     // Slight hacky fix for double border
     background: #fff;
-    border-bottom-left-radius: $uikit-border-radius;
-    border-bottom-right-radius: $uikit-border-radius;
+    border-bottom-left-radius: $AU-border-radius;
+    border-bottom-right-radius: $AU-border-radius;
     // Resets for list item
-    border-top: $uikit-borderize;
+    border-top: $AU-borderize;
     margin: 0 auto;
     &:last-of-type {
       border-bottom: 0;

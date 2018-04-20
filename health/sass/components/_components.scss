@@ -7,10 +7,12 @@
 //
 // Style guide: component
 
+@import 'layout/layout';
+
 // Typography
 @import 'typography/blockquote/module';
 @import 'typography/blockquote/extends';
-@import 'typography/headings/extends';
+@import 'typography/headings/module';
 @import 'typography/fields/module';
 
 // Component styles

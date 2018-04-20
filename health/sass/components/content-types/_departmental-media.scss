@@ -19,7 +19,7 @@
       }
     }
     .field-name-field-image-featured {
-      margin-bottom: uikit-space(1);
+      @include AU-space('margin-bottom', 1unit);
     }
     .field-name-field-related-health-topics {
       .field-label {
@@ -40,7 +40,7 @@
     img {
       border: 0 !important;
     }
-    @include uikit-media(md) {
+    @include AU-media(md) {
       .group-details {
         position: absolute;
         bottom: 10px;

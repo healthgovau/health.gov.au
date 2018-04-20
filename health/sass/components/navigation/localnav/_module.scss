@@ -4,16 +4,84 @@
 //
 //-------------------------------------------------------------
 
+// Menu with indentation
+%health-localnav {
+
+  padding: 0;
+
+  ul {
+    @extend .au-link-list;
+    padding: 0;
+    text-transform: none;
+    li {
+      margin: 0;
+      padding: 0;
+      border-bottom: $AU-borderize;
+      &:first-child {
+        @include AU-media(sm) {
+          border-top: $AU-borderize;
+        }
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+
+      a {
+        @extend %health-localnav__link;
+      }
+    }
+  }
+
+  // Level 1
+  > ul {
+    > li {
+      a {
+        @include AU-space('padding', .5unit 12px);
+        @include AU-media(sm) {
+          @include AU-space('padding', .5unit 1unit);
+        }
+      }
+
+      // Level 2
+      > ul {
+        > li {
+          a {
+            @include AU-space('padding', .5unit 1unit);
+            @include AU-media(sm) {
+              @include AU-space('padding', .5unit 1.75unit);
+            }
+          }
+
+          // Level 3
+          > ul {
+            > li a {
+              @include AU-space('padding', .5unit 2.5unit);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Hide on mobile initially.
+  display: none;
+  @include AU-media(sm) { // Always show on desktop.
+    display: block;
+  }
+  &.mobilemenu-active { // Show when toggled.
+    display: block;
+  }
+}
+
 // Individual menu items
-%uikit-localnav__link {
+%health-localnav__link {
   display: block;
   border: none;
   border-left: 4px solid transparent;
   border-bottom: none;
   text-decoration: none;
-  padding: uikit-space(.5);
 
-  @include uikit-media(sm) {
+  @include AU-media(sm) {
     &:hover {
       border-left-color: $colour-Secondary;
     }
@@ -36,85 +104,15 @@
   }
 }
 
-// Menu with indentation
-%uikit-localnav {
-
-  padding: 0;
-  // Level 1
-  ul {
-    @extend .uikit-link-list;
-    padding: 0;
-    text-transform: none;
-    > li {
-      margin: 0;
-      padding: 0;
-      border-bottom: $uikit-borderize;
-      &:first-child {
-        @include uikit-media(sm) {
-          border-top: $uikit-borderize;
-        }
-      }
-      &:last-child {
-        border-bottom: none;
-      }
-
-      a {
-        padding: uikit-space(.5) 12px;
-        @include uikit-media(sm) {
-          padding: uikit-space(.5) uikit-space(1);
-        }
-      }
-
-      // Level 2
-      ul {
-        li {
-          &:first-child {
-            border-top: $uikit-borderize;
-          }
-          a {
-            padding: uikit-space(.5) uikit-space(1);
-            @include uikit-media(sm) {
-              padding: uikit-space(.5) uikit-space(1.75);
-            }
-            border-bottom: 0;
-          }
-        }
-
-        // Level 3
-        ul {
-          li a {
-            padding: uikit-space(.5) uikit-space(2.5);
-          }
-        }
-      }
-    }
-
-
-  }
-
-  a {
-    @extend %uikit-localnav__link;
-  }
-
-  // Hide on mobile initially.
-  display: none;
-  @include uikit-media(sm) { // Always show on desktop.
-    display: block;
-  }
-  &.mobilemenu-active { // Show when toggled.
-    display: block;
-  }
-}
-
 // Mobile toggle.
-%uikit-localnav__mobile-toggle {
+%health-localnav__mobile-toggle {
 
-  @include uikit-media(sm) { // Hide on desktop.
+  @include AU-media(sm) { // Hide on desktop.
     display: none;
   }
 
   display: block;
-  border-bottom: $uikit-borderize;
+  border-bottom: $AU-borderize;
 
   // Toggles
   .mobile-toggle__close,
@@ -136,4 +134,3 @@
     }
   }
 }
-
