@@ -3,12 +3,9 @@
 //
 .form-item {
   @extend %au-form-item;
-}
 
-.form-item {
   label {
     font-weight: bold;
-    display: block;
   }
   .error {
     @extend .au-text-input--invalid;
@@ -23,6 +20,10 @@
 
 .form-required {
   @extend %au-form-item__required;
+}
+
+.form-item--inline {
+  @extend %au-form-item--inline;
 }
 
 // Password confirmation.

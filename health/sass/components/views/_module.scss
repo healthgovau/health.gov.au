@@ -79,13 +79,13 @@
 
 // Generic listing
 .view-header .view-result-summary {
-    @include AU-fontgrid('md');
+    @include health-fontgrid('md', 'default', 'light');
     span {
-        font-size: 30px;
-        font-weight: 700;
+      @include health-fontgrid('xl', 'nospace');
     }
     @include AU-media(sm) {
       float: left;
       margin-right: 45px;
     }
 }
+

@@ -26,6 +26,11 @@
 %au-form-item {
   @include AU-space('margin-bottom', 1unit);
 
+  display: block;
+  div, label {
+    display: block;
+  }
+
   // The part of the label that indicates a required field.
   &__required {
     color: $AU-color-error;
@@ -42,6 +47,10 @@
     div,
     label {
       display: inline;
+    }
+
+    label {
+      @include AU-space('margin-right', .5unit);
     }
 
     // There's always an exception.
