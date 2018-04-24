@@ -9,7 +9,7 @@
 // which will be full width to permit bands
 // :not() supported by IE9+ so polyfill
 body {
-  &:not(.node-type-health-topic, .node-type-health-topic-hp, .node-type-landing-page){
+  &:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) {
     .page-layout {
       @extend .container;
     }
