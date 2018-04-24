@@ -177,10 +177,21 @@ function _health_get_render_elements_for_hp_topic_page($variables) {
  *
  * @return mixed
  */
-function _health_label_display($variables, $field, $field_variables) {
+function _health_label_display($variables, $field) {
+  // Set some defaults needed to render.
+  $field_variables = [
+    'title_attributes' => '',
+    'content_attributes' => '',
+    'item_attributes' => [0 => ''],
+    'attributes' => '',
+  ];
+
   // Get the label according to the display mode.
   $entity_fields = ds_get_fields('node');
   $field_variables['label'] = $entity_fields[$field]['title'];
+
+  // Add some default classes that are needed.
+  $field_variables['classes'] = 'field clearfix field-name-ds-' . str_replace('_', '-', $field);
 
   // Get the display of the label according to the display mode.
   $field_settings = ds_get_field_settings('node', $variables['type'], $variables['view_mode']);
@@ -191,11 +202,11 @@ function _health_label_display($variables, $field, $field_variables) {
         break;
       case 'above':
         $field_variables['label_hidden'] = FALSE;
-        $field_variables['classes'] = 'field-label-above';
+        $field_variables['classes'] .= ' field-label-above';
         break;
       case 'inline':
         $field_variables['label_hidden'] = FALSE;
-        $field_variables['classes'] = 'field-label-inline';
+        $field_variables['classes'] .= ' field-label-inline';
         break;
     }
   }

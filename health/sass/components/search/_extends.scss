@@ -51,15 +51,6 @@
   }
 }
 
-// Global search in header
-#block-search-api-page-default-search {
-  @include uikit-media(sm) {
-    display: block;
-    height: auto;
-  }
-}
-
-
 // Mobile search
 .region-navigation {
   #block-search-api-page-default-search--2 {
@@ -82,11 +73,14 @@
 
   }
 }
-.region-header { // Hide the search in the header on mobile.
+
+// Global search in header
+.js .region-header {
   div.block-search-api-page {
-    display: none;
+    display: none; // Hide the search in the header on mobile.
     @include uikit-media(sm) {
       display: block;
+      height: auto;
     }
   }
 }

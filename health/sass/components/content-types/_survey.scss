@@ -1,0 +1,96 @@
+// Content type styles by display mode (defined in /display-modes/*)
+// ========================================
+
+// Default/full content
+.node-type-survey {
+  @extend %dm-full-content;
+  @extend %page-title-no-supp;
+  @extend %page-help-and-currency;
+}
+
+// Display modes
+.node-survey {
+
+  // Full
+  &.view-mode-full {
+    .field-name-field-status,
+    .field-name-field-date-end,
+    .field-name-field-time-required,
+    .field-name-field-audience,
+    .field-name-ds-associated-release {
+      @extend %spaced-inline-label;
+    }
+
+    .field-name-field-link-external {
+      padding-bottom: uikit-space(1.5);
+      .field-items {
+        border: none;
+        padding: 0;
+      }
+      .external-link-url {
+        display: none;
+      }
+    }
+
+    .field-name-field-image-featured {
+      padding-bottom: uikit-space(1);
+    }
+  }
+
+  // List vertical
+  &.view-mode-listing_vertical {
+    @extend %dm-list-vertical;
+  }
+  // List vertical small
+  &.view-mode-listing_vertical_small {
+    @extend %dm-list-vertical--small-noimage;
+  }
+
+  // List horizontal
+  &.view-mode-listing_horizontal {
+    @extend %dm-list-horizontal;
+  }
+
+  // Feature
+  &.view-mode-feature {
+    @extend %dm-inline;
+    display: inline-block;
+    .field-label-inline .field-items {
+      padding-bottom: 0;
+      margin-right: 0;
+    }
+    border-left-color: $colour-Primary;
+    .circle-highlight {
+      border-radius: 50%;
+      border: 2px solid $colour-Primary;
+      padding: 5px;
+      background-color: white;
+      font-weight: bold;
+    }
+    .field-name-field-time-required {
+      .field-label {
+        font-weight: normal;
+      }
+    }
+    .field-name-field-status {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .field-name-title h2 {
+      font-weight: bold;
+    }
+    .survey-button {
+      margin-top: uikit-space(.5);
+    }
+  }
+
+  // Inline style
+  &.view-mode-inline {
+    @extend %dm-inline;
+  }
+
+  // Search
+  &.view-mode-search_result {
+    @extend %dm-search-index;
+  }
+}

@@ -15,7 +15,7 @@ include_once drupal_get_path('theme', 'health') . '/includes/helper.inc';
  */
 function health_adminimal_toc_filter($variables) {
   $output = '';
-  $output .= '<nav class="index-links">';
+  $output .= '<nav class="index-links rs_preserve rs_skip">';
   $output .= '<h2 id="index-links">' . t('In this section') . '</h2>';
   $output .= $variables['content'];
   $output .= '</nav>';
@@ -53,11 +53,23 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
         ':input[id="edit-field-publication-orderable-und"]' => ['checked' => TRUE],
       ],
     ];
+
+    $form['#validate'][] = '_health_adminimal_publication_validate';
   }
 
   // Prevent users from being able to change the default image for media releases.
   if ($form_id == 'departmental_media_node_form') {
     $form['field_image_featured']['#access'] = FALSE;
+  }
+
+  // Prevent users from being able to change the default related contact for news and departmental media releases.
+  if ($form_id == 'departmental_media_node_form' || $form_id == 'news_article_node_form') {
+    $form['field_related_contact']['#access'] = FALSE;
+  }
+
+  // Add character limit to 200 to summary field.
+  if ($form['field_summary']) {
+    $form['field_summary'][LANGUAGE_NONE][0]['value']['#attributes']['maxlength'] = 200;
   }
 }
 
@@ -80,11 +92,6 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
   // Add logic of if a news or event node is marked as featured, it should be validated with value in featured image field. 
   if ($form_id == 'news_article_node_form' || $form_id == 'event_node_form') {
     $form['#validate'][] = 'health_adminimal_feature_validator';
-  }
-
-  // Add logic to invalid the form if last updated date is not later than publication date.
-  if ($form_id == 'publication_node_form') {
-    $form['#validate'][] = '_health_adminimal_publication_date_validator';
   }
 
   // Update date published if the user is changing moderation states.
@@ -287,21 +294,6 @@ function health_adminimal_feature_validator($form, &$form_state) {
 }
 
 /**
- * Node form validator for publication content type.
- *
- * @param $form
- * @param $form_state
- */
-function _health_adminimal_publication_date_validator($form, &$form_state) {
-  // Last updated field must be later than publication date.
-  if (isset($form_state['values']['field_date_updated'][LANGUAGE_NONE]) && isset($form_state['values']['field_publication_date'][LANGUAGE_NONE])) {
-    if (strtotime($form_state['values']['field_date_updated'][LANGUAGE_NONE][0]['value']) < strtotime($form_state['values']['field_publication_date'][LANGUAGE_NONE][0]['value'])) {
-      form_set_error('field_date_updated', t('Last updated date must be later than publication date.'));
-    }
-  }
-}
-
-/**
  * Video duration validator.
  *
  * @param $form
@@ -466,4 +458,28 @@ function _health_adminimal_find_first_publish_date($nid) {
   }
 
   return $date;
+}
+
+/**
+ * Custom form validator for publication node form.
+ *
+ * Make publication nmm id field required if publication orderable field is
+ * checked.
+ *
+ * Remove publication nmm id value if publication orderable field is unchecked.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function _health_adminimal_publication_validate($form, &$form_state) {
+  if ($form_state['values']['field_publication_orderable'][LANGUAGE_NONE][0]['value'] == TRUE) {
+    if ($form_state['values']['field_publication_nmm_id'][LANGUAGE_NONE][0]['value'] == NULL) {
+      form_set_error('field_publication_nmm_id', 'Please fill in publication nmm id');
+    }
+  }
+  else {
+    if ($form_state['values']['field_publication_nmm_id'][LANGUAGE_NONE][0]['value'] != NULL) {
+      $form_state['values']['field_publication_nmm_id'][LANGUAGE_NONE][0]['value'] = NULL;
+    }
+  }
 }

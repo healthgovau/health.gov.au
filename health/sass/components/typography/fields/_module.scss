@@ -1,7 +1,7 @@
 @import "_print.scss";
 
 // Date
-.meta-date {
+%meta-date {
     color: $colour-minorText;
     font-size: 87.5%;
     margin-bottom: uikit-space(0.5);
@@ -11,21 +11,23 @@
 %date-and-tag {
 
   .field-type-datetime,
-  .field-type-taxonomy-term-reference,
-  .field-name-field-related-health-topics {
-    @extend .meta-date;
+  .field-name-field-status,
+  .field-name-field-time-required,
+  .field-name-ds-content-type,
+  .field-name-field-publication-type,
+  .field-name-field-video-type {
+    @extend %meta-date;
     float: left;
     .tags__item {
       font-weight: normal;
     }
-  }
-
-  .field-type-datetime {
     padding-right: uikit-space(.5);
   }
 
-  .field-type-taxonomy-term-reference,
-  .field-name-field-related-health-topics {
+  .field-name-ds-content-type,
+  .field-name-field-time-required,
+  .field-name-field-publication-type,
+  .field-name-field-video-type {
     padding-left: uikit-space(.5);
     border-left: 1px solid $colour-minorText;
   }
@@ -34,21 +36,25 @@
 %date-and-tag--small {
 
   .field-type-datetime,
-  .field-type-taxonomy-term-reference {
-    @extend .meta-date;
+  .field-name-field-status,
+  .field-name-field-time-required,
+  .field-name-ds-content-type,
+  .field-name-field-publication-type,
+  .field-name-field-video-type {
+    @extend %meta-date;
     font-size: 12px;
     @include uikit-media(md) {
       font-size: 14px;
     }
     float: left;
     margin-bottom: 0;
-  }
-
-  .field-type-datetime {
     padding-right: uikit-space(.5);
   }
 
-  .field-type-taxonomy-term-reference {
+  .field-name-ds-content-type,
+  .field-name-field-time-required,
+  .field-name-field-publication-type,
+  .field-name-field-video-type {
     padding-left: uikit-space(.5);
     border-left: 1px solid $colour-minorText;
   }
@@ -109,6 +115,16 @@
         @extend %ext-link-wrapper;
     }
 }
+
+// Email telephone field
+.field-name-field-email,
+.field-name-field-contact-telephone {
+    i:before {
+      position: relative;
+      font-size: 1em;
+    }
+}
+
 .external-link-url {
     @extend %ext-link;
 }
@@ -209,5 +225,20 @@ p.summary, .field-name-field-summary {
     > .field-items > .field-item {
       margin-bottom: uikit-space(.5);
     }
+  }
+}
+
+// Put a consistent space between the label and the value when displayed inline.
+%spaced-inline-label {
+  .field-label {
+    width: 11em;
+  }
+}
+
+// Override the line height from UIKit on image fields.
+.field-name-field-image,
+.field-name-field-image-featured {
+  div {
+    line-height: 0;
   }
 }

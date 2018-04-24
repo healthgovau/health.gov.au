@@ -59,6 +59,16 @@
     padding-right: 0;
     //margin-left: -12px;
     text-align: center;
+
+    // Add external icon to field-link-internal if the link is external.
+    a[rel~='external'] {
+      .field-name-field-link-internal {
+        .field-item {
+          @extend a[rel~='external'];
+        }
+      }
+    }
+
     .field-name-field-link-internal {
       font-size: 14px;
       word-break: break-word;

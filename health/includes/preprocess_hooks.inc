@@ -494,7 +494,6 @@ function health_preprocess_field(&$variables) {
   // Add p tags around plain text fields.
   $fields = [
     'field_summary',
-    'field_title'
   ];
   foreach($fields as $field) {
     if ($variables['element']['#field_name'] == $field) {
@@ -502,6 +501,24 @@ function health_preprocess_field(&$variables) {
         if ($variables['element']['#items'][0]['format'] == NULL) { // Plain text
           $variables['items'][0]['#markup'] = '<p>' . $variables['items'][0]['#markup'] . '</p>';
         }
+      }
+    }
+  }
+
+  // Markup changes to content.
+  // We would use text format filters for this, but we don't have access via GovCMS.
+  // We also cannot do this via JS because Readspeaker uses the original HTML and will ignore changes made via JS.
+  $fields = [
+    'field_body',
+  ];
+  foreach($fields as $field) {
+    if ($variables['element']['#field_name'] == $field) {
+      if (isset($variables['element']['#items'][0])) {
+        // Add rs_preserve class to any H2's
+        $variables['items'][0]['#markup'] = preg_replace("/<h2>(.*?)<\/h2>/", '<h2 class="rs_preserve">$1</h2>', $variables['items'][0]['#markup']);
+        // Add a div around tables so they can be made responsive.
+        $variables['items'][0]['#markup'] = str_replace('<table', '<div class="responsive-table-wrapper"><table', $variables['items'][0]['#markup']);
+        $variables['items'][0]['#markup'] = str_replace('</table>', '</table></div>', $variables['items'][0]['#markup']);
       }
     }
   }
@@ -536,7 +553,7 @@ function health_preprocess_field(&$variables) {
       $variables['element']['#view_mode'] == 'full' &&
       isset($variables['element']['#object']->field_publication_files[LANGUAGE_NONE][0])) {
       $variables['items'][0]['#prefix'] = '<div class="link-wrapper"><a href="#" class="link-wrapper">';
-      $variables['items'][0]['#suffix'] = '</a></div><div class="go-to-download-link">Go to <a href="#" class="link-wrapper" role="button">downloads</a></div>';
+      $variables['items'][0]['#suffix'] = '</a></div><div class="go-to-download-link rs_preserve">Go to <a href="#" class="link-wrapper" role="button">downloads</a></div>';
     }
   }
 
@@ -561,6 +578,14 @@ function health_preprocess_field(&$variables) {
     // Make sure email addresses are being spam-spanned.
     if ($variables['items']) {
       $variables['items'][0]['#markup'] = _spamspan_filter_process($variables['items'][0]['#markup'], null);
+    }
+  }
+
+  // External link.
+  if ($variables['element']['#field_name'] == 'field_link_external') {
+    // If it is on the survey page, add button class.
+    if ($variables['element']['#object']->type == 'survey') {
+      $variables['items'][0]['#element']['attributes']['class'] = 'button button--large';
     }
   }
 }
@@ -785,6 +810,10 @@ function health_preprocess_page(&$variables) {
   ];
   $variables['page']['content']['#attached']['js'][] = [
     'data' => path_to_theme() . '/js/dist/script.min.js',
+    'type' => 'file',
+  ];
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/dist/health.facetapi.min.js',
     'type' => 'file',
   ];
 

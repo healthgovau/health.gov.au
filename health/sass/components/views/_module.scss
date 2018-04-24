@@ -72,7 +72,7 @@
 }
 
 // Generic listing
-.view-header {
+.view-header .view-result-summary {
     @extend .uikit-display-2;
     span {
         font-size: 30px;

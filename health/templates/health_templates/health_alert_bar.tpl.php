@@ -7,7 +7,7 @@
         <div v-cloak class="health-alert-content">
             <ul>
                 <li v-for="(item, index) in items">
-                    <div class="alert-date">{{ item.date | formatDate }}</div><div class="alert-title"><a :href="item.link">{{ item.title }}</a></div>
+                    <div class="alert-date">{{ item.updated_date | formatDate }}</div><div class="alert-title"><a :href="item.link">{{ item.title }}</a></div>
                 </li>
             </ul>
         </div>
