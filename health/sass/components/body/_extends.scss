@@ -4,16 +4,4 @@
 
 .page {
   @extend .au-body;
-  a {
-    @extend %link_focus;
-  }
-}
-
-%link_focus {
-  &:focus {
-    background-color: $colour-Secondary;
-    color: white;
-    outline: 1px solid $colour-Secondary-hover;
-    outline-offset: 0;
-  }
 }

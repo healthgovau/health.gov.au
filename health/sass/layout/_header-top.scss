@@ -10,7 +10,7 @@
 
 .page {
   .header-top {
-    background: $AU-colour-Secondary;
+    background: $AU-color-foreground-text;
     color: #ffffff;
     @include AU-space('padding', 0.5unit);
     .group-left {

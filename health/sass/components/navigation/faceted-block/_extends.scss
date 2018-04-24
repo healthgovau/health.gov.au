@@ -54,18 +54,14 @@ p.filter__help {
     margin-right: 3em;
   }
 }
+
 .block-facetapi {
   @extend %mobile-menu;
+  @extend .au-accordion;
   @include AU-media(sm){
     @include AU-space('margin-top', .5unit);
   }
-  .au-accordion__title {
-    padding-top: 0.8em;
-    padding-bottom: 0.8em;
-    .block__title {
-      font-size: 16px;
-    }
-  }
+
   .facetapi-facetapi-checkbox-links a {
     border: none;
   }
@@ -86,4 +82,3 @@ p.filter__help {
     @include AU-space('margin-top', .5unit);
   }
 }
-

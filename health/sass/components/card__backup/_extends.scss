@@ -38,14 +38,14 @@
   .view-footer {
     @extend %au-card--list--item;
     &:last-of-type {
-      border-bottom: $AU-borderize;
+      border-bottom: $health-borderize--thin;
     }
   }
   // Customisations for view/panels output
   .pane-title {
     @include AU-fontgrid('xl');
     text-align: center;
-    @include AU-space('margin-bottom', .5unit);;
+    @include AU-space('margin-bottom', .5unit);
   }
   .views-row .node-title {
     font-size: 16px;
@@ -63,7 +63,7 @@
     border-bottom-left-radius: $AU-border-radius;
     border-bottom-right-radius: $AU-border-radius;
     // Resets for list item
-    border-top: $AU-borderize;
+    border-top: $health-borderize--thin;
     margin: 0 auto;
     &:last-of-type {
       border-bottom: 0;

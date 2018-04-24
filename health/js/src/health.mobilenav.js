@@ -62,7 +62,7 @@
       // Local navigation
       $('.mobile-toggle.mobile-toggle__local-nav a', context).click(function (e) {
         e.preventDefault();
-        $("#block-menu-block-2", context).toggleClass('mobilemenu-active');
+        $("#block-menu-block-2 .menu-block-wrapper", context).toggleClass('mobilemenu-active');
         $(".mobile-toggle.mobile-toggle__local-nav", context).toggleClass('mobilemenu-active');
       });
 

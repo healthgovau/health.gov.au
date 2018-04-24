@@ -6,16 +6,16 @@
 
 #search-block-form,
 .au-header #search-block-form {
-  @extend %au-search;
+  @extend %health-search;
 }
 
 #block-search-api-page-default-search,
 .au-header #block-search-api-page-default-search {
-  @extend %au-search;
+  @extend %health-search;
 }
 
 .block-search-api-page {
-  @extend %au-search;
+  @extend %health-search;
   .search-form {
     margin: 0;
   }
@@ -23,7 +23,7 @@
 
 
 .view-filters .views-exposed-form {
-  @extend %au-search;
+  @extend %health-search;
   overflow: hidden;
   @include AU-space('margin-bottom', 1unit);
   @include AU-media(md){

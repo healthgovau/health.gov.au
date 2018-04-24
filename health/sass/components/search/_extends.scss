@@ -36,7 +36,7 @@
       .view-mode-search_result {
         @extend %dm-search-index;
         @include AU-clearfix;
-        border-bottom: $AU-borderize;
+        border-bottom: $health-borderize--thin;
         @include AU-space('padding-top', .5unit);
         @include AU-space('padding-bottom', .5unit);
         @include AU-media(md){

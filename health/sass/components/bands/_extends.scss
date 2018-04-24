@@ -13,8 +13,9 @@
 
   background-color: $colour-light;
   .block__title {
-    @include AU-fontgrid('md');
-    font-weight: 700;
+    @extend %heading--lg;
+    @extend %heading--nospace;
+    line-height: 1;
     margin:0;
   }
 }
@@ -35,7 +36,7 @@
 .listing-back {
   @extend %band;
   @include AU-space('padding', .8unit 0);
-  border-top: 1px solid $colour-light-darker;
+  border-top: $health-borderize--very-thin;
   .wrapper {
     @extend .container;
     text-align: center;
@@ -59,8 +60,8 @@
 #block-bean-homepage-healthcare-system,
 #block-bean-homepage-portfolio-sport {
   h2 {
-    @extend %display--lg;
-    @extend %display--light;
+    @extend %heading--lg;
+    @extend %heading--light;
     max-width: 60rem;
   }
 }
@@ -87,27 +88,14 @@
           @include AU-media(sm) {
             display: table-cell;
             vertical-align: middle;
+            text-align: center;
           }
-
           a {
-            @extend .au-btn--large;
-            border-radius: 0;
-
-            width: 100%;
-
-            @include AU-media(sm) {
-              margin: auto;
-              width: 50%;
-            }
-            background-color: $colour-Secondary-dark;
-            color: white;
-            border: 1px solid $colour-Secondary-dark;
-            &:hover {
-              background-color: $colour-Secondary-hover;
-            }
-            &:after {
-              color: white;
-            }
+            @extend %health-btn--large;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
           }
         }
       }

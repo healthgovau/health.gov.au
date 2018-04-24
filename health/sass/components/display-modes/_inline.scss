@@ -1,7 +1,8 @@
 // Inline
 %dm-inline {
-  background: $uikit-colour-Background;
-  padding: uikit-space(0.5);
+  border-left: $health-borderize--fat;
+  background: $AU-color-background;
+
   @include AU-space('padding', .5unit);
   @include AU-media(sm) {
     @include AU-space('padding', 1unit);

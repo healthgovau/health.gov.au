@@ -22,6 +22,31 @@ body {
   &:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) {
     .page .page-layout {
       @extend .container;
+
+      // Single column
+      .main-content-full {
+        @extend .col-sm-12;
+      }
+
+      // 2 columns
+      .main-content {
+        @extend .col-sm-8;
+      }
+
+      .sidebar-left,
+      .sidebar-right {
+        @extend .col-sm-4;
+      }
+
+      .sidebar-right {
+        // Right sidebar is in the markup first, but we want it to display on the right.
+        float: none;
+        padding: 0; // Remove the gutters on mobile.
+        @include AU-media(sm) {
+          float: right;
+          padding: 0 ($AU-grid-12-gutter-width / 2); // Put them back on tablet+ to work with the grid.
+        }
+      }
     }
   }
 }
@@ -39,8 +64,7 @@ body.page-node-3406
   }
   .page {
     .tabs {
-      margin-top: uikit-space(1);
-      margin-bottom: 0;
+      @include AU-space('margin', 1unit 0 0 0);
     }
   }
 }
@@ -83,7 +107,7 @@ body.page-node-3406
   float: none;
   padding-left: 0;
   padding-right: 0;
-  @include uikit-media(sm){
+  @include AU-media(sm){
     float: right;
     padding-left: 12px;
     padding-right: 12px;

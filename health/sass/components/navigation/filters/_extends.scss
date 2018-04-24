@@ -1,13 +1,11 @@
 .block-facetapi {
-    @extend %filter;
-    .au-accordion__title {
-        @extend %filter__title-container;
+  @extend %filter;
+  .block__title {
+    //@extend %heading--sm;
+  }
+  .au-accordion__body-wrapper {
+    ul li:first-of-type label.au-control-input {
+      margin-top: 0;
     }
-    .block__title {
-        @include AU-fontgrid('sm');
-        margin-bottom: 0;
-    }
-    .au-accordion__body {
-        @extend %filter__body;
-    }
+  }
 }

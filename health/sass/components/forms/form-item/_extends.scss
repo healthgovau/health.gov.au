@@ -8,17 +8,11 @@
 .form-item {
   label {
     font-weight: bold;
-    //@extend .au-text-input__label;
   }
-  input.error,
-  textarea.error {
+  .error {
     @extend .au-text-input--invalid;
   }
-  select.error {
-    border: $AU-colour-Error;
-  }
   .description, .help-block {
-    //@extend .au-text-input__hint;
     @include AU-space('margin-bottom', .75unit);
   }
   .resizable-textarea .grippie {

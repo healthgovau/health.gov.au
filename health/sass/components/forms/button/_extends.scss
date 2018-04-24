@@ -19,18 +19,7 @@ button,
 html [type='button'],
 [type='reset'],
 [type='submit']{
-  @extend .au-btn;
-  border-radius: 0;
-  border: 0;
-  color: white;
-  &[rel~='external']:after {
-    color: white;
-  }
-  background-color: $colour-Primary;
-  &:hover, &:focus {
-    background-color: $colour-Primary-hover;
-    color: white;
-  }
+  @extend %health-btn;
 }
 
 .button--secondary {
@@ -39,7 +28,7 @@ html [type='button'],
 
 .button--light, a.button--light {
   background-color: white;
-  color: $AU-colour-Text;
+  color: $AU-color-foreground-text;
   &:hover, &:active, &:focus {
     background-color: $colour-light-dark;
   }
@@ -49,10 +38,9 @@ html [type='button'],
   font-size: 14px;
 }
 
-.button--large, a.button--large {
-  text-align: center;
-  padding: 1em 2em;
-  font-size: 24px;
+.button--large, a.button--large,
+.bean-large-button .field-name-field-link-to a {
+  @extend %health-btn--large;
 }
 
 .button--tertiary {

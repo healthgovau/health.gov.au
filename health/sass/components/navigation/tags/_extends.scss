@@ -38,4 +38,8 @@
 
 .tags {
   @extend .au-tags;
+  dt {
+    @include AU-space('margin-right', .5unit);
+    font-weight: bold;
+  }
 }

@@ -28,12 +28,12 @@
   }
 
   &__body {
-    border-top: $AU-borderize;
+    border-top: $health-borderize--thin;
   }
 
   &__row {
     padding: .1em .6em;
-    border-bottom: $AU-borderize;
+    border-bottom: $health-borderize--thin;
     background-color: #eee;
 
     &:nth-child(even) {

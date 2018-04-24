@@ -2,17 +2,7 @@
 %filter {
     margin-bottom: 0;
 }
-%filter__title-container {
-    @include AU-space('padding-top', .5unit);
-    @include AU-space('padding-bottom', .5unit);
-}
 %filter__title-text {
-}
-%filter__body {
-    &[tabindex="0"]:focus,
-    &:target {
-        outline: none;
-    }
 }
 %filter__term {
 

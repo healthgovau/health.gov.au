@@ -29,12 +29,6 @@
   }
 }
 
-// UIkit override
-.au-body .au-accordion__title {
-  font-size: 16px;
-  padding-left: 1em;
-}
-
 // When the block title is a link
 .au-body .sidebar .block-menu-block--title-link {
   .block__title {
@@ -42,7 +36,7 @@
     a {
       font-size: 18px;
       @extend %health-localnav__link;
-      border-top: $AU-borderize;
+      border-top: $health-borderize--thin;
     }
   }
   // The indent needs to adjust as the parent item is now a link

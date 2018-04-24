@@ -4,63 +4,81 @@
 //
 // All HTML headings, `<h1>` through `<h6>`, are available. `%h1` through `%h6`
 // classes are also available, for when you want to match the font styling of a
-// heading but still want your text to be displayed inline.
+// heading but still want your text to be headinged inline.
 //
 // Markup: headings-h.twig
 //
 // Style guide: base.headings
 
-%display--xxl {
+%heading--xxl {
   @include AU-fontgrid('xl');
   @include AU-media(sm) {
     @include AU-fontgrid('xxl');
   }
+  @extend %heading--base;
 }
-%display--xl {
+%heading--xl {
   @include AU-fontgrid('lg');
   @include AU-media(sm) {
     @include AU-fontgrid('xl');
   }
+  @extend %heading--base;
 }
-%display--lg {
+%heading--lg {
   @include AU-fontgrid('md');
   @include AU-media(sm) {
     @include AU-fontgrid('lg');
   }
+  @extend %heading--base;
 }
-%display--md {
+
+%heading--md {
   @include AU-fontgrid('sm');
   @include AU-media(sm) {
     @include AU-fontgrid('md');
   }
+  @extend %heading--base;
 }
 
-%display--sm {
+%heading--sm {
   @include AU-fontgrid('xs');
   @include AU-media(sm) {
     @include AU-fontgrid('sm');
   }
+  @extend %heading--base;
 }
 
-%display--xs {
+%heading--xs {
   @include AU-fontgrid('xs');
   @include AU-media(sm) {
     @include AU-fontgrid('xs');
   }
+  @extend %heading--base;
 }
-%display--light {
+
+%heading--base {
+  font-weight: bold;
+}
+
+%heading--light {
   font-weight: normal;
 }
 
+%heading--nospace {
+  line-height: 1;
+}
+
+
+
 // Lists and auto-generated content
 %list-item-title {
-  @extend %display--sm;
+  @extend %heading--sm;
 }
 
 %list-item-title--medium {
-  @extend %display--md;
+  @extend %heading--md;
 }
 
 %list-item-title--large {
-  @extend %display--lg;
+  @extend %heading--lg;
 }

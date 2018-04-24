@@ -23,7 +23,7 @@
 %tabs {
   @extend .au-link-list;
   @extend .au-link-list--inline;
-  border-bottom: $AU-borderize;
+  border-bottom: $health-borderize--thin;
   width: 100%;
   // Need to use body otherwise padding gets hit with uikitbody ul
   .au-body & {
@@ -59,7 +59,7 @@
   &:hover,
   &:focus {
     border-bottom: 4px solid $colour-Secondary-darker;
-    background-color: $AU-colour-Link;
+    background-color: $AU-color-foreground-action;
     color: white;
   }
 }

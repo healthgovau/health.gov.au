@@ -4,8 +4,8 @@
   @include row-and-container; // Band title
   h2 {
     @extend .col-xs-12;
-    @extend %display--xl;
-    @extend %display--light;
+    @extend %heading--xl;
+    @extend %heading--light;
     @include AU-space('padding-bottom', .25unit);
     @include AU-space('margin-bottom', .5unit);;
   } // Each item
@@ -14,7 +14,7 @@
     @extend .col-md-3;
   } // Item link
   .field-type-link-field {
-    @extend .tile__title;
+    @extend %list-item-title--medium;
   }
   .field-name-field-summary {
     @include AU-space('margin-bottom', 1unit);
@@ -38,10 +38,9 @@
   @include AU-space('padding-bottom', .75unit); // Band title
   h2 {
     @extend .col-xs-12;
-    @extend %display--xl;
-    @extend %display--light;
-    @include AU-space('padding-bottom', .25unit);
-    @include AU-space('margin-bottom', .5unit);;
+    @extend %heading--xl;
+    @extend %heading--light;
+    @include AU-space('padding-bottom', .75unit);
   } // Items
   // Wrapper title/summary
   .field-name-field-taxonomy-paragraph {
@@ -69,8 +68,9 @@
           .field-name-title {
             @include AU-space('margin-bottom', .5unit);
             h3 {
-              @extend %list-item-title;
+              @extend %list-item-title--medium;
               border-bottom: 1px solid white;
+              text-decoration: underline;
               display: inline;
             }
           } // Override drupal taxonomy term style.
@@ -105,8 +105,8 @@
     }
   } // Title
   h2 {
-    @extend %display--xl;
-    @extend %display--light;
+    @extend %heading--xl;
+    @extend %heading--light;
   }
 }
 
@@ -173,7 +173,7 @@
     .paragraphs-item-para-telephone {
       padding: 0;
       .field-name-field-contact-telephone {
-        @extend %display--xl;
+        @extend %heading--xl;
         font-weight: 700;
       }
       i {
@@ -192,8 +192,9 @@
   @include row-and-container;
   .view-mode-full {
     h2 {
-      @extend %display--xl;
-      @extend %display--light;
+      @extend %heading--xl;
+      @extend %heading--light;
+      @include AU-space('padding-bottom', .75unit);
     }
   } // Wrapper title/summary
   h2,
@@ -265,8 +266,9 @@
     >.para-row {
       >h2,
       >.group-header>h2 {
-        @extend %display--xl;
-        @extend %display--light;
+        @extend %heading--xl;
+        @extend %heading--light;
+        @include AU-space('padding-bottom', .75unit);
       }
       .group-header {
         .field-name-field-summary {
@@ -298,8 +300,9 @@
   } // @todo Should we remove paragraphs-item-para-block container and row by default, and just let each individual one decide on a case by case basis?
   @include row-and-container;
   .field-name-field-title {
-    @extend %display--xl;
-    @extend %display--light;
+    @extend %heading--xl;
+    @extend %heading--light;
+    @include AU-space('padding-bottom', .75unit);
   }
   .field-name-field-title,
   .field-name-field-summary {
@@ -336,7 +339,7 @@
 .paragraphs-item-featured-videos {
   // This creates .container and .row from band markup for BS grid
   @include row-and-container; // Band title
-  padding: uikit-space(1);
+  @include AU-space('padding', 1unit);
   // layout
   .group-left {
     width: 100%;

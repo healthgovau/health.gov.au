@@ -10,7 +10,7 @@
 %au-fieldset {
   // Change the border, margin, and padding in all browsers (opinionated).
   @include AU-space('padding', 1unit);
-  border: $AU-borderize;
+  border: $health-borderize--thin;
   margin: 0 2px;
   @include AU-space('margin-bottom', 1unit);
 }
