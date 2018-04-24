@@ -13,23 +13,10 @@
   &.status {
     @extend .au-page-alerts--success;
   }
-  /*&.info {
-    h3 {
-      @extend %heading--md;
-    }
-
-    border-color: $colour-Secondary-light;
-    &:after {
-      top: 29px;
-      width: 32px;
-      height: 32px;
-      left: -40px;
-    }
-  }*/
 }
 
 // Topic landing page.
-/*.page-topics,
+.page-topics,
 .page-initiatives-and-programs {
   .messages.info {
     margin: 0;
@@ -37,7 +24,7 @@
       margin-top: 16em;
     }
   }
-}*/
+}
 
 // Global health alert.
 #health-alert-ajax-container {

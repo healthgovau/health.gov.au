@@ -644,7 +644,7 @@ function health_file_entity_download_link($variables) {
       }
 
       // Construct the link.
-      $variables['text'] = '<div class="file__link">Download <span class="file__link-title">' . $title . ' as</span> ' . health_get_friendly_mime($file->filemime) . '</div>';
+      $variables['text'] = '<span class="file__link">Download <span class="file__link-title">' . $title . ' as</span> ' . health_get_friendly_mime($file->filemime) . '</span>';
 
       // Add metatdata (file size, image size, no of pages)
 

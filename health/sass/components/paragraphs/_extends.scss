@@ -4,8 +4,7 @@
   @include row-and-container; // Band title
   h2 {
     @extend .col-xs-12;
-    @extend %heading--xl;
-    @extend %heading--light;
+    @include health-fontgrid('xl', 'default', 'light');
     @include AU-space('padding-bottom', .25unit);
     @include AU-space('margin-bottom', .5unit);;
   } // Each item
@@ -38,8 +37,7 @@
   @include AU-space('padding-bottom', .75unit); // Band title
   h2 {
     @extend .col-xs-12;
-    @extend %heading--xl;
-    @extend %heading--light;
+    @include health-fontgrid('xl', 'default', 'light');
     @include AU-space('padding-bottom', .75unit);
   } // Items
   // Wrapper title/summary
@@ -105,8 +103,7 @@
     }
   } // Title
   h2 {
-    @extend %heading--xl;
-    @extend %heading--light;
+    @include health-fontgrid('xl', 'default', 'light');
   }
 }
 
@@ -192,8 +189,7 @@
   @include row-and-container;
   .view-mode-full {
     h2 {
-      @extend %heading--xl;
-      @extend %heading--light;
+      @include health-fontgrid('xl', 'default', 'light');
       @include AU-space('padding-bottom', .75unit);
     }
   } // Wrapper title/summary
@@ -266,8 +262,7 @@
     >.para-row {
       >h2,
       >.group-header>h2 {
-        @extend %heading--xl;
-        @extend %heading--light;
+        @include health-fontgrid('xl', 'default', 'light');
         @include AU-space('padding-bottom', .75unit);
       }
       .group-header {
@@ -300,8 +295,7 @@
   } // @todo Should we remove paragraphs-item-para-block container and row by default, and just let each individual one decide on a case by case basis?
   @include row-and-container;
   .field-name-field-title {
-    @extend %heading--xl;
-    @extend %heading--light;
+    @include health-fontgrid('xl', 'default', 'light');
     @include AU-space('padding-bottom', .75unit);
   }
   .field-name-field-title,

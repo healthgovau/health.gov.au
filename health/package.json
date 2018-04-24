@@ -28,6 +28,7 @@
     "sass-versioning": "^0.3.0"
   },
   "dependencies": {
+    "@gov.au/accordion": "^2.0.1",
     "@gov.au/body": "^2.0.2",
     "@gov.au/breadcrumbs": "^2.0.1",
     "@gov.au/buttons": "^2.0.1",
@@ -91,7 +92,7 @@
       "name": "pancake.js"
     },
     "react": {
-      "location": "pancake/react/"
+      "location": false
     },
     "json": {
       "enable": false,

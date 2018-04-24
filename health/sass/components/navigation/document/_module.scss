@@ -18,10 +18,7 @@
             @extend %visually-hidden;
         }
     }
-    .file__meta {
-        display: inline;
-        color: $colour-Secondary;
-    }
+    .file__meta {}
     .field-name-field-file,
     .field-name-field-images .field-item {
       @include link-pullout;
