@@ -9,6 +9,10 @@
   }
 }
 
+#block-bean-campaign-external-link-block {
+  @include AU-space('margin-bottom', 1unit);
+}
+
 .node-type-landing-page {
   .field-name-field-image {
     @include block-text-image-svg('large');

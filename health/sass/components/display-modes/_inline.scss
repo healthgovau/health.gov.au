@@ -1,7 +1,7 @@
 // Inline
 %dm-inline {
   border-left: $health-borderize--fat;
-  background: $AU-colour-Background;
+  background: $AU-color-background;
 
   @include AU-space('padding', .5unit);
   @include AU-media(sm) {

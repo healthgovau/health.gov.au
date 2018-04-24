@@ -28,7 +28,7 @@
 
   // The part of the label that indicates a required field.
   &__required {
-    color: red;
+    color: $AU-color-error;
   }
 
   // The descriptive help text (separate from the label).

@@ -16,10 +16,10 @@
     li {
       margin: 0;
       padding: 0;
-      border-bottom: $AU-borderize;
+      border-bottom: $health-borderize--very-thin;
       &:first-child {
         @include AU-media(sm) {
-          border-top: $AU-borderize;
+          border-top: $health-borderize--very-thin;
         }
       }
       &:last-child {
@@ -112,7 +112,7 @@
   }
 
   display: block;
-  border-bottom: $AU-borderize;
+  border-bottom: $health-borderize--very-thin;
 
   // Toggles
   .mobile-toggle__close,

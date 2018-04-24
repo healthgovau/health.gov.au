@@ -84,7 +84,6 @@
   }
   .video__transcript {
     @extend .au-accordion;
-    border-width: 0 0 1px 0;
     summary {
       @extend .au-accordion__title;
       background-color: transparent;

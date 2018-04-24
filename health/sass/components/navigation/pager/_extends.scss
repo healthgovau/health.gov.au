@@ -14,7 +14,7 @@
 .item-list .pager,
 .pager {
   @extend %au-pager;
-  border-top: $AU-borderize;
+  border-top: $health-borderize--very-thin;
 }
 
 .pager-item,

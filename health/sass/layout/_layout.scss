@@ -37,8 +37,10 @@ body {
       .sidebar-right {
         // Right sidebar is in the markup first, but we want it to display on the right.
         float: none;
+        padding: 0; // Remove the gutters on mobile.
         @include AU-media(sm) {
           float: right;
+          padding: 0 ($AU-grid-12-gutter-width / 2); // Put them back on tablet+ to work with the grid.
         }
       }
     }

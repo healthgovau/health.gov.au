@@ -1,10 +1,3 @@
-
-// The %text-form-element can be used to style `<input>` text types and
-// `<textarea>` elements at the same time.
-%text-form-element {
-  @extend .au-text-input;
-}
-
 // Inputs
 //
 // The `<input>` element is mostly used for text-based inputs that include the
@@ -24,9 +17,10 @@
 [type='date'],
 [type='time'],
 [type='number'] {
-  @extend %text-form-element !optional;
+  @extend .au-text-input;
   width: 100%;
   max-width: 42em;
+  border-radius: 0;
 }
 
 [type='range'] {
@@ -39,11 +33,4 @@
 
 [type='file'] {
   // Add your styles.
-}
-
-.form-type-textfield {
-  label {
-    @extend .au-control-input;
-    //@extend .au-text-input__label;
-  }
 }

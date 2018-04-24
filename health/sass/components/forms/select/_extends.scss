@@ -12,5 +12,6 @@
 .form-select--wrapper {
   select {
     @extend .au-select;
+    border-radius: 0;
   }
 }

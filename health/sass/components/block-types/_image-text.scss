@@ -2,7 +2,14 @@
 .bean-image-and-text {
   .field-name-field-link-internal {
     @extend %list-item-title;
-  } // Full display
+  }
+
+  .field-name-field-bean-text div {
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  // Full display
   // Used for home page function selector
   &.view-mode-full {
     float: left;
@@ -85,7 +92,6 @@
         font-size: 14px;
         margin: 0 auto;
         max-width: 75%;
-        text-decoration: none;
         display: inline-block;
       }
     }

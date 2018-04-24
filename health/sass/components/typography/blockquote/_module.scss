@@ -6,18 +6,18 @@
 
 %au-blockquote {
 
-  //color: $AU-colour-Text;
+  //color: $AU-color-foreground-text;
   //line-height: $AU-leading;
   @include AU-space('margin', 1unit .25unit 1unit 0);
   @include AU-space('padding', .75unit .75unit .75unit 3unit);
   border-radius: $AU-border-radius;
-  box-shadow: 2px 0 6px transparentize($AU-colour-Text, 0.3);
+  box-shadow: 2px 0 6px transparentize($AU-color-foreground-text, 0.3);
   max-width: $AU-maxwidth;
-  border-left: 6px solid $AU-colour-Border;
+  border-left: 6px solid $AU-color-foreground-border;
   background-repeat: no-repeat;
   background-size: 70px;
   background-position: center left;
-  background-image: AU-svguri('<svg fill="#{ $AU-colour-Text }" xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 32 32">
+  background-image: AU-svguri('<svg fill="#{ $AU-color-foreground-text }" xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 32 32">
         <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
         <path d="M0 0h24v24H0z" fill="none"/>
       </svg>');
@@ -32,9 +32,9 @@
 
   .ie8 &,
   .lt-ie8 & {
-    border-top: $AU-borderize;
-    border-right: $AU-borderize;
-    border-bottom: $AU-borderize;
+    border-top: $health-borderize--thin;
+    border-right: $health-borderize--thin;
+    border-bottom: $health-borderize--thin;
   }
 }
 

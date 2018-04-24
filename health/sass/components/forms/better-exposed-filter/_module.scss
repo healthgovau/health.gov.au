@@ -42,23 +42,14 @@
 
 // Applied filters
 #edit-custom-remove {
-  .item-list, ul {
+  .item-list,
+  ul,
+  .facet-remove {
     display: inline;
   }
 
-  label {
-    @include AU-fontgrid('sm');
-    display: block;
-    @include AU-media(sm){
-      @include AU-space('top', .5unit);
-      display: inline;
-    }
-  }
-  .facet-clear {
-    color: $colour-minorText;
-  }
-  .facet-remove {
-    display: inline;
+  .facet-remove a {
+    padding-right: 0;
   }
 
   // Fix the inline display of the icon.

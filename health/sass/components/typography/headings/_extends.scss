@@ -2,27 +2,27 @@
 
 .page {
   h1 {
-    @extend %display--xxl;
+    @extend %heading--xxl;
   }
 
   h2 {
-    @extend %display--xl;
+    @extend %heading--xl;
   }
 
   h3 {
-    @extend %display--lg;
+    @extend %heading--lg;
   }
 
   h4 {
-    @extend %display--md;
+    @extend %heading--md;
   }
 
   h5 {
-    @extend %display--sm;
+    @extend %heading--sm;
   }
 
   h6 {
-    @extend %display--xs;
+    @extend %heading--xs;
   }
 }
 

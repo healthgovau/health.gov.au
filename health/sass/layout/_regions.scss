@@ -63,7 +63,7 @@
     clear: both;
     @include AU-clearfix;
     background: white;
-    border-bottom: $AU-borderize;
+    border-bottom: $health-borderize--thin;
     @include AU-media(sm) {
       border-bottom: 0;
     }

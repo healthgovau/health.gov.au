@@ -8,11 +8,11 @@
 $fontawesome: "FontAwesome";
 
 // Borders
-$AU-borderize: 1px solid $AU-colour-Border;
-$health-borderize: 3px solid $AU-colour-Border;
-$health-borderize--thin: 2px solid $AU-colour-Border;
-$health-borderize--fat: 6px solid $AU-colour-Border;
-$AU-border-radius: 3px;
+$AU-color-foreground-border: #ccc; // Apparently this is not accessible...
+$health-borderize: 3px solid $AU-color-foreground-border;
+$health-borderize--very-thin: 1px solid $AU-color-foreground-border;
+$health-borderize--thin: 2px solid $AU-color-foreground-border;
+$health-borderize--fat: 6px solid $AU-color-foreground-border;
 
 // Taskbar
 $minHeight-Taskbar: 200px !default;

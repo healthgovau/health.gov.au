@@ -160,15 +160,7 @@ p.summary, .field-name-field-summary {
     .field-name-field-date-updated,
     .field-name-field-date-published {
         &.field-label-inline {
-            border-top: $AU-borderize;
-            @include AU-space('padding-top', 1unit);
-            @include AU-space('margin-top', 1unit);
-            @include AU-media(sm){
-                @include AU-space('margin-top', 2unit);
-            }
-            @include AU-media(md){
-                @include AU-space('margin-top', 3unit);
-            }
+          @extend %bottom-border;
         }
     }
 }
@@ -202,7 +194,7 @@ p.summary, .field-name-field-summary {
 }
 
 %bottom-border {
-  border-top: $AU-borderize;
+  border-top: $health-borderize--very-thin;
   @include AU-space('padding-top', 1unit);
   @include AU-space('margin-top', 1unit);
   @include AU-media(sm){

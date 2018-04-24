@@ -55,7 +55,7 @@
   .paragraphs-item-para-block.block-id__more-services-card {
     &.para-container {
       .bean-image-and-text.view-mode-full {
-        color: $AU-colour-Secondary;
+        color: $colour-Secondary;
         &.more-services-card {
           @include block-card($colour-Primary-dark, $colour-Primary-hover);
         }

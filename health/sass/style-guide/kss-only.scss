@@ -106,82 +106,82 @@
 }
 
 .palette__color--hero {
-	background-color: $AU-colour-Hero;
+	background-color: $AU-color-Hero;
 
 	&:after {
-		content: 'Hero: #{ $AU-colour-Hero }'
+		content: 'Hero: #{ $AU-color-Hero }'
 	}
 }
 .palette__color--primary {
-	background-color: $AU-colour-Primary;
+	background-color: $AU-color-Primary;
 
 	&:after {
-		content: 'Primary: #{ $AU-colour-Primary }'
+		content: 'Primary: #{ $AU-color-Primary }'
 	}
 }
 .palette__color--secondary {
-	background-color: $AU-colour-Secondary;
+	background-color: $colour-Secondary;
 
 	&:after {
-		content: 'Secondary: #{ $AU-colour-Secondary }'
+		content: 'Secondary: #{ $colour-Secondary }'
 	}
 }
 .palette__color--background {
-	background-color: $AU-colour-Background;
+	background-color: $AU-color-background;
 
 	&:after {
-		content: 'Background: #{ $AU-colour-Background }'
+		content: 'Background: #{ $AU-color-background }'
 	}
 }
 .palette__color--border {
-	background-color: $AU-colour-Border;
+	background-color: $AU-color-foreground-border;
 
 	&:after {
-		content: 'Border: #{ $AU-colour-Border }'
+		content: 'Border: #{ $AU-color-foreground-border }'
 	}
 }
 .palette__color--text {
-	background-color: $AU-colour-Text;
+	background-color: $AU-color-foreground-text;
 
 	&:after {
-		content: 'Text: #{ $AU-colour-Text }'
+		content: 'Text: #{ $AU-color-foreground-text }'
 	}
 }
 .palette__color--link {
-	background-color: $AU-colour-Link;
+	background-color: $AU-color-foreground-action;
 
 	&:after {
-		content: 'Link: #{ $AU-colour-Link }'
+		content: 'Link: #{ $AU-color-foreground-action }'
 	}
 }
 
 
 .palette__color--error {
-	background-color: $AU-colour-Error;
+	background-color: $AU-color-Error;
 
 	&:after {
-		content: 'Error: #{ $AU-colour-Error }'
+		content: 'Error: #{ $AU-color-Error }'
 	}
 }
 .palette__color--success {
-	background-color: $AU-colour-Success;
+	background-color: $AU-color-Success;
 
 	&:after {
-		content: 'Success: #{ $AU-colour-Success }'
+		content: 'Success: #{ $AU-color-Success }'
 	}
 }
 .palette__color--warning {
-	background-color: $AU-colour-Warning;
+	background-color: $AU-color-Warning;
 
 	&:after {
-		content: 'Warning: #{ $AU-colour-Warning }'
+		content: 'Warning: #{ $AU-color-Warning }'
 	}
 }
 .palette__color--info {
-	background-color: $AU-colour-Info;
+	background-color: $AU-color-Info;
 
 	&:after {
-		content: 'Info: #{ $AU-colour-Info }'
+		content: 'Info: #{ $AU-color-Info }'
 	}
 }
 
@@ -190,1670 +190,1670 @@
 	background-color: #fff;
 }
 .contrast-box--background {
-	background-color: $AU-colour-Background;
+	background-color: $AU-color-background;
 }
 .contrast-box--hero {
-	background-color: $AU-colour-Hero;
+	background-color: $AU-color-Hero;
 }
 .contrast-box--primary {
-	background-color: $AU-colour-Primary;
+	background-color: $AU-color-Primary;
 }
 .contrast-box--secondary {
-	background-color: $AU-colour-Secondary;
+	background-color: $colour-Secondary;
 }
 .contrast-box--border {
-	background-color: $AU-colour-Border;
+	background-color: $AU-color-foreground-border;
 }
 .contrast-box--link {
-	background-color: $AU-colour-Link;
+	background-color: $AU-color-foreground-action;
 }
 
 .colorbox__colour-Hero {
-	background-color: $AU-colour-Hero;
+	background-color: $AU-color-Hero;
 
 	> span:after {
-		content: "#{ $AU-colour-Hero }";
+		content: "#{ $AU-color-Hero }";
 	}
 
 	.colorbox--colour--95 {
-		background-color: $AU-colour-Hero--95;
+		background-color: $AU-color-Hero--95;
 
 		span:after {
-			content: "#{ $AU-colour-Hero--95 }";
+			content: "#{ $AU-color-Hero--95 }";
 		}
 	}
 	.colorbox--colour--90 {
-		background-color: $AU-colour-Hero--90;
+		background-color: $AU-color-Hero--90;
 
 		span:after {
-			content: "#{ $AU-colour-Hero--90 }";
+			content: "#{ $AU-color-Hero--90 }";
 		}
 	}
 	.colorbox--colour--80 {
-		background-color: $AU-colour-Hero--80;
+		background-color: $AU-color-Hero--80;
 
 		span:after {
-			content: "#{ $AU-colour-Hero--80 }";
+			content: "#{ $AU-color-Hero--80 }";
 		}
 	}
 	.colorbox--colour--70 {
-		background-color: $AU-colour-Hero--70;
+		background-color: $AU-color-Hero--70;
 
 		span:after {
-			content: "#{ $AU-colour-Hero--70 }";
+			content: "#{ $AU-color-Hero--70 }";
 		}
 	}
 	.colorbox--colour--60 {
-		background-color: $AU-colour-Hero--60;
+		background-color: $AU-color-Hero--60;
 
 		span:after {
-			content: "#{ $AU-colour-Hero--60 }";
+			content: "#{ $AU-color-Hero--60 }";
 		}
 	}
 	.colorbox--colour--50 {
-		background-color: $AU-colour-Hero--50;
+		background-color: $AU-color-Hero--50;
 
 		span:after {
-			content: "#{ $AU-colour-Hero--50 }";
+			content: "#{ $AU-color-Hero--50 }";
 		}
 	}
 	.colorbox--colour--40 {
-		background-color: $AU-colour-Hero--40;
+		background-color: $AU-color-Hero--40;
 
 		span:after {
-			content: "#{ $AU-colour-Hero--40 }";
+			content: "#{ $AU-color-Hero--40 }";
 		}
 	}
 	.colorbox--colour--30 {
-		background-color: $AU-colour-Hero--30;
+		background-color: $AU-color-Hero--30;
 
 		span:after {
-			content: "#{ $AU-colour-Hero--30 }";
+			content: "#{ $AU-color-Hero--30 }";
 		}
 	}
 	.colorbox--colour--20 {
-		background-color: $AU-colour-Hero--20;
+		background-color: $AU-color-Hero--20;
 
 		span:after {
-			content: "#{ $AU-colour-Hero--20 }";
+			content: "#{ $AU-color-Hero--20 }";
 		}
 	}
 	.colorbox--colour--10 {
-		background-color: $AU-colour-Hero--10;
+		background-color: $AU-color-Hero--10;
 
 		span:after {
-			content: "#{ $AU-colour-Hero--10 }";
+			content: "#{ $AU-color-Hero--10 }";
 		}
 	}
 
 	.colorbox--colour-90 {
-		background-color: $AU-colour-Hero-90;
+		background-color: $AU-color-Hero-90;
 
 		span:after {
-			content: "#{ $AU-colour-Hero-90 }";
+			content: "#{ $AU-color-Hero-90 }";
 		}
 	}
 	.colorbox--colour-80 {
-		background-color: $AU-colour-Hero-80;
+		background-color: $AU-color-Hero-80;
 
 		span:after {
-			content: "#{ $AU-colour-Hero-80 }";
+			content: "#{ $AU-color-Hero-80 }";
 		}
 	}
 	.colorbox--colour-70 {
-		background-color: $AU-colour-Hero-70;
+		background-color: $AU-color-Hero-70;
 
 		span:after {
-			content: "#{ $AU-colour-Hero-70 }";
+			content: "#{ $AU-color-Hero-70 }";
 		}
 	}
 	.colorbox--colour-60 {
-		background-color: $AU-colour-Hero-60;
+		background-color: $AU-color-Hero-60;
 
 		span:after {
-			content: "#{ $AU-colour-Hero-60 }";
+			content: "#{ $AU-color-Hero-60 }";
 		}
 	}
 	.colorbox--colour-50 {
-		background-color: $AU-colour-Hero-50;
+		background-color: $AU-color-Hero-50;
 
 		span:after {
-			content: "#{ $AU-colour-Hero-50 }";
+			content: "#{ $AU-color-Hero-50 }";
 		}
 	}
 	.colorbox--colour-40 {
-		background-color: $AU-colour-Hero-40;
+		background-color: $AU-color-Hero-40;
 
 		span:after {
-			content: "#{ $AU-colour-Hero-40 }";
+			content: "#{ $AU-color-Hero-40 }";
 		}
 	}
 	.colorbox--colour-30 {
-		background-color: $AU-colour-Hero-30;
+		background-color: $AU-color-Hero-30;
 
 		span:after {
-			content: "#{ $AU-colour-Hero-30 }";
+			content: "#{ $AU-color-Hero-30 }";
 		}
 	}
 	.colorbox--colour-20 {
-		background-color: $AU-colour-Hero-20;
+		background-color: $AU-color-Hero-20;
 
 		span:after {
-			content: "#{ $AU-colour-Hero-20 }";
+			content: "#{ $AU-color-Hero-20 }";
 		}
 	}
 	.colorbox--colour-10 {
-		background-color: $AU-colour-Hero-10;
+		background-color: $AU-color-Hero-10;
 
 		span:after {
-			content: "#{ $AU-colour-Hero-10 }";
+			content: "#{ $AU-color-Hero-10 }";
 		}
 	}
 	.colorbox--colour-5 {
-		background-color: $AU-colour-Hero-5;
+		background-color: $AU-color-Hero-5;
 
 		span:after {
-			content: "#{ $AU-colour-Hero-5 }";
+			content: "#{ $AU-color-Hero-5 }";
 		}
 	}
 }
 
 .colorbox__colour-Primary {
-	background-color: $AU-colour-Primary;
+	background-color: $AU-color-Primary;
 
 	> span:after {
-		content: "#{ $AU-colour-Primary }";
+		content: "#{ $AU-color-Primary }";
 	}
 
 	.colorbox--colour--95 {
-		background-color: $AU-colour-Primary--95;
+		background-color: $AU-color-Primary--95;
 
 		span:after {
-			content: "#{ $AU-colour-Primary--95 }";
+			content: "#{ $AU-color-Primary--95 }";
 		}
 	}
 	.colorbox--colour--90 {
-		background-color: $AU-colour-Primary--90;
+		background-color: $AU-color-Primary--90;
 
 		span:after {
-			content: "#{ $AU-colour-Primary--90 }";
+			content: "#{ $AU-color-Primary--90 }";
 		}
 	}
 	.colorbox--colour--80 {
-		background-color: $AU-colour-Primary--80;
+		background-color: $AU-color-Primary--80;
 
 		span:after {
-			content: "#{ $AU-colour-Primary--80 }";
+			content: "#{ $AU-color-Primary--80 }";
 		}
 	}
 	.colorbox--colour--70 {
-		background-color: $AU-colour-Primary--70;
+		background-color: $AU-color-Primary--70;
 
 		span:after {
-			content: "#{ $AU-colour-Primary--70 }";
+			content: "#{ $AU-color-Primary--70 }";
 		}
 	}
 	.colorbox--colour--60 {
-		background-color: $AU-colour-Primary--60;
+		background-color: $AU-color-Primary--60;
 
 		span:after {
-			content: "#{ $AU-colour-Primary--60 }";
+			content: "#{ $AU-color-Primary--60 }";
 		}
 	}
 	.colorbox--colour--50 {
-		background-color: $AU-colour-Primary--50;
+		background-color: $AU-color-Primary--50;
 
 		span:after {
-			content: "#{ $AU-colour-Primary--50 }";
+			content: "#{ $AU-color-Primary--50 }";
 		}
 	}
 	.colorbox--colour--40 {
-		background-color: $AU-colour-Primary--40;
+		background-color: $AU-color-Primary--40;
 
 		span:after {
-			content: "#{ $AU-colour-Primary--40 }";
+			content: "#{ $AU-color-Primary--40 }";
 		}
 	}
 	.colorbox--colour--30 {
-		background-color: $AU-colour-Primary--30;
+		background-color: $AU-color-Primary--30;
 
 		span:after {
-			content: "#{ $AU-colour-Primary--30 }";
+			content: "#{ $AU-color-Primary--30 }";
 		}
 	}
 	.colorbox--colour--20 {
-		background-color: $AU-colour-Primary--20;
+		background-color: $AU-color-Primary--20;
 
 		span:after {
-			content: "#{ $AU-colour-Primary--20 }";
+			content: "#{ $AU-color-Primary--20 }";
 		}
 	}
 	.colorbox--colour--10 {
-		background-color: $AU-colour-Primary--10;
+		background-color: $AU-color-Primary--10;
 
 		span:after {
-			content: "#{ $AU-colour-Primary--10 }";
+			content: "#{ $AU-color-Primary--10 }";
 		}
 	}
 
 	.colorbox--colour-90 {
-		background-color: $AU-colour-Primary-90;
+		background-color: $AU-color-Primary-90;
 
 		span:after {
-			content: "#{ $AU-colour-Primary-90 }";
+			content: "#{ $AU-color-Primary-90 }";
 		}
 	}
 	.colorbox--colour-80 {
-		background-color: $AU-colour-Primary-80;
+		background-color: $AU-color-Primary-80;
 
 		span:after {
-			content: "#{ $AU-colour-Primary-80 }";
+			content: "#{ $AU-color-Primary-80 }";
 		}
 	}
 	.colorbox--colour-70 {
-		background-color: $AU-colour-Primary-70;
+		background-color: $AU-color-Primary-70;
 
 		span:after {
-			content: "#{ $AU-colour-Primary-70 }";
+			content: "#{ $AU-color-Primary-70 }";
 		}
 	}
 	.colorbox--colour-60 {
-		background-color: $AU-colour-Primary-60;
+		background-color: $AU-color-Primary-60;
 
 		span:after {
-			content: "#{ $AU-colour-Primary-60 }";
+			content: "#{ $AU-color-Primary-60 }";
 		}
 	}
 	.colorbox--colour-50 {
-		background-color: $AU-colour-Primary-50;
+		background-color: $AU-color-Primary-50;
 
 		span:after {
-			content: "#{ $AU-colour-Primary-50 }";
+			content: "#{ $AU-color-Primary-50 }";
 		}
 	}
 	.colorbox--colour-40 {
-		background-color: $AU-colour-Primary-40;
+		background-color: $AU-color-Primary-40;
 
 		span:after {
-			content: "#{ $AU-colour-Primary-40 }";
+			content: "#{ $AU-color-Primary-40 }";
 		}
 	}
 	.colorbox--colour-30 {
-		background-color: $AU-colour-Primary-30;
+		background-color: $AU-color-Primary-30;
 
 		span:after {
-			content: "#{ $AU-colour-Primary-30 }";
+			content: "#{ $AU-color-Primary-30 }";
 		}
 	}
 	.colorbox--colour-20 {
-		background-color: $AU-colour-Primary-20;
+		background-color: $AU-color-Primary-20;
 
 		span:after {
-			content: "#{ $AU-colour-Primary-20 }";
+			content: "#{ $AU-color-Primary-20 }";
 		}
 	}
 	.colorbox--colour-10 {
-		background-color: $AU-colour-Primary-10;
+		background-color: $AU-color-Primary-10;
 
 		span:after {
-			content: "#{ $AU-colour-Primary-10 }";
+			content: "#{ $AU-color-Primary-10 }";
 		}
 	}
 	.colorbox--colour-5 {
-		background-color: $AU-colour-Primary-5;
+		background-color: $AU-color-Primary-5;
 
 		span:after {
-			content: "#{ $AU-colour-Primary-5 }";
+			content: "#{ $AU-color-Primary-5 }";
 		}
 	}
 }
 
 .colorbox__colour-Secondary {
-	background-color: $AU-colour-Secondary;
+	background-color: $colour-Secondary;
 
 	> span:after {
-		content: "#{ $AU-colour-Secondary }";
+		content: "#{ $colour-Secondary }";
 	}
 
 	.colorbox--colour--95 {
-		background-color: $AU-colour-Secondary--95;
+		background-color: $colour-Secondary--95;
 
 		span:after {
-			content: "#{ $AU-colour-Secondary--95 }";
+			content: "#{ $colour-Secondary--95 }";
 		}
 	}
 	.colorbox--colour--90 {
-		background-color: $AU-colour-Secondary--90;
+		background-color: $colour-Secondary--90;
 
 		span:after {
-			content: "#{ $AU-colour-Secondary--90 }";
+			content: "#{ $colour-Secondary--90 }";
 		}
 	}
 	.colorbox--colour--80 {
-		background-color: $AU-colour-Secondary--80;
+		background-color: $colour-Secondary--80;
 
 		span:after {
-			content: "#{ $AU-colour-Secondary--80 }";
+			content: "#{ $colour-Secondary--80 }";
 		}
 	}
 	.colorbox--colour--70 {
-		background-color: $AU-colour-Secondary--70;
+		background-color: $colour-Secondary--70;
 
 		span:after {
-			content: "#{ $AU-colour-Secondary--70 }";
+			content: "#{ $colour-Secondary--70 }";
 		}
 	}
 	.colorbox--colour--60 {
-		background-color: $AU-colour-Secondary--60;
+		background-color: $colour-Secondary--60;
 
 		span:after {
-			content: "#{ $AU-colour-Secondary--60 }";
+			content: "#{ $colour-Secondary--60 }";
 		}
 	}
 	.colorbox--colour--50 {
-		background-color: $AU-colour-Secondary--50;
+		background-color: $colour-Secondary--50;
 
 		span:after {
-			content: "#{ $AU-colour-Secondary--50 }";
+			content: "#{ $colour-Secondary--50 }";
 		}
 	}
 	.colorbox--colour--40 {
-		background-color: $AU-colour-Secondary--40;
+		background-color: $colour-Secondary--40;
 
 		span:after {
-			content: "#{ $AU-colour-Secondary--40 }";
+			content: "#{ $colour-Secondary--40 }";
 		}
 	}
 	.colorbox--colour--30 {
-		background-color: $AU-colour-Secondary--30;
+		background-color: $colour-Secondary--30;
 
 		span:after {
-			content: "#{ $AU-colour-Secondary--30 }";
+			content: "#{ $colour-Secondary--30 }";
 		}
 	}
 	.colorbox--colour--20 {
-		background-color: $AU-colour-Secondary--20;
+		background-color: $colour-Secondary--20;
 
 		span:after {
-			content: "#{ $AU-colour-Secondary--20 }";
+			content: "#{ $colour-Secondary--20 }";
 		}
 	}
 	.colorbox--colour--10 {
-		background-color: $AU-colour-Secondary--10;
+		background-color: $colour-Secondary--10;
 
 		span:after {
-			content: "#{ $AU-colour-Secondary--10 }";
+			content: "#{ $colour-Secondary--10 }";
 		}
 	}
 
 	.colorbox--colour-90 {
-		background-color: $AU-colour-Secondary-90;
+		background-color: $colour-Secondary-90;
 
 		span:after {
-			content: "#{ $AU-colour-Secondary-90 }";
+			content: "#{ $colour-Secondary-90 }";
 		}
 	}
 	.colorbox--colour-80 {
-		background-color: $AU-colour-Secondary-80;
+		background-color: $colour-Secondary-80;
 
 		span:after {
-			content: "#{ $AU-colour-Secondary-80 }";
+			content: "#{ $colour-Secondary-80 }";
 		}
 	}
 	.colorbox--colour-70 {
-		background-color: $AU-colour-Secondary-70;
+		background-color: $colour-Secondary-70;
 
 		span:after {
-			content: "#{ $AU-colour-Secondary-70 }";
+			content: "#{ $colour-Secondary-70 }";
 		}
 	}
 	.colorbox--colour-60 {
-		background-color: $AU-colour-Secondary-60;
+		background-color: $colour-Secondary-60;
 
 		span:after {
-			content: "#{ $AU-colour-Secondary-60 }";
+			content: "#{ $colour-Secondary-60 }";
 		}
 	}
 	.colorbox--colour-50 {
-		background-color: $AU-colour-Secondary-50;
+		background-color: $colour-Secondary-50;
 
 		span:after {
-			content: "#{ $AU-colour-Secondary-50 }";
+			content: "#{ $colour-Secondary-50 }";
 		}
 	}
 	.colorbox--colour-40 {
-		background-color: $AU-colour-Secondary-40;
+		background-color: $colour-Secondary-40;
 
 		span:after {
-			content: "#{ $AU-colour-Secondary-40 }";
+			content: "#{ $colour-Secondary-40 }";
 		}
 	}
 	.colorbox--colour-30 {
-		background-color: $AU-colour-Secondary-30;
+		background-color: $colour-Secondary-30;
 
 		span:after {
-			content: "#{ $AU-colour-Secondary-30 }";
+			content: "#{ $colour-Secondary-30 }";
 		}
 	}
 	.colorbox--colour-20 {
-		background-color: $AU-colour-Secondary-20;
+		background-color: $colour-Secondary-20;
 
 		span:after {
-			content: "#{ $AU-colour-Secondary-20 }";
+			content: "#{ $colour-Secondary-20 }";
 		}
 	}
 	.colorbox--colour-10 {
-		background-color: $AU-colour-Secondary-10;
+		background-color: $colour-Secondary-10;
 
 		span:after {
-			content: "#{ $AU-colour-Secondary-10 }";
+			content: "#{ $colour-Secondary-10 }";
 		}
 	}
 	.colorbox--colour-5 {
-		background-color: $AU-colour-Secondary-5;
+		background-color: $colour-Secondary-5;
 
 		span:after {
-			content: "#{ $AU-colour-Secondary-5 }";
+			content: "#{ $colour-Secondary-5 }";
 		}
 	}
 }
 
 .colorbox__colour-Background {
-	background-color: $AU-colour-Background;
+	background-color: $AU-color-background;
 
 	> span:after {
-		content: "#{ $AU-colour-Background }";
+		content: "#{ $AU-color-background }";
 	}
 
 	.colorbox--colour--95 {
-		background-color: $AU-colour-Background--95;
+		background-color: $AU-color-background--95;
 
 		span:after {
-			content: "#{ $AU-colour-Background--95 }";
+			content: "#{ $AU-color-background--95 }";
 		}
 	}
 	.colorbox--colour--90 {
-		background-color: $AU-colour-Background--90;
+		background-color: $AU-color-background--90;
 
 		span:after {
-			content: "#{ $AU-colour-Background--90 }";
+			content: "#{ $AU-color-background--90 }";
 		}
 	}
 	.colorbox--colour--80 {
-		background-color: $AU-colour-Background--80;
+		background-color: $AU-color-background--80;
 
 		span:after {
-			content: "#{ $AU-colour-Background--80 }";
+			content: "#{ $AU-color-background--80 }";
 		}
 	}
 	.colorbox--colour--70 {
-		background-color: $AU-colour-Background--70;
+		background-color: $AU-color-background--70;
 
 		span:after {
-			content: "#{ $AU-colour-Background--70 }";
+			content: "#{ $AU-color-background--70 }";
 		}
 	}
 	.colorbox--colour--60 {
-		background-color: $AU-colour-Background--60;
+		background-color: $AU-color-background--60;
 
 		span:after {
-			content: "#{ $AU-colour-Background--60 }";
+			content: "#{ $AU-color-background--60 }";
 		}
 	}
 	.colorbox--colour--50 {
-		background-color: $AU-colour-Background--50;
+		background-color: $AU-color-background--50;
 
 		span:after {
-			content: "#{ $AU-colour-Background--50 }";
+			content: "#{ $AU-color-background--50 }";
 		}
 	}
 	.colorbox--colour--40 {
-		background-color: $AU-colour-Background--40;
+		background-color: $AU-color-background--40;
 
 		span:after {
-			content: "#{ $AU-colour-Background--40 }";
+			content: "#{ $AU-color-background--40 }";
 		}
 	}
 	.colorbox--colour--30 {
-		background-color: $AU-colour-Background--30;
+		background-color: $AU-color-background--30;
 
 		span:after {
-			content: "#{ $AU-colour-Background--30 }";
+			content: "#{ $AU-color-background--30 }";
 		}
 	}
 	.colorbox--colour--20 {
-		background-color: $AU-colour-Background--20;
+		background-color: $AU-color-background--20;
 
 		span:after {
-			content: "#{ $AU-colour-Background--20 }";
+			content: "#{ $AU-color-background--20 }";
 		}
 	}
 	.colorbox--colour--10 {
-		background-color: $AU-colour-Background--10;
+		background-color: $AU-color-background--10;
 
 		span:after {
-			content: "#{ $AU-colour-Background--10 }";
+			content: "#{ $AU-color-background--10 }";
 		}
 	}
 
 	.colorbox--colour-90 {
-		background-color: $AU-colour-Background-90;
+		background-color: $AU-color-background-90;
 
 		span:after {
-			content: "#{ $AU-colour-Background-90 }";
+			content: "#{ $AU-color-background-90 }";
 		}
 	}
 	.colorbox--colour-80 {
-		background-color: $AU-colour-Background-80;
+		background-color: $AU-color-background-80;
 
 		span:after {
-			content: "#{ $AU-colour-Background-80 }";
+			content: "#{ $AU-color-background-80 }";
 		}
 	}
 	.colorbox--colour-70 {
-		background-color: $AU-colour-Background-70;
+		background-color: $AU-color-background-70;
 
 		span:after {
-			content: "#{ $AU-colour-Background-70 }";
+			content: "#{ $AU-color-background-70 }";
 		}
 	}
 	.colorbox--colour-60 {
-		background-color: $AU-colour-Background-60;
+		background-color: $AU-color-background-60;
 
 		span:after {
-			content: "#{ $AU-colour-Background-60 }";
+			content: "#{ $AU-color-background-60 }";
 		}
 	}
 	.colorbox--colour-50 {
-		background-color: $AU-colour-Background-50;
+		background-color: $AU-color-background-50;
 
 		span:after {
-			content: "#{ $AU-colour-Background-50 }";
+			content: "#{ $AU-color-background-50 }";
 		}
 	}
 	.colorbox--colour-40 {
-		background-color: $AU-colour-Background-40;
+		background-color: $AU-color-background-40;
 
 		span:after {
-			content: "#{ $AU-colour-Background-40 }";
+			content: "#{ $AU-color-background-40 }";
 		}
 	}
 	.colorbox--colour-30 {
-		background-color: $AU-colour-Background-30;
+		background-color: $AU-color-background-30;
 
 		span:after {
-			content: "#{ $AU-colour-Background-30 }";
+			content: "#{ $AU-color-background-30 }";
 		}
 	}
 	.colorbox--colour-20 {
-		background-color: $AU-colour-Background-20;
+		background-color: $AU-color-background-20;
 
 		span:after {
-			content: "#{ $AU-colour-Background-20 }";
+			content: "#{ $AU-color-background-20 }";
 		}
 	}
 	.colorbox--colour-10 {
-		background-color: $AU-colour-Background-10;
+		background-color: $AU-color-background-10;
 
 		span:after {
-			content: "#{ $AU-colour-Background-10 }";
+			content: "#{ $AU-color-background-10 }";
 		}
 	}
 	.colorbox--colour-5 {
-		background-color: $AU-colour-Background-5;
+		background-color: $AU-color-background-5;
 
 		span:after {
-			content: "#{ $AU-colour-Background-5 }";
+			content: "#{ $AU-color-background-5 }";
 		}
 	}
 }
 
 .colorbox__colour-Border {
-	background-color: $AU-colour-Border;
+	background-color: $AU-color-foreground-border;
 
 	> span:after {
-		content: "#{ $AU-colour-Border }";
+		content: "#{ $AU-color-foreground-border }";
 	}
 
 	.colorbox--colour--95 {
-		background-color: $AU-colour-Border--95;
+		background-color: $AU-color-foreground-border--95;
 
 		span:after {
-			content: "#{ $AU-colour-Border--95 }";
+			content: "#{ $AU-color-foreground-border--95 }";
 		}
 	}
 	.colorbox--colour--90 {
-		background-color: $AU-colour-Border--90;
+		background-color: $AU-color-foreground-border--90;
 
 		span:after {
-			content: "#{ $AU-colour-Border--90 }";
+			content: "#{ $AU-color-foreground-border--90 }";
 		}
 	}
 	.colorbox--colour--80 {
-		background-color: $AU-colour-Border--80;
+		background-color: $AU-color-foreground-border--80;
 
 		span:after {
-			content: "#{ $AU-colour-Border--80 }";
+			content: "#{ $AU-color-foreground-border--80 }";
 		}
 	}
 	.colorbox--colour--70 {
-		background-color: $AU-colour-Border--70;
+		background-color: $AU-color-foreground-border--70;
 
 		span:after {
-			content: "#{ $AU-colour-Border--70 }";
+			content: "#{ $AU-color-foreground-border--70 }";
 		}
 	}
 	.colorbox--colour--60 {
-		background-color: $AU-colour-Border--60;
+		background-color: $AU-color-foreground-border--60;
 
 		span:after {
-			content: "#{ $AU-colour-Border--60 }";
+			content: "#{ $AU-color-foreground-border--60 }";
 		}
 	}
 	.colorbox--colour--50 {
-		background-color: $AU-colour-Border--50;
+		background-color: $AU-color-foreground-border--50;
 
 		span:after {
-			content: "#{ $AU-colour-Border--50 }";
+			content: "#{ $AU-color-foreground-border--50 }";
 		}
 	}
 	.colorbox--colour--40 {
-		background-color: $AU-colour-Border--40;
+		background-color: $AU-color-foreground-border--40;
 
 		span:after {
-			content: "#{ $AU-colour-Border--40 }";
+			content: "#{ $AU-color-foreground-border--40 }";
 		}
 	}
 	.colorbox--colour--30 {
-		background-color: $AU-colour-Border--30;
+		background-color: $AU-color-foreground-border--30;
 
 		span:after {
-			content: "#{ $AU-colour-Border--30 }";
+			content: "#{ $AU-color-foreground-border--30 }";
 		}
 	}
 	.colorbox--colour--20 {
-		background-color: $AU-colour-Border--20;
+		background-color: $AU-color-foreground-border--20;
 
 		span:after {
-			content: "#{ $AU-colour-Border--20 }";
+			content: "#{ $AU-color-foreground-border--20 }";
 		}
 	}
 	.colorbox--colour--10 {
-		background-color: $AU-colour-Border--10;
+		background-color: $AU-color-foreground-border--10;
 
 		span:after {
-			content: "#{ $AU-colour-Border--10 }";
+			content: "#{ $AU-color-foreground-border--10 }";
 		}
 	}
 
 	.colorbox--colour-90 {
-		background-color: $AU-colour-Border-90;
+		background-color: $AU-color-foreground-border-90;
 
 		span:after {
-			content: "#{ $AU-colour-Border-90 }";
+			content: "#{ $AU-color-foreground-border-90 }";
 		}
 	}
 	.colorbox--colour-80 {
-		background-color: $AU-colour-Border-80;
+		background-color: $AU-color-foreground-border-80;
 
 		span:after {
-			content: "#{ $AU-colour-Border-80 }";
+			content: "#{ $AU-color-foreground-border-80 }";
 		}
 	}
 	.colorbox--colour-70 {
-		background-color: $AU-colour-Border-70;
+		background-color: $AU-color-foreground-border-70;
 
 		span:after {
-			content: "#{ $AU-colour-Border-70 }";
+			content: "#{ $AU-color-foreground-border-70 }";
 		}
 	}
 	.colorbox--colour-60 {
-		background-color: $AU-colour-Border-60;
+		background-color: $AU-color-foreground-border-60;
 
 		span:after {
-			content: "#{ $AU-colour-Border-60 }";
+			content: "#{ $AU-color-foreground-border-60 }";
 		}
 	}
 	.colorbox--colour-50 {
-		background-color: $AU-colour-Border-50;
+		background-color: $AU-color-foreground-border-50;
 
 		span:after {
-			content: "#{ $AU-colour-Border-50 }";
+			content: "#{ $AU-color-foreground-border-50 }";
 		}
 	}
 	.colorbox--colour-40 {
-		background-color: $AU-colour-Border-40;
+		background-color: $AU-color-foreground-border-40;
 
 		span:after {
-			content: "#{ $AU-colour-Border-40 }";
+			content: "#{ $AU-color-foreground-border-40 }";
 		}
 	}
 	.colorbox--colour-30 {
-		background-color: $AU-colour-Border-30;
+		background-color: $AU-color-foreground-border-30;
 
 		span:after {
-			content: "#{ $AU-colour-Border-30 }";
+			content: "#{ $AU-color-foreground-border-30 }";
 		}
 	}
 	.colorbox--colour-20 {
-		background-color: $AU-colour-Border-20;
+		background-color: $AU-color-foreground-border-20;
 
 		span:after {
-			content: "#{ $AU-colour-Border-20 }";
+			content: "#{ $AU-color-foreground-border-20 }";
 		}
 	}
 	.colorbox--colour-10 {
-		background-color: $AU-colour-Border-10;
+		background-color: $AU-color-foreground-border-10;
 
 		span:after {
-			content: "#{ $AU-colour-Border-10 }";
+			content: "#{ $AU-color-foreground-border-10 }";
 		}
 	}
 	.colorbox--colour-5 {
-		background-color: $AU-colour-Border-5;
+		background-color: $AU-color-foreground-border-5;
 
 		span:after {
-			content: "#{ $AU-colour-Border-5 }";
+			content: "#{ $AU-color-foreground-border-5 }";
 		}
 	}
 }
 
 .colorbox__colour-Text {
-	background-color: $AU-colour-Text;
+	background-color: $AU-color-foreground-text;
 
 	> span:after {
-		content: "#{ $AU-colour-Text }";
+		content: "#{ $AU-color-foreground-text }";
 	}
 
 	.colorbox--colour--95 {
-		background-color: $AU-colour-Text--95;
+		background-color: $AU-color-foreground-text--95;
 
 		span:after {
-			content: "#{ $AU-colour-Text--95 }";
+			content: "#{ $AU-color-foreground-text--95 }";
 		}
 	}
 	.colorbox--colour--90 {
-		background-color: $AU-colour-Text--90;
+		background-color: $AU-color-foreground-text--90;
 
 		span:after {
-			content: "#{ $AU-colour-Text--90 }";
+			content: "#{ $AU-color-foreground-text--90 }";
 		}
 	}
 	.colorbox--colour--80 {
-		background-color: $AU-colour-Text--80;
+		background-color: $AU-color-foreground-text--80;
 
 		span:after {
-			content: "#{ $AU-colour-Text--80 }";
+			content: "#{ $AU-color-foreground-text--80 }";
 		}
 	}
 	.colorbox--colour--70 {
-		background-color: $AU-colour-Text--70;
+		background-color: $AU-color-foreground-text--70;
 
 		span:after {
-			content: "#{ $AU-colour-Text--70 }";
+			content: "#{ $AU-color-foreground-text--70 }";
 		}
 	}
 	.colorbox--colour--60 {
-		background-color: $AU-colour-Text--60;
+		background-color: $AU-color-foreground-text--60;
 
 		span:after {
-			content: "#{ $AU-colour-Text--60 }";
+			content: "#{ $AU-color-foreground-text--60 }";
 		}
 	}
 	.colorbox--colour--50 {
-		background-color: $AU-colour-Text--50;
+		background-color: $AU-color-foreground-text--50;
 
 		span:after {
-			content: "#{ $AU-colour-Text--50 }";
+			content: "#{ $AU-color-foreground-text--50 }";
 		}
 	}
 	.colorbox--colour--40 {
-		background-color: $AU-colour-Text--40;
+		background-color: $AU-color-foreground-text--40;
 
 		span:after {
-			content: "#{ $AU-colour-Text--40 }";
+			content: "#{ $AU-color-foreground-text--40 }";
 		}
 	}
 	.colorbox--colour--30 {
-		background-color: $AU-colour-Text--30;
+		background-color: $AU-color-foreground-text--30;
 
 		span:after {
-			content: "#{ $AU-colour-Text--30 }";
+			content: "#{ $AU-color-foreground-text--30 }";
 		}
 	}
 	.colorbox--colour--20 {
-		background-color: $AU-colour-Text--20;
+		background-color: $AU-color-foreground-text--20;
 
 		span:after {
-			content: "#{ $AU-colour-Text--20 }";
+			content: "#{ $AU-color-foreground-text--20 }";
 		}
 	}
 	.colorbox--colour--10 {
-		background-color: $AU-colour-Text--10;
+		background-color: $AU-color-foreground-text--10;
 
 		span:after {
-			content: "#{ $AU-colour-Text--10 }";
+			content: "#{ $AU-color-foreground-text--10 }";
 		}
 	}
 
 	.colorbox--colour-90 {
-		background-color: $AU-colour-Text-90;
+		background-color: $AU-color-foreground-text-90;
 
 		span:after {
-			content: "#{ $AU-colour-Text-90 }";
+			content: "#{ $AU-color-foreground-text-90 }";
 		}
 	}
 	.colorbox--colour-80 {
-		background-color: $AU-colour-Text-80;
+		background-color: $AU-color-foreground-text-80;
 
 		span:after {
-			content: "#{ $AU-colour-Text-80 }";
+			content: "#{ $AU-color-foreground-text-80 }";
 		}
 	}
 	.colorbox--colour-70 {
-		background-color: $AU-colour-Text-70;
+		background-color: $AU-color-foreground-text-70;
 
 		span:after {
-			content: "#{ $AU-colour-Text-70 }";
+			content: "#{ $AU-color-foreground-text-70 }";
 		}
 	}
 	.colorbox--colour-60 {
-		background-color: $AU-colour-Text-60;
+		background-color: $AU-color-foreground-text-60;
 
 		span:after {
-			content: "#{ $AU-colour-Text-60 }";
+			content: "#{ $AU-color-foreground-text-60 }";
 		}
 	}
 	.colorbox--colour-50 {
-		background-color: $AU-colour-Text-50;
+		background-color: $AU-color-foreground-text-50;
 
 		span:after {
-			content: "#{ $AU-colour-Text-50 }";
+			content: "#{ $AU-color-foreground-text-50 }";
 		}
 	}
 	.colorbox--colour-40 {
-		background-color: $AU-colour-Text-40;
+		background-color: $AU-color-foreground-text-40;
 
 		span:after {
-			content: "#{ $AU-colour-Text-40 }";
+			content: "#{ $AU-color-foreground-text-40 }";
 		}
 	}
 	.colorbox--colour-30 {
-		background-color: $AU-colour-Text-30;
+		background-color: $AU-color-foreground-text-30;
 
 		span:after {
-			content: "#{ $AU-colour-Text-30 }";
+			content: "#{ $AU-color-foreground-text-30 }";
 		}
 	}
 	.colorbox--colour-20 {
-		background-color: $AU-colour-Text-20;
+		background-color: $AU-color-foreground-text-20;
 
 		span:after {
-			content: "#{ $AU-colour-Text-20 }";
+			content: "#{ $AU-color-foreground-text-20 }";
 		}
 	}
 	.colorbox--colour-10 {
-		background-color: $AU-colour-Text-10;
+		background-color: $AU-color-foreground-text-10;
 
 		span:after {
-			content: "#{ $AU-colour-Text-10 }";
+			content: "#{ $AU-color-foreground-text-10 }";
 		}
 	}
 	.colorbox--colour-5 {
-		background-color: $AU-colour-Text-5;
+		background-color: $AU-color-foreground-text-5;
 
 		span:after {
-			content: "#{ $AU-colour-Text-5 }";
+			content: "#{ $AU-color-foreground-text-5 }";
 		}
 	}
 }
 
 .colorbox__colour-Link {
-	background-color: $AU-colour-Link;
+	background-color: $AU-color-foreground-action;
 
 	> span:after {
-		content: "#{ $AU-colour-Link }";
+		content: "#{ $AU-color-foreground-action }";
 	}
 
 	.colorbox--colour--95 {
-		background-color: $AU-colour-Link--95;
+		background-color: $AU-color-foreground-action--95;
 
 		span:after {
-			content: "#{ $AU-colour-Link--95 }";
+			content: "#{ $AU-color-foreground-action--95 }";
 		}
 	}
 	.colorbox--colour--90 {
-		background-color: $AU-colour-Link--90;
+		background-color: $AU-color-foreground-action--90;
 
 		span:after {
-			content: "#{ $AU-colour-Link--90 }";
+			content: "#{ $AU-color-foreground-action--90 }";
 		}
 	}
 	.colorbox--colour--80 {
-		background-color: $AU-colour-Link--80;
+		background-color: $AU-color-foreground-action--80;
 
 		span:after {
-			content: "#{ $AU-colour-Link--80 }";
+			content: "#{ $AU-color-foreground-action--80 }";
 		}
 	}
 	.colorbox--colour--70 {
-		background-color: $AU-colour-Link--70;
+		background-color: $AU-color-foreground-action--70;
 
 		span:after {
-			content: "#{ $AU-colour-Link--70 }";
+			content: "#{ $AU-color-foreground-action--70 }";
 		}
 	}
 	.colorbox--colour--60 {
-		background-color: $AU-colour-Link--60;
+		background-color: $AU-color-foreground-action--60;
 
 		span:after {
-			content: "#{ $AU-colour-Link--60 }";
+			content: "#{ $AU-color-foreground-action--60 }";
 		}
 	}
 	.colorbox--colour--50 {
-		background-color: $AU-colour-Link--50;
+		background-color: $AU-color-foreground-action--50;
 
 		span:after {
-			content: "#{ $AU-colour-Link--50 }";
+			content: "#{ $AU-color-foreground-action--50 }";
 		}
 	}
 	.colorbox--colour--40 {
-		background-color: $AU-colour-Link--40;
+		background-color: $AU-color-foreground-action--40;
 
 		span:after {
-			content: "#{ $AU-colour-Link--40 }";
+			content: "#{ $AU-color-foreground-action--40 }";
 		}
 	}
 	.colorbox--colour--30 {
-		background-color: $AU-colour-Link--30;
+		background-color: $AU-color-foreground-action--30;
 
 		span:after {
-			content: "#{ $AU-colour-Link--30 }";
+			content: "#{ $AU-color-foreground-action--30 }";
 		}
 	}
 	.colorbox--colour--20 {
-		background-color: $AU-colour-Link--20;
+		background-color: $AU-color-foreground-action--20;
 
 		span:after {
-			content: "#{ $AU-colour-Link--20 }";
+			content: "#{ $AU-color-foreground-action--20 }";
 		}
 	}
 	.colorbox--colour--10 {
-		background-color: $AU-colour-Link--10;
+		background-color: $AU-color-foreground-action--10;
 
 		span:after {
-			content: "#{ $AU-colour-Link--10 }";
+			content: "#{ $AU-color-foreground-action--10 }";
 		}
 	}
 
 	.colorbox--colour-90 {
-		background-color: $AU-colour-Link-90;
+		background-color: $AU-color-foreground-action-90;
 
 		span:after {
-			content: "#{ $AU-colour-Link-90 }";
+			content: "#{ $AU-color-foreground-action-90 }";
 		}
 	}
 	.colorbox--colour-80 {
-		background-color: $AU-colour-Link-80;
+		background-color: $AU-color-foreground-action-80;
 
 		span:after {
-			content: "#{ $AU-colour-Link-80 }";
+			content: "#{ $AU-color-foreground-action-80 }";
 		}
 	}
 	.colorbox--colour-70 {
-		background-color: $AU-colour-Link-70;
+		background-color: $AU-color-foreground-action-70;
 
 		span:after {
-			content: "#{ $AU-colour-Link-70 }";
+			content: "#{ $AU-color-foreground-action-70 }";
 		}
 	}
 	.colorbox--colour-60 {
-		background-color: $AU-colour-Link-60;
+		background-color: $AU-color-foreground-action-60;
 
 		span:after {
-			content: "#{ $AU-colour-Link-60 }";
+			content: "#{ $AU-color-foreground-action-60 }";
 		}
 	}
 	.colorbox--colour-50 {
-		background-color: $AU-colour-Link-50;
+		background-color: $AU-color-foreground-action-50;
 
 		span:after {
-			content: "#{ $AU-colour-Link-50 }";
+			content: "#{ $AU-color-foreground-action-50 }";
 		}
 	}
 	.colorbox--colour-40 {
-		background-color: $AU-colour-Link-40;
+		background-color: $AU-color-foreground-action-40;
 
 		span:after {
-			content: "#{ $AU-colour-Link-40 }";
+			content: "#{ $AU-color-foreground-action-40 }";
 		}
 	}
 	.colorbox--colour-30 {
-		background-color: $AU-colour-Link-30;
+		background-color: $AU-color-foreground-action-30;
 
 		span:after {
-			content: "#{ $AU-colour-Link-30 }";
+			content: "#{ $AU-color-foreground-action-30 }";
 		}
 	}
 	.colorbox--colour-20 {
-		background-color: $AU-colour-Link-20;
+		background-color: $AU-color-foreground-action-20;
 
 		span:after {
-			content: "#{ $AU-colour-Link-20 }";
+			content: "#{ $AU-color-foreground-action-20 }";
 		}
 	}
 	.colorbox--colour-10 {
-		background-color: $AU-colour-Link-10;
+		background-color: $AU-color-foreground-action-10;
 
 		span:after {
-			content: "#{ $AU-colour-Link-10 }";
+			content: "#{ $AU-color-foreground-action-10 }";
 		}
 	}
 	.colorbox--colour-5 {
-		background-color: $AU-colour-Link-5;
+		background-color: $AU-color-foreground-action-5;
 
 		span:after {
-			content: "#{ $AU-colour-Link-5 }";
+			content: "#{ $AU-color-foreground-action-5 }";
 		}
 	}
 }
 
 .colorbox__colour-Error {
-	background-color: $AU-colour-Error;
+	background-color: $AU-color-Error;
 
 	> span:after {
-		content: "#{ $AU-colour-Error }";
+		content: "#{ $AU-color-Error }";
 	}
 
 	.colorbox--colour--95 {
-		background-color: $AU-colour-Error--95;
+		background-color: $AU-color-Error--95;
 
 		span:after {
-			content: "#{ $AU-colour-Error--95 }";
+			content: "#{ $AU-color-Error--95 }";
 		}
 	}
 	.colorbox--colour--90 {
-		background-color: $AU-colour-Error--90;
+		background-color: $AU-color-Error--90;
 
 		span:after {
-			content: "#{ $AU-colour-Error--90 }";
+			content: "#{ $AU-color-Error--90 }";
 		}
 	}
 	.colorbox--colour--80 {
-		background-color: $AU-colour-Error--80;
+		background-color: $AU-color-Error--80;
 
 		span:after {
-			content: "#{ $AU-colour-Error--80 }";
+			content: "#{ $AU-color-Error--80 }";
 		}
 	}
 	.colorbox--colour--70 {
-		background-color: $AU-colour-Error--70;
+		background-color: $AU-color-Error--70;
 
 		span:after {
-			content: "#{ $AU-colour-Error--70 }";
+			content: "#{ $AU-color-Error--70 }";
 		}
 	}
 	.colorbox--colour--60 {
-		background-color: $AU-colour-Error--60;
+		background-color: $AU-color-Error--60;
 
 		span:after {
-			content: "#{ $AU-colour-Error--60 }";
+			content: "#{ $AU-color-Error--60 }";
 		}
 	}
 	.colorbox--colour--50 {
-		background-color: $AU-colour-Error--50;
+		background-color: $AU-color-Error--50;
 
 		span:after {
-			content: "#{ $AU-colour-Error--50 }";
+			content: "#{ $AU-color-Error--50 }";
 		}
 	}
 	.colorbox--colour--40 {
-		background-color: $AU-colour-Error--40;
+		background-color: $AU-color-Error--40;
 
 		span:after {
-			content: "#{ $AU-colour-Error--40 }";
+			content: "#{ $AU-color-Error--40 }";
 		}
 	}
 	.colorbox--colour--30 {
-		background-color: $AU-colour-Error--30;
+		background-color: $AU-color-Error--30;
 
 		span:after {
-			content: "#{ $AU-colour-Error--30 }";
+			content: "#{ $AU-color-Error--30 }";
 		}
 	}
 	.colorbox--colour--20 {
-		background-color: $AU-colour-Error--20;
+		background-color: $AU-color-Error--20;
 
 		span:after {
-			content: "#{ $AU-colour-Error--20 }";
+			content: "#{ $AU-color-Error--20 }";
 		}
 	}
 	.colorbox--colour--10 {
-		background-color: $AU-colour-Error--10;
+		background-color: $AU-color-Error--10;
 
 		span:after {
-			content: "#{ $AU-colour-Error--10 }";
+			content: "#{ $AU-color-Error--10 }";
 		}
 	}
 
 	.colorbox--colour-90 {
-		background-color: $AU-colour-Error-90;
+		background-color: $AU-color-Error-90;
 
 		span:after {
-			content: "#{ $AU-colour-Error-90 }";
+			content: "#{ $AU-color-Error-90 }";
 		}
 	}
 	.colorbox--colour-80 {
-		background-color: $AU-colour-Error-80;
+		background-color: $AU-color-Error-80;
 
 		span:after {
-			content: "#{ $AU-colour-Error-80 }";
+			content: "#{ $AU-color-Error-80 }";
 		}
 	}
 	.colorbox--colour-70 {
-		background-color: $AU-colour-Error-70;
+		background-color: $AU-color-Error-70;
 
 		span:after {
-			content: "#{ $AU-colour-Error-70 }";
+			content: "#{ $AU-color-Error-70 }";
 		}
 	}
 	.colorbox--colour-60 {
-		background-color: $AU-colour-Error-60;
+		background-color: $AU-color-Error-60;
 
 		span:after {
-			content: "#{ $AU-colour-Error-60 }";
+			content: "#{ $AU-color-Error-60 }";
 		}
 	}
 	.colorbox--colour-50 {
-		background-color: $AU-colour-Error-50;
+		background-color: $AU-color-Error-50;
 
 		span:after {
-			content: "#{ $AU-colour-Error-50 }";
+			content: "#{ $AU-color-Error-50 }";
 		}
 	}
 	.colorbox--colour-40 {
-		background-color: $AU-colour-Error-40;
+		background-color: $AU-color-Error-40;
 
 		span:after {
-			content: "#{ $AU-colour-Error-40 }";
+			content: "#{ $AU-color-Error-40 }";
 		}
 	}
 	.colorbox--colour-30 {
-		background-color: $AU-colour-Error-30;
+		background-color: $AU-color-Error-30;
 
 		span:after {
-			content: "#{ $AU-colour-Error-30 }";
+			content: "#{ $AU-color-Error-30 }";
 		}
 	}
 	.colorbox--colour-20 {
-		background-color: $AU-colour-Error-20;
+		background-color: $AU-color-Error-20;
 
 		span:after {
-			content: "#{ $AU-colour-Error-20 }";
+			content: "#{ $AU-color-Error-20 }";
 		}
 	}
 	.colorbox--colour-10 {
-		background-color: $AU-colour-Error-10;
+		background-color: $AU-color-Error-10;
 
 		span:after {
-			content: "#{ $AU-colour-Error-10 }";
+			content: "#{ $AU-color-Error-10 }";
 		}
 	}
 	.colorbox--colour-5 {
-		background-color: $AU-colour-Error-5;
+		background-color: $AU-color-Error-5;
 
 		span:after {
-			content: "#{ $AU-colour-Error-5 }";
+			content: "#{ $AU-color-Error-5 }";
 		}
 	}
 }
 
 .colorbox__colour-Success {
-	background-color: $AU-colour-Success;
+	background-color: $AU-color-Success;
 
 	> span:after {
-		content: "#{ $AU-colour-Success }";
+		content: "#{ $AU-color-Success }";
 	}
 
 	.colorbox--colour--95 {
-		background-color: $AU-colour-Success--95;
+		background-color: $AU-color-Success--95;
 
 		span:after {
-			content: "#{ $AU-colour-Success--95 }";
+			content: "#{ $AU-color-Success--95 }";
 		}
 	}
 	.colorbox--colour--90 {
-		background-color: $AU-colour-Success--90;
+		background-color: $AU-color-Success--90;
 
 		span:after {
-			content: "#{ $AU-colour-Success--90 }";
+			content: "#{ $AU-color-Success--90 }";
 		}
 	}
 	.colorbox--colour--80 {
-		background-color: $AU-colour-Success--80;
+		background-color: $AU-color-Success--80;
 
 		span:after {
-			content: "#{ $AU-colour-Success--80 }";
+			content: "#{ $AU-color-Success--80 }";
 		}
 	}
 	.colorbox--colour--70 {
-		background-color: $AU-colour-Success--70;
+		background-color: $AU-color-Success--70;
 
 		span:after {
-			content: "#{ $AU-colour-Success--70 }";
+			content: "#{ $AU-color-Success--70 }";
 		}
 	}
 	.colorbox--colour--60 {
-		background-color: $AU-colour-Success--60;
+		background-color: $AU-color-Success--60;
 
 		span:after {
-			content: "#{ $AU-colour-Success--60 }";
+			content: "#{ $AU-color-Success--60 }";
 		}
 	}
 	.colorbox--colour--50 {
-		background-color: $AU-colour-Success--50;
+		background-color: $AU-color-Success--50;
 
 		span:after {
-			content: "#{ $AU-colour-Success--50 }";
+			content: "#{ $AU-color-Success--50 }";
 		}
 	}
 	.colorbox--colour--40 {
-		background-color: $AU-colour-Success--40;
+		background-color: $AU-color-Success--40;
 
 		span:after {
-			content: "#{ $AU-colour-Success--40 }";
+			content: "#{ $AU-color-Success--40 }";
 		}
 	}
 	.colorbox--colour--30 {
-		background-color: $AU-colour-Success--30;
+		background-color: $AU-color-Success--30;
 
 		span:after {
-			content: "#{ $AU-colour-Success--30 }";
+			content: "#{ $AU-color-Success--30 }";
 		}
 	}
 	.colorbox--colour--20 {
-		background-color: $AU-colour-Success--20;
+		background-color: $AU-color-Success--20;
 
 		span:after {
-			content: "#{ $AU-colour-Success--20 }";
+			content: "#{ $AU-color-Success--20 }";
 		}
 	}
 	.colorbox--colour--10 {
-		background-color: $AU-colour-Success--10;
+		background-color: $AU-color-Success--10;
 
 		span:after {
-			content: "#{ $AU-colour-Success--10 }";
+			content: "#{ $AU-color-Success--10 }";
 		}
 	}
 
 	.colorbox--colour-90 {
-		background-color: $AU-colour-Success-90;
+		background-color: $AU-color-Success-90;
 
 		span:after {
-			content: "#{ $AU-colour-Success-90 }";
+			content: "#{ $AU-color-Success-90 }";
 		}
 	}
 	.colorbox--colour-80 {
-		background-color: $AU-colour-Success-80;
+		background-color: $AU-color-Success-80;
 
 		span:after {
-			content: "#{ $AU-colour-Success-80 }";
+			content: "#{ $AU-color-Success-80 }";
 		}
 	}
 	.colorbox--colour-70 {
-		background-color: $AU-colour-Success-70;
+		background-color: $AU-color-Success-70;
 
 		span:after {
-			content: "#{ $AU-colour-Success-70 }";
+			content: "#{ $AU-color-Success-70 }";
 		}
 	}
 	.colorbox--colour-60 {
-		background-color: $AU-colour-Success-60;
+		background-color: $AU-color-Success-60;
 
 		span:after {
-			content: "#{ $AU-colour-Success-60 }";
+			content: "#{ $AU-color-Success-60 }";
 		}
 	}
 	.colorbox--colour-50 {
-		background-color: $AU-colour-Success-50;
+		background-color: $AU-color-Success-50;
 
 		span:after {
-			content: "#{ $AU-colour-Success-50 }";
+			content: "#{ $AU-color-Success-50 }";
 		}
 	}
 	.colorbox--colour-40 {
-		background-color: $AU-colour-Success-40;
+		background-color: $AU-color-Success-40;
 
 		span:after {
-			content: "#{ $AU-colour-Success-40 }";
+			content: "#{ $AU-color-Success-40 }";
 		}
 	}
 	.colorbox--colour-30 {
-		background-color: $AU-colour-Success-30;
+		background-color: $AU-color-Success-30;
 
 		span:after {
-			content: "#{ $AU-colour-Success-30 }";
+			content: "#{ $AU-color-Success-30 }";
 		}
 	}
 	.colorbox--colour-20 {
-		background-color: $AU-colour-Success-20;
+		background-color: $AU-color-Success-20;
 
 		span:after {
-			content: "#{ $AU-colour-Success-20 }";
+			content: "#{ $AU-color-Success-20 }";
 		}
 	}
 	.colorbox--colour-10 {
-		background-color: $AU-colour-Success-10;
+		background-color: $AU-color-Success-10;
 
 		span:after {
-			content: "#{ $AU-colour-Success-10 }";
+			content: "#{ $AU-color-Success-10 }";
 		}
 	}
 	.colorbox--colour-5 {
-		background-color: $AU-colour-Success-5;
+		background-color: $AU-color-Success-5;
 
 		span:after {
-			content: "#{ $AU-colour-Success-5 }";
+			content: "#{ $AU-color-Success-5 }";
 		}
 	}
 }
 
 .colorbox__colour-Warning {
-	background-color: $AU-colour-Warning;
+	background-color: $AU-color-Warning;
 
 	> span:after {
-		content: "#{ $AU-colour-Warning }";
+		content: "#{ $AU-color-Warning }";
 	}
 
 	.colorbox--colour--95 {
-		background-color: $AU-colour-Warning--95;
+		background-color: $AU-color-Warning--95;
 
 		span:after {
-			content: "#{ $AU-colour-Warning--95 }";
+			content: "#{ $AU-color-Warning--95 }";
 		}
 	}
 	.colorbox--colour--90 {
-		background-color: $AU-colour-Warning--90;
+		background-color: $AU-color-Warning--90;
 
 		span:after {
-			content: "#{ $AU-colour-Warning--90 }";
+			content: "#{ $AU-color-Warning--90 }";
 		}
 	}
 	.colorbox--colour--80 {
-		background-color: $AU-colour-Warning--80;
+		background-color: $AU-color-Warning--80;
 
 		span:after {
-			content: "#{ $AU-colour-Warning--80 }";
+			content: "#{ $AU-color-Warning--80 }";
 		}
 	}
 	.colorbox--colour--70 {
-		background-color: $AU-colour-Warning--70;
+		background-color: $AU-color-Warning--70;
 
 		span:after {
-			content: "#{ $AU-colour-Warning--70 }";
+			content: "#{ $AU-color-Warning--70 }";
 		}
 	}
 	.colorbox--colour--60 {
-		background-color: $AU-colour-Warning--60;
+		background-color: $AU-color-Warning--60;
 
 		span:after {
-			content: "#{ $AU-colour-Warning--60 }";
+			content: "#{ $AU-color-Warning--60 }";
 		}
 	}
 	.colorbox--colour--50 {
-		background-color: $AU-colour-Warning--50;
+		background-color: $AU-color-Warning--50;
 
 		span:after {
-			content: "#{ $AU-colour-Warning--50 }";
+			content: "#{ $AU-color-Warning--50 }";
 		}
 	}
 	.colorbox--colour--40 {
-		background-color: $AU-colour-Warning--40;
+		background-color: $AU-color-Warning--40;
 
 		span:after {
-			content: "#{ $AU-colour-Warning--40 }";
+			content: "#{ $AU-color-Warning--40 }";
 		}
 	}
 	.colorbox--colour--30 {
-		background-color: $AU-colour-Warning--30;
+		background-color: $AU-color-Warning--30;
 
 		span:after {
-			content: "#{ $AU-colour-Warning--30 }";
+			content: "#{ $AU-color-Warning--30 }";
 		}
 	}
 	.colorbox--colour--20 {
-		background-color: $AU-colour-Warning--20;
+		background-color: $AU-color-Warning--20;
 
 		span:after {
-			content: "#{ $AU-colour-Warning--20 }";
+			content: "#{ $AU-color-Warning--20 }";
 		}
 	}
 	.colorbox--colour--10 {
-		background-color: $AU-colour-Warning--10;
+		background-color: $AU-color-Warning--10;
 
 		span:after {
-			content: "#{ $AU-colour-Warning--10 }";
+			content: "#{ $AU-color-Warning--10 }";
 		}
 	}
 
 	.colorbox--colour-90 {
-		background-color: $AU-colour-Warning-90;
+		background-color: $AU-color-Warning-90;
 
 		span:after {
-			content: "#{ $AU-colour-Warning-90 }";
+			content: "#{ $AU-color-Warning-90 }";
 		}
 	}
 	.colorbox--colour-80 {
-		background-color: $AU-colour-Warning-80;
+		background-color: $AU-color-Warning-80;
 
 		span:after {
-			content: "#{ $AU-colour-Warning-80 }";
+			content: "#{ $AU-color-Warning-80 }";
 		}
 	}
 	.colorbox--colour-70 {
-		background-color: $AU-colour-Warning-70;
+		background-color: $AU-color-Warning-70;
 
 		span:after {
-			content: "#{ $AU-colour-Warning-70 }";
+			content: "#{ $AU-color-Warning-70 }";
 		}
 	}
 	.colorbox--colour-60 {
-		background-color: $AU-colour-Warning-60;
+		background-color: $AU-color-Warning-60;
 
 		span:after {
-			content: "#{ $AU-colour-Warning-60 }";
+			content: "#{ $AU-color-Warning-60 }";
 		}
 	}
 	.colorbox--colour-50 {
-		background-color: $AU-colour-Warning-50;
+		background-color: $AU-color-Warning-50;
 
 		span:after {
-			content: "#{ $AU-colour-Warning-50 }";
+			content: "#{ $AU-color-Warning-50 }";
 		}
 	}
 	.colorbox--colour-40 {
-		background-color: $AU-colour-Warning-40;
+		background-color: $AU-color-Warning-40;
 
 		span:after {
-			content: "#{ $AU-colour-Warning-40 }";
+			content: "#{ $AU-color-Warning-40 }";
 		}
 	}
 	.colorbox--colour-30 {
-		background-color: $AU-colour-Warning-30;
+		background-color: $AU-color-Warning-30;
 
 		span:after {
-			content: "#{ $AU-colour-Warning-30 }";
+			content: "#{ $AU-color-Warning-30 }";
 		}
 	}
 	.colorbox--colour-20 {
-		background-color: $AU-colour-Warning-20;
+		background-color: $AU-color-Warning-20;
 
 		span:after {
-			content: "#{ $AU-colour-Warning-20 }";
+			content: "#{ $AU-color-Warning-20 }";
 		}
 	}
 	.colorbox--colour-10 {
-		background-color: $AU-colour-Warning-10;
+		background-color: $AU-color-Warning-10;
 
 		span:after {
-			content: "#{ $AU-colour-Warning-10 }";
+			content: "#{ $AU-color-Warning-10 }";
 		}
 	}
 	.colorbox--colour-5 {
-		background-color: $AU-colour-Warning-5;
+		background-color: $AU-color-Warning-5;
 
 		span:after {
-			content: "#{ $AU-colour-Warning-5 }";
+			content: "#{ $AU-color-Warning-5 }";
 		}
 	}
 }
 
 .colorbox__colour-Info {
-	background-color: $AU-colour-Info;
+	background-color: $AU-color-Info;
 
 	> span:after {
-		content: "#{ $AU-colour-Info }";
+		content: "#{ $AU-color-Info }";
 	}
 
 	.colorbox--colour--95 {
-		background-color: $AU-colour-Info--95;
+		background-color: $AU-color-Info--95;
 
 		span:after {
-			content: "#{ $AU-colour-Info--95 }";
+			content: "#{ $AU-color-Info--95 }";
 		}
 	}
 	.colorbox--colour--90 {
-		background-color: $AU-colour-Info--90;
+		background-color: $AU-color-Info--90;
 
 		span:after {
-			content: "#{ $AU-colour-Info--90 }";
+			content: "#{ $AU-color-Info--90 }";
 		}
 	}
 	.colorbox--colour--80 {
-		background-color: $AU-colour-Info--80;
+		background-color: $AU-color-Info--80;
 
 		span:after {
-			content: "#{ $AU-colour-Info--80 }";
+			content: "#{ $AU-color-Info--80 }";
 		}
 	}
 	.colorbox--colour--70 {
-		background-color: $AU-colour-Info--70;
+		background-color: $AU-color-Info--70;
 
 		span:after {
-			content: "#{ $AU-colour-Info--70 }";
+			content: "#{ $AU-color-Info--70 }";
 		}
 	}
 	.colorbox--colour--60 {
-		background-color: $AU-colour-Info--60;
+		background-color: $AU-color-Info--60;
 
 		span:after {
-			content: "#{ $AU-colour-Info--60 }";
+			content: "#{ $AU-color-Info--60 }";
 		}
 	}
 	.colorbox--colour--50 {
-		background-color: $AU-colour-Info--50;
+		background-color: $AU-color-Info--50;
 
 		span:after {
-			content: "#{ $AU-colour-Info--50 }";
+			content: "#{ $AU-color-Info--50 }";
 		}
 	}
 	.colorbox--colour--40 {
-		background-color: $AU-colour-Info--40;
+		background-color: $AU-color-Info--40;
 
 		span:after {
-			content: "#{ $AU-colour-Info--40 }";
+			content: "#{ $AU-color-Info--40 }";
 		}
 	}
 	.colorbox--colour--30 {
-		background-color: $AU-colour-Info--30;
+		background-color: $AU-color-Info--30;
 
 		span:after {
-			content: "#{ $AU-colour-Info--30 }";
+			content: "#{ $AU-color-Info--30 }";
 		}
 	}
 	.colorbox--colour--20 {
-		background-color: $AU-colour-Info--20;
+		background-color: $AU-color-Info--20;
 
 		span:after {
-			content: "#{ $AU-colour-Info--20 }";
+			content: "#{ $AU-color-Info--20 }";
 		}
 	}
 	.colorbox--colour--10 {
-		background-color: $AU-colour-Info--10;
+		background-color: $AU-color-Info--10;
 
 		span:after {
-			content: "#{ $AU-colour-Info--10 }";
+			content: "#{ $AU-color-Info--10 }";
 		}
 	}
 
 	.colorbox--colour-90 {
-		background-color: $AU-colour-Info-90;
+		background-color: $AU-color-Info-90;
 
 		span:after {
-			content: "#{ $AU-colour-Info-90 }";
+			content: "#{ $AU-color-Info-90 }";
 		}
 	}
 	.colorbox--colour-80 {
-		background-color: $AU-colour-Info-80;
+		background-color: $AU-color-Info-80;
 
 		span:after {
-			content: "#{ $AU-colour-Info-80 }";
+			content: "#{ $AU-color-Info-80 }";
 		}
 	}
 	.colorbox--colour-70 {
-		background-color: $AU-colour-Info-70;
+		background-color: $AU-color-Info-70;
 
 		span:after {
-			content: "#{ $AU-colour-Info-70 }";
+			content: "#{ $AU-color-Info-70 }";
 		}
 	}
 	.colorbox--colour-60 {
-		background-color: $AU-colour-Info-60;
+		background-color: $AU-color-Info-60;
 
 		span:after {
-			content: "#{ $AU-colour-Info-60 }";
+			content: "#{ $AU-color-Info-60 }";
 		}
 	}
 	.colorbox--colour-50 {
-		background-color: $AU-colour-Info-50;
+		background-color: $AU-color-Info-50;
 
 		span:after {
-			content: "#{ $AU-colour-Info-50 }";
+			content: "#{ $AU-color-Info-50 }";
 		}
 	}
 	.colorbox--colour-40 {
-		background-color: $AU-colour-Info-40;
+		background-color: $AU-color-Info-40;
 
 		span:after {
-			content: "#{ $AU-colour-Info-40 }";
+			content: "#{ $AU-color-Info-40 }";
 		}
 	}
 	.colorbox--colour-30 {
-		background-color: $AU-colour-Info-30;
+		background-color: $AU-color-Info-30;
 
 		span:after {
-			content: "#{ $AU-colour-Info-30 }";
+			content: "#{ $AU-color-Info-30 }";
 		}
 	}
 	.colorbox--colour-20 {
-		background-color: $AU-colour-Info-20;
+		background-color: $AU-color-Info-20;
 
 		span:after {
-			content: "#{ $AU-colour-Info-20 }";
+			content: "#{ $AU-color-Info-20 }";
 		}
 	}
 	.colorbox--colour-10 {
-		background-color: $AU-colour-Info-10;
+		background-color: $AU-color-Info-10;
 
 		span:after {
-			content: "#{ $AU-colour-Info-10 }";
+			content: "#{ $AU-color-Info-10 }";
 		}
 	}
 	.colorbox--colour-5 {
-		background-color: $AU-colour-Info-5;
+		background-color: $AU-color-Info-5;
 
 		span:after {
-			content: "#{ $AU-colour-Info-5 }";
+			content: "#{ $AU-color-Info-5 }";
 		}
 	}
 }

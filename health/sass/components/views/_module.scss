@@ -14,7 +14,7 @@
         @include AU-space('margin-bottom', 1unit);
         .views-row {
             @include AU-clearfix;
-            border-bottom: $AU-borderize;
+            border-bottom: $health-borderize--very-thin;
             @include AU-space('padding-top', .5unit);
             @include AU-space('padding-bottom', .5unit);
             @include AU-media(md){

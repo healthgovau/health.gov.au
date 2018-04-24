@@ -6,20 +6,7 @@
 //
 // Style guide: sass.colors
 
-$AU-colour-Hero: #115361 !default; //color variables (yes! the actual spelling doesn't have a u)
-$AU-colour-Primary: #1B7991 !default;
-$AU-colour-Secondary: #313131 !default;
-$AU-colour-Background: #f0f3f5 !default;
-$AU-colour-Border: #CCC;
-$AU-colour-Text: #313131 !default;
-$AU-colour-Link: #5bcbe3 !default;
-
-$AU-colour-Error: #ff635c !default;
-$AU-colour-Success: #0cac78 !default;
-$AU-colour-Warning: #f69900 !default;
-$AU-colour-Info: #00bfe9 !default;
-
-// Health variables here
+// Health.
 $colour-Shadow: rgba(0,0,0,0.1);
 $colour-card: #fff;
 
@@ -41,7 +28,6 @@ $colour-Tertiary-darker: #c42832;
 $colour-Tertiary-light: #ee303b;
 $colour-Tertiary-hover: #a31f26;
 
-// Dummy values to be replaced with real values
 $colour-Tertiary-2: #0099d9; // light
 $colour-Tertiary-2-dark: #0092d6; // mid
 $colour-Tertiary-2-darker: #007cb5; // dark - constrast compliant
@@ -134,14 +120,11 @@ $colour-light-darker: #cdcdcd;
   }
 }
 
-$AU-color-foreground-action: #313131; // Health override
-$AU-colour-Primary: $colour-Primary; // Health override
-
-// Statistics
-$colour-Statistics-blue: $colour-Primary-darker;
-$colour-Statistics-orange: $AU-colour-Warning;
-$colour-Statistics-green: $AU-colour-Success;
-$colour-Statistics-red: $AU-colour-Error;
+// Health override
+$AU-color-foreground-action: #313131;
+$AU-color-foreground-border-suggestion: #808080;
+$AU-color-Primary: $colour-Primary;
+$AU-color-info: $colour-Tertiary-2;
 
 // Typography
 $colour-minorText: #6e6e6e;

@@ -14,10 +14,10 @@
     border-bottom: 6px solid #e5e5e5;
     li {
       margin: 0;
-      border-bottom: 1px solid $colour-light-dark;
+      border-bottom: $health-borderize--very-thin;
 
       &:first-child {
-        border-top: 1px solid $colour-light-dark;
+        border-top: $health-borderize--very-thin;
       }
 
       border-left: 6px solid transparent;
@@ -98,7 +98,7 @@
             border-bottom: 6px solid $colour-Secondary;
             background-color: transparent;
             transition: none;
-            color: $AU-colour-Text;
+            color: $AU-color-foreground-text;
           }
         }
 
@@ -108,7 +108,7 @@
             border-bottom: 6px solid $colour-Secondary;
             background-color: transparent;
             transition: none;
-            color: $AU-colour-Text;
+            color: $AU-color-foreground-text;
           }
         }
       }
@@ -136,7 +136,7 @@
 
   &:hover,
   &:focus {
-    color: $AU-colour-Text;
+    color: $AU-color-foreground-text;
     background: transparent;
     outline-offset: -1px;
   }

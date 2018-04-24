@@ -16,22 +16,31 @@
 //    controls in Android 4.
 // 2. Correct the inability to style clickable types in iOS and Safari.
 
-.au-btn--large {
+%health-btn {
   @extend .au-btn;
-  display: block;
-  //@extend .au-btn--block; // THIS IS CAUSING COMPILE ERRORS.
-  // START COPY FROM AU-BTN--BLOCK
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
+  border-radius: 0;
+  border: 0;
   text-align: center;
-  // END COPY
 
-  @extend .au-btn--tertiary;
+  // Primary button colours.
+  color: white;
+  &[rel~='external']:after {
+    color: white;
+  }
+  background-color: $colour-Secondary;
+  &:hover:not(:disabled), &:focus:not(:disabled) {
+    background-color: $colour-Secondary-hover;
+    color: white;
+  }
+}
+
+// Add a large variant.
+%health-btn--large {
+  @extend %health-btn;
+  font-weight: bold;
   @include AU-space('margin-bottom', .5unit);
-  padding: 1em 2em;
+  @include AU-space('padding', 1unit 2unit);
+  display: block;
+
 }
 
-.bean-large-button .field-name-field-link-to a {
-  @extend .au-btn--large;
-}

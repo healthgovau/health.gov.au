@@ -17,7 +17,7 @@
        aria-selected="false"
        role="tab"
        onClick="return AU.accordion.Toggle( this )">
-       <h2<?php print $title_attributes; ?>><?php print $title; ?></h2></a>
+       <?php print $title; ?></a>
     <?php endif; ?>
     <?php print render($title_suffix); ?>
 

@@ -10,10 +10,10 @@
 %table {
   @include AU-space('margin-bottom', 1unit);
   border-collapse: collapse;
-  border: $AU-borderize;
+  border: $health-borderize--thin;
 
   tr:nth-child(even) {
-    background-color: $AU-colour-Background;
+    background-color: $AU-color-background;
   }
 
   &.table__no-banding {
@@ -29,7 +29,7 @@
       font-size: initial;
     }
 
-    border-bottom: $AU-borderize;
+    border-bottom: $health-borderize--thin;
     @include AU-space('padding', .25unit);
     text-align: left;
     vertical-align: top;
@@ -37,7 +37,7 @@
   }
 
   thead {
-    border-bottom: 2px solid $AU-colour-Border;
+    border-bottom: 2px solid $AU-color-foreground-border;
   }
 
   min-width: 43em;

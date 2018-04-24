@@ -5,7 +5,7 @@
     @include AU-clearfix;
     display: block;
     clear: both;
-    color: $AU-colour-Text;
+    color: $AU-color-foreground-text;
     background: none;
 
   }
@@ -14,7 +14,7 @@
     padding-top: 0;
     padding-bottom: 0;
     margin-bottom: 0;
-    color: $AU-colour-Text;
+    color: $AU-color-foreground-text;
     @include AU-media(sm){
       @include AU-space('margin-bottom', 2unit);
     }
