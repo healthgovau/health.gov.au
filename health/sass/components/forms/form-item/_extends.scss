@@ -8,6 +8,7 @@
 .form-item {
   label {
     font-weight: bold;
+    display: block;
   }
   .error {
     @extend .au-text-input--invalid;

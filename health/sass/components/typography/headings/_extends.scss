@@ -2,27 +2,27 @@
 
 .page {
   h1 {
-    @extend %heading--xxl;
+    @include health-fontgrid('xxl');
   }
 
   h2 {
-    @extend %heading--xl;
+    @include health-fontgrid('xl');
   }
 
   h3 {
-    @extend %heading--lg;
+    @include health-fontgrid('lg');
   }
 
   h4 {
-    @extend %heading--md;
+    @include health-fontgrid('md');
   }
 
   h5 {
-    @extend %heading--sm;
+    @include health-fontgrid('sm');
   }
 
   h6 {
-    @extend %heading--xs;
+    @include health-fontgrid('xs');
   }
 }
 

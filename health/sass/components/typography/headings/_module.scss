@@ -1,5 +1,3 @@
-@import "_extends.scss";
-
 // Headings
 //
 // All HTML headings, `<h1>` through `<h6>`, are available. `%h1` through `%h6`
@@ -10,75 +8,73 @@
 //
 // Style guide: base.headings
 
-%heading--xxl {
-  @include AU-fontgrid('xl');
+/**
+ * Health-fontgrid Mixin for setting font-size and line-height that snaps to the grid, and also includes mobile :)
+ *
+ * @param  {keywords} $fontsize-key   -  Either one of the following keywords: xs, sm, md, lg, xl, xxl, xxxl
+ * @param  {keywords} $lineheight-key -  Either one of the following keywords: heading, nospace, default
+ *
+ * @return {string}                   - The code; fontsize in REM, with PX fallback, and unitless line-height which matches vertical grid
+*/
+@mixin health-fontgrid( $fontsize-key, $lineheight-key: 'default', $weight: 'heavy' ) {
+  $next-size-down: health-fontgrid-next-size($fontsize-key);
+  @include AU-fontgrid($next-size-down, $lineheight-key);
   @include AU-media(sm) {
-    @include AU-fontgrid('xxl');
+    @include AU-fontgrid($fontsize-key, $lineheight-key);
   }
-  @extend %heading--base;
-}
-%heading--xl {
-  @include AU-fontgrid('lg');
-  @include AU-media(sm) {
-    @include AU-fontgrid('xl');
+
+  @if $weight == 'heavy' {
+    font-weight: bold;
   }
-  @extend %heading--base;
-}
-%heading--lg {
-  @include AU-fontgrid('md');
-  @include AU-media(sm) {
-    @include AU-fontgrid('lg');
+
+  @if $weight == 'light' {
+    font-weight: normal;
   }
-  @extend %heading--base;
 }
 
-%heading--md {
-  @include AU-fontgrid('sm');
-  @include AU-media(sm) {
-    @include AU-fontgrid('md');
+/**
+ * Get the next size down.
+ *
+ * @param  {keywords} $fontsize-key   -  Either one of the following keywords: xs, sm, md, lg, xl, xxl, xxxl
+ *
+ * @return {string}                   -  One of the following keywords: xs, sm, md, lg, xl, xxl, xxxl
+*/
+@function health-fontgrid-next-size( $fontsize-key ) {
+  @if $fontsize-key == 'xs' {
+    @return 'xs';
   }
-  @extend %heading--base;
-}
-
-%heading--sm {
-  @include AU-fontgrid('xs');
-  @include AU-media(sm) {
-    @include AU-fontgrid('sm');
+  @if $fontsize-key == 'sm' {
+    @return 'xs';
   }
-  @extend %heading--base;
-}
-
-%heading--xs {
-  @include AU-fontgrid('xs');
-  @include AU-media(sm) {
-    @include AU-fontgrid('xs');
+  @if $fontsize-key == 'md' {
+    @return 'sm';
   }
-  @extend %heading--base;
+  @if $fontsize-key == 'lg' {
+    @return 'md';
+  }
+  @if $fontsize-key == 'xl' {
+    @return 'lg';
+  }
+  @if $fontsize-key == 'xxl' {
+    @return 'xl';
+  }
+  @return 'md';
 }
-
-%heading--base {
-  font-weight: bold;
-}
-
-%heading--light {
-  font-weight: normal;
-}
-
-%heading--nospace {
-  line-height: 1;
-}
-
-
 
 // Lists and auto-generated content
 %list-item-title {
-  @extend %heading--sm;
+  @include health-fontgrid('sm', 'heading');
+  @include AU-space('margin-bottom', .25unit);
 }
 
 %list-item-title--medium {
-  @extend %heading--md;
+  @include health-fontgrid('md', 'heading');
+  @include AU-space('margin-bottom', .5unit);
 }
 
 %list-item-title--large {
-  @extend %heading--lg;
+  @include health-fontgrid('lg', 'heading');
+  @include AU-space('margin-bottom', .5unit);
 }
+
+@import "_extends.scss";

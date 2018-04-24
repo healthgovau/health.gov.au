@@ -13,8 +13,7 @@
 
   background-color: $colour-light;
   .block__title {
-    @extend %heading--lg;
-    @extend %heading--nospace;
+    @include health-fontgrid('lg', 'nospace');
     line-height: 1;
     margin:0;
   }
@@ -60,8 +59,7 @@
 #block-bean-homepage-healthcare-system,
 #block-bean-homepage-portfolio-sport {
   h2 {
-    @extend %heading--lg;
-    @extend %heading--light;
+    @include health-fontgrid('lg', 'default', 'light');
     max-width: 60rem;
   }
 }
