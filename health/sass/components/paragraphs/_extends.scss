@@ -175,18 +175,6 @@
       .field-name-field-contact-telephone {
         @extend .uikit-display-3;
         font-weight: 700;
-        a {
-          &:before {
-            content: "\f095";
-            font-family: FontAwesome;
-            font-size: 1em;
-            font-style: normal;
-            font-weight: normal;
-            text-decoration: inherit;
-            z-index: 1;
-            margin-right: 5px;
-          }
-        }
       }
     }
   }
