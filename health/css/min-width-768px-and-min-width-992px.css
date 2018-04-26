@@ -1,1 +1,9 @@
+<<<<<<< HEAD
 .region-navigation #block-superfish-1 ul li{margin:0 1.28em;font-size:1em}
+=======
+.region-navigation #block-superfish-1 ul li {
+  margin: 0 13px;
+  margin: 0 0.8rem;
+  font-size: 1em;
+}
+>>>>>>> Compile css and js
