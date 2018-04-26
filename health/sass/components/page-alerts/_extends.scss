@@ -42,9 +42,7 @@
     padding: 0;
   }
 
-  /*
-  THIS IS CAUSING PROBLEMS WITH DOING @extend .container
-  .container {
+  .health-alert-content-wrapper {
     padding: 1em;
 
     .health-alert-logo {
@@ -75,6 +73,6 @@
         }
       }
     }
-  }*/
+  }
 
 }

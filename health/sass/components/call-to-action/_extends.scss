@@ -9,6 +9,21 @@
 .health-cta-link {
   @extend .au-cta-link;
   @include health-fontgrid('md');
+  &:after, &:hover:after {
+    background-image: none;
+    content: "\f061";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    z-index: 1;
+  }
+  &:after {
+    @include AU-space('margin-left', .5unit);
+  }
+  &:hover:after {
+    @include AU-space('margin-left', .75unit);
+  }
 }
 
 .au-cta-link--light,

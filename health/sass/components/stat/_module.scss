@@ -84,46 +84,33 @@
 
 // Statistic value.
 %stat__value {
-
   @extend .col-xs-12;
-
   @include AU-space('padding', .5unit 0);
-
   @include AU-media('md') {
     @include AU-space('padding', 1unit 0);
   }
 }
 
 %stat__value-value {
-  @extend h1;
-  margin: 0;
-  font-weight: 500;
-  font-size: 2.5em;
-  display: inline;
-  color: white;
-
-  @include AU-media('md') {
-    font-size: 4em;
+  font-size: 3rem;
+  @include AU-media('sm') {
+    font-size: 4rem;
   }
+  line-height: 1.3;
+  display: inline;
+  margin: 0;
+  color: white;
 }
 
 %stat__value-suffix,
 %stat__value-prefix {
-  font-size: 1.5rem;
-  @include AU-media('md') {
-    font-size: 2rem;
-  }
+  @include health-fontgrid('xl', 'default', 'light');
 }
 
 // Statistic text.
 %stat__text {
-
-  font-size: 1.25em;
-  line-height: 1.25em;
-  font-weight: bold;
-
-  padding: 0 AU-space(1) AU-space(0.25) AU-space(1);
-
+  @include health-fontgrid('md', 'default', 'light');
+  @include AU-space('padding', 0 1unit .25unit 1unit);
   @include AU-media('md') {
     @include AU-space('padding-bottom', 1unit);
   }
@@ -131,9 +118,7 @@
 
 // The trend.
 %stat__trend {
-
   @extend .col-xs-12;
-
   padding-top: 12px;
   padding-bottom: 12px;
 }
@@ -180,4 +165,3 @@
 }
 
 @import '_print.scss';
-

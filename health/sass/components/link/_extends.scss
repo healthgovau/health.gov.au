@@ -1,16 +1,3 @@
-// Override uikit cta link icon with font awesome.
-.health-cta-link {
-  &:after, &:hover:after {
-    background-image: none;
-    content: "\f061";
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: none;
-    z-index: 1;
-  }
-}
-
 // Override external link icon with font awesome.
 .page a[rel~='external'] {
   &:after, &:hover:after {
@@ -25,4 +12,3 @@
     margin-right: 5px;
   }
 }
-
