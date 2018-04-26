@@ -1,25 +1,15 @@
 .taskbar .taskbar__item,
 .taskbar.view ul > .views-row .node,
-.taskbar
-      .taskbar--tiled--2.view ul > .views-row .node,
-.taskbar--tiled--2.view ul > .views-row
-      .taskbar .node,
-.taskbar
-      .taskbar--tiled--3.view ul > .views-row .node,
-.taskbar--tiled--3.view ul > .views-row
-      .taskbar .node,
-.taskbar
-      .taskbar--tiled--4.view ul > .views-row .node,
-.taskbar--tiled--4.view ul > .views-row
-      .taskbar .node,
-.taskbar
-      .taskbar--tiled--5.view ul > .views-row .node,
-.taskbar--tiled--5.view ul > .views-row
-      .taskbar .node,
-.taskbar
-      .taskbar--tiled--6.view ul > .views-row .node,
-.taskbar--tiled--6.view ul > .views-row
-      .taskbar .node,
+.taskbar .taskbar--tiled--2.view ul > .views-row .node,
+.taskbar--tiled--2.view ul > .views-row .taskbar .node,
+.taskbar .taskbar--tiled--3.view ul > .views-row .node,
+.taskbar--tiled--3.view ul > .views-row .taskbar .node,
+.taskbar .taskbar--tiled--4.view ul > .views-row .node,
+.taskbar--tiled--4.view ul > .views-row .taskbar .node,
+.taskbar .taskbar--tiled--5.view ul > .views-row .node,
+.taskbar--tiled--5.view ul > .views-row .taskbar .node,
+.taskbar .taskbar--tiled--6.view ul > .views-row .node,
+.taskbar--tiled--6.view ul > .views-row .taskbar .node,
 .taskbar--tiled--2 .taskbar__item,
 .taskbar--2 .taskbar__item,
 .taskbar--tiled--3 .taskbar__item,
@@ -109,7 +99,7 @@
 .node-type-committee-or-group .group-left,
 .node-type-condition-or-disease .group-left,
 .node-type-contact .group-left,
-.node-type-initiative-or-program .group-left,
+.node-type-program .group-left,
 .node-type-release .group-left,
 .node-type-statistic .group-left,
 .node-type-service .group-left,
@@ -131,7 +121,7 @@
 .node-type-committee-or-group .group-right,
 .node-type-condition-or-disease .group-right,
 .node-type-contact .group-right,
-.node-type-initiative-or-program .group-right,
+.node-type-program .group-right,
 .node-type-release .group-right,
 .node-type-statistic .group-right,
 .node-type-service .group-right,
@@ -153,7 +143,7 @@
 .node-type-committee-or-group .view-mode-full > .group-left,
 .node-type-condition-or-disease .view-mode-full > .group-left,
 .node-type-contact .view-mode-full > .group-left,
-.node-type-initiative-or-program .view-mode-full > .group-left,
+.node-type-program .view-mode-full > .group-left,
 .node-type-release .view-mode-full > .group-left,
 .node-type-statistic .view-mode-full > .group-left,
 .node-type-service .view-mode-full > .group-left,
@@ -161,7 +151,8 @@
 .node-type-health-topic .view-mode-full > .group-left,
 .node-type-health-topic-hp .view-mode-full > .group-left,
 .node-type-departmental-media .view-mode-full > .group-left {
-  padding-right: 2.4em;
+  padding-right: 24px;
+  padding-right: 1.5rem;
 }
 
 .node-publication.view-mode-feature .group-left {

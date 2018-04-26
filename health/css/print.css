@@ -1,22 +1,39 @@
-.uikit-accordion__title,
-.video__transcript summary {
-  background: #fff !important;
+.au-accordion,
+.video__transcript,
+.block-facetapi {
+  border-color: #000 !important;
+  color: #000 !important;
 }
 
-.uikit-accordion__title:after,
+.au-accordion__title,
+.video__transcript summary {
+  background: #fff !important;
+  color: #000 !important;
+  border: 1px !important;
+}
+
+.au-accordion__title:after,
 .video__transcript summary:after {
   display: none;
 }
 
-.uikit-accordion__body,
+.au-accordion__body-wrapper,
+.video__transcript .video__transcript-body-wrapper {
+  border-color: #000 !important;
+}
+
+.au-accordion__body,
 .video__transcript .video__transcript-body {
   height: auto !important;
   display: block !important;
 }
 
-.uikit-body *,
+.au-body *,
 .page *,
-.rsbtn_colorskin * {
+.rsbtn_colorskin *,
+.au-body,
+.page,
+.rsbtn_colorskin {
   text-shadow: none !important;
   color: #000 !important;
   background: #fff !important;
@@ -24,41 +41,41 @@
   border-color: #000 !important;
 }
 
-.uikit-body a,
+.au-body a,
 .page a,
 .rsbtn_colorskin a,
-.uikit-body a:visited,
+.au-body a:visited,
 .page a:visited,
 .rsbtn_colorskin a:visited {
   text-decoration: underline;
 }
 
-.uikit-body a[href]:after,
+.au-body a[href]:after,
 .page a[href]:after,
 .rsbtn_colorskin a[href]:after {
   content: " (" attr(href) ")";
 }
 
-.uikit-body abbr[title]:after,
+.au-body abbr[title]:after,
 .page abbr[title]:after,
 .rsbtn_colorskin abbr[title]:after {
   content: " (" attr(title) ")";
 }
 
-.uikit-body a[href^="javascript:"]:after,
+.au-body a[href^="javascript:"]:after,
 .page a[href^="javascript:"]:after,
 .rsbtn_colorskin a[href^="javascript:"]:after,
-.uikit-body a[href^="#"]:after,
+.au-body a[href^="#"]:after,
 .page a[href^="#"]:after,
 .rsbtn_colorskin a[href^="#"]:after {
   content: "";
 }
 
-.uikit-body a[rel~='external']:after,
+.au-body a[rel~='external']:after,
 .page a[rel~='external']:after,
 .rsbtn_colorskin a[rel~='external']:after,
-.uikit-body .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after,
-.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .uikit-body .field-item:after,
+.au-body .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .au-body .field-item:after,
 .page .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after,
 .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .page .field-item:after,
 .rsbtn_colorskin .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .field-item:after,
@@ -66,10 +83,10 @@
   display: none !important;
 }
 
-.uikit-body pre,
+.au-body pre,
 .page pre,
 .rsbtn_colorskin pre,
-.uikit-body blockquote,
+.au-body blockquote,
 .page blockquote,
 .rsbtn_colorskin blockquote {
   border: 1px solid #000;
@@ -77,122 +94,115 @@
   page-break-inside: avoid;
 }
 
-.uikit-body thead,
+.au-body thead,
 .page thead,
 .rsbtn_colorskin thead {
   display: table-header-group;
 }
 
-.uikit-body tr,
+.au-body tr,
 .page tr,
 .rsbtn_colorskin tr,
-.uikit-body img,
+.au-body img,
 .page img,
 .rsbtn_colorskin img {
   page-break-inside: avoid;
 }
 
-.uikit-body img,
+.au-body img,
 .page img,
 .rsbtn_colorskin img {
   max-width: 100% !important;
 }
 
-.uikit-body p,
+.au-body p,
 .page p,
 .rsbtn_colorskin p,
-.uikit-body h2,
+.au-body h2,
 .page h2,
 .rsbtn_colorskin h2,
-.uikit-body .video--left .video__title,
-.video--left
-  .uikit-body .video__title,
+.au-body .video--left .video__title,
+.video--left .au-body .video__title,
 .page .video--left .video__title,
 .video--left .page .video__title,
 .rsbtn_colorskin .video--left .video__title,
 .video--left .rsbtn_colorskin .video__title,
-.uikit-body .video--right .video__title,
-.video--right
-  .uikit-body .video__title,
+.au-body .video--right .video__title,
+.video--right .au-body .video__title,
 .page .video--right .video__title,
 .video--right .page .video__title,
 .rsbtn_colorskin .video--right .video__title,
 .video--right .rsbtn_colorskin .video__title,
-.uikit-body h3,
+.au-body h3,
 .page h3,
 .rsbtn_colorskin h3 {
   orphans: 3;
   widows: 3;
 }
 
-.uikit-body h2,
+.au-body h2,
 .page h2,
 .rsbtn_colorskin h2,
-.uikit-body .video--left .video__title,
-.video--left .uikit-body .video__title,
+.au-body .video--left .video__title,
+.video--left .au-body .video__title,
 .page .video--left .video__title,
 .video--left .page .video__title,
 .rsbtn_colorskin .video--left .video__title,
 .video--left .rsbtn_colorskin .video__title,
-.uikit-body .video--right .video__title,
-.video--right .uikit-body .video__title,
+.au-body .video--right .video__title,
+.video--right .au-body .video__title,
 .page .video--right .video__title,
 .video--right .page .video__title,
 .rsbtn_colorskin .video--right .video__title,
 .video--right .rsbtn_colorskin .video__title,
-.uikit-body h3,
+.au-body h3,
 .page h3,
 .rsbtn_colorskin h3 {
   page-break-after: avoid;
 }
 
-.uikit-body p a,
+.au-body p a,
 .page p a,
 .rsbtn_colorskin p a {
   word-wrap: break-word;
 }
 
-.uikit-body select,
+.au-body select,
 .page select,
 .rsbtn_colorskin select {
   background: #fff !important;
 }
 
-.breadcrumbs > .uikit-link-list > li:after,
-.uikit-breadcrumbs > .uikit-link-list > li:after,
+.breadcrumbs > .au-link-list > li:after,
+.au-breadcrumbs > .au-link-list > li:after,
 .breadcrumbs > .breadcrumbs__list > li:after,
-.uikit-breadcrumbs > .breadcrumbs__list > li:after,
-.uikit-inpage-nav-links .toc .breadcrumbs > ul > li:after,
-.uikit-inpage-nav-links .toc
-  .uikit-breadcrumbs > ul > li:after,
-.uikit-body .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after,
-.uikit-body .sidebar #block-menu-block-2
-  .uikit-breadcrumbs > ul > li:after,
-.page .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after,
-.page .sidebar #block-menu-block-2
-  .uikit-breadcrumbs > ul > li:after,
-.rsbtn_colorskin .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after,
-.rsbtn_colorskin .sidebar #block-menu-block-2
-  .uikit-breadcrumbs > ul > li:after,
+.au-breadcrumbs > .breadcrumbs__list > li:after,
+.au-inpage-nav-links .breadcrumbs > ul > li:after,
+.au-inpage-nav-links .au-breadcrumbs > ul > li:after,
+.au-body .sidebar #block-menu-block-2 .menu-block-wrapper .breadcrumbs > ul > li:after,
+.au-body .sidebar #block-menu-block-2 .menu-block-wrapper .au-breadcrumbs > ul > li:after,
+.page .sidebar #block-menu-block-2 .menu-block-wrapper .breadcrumbs > ul > li:after,
+.page .sidebar #block-menu-block-2 .menu-block-wrapper .au-breadcrumbs > ul > li:after,
+.rsbtn_colorskin .sidebar #block-menu-block-2 .menu-block-wrapper .breadcrumbs > ul > li:after,
+.rsbtn_colorskin .sidebar #block-menu-block-2 .menu-block-wrapper .au-breadcrumbs > ul > li:after,
 .breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after,
-.uikit-breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after,
+.au-breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after,
 #block-menu-menu-sub-menu .breadcrumbs > .menu > li:after,
-#block-menu-menu-sub-menu
-  .uikit-breadcrumbs > .menu > li:after,
+#block-menu-menu-sub-menu .au-breadcrumbs > .menu > li:after,
 footer .breadcrumbs > .menu > li:after,
-footer
-  .uikit-breadcrumbs > .menu > li:after,
+footer .au-breadcrumbs > .menu > li:after,
 .region-navigation #block-superfish-1 .breadcrumbs > ul > li:after,
-.region-navigation #block-superfish-1
-  .uikit-breadcrumbs > ul > li:after,
+.region-navigation #block-superfish-1 .au-breadcrumbs > ul > li:after,
 .breadcrumbs > .tabs > li:after,
-.uikit-breadcrumbs > .tabs > li:after {
-  border-color: #000 !important;
+.au-breadcrumbs > .tabs > li:after {
+  content: ">" !important;
+  background-image: none !important;
 }
 
-.uikit-btn,
-.uikit-btn-large,
+.au-btn,
 .feedback-band.bean-basic-content .feedback-band .feedback-col.link .feedback-col-link a,
+.button--large,
+a.button--large,
 .bean-large-button .field-name-field-link-to a,
 .button,
 a.button,
@@ -200,40 +210,74 @@ button,
 html [type='button'],
 [type='reset'],
 [type='submit'],
-.uikit-header #search-block-form .form-submit,
-.region-featured #search-block-form .form-submit,
+#search-block-form .form-submit,
 #block-search-api-page-default-search .form-submit,
 .block-search-api-page .form-submit,
 .view-filters .views-exposed-form .form-submit {
   background-color: #fff !important;
   border: 2px solid #000 !important;
   color: #000 !important;
+  text-decoration: none !important;
 }
 
-.uikit-btn:disabled,
-.uikit-btn-large:disabled,
+.au-btn[disabled],
+.feedback-band.bean-basic-content .feedback-band .feedback-col.link .feedback-col-link a[disabled],
+.button--large[disabled],
+.bean-large-button .field-name-field-link-to a[disabled],
+.button[disabled],
+button[disabled],
+html [disabled][type='button'],
+[disabled][type='reset'],
+[disabled][type='submit'],
+#search-block-form .form-submit[disabled],
+#block-search-api-page-default-search .form-submit[disabled],
+.block-search-api-page .form-submit[disabled],
+.view-filters .views-exposed-form .form-submit[disabled] {
+  background-color: #ccc !important;
+  border: 2px solid #ccc !important;
+}
+
+.au-btn:disabled,
 .feedback-band.bean-basic-content .feedback-band .feedback-col.link .feedback-col-link a:disabled,
+.button--large:disabled,
 .bean-large-button .field-name-field-link-to a:disabled,
 .button:disabled,
 button:disabled,
-html [type='button']:disabled,
-[type='reset']:disabled,
-[type='submit']:disabled,
-.uikit-header #search-block-form .form-submit:disabled,
-.region-featured #search-block-form .form-submit:disabled,
+html :disabled[type='button'],
+:disabled[type='reset'],
+:disabled[type='submit'],
+#search-block-form .form-submit:disabled,
 #block-search-api-page-default-search .form-submit:disabled,
 .block-search-api-page .form-submit:disabled,
 .view-filters .views-exposed-form .form-submit:disabled {
   background-color: #ccc !important;
+  border: 2px solid #ccc !important;
 }
 
-.uikit-callout {
-  border-top: 1px solid #000 !important;
-  border-right: 1px solid #000 !important;
-  border-bottom: 1px solid #000 !important;
+.au-callout {
+  border-left-width: 16px !important;
+  border-left-width: 1rem !important;
+  border: 1px solid #000 !important;
+  color: #000 !important;
+  background-color: transparent !important;
 }
 
-.uikit-control-input__text:after,
+.au-control-input__text,
+.webform-component-radios label .input__text,
+.webform-component-checkboxes label .input__text,
+.form-type-radios label .input__text,
+.form-type-checkboxes label .input__text,
+.form-type-checkbox label .input__text {
+  color: #000 !important;
+}
+
+.au-control-input__text:before,
+.webform-component-radios label .input__text:before,
+.webform-component-checkboxes label .input__text:before,
+.form-type-radios label .input__text:before,
+.form-type-checkboxes label .input__text:before,
+.form-type-checkbox label .input__text:before,
+.au-control-input__text:after,
 .webform-component-radios label .input__text:after,
 .webform-component-checkboxes label .input__text:after,
 .form-type-radios label .input__text:after,
@@ -242,15 +286,28 @@ html [type='button']:disabled,
   display: none !important;
 }
 
-.uikit-cta-link:after,
+.au-cta-link,
+.health-cta-link,
+.block-bean-call-to-action .field-name-field-link-to a,
+.bean-call-to-action .field-name-field-link-to a,
+.video__cta,
+.region-title-supp .block-bean-call-to-action a,
+.paragraphs-item-para-statistics .field-name-field-link-internal a,
+.paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a,
+.paragraphs-item-para-view .para-row > a {
+  color: #000 !important;
+}
+
+.au-cta-link:after,
 .health-cta-link:after,
 .block-bean-call-to-action .field-name-field-link-to a:after,
 .bean-call-to-action .field-name-field-link-to a:after,
 .video__cta:after,
-.region-title-supp .block-bean-call-to-action .bean-call-to-action__title:after,
+.region-title-supp .block-bean-call-to-action a:after,
 .paragraphs-item-para-statistics .field-name-field-link-internal a:after,
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:after,
 .paragraphs-item-para-view .para-row > a:after {
+  background-image: none !important;
   content: ' > ' !important;
   border: none !important;
   -webkit-transform: rotate(0deg) !important;
@@ -258,40 +315,49 @@ html [type='button']:disabled,
   transform: rotate(0deg) !important;
 }
 
-.uikit-direction-link:after,
+.au-direction-link,
+.direction-link,
+.more-link a,
+.more-help-link a,
+ul.links .node-readmore {
+  color: #000 !important;
+}
+
+.au-direction-link:after,
 .direction-link:after,
 .more-link a:after,
 .more-help-link a:after,
 ul.links .node-readmore:after {
-  background: none !important;
   content: '→' !important;
-  width: auto !important;
-  height: auto !important;
 }
 
-.uikit-direction-link--left:before {
-  background: none !important;
+.au-direction-link--left:before {
   content: '←' !important;
-  width: auto !important;
-  height: auto !important;
 }
 
-.uikit-direction-link--up:after,
+.au-direction-link--up:after,
 .direction-link--up:after {
   content: '↑' !important;
 }
 
-.uikit-direction-link--down:after {
+.au-direction-link--down:after {
   content: '↓' !important;
 }
 
-.uikit-footer,
+.au-footer,
 .page .footer {
+  color: #000 !important;
   background: #fff !important;
   border-color: #000 !important;
 }
 
-.uikit-page-alerts,
+.au-header,
+.region-featured {
+  color: #000 !important;
+  background: #fff !important;
+}
+
+.au-page-alerts,
 .messages,
 .block-workbench {
   border-color: #000 !important;
@@ -300,7 +366,7 @@ ul.links .node-readmore:after {
   padding-top: 3em !important;
 }
 
-.uikit-page-alerts:after,
+.au-page-alerts:after,
 .messages:after,
 .block-workbench:after {
   background: none !important;
@@ -314,45 +380,50 @@ ul.links .node-readmore:after {
   width: auto !important;
 }
 
-.uikit-page-alerts--success:after,
+.au-page-alerts--success:after,
 .messages.status:after {
   content: 'success' !important;
 }
 
-.uikit-page-alerts--warning:after,
+.au-page-alerts--warning:after,
 .messages.warning:after {
   content: 'warning' !important;
 }
 
-.uikit-page-alerts--error:after,
+.au-page-alerts--error:after,
 .messages.error:after {
   content: 'error' !important;
 }
 
-.uikit-select__element,
+.au-select,
 .form-select--wrapper select {
   border-color: #000 !important;
+  background-image: url("data:image/svg+xml,%3Csvg fill='%23000' width='1.5em' height='auto' viewBox='0 0 28 12' xmlns='http://www.w3.org/2000/svg'%3E  %3Cpath d='M1.9 1.1L8 7.2l6.1-6.1L16 2.9l-8 8-8-8 1.9-1.8z'/%3E  %3Cpath fill='none' d='M2-5.8h24v24H2v-24z'/%3E  %3C/svg%3E") !important;
 }
 
-.uikit-select:after,
-.form-select--wrapper:after {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E   %3Cpath fill='%23000' d='M64 128l64-64-16-16-64 64'/%3E   %3Cpath fill='%23000' d='M64 128l16-16-64-64L0 64'/%3E  %3C/svg%3E") !important;
-}
-
-.uikit-skip-link__link,
+.au-skip-link__link,
 .skip-link__link {
   background: #fff !important;
 }
 
-.uikit-tags__item,
-.form-type-bef-link a,
-#edit-custom-remove .facet-remove-link,
-.filter-topics-by-letter li,
-.tags__item > a {
+.au-tags,
+.filter-topics-by-letter ol,
+.filter-topics-by-letter ul,
+.tags {
+  color: #000 !important;
+}
+
+.au-tags__item,
+.form-type-bef-link a {
   border-color: #000 !important;
 }
 
-.uikit-text-input,
+.au-tags__item a,
+.form-type-bef-link a a {
+  color: #000 !important;
+}
+
+.au-text-input,
 [type='text'],
 [type='search'],
 [type='tel'],
@@ -362,22 +433,52 @@ ul.links .node-readmore:after {
 [type='date'],
 [type='time'],
 [type='number'],
-textarea,
-.uikit-header #search-block-form .form-item input,
-.region-featured #search-block-form .form-item input,
+#search-block-form .form-item input,
 #block-search-api-page-default-search .form-item input,
 .block-search-api-page .form-item input,
-.view-filters .views-exposed-form .form-item input {
+.view-filters .views-exposed-form .form-item input,
+textarea {
   border-color: #000 !important;
 }
 
-:disabled {
-  background-color: #f0f3f5 !important;
-  border-color: transparent;
+.au-text-input[disabled],
+[disabled][type='text'],
+[disabled][type='search'],
+[disabled][type='tel'],
+[disabled][type='url'],
+[disabled][type='email'],
+[disabled][type='password'],
+[disabled][type='date'],
+[disabled][type='time'],
+[disabled][type='number'],
+#search-block-form .form-item input[disabled],
+#block-search-api-page-default-search .form-item input[disabled],
+.block-search-api-page .form-item input[disabled],
+.view-filters .views-exposed-form .form-item input[disabled],
+textarea[disabled] {
+  color: #626262 !important;
+  background-color: #ccc !important;
+  border: 2px solid #ccc !important;
 }
 
-[disabled] {
-  background-color: #f0f3f5 !important;
+.au-text-input:disabled,
+:disabled[type='text'],
+:disabled[type='search'],
+:disabled[type='tel'],
+:disabled[type='url'],
+:disabled[type='email'],
+:disabled[type='password'],
+:disabled[type='date'],
+:disabled[type='time'],
+:disabled[type='number'],
+#search-block-form .form-item input:disabled,
+#block-search-api-page-default-search .form-item input:disabled,
+.block-search-api-page .form-item input:disabled,
+.view-filters .views-exposed-form .form-item input:disabled,
+textarea:disabled {
+  color: #626262 !important;
+  background-color: #ccc !important;
+  border: 2px solid #ccc !important;
 }
 
 .document-accessibility-form {
@@ -431,16 +532,15 @@ table thead {
   display: none;
 }
 
-.uikit-contextual-links {
+.au-contextual-links {
   display: none;
 }
 
-.uikit-workbench {
+.au-workbench {
   display: none;
 }
 
-.uikit-search,
-#search-block-form {
+.au-search {
   display: none;
 }
 
@@ -453,7 +553,7 @@ table thead {
   display: none;
 }
 
-.uikit-tabs {
+.au-tabs {
   display: none;
 }
 
@@ -469,8 +569,8 @@ table thead {
   display: none;
 }
 
-header.uikit-header .uikit-header__logo,
-header.region-featured .uikit-header__logo {
+header.au-header .au-header__logo,
+header.region-featured .au-header__logo {
   float: left;
   width: 70%;
 }
