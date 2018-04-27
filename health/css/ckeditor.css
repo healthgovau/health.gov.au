@@ -5344,7 +5344,7 @@ tr.drag-previous {
   height: 0;
   position: relative; }
   .image-wrapper.image-loading {
-    background-color: white; }
+    background-color: transparent; }
   .image-wrapper .image {
     width: 100%;
     position: absolute; }
@@ -5352,6 +5352,9 @@ tr.drag-previous {
       visibility: hidden; }
       .image-wrapper .image img.loaded {
         visibility: visible; }
+
+a .image-wrapper.image-loading {
+  background-color: white; }
 
 @media print {
   .image-wrapper.image-loading {
@@ -7388,9 +7391,11 @@ div.contextual-links-region-active .contextual-links-wrapper {
   display: inline;
   font-size: 0.8em;
   padding-left: 0.5em;
-  bottom: -3px; }
+  bottom: -3px;
+  margin-left: 0; }
   #edit-custom-remove .fa:before {
-    position: relative; }
+    position: relative;
+    margin-left: 0; }
 
 .uikit-btn-large, .feedback-band.bean-basic-content .feedback-band .feedback-col.link .feedback-col-link a, .bean-large-button .field-name-field-link-to a {
   margin-bottom: 0.8em; }
@@ -7717,7 +7722,8 @@ ul.social__links .social__links-item a,
     position: absolute;
     line-height: 1;
     left: 0;
-    margin-left: -1.2em; }
+    margin-left: -1.2em;
+    display: inline-block; }
 
 .fa-large {
   padding-left: 3.5em; }
@@ -8984,8 +8990,9 @@ body {
 .node-type-health-topic .page-layout p:last-of-type,
 .node-type-health-topic-hp .page-layout p:last-of-type,
 .node-type-landing-page .page-layout p:last-of-type,
+.node-type-publication .page-layout p:last-of-type,
 td .page-layout p:last-of-type, th .page-layout p:last-of-type,
-.view .page-layout p:last-of-type,
+.page-views .page-layout p:last-of-type,
 .document-accessibility-form .page-layout p:last-of-type {
   margin-bottom: 0; }
 

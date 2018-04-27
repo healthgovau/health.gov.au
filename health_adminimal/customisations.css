@@ -269,3 +269,17 @@ body .field-name-field-components .field-multiple-table fieldset > legend > span
 .field-name-field-components .warning.tabledrag-changed {
     display: none;
 }
+
+/* Workbench changes */
+.page-admin-workbench .admin.my-workbench > div:first-child {
+    display: none;
+}
+
+.page-admin-workbench .admin.my-workbench > div {
+    width: 100%;
+}
+
+/* Fixing strange padding around links in table cells */
+body.adminimal-skin-material table tbody td a {
+    padding: 0 !important;
+}

@@ -94,11 +94,6 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
     $form['#validate'][] = 'health_adminimal_feature_validator';
   }
 
-  // Add logic to invalid the form if last updated date is not later than publication date.
-  if ($form_id == 'publication_node_form') {
-    $form['#validate'][] = '_health_adminimal_publication_date_validator';
-  }
-
   // Update date published if the user is changing moderation states.
   if ($form_id == 'workbench_moderation_moderate_form') {
     $form['#submit'][] = '_health_adminimal_date_published_submitter';
@@ -294,21 +289,6 @@ function health_adminimal_feature_validator($form, &$form_state) {
       if ($feature_iamge_id == 0) {
         form_set_error('field_feature_image', t('Feature image field cannot be empty if marked as promoted to feature.'));
       }
-    }
-  }
-}
-
-/**
- * Node form validator for publication content type.
- *
- * @param $form
- * @param $form_state
- */
-function _health_adminimal_publication_date_validator($form, &$form_state) {
-  // Last updated field must be later than publication date.
-  if (isset($form_state['values']['field_date_updated'][LANGUAGE_NONE]) && isset($form_state['values']['field_publication_date'][LANGUAGE_NONE])) {
-    if (strtotime($form_state['values']['field_date_updated'][LANGUAGE_NONE][0]['value']) < strtotime($form_state['values']['field_publication_date'][LANGUAGE_NONE][0]['value'])) {
-      form_set_error('field_date_updated', t('Last updated date must be later than publication date.'));
     }
   }
 }

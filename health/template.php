@@ -895,7 +895,7 @@ function health_image($variables) {
     if (isset($size['width']) && isset($size['height'])) {
       $attributes['width'] = $size['width'];
       $attributes['height'] = $size['height'];
-      $ratio = round(($attributes['height'] / $attributes['width']) * 100);
+      $ratio = round(($attributes['height'] / $attributes['width']) * 100, 2);
     }
   }
   if (isset($ratio)) {
