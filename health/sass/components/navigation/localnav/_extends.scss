@@ -14,8 +14,14 @@
 }
 
 // Local navigation
-.au-body .sidebar #block-menu-block-2 .menu-block-wrapper {
-  @extend %health-localnav;
+.au-body .sidebar {
+  @include AU-space('margin', -1.5unit 0 1.5unit 0);
+  @include AU-media(sm) {
+    @include AU-space('margin', 0);
+  }
+  #block-menu-block-2 .menu-block-wrapper {
+    @extend %health-localnav;
+  }
 }
 
 // When the block title is a link
