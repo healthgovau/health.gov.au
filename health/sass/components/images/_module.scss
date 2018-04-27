@@ -25,7 +25,7 @@
   position: relative;
 
   &.image-loading {
-    background-color: white;
+    background-color: transparent;
   }
 
   .image {
@@ -39,6 +39,13 @@
         visibility: visible;
       }
     }
+  }
+}
+// Make the background colour white for images that are loading that have a link around them.
+// Normal this background is black and it looks ugly.
+a .image-wrapper {
+  &.image-loading {
+    background-color: white;
   }
 }
 

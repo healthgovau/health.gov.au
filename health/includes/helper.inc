@@ -253,7 +253,7 @@ function _health_default_audience_menu($path) {
 }
 
 /**
- * Generate a random letter based ID of varing lengths.
+ * Generate a random letter based ID of varying lengths.
  *
  * @param int $length
  *
