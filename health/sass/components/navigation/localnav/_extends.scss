@@ -18,7 +18,7 @@
   @extend %health-localnav;
 
   display: none;
-  @include uikit-media(sm) {
+  @include AU-media(sm) {
     display: block;
   }
 
