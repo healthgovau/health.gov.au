@@ -230,6 +230,33 @@ function health_preprocess_entity(&$variables) {
       }
 
       // Generate the view.
+      if ($view_name == 'generic_view') {
+
+        $content_type = $related_topics = $audience = $related_initiative = NULL;
+
+        // Content type filter.
+        if (isset($para_item->field_content_type[LANGUAGE_NONE])) {
+          $content_type = $para_item->field_content_type[LANGUAGE_NONE][0]['value'];
+        }
+
+        // Related topic filter.
+        if (isset($para_item->field_related_health_topics[LANGUAGE_NONE])) {
+          $related_topics = $para_item->field_related_health_topics[LANGUAGE_NONE][0]['target_id'];
+        }
+
+        // Audience filter.
+        if (isset($para_item->field_audience[LANGUAGE_NONE])) {
+          $audience = $para_item->field_audience[LANGUAGE_NONE][0]['tid'];
+        }
+
+        // Related initiative filter.
+        if (isset($para_item->field_related_initiatives[LANGUAGE_NONE])) {
+          $related_initiative = $para_item->field_related_initiatives[LANGUAGE_NONE][0]['target_id'];
+        }
+
+        $view->set_arguments([$content_type, $related_topics, $audience, $related_initiative]);
+      }
+
       $view->execute();
 
       if ($view->total_rows > 0) {
