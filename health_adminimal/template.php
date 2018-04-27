@@ -339,8 +339,8 @@ function _health_adminimal_telephone_validator($element, &$form_state) {
     $field_name = $element[LANGUAGE_NONE]['#field_name'];
     $value = $form_state['values'][$field_name][LANGUAGE_NONE][0]['value'];
   }
-  if (!empty($value) && preg_match('/^(\(\d{2}\)|\d{4}) ?(\d{4}|\d{3}) ?(\d{4}|\d{3})$/', $value) == 0) {
-    form_error($element, t('Telephone number is not in a valid format, eg:<br/>Local: (02) 1234 5678 <br/>Mobile: 0412 345 678 <br/>Hotline: 1300 123 456'));
+  if (!empty($value) && (preg_match('/^(\d{2}|\d{4}) ?(\d{4}|\d{3}) ?(\d{4}|\d{3})$/', $value) || preg_match('/^\d{3} \d{3}$/', $value)) == 0) {
+    form_error($element, t('Telephone number is not in a valid format, eg:<br/>Local: 02 1234 5678 <br/>Mobile: 0412 345 678 <br/>Hotline: 1300 123 456 <br/>Hotline: 130 000'));
   }
 }
 
