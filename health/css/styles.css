@@ -13,6 +13,9 @@ body.node-type-health-topic .para-container.paragraphs-item-para-content-text,
 body.node-type-health-topic-hp .para-container.paragraphs-item-para-content-text,
 body.node-type-landing-page .para-container.paragraphs-item-para-content-text,
 .paragraphs-item-para-taxonomies.para-container,
+.uikit-body a.localnav__mobile-toggle,
+.page a.localnav__mobile-toggle,
+.rsbtn_colorskin a.localnav__mobile-toggle,
 .region-sidebar-second,
 .front .paragraphs-item-para-block.para-container.block-id__feedback-band {
   background-color: #ecedee;
@@ -266,6 +269,9 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 .uikit-body .uikit-accordion__title,
 .page .uikit-accordion__title,
 .rsbtn_colorskin .uikit-accordion__title,
+.uikit-body .health-accordion__title,
+.rsbtn_colorskin .health-accordion__title,
+.page .health-accordion__title,
 .uikit-body .video__transcript summary,
 .video__transcript .uikit-body summary,
 .page .video__transcript summary,
@@ -273,6 +279,8 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 .rsbtn_colorskin .video__transcript summary,
 .video__transcript .rsbtn_colorskin summary,
 .uikit-accordion__title,
+.health-accordion__title,
+.page .health-accordion__title,
 .video__transcript summary {
   display: block;
   color: #313131;
@@ -292,6 +300,9 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 .uikit-body .uikit-accordion__title:focus,
 .page .uikit-accordion__title:focus,
 .rsbtn_colorskin .uikit-accordion__title:focus,
+.uikit-body .health-accordion__title:focus,
+.rsbtn_colorskin .health-accordion__title:focus,
+.page .health-accordion__title:focus,
 .uikit-body .video__transcript summary:focus,
 .video__transcript .uikit-body summary:focus,
 .page .video__transcript summary:focus,
@@ -299,6 +310,7 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 .rsbtn_colorskin .video__transcript summary:focus,
 .video__transcript .rsbtn_colorskin summary:focus,
 .uikit-accordion__title:focus,
+.health-accordion__title:focus,
 .video__transcript summary:focus {
   outline: none;
   border: 2px solid #313131;
@@ -307,6 +319,9 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 .uikit-body .uikit-accordion__title:focus,
 .page .uikit-accordion__title:focus,
 .rsbtn_colorskin .uikit-accordion__title:focus,
+.uikit-body .health-accordion__title:focus,
+.rsbtn_colorskin .health-accordion__title:focus,
+.page .health-accordion__title:focus,
 .uikit-body .video__transcript summary:focus,
 .video__transcript .uikit-body summary:focus,
 .page .video__transcript summary:focus,
@@ -316,6 +331,9 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 .uikit-body .uikit-accordion__title:hover,
 .page .uikit-accordion__title:hover,
 .rsbtn_colorskin .uikit-accordion__title:hover,
+.uikit-body .health-accordion__title:hover,
+.rsbtn_colorskin .health-accordion__title:hover,
+.page .health-accordion__title:hover,
 .uikit-body .video__transcript summary:hover,
 .video__transcript .uikit-body summary:hover,
 .page .video__transcript summary:hover,
@@ -323,8 +341,10 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 .rsbtn_colorskin .video__transcript summary:hover,
 .video__transcript .rsbtn_colorskin summary:hover,
 .uikit-accordion__title:focus,
+.health-accordion__title:focus,
 .video__transcript summary:focus,
 .uikit-accordion__title:hover,
+.health-accordion__title:hover,
 .video__transcript summary:hover {
   background-color: #f0f3f5;
 }
@@ -332,6 +352,9 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 .uikit-body .uikit-accordion__title::-webkit-details-marker,
 .page .uikit-accordion__title::-webkit-details-marker,
 .rsbtn_colorskin .uikit-accordion__title::-webkit-details-marker,
+.uikit-body .health-accordion__title::-webkit-details-marker,
+.rsbtn_colorskin .health-accordion__title::-webkit-details-marker,
+.page .health-accordion__title::-webkit-details-marker,
 .uikit-body .video__transcript summary::-webkit-details-marker,
 .video__transcript .uikit-body summary::-webkit-details-marker,
 .page .video__transcript summary::-webkit-details-marker,
@@ -339,6 +362,8 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 .rsbtn_colorskin .video__transcript summary::-webkit-details-marker,
 .video__transcript .rsbtn_colorskin summary::-webkit-details-marker,
 .uikit-accordion__title::-webkit-details-marker,
+.health-accordion__title::-webkit-details-marker,
+.page .health-accordion__title::-webkit-details-marker,
 .video__transcript summary::-webkit-details-marker {
   display: none;
 }
@@ -346,6 +371,9 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 .uikit-body .uikit-accordion__title:after,
 .page .uikit-accordion__title:after,
 .rsbtn_colorskin .uikit-accordion__title:after,
+.uikit-body .health-accordion__title:after,
+.rsbtn_colorskin .health-accordion__title:after,
+.page .health-accordion__title:after,
 .uikit-body .video__transcript summary:after,
 .video__transcript .uikit-body summary:after,
 .page .video__transcript summary:after,
@@ -353,6 +381,8 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 .rsbtn_colorskin .video__transcript summary:after,
 .video__transcript .rsbtn_colorskin summary:after,
 .uikit-accordion__title:after,
+.health-accordion__title:after,
+.page .health-accordion__title:after,
 .video__transcript summary:after {
   content: ' ';
   position: absolute;
@@ -372,6 +402,12 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 .uikit-body .uikit-accordion__title.uikit-accordion--closed:after,
 .page .uikit-accordion__title.uikit-accordion--closed:after,
 .rsbtn_colorskin .uikit-accordion__title.uikit-accordion--closed:after,
+.uikit-body .uikit-accordion--closed.health-accordion__title:after,
+.rsbtn_colorskin .uikit-accordion--closed.health-accordion__title:after,
+.uikit-body .health-accordion__title.health-accordion--closed:after,
+.rsbtn_colorskin .health-accordion__title.health-accordion--closed:after,
+.page .health-accordion__title.health-accordion--closed:after,
+.page .uikit-accordion--closed.health-accordion__title:after,
 .uikit-body .video__transcript summary.uikit-accordion--closed:after,
 .video__transcript .uikit-body summary.uikit-accordion--closed:after,
 .page .video__transcript summary.uikit-accordion--closed:after,
@@ -379,6 +415,9 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 .rsbtn_colorskin .video__transcript summary.uikit-accordion--closed:after,
 .video__transcript .rsbtn_colorskin summary.uikit-accordion--closed:after,
 .uikit-accordion__title.uikit-accordion--closed:after,
+.uikit-accordion--closed.health-accordion__title:after,
+.health-accordion__title.health-accordion--closed:after,
+.page .health-accordion__title.health-accordion--closed:after,
 .video__transcript summary.uikit-accordion--closed:after {
   -webkit-transform: rotate(-180deg);
   -ms-transform: rotate(-180deg);
@@ -388,6 +427,9 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 .ie8 .uikit-body .uikit-accordion__title:after,
 .ie8 .page .uikit-accordion__title:after,
 .ie8 .rsbtn_colorskin .uikit-accordion__title:after,
+.ie8 .uikit-body .health-accordion__title:after,
+.ie8 .rsbtn_colorskin .health-accordion__title:after,
+.ie8 .page .health-accordion__title:after,
 .ie8 .uikit-body .video__transcript summary:after,
 .video__transcript .ie8 .uikit-body summary:after,
 .ie8 .page .video__transcript summary:after,
@@ -397,6 +439,9 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 .lt-ie8 .uikit-body .uikit-accordion__title:after,
 .lt-ie8 .page .uikit-accordion__title:after,
 .lt-ie8 .rsbtn_colorskin .uikit-accordion__title:after,
+.lt-ie8 .uikit-body .health-accordion__title:after,
+.lt-ie8 .rsbtn_colorskin .health-accordion__title:after,
+.lt-ie8 .page .health-accordion__title:after,
 .lt-ie8 .uikit-body .video__transcript summary:after,
 .video__transcript
   .lt-ie8 .uikit-body summary:after,
@@ -408,10 +453,12 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
   .lt-ie8 .rsbtn_colorskin summary:after,
 .ie8
   .uikit-accordion__title:after,
+.ie8 .health-accordion__title:after,
 .ie8 .video__transcript summary:after,
 .video__transcript .ie8 summary:after,
 .lt-ie8
   .uikit-accordion__title:after,
+.lt-ie8 .health-accordion__title:after,
 .lt-ie8 .video__transcript summary:after,
 .video__transcript
   .lt-ie8 summary:after {
@@ -422,6 +469,12 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 .ie8 .uikit-body .uikit-accordion__title.uikit-accordion--open:after,
 .ie8 .page .uikit-accordion__title.uikit-accordion--open:after,
 .ie8 .rsbtn_colorskin .uikit-accordion__title.uikit-accordion--open:after,
+.ie8 .uikit-body .uikit-accordion--open.health-accordion__title:after,
+.ie8 .rsbtn_colorskin .uikit-accordion--open.health-accordion__title:after,
+.ie8 .uikit-body .health-accordion__title.health-accordion--open:after,
+.ie8 .rsbtn_colorskin .health-accordion__title.health-accordion--open:after,
+.ie8 .page .health-accordion__title.health-accordion--open:after,
+.ie8 .page .uikit-accordion--open.health-accordion__title:after,
 .ie8 .uikit-body .video__transcript summary.uikit-accordion--open:after,
 .video__transcript .ie8 .uikit-body summary.uikit-accordion--open:after,
 .ie8 .page .video__transcript summary.uikit-accordion--open:after,
@@ -431,6 +484,12 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 .lt-ie8 .uikit-body .uikit-accordion__title.uikit-accordion--open:after,
 .lt-ie8 .page .uikit-accordion__title.uikit-accordion--open:after,
 .lt-ie8 .rsbtn_colorskin .uikit-accordion__title.uikit-accordion--open:after,
+.lt-ie8 .uikit-body .uikit-accordion--open.health-accordion__title:after,
+.lt-ie8 .rsbtn_colorskin .uikit-accordion--open.health-accordion__title:after,
+.lt-ie8 .uikit-body .health-accordion__title.health-accordion--open:after,
+.lt-ie8 .rsbtn_colorskin .health-accordion__title.health-accordion--open:after,
+.lt-ie8 .page .health-accordion__title.health-accordion--open:after,
+.lt-ie8 .page .uikit-accordion--open.health-accordion__title:after,
 .lt-ie8 .uikit-body .video__transcript summary.uikit-accordion--open:after,
 .video__transcript
   .lt-ie8 .uikit-body summary.uikit-accordion--open:after,
@@ -442,10 +501,14 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
   .lt-ie8 .rsbtn_colorskin summary.uikit-accordion--open:after,
 .ie8
   .uikit-accordion__title.uikit-accordion--open:after,
+.ie8 .uikit-accordion--open.health-accordion__title:after,
+.ie8 .health-accordion__title.health-accordion--open:after,
 .ie8 .video__transcript summary.uikit-accordion--open:after,
 .video__transcript .ie8 summary.uikit-accordion--open:after,
 .lt-ie8
   .uikit-accordion__title.uikit-accordion--open:after,
+.lt-ie8 .uikit-accordion--open.health-accordion__title:after,
+.lt-ie8 .health-accordion__title.health-accordion--open:after,
 .lt-ie8 .video__transcript summary.uikit-accordion--open:after,
 .video__transcript
   .lt-ie8 summary.uikit-accordion--open:after {
@@ -453,11 +516,13 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 }
 
 .uikit-accordion__body,
+.health-accordion__body,
 .video__transcript .video__transcript-body {
   overflow: hidden;
 }
 
 .js .uikit-accordion__body.uikit-accordion--open,
+.js .uikit-accordion--open.health-accordion__body,
 .js .video__transcript .uikit-accordion--open.video__transcript-body,
 .video__transcript .js .uikit-accordion--open.video__transcript-body {
   display: block;
@@ -465,6 +530,7 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 }
 
 .js .uikit-accordion__body.uikit-accordion--closed,
+.js .uikit-accordion--closed.health-accordion__body,
 .js .video__transcript .uikit-accordion--closed.video__transcript-body,
 .video__transcript .js .uikit-accordion--closed.video__transcript-body {
   display: none;
@@ -472,6 +538,7 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
 }
 
 .uikit-accordion__body-wrapper,
+.health-accordion__body-wrapper,
 .video__transcript .video__transcript-body-wrapper {
   padding: 1.2em;
   border-top: 1px solid #CCC;
@@ -15995,6 +16062,26 @@ p.resource-title {
   width: 33.3333333333%;
 }
 
+.health-accordion__title,
+.page .health-accordion__title {
+  border: none;
+}
+
+.health-accordion__title:focus,
+.page .health-accordion__title:focus {
+  outline: 1px solid #313131;
+  outline-offset: 1px;
+}
+
+.health-accordion__title:focus,
+.page .health-accordion__title:focus {
+  border: none;
+}
+
+.health-accordion__body.health-accordion--closed {
+  display: none;
+}
+
 .region-alerts {
   background-color: #ffefef;
   border-top: 6px solid #ff635c;
@@ -20639,7 +20726,6 @@ div.region-content .anchor {
 .page .sidebar #block-menu-block-2,
 .rsbtn_colorskin .sidebar #block-menu-block-2 {
   padding: 0;
-  display: none;
 }
 
 .uikit-body .sidebar #block-menu-block-2 ul,
@@ -20688,33 +20774,27 @@ div.region-content .anchor {
   padding: 0.8em 4em;
 }
 
-.uikit-body .sidebar .mobilemenu-active#block-menu-block-2,
-.page .sidebar .mobilemenu-active#block-menu-block-2,
-.rsbtn_colorskin .sidebar .mobilemenu-active#block-menu-block-2 {
-  display: block;
-}
-
-.mobile-toggle.mobile-toggle__local-nav {
+.uikit-body a.localnav__mobile-toggle,
+.page a.localnav__mobile-toggle,
+.rsbtn_colorskin a.localnav__mobile-toggle {
   display: block;
   border-bottom: 1px solid #CCC;
-}
-
-.mobile-toggle.mobile-toggle__local-nav .mobile-toggle__close,
-.mobile-toggle.mobile-toggle__local-nav .mobile-toggle__open {
   padding: 6px 12px;
-  display: block;
 }
 
-.mobile-toggle.mobile-toggle__local-nav .mobile-toggle__close {
-  display: none;
+.uikit-body a.localnav__mobile-toggle:after,
+.page a.localnav__mobile-toggle:after,
+.rsbtn_colorskin a.localnav__mobile-toggle:after {
+  right: auto;
+  margin-left: 1em;
+  font-size: 0.8em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E %3Cpath fill='black' d='M64 0l64 64-16 16-64-64'/%3E %3Cpath fill='black' d='M64 0l16 16-64 64L0 64'/%3E%3C/svg%3E");
 }
 
-.mobilemenu-active.mobile-toggle.mobile-toggle__local-nav .mobile-toggle__open {
-  display: none;
-}
-
-.mobilemenu-active.mobile-toggle.mobile-toggle__local-nav .mobile-toggle__close {
-  display: block;
+.uikit-body a.localnav__mobile-toggle:focus,
+.page a.localnav__mobile-toggle:focus,
+.rsbtn_colorskin a.localnav__mobile-toggle:focus {
+  color: black;
 }
 
 .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 {
@@ -20731,6 +20811,9 @@ div.region-content .anchor {
 .uikit-body .uikit-accordion__title,
 .page .uikit-accordion__title,
 .rsbtn_colorskin .uikit-accordion__title,
+.uikit-body .health-accordion__title,
+.rsbtn_colorskin .health-accordion__title,
+.page .health-accordion__title,
 .uikit-body .video__transcript summary,
 .video__transcript .uikit-body summary,
 .page .video__transcript summary,
@@ -20770,10 +20853,6 @@ div.region-content .anchor {
 .page .sidebar .block-menu-block--title-link .menu ul ul a,
 .rsbtn_colorskin .sidebar .block-menu-block--title-link .menu ul ul a {
   padding-left: 3.2em;
-}
-
-.mobile-toggle.mobile-toggle__local-nav a {
-  border-bottom: 0;
 }
 
 #block-menu-menu-sub-menu {
@@ -20910,6 +20989,10 @@ ul.links {
   color: #313131;
   background: transparent;
   outline-offset: -1px;
+}
+
+.region-navigation .mobile-toggle:after {
+  background: none;
 }
 
 .nav-overlay {
@@ -21098,6 +21181,7 @@ header,
 }
 
 .block-facetapi .uikit-accordion__title,
+.block-facetapi .health-accordion__title,
 .block-facetapi .video__transcript summary,
 .video__transcript .block-facetapi summary {
   padding-top: 0.8em;
@@ -21105,9 +21189,11 @@ header,
 }
 
 .block-facetapi [tabindex="0"].uikit-accordion__body:focus,
+.block-facetapi [tabindex="0"].health-accordion__body:focus,
 .block-facetapi .video__transcript [tabindex="0"].video__transcript-body:focus,
 .video__transcript .block-facetapi [tabindex="0"].video__transcript-body:focus,
 .block-facetapi .uikit-accordion__body:target,
+.block-facetapi .health-accordion__body:target,
 .block-facetapi .video__transcript .video__transcript-body:target,
 .video__transcript .block-facetapi .video__transcript-body:target {
   outline: none;
@@ -21270,6 +21356,7 @@ p.filter__help {
 }
 
 .block-facetapi .uikit-accordion__title,
+.block-facetapi .health-accordion__title,
 .block-facetapi .video__transcript summary,
 .video__transcript .block-facetapi summary {
   padding-top: 0.8em;
@@ -21277,6 +21364,7 @@ p.filter__help {
 }
 
 .block-facetapi .uikit-accordion__title .block__title,
+.block-facetapi .health-accordion__title .block__title,
 .block-facetapi .video__transcript summary .block__title,
 .video__transcript .block-facetapi summary .block__title {
   font-size: 16px;

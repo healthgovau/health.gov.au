@@ -3735,13 +3735,9 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
   padding: 0.8em 2.8em;
 }
 
-.uikit-body .sidebar #block-menu-block-2,
-.page .sidebar #block-menu-block-2,
-.rsbtn_colorskin .sidebar #block-menu-block-2 {
-  display: block;
-}
-
-.mobile-toggle.mobile-toggle__local-nav {
+.uikit-body a.localnav__mobile-toggle,
+.page a.localnav__mobile-toggle,
+.rsbtn_colorskin a.localnav__mobile-toggle {
   display: none;
 }
 
@@ -3888,6 +3884,7 @@ p.filter__help {
 
 .region-navigation #block-search-api-page-default-search--2 {
   border-bottom: 0;
+  display: none;
 }
 
 .js .region-header div.block-search-api-page {

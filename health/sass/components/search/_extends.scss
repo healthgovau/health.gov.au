@@ -69,8 +69,8 @@
     border-radius: 0;
     @include uikit-media(sm) {
       border-bottom: 0;
+      display: none;
     }
-
   }
 }
 
