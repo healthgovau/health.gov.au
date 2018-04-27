@@ -6,7 +6,15 @@
 //
 // Style guide: navigation.breadcrumb
 
-%au-breadcrumbs,
-.au-breadcrumbs {
+.breadcrumbs {
   @extend .au-breadcrumbs;
+  display: none;
+  @include AU-media(sm) {
+    display: block;
+  }
+
+  .breadcrumbs__list {
+    @extend .au-link-list;
+    @extend .au-link-list--inline;
+  }
 }
