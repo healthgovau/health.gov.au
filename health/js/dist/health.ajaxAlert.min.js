@@ -2,6 +2,8 @@
 
   'use strict';
 
+  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
   // To understand behaviors, see https://drupal.org/node/756722#behaviors
   Drupal.behaviors.ajaxAlert = {
     attach: function (context, settings) {
@@ -27,7 +29,7 @@
                   xml.find('item').each(function () {
 
                     // Check if the node list appears in cookies already.
-                    var updated_date = $.datepicker.formatDate('@', new Date($(this).find('pubDate').text().replace(/\s/, 'T')));
+                    var updated_date = new Date($(this).find('pubDate').text().replace(/\s/, 'T')).getTime();
                     var cookie = 'HideHealthAlert-' + $(this).find('id').text() + '-' + updated_date;
                     var hideAlert = scope.getCookie(cookie);
                     if (!hideAlert) {
@@ -37,7 +39,7 @@
                           'id': $(this).find('id').text(),
                           'title': $(this).find('title').text(),
                           'link': $(this).find('link').text(),
-                          'updated_date': updated_date,
+                          'updated_date': updated_date
                         });
                     }
                   });
@@ -97,7 +99,8 @@
         // Vue filter to convert timestamp to dd MM yy format.
         Vue.filter('formatDate', function (value) {
           if (value) {
-            return $.datepicker.formatDate('dd MM yy', new Date(parseInt(value)));
+            var date = new Date(parseInt(value));
+            return date.getUTCDate() + ' ' + months[(date.getUTCMonth()+1)] + ' ' + date.getUTCFullYear();
           }
         });
 
