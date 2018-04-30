@@ -16023,6 +16023,10 @@ p.resource-title {
   width: 100%;
 }
 
+.block__count--3 .bean-image-and-text {
+  margin-bottom: 12px;
+}
+
 .block__count--5 .bean-image-and-text {
   width: 50%;
   float: left;
@@ -21591,7 +21595,7 @@ p.filter__help {
   position: relative;
 }
 
-.js .region-header div.block-search-api-page {
+.region-header div.block-search-api-page {
   display: none;
 }
 

@@ -3225,6 +3225,10 @@ h6 {
   display: block;
 }
 
+.block__count--3 .bean-image-and-text {
+  margin-bottom: 0;
+}
+
 .block__count--5 .bean-image-and-text {
   width: 20%;
   margin-bottom: 0;
@@ -3887,7 +3891,7 @@ p.filter__help {
   display: none;
 }
 
-.js .region-header div.block-search-api-page {
+.region-header div.block-search-api-page {
   display: block;
   height: auto;
 }

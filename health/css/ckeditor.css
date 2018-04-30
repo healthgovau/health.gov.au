@@ -4937,6 +4937,12 @@ p.summary, .field-name-field-summary {
 .block__count--1 .bean-image-and-text {
   width: 100%; }
 
+.block__count--3 .bean-image-and-text {
+  margin-bottom: 12px; }
+  @media (min-width: 768px) {
+    .block__count--3 .bean-image-and-text {
+      margin-bottom: 0; } }
+
 .block__count--5 .bean-image-and-text {
   width: 50%;
   float: left;
@@ -8497,10 +8503,10 @@ p.filter__help {
       border-bottom: 0;
       display: none; } }
 
-.js .region-header div.block-search-api-page {
+.region-header div.block-search-api-page {
   display: none; }
   @media (min-width: 768px) {
-    .js .region-header div.block-search-api-page {
+    .region-header div.block-search-api-page {
       display: block;
       height: auto; } }
 
