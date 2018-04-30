@@ -35,9 +35,13 @@ endif;
             <a href="<?php print $front_page; ?>"
              title="<?php print t('Home'); ?>" rel="home"
              class="uikit-header__logo">
-              <img data-src="/<?php print path_to_theme(); ?>/images/DoHCrest.png"
-                alt="<?php print t('Australia government Department of Health'); ?>"
-                class="uikit-header__logo-image uikit-responsive-media-img"/>
+              <div class="image-wrapper image-loading rs_preserve rs_skip" style="padding-bottom: 24%">
+                <div class="image">
+                  <img data-src="/<?php print path_to_theme(); ?>/images/DoHCrest.png" width="858" height="208"
+                       alt="<?php print t('Australia government Department of Health'); ?>"
+                       class="uikit-header__logo-image uikit-responsive-media-img"/>
+                </div>
+              </div>
             </a>
           <?php endif; ?>
           <?php if ($site_name || $site_slogan): ?>
@@ -159,7 +163,13 @@ endif;
       <div class="footer__end row">
       <?php print render($page['footer_bottom']); ?>
         <div class="footer__logo">
-          <img data-src="/<?php print path_to_theme(); ?>/images/GovCrest.png" alt="Commonwealth Coat of Arms crest logo">
+          <div class="image-wrapper image-loading rs_preserve rs_skip" style="padding-bottom: 73%">
+            <div class="image">
+              <img typeof="foaf:Image" width="201" height="147"
+                   alt="Commonwealth Coat of Arms crest logo"
+                   data-src="/<?php print path_to_theme(); ?>/images/GovCrest.png">
+            </div>
+          </div>
         </div>
         <p class="footer__attribution">
           <small>© Commonwealth of Australia</small>

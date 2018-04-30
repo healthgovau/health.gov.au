@@ -59,9 +59,6 @@
 }
 
 // Mobile toggle.
-.mobile-toggle.mobile-toggle__local-nav {
+.uikit-body a.localnav__mobile-toggle {
   @extend %uikit-localnav__mobile-toggle;
-  a {
-    border-bottom: 0;
-  }
 }

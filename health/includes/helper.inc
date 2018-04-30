@@ -253,7 +253,7 @@ function _health_default_audience_menu($path) {
 }
 
 /**
- * Generate a random letter based ID of varing lengths.
+ * Generate a random letter based ID of varying lengths.
  *
  * @param int $length
  *
@@ -336,7 +336,7 @@ function _health_get_featured_item_nid($featured, $featured_bundle_type) {
     }
     $featured_item = field_get_items('paragraphs_item', $featured, $field);
     if (!empty($featured_item)) {
-      return $featured_item[0]['entity']->nid;
+      return $featured_item[0]['target_id'];
     }
   }
   return FALSE;

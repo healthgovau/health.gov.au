@@ -832,6 +832,10 @@ function health_preprocess_page(&$variables) {
     'type' => 'file',
   ];
   $variables['page']['content']['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/dist/health.accordion.min.js',
+    'type' => 'file',
+  ];
+  $variables['page']['content']['#attached']['js'][] = [
     'data' => path_to_theme() . '/pancake/js/pancake.js', // Already minified.
     'type' => 'file',
   ];
@@ -1107,7 +1111,6 @@ function health_preprocess_page(&$variables) {
   $render_health_alert_bar = [
     '#theme' => 'health_alert_bar',
   ];
-  $render_health_alert_bar['#attached']['library'][] = ['system', 'ui.datepicker'];
   $render_health_alert_bar['#attached']['js'][] = [
     'data' => path_to_theme() . '/js/dist/health.ajaxAlert.min.js',
     'type' => 'file',

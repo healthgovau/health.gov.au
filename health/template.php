@@ -525,7 +525,7 @@ function health_js_alter(&$javascript) {
   }
 
   if ($replace_jquery) {
-    $javascript['misc/jquery.js']['data'] = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js';
+    $javascript['misc/jquery.js']['data'] = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js';
     $javascript['misc/jquery.js']['type'] = 'external';
   }
 
@@ -895,7 +895,7 @@ function health_image($variables) {
     if (isset($size['width']) && isset($size['height'])) {
       $attributes['width'] = $size['width'];
       $attributes['height'] = $size['height'];
-      $ratio = round(($attributes['height'] / $attributes['width']) * 100);
+      $ratio = round(($attributes['height'] / $attributes['width']) * 100, 2);
     }
   }
   if (isset($ratio)) {
