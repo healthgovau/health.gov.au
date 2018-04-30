@@ -23,7 +23,8 @@
   .paragraphs-item-para-contact.para-container {
     @extend %colour-Tertiary-2-background;
     color: white;
-    h2 {
+    h2,
+    i {
       color: white;
     }
     a {
