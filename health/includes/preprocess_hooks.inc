@@ -727,8 +727,6 @@ function health_preprocess_html(&$variables, $hook) {
  *
  * @param array $variables
  *   Variables to pass to the theme template.
- * @param string $hook
- *   The name of the template being rendered ("node" in this case.)
  */
 function health_preprocess_node(&$variables) {
 
@@ -774,6 +772,12 @@ function health_preprocess_node(&$variables) {
 
   // Add the type as a name to the node e.g. "News article" or "Event"
   $variables['type_name'] = node_type_get_name($variables['node']);
+
+  // Add contact type to class for contact content type.
+  if ($variables['type'] == 'contact') {
+    $type = taxonomy_term_load($variables['field_contact_type'][0]['tid'])->name;
+    $variables['classes_array'][] = strtolower(str_replace(' ', '-', $type));
+  }
 
   // Display suite preprocess hooks.
   if (isset($variables['preprocess_fields'])) {
