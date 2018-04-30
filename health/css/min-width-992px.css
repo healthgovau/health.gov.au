@@ -1204,6 +1204,11 @@ table {
   display: block;
 }
 
+.node-publication.view-mode-inline_large,
+.node-contact.view-mode-inline_large {
+  margin-bottom: 4.8em;
+}
+
 .node-news-article.view-mode-listing_vertical_small .group-right {
   padding: 0.57em 1.05em;
 }
@@ -1249,10 +1254,6 @@ table {
 .node-video.view-mode-full.node-video > .group-left {
   width: 60%;
   padding-right: 4em;
-}
-
-.node-contact.view-mode-inline_large {
-  margin-bottom: 4.8em;
 }
 
 .node-departmental-media.view-mode-listing_vertical_small .group-right {

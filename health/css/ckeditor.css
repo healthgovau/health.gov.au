@@ -7521,8 +7521,26 @@ ul.social__links,
     .node-news-article.view-mode-inline, .node-health-alert.view-mode-inline, .node-publication.view-mode-inline, .node-publication-collection.view-mode-inline, .node-video.view-mode-inline, .node-contact.view-mode-inline, .node-initiative-or-program.view-mode-inline, .node-departmental-media.view-mode-inline {
       padding: 1.6em 0.8em; } }
 
-.node-publication.view-mode-inline_large {
+.node-publication.view-mode-inline_large, .node-contact.view-mode-inline_large {
   margin-bottom: 1.6em; }
+  .node-publication.view-mode-inline_large .field-name-title, .node-contact.view-mode-inline_large .field-name-title {
+    font-weight: bold; }
+  .node-publication.view-mode-inline_large .group-name .field, .node-contact.view-mode-inline_large .group-name .field {
+    float: left;
+    margin-right: 4px; }
+  .node-publication.view-mode-inline_large .group-name:before, .node-contact.view-mode-inline_large .group-name:before, .node-publication.view-mode-inline_large .group-name:after, .node-contact.view-mode-inline_large .group-name:after {
+    content: " ";
+    display: table; }
+  .node-publication.view-mode-inline_large .group-name:after, .node-contact.view-mode-inline_large .group-name:after {
+    clear: both; }
+  .node-publication.view-mode-inline_large p, .node-contact.view-mode-inline_large p {
+    margin-bottom: 0; }
+  @media (min-width: 768px) {
+    .node-publication.view-mode-inline_large, .node-contact.view-mode-inline_large {
+      margin-bottom: 3.2em; } }
+  @media (min-width: 992px) {
+    .node-publication.view-mode-inline_large, .node-contact.view-mode-inline_large {
+      margin-bottom: 4.8em; } }
 
 .node-news-article.view-mode-search_result, .node-event.view-mode-search_result, .node-health-alert.view-mode-search_result, .node-publication.view-mode-search_result, .node-video.view-mode-search_result, .node-campaign.view-mode-search_result, .node-committee-or-group.view-mode-search_result, .node-condition-or-disease.view-mode-search_result, .node-contact.view-mode-search_result, .node-initiative-or-program.view-mode-search_result, .node-release.view-mode-search_result, .node-statistic.view-mode-search_result, .node-service.view-mode-search_result, .node-survey.view-mode-search_result, .node-health-topic.view-mode-search_result, .node-departmental-media.view-mode-search_result, .page-search main .search-api-page-results .view-mode-search_result {
   width: 100%; }
@@ -7710,27 +7728,6 @@ ul.social__links,
   padding-bottom: 0 !important; }
   .node-video.view-mode-feature .field-name-field-image-featured img, .node-video.view-mode-full .field-name-field-image-featured img, .node-video.view-mode-listing_vertical .field-name-field-image-featured img, .node-video.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-video.view-mode-inline .field-name-field-image-featured img {
     width: 100%; }
-
-.node-contact.view-mode-inline_large {
-  margin-bottom: 1.6em; }
-  .node-contact.view-mode-inline_large .field-name-title {
-    font-weight: bold; }
-  .node-contact.view-mode-inline_large .group-name .field {
-    float: left;
-    margin-right: 4px; }
-  .node-contact.view-mode-inline_large .group-name:before, .node-contact.view-mode-inline_large .group-name:after {
-    content: " ";
-    display: table; }
-  .node-contact.view-mode-inline_large .group-name:after {
-    clear: both; }
-  .node-contact.view-mode-inline_large p {
-    margin-bottom: 0; }
-  @media (min-width: 768px) {
-    .node-contact.view-mode-inline_large {
-      margin-bottom: 3.2em; } }
-  @media (min-width: 992px) {
-    .node-contact.view-mode-inline_large {
-      margin-bottom: 4.8em; } }
 
 .node-statistic.view-mode-feature, .node-statistic.view-mode-inline {
   max-width: 25em; }
@@ -8179,15 +8176,6 @@ body.node-type-health-topic .para-container.paragraphs-item-image, body.node-typ
     padding: 0; }
     .page .paragraphs-item-para-contact .view-mode-hotline_bar .paragraphs-item-para-telephone .field-name-field-contact-telephone {
       font-weight: 700; }
-      .page .paragraphs-item-para-contact .view-mode-hotline_bar .paragraphs-item-para-telephone .field-name-field-contact-telephone a:before {
-        content: "\f095";
-        font-family: FontAwesome;
-        font-size: 1em;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: inherit;
-        z-index: 1;
-        margin-right: 5px; }
 
 .paragraphs-item-para-statistics .field-name-field-summary p {
   margin-top: 0.8em;
@@ -9512,11 +9500,13 @@ body {
 .page-node-1156 .paragraphs-item-para-contact.para-container {
   color: white; }
   .page-node-1021 .paragraphs-item-para-contact.para-container h2, .page-node-1021 .paragraphs-item-para-contact.para-container .video--left .video__title, .video--left .page-node-1021 .paragraphs-item-para-contact.para-container .video__title, .page-node-1021 .paragraphs-item-para-contact.para-container .video--right .video__title, .video--right .page-node-1021 .paragraphs-item-para-contact.para-container .video__title,
+  .page-node-1021 .paragraphs-item-para-contact.para-container i,
   .page-node-1156 .paragraphs-item-para-contact.para-container h2,
   .page-node-1156 .paragraphs-item-para-contact.para-container .video--left .video__title,
   .video--left .page-node-1156 .paragraphs-item-para-contact.para-container .video__title,
   .page-node-1156 .paragraphs-item-para-contact.para-container .video--right .video__title,
-  .video--right .page-node-1156 .paragraphs-item-para-contact.para-container .video__title {
+  .video--right .page-node-1156 .paragraphs-item-para-contact.para-container .video__title,
+  .page-node-1156 .paragraphs-item-para-contact.para-container i {
     color: white; }
   .page-node-1021 .paragraphs-item-para-contact.para-container a,
   .page-node-1156 .paragraphs-item-para-contact.para-container a {
