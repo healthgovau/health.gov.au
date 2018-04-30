@@ -36,31 +36,11 @@
 
   // Inline style
   &.view-mode-inline_large {
-    .field-name-title {
-      font-weight: bold;
-    }
-    .group-name {
-      .field {
-        float: left;
-        margin-right: 4px;
-      }
-      @include uikit-clearfix;
-    }
-    p {
-      margin-bottom: 0;
-    }
-
-    margin-bottom: uikit-space(1);
-    @include uikit-media(sm){
-      margin-bottom: uikit-space(2);
-    }
-    @include uikit-media(md){
-      margin-bottom: uikit-space(3);
-    }
+    @extend %dm-inline-large;
   }
     
-    // Search
-    &.view-mode-search_result {
-        @extend %dm-search-index;
-    }
+  // Search
+  &.view-mode-search_result {
+      @extend %dm-search-index;
+  }
 }
