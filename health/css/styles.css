@@ -17825,8 +17825,38 @@ ul.social__links .social__links-item a:after,
   padding: 0.8em 0;
 }
 
-.node-publication.view-mode-inline_large {
+.node-publication.view-mode-inline_large,
+.node-contact.view-mode-inline_large {
   margin-bottom: 1.6em;
+}
+
+.node-publication.view-mode-inline_large .field-name-title,
+.node-contact.view-mode-inline_large .field-name-title {
+  font-weight: bold;
+}
+
+.node-publication.view-mode-inline_large .group-name .field,
+.node-contact.view-mode-inline_large .group-name .field {
+  float: left;
+  margin-right: 4px;
+}
+
+.node-publication.view-mode-inline_large .group-name:before,
+.node-contact.view-mode-inline_large .group-name:before,
+.node-publication.view-mode-inline_large .group-name:after,
+.node-contact.view-mode-inline_large .group-name:after {
+  content: " ";
+  display: table;
+}
+
+.node-publication.view-mode-inline_large .group-name:after,
+.node-contact.view-mode-inline_large .group-name:after {
+  clear: both;
+}
+
+.node-publication.view-mode-inline_large p,
+.node-contact.view-mode-inline_large p {
+  margin-bottom: 0;
 }
 
 .node-news-article.view-mode-search_result,
@@ -18095,31 +18125,11 @@ ul.social__links .social__links-item a:after,
   width: 100%;
 }
 
-.node-contact.view-mode-inline_large {
-  margin-bottom: 1.6em;
-}
-
-.node-contact.view-mode-inline_large .field-name-title {
-  font-weight: bold;
-}
-
-.node-contact.view-mode-inline_large .group-name .field {
-  float: left;
-  margin-right: 4px;
-}
-
-.node-contact.view-mode-inline_large .group-name:before,
-.node-contact.view-mode-inline_large .group-name:after {
-  content: " ";
-  display: table;
-}
-
-.node-contact.view-mode-inline_large .group-name:after {
-  clear: both;
-}
-
-.node-contact.view-mode-inline_large p {
-  margin-bottom: 0;
+.node-contact.department-of-health .field-name-field-image-featured img,
+.node-contact.committee-or-group .field-name-field-image-featured img,
+.node-contact.minister .field-name-field-image-featured img {
+  border-radius: 50%;
+  border: 3px solid #CCC;
 }
 
 .node-statistic.view-mode-feature,

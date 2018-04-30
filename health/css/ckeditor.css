@@ -7521,8 +7521,26 @@ ul.social__links,
     .node-news-article.view-mode-inline, .node-health-alert.view-mode-inline, .node-publication.view-mode-inline, .node-publication-collection.view-mode-inline, .node-video.view-mode-inline, .node-contact.view-mode-inline, .node-initiative-or-program.view-mode-inline, .node-departmental-media.view-mode-inline {
       padding: 1.6em 0.8em; } }
 
-.node-publication.view-mode-inline_large {
+.node-publication.view-mode-inline_large, .node-contact.view-mode-inline_large {
   margin-bottom: 1.6em; }
+  .node-publication.view-mode-inline_large .field-name-title, .node-contact.view-mode-inline_large .field-name-title {
+    font-weight: bold; }
+  .node-publication.view-mode-inline_large .group-name .field, .node-contact.view-mode-inline_large .group-name .field {
+    float: left;
+    margin-right: 4px; }
+  .node-publication.view-mode-inline_large .group-name:before, .node-contact.view-mode-inline_large .group-name:before, .node-publication.view-mode-inline_large .group-name:after, .node-contact.view-mode-inline_large .group-name:after {
+    content: " ";
+    display: table; }
+  .node-publication.view-mode-inline_large .group-name:after, .node-contact.view-mode-inline_large .group-name:after {
+    clear: both; }
+  .node-publication.view-mode-inline_large p, .node-contact.view-mode-inline_large p {
+    margin-bottom: 0; }
+  @media (min-width: 768px) {
+    .node-publication.view-mode-inline_large, .node-contact.view-mode-inline_large {
+      margin-bottom: 3.2em; } }
+  @media (min-width: 992px) {
+    .node-publication.view-mode-inline_large, .node-contact.view-mode-inline_large {
+      margin-bottom: 4.8em; } }
 
 .node-news-article.view-mode-search_result, .node-event.view-mode-search_result, .node-health-alert.view-mode-search_result, .node-publication.view-mode-search_result, .node-video.view-mode-search_result, .node-campaign.view-mode-search_result, .node-committee-or-group.view-mode-search_result, .node-condition-or-disease.view-mode-search_result, .node-contact.view-mode-search_result, .node-initiative-or-program.view-mode-search_result, .node-release.view-mode-search_result, .node-statistic.view-mode-search_result, .node-service.view-mode-search_result, .node-survey.view-mode-search_result, .node-health-topic.view-mode-search_result, .node-departmental-media.view-mode-search_result, .page-search main .search-api-page-results .view-mode-search_result {
   width: 100%; }
@@ -7711,26 +7729,9 @@ ul.social__links,
   .node-video.view-mode-feature .field-name-field-image-featured img, .node-video.view-mode-full .field-name-field-image-featured img, .node-video.view-mode-listing_vertical .field-name-field-image-featured img, .node-video.view-mode-listing_vertical_small .field-name-field-image-featured img, .node-video.view-mode-inline .field-name-field-image-featured img {
     width: 100%; }
 
-.node-contact.view-mode-inline_large {
-  margin-bottom: 1.6em; }
-  .node-contact.view-mode-inline_large .field-name-title {
-    font-weight: bold; }
-  .node-contact.view-mode-inline_large .group-name .field {
-    float: left;
-    margin-right: 4px; }
-  .node-contact.view-mode-inline_large .group-name:before, .node-contact.view-mode-inline_large .group-name:after {
-    content: " ";
-    display: table; }
-  .node-contact.view-mode-inline_large .group-name:after {
-    clear: both; }
-  .node-contact.view-mode-inline_large p {
-    margin-bottom: 0; }
-  @media (min-width: 768px) {
-    .node-contact.view-mode-inline_large {
-      margin-bottom: 3.2em; } }
-  @media (min-width: 992px) {
-    .node-contact.view-mode-inline_large {
-      margin-bottom: 4.8em; } }
+.node-contact.department-of-health .field-name-field-image-featured img, .node-contact.committee-or-group .field-name-field-image-featured img, .node-contact.minister .field-name-field-image-featured img {
+  border-radius: 50%;
+  border: 3px solid #CCC; }
 
 .node-statistic.view-mode-feature, .node-statistic.view-mode-inline {
   max-width: 25em; }
