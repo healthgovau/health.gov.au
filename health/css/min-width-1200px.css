@@ -57,43 +57,35 @@ body.node-type-landing-page .page .para-container.paragraphs-item-para-content-t
 .page .paragraphs-item-two-columns.inside-para-container,
 .uikit-grid .paragraphs-item-para-block.inside-para-container,
 .page .paragraphs-item-para-block.inside-para-container,
-.uikit-grid body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout,
-body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .uikit-grid .page-layout,
-.page body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout,
-body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page .page-layout,
+.uikit-grid .paragraphs-item-featured-videos.inside-para-container,
+.page .paragraphs-item-featured-videos.inside-para-container,
+.uikit-grid body  .page-layout,
+body  .uikit-grid .page-layout,
+.page body  .page-layout,
+body  .page .page-layout,
 .uikit-grid body.front #tabs,
 body.front .uikit-grid #tabs,
 .page body.front #tabs,
 body.front .page #tabs,
-.uikit-grid
-    body.front .messages,
+.uikit-grid body.front .messages,
 body.front .uikit-grid .messages,
-.page
-    body.front .messages,
+.page body.front .messages,
 body.front .page .messages,
-.uikit-grid
-    body.node-type-health-topic #tabs,
+.uikit-grid body.node-type-health-topic #tabs,
 body.node-type-health-topic .uikit-grid #tabs,
-.page
-    body.node-type-health-topic #tabs,
+.page body.node-type-health-topic #tabs,
 body.node-type-health-topic .page #tabs,
-.uikit-grid
-    body.node-type-health-topic .messages,
+.uikit-grid body.node-type-health-topic .messages,
 body.node-type-health-topic .uikit-grid .messages,
-.page
-    body.node-type-health-topic .messages,
+.page body.node-type-health-topic .messages,
 body.node-type-health-topic .page .messages,
-.uikit-grid
-    body.node-type-health-topic-hp #tabs,
+.uikit-grid body.node-type-health-topic-hp #tabs,
 body.node-type-health-topic-hp .uikit-grid #tabs,
-.page
-    body.node-type-health-topic-hp #tabs,
+.page body.node-type-health-topic-hp #tabs,
 body.node-type-health-topic-hp .page #tabs,
-.uikit-grid
-    body.node-type-health-topic-hp .messages,
+.uikit-grid body.node-type-health-topic-hp .messages,
 body.node-type-health-topic-hp .uikit-grid .messages,
-.page
-    body.node-type-health-topic-hp .messages,
+.page body.node-type-health-topic-hp .messages,
 body.node-type-health-topic-hp .page .messages {
   width: 1176px;
 }

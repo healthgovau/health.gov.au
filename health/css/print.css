@@ -105,15 +105,13 @@
 .page h2,
 .rsbtn_colorskin h2,
 .uikit-body .video--left .video__title,
-.video--left
-  .uikit-body .video__title,
+.video--left .uikit-body .video__title,
 .page .video--left .video__title,
 .video--left .page .video__title,
 .rsbtn_colorskin .video--left .video__title,
 .video--left .rsbtn_colorskin .video__title,
 .uikit-body .video--right .video__title,
-.video--right
-  .uikit-body .video__title,
+.video--right .uikit-body .video__title,
 .page .video--right .video__title,
 .video--right .page .video__title,
 .rsbtn_colorskin .video--right .video__title,
@@ -163,28 +161,21 @@
 .breadcrumbs > .breadcrumbs__list > li:after,
 .uikit-breadcrumbs > .breadcrumbs__list > li:after,
 .uikit-inpage-nav-links .toc .breadcrumbs > ul > li:after,
-.uikit-inpage-nav-links .toc
-  .uikit-breadcrumbs > ul > li:after,
+.uikit-inpage-nav-links .toc .uikit-breadcrumbs > ul > li:after,
 .uikit-body .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after,
-.uikit-body .sidebar #block-menu-block-2
-  .uikit-breadcrumbs > ul > li:after,
+.uikit-body .sidebar #block-menu-block-2 .uikit-breadcrumbs > ul > li:after,
 .page .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after,
-.page .sidebar #block-menu-block-2
-  .uikit-breadcrumbs > ul > li:after,
+.page .sidebar #block-menu-block-2 .uikit-breadcrumbs > ul > li:after,
 .rsbtn_colorskin .sidebar #block-menu-block-2 .breadcrumbs > ul > li:after,
-.rsbtn_colorskin .sidebar #block-menu-block-2
-  .uikit-breadcrumbs > ul > li:after,
+.rsbtn_colorskin .sidebar #block-menu-block-2 .uikit-breadcrumbs > ul > li:after,
 .breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after,
 .uikit-breadcrumbs > .page.menu-block-wrapper.menu-name-main-menu.menu-block-2 > li:after,
 #block-menu-menu-sub-menu .breadcrumbs > .menu > li:after,
-#block-menu-menu-sub-menu
-  .uikit-breadcrumbs > .menu > li:after,
+#block-menu-menu-sub-menu .uikit-breadcrumbs > .menu > li:after,
 footer .breadcrumbs > .menu > li:after,
-footer
-  .uikit-breadcrumbs > .menu > li:after,
+footer .uikit-breadcrumbs > .menu > li:after,
 .region-navigation #block-superfish-1 .breadcrumbs > ul > li:after,
-.region-navigation #block-superfish-1
-  .uikit-breadcrumbs > ul > li:after,
+.region-navigation #block-superfish-1 .uikit-breadcrumbs > ul > li:after,
 .breadcrumbs > .tabs > li:after,
 .uikit-breadcrumbs > .tabs > li:after {
   border-color: #000 !important;
@@ -216,9 +207,9 @@ html [type='button'],
 .bean-large-button .field-name-field-link-to a:disabled,
 .button:disabled,
 button:disabled,
-html [type='button']:disabled,
-[type='reset']:disabled,
-[type='submit']:disabled,
+html :disabled[type='button'],
+:disabled[type='reset'],
+:disabled[type='submit'],
 .uikit-header #search-block-form .form-submit:disabled,
 .region-featured #search-block-form .form-submit:disabled,
 #block-search-api-page-default-search .form-submit:disabled,

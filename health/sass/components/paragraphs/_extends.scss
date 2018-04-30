@@ -337,3 +337,9 @@
   }
   margin-bottom: uikit-space(1);
 }
+
+// Featured video
+.paragraphs-item-featured-videos {
+  // This creates .container and .row from band markup for BS grid
+  @include row-and-container; // Band title
+}
