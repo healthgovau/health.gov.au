@@ -119,6 +119,10 @@
   .bean-image-and-text {
     @extend .col-xs-12;
     @extend .col-sm-4;
+    margin-bottom: 12px;
+    @include uikit-media(sm) {
+      margin-bottom: 0;
+    }
   }
 }
 .block__count--5 {
