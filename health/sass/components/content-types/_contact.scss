@@ -3,7 +3,7 @@
 
 // Default/full content
 .node-type-contact {
-    @extend %dm-full-content;
+  @extend %dm-full-content;
 	@extend %page-help-and-currency;
 }
 
@@ -31,13 +31,28 @@
 
 	// Inline style
 	&.view-mode-inline {
-		@extend %dm-inline-2-col;
+    @extend %dm-inline-2-col;
+    // layout override
+    .group-left {
+      @extend .col-sm-2;
     }
+    // .group-right {
+    //   @extend .col-sm-10;
+    // }
+    // Styling
+    border-left: 0;
+    background: none;
+
+    padding: 0;
+    @include uikit-media(sm) {
+      padding: 0;
+    }
+  }
 
   // Inline style
-  &.view-mode-inline_large {
-    @extend %dm-inline-large;
-  }
+  // &.view-mode-inline_large {
+  //   @extend %dm-inline-large;
+  // }
     
   // Search
   &.view-mode-search_result {
@@ -45,15 +60,28 @@
   }
 
   // Contact type subsets for differential styling
+  .field-name-field-image-featured {
+    img {
+      border: 0; // Clear for company logos, crests, etc
+    } 
+  }
+
   // Apply circle style to default image and sleected ones regardless of upload
-  &.default,
   &.department-of-health,
-  &.minister {
+  &.minister,
+  &.committee-or-group {
     .field-name-field-image-featured {
       img {
         @include circlefy;
-      }
+      } 
     }
+  }
+
+  // If default image is used apply circle regardless
+  .field-name-field-image-featured.default {
+    img {
+      @include circlefy;
+    } 
   }
   
 }
