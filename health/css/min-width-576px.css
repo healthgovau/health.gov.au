@@ -1,15 +1,25 @@
 .taskbar .taskbar__item,
 .taskbar.view ul > .views-row .node,
-.taskbar .taskbar--tiled--2.view ul > .views-row .node,
-.taskbar--tiled--2.view ul > .views-row .taskbar .node,
-.taskbar .taskbar--tiled--3.view ul > .views-row .node,
-.taskbar--tiled--3.view ul > .views-row .taskbar .node,
-.taskbar .taskbar--tiled--4.view ul > .views-row .node,
-.taskbar--tiled--4.view ul > .views-row .taskbar .node,
-.taskbar .taskbar--tiled--5.view ul > .views-row .node,
-.taskbar--tiled--5.view ul > .views-row .taskbar .node,
-.taskbar .taskbar--tiled--6.view ul > .views-row .node,
-.taskbar--tiled--6.view ul > .views-row .taskbar .node,
+.taskbar
+      .taskbar--tiled--2.view ul > .views-row .node,
+.taskbar--tiled--2.view ul > .views-row
+      .taskbar .node,
+.taskbar
+      .taskbar--tiled--3.view ul > .views-row .node,
+.taskbar--tiled--3.view ul > .views-row
+      .taskbar .node,
+.taskbar
+      .taskbar--tiled--4.view ul > .views-row .node,
+.taskbar--tiled--4.view ul > .views-row
+      .taskbar .node,
+.taskbar
+      .taskbar--tiled--5.view ul > .views-row .node,
+.taskbar--tiled--5.view ul > .views-row
+      .taskbar .node,
+.taskbar
+      .taskbar--tiled--6.view ul > .views-row .node,
+.taskbar--tiled--6.view ul > .views-row
+      .taskbar .node,
 .taskbar--tiled--2 .taskbar__item,
 .taskbar--2 .taskbar__item,
 .taskbar--tiled--3 .taskbar__item,

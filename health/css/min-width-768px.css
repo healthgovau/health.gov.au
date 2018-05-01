@@ -64,33 +64,43 @@ body.node-type-landing-page .page .para-container.paragraphs-item-para-content-t
 .page .paragraphs-item-para-block.inside-para-container,
 .uikit-grid .paragraphs-item-featured-videos.inside-para-container,
 .page .paragraphs-item-featured-videos.inside-para-container,
-.uikit-grid body  .page-layout,
-body  .uikit-grid .page-layout,
-.page body  .page-layout,
-body  .page .page-layout,
+.uikit-grid body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout,
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .uikit-grid .page-layout,
+.page body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout,
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page .page-layout,
 .uikit-grid body.front #tabs,
 body.front .uikit-grid #tabs,
 .page body.front #tabs,
 body.front .page #tabs,
-.uikit-grid body.front .messages,
+.uikit-grid
+    body.front .messages,
 body.front .uikit-grid .messages,
-.page body.front .messages,
+.page
+    body.front .messages,
 body.front .page .messages,
-.uikit-grid body.node-type-health-topic #tabs,
+.uikit-grid
+    body.node-type-health-topic #tabs,
 body.node-type-health-topic .uikit-grid #tabs,
-.page body.node-type-health-topic #tabs,
+.page
+    body.node-type-health-topic #tabs,
 body.node-type-health-topic .page #tabs,
-.uikit-grid body.node-type-health-topic .messages,
+.uikit-grid
+    body.node-type-health-topic .messages,
 body.node-type-health-topic .uikit-grid .messages,
-.page body.node-type-health-topic .messages,
+.page
+    body.node-type-health-topic .messages,
 body.node-type-health-topic .page .messages,
-.uikit-grid body.node-type-health-topic-hp #tabs,
+.uikit-grid
+    body.node-type-health-topic-hp #tabs,
 body.node-type-health-topic-hp .uikit-grid #tabs,
-.page body.node-type-health-topic-hp #tabs,
+.page
+    body.node-type-health-topic-hp #tabs,
 body.node-type-health-topic-hp .page #tabs,
-.uikit-grid body.node-type-health-topic-hp .messages,
+.uikit-grid
+    body.node-type-health-topic-hp .messages,
 body.node-type-health-topic-hp .uikit-grid .messages,
-.page body.node-type-health-topic-hp .messages,
+.page
+    body.node-type-health-topic-hp .messages,
 body.node-type-health-topic-hp .page .messages {
   width: 744px;
 }
@@ -203,14 +213,14 @@ body.node-type-landing-page #health-alert-ajax-container .para-container.paragra
 #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .uikit-grid .health-alert-logo,
 .page #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .health-alert-logo,
 #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .page .health-alert-logo,
-.uikit-grid #health-alert-ajax-container body  .page-layout .health-alert-logo,
-#health-alert-ajax-container body  .page-layout .uikit-grid .health-alert-logo,
-.page #health-alert-ajax-container body  .page-layout .health-alert-logo,
-#health-alert-ajax-container body  .page-layout .page .health-alert-logo,
-.uikit-grid body  #health-alert-ajax-container .page-layout .health-alert-logo,
-body  #health-alert-ajax-container .page-layout .uikit-grid .health-alert-logo,
-.page body  #health-alert-ajax-container .page-layout .health-alert-logo,
-body  #health-alert-ajax-container .page-layout .page .health-alert-logo,
+.uikit-grid #health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-logo,
+#health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .uikit-grid .health-alert-logo,
+.page #health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-logo,
+#health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .page .health-alert-logo,
+.uikit-grid body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-logo,
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .uikit-grid .health-alert-logo,
+.page body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-logo,
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .page .health-alert-logo,
 .uikit-grid #health-alert-ajax-container body.front #tabs .health-alert-logo,
 #health-alert-ajax-container body.front #tabs .uikit-grid .health-alert-logo,
 .page #health-alert-ajax-container body.front #tabs .health-alert-logo,
@@ -219,45 +229,75 @@ body  #health-alert-ajax-container .page-layout .page .health-alert-logo,
 body.front #health-alert-ajax-container #tabs .uikit-grid .health-alert-logo,
 .page body.front #health-alert-ajax-container #tabs .health-alert-logo,
 body.front #health-alert-ajax-container #tabs .page .health-alert-logo,
-.uikit-grid #health-alert-ajax-container body.front .messages .health-alert-logo,
-#health-alert-ajax-container body.front .messages .uikit-grid .health-alert-logo,
-.page #health-alert-ajax-container body.front .messages .health-alert-logo,
-#health-alert-ajax-container body.front .messages .page .health-alert-logo,
-.uikit-grid body.front #health-alert-ajax-container .messages .health-alert-logo,
+.uikit-grid #health-alert-ajax-container
+  body.front .messages .health-alert-logo,
+#health-alert-ajax-container
+  body.front .messages .uikit-grid .health-alert-logo,
+.page #health-alert-ajax-container
+  body.front .messages .health-alert-logo,
+#health-alert-ajax-container
+  body.front .messages .page .health-alert-logo,
+.uikit-grid
+  body.front #health-alert-ajax-container .messages .health-alert-logo,
 body.front #health-alert-ajax-container .messages .uikit-grid .health-alert-logo,
-.page body.front #health-alert-ajax-container .messages .health-alert-logo,
+.page
+  body.front #health-alert-ajax-container .messages .health-alert-logo,
 body.front #health-alert-ajax-container .messages .page .health-alert-logo,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-logo,
-#health-alert-ajax-container body.node-type-health-topic #tabs .uikit-grid .health-alert-logo,
-.page #health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-logo,
-#health-alert-ajax-container body.node-type-health-topic #tabs .page .health-alert-logo,
-.uikit-grid body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-logo,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-logo,
+#health-alert-ajax-container
+  body.node-type-health-topic #tabs .uikit-grid .health-alert-logo,
+.page #health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-logo,
+#health-alert-ajax-container
+  body.node-type-health-topic #tabs .page .health-alert-logo,
+.uikit-grid
+  body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-logo,
 body.node-type-health-topic #health-alert-ajax-container #tabs .uikit-grid .health-alert-logo,
-.page body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-logo,
+.page
+  body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-logo,
 body.node-type-health-topic #health-alert-ajax-container #tabs .page .health-alert-logo,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic .messages .health-alert-logo,
-#health-alert-ajax-container body.node-type-health-topic .messages .uikit-grid .health-alert-logo,
-.page #health-alert-ajax-container body.node-type-health-topic .messages .health-alert-logo,
-#health-alert-ajax-container body.node-type-health-topic .messages .page .health-alert-logo,
-.uikit-grid body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-logo,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-logo,
+#health-alert-ajax-container
+  body.node-type-health-topic .messages .uikit-grid .health-alert-logo,
+.page #health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-logo,
+#health-alert-ajax-container
+  body.node-type-health-topic .messages .page .health-alert-logo,
+.uikit-grid
+  body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-logo,
 body.node-type-health-topic #health-alert-ajax-container .messages .uikit-grid .health-alert-logo,
-.page body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-logo,
+.page
+  body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-logo,
 body.node-type-health-topic #health-alert-ajax-container .messages .page .health-alert-logo,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-logo,
-#health-alert-ajax-container body.node-type-health-topic-hp #tabs .uikit-grid .health-alert-logo,
-.page #health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-logo,
-#health-alert-ajax-container body.node-type-health-topic-hp #tabs .page .health-alert-logo,
-.uikit-grid body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-logo,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-logo,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .uikit-grid .health-alert-logo,
+.page #health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-logo,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .page .health-alert-logo,
+.uikit-grid
+  body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-logo,
 body.node-type-health-topic-hp #health-alert-ajax-container #tabs .uikit-grid .health-alert-logo,
-.page body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-logo,
+.page
+  body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-logo,
 body.node-type-health-topic-hp #health-alert-ajax-container #tabs .page .health-alert-logo,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-logo,
-#health-alert-ajax-container body.node-type-health-topic-hp .messages .uikit-grid .health-alert-logo,
-.page #health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-logo,
-#health-alert-ajax-container body.node-type-health-topic-hp .messages .page .health-alert-logo,
-.uikit-grid body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-logo,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-logo,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .uikit-grid .health-alert-logo,
+.page #health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-logo,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .page .health-alert-logo,
+.uikit-grid
+  body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-logo,
 body.node-type-health-topic-hp #health-alert-ajax-container .messages .uikit-grid .health-alert-logo,
-.page body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-logo,
+.page
+  body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-logo,
 body.node-type-health-topic-hp #health-alert-ajax-container .messages .page .health-alert-logo,
 .uikit-grid #health-alert-ajax-container .container .health-alert-content li .alert-date,
 #health-alert-ajax-container .container .health-alert-content li .uikit-grid .alert-date,
@@ -361,14 +401,14 @@ body.node-type-landing-page #health-alert-ajax-container .para-container.paragra
 #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .health-alert-content li .uikit-grid .alert-date,
 .page #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .health-alert-content li .alert-date,
 #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .health-alert-content li .page .alert-date,
-.uikit-grid #health-alert-ajax-container body  .page-layout .health-alert-content li .alert-date,
-#health-alert-ajax-container body  .page-layout .health-alert-content li .uikit-grid .alert-date,
-.page #health-alert-ajax-container body  .page-layout .health-alert-content li .alert-date,
-#health-alert-ajax-container body  .page-layout .health-alert-content li .page .alert-date,
-.uikit-grid body  #health-alert-ajax-container .page-layout .health-alert-content li .alert-date,
-body  #health-alert-ajax-container .page-layout .health-alert-content li .uikit-grid .alert-date,
-.page body  #health-alert-ajax-container .page-layout .health-alert-content li .alert-date,
-body  #health-alert-ajax-container .page-layout .health-alert-content li .page .alert-date,
+.uikit-grid #health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content li .alert-date,
+#health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content li .uikit-grid .alert-date,
+.page #health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content li .alert-date,
+#health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content li .page .alert-date,
+.uikit-grid body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content li .alert-date,
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content li .uikit-grid .alert-date,
+.page body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content li .alert-date,
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content li .page .alert-date,
 .uikit-grid #health-alert-ajax-container body.front #tabs .health-alert-content li .alert-date,
 #health-alert-ajax-container body.front #tabs .health-alert-content li .uikit-grid .alert-date,
 .page #health-alert-ajax-container body.front #tabs .health-alert-content li .alert-date,
@@ -377,45 +417,75 @@ body  #health-alert-ajax-container .page-layout .health-alert-content li .page .
 body.front #health-alert-ajax-container #tabs .health-alert-content li .uikit-grid .alert-date,
 .page body.front #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
 body.front #health-alert-ajax-container #tabs .health-alert-content li .page .alert-date,
-.uikit-grid #health-alert-ajax-container body.front .messages .health-alert-content li .alert-date,
-#health-alert-ajax-container body.front .messages .health-alert-content li .uikit-grid .alert-date,
-.page #health-alert-ajax-container body.front .messages .health-alert-content li .alert-date,
-#health-alert-ajax-container body.front .messages .health-alert-content li .page .alert-date,
-.uikit-grid body.front #health-alert-ajax-container .messages .health-alert-content li .alert-date,
+.uikit-grid #health-alert-ajax-container
+  body.front .messages .health-alert-content li .alert-date,
+#health-alert-ajax-container
+  body.front .messages .health-alert-content li .uikit-grid .alert-date,
+.page #health-alert-ajax-container
+  body.front .messages .health-alert-content li .alert-date,
+#health-alert-ajax-container
+  body.front .messages .health-alert-content li .page .alert-date,
+.uikit-grid
+  body.front #health-alert-ajax-container .messages .health-alert-content li .alert-date,
 body.front #health-alert-ajax-container .messages .health-alert-content li .uikit-grid .alert-date,
-.page body.front #health-alert-ajax-container .messages .health-alert-content li .alert-date,
+.page
+  body.front #health-alert-ajax-container .messages .health-alert-content li .alert-date,
 body.front #health-alert-ajax-container .messages .health-alert-content li .page .alert-date,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content li .alert-date,
-#health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content li .uikit-grid .alert-date,
-.page #health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content li .alert-date,
-#health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content li .page .alert-date,
-.uikit-grid body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-content li .alert-date,
+#health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-content li .uikit-grid .alert-date,
+.page #health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-content li .alert-date,
+#health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-content li .page .alert-date,
+.uikit-grid
+  body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
 body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .uikit-grid .alert-date,
-.page body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
+.page
+  body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
 body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .page .alert-date,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content li .alert-date,
-#health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content li .uikit-grid .alert-date,
-.page #health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content li .alert-date,
-#health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content li .page .alert-date,
-.uikit-grid body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .alert-date,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-content li .alert-date,
+#health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-content li .uikit-grid .alert-date,
+.page #health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-content li .alert-date,
+#health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-content li .page .alert-date,
+.uikit-grid
+  body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .alert-date,
 body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .uikit-grid .alert-date,
-.page body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .alert-date,
+.page
+  body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .alert-date,
 body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .page .alert-date,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content li .alert-date,
-#health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content li .uikit-grid .alert-date,
-.page #health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content li .alert-date,
-#health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content li .page .alert-date,
-.uikit-grid body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-content li .alert-date,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-content li .uikit-grid .alert-date,
+.page #health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-content li .alert-date,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-content li .page .alert-date,
+.uikit-grid
+  body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
 body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .uikit-grid .alert-date,
-.page body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
+.page
+  body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
 body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .page .alert-date,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content li .alert-date,
-#health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content li .uikit-grid .alert-date,
-.page #health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content li .alert-date,
-#health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content li .page .alert-date,
-.uikit-grid body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .alert-date,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-content li .alert-date,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-content li .uikit-grid .alert-date,
+.page #health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-content li .alert-date,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-content li .page .alert-date,
+.uikit-grid
+  body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .alert-date,
 body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .uikit-grid .alert-date,
-.page body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .alert-date,
+.page
+  body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .alert-date,
 body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .page .alert-date,
 .uikit-grid .bean-image-and-text.view-mode-listing_vertical .group-left,
 .bean-image-and-text.view-mode-listing_vertical .uikit-grid .group-left,
@@ -550,9 +620,11 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
 .bean-image-and-text.view-mode-feature_large .uikit-grid .group-left,
 .page .bean-image-and-text.view-mode-feature_large .group-left,
 .bean-image-and-text.view-mode-feature_large .page .group-left,
-.uikit-grid .bean-image-and-text.view-mode-feature_large .group-right,
+.uikit-grid
+  .bean-image-and-text.view-mode-feature_large .group-right,
 .bean-image-and-text.view-mode-feature_large .uikit-grid .group-right,
-.page .bean-image-and-text.view-mode-feature_large .group-right,
+.page
+  .bean-image-and-text.view-mode-feature_large .group-right,
 .bean-image-and-text.view-mode-feature_large .page .group-right,
 .uikit-grid .node-video.view-mode-inline .group-left,
 .node-video.view-mode-inline .uikit-grid .group-left,
@@ -578,25 +650,31 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
 body.node-type-health-topic .uikit-grid .paragraphs-item-two-columns > .para-row > .group-left,
 .page body.node-type-health-topic .paragraphs-item-two-columns > .para-row > .group-left,
 body.node-type-health-topic .page .paragraphs-item-two-columns > .para-row > .group-left,
-.uikit-grid body.node-type-health-topic .paragraphs-item-two-columns > .para-row > .group-right,
+.uikit-grid
+  body.node-type-health-topic .paragraphs-item-two-columns > .para-row > .group-right,
 body.node-type-health-topic .uikit-grid .paragraphs-item-two-columns > .para-row > .group-right,
-.page body.node-type-health-topic .paragraphs-item-two-columns > .para-row > .group-right,
+.page
+  body.node-type-health-topic .paragraphs-item-two-columns > .para-row > .group-right,
 body.node-type-health-topic .page .paragraphs-item-two-columns > .para-row > .group-right,
 .uikit-grid body.node-type-health-topic-hp .paragraphs-item-two-columns > .para-row > .group-left,
 body.node-type-health-topic-hp .uikit-grid .paragraphs-item-two-columns > .para-row > .group-left,
 .page body.node-type-health-topic-hp .paragraphs-item-two-columns > .para-row > .group-left,
 body.node-type-health-topic-hp .page .paragraphs-item-two-columns > .para-row > .group-left,
-.uikit-grid body.node-type-health-topic-hp .paragraphs-item-two-columns > .para-row > .group-right,
+.uikit-grid
+  body.node-type-health-topic-hp .paragraphs-item-two-columns > .para-row > .group-right,
 body.node-type-health-topic-hp .uikit-grid .paragraphs-item-two-columns > .para-row > .group-right,
-.page body.node-type-health-topic-hp .paragraphs-item-two-columns > .para-row > .group-right,
+.page
+  body.node-type-health-topic-hp .paragraphs-item-two-columns > .para-row > .group-right,
 body.node-type-health-topic-hp .page .paragraphs-item-two-columns > .para-row > .group-right,
 .uikit-grid body.node-type-landing-page .paragraphs-item-two-columns > .para-row > .group-left,
 body.node-type-landing-page .uikit-grid .paragraphs-item-two-columns > .para-row > .group-left,
 .page body.node-type-landing-page .paragraphs-item-two-columns > .para-row > .group-left,
 body.node-type-landing-page .page .paragraphs-item-two-columns > .para-row > .group-left,
-.uikit-grid body.node-type-landing-page .paragraphs-item-two-columns > .para-row > .group-right,
+.uikit-grid
+  body.node-type-landing-page .paragraphs-item-two-columns > .para-row > .group-right,
 body.node-type-landing-page .uikit-grid .paragraphs-item-two-columns > .para-row > .group-right,
-.page body.node-type-landing-page .paragraphs-item-two-columns > .para-row > .group-right,
+.page
+  body.node-type-landing-page .paragraphs-item-two-columns > .para-row > .group-right,
 body.node-type-landing-page .page .paragraphs-item-two-columns > .para-row > .group-right,
 .uikit-grid .paragraphs-item-para-links .paragraphs-item-para-link,
 .paragraphs-item-para-links .uikit-grid .paragraphs-item-para-link,
@@ -608,8 +686,10 @@ body.node-type-landing-page .page .paragraphs-item-two-columns > .para-row > .gr
 .paragraphs-item-para-taxonomies .page .field-name-field-taxonomy-paragraph > .field-items > .field-item,
 .uikit-grid .paragraphs-item-two-columns > .para-row > .group-left,
 .page .paragraphs-item-two-columns > .para-row > .group-left,
-.uikit-grid .paragraphs-item-two-columns > .para-row > .group-right,
-.page .paragraphs-item-two-columns > .para-row > .group-right,
+.uikit-grid
+  .paragraphs-item-two-columns > .para-row > .group-right,
+.page
+  .paragraphs-item-two-columns > .para-row > .group-right,
 .uikit-grid .col-sm-7,
 .page .col-sm-7,
 .uikit-grid .col-sm-8,
@@ -727,14 +807,14 @@ body.node-type-landing-page #health-alert-ajax-container .para-container.paragra
 #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .uikit-grid .health-alert-content,
 .page #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .health-alert-content,
 #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .page .health-alert-content,
-.uikit-grid #health-alert-ajax-container body  .page-layout .health-alert-content,
-#health-alert-ajax-container body  .page-layout .uikit-grid .health-alert-content,
-.page #health-alert-ajax-container body  .page-layout .health-alert-content,
-#health-alert-ajax-container body  .page-layout .page .health-alert-content,
-.uikit-grid body  #health-alert-ajax-container .page-layout .health-alert-content,
-body  #health-alert-ajax-container .page-layout .uikit-grid .health-alert-content,
-.page body  #health-alert-ajax-container .page-layout .health-alert-content,
-body  #health-alert-ajax-container .page-layout .page .health-alert-content,
+.uikit-grid #health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content,
+#health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .uikit-grid .health-alert-content,
+.page #health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content,
+#health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .page .health-alert-content,
+.uikit-grid body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content,
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .uikit-grid .health-alert-content,
+.page body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content,
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .page .health-alert-content,
 .uikit-grid #health-alert-ajax-container body.front #tabs .health-alert-content,
 #health-alert-ajax-container body.front #tabs .uikit-grid .health-alert-content,
 .page #health-alert-ajax-container body.front #tabs .health-alert-content,
@@ -743,45 +823,75 @@ body  #health-alert-ajax-container .page-layout .page .health-alert-content,
 body.front #health-alert-ajax-container #tabs .uikit-grid .health-alert-content,
 .page body.front #health-alert-ajax-container #tabs .health-alert-content,
 body.front #health-alert-ajax-container #tabs .page .health-alert-content,
-.uikit-grid #health-alert-ajax-container body.front .messages .health-alert-content,
-#health-alert-ajax-container body.front .messages .uikit-grid .health-alert-content,
-.page #health-alert-ajax-container body.front .messages .health-alert-content,
-#health-alert-ajax-container body.front .messages .page .health-alert-content,
-.uikit-grid body.front #health-alert-ajax-container .messages .health-alert-content,
+.uikit-grid #health-alert-ajax-container
+  body.front .messages .health-alert-content,
+#health-alert-ajax-container
+  body.front .messages .uikit-grid .health-alert-content,
+.page #health-alert-ajax-container
+  body.front .messages .health-alert-content,
+#health-alert-ajax-container
+  body.front .messages .page .health-alert-content,
+.uikit-grid
+  body.front #health-alert-ajax-container .messages .health-alert-content,
 body.front #health-alert-ajax-container .messages .uikit-grid .health-alert-content,
-.page body.front #health-alert-ajax-container .messages .health-alert-content,
+.page
+  body.front #health-alert-ajax-container .messages .health-alert-content,
 body.front #health-alert-ajax-container .messages .page .health-alert-content,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content,
-#health-alert-ajax-container body.node-type-health-topic #tabs .uikit-grid .health-alert-content,
-.page #health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content,
-#health-alert-ajax-container body.node-type-health-topic #tabs .page .health-alert-content,
-.uikit-grid body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-content,
+#health-alert-ajax-container
+  body.node-type-health-topic #tabs .uikit-grid .health-alert-content,
+.page #health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-content,
+#health-alert-ajax-container
+  body.node-type-health-topic #tabs .page .health-alert-content,
+.uikit-grid
+  body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content,
 body.node-type-health-topic #health-alert-ajax-container #tabs .uikit-grid .health-alert-content,
-.page body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content,
+.page
+  body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content,
 body.node-type-health-topic #health-alert-ajax-container #tabs .page .health-alert-content,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content,
-#health-alert-ajax-container body.node-type-health-topic .messages .uikit-grid .health-alert-content,
-.page #health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content,
-#health-alert-ajax-container body.node-type-health-topic .messages .page .health-alert-content,
-.uikit-grid body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-content,
+#health-alert-ajax-container
+  body.node-type-health-topic .messages .uikit-grid .health-alert-content,
+.page #health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-content,
+#health-alert-ajax-container
+  body.node-type-health-topic .messages .page .health-alert-content,
+.uikit-grid
+  body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content,
 body.node-type-health-topic #health-alert-ajax-container .messages .uikit-grid .health-alert-content,
-.page body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content,
+.page
+  body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content,
 body.node-type-health-topic #health-alert-ajax-container .messages .page .health-alert-content,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content,
-#health-alert-ajax-container body.node-type-health-topic-hp #tabs .uikit-grid .health-alert-content,
-.page #health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content,
-#health-alert-ajax-container body.node-type-health-topic-hp #tabs .page .health-alert-content,
-.uikit-grid body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-content,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .uikit-grid .health-alert-content,
+.page #health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-content,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .page .health-alert-content,
+.uikit-grid
+  body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content,
 body.node-type-health-topic-hp #health-alert-ajax-container #tabs .uikit-grid .health-alert-content,
-.page body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content,
+.page
+  body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content,
 body.node-type-health-topic-hp #health-alert-ajax-container #tabs .page .health-alert-content,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content,
-#health-alert-ajax-container body.node-type-health-topic-hp .messages .uikit-grid .health-alert-content,
-.page #health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content,
-#health-alert-ajax-container body.node-type-health-topic-hp .messages .page .health-alert-content,
-.uikit-grid body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-content,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .uikit-grid .health-alert-content,
+.page #health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-content,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .page .health-alert-content,
+.uikit-grid
+  body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content,
 body.node-type-health-topic-hp #health-alert-ajax-container .messages .uikit-grid .health-alert-content,
-.page body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content,
+.page
+  body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content,
 body.node-type-health-topic-hp #health-alert-ajax-container .messages .page .health-alert-content,
 .uikit-grid #health-alert-ajax-container .container .health-alert-content li .alert-title,
 #health-alert-ajax-container .container .health-alert-content li .uikit-grid .alert-title,
@@ -885,14 +995,14 @@ body.node-type-landing-page #health-alert-ajax-container .para-container.paragra
 #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .health-alert-content li .uikit-grid .alert-title,
 .page #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .health-alert-content li .alert-title,
 #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .health-alert-content li .page .alert-title,
-.uikit-grid #health-alert-ajax-container body  .page-layout .health-alert-content li .alert-title,
-#health-alert-ajax-container body  .page-layout .health-alert-content li .uikit-grid .alert-title,
-.page #health-alert-ajax-container body  .page-layout .health-alert-content li .alert-title,
-#health-alert-ajax-container body  .page-layout .health-alert-content li .page .alert-title,
-.uikit-grid body  #health-alert-ajax-container .page-layout .health-alert-content li .alert-title,
-body  #health-alert-ajax-container .page-layout .health-alert-content li .uikit-grid .alert-title,
-.page body  #health-alert-ajax-container .page-layout .health-alert-content li .alert-title,
-body  #health-alert-ajax-container .page-layout .health-alert-content li .page .alert-title,
+.uikit-grid #health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content li .alert-title,
+#health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content li .uikit-grid .alert-title,
+.page #health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content li .alert-title,
+#health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content li .page .alert-title,
+.uikit-grid body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content li .alert-title,
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content li .uikit-grid .alert-title,
+.page body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content li .alert-title,
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content li .page .alert-title,
 .uikit-grid #health-alert-ajax-container body.front #tabs .health-alert-content li .alert-title,
 #health-alert-ajax-container body.front #tabs .health-alert-content li .uikit-grid .alert-title,
 .page #health-alert-ajax-container body.front #tabs .health-alert-content li .alert-title,
@@ -901,45 +1011,75 @@ body  #health-alert-ajax-container .page-layout .health-alert-content li .page .
 body.front #health-alert-ajax-container #tabs .health-alert-content li .uikit-grid .alert-title,
 .page body.front #health-alert-ajax-container #tabs .health-alert-content li .alert-title,
 body.front #health-alert-ajax-container #tabs .health-alert-content li .page .alert-title,
-.uikit-grid #health-alert-ajax-container body.front .messages .health-alert-content li .alert-title,
-#health-alert-ajax-container body.front .messages .health-alert-content li .uikit-grid .alert-title,
-.page #health-alert-ajax-container body.front .messages .health-alert-content li .alert-title,
-#health-alert-ajax-container body.front .messages .health-alert-content li .page .alert-title,
-.uikit-grid body.front #health-alert-ajax-container .messages .health-alert-content li .alert-title,
+.uikit-grid #health-alert-ajax-container
+  body.front .messages .health-alert-content li .alert-title,
+#health-alert-ajax-container
+  body.front .messages .health-alert-content li .uikit-grid .alert-title,
+.page #health-alert-ajax-container
+  body.front .messages .health-alert-content li .alert-title,
+#health-alert-ajax-container
+  body.front .messages .health-alert-content li .page .alert-title,
+.uikit-grid
+  body.front #health-alert-ajax-container .messages .health-alert-content li .alert-title,
 body.front #health-alert-ajax-container .messages .health-alert-content li .uikit-grid .alert-title,
-.page body.front #health-alert-ajax-container .messages .health-alert-content li .alert-title,
+.page
+  body.front #health-alert-ajax-container .messages .health-alert-content li .alert-title,
 body.front #health-alert-ajax-container .messages .health-alert-content li .page .alert-title,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content li .alert-title,
-#health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content li .uikit-grid .alert-title,
-.page #health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content li .alert-title,
-#health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content li .page .alert-title,
-.uikit-grid body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .alert-title,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-content li .alert-title,
+#health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-content li .uikit-grid .alert-title,
+.page #health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-content li .alert-title,
+#health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-content li .page .alert-title,
+.uikit-grid
+  body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .alert-title,
 body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .uikit-grid .alert-title,
-.page body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .alert-title,
+.page
+  body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .alert-title,
 body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .page .alert-title,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content li .alert-title,
-#health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content li .uikit-grid .alert-title,
-.page #health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content li .alert-title,
-#health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content li .page .alert-title,
-.uikit-grid body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .alert-title,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-content li .alert-title,
+#health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-content li .uikit-grid .alert-title,
+.page #health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-content li .alert-title,
+#health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-content li .page .alert-title,
+.uikit-grid
+  body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .alert-title,
 body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .uikit-grid .alert-title,
-.page body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .alert-title,
+.page
+  body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .alert-title,
 body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .page .alert-title,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content li .alert-title,
-#health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content li .uikit-grid .alert-title,
-.page #health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content li .alert-title,
-#health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content li .page .alert-title,
-.uikit-grid body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .alert-title,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-content li .alert-title,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-content li .uikit-grid .alert-title,
+.page #health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-content li .alert-title,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-content li .page .alert-title,
+.uikit-grid
+  body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .alert-title,
 body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .uikit-grid .alert-title,
-.page body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .alert-title,
+.page
+  body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .alert-title,
 body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .page .alert-title,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content li .alert-title,
-#health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content li .uikit-grid .alert-title,
-.page #health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content li .alert-title,
-#health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content li .page .alert-title,
-.uikit-grid body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .alert-title,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-content li .alert-title,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-content li .uikit-grid .alert-title,
+.page #health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-content li .alert-title,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-content li .page .alert-title,
+.uikit-grid
+  body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .alert-title,
 body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .uikit-grid .alert-title,
-.page body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .alert-title,
+.page
+  body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .alert-title,
 body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .page .alert-title,
 .uikit-grid .bean-image-and-text.view-mode-listing_vertical .group-right,
 .bean-image-and-text.view-mode-listing_vertical .uikit-grid .group-right,
@@ -1291,14 +1431,14 @@ body.node-type-landing-page #health-alert-ajax-container .para-container.paragra
 #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .uikit-grid .health-alert-logo,
 .page #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .health-alert-logo,
 #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .page .health-alert-logo,
-.uikit-grid #health-alert-ajax-container body  .page-layout .health-alert-logo,
-#health-alert-ajax-container body  .page-layout .uikit-grid .health-alert-logo,
-.page #health-alert-ajax-container body  .page-layout .health-alert-logo,
-#health-alert-ajax-container body  .page-layout .page .health-alert-logo,
-.uikit-grid body  #health-alert-ajax-container .page-layout .health-alert-logo,
-body  #health-alert-ajax-container .page-layout .uikit-grid .health-alert-logo,
-.page body  #health-alert-ajax-container .page-layout .health-alert-logo,
-body  #health-alert-ajax-container .page-layout .page .health-alert-logo,
+.uikit-grid #health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-logo,
+#health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .uikit-grid .health-alert-logo,
+.page #health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-logo,
+#health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .page .health-alert-logo,
+.uikit-grid body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-logo,
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .uikit-grid .health-alert-logo,
+.page body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-logo,
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .page .health-alert-logo,
 .uikit-grid #health-alert-ajax-container body.front #tabs .health-alert-logo,
 #health-alert-ajax-container body.front #tabs .uikit-grid .health-alert-logo,
 .page #health-alert-ajax-container body.front #tabs .health-alert-logo,
@@ -1307,45 +1447,75 @@ body  #health-alert-ajax-container .page-layout .page .health-alert-logo,
 body.front #health-alert-ajax-container #tabs .uikit-grid .health-alert-logo,
 .page body.front #health-alert-ajax-container #tabs .health-alert-logo,
 body.front #health-alert-ajax-container #tabs .page .health-alert-logo,
-.uikit-grid #health-alert-ajax-container body.front .messages .health-alert-logo,
-#health-alert-ajax-container body.front .messages .uikit-grid .health-alert-logo,
-.page #health-alert-ajax-container body.front .messages .health-alert-logo,
-#health-alert-ajax-container body.front .messages .page .health-alert-logo,
-.uikit-grid body.front #health-alert-ajax-container .messages .health-alert-logo,
+.uikit-grid #health-alert-ajax-container
+  body.front .messages .health-alert-logo,
+#health-alert-ajax-container
+  body.front .messages .uikit-grid .health-alert-logo,
+.page #health-alert-ajax-container
+  body.front .messages .health-alert-logo,
+#health-alert-ajax-container
+  body.front .messages .page .health-alert-logo,
+.uikit-grid
+  body.front #health-alert-ajax-container .messages .health-alert-logo,
 body.front #health-alert-ajax-container .messages .uikit-grid .health-alert-logo,
-.page body.front #health-alert-ajax-container .messages .health-alert-logo,
+.page
+  body.front #health-alert-ajax-container .messages .health-alert-logo,
 body.front #health-alert-ajax-container .messages .page .health-alert-logo,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-logo,
-#health-alert-ajax-container body.node-type-health-topic #tabs .uikit-grid .health-alert-logo,
-.page #health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-logo,
-#health-alert-ajax-container body.node-type-health-topic #tabs .page .health-alert-logo,
-.uikit-grid body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-logo,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-logo,
+#health-alert-ajax-container
+  body.node-type-health-topic #tabs .uikit-grid .health-alert-logo,
+.page #health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-logo,
+#health-alert-ajax-container
+  body.node-type-health-topic #tabs .page .health-alert-logo,
+.uikit-grid
+  body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-logo,
 body.node-type-health-topic #health-alert-ajax-container #tabs .uikit-grid .health-alert-logo,
-.page body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-logo,
+.page
+  body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-logo,
 body.node-type-health-topic #health-alert-ajax-container #tabs .page .health-alert-logo,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic .messages .health-alert-logo,
-#health-alert-ajax-container body.node-type-health-topic .messages .uikit-grid .health-alert-logo,
-.page #health-alert-ajax-container body.node-type-health-topic .messages .health-alert-logo,
-#health-alert-ajax-container body.node-type-health-topic .messages .page .health-alert-logo,
-.uikit-grid body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-logo,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-logo,
+#health-alert-ajax-container
+  body.node-type-health-topic .messages .uikit-grid .health-alert-logo,
+.page #health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-logo,
+#health-alert-ajax-container
+  body.node-type-health-topic .messages .page .health-alert-logo,
+.uikit-grid
+  body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-logo,
 body.node-type-health-topic #health-alert-ajax-container .messages .uikit-grid .health-alert-logo,
-.page body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-logo,
+.page
+  body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-logo,
 body.node-type-health-topic #health-alert-ajax-container .messages .page .health-alert-logo,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-logo,
-#health-alert-ajax-container body.node-type-health-topic-hp #tabs .uikit-grid .health-alert-logo,
-.page #health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-logo,
-#health-alert-ajax-container body.node-type-health-topic-hp #tabs .page .health-alert-logo,
-.uikit-grid body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-logo,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-logo,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .uikit-grid .health-alert-logo,
+.page #health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-logo,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .page .health-alert-logo,
+.uikit-grid
+  body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-logo,
 body.node-type-health-topic-hp #health-alert-ajax-container #tabs .uikit-grid .health-alert-logo,
-.page body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-logo,
+.page
+  body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-logo,
 body.node-type-health-topic-hp #health-alert-ajax-container #tabs .page .health-alert-logo,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-logo,
-#health-alert-ajax-container body.node-type-health-topic-hp .messages .uikit-grid .health-alert-logo,
-.page #health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-logo,
-#health-alert-ajax-container body.node-type-health-topic-hp .messages .page .health-alert-logo,
-.uikit-grid body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-logo,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-logo,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .uikit-grid .health-alert-logo,
+.page #health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-logo,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .page .health-alert-logo,
+.uikit-grid
+  body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-logo,
 body.node-type-health-topic-hp #health-alert-ajax-container .messages .uikit-grid .health-alert-logo,
-.page body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-logo,
+.page
+  body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-logo,
 body.node-type-health-topic-hp #health-alert-ajax-container .messages .page .health-alert-logo,
 .uikit-grid #health-alert-ajax-container .container .health-alert-content li .alert-date,
 #health-alert-ajax-container .container .health-alert-content li .uikit-grid .alert-date,
@@ -1449,14 +1619,14 @@ body.node-type-landing-page #health-alert-ajax-container .para-container.paragra
 #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .health-alert-content li .uikit-grid .alert-date,
 .page #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .health-alert-content li .alert-date,
 #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .health-alert-content li .page .alert-date,
-.uikit-grid #health-alert-ajax-container body  .page-layout .health-alert-content li .alert-date,
-#health-alert-ajax-container body  .page-layout .health-alert-content li .uikit-grid .alert-date,
-.page #health-alert-ajax-container body  .page-layout .health-alert-content li .alert-date,
-#health-alert-ajax-container body  .page-layout .health-alert-content li .page .alert-date,
-.uikit-grid body  #health-alert-ajax-container .page-layout .health-alert-content li .alert-date,
-body  #health-alert-ajax-container .page-layout .health-alert-content li .uikit-grid .alert-date,
-.page body  #health-alert-ajax-container .page-layout .health-alert-content li .alert-date,
-body  #health-alert-ajax-container .page-layout .health-alert-content li .page .alert-date,
+.uikit-grid #health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content li .alert-date,
+#health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content li .uikit-grid .alert-date,
+.page #health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content li .alert-date,
+#health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content li .page .alert-date,
+.uikit-grid body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content li .alert-date,
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content li .uikit-grid .alert-date,
+.page body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content li .alert-date,
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content li .page .alert-date,
 .uikit-grid #health-alert-ajax-container body.front #tabs .health-alert-content li .alert-date,
 #health-alert-ajax-container body.front #tabs .health-alert-content li .uikit-grid .alert-date,
 .page #health-alert-ajax-container body.front #tabs .health-alert-content li .alert-date,
@@ -1465,45 +1635,75 @@ body  #health-alert-ajax-container .page-layout .health-alert-content li .page .
 body.front #health-alert-ajax-container #tabs .health-alert-content li .uikit-grid .alert-date,
 .page body.front #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
 body.front #health-alert-ajax-container #tabs .health-alert-content li .page .alert-date,
-.uikit-grid #health-alert-ajax-container body.front .messages .health-alert-content li .alert-date,
-#health-alert-ajax-container body.front .messages .health-alert-content li .uikit-grid .alert-date,
-.page #health-alert-ajax-container body.front .messages .health-alert-content li .alert-date,
-#health-alert-ajax-container body.front .messages .health-alert-content li .page .alert-date,
-.uikit-grid body.front #health-alert-ajax-container .messages .health-alert-content li .alert-date,
+.uikit-grid #health-alert-ajax-container
+  body.front .messages .health-alert-content li .alert-date,
+#health-alert-ajax-container
+  body.front .messages .health-alert-content li .uikit-grid .alert-date,
+.page #health-alert-ajax-container
+  body.front .messages .health-alert-content li .alert-date,
+#health-alert-ajax-container
+  body.front .messages .health-alert-content li .page .alert-date,
+.uikit-grid
+  body.front #health-alert-ajax-container .messages .health-alert-content li .alert-date,
 body.front #health-alert-ajax-container .messages .health-alert-content li .uikit-grid .alert-date,
-.page body.front #health-alert-ajax-container .messages .health-alert-content li .alert-date,
+.page
+  body.front #health-alert-ajax-container .messages .health-alert-content li .alert-date,
 body.front #health-alert-ajax-container .messages .health-alert-content li .page .alert-date,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content li .alert-date,
-#health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content li .uikit-grid .alert-date,
-.page #health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content li .alert-date,
-#health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content li .page .alert-date,
-.uikit-grid body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-content li .alert-date,
+#health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-content li .uikit-grid .alert-date,
+.page #health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-content li .alert-date,
+#health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-content li .page .alert-date,
+.uikit-grid
+  body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
 body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .uikit-grid .alert-date,
-.page body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
+.page
+  body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
 body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .page .alert-date,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content li .alert-date,
-#health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content li .uikit-grid .alert-date,
-.page #health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content li .alert-date,
-#health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content li .page .alert-date,
-.uikit-grid body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .alert-date,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-content li .alert-date,
+#health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-content li .uikit-grid .alert-date,
+.page #health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-content li .alert-date,
+#health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-content li .page .alert-date,
+.uikit-grid
+  body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .alert-date,
 body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .uikit-grid .alert-date,
-.page body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .alert-date,
+.page
+  body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .alert-date,
 body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .page .alert-date,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content li .alert-date,
-#health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content li .uikit-grid .alert-date,
-.page #health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content li .alert-date,
-#health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content li .page .alert-date,
-.uikit-grid body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-content li .alert-date,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-content li .uikit-grid .alert-date,
+.page #health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-content li .alert-date,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-content li .page .alert-date,
+.uikit-grid
+  body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
 body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .uikit-grid .alert-date,
-.page body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
+.page
+  body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
 body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .page .alert-date,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content li .alert-date,
-#health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content li .uikit-grid .alert-date,
-.page #health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content li .alert-date,
-#health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content li .page .alert-date,
-.uikit-grid body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .alert-date,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-content li .alert-date,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-content li .uikit-grid .alert-date,
+.page #health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-content li .alert-date,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-content li .page .alert-date,
+.uikit-grid
+  body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .alert-date,
 body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .uikit-grid .alert-date,
-.page body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .alert-date,
+.page
+  body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .alert-date,
 body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .page .alert-date,
 .uikit-grid .bean-image-and-text.view-mode-listing_vertical .group-left,
 .bean-image-and-text.view-mode-listing_vertical .uikit-grid .group-left,
@@ -1647,9 +1847,11 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
 .bean-image-and-text.view-mode-feature_large .uikit-grid .group-left,
 .page .bean-image-and-text.view-mode-feature_large .group-left,
 .bean-image-and-text.view-mode-feature_large .page .group-left,
-.uikit-grid .bean-image-and-text.view-mode-feature_large .group-right,
+.uikit-grid
+  .bean-image-and-text.view-mode-feature_large .group-right,
 .bean-image-and-text.view-mode-feature_large .uikit-grid .group-right,
-.page .bean-image-and-text.view-mode-feature_large .group-right,
+.page
+  .bean-image-and-text.view-mode-feature_large .group-right,
 .bean-image-and-text.view-mode-feature_large .page .group-right,
 .uikit-grid .node-video.view-mode-inline .group-left,
 .node-video.view-mode-inline .uikit-grid .group-left,
@@ -1675,25 +1877,31 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
 body.node-type-health-topic .uikit-grid .paragraphs-item-two-columns > .para-row > .group-left,
 .page body.node-type-health-topic .paragraphs-item-two-columns > .para-row > .group-left,
 body.node-type-health-topic .page .paragraphs-item-two-columns > .para-row > .group-left,
-.uikit-grid body.node-type-health-topic .paragraphs-item-two-columns > .para-row > .group-right,
+.uikit-grid
+  body.node-type-health-topic .paragraphs-item-two-columns > .para-row > .group-right,
 body.node-type-health-topic .uikit-grid .paragraphs-item-two-columns > .para-row > .group-right,
-.page body.node-type-health-topic .paragraphs-item-two-columns > .para-row > .group-right,
+.page
+  body.node-type-health-topic .paragraphs-item-two-columns > .para-row > .group-right,
 body.node-type-health-topic .page .paragraphs-item-two-columns > .para-row > .group-right,
 .uikit-grid body.node-type-health-topic-hp .paragraphs-item-two-columns > .para-row > .group-left,
 body.node-type-health-topic-hp .uikit-grid .paragraphs-item-two-columns > .para-row > .group-left,
 .page body.node-type-health-topic-hp .paragraphs-item-two-columns > .para-row > .group-left,
 body.node-type-health-topic-hp .page .paragraphs-item-two-columns > .para-row > .group-left,
-.uikit-grid body.node-type-health-topic-hp .paragraphs-item-two-columns > .para-row > .group-right,
+.uikit-grid
+  body.node-type-health-topic-hp .paragraphs-item-two-columns > .para-row > .group-right,
 body.node-type-health-topic-hp .uikit-grid .paragraphs-item-two-columns > .para-row > .group-right,
-.page body.node-type-health-topic-hp .paragraphs-item-two-columns > .para-row > .group-right,
+.page
+  body.node-type-health-topic-hp .paragraphs-item-two-columns > .para-row > .group-right,
 body.node-type-health-topic-hp .page .paragraphs-item-two-columns > .para-row > .group-right,
 .uikit-grid body.node-type-landing-page .paragraphs-item-two-columns > .para-row > .group-left,
 body.node-type-landing-page .uikit-grid .paragraphs-item-two-columns > .para-row > .group-left,
 .page body.node-type-landing-page .paragraphs-item-two-columns > .para-row > .group-left,
 body.node-type-landing-page .page .paragraphs-item-two-columns > .para-row > .group-left,
-.uikit-grid body.node-type-landing-page .paragraphs-item-two-columns > .para-row > .group-right,
+.uikit-grid
+  body.node-type-landing-page .paragraphs-item-two-columns > .para-row > .group-right,
 body.node-type-landing-page .uikit-grid .paragraphs-item-two-columns > .para-row > .group-right,
-.page body.node-type-landing-page .paragraphs-item-two-columns > .para-row > .group-right,
+.page
+  body.node-type-landing-page .paragraphs-item-two-columns > .para-row > .group-right,
 body.node-type-landing-page .page .paragraphs-item-two-columns > .para-row > .group-right,
 .uikit-grid .paragraphs-item-para-links .paragraphs-item-para-link,
 .paragraphs-item-para-links .uikit-grid .paragraphs-item-para-link,
@@ -1705,8 +1913,10 @@ body.node-type-landing-page .page .paragraphs-item-two-columns > .para-row > .gr
 .paragraphs-item-para-taxonomies .page .field-name-field-taxonomy-paragraph > .field-items > .field-item,
 .uikit-grid .paragraphs-item-two-columns > .para-row > .group-left,
 .page .paragraphs-item-two-columns > .para-row > .group-left,
-.uikit-grid .paragraphs-item-two-columns > .para-row > .group-right,
-.page .paragraphs-item-two-columns > .para-row > .group-right {
+.uikit-grid
+  .paragraphs-item-two-columns > .para-row > .group-right,
+.page
+  .paragraphs-item-two-columns > .para-row > .group-right {
   width: 50%;
 }
 
@@ -1833,14 +2043,14 @@ body.node-type-landing-page #health-alert-ajax-container .para-container.paragra
 #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .uikit-grid .health-alert-content,
 .page #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .health-alert-content,
 #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .page .health-alert-content,
-.uikit-grid #health-alert-ajax-container body  .page-layout .health-alert-content,
-#health-alert-ajax-container body  .page-layout .uikit-grid .health-alert-content,
-.page #health-alert-ajax-container body  .page-layout .health-alert-content,
-#health-alert-ajax-container body  .page-layout .page .health-alert-content,
-.uikit-grid body  #health-alert-ajax-container .page-layout .health-alert-content,
-body  #health-alert-ajax-container .page-layout .uikit-grid .health-alert-content,
-.page body  #health-alert-ajax-container .page-layout .health-alert-content,
-body  #health-alert-ajax-container .page-layout .page .health-alert-content,
+.uikit-grid #health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content,
+#health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .uikit-grid .health-alert-content,
+.page #health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content,
+#health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .page .health-alert-content,
+.uikit-grid body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content,
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .uikit-grid .health-alert-content,
+.page body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content,
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .page .health-alert-content,
 .uikit-grid #health-alert-ajax-container body.front #tabs .health-alert-content,
 #health-alert-ajax-container body.front #tabs .uikit-grid .health-alert-content,
 .page #health-alert-ajax-container body.front #tabs .health-alert-content,
@@ -1849,45 +2059,75 @@ body  #health-alert-ajax-container .page-layout .page .health-alert-content,
 body.front #health-alert-ajax-container #tabs .uikit-grid .health-alert-content,
 .page body.front #health-alert-ajax-container #tabs .health-alert-content,
 body.front #health-alert-ajax-container #tabs .page .health-alert-content,
-.uikit-grid #health-alert-ajax-container body.front .messages .health-alert-content,
-#health-alert-ajax-container body.front .messages .uikit-grid .health-alert-content,
-.page #health-alert-ajax-container body.front .messages .health-alert-content,
-#health-alert-ajax-container body.front .messages .page .health-alert-content,
-.uikit-grid body.front #health-alert-ajax-container .messages .health-alert-content,
+.uikit-grid #health-alert-ajax-container
+  body.front .messages .health-alert-content,
+#health-alert-ajax-container
+  body.front .messages .uikit-grid .health-alert-content,
+.page #health-alert-ajax-container
+  body.front .messages .health-alert-content,
+#health-alert-ajax-container
+  body.front .messages .page .health-alert-content,
+.uikit-grid
+  body.front #health-alert-ajax-container .messages .health-alert-content,
 body.front #health-alert-ajax-container .messages .uikit-grid .health-alert-content,
-.page body.front #health-alert-ajax-container .messages .health-alert-content,
+.page
+  body.front #health-alert-ajax-container .messages .health-alert-content,
 body.front #health-alert-ajax-container .messages .page .health-alert-content,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content,
-#health-alert-ajax-container body.node-type-health-topic #tabs .uikit-grid .health-alert-content,
-.page #health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content,
-#health-alert-ajax-container body.node-type-health-topic #tabs .page .health-alert-content,
-.uikit-grid body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-content,
+#health-alert-ajax-container
+  body.node-type-health-topic #tabs .uikit-grid .health-alert-content,
+.page #health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-content,
+#health-alert-ajax-container
+  body.node-type-health-topic #tabs .page .health-alert-content,
+.uikit-grid
+  body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content,
 body.node-type-health-topic #health-alert-ajax-container #tabs .uikit-grid .health-alert-content,
-.page body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content,
+.page
+  body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content,
 body.node-type-health-topic #health-alert-ajax-container #tabs .page .health-alert-content,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content,
-#health-alert-ajax-container body.node-type-health-topic .messages .uikit-grid .health-alert-content,
-.page #health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content,
-#health-alert-ajax-container body.node-type-health-topic .messages .page .health-alert-content,
-.uikit-grid body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-content,
+#health-alert-ajax-container
+  body.node-type-health-topic .messages .uikit-grid .health-alert-content,
+.page #health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-content,
+#health-alert-ajax-container
+  body.node-type-health-topic .messages .page .health-alert-content,
+.uikit-grid
+  body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content,
 body.node-type-health-topic #health-alert-ajax-container .messages .uikit-grid .health-alert-content,
-.page body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content,
+.page
+  body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content,
 body.node-type-health-topic #health-alert-ajax-container .messages .page .health-alert-content,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content,
-#health-alert-ajax-container body.node-type-health-topic-hp #tabs .uikit-grid .health-alert-content,
-.page #health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content,
-#health-alert-ajax-container body.node-type-health-topic-hp #tabs .page .health-alert-content,
-.uikit-grid body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-content,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .uikit-grid .health-alert-content,
+.page #health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-content,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .page .health-alert-content,
+.uikit-grid
+  body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content,
 body.node-type-health-topic-hp #health-alert-ajax-container #tabs .uikit-grid .health-alert-content,
-.page body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content,
+.page
+  body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content,
 body.node-type-health-topic-hp #health-alert-ajax-container #tabs .page .health-alert-content,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content,
-#health-alert-ajax-container body.node-type-health-topic-hp .messages .uikit-grid .health-alert-content,
-.page #health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content,
-#health-alert-ajax-container body.node-type-health-topic-hp .messages .page .health-alert-content,
-.uikit-grid body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-content,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .uikit-grid .health-alert-content,
+.page #health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-content,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .page .health-alert-content,
+.uikit-grid
+  body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content,
 body.node-type-health-topic-hp #health-alert-ajax-container .messages .uikit-grid .health-alert-content,
-.page body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content,
+.page
+  body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content,
 body.node-type-health-topic-hp #health-alert-ajax-container .messages .page .health-alert-content,
 .uikit-grid #health-alert-ajax-container .container .health-alert-content li .alert-title,
 #health-alert-ajax-container .container .health-alert-content li .uikit-grid .alert-title,
@@ -1991,14 +2231,14 @@ body.node-type-landing-page #health-alert-ajax-container .para-container.paragra
 #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .health-alert-content li .uikit-grid .alert-title,
 .page #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .health-alert-content li .alert-title,
 #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .health-alert-content li .page .alert-title,
-.uikit-grid #health-alert-ajax-container body  .page-layout .health-alert-content li .alert-title,
-#health-alert-ajax-container body  .page-layout .health-alert-content li .uikit-grid .alert-title,
-.page #health-alert-ajax-container body  .page-layout .health-alert-content li .alert-title,
-#health-alert-ajax-container body  .page-layout .health-alert-content li .page .alert-title,
-.uikit-grid body  #health-alert-ajax-container .page-layout .health-alert-content li .alert-title,
-body  #health-alert-ajax-container .page-layout .health-alert-content li .uikit-grid .alert-title,
-.page body  #health-alert-ajax-container .page-layout .health-alert-content li .alert-title,
-body  #health-alert-ajax-container .page-layout .health-alert-content li .page .alert-title,
+.uikit-grid #health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content li .alert-title,
+#health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content li .uikit-grid .alert-title,
+.page #health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content li .alert-title,
+#health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content li .page .alert-title,
+.uikit-grid body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content li .alert-title,
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content li .uikit-grid .alert-title,
+.page body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content li .alert-title,
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content li .page .alert-title,
 .uikit-grid #health-alert-ajax-container body.front #tabs .health-alert-content li .alert-title,
 #health-alert-ajax-container body.front #tabs .health-alert-content li .uikit-grid .alert-title,
 .page #health-alert-ajax-container body.front #tabs .health-alert-content li .alert-title,
@@ -2007,45 +2247,75 @@ body  #health-alert-ajax-container .page-layout .health-alert-content li .page .
 body.front #health-alert-ajax-container #tabs .health-alert-content li .uikit-grid .alert-title,
 .page body.front #health-alert-ajax-container #tabs .health-alert-content li .alert-title,
 body.front #health-alert-ajax-container #tabs .health-alert-content li .page .alert-title,
-.uikit-grid #health-alert-ajax-container body.front .messages .health-alert-content li .alert-title,
-#health-alert-ajax-container body.front .messages .health-alert-content li .uikit-grid .alert-title,
-.page #health-alert-ajax-container body.front .messages .health-alert-content li .alert-title,
-#health-alert-ajax-container body.front .messages .health-alert-content li .page .alert-title,
-.uikit-grid body.front #health-alert-ajax-container .messages .health-alert-content li .alert-title,
+.uikit-grid #health-alert-ajax-container
+  body.front .messages .health-alert-content li .alert-title,
+#health-alert-ajax-container
+  body.front .messages .health-alert-content li .uikit-grid .alert-title,
+.page #health-alert-ajax-container
+  body.front .messages .health-alert-content li .alert-title,
+#health-alert-ajax-container
+  body.front .messages .health-alert-content li .page .alert-title,
+.uikit-grid
+  body.front #health-alert-ajax-container .messages .health-alert-content li .alert-title,
 body.front #health-alert-ajax-container .messages .health-alert-content li .uikit-grid .alert-title,
-.page body.front #health-alert-ajax-container .messages .health-alert-content li .alert-title,
+.page
+  body.front #health-alert-ajax-container .messages .health-alert-content li .alert-title,
 body.front #health-alert-ajax-container .messages .health-alert-content li .page .alert-title,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content li .alert-title,
-#health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content li .uikit-grid .alert-title,
-.page #health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content li .alert-title,
-#health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content li .page .alert-title,
-.uikit-grid body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .alert-title,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-content li .alert-title,
+#health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-content li .uikit-grid .alert-title,
+.page #health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-content li .alert-title,
+#health-alert-ajax-container
+  body.node-type-health-topic #tabs .health-alert-content li .page .alert-title,
+.uikit-grid
+  body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .alert-title,
 body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .uikit-grid .alert-title,
-.page body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .alert-title,
+.page
+  body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .alert-title,
 body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .page .alert-title,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content li .alert-title,
-#health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content li .uikit-grid .alert-title,
-.page #health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content li .alert-title,
-#health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content li .page .alert-title,
-.uikit-grid body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .alert-title,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-content li .alert-title,
+#health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-content li .uikit-grid .alert-title,
+.page #health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-content li .alert-title,
+#health-alert-ajax-container
+  body.node-type-health-topic .messages .health-alert-content li .page .alert-title,
+.uikit-grid
+  body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .alert-title,
 body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .uikit-grid .alert-title,
-.page body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .alert-title,
+.page
+  body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .alert-title,
 body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .page .alert-title,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content li .alert-title,
-#health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content li .uikit-grid .alert-title,
-.page #health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content li .alert-title,
-#health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content li .page .alert-title,
-.uikit-grid body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .alert-title,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-content li .alert-title,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-content li .uikit-grid .alert-title,
+.page #health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-content li .alert-title,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp #tabs .health-alert-content li .page .alert-title,
+.uikit-grid
+  body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .alert-title,
 body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .uikit-grid .alert-title,
-.page body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .alert-title,
+.page
+  body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .alert-title,
 body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .page .alert-title,
-.uikit-grid #health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content li .alert-title,
-#health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content li .uikit-grid .alert-title,
-.page #health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content li .alert-title,
-#health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content li .page .alert-title,
-.uikit-grid body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .alert-title,
+.uikit-grid #health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-content li .alert-title,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-content li .uikit-grid .alert-title,
+.page #health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-content li .alert-title,
+#health-alert-ajax-container
+  body.node-type-health-topic-hp .messages .health-alert-content li .page .alert-title,
+.uikit-grid
+  body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .alert-title,
 body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .uikit-grid .alert-title,
-.page body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .alert-title,
+.page
+  body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .alert-title,
 body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .page .alert-title,
 .uikit-grid .bean-image-and-text.view-mode-listing_vertical .group-right,
 .bean-image-and-text.view-mode-listing_vertical .uikit-grid .group-right,
@@ -3044,19 +3314,24 @@ body.node-type-landing-page #health-alert-ajax-container .para-container.paragra
 #health-alert-ajax-container .paragraphs-item-two-columns.inside-para-container .health-alert-content li .alert-date,
 #health-alert-ajax-container .paragraphs-item-para-block.inside-para-container .health-alert-content li .alert-date,
 #health-alert-ajax-container .paragraphs-item-featured-videos.inside-para-container .health-alert-content li .alert-date,
-#health-alert-ajax-container body  .page-layout .health-alert-content li .alert-date,
-body  #health-alert-ajax-container .page-layout .health-alert-content li .alert-date,
+#health-alert-ajax-container body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) .page-layout .health-alert-content li .alert-date,
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #health-alert-ajax-container .page-layout .health-alert-content li .alert-date,
 #health-alert-ajax-container body.front #tabs .health-alert-content li .alert-date,
 body.front #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
-#health-alert-ajax-container body.front .messages .health-alert-content li .alert-date,
+#health-alert-ajax-container
+          body.front .messages .health-alert-content li .alert-date,
 body.front #health-alert-ajax-container .messages .health-alert-content li .alert-date,
-#health-alert-ajax-container body.node-type-health-topic #tabs .health-alert-content li .alert-date,
+#health-alert-ajax-container
+          body.node-type-health-topic #tabs .health-alert-content li .alert-date,
 body.node-type-health-topic #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
-#health-alert-ajax-container body.node-type-health-topic .messages .health-alert-content li .alert-date,
+#health-alert-ajax-container
+          body.node-type-health-topic .messages .health-alert-content li .alert-date,
 body.node-type-health-topic #health-alert-ajax-container .messages .health-alert-content li .alert-date,
-#health-alert-ajax-container body.node-type-health-topic-hp #tabs .health-alert-content li .alert-date,
+#health-alert-ajax-container
+          body.node-type-health-topic-hp #tabs .health-alert-content li .alert-date,
 body.node-type-health-topic-hp #health-alert-ajax-container #tabs .health-alert-content li .alert-date,
-#health-alert-ajax-container body.node-type-health-topic-hp .messages .health-alert-content li .alert-date,
+#health-alert-ajax-container
+          body.node-type-health-topic-hp .messages .health-alert-content li .alert-date,
 body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-alert-content li .alert-date {
   text-align: right;
 }
@@ -3710,6 +3985,6 @@ header.region-featured .region-header {
   padding: 0.8em 1.6em;
 }
 
-body  #content {
+body:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) #content {
   padding-top: 0;
 }
