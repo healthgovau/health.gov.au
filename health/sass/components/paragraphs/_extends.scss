@@ -114,7 +114,6 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .view-mode-hotline_bar {}
 }
 
 // Contact
@@ -175,6 +174,9 @@
       .field-name-field-contact-telephone {
         @extend .uikit-display-3;
         font-weight: 700;
+      }
+      i {
+        color: #fff;
       }
     }
   }
