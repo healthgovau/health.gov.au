@@ -45,9 +45,9 @@
   }
 
   // Contact type subsets for differential styling
-  // Apply circle style to image for individuals
+  // Apply circle style to default image and sleected ones regardless of upload
+  &.default,
   &.department-of-health,
-  &.committee-or-group,
   &.minister {
     .field-name-field-image-featured {
       img {
@@ -55,4 +55,5 @@
       }
     }
   }
+  
 }
