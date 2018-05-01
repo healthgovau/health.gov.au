@@ -509,6 +509,15 @@ function health_preprocess_field(&$variables) {
         }
       }
     }
+
+    // Contact
+    if ($variables['element']['#object']->type == 'contact') {
+      if ($variables['element']['#items'][0]['filename'] == 'Contact placeholder - group' && $variables['element']['#items'][0]['fid'] == 6186) {
+        // Add default to class if image value is default.
+        $variables['classes_array'][] = 'default';
+      }
+
+    }
   }
 
   // Related term field.
