@@ -452,8 +452,8 @@ function health_preprocess_field(&$variables) {
     }
   }
 
-  // Create variable for address field.
-  if ($variables['element']['#field_name'] == 'field_street_address') {
+  // Create variable for street address field.
+  if ($variables['element']['#field_name'] == 'field_contact_street_address') {
     $variables['location_map'] = '';
     // Only show the map in event node view.
     if (arg(0) == 'node' && is_numeric(arg(1))) {
@@ -468,6 +468,16 @@ function health_preprocess_field(&$variables) {
         $address = $variables['items'][0]['#address'];
         $variables['location_map'] ='<img src="' . $src . '" alt="' . $address['thoroughfare'] . ' ' . $address['locality'] .'" />';
       }
+    }
+  }
+
+  // Add title and organisation to postal address field.
+  if ($variables['element']['#field_name'] == 'field_contact_postal_address') {
+    $variables['title'] = $variables['element']['#object']->title;
+    $variables['organisation'] = '';
+
+    if (isset($variables['element']['#object']->field_contact_organisation[LANGUAGE_NONE])) {
+      $variables['organisation'] = $variables['element']['#object']->field_contact_organisation[LANGUAGE_NONE][0]['value'];
     }
   }
 
