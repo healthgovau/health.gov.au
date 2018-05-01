@@ -19204,6 +19204,13 @@ ul.social__links .social__links-item a:after,
   width: 100%;
 }
 
+.node-contact.department-of-health .field-name-field-image-featured img,
+.node-contact.committee-or-group .field-name-field-image-featured img,
+.node-contact.minister .field-name-field-image-featured img {
+  border-radius: 50%;
+  border: 3px solid #CCC;
+}
+
 .node-statistic.view-mode-feature,
 .node-statistic.view-mode-inline {
   max-width: 25em;
@@ -19851,6 +19858,10 @@ body.node-type-landing-page .para-container.paragraphs-item-image {
 
 .page .paragraphs-item-para-contact .view-mode-hotline_bar .paragraphs-item-para-telephone .field-name-field-contact-telephone {
   font-weight: 700;
+}
+
+.page .paragraphs-item-para-contact .view-mode-hotline_bar .paragraphs-item-para-telephone i {
+  color: #fff;
 }
 
 .paragraphs-item-para-statistics .field-name-field-summary p {

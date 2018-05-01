@@ -43,4 +43,16 @@
   &.view-mode-search_result {
       @extend %dm-search-index;
   }
+
+  // Contact type subsets for differential styling
+  // Apply circle style to image for individuals
+  &.department-of-health,
+  &.committee-or-group,
+  &.minister {
+    .field-name-field-image-featured {
+      img {
+        @include circlefy;
+      }
+    }
+  }
 }
