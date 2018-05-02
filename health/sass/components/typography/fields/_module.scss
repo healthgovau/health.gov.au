@@ -61,7 +61,8 @@
 }
 
 // All fields
-%field-label {
+%field-label,
+.field-label-ui label {
     font-weight: bold;
     margin-bottom: uikit-space(.25);
 }
@@ -104,6 +105,15 @@
 
 // Styling by field name
 
+// Addresses
+// .field-name-field-contact-postal-address,
+// .field-name-field-contact-street-address {
+//   .field-items {
+//     border-left: $health-borderize--fat;
+//     padding-left: uikit-space(1.5);
+//   }
+// }
+
 // Ext link
 .field-name-field-link-external {
     padding-bottom: uikit-space(1.5);
@@ -116,6 +126,11 @@
     }
 }
 
+// External link
+.external-link-url {
+    @extend %ext-link;
+}
+
 // Email telephone field
 .field-name-field-contact-email,
 .field-name-field-contact-telephone {
@@ -125,8 +140,25 @@
     }
 }
 
-.external-link-url {
-    @extend %ext-link;
+// Paragraph styling
+// Email
+.paragraphs-item-para-email {
+  .field-items{
+    padding-bottom: 0;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+// Telephone
+.paragraphs-items-field-para-telephone {
+  .field-items{
+    padding-bottom: 0;
+  }
+  p {
+    margin-bottom: 0;
+  }
 }
 
 // Document accessibility

@@ -18,6 +18,7 @@ ul.social__links, // Getting specific with it nah nah nah nah na na na!
     // Font Awesome implementation
     a {
       @extend %baseicon;
+      margin-left: 2.6em !important;
       &.youtube:before {
         content: "\f16a";
       }
