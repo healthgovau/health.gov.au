@@ -104,6 +104,10 @@ body.node-type-health-topic-hp .page .messages {
 .page .col-lg-1,
 .uikit-grid .col-lg-2,
 .page .col-lg-2,
+.uikit-grid .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .uikit-grid .group-left,
+.page .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .page .group-left,
 .uikit-grid .col-lg-3,
 .page .col-lg-3,
 .page .paragraphs-item-para-contact .group-left,
@@ -122,6 +126,10 @@ body.node-type-health-topic-hp .page .messages {
 .page .paragraphs-item-para-contact .group-right,
 .uikit-grid .col-lg-10,
 .page .col-lg-10,
+.uikit-grid .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .uikit-grid .group-right,
+.page .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .page .group-right,
 .uikit-grid .col-lg-11,
 .page .col-lg-11,
 .uikit-grid .col-lg-12,
@@ -135,7 +143,11 @@ body.node-type-health-topic-hp .page .messages {
 }
 
 .uikit-grid .col-lg-2,
-.page .col-lg-2 {
+.page .col-lg-2,
+.uikit-grid .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .uikit-grid .group-left,
+.page .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .page .group-left {
   width: 16.6666666667%;
 }
 
@@ -177,7 +189,11 @@ body.node-type-health-topic-hp .page .messages {
 }
 
 .uikit-grid .col-lg-10,
-.page .col-lg-10 {
+.page .col-lg-10,
+.uikit-grid .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .uikit-grid .group-right,
+.page .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .page .group-right {
   width: 83.3333333333%;
 }
 

@@ -109,6 +109,10 @@ body.node-type-health-topic-hp .page .messages {
 .page .col-sm-1,
 .uikit-grid .col-sm-2,
 .page .col-sm-2,
+.uikit-grid .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .uikit-grid .group-left,
+.page .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .page .group-left,
 .uikit-grid .col-sm-3,
 .page .col-sm-3,
 .uikit-grid #health-alert-ajax-container .container .health-alert-logo,
@@ -1191,6 +1195,10 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
 .node-departmental-media.view-mode-inline .page .group-right,
 .uikit-grid .col-sm-10,
 .page .col-sm-10,
+.uikit-grid .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .uikit-grid .group-right,
+.page .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .page .group-right,
 .uikit-grid .col-sm-11,
 .page .col-sm-11,
 .uikit-grid .col-sm-12,
@@ -1323,7 +1331,11 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
 }
 
 .uikit-grid .col-sm-2,
-.page .col-sm-2 {
+.page .col-sm-2,
+.uikit-grid .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .uikit-grid .group-left,
+.page .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .page .group-left {
   width: 16.6666666667%;
 }
 
@@ -2429,7 +2441,11 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
 }
 
 .uikit-grid .col-sm-10,
-.page .col-sm-10 {
+.page .col-sm-10,
+.uikit-grid .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .uikit-grid .group-right,
+.page .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .page .group-right {
   width: 83.3333333333%;
 }
 
@@ -3642,13 +3658,16 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
   padding: 1.6em 0.8em;
 }
 
-.node-publication.view-mode-inline_large,
-.node-contact.view-mode-inline_large {
+.node-publication.view-mode-inline_large {
   margin-bottom: 3.2em;
 }
 
 .node-video.view-mode-listing_vertical .field-name-field-resource-duration .field-item {
   margin-bottom: 2px;
+}
+
+.node-contact.view-mode-inline {
+  padding: 0;
 }
 
 .paragraphs-view-news_and_events .views-row,

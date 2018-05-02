@@ -3836,12 +3836,32 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .p
 .page .col-lg-1,
 .uikit-grid .col-xs-2,
 .page .col-xs-2,
+.uikit-grid .node-contact.view-mode-listing_vertical .group-left,
+.node-contact.view-mode-listing_vertical .uikit-grid .group-left,
+.page .node-contact.view-mode-listing_vertical .group-left,
+.node-contact.view-mode-listing_vertical .page .group-left,
+.uikit-grid .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .uikit-grid .group-left,
+.page .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .page .group-left,
 .uikit-grid .col-sm-2,
 .page .col-sm-2,
+.uikit-grid .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .uikit-grid .group-left,
+.page .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .page .group-left,
 .uikit-grid .col-md-2,
 .page .col-md-2,
+.uikit-grid .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .uikit-grid .group-left,
+.page .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .page .group-left,
 .uikit-grid .col-lg-2,
 .page .col-lg-2,
+.uikit-grid .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .uikit-grid .group-left,
+.page .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .page .group-left,
 .uikit-grid .col-xs-3,
 .page .col-xs-3,
 .uikit-grid .col-sm-3,
@@ -5036,12 +5056,32 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
 .page .paragraphs-item-para-contact .group-right,
 .uikit-grid .col-xs-10,
 .page .col-xs-10,
+.uikit-grid .node-contact.view-mode-listing_vertical .group-right,
+.node-contact.view-mode-listing_vertical .uikit-grid .group-right,
+.page .node-contact.view-mode-listing_vertical .group-right,
+.node-contact.view-mode-listing_vertical .page .group-right,
+.uikit-grid .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .uikit-grid .group-right,
+.page .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .page .group-right,
 .uikit-grid .col-sm-10,
 .page .col-sm-10,
+.uikit-grid .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .uikit-grid .group-right,
+.page .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .page .group-right,
 .uikit-grid .col-md-10,
 .page .col-md-10,
+.uikit-grid .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .uikit-grid .group-right,
+.page .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .page .group-right,
 .uikit-grid .col-lg-10,
 .page .col-lg-10,
+.uikit-grid .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .uikit-grid .group-right,
+.page .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .page .group-right,
 .uikit-grid .col-xs-11,
 .page .col-xs-11,
 .uikit-grid .col-sm-11,
@@ -5512,6 +5552,14 @@ body.node-type-landing-page .page .group-header,
 .page .col-xs-1,
 .uikit-grid .col-xs-2,
 .page .col-xs-2,
+.uikit-grid .node-contact.view-mode-listing_vertical .group-left,
+.node-contact.view-mode-listing_vertical .uikit-grid .group-left,
+.page .node-contact.view-mode-listing_vertical .group-left,
+.node-contact.view-mode-listing_vertical .page .group-left,
+.uikit-grid .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .uikit-grid .group-left,
+.page .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .page .group-left,
 .uikit-grid .col-xs-3,
 .page .col-xs-3,
 .uikit-grid .col-xs-4,
@@ -5528,6 +5576,14 @@ body.node-type-landing-page .page .group-header,
 .page .col-xs-9,
 .uikit-grid .col-xs-10,
 .page .col-xs-10,
+.uikit-grid .node-contact.view-mode-listing_vertical .group-right,
+.node-contact.view-mode-listing_vertical .uikit-grid .group-right,
+.page .node-contact.view-mode-listing_vertical .group-right,
+.node-contact.view-mode-listing_vertical .page .group-right,
+.uikit-grid .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .uikit-grid .group-right,
+.page .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .page .group-right,
 .uikit-grid .col-xs-11,
 .page .col-xs-11,
 .uikit-grid .col-xs-12,
@@ -5845,7 +5901,15 @@ body.node-type-landing-page .page .group-header,
 }
 
 .uikit-grid .col-xs-2,
-.page .col-xs-2 {
+.page .col-xs-2,
+.uikit-grid .node-contact.view-mode-listing_vertical .group-left,
+.node-contact.view-mode-listing_vertical .uikit-grid .group-left,
+.page .node-contact.view-mode-listing_vertical .group-left,
+.node-contact.view-mode-listing_vertical .page .group-left,
+.uikit-grid .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .uikit-grid .group-left,
+.page .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .page .group-left {
   width: 16.6666666667%;
 }
 
@@ -5885,7 +5949,15 @@ body.node-type-landing-page .page .group-header,
 }
 
 .uikit-grid .col-xs-10,
-.page .col-xs-10 {
+.page .col-xs-10,
+.uikit-grid .node-contact.view-mode-listing_vertical .group-right,
+.node-contact.view-mode-listing_vertical .uikit-grid .group-right,
+.page .node-contact.view-mode-listing_vertical .group-right,
+.node-contact.view-mode-listing_vertical .page .group-right,
+.uikit-grid .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .uikit-grid .group-right,
+.page .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .page .group-right {
   width: 83.3333333333%;
 }
 
@@ -13061,6 +13133,8 @@ body {
 
 .visually-hidden,
 .element-invisible,
+.node-contact.view-mode-listing_vertical .field-label,
+.node-contact.view-mode-inline .field-label,
 .node-publication.view-mode-full .paragraphs-item-documents .file__link span {
   position: absolute;
   width: 1px;
@@ -15676,7 +15750,8 @@ ul + h6 {
 .field-label-inline .field-label,
 .field-label-above .field-label,
 .field-name-field-related-health-topics .label-above,
-.field-name-field-related-health-topics .label-inline {
+.field-name-field-related-health-topics .label-inline,
+.field-label-ui label {
   font-weight: bold;
   margin-bottom: 0.4em;
 }
@@ -15708,6 +15783,22 @@ ul + h6 {
 .field-name-field-contact-telephone i:before {
   position: relative;
   font-size: 1em;
+}
+
+.paragraphs-item-para-email .field-items {
+  padding-bottom: 0;
+}
+
+.paragraphs-item-para-email p {
+  margin-bottom: 0;
+}
+
+.paragraphs-items-field-para-telephone .field-items {
+  padding-bottom: 0;
+}
+
+.paragraphs-items-field-para-telephone p {
+  margin-bottom: 0;
 }
 
 .document-accessibility-form {
@@ -17956,6 +18047,10 @@ a.uikit-header__logo:focus {
   margin-left: 2px;
 }
 
+.rsbtn_colorskin .rspart [class*="fa-"]:before {
+  margin-left: -1.2em;
+}
+
 .rsbtn_colorskin .rspart.rsbutton {
   background-color: #008998;
   width: 18px;
@@ -18167,6 +18262,7 @@ ul.social__links .social__links-item,
 
 ul.social__links .social__links-item a,
 .social__links .social__links-item a {
+  margin-left: 2.6em !important;
   display: inline;
   margin-right: 0;
 }
@@ -18902,37 +18998,30 @@ ul.social__links .social__links-item a:after,
   padding: 0.8em 0;
 }
 
-.node-publication.view-mode-inline_large,
-.node-contact.view-mode-inline_large {
+.node-publication.view-mode-inline_large {
   margin-bottom: 1.6em;
 }
 
-.node-publication.view-mode-inline_large .field-name-title,
-.node-contact.view-mode-inline_large .field-name-title {
+.node-publication.view-mode-inline_large .field-name-title {
   font-weight: bold;
 }
 
-.node-publication.view-mode-inline_large .group-name .field,
-.node-contact.view-mode-inline_large .group-name .field {
+.node-publication.view-mode-inline_large .group-name .field {
   float: left;
   margin-right: 4px;
 }
 
 .node-publication.view-mode-inline_large .group-name:before,
-.node-contact.view-mode-inline_large .group-name:before,
-.node-publication.view-mode-inline_large .group-name:after,
-.node-contact.view-mode-inline_large .group-name:after {
+.node-publication.view-mode-inline_large .group-name:after {
   content: " ";
   display: table;
 }
 
-.node-publication.view-mode-inline_large .group-name:after,
-.node-contact.view-mode-inline_large .group-name:after {
+.node-publication.view-mode-inline_large .group-name:after {
   clear: both;
 }
 
-.node-publication.view-mode-inline_large p,
-.node-contact.view-mode-inline_large p {
+.node-publication.view-mode-inline_large p {
   margin-bottom: 0;
 }
 
@@ -19204,9 +19293,48 @@ ul.social__links .social__links-item a:after,
   width: 100%;
 }
 
+.node-contact.view-mode-listing_vertical .inside-para-container,
+.node-contact.view-mode-listing_vertical .field-name-field-summary {
+  padding-bottom: 0.8em;
+}
+
+.node-contact.view-mode-inline {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #ccc;
+  background: none;
+  padding: 0;
+}
+
+.node-contact.view-mode-inline .group-left {
+  background: #ecedee;
+  text-align: center;
+  padding-top: 1.6em;
+  padding-bottom: 1.6em;
+}
+
+.node-contact.view-mode-inline .group-right {
+  padding: 1.6em 0.8em 0.8em 2.4em !important;
+}
+
+.node-contact.view-mode-inline .inside-para-container {
+  padding-bottom: 0.8em;
+}
+
+.node-contact .field-name-field-image-featured img {
+  border: 0;
+  max-width: 100%;
+}
+
 .node-contact.department-of-health .field-name-field-image-featured img,
-.node-contact.committee-or-group .field-name-field-image-featured img,
-.node-contact.minister .field-name-field-image-featured img {
+.node-contact.minister .field-name-field-image-featured img,
+.node-contact.committee-or-group .field-name-field-image-featured img {
+  border-radius: 50%;
+  border: 3px solid #CCC;
+}
+
+.node-contact .field-name-field-image-featured.default img {
   border-radius: 50%;
   border: 3px solid #CCC;
 }
@@ -20578,7 +20706,7 @@ ul.social__links .social__links-item a,
 .region-navigation .mobile-toggle.mobile-toggle--main-menu .mobile-toggle__label,
 .region-navigation .mobile-toggle.mobile-toggle--search .mobile-toggle__label {
   position: relative;
-  margin-left: 2em;
+  margin-left: 1.6em;
 }
 
 .social__links .social__links-item a:before,
@@ -20594,7 +20722,7 @@ ul.social__links .social__links-item a,
   position: absolute;
   line-height: 1;
   left: 0;
-  margin-left: -1.2em;
+  margin-left: -1.6em;
   display: inline-block;
 }
 
