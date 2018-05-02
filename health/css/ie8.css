@@ -1,4 +1,84 @@
 @charset "UTF-8";
+.colour-primary {
+  background: #153a6e; }
+  .colour-primary:hover {
+    background: #000b33; }
+
+.colour-primary-light {
+  background: #22447b; }
+  .colour-primary-light:hover {
+    background: #000b33; }
+
+.colour-primary-dark {
+  background: #213363; }
+  .colour-primary-dark:hover {
+    background: #000b33; }
+
+.colour-primary-darker {
+  background: #1b2a57; }
+  .colour-primary-darker:hover {
+    background: #000b33; }
+
+.colour-secondary {
+  background: #008998; }
+  .colour-secondary:hover {
+    background: #006570; }
+
+.colour-secondary-light {
+  background: #0091a0; }
+  .colour-secondary-light:hover {
+    background: #006570; }
+
+.colour-secondary-dark {
+  background: #007b89; }
+  .colour-secondary-dark:hover {
+    background: #006570; }
+
+.colour-secondary-darker {
+  background: #006e7a; }
+  .colour-secondary-darker:hover {
+    background: #006570; }
+
+.colour-tertiary {
+  background: #df2f3b; }
+  .colour-tertiary:hover {
+    background: #a31f26; }
+
+.colour-tertiary-light {
+  background: #ee303b; }
+  .colour-tertiary-light:hover {
+    background: #a31f26; }
+
+.colour-tertiary-dark {
+  background: #d42b38; }
+  .colour-tertiary-dark:hover {
+    background: #a31f26; }
+
+.colour-tertiary-darker {
+  background: #c42832; }
+  .colour-tertiary-darker:hover {
+    background: #a31f26; }
+
+.colour-tertiary-2 {
+  background: #0099d9; }
+  .colour-tertiary-2:hover {
+    background: #0070a3; }
+
+.colour-tertiary-2-light {
+  background: #28a9e0; }
+  .colour-tertiary-2-light:hover {
+    background: #0070a3; }
+
+.colour-tertiary-2-dark {
+  background: #0092d6; }
+  .colour-tertiary-2-dark:hover {
+    background: #0070a3; }
+
+.colour-tertiary-2-darker {
+  background: #007cb5; }
+  .colour-tertiary-2-darker:hover {
+    background: #0070a3; }
+
 .ie8 body {
   margin: 24px; }
 

@@ -1,5 +1,133 @@
 @charset "UTF-8";
 
+.colour-primary {
+  background: #153a6e;
+}
+
+.colour-primary:hover {
+  background: #000b33;
+}
+
+.colour-primary-light {
+  background: #22447b;
+}
+
+.colour-primary-light:hover {
+  background: #000b33;
+}
+
+.colour-primary-dark {
+  background: #213363;
+}
+
+.colour-primary-dark:hover {
+  background: #000b33;
+}
+
+.colour-primary-darker {
+  background: #1b2a57;
+}
+
+.colour-primary-darker:hover {
+  background: #000b33;
+}
+
+.colour-secondary {
+  background: #008998;
+}
+
+.colour-secondary:hover {
+  background: #006570;
+}
+
+.colour-secondary-light {
+  background: #0091a0;
+}
+
+.colour-secondary-light:hover {
+  background: #006570;
+}
+
+.colour-secondary-dark {
+  background: #007b89;
+}
+
+.colour-secondary-dark:hover {
+  background: #006570;
+}
+
+.colour-secondary-darker {
+  background: #006e7a;
+}
+
+.colour-secondary-darker:hover {
+  background: #006570;
+}
+
+.colour-tertiary {
+  background: #df2f3b;
+}
+
+.colour-tertiary:hover {
+  background: #a31f26;
+}
+
+.colour-tertiary-light {
+  background: #ee303b;
+}
+
+.colour-tertiary-light:hover {
+  background: #a31f26;
+}
+
+.colour-tertiary-dark {
+  background: #d42b38;
+}
+
+.colour-tertiary-dark:hover {
+  background: #a31f26;
+}
+
+.colour-tertiary-darker {
+  background: #c42832;
+}
+
+.colour-tertiary-darker:hover {
+  background: #a31f26;
+}
+
+.colour-tertiary-2 {
+  background: #0099d9;
+}
+
+.colour-tertiary-2:hover {
+  background: #0070a3;
+}
+
+.colour-tertiary-2-light {
+  background: #28a9e0;
+}
+
+.colour-tertiary-2-light:hover {
+  background: #0070a3;
+}
+
+.colour-tertiary-2-dark {
+  background: #0092d6;
+}
+
+.colour-tertiary-2-dark:hover {
+  background: #0070a3;
+}
+
+.colour-tertiary-2-darker {
+  background: #007cb5;
+}
+
+.colour-tertiary-2-darker:hover {
+  background: #0070a3;
+}
+
 .page .footer,
 body.node-type-health-topic .paragraphs-2-columns-resources.para-container,
 body.node-type-health-topic-hp .paragraphs-2-columns-resources.para-container,
@@ -3866,6 +3994,10 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .p
 .page .col-xs-3,
 .uikit-grid .col-sm-3,
 .page .col-sm-3,
+.uikit-grid .block__count--4 .bean-image-and-text,
+.block__count--4 .uikit-grid .bean-image-and-text,
+.page .block__count--4 .bean-image-and-text,
+.block__count--4 .page .bean-image-and-text,
 .uikit-grid #health-alert-ajax-container .container .health-alert-logo,
 #health-alert-ajax-container .container .uikit-grid .health-alert-logo,
 .page #health-alert-ajax-container .container .health-alert-logo,
@@ -5108,6 +5240,10 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
 .block__count--3 .uikit-grid .bean-image-and-text,
 .page .block__count--3 .bean-image-and-text,
 .block__count--3 .page .bean-image-and-text,
+.uikit-grid .block__count--4 .bean-image-and-text,
+.block__count--4 .uikit-grid .bean-image-and-text,
+.page .block__count--4 .bean-image-and-text,
+.block__count--4 .page .bean-image-and-text,
 .uikit-grid .video--left .video__left,
 .video--left .uikit-grid .video__left,
 .page .video--left .video__left,
@@ -5604,6 +5740,10 @@ body.node-type-landing-page .page .group-header,
 .block__count--3 .uikit-grid .bean-image-and-text,
 .page .block__count--3 .bean-image-and-text,
 .block__count--3 .page .bean-image-and-text,
+.uikit-grid .block__count--4 .bean-image-and-text,
+.block__count--4 .uikit-grid .bean-image-and-text,
+.page .block__count--4 .bean-image-and-text,
+.block__count--4 .page .bean-image-and-text,
 .uikit-grid .video--left .video__left,
 .video--left .uikit-grid .video__left,
 .page .video--left .video__left,
@@ -5984,6 +6124,10 @@ body.node-type-landing-page .page .group-header,
 .block__count--3 .uikit-grid .bean-image-and-text,
 .page .block__count--3 .bean-image-and-text,
 .block__count--3 .page .bean-image-and-text,
+.uikit-grid .block__count--4 .bean-image-and-text,
+.block__count--4 .uikit-grid .bean-image-and-text,
+.page .block__count--4 .bean-image-and-text,
+.block__count--4 .page .bean-image-and-text,
 .uikit-grid .video--left .video__left,
 .video--left .uikit-grid .video__left,
 .page .video--left .video__left,
@@ -16035,6 +16179,43 @@ p.resource-title {
   background: #e5e5e5;
 }
 
+.bean-image-and-text.view-mode-solid_full_card {
+  box-sizing: border-box;
+  position: relative;
+  min-height: 1px;
+  padding: 1.6em;
+}
+
+.bean-image-and-text.view-mode-solid_full_card .bean-block-content a {
+  display: block;
+  border-bottom: none;
+}
+
+.bean-image-and-text.view-mode-solid_full_card .bean-block-content a:after {
+  display: none;
+}
+
+.bean-image-and-text.view-mode-solid_full_card .bean-block-content a .field-name-field-bean-text {
+  color: white;
+}
+
+.bean-image-and-text.view-mode-solid_full_card .bean-block-content a .field-name-field-link-internal .field-item {
+  display: inline;
+  color: white;
+  border-bottom: 1px solid white;
+  font-weight: 700;
+  margin-bottom: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.bean-image-and-text.view-mode-solid_full_card .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .bean-image-and-text.view-mode-solid_full_card .bean-block-content .field-item .field-name-field-link-internal .field-item:after {
+  color: white;
+  position: absolute;
+  top: 1.2em;
+  right: 0.4em;
+}
+
 .bean-image-and-text.view-mode-feature_large {
   float: left;
 }
@@ -16153,6 +16334,10 @@ p.resource-title {
 }
 
 .block__count--3 .bean-image-and-text {
+  margin-bottom: 12px;
+}
+
+.block__count--4 .bean-image-and-text {
   margin-bottom: 12px;
 }
 
@@ -21396,6 +21581,7 @@ header,
 
 .external-link-url,
 .bean-image-and-text.view-mode-full .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after,
+.bean-image-and-text.view-mode-solid_full_card .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after,
 .bean-image-and-text.view-mode-view_selector .bean-block-content a[rel~='external'] .field-name-field-link-internal .field-item:after,
 .bean-image-and-text.view-mode-view_selector a[rel~='external'] .field-name-field-link-internal .bean-block-content .field-item .field-name-field-link-internal .field-item:after,
 .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full.more-services-card a[rel~='external'] .field-name-field-link-internal .field-item:after,
