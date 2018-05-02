@@ -91,6 +91,9 @@
   .rspart {
     float: left;
     margin-left: 2px;
+    [class*="fa-"]:before {
+      margin-left: -1.2em;
+    }
     &.rsbutton {
       background-color: $colour-Secondary;
       width: 18px;

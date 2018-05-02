@@ -104,6 +104,10 @@ body.node-type-health-topic-hp .page .messages {
 .page .col-md-1,
 .uikit-grid .col-md-2,
 .page .col-md-2,
+.uikit-grid .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .uikit-grid .group-left,
+.page .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .page .group-left,
 .uikit-grid .col-md-3,
 .page .col-md-3,
 .uikit-grid .tile,
@@ -188,6 +192,10 @@ body.node-type-health-topic-hp .page .messages {
 .page .col-md-9,
 .uikit-grid .col-md-10,
 .page .col-md-10,
+.uikit-grid .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .uikit-grid .group-right,
+.page .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .page .group-right,
 .uikit-grid .col-md-11,
 .page .col-md-11,
 .uikit-grid .col-md-12,
@@ -221,7 +229,11 @@ body.node-type-health-topic-hp .page .messages {
 }
 
 .uikit-grid .col-md-2,
-.page .col-md-2 {
+.page .col-md-2,
+.uikit-grid .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .uikit-grid .group-left,
+.page .node-contact.view-mode-inline .group-left,
+.node-contact.view-mode-inline .page .group-left {
   width: 16.6666666667%;
 }
 
@@ -329,7 +341,11 @@ body.node-type-health-topic-hp .page .messages {
 }
 
 .uikit-grid .col-md-10,
-.page .col-md-10 {
+.page .col-md-10,
+.uikit-grid .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .uikit-grid .group-right,
+.page .node-contact.view-mode-inline .group-right,
+.node-contact.view-mode-inline .page .group-right {
   width: 83.3333333333%;
 }
 
@@ -1218,8 +1234,7 @@ table {
   display: block;
 }
 
-.node-publication.view-mode-inline_large,
-.node-contact.view-mode-inline_large {
+.node-publication.view-mode-inline_large {
   margin-bottom: 4.8em;
 }
 
@@ -1268,6 +1283,10 @@ table {
 .node-video.view-mode-full.node-video > .group-left {
   width: 60%;
   padding-right: 4em;
+}
+
+.node-contact .field-name-field-image-featured img {
+  max-width: 80%;
 }
 
 .node-departmental-media.view-mode-listing_vertical_small .group-right {
