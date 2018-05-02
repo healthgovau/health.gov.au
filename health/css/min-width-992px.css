@@ -1311,7 +1311,8 @@ table {
   padding: 1.6em;
 }
 
-.page-views .view-content .views-row {
+.page-views .view-content .views-row,
+.view-generic-view .view-content .views-row {
   padding-top: 2.4em;
   padding-bottom: 1.6em;
 }
