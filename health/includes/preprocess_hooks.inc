@@ -1069,10 +1069,12 @@ function health_preprocess_page(&$variables) {
 
   // Add the Initiatives and programs logo so it can be rendered in the header.
   if (isset($variables['node'])) {
-    if ($variables['node']->type == 'initiative_or_program') {
+    if ($variables['node']->type == 'program') {
       $logo = field_view_field('node', $variables['node'], 'field_image_featured', array('label'=> 'hidden', 'settings' => array('image_style' => 'title_section_image')));
-      $variables['initiative_or_program_logo'] = render($logo);
-      $variables['node']->field_image_featured = array();
+      if (!empty($logo)) {
+        $variables['header_image'] = render($logo);
+        $variables['node']->field_image_featured = [];
+      }
     }
   }
 
