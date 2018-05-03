@@ -285,6 +285,11 @@ function health_adminimal_form_element($variables) {
     case 'invisible':
       $output .= ' ' . theme('form_element_label', $variables);
       // Help text.
+      // Add description back in if this is a text area.
+      if ($element['#type'] == 'textarea') {
+        $info = field_info_instance('node', 'field_summary', 'contact');
+        $element['#description'] = $info['description'];
+      }
       if (!empty($element['#description'])) {
         $output .= '<div class="description">' . $element['#description'] . "</div>\n";
       }
@@ -311,6 +316,18 @@ function health_adminimal_form_element($variables) {
       break;
   }
 
+  $output .= "</div>\n";
+
+  return $output;
+}
+
+/**
+ * Implements theme_text_format_wrapper
+ */
+function health_adminimal_text_format_wrapper($variables) {
+  $element = $variables['element'];
+  $output = '<div class="text-format-wrapper">';
+  $output .= $element['#children'];
   $output .= "</div>\n";
 
   return $output;
