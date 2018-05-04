@@ -307,3 +307,18 @@
   // This creates .container and .row from band markup for BS grid
   @include row-and-container; // Band title
 }
+
+// Contacts
+.paragraphs-item-contacts {
+  // Layout of contacts.
+  .field-name-field-para-contacts {
+    @extend .row;
+    > .field-items > .field-item {
+      @extend .col-sm-3;
+      text-align: center;
+    }
+  }
+  .field-name-field-link-internal a {
+    @extend .health-cta-link;
+  }
+}

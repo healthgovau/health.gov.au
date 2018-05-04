@@ -78,7 +78,7 @@ endif;
     <div class="container">
       <div class="row">
       <div class="page-title__core col<?php print isset($section_title) ? ' section-title' : '';
-      print count($page['title_supp']) == 0 ? ' full': ''; ?>">
+      print count($page['title_supp']) > 0 || isset($header_image) ? '': ' full'; ?>">
         <?php print $breadcrumb; ?>
 
         <?php print render($page['title_core']); ?>
@@ -103,10 +103,10 @@ endif;
 
       </div>
 
-      <?php if (count($page['title_supp']) > 0): ?>
+      <?php if (count($page['title_supp']) > 0 || isset($header_image)): ?>
         <div class="page-title__supp col <?php print isset($section_title) ? 'section-title' : '' ?>">
           <?php print render($page['title_supp']); ?>
-          <?php print isset($initiative_or_program_logo) ? $initiative_or_program_logo : ''?>
+          <?php print isset($header_image) ? $header_image : ''; ?>
         </div>
       <?php endif; ?>
       </div>
