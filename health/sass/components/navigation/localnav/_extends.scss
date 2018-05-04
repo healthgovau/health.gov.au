@@ -18,6 +18,11 @@
 
   @extend %uikit-localnav;
 
+  display: none;
+  @include uikit-media(sm) {
+    display: block;
+  }
+
   // Drupal block title as link helper styles
   &__title {
     font-size: 18px;
