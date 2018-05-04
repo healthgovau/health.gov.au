@@ -334,3 +334,10 @@
   // This creates .container and .row from band markup for BS grid
   @include row-and-container; // Band title
 }
+
+// Text block on full width -0 Danny revisit
+.node-type-program{
+  .paragraphs-item-para-content-text {
+    @include row-and-container;
+  }
+}
