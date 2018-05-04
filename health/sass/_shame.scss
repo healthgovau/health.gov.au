@@ -227,10 +227,16 @@
 
 // MRFF landing page.
 .page-node-3406 {
+  // hotline bar.
   .block-id__mrff-applying-for-funding.para-container {
     @include hotline-bar();
     padding-top: 0;
     padding-bottom: 0;
+  }
+  // solid cards.
+  .block-id__mrff-patients.block-id__mrff-researchers.block-id__mrff-research-missions.block-id__mrff-research-translation {
+    @extend %colour-Light-background;
+    padding: uikit-space(1);
   }
 }
 

@@ -23,11 +23,11 @@
   }
   // Solid colour card.
   &.view-mode-solid_full_card {
-    box-sizing: border-box;
-    position: relative;
-    min-height: 1px;
-    padding: uikit-space(1);
     .bean-block-content {
+      box-sizing: border-box;
+      position: relative;
+      min-height: 1px;
+      padding: uikit-space(1);
       a {
         display: block;
         border-bottom: none;
