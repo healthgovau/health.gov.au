@@ -14,7 +14,7 @@
   </a>
 </div>
 
-<div class="<?php print $classes; ?> health-accordion health-accordion__body health-accordion--closed"<?php print $attributes; ?> id="<?php print $block_html_id; ?>">
+<div class="<?php print $classes; ?> health-accordion health-accordion__body"<?php print $attributes; ?> id="<?php print $block_html_id; ?>">
 
   <?php if ($block->region != 'sidebar_second') : ?>
     <?php print render($title_prefix); ?>
