@@ -225,6 +225,15 @@
   }
 }
 
+// MRFF landing page.
+.page-node-3406 {
+  .block-id__mrff-applying-for-funding.para-container {
+    @include hotline-bar();
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
 /** START UIKIT overrides */
 
 // Stop all last P tags from having a bottom margin, this happens across the

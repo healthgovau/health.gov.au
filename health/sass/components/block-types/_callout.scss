@@ -1,7 +1,6 @@
 .page-node {
   .bean-call-to-action {
     &.view-mode-hotline_bar {
-      @include hotline-bar();
 
       .field-name-field-title,
       .health-cta-link:after {

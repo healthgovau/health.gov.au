@@ -104,8 +104,8 @@ body.node-type-health-topic .paragraphs-item-two-columns.para-container, body.no
   background-color: #006e7a;
   background: linear-gradient(to right, #006e7a, #008998); }
 
-.page-node .bean-call-to-action.view-mode-hotline_bar, .page-node-1021 .paragraphs-item-para-contact.para-container,
-.page-node-1156 .paragraphs-item-para-contact.para-container {
+.page-node-1021 .paragraphs-item-para-contact.para-container,
+.page-node-1156 .paragraphs-item-para-contact.para-container, .page-node-3406 .block-id__mrff-applying-for-funding.para-container {
   background-color: #007cb5;
   background: linear-gradient(to right, #007cb5, #0099d9); }
 
@@ -2841,7 +2841,7 @@ p + .uikit-display-3, p + h4, .bean-image-and-text.view-mode-listing_vertical .f
 #block-bean-homepage-portfolio-sport p + .video__title, .page .paragraphs-item-para-contact .field-name-field-related-contact .paragraphs-item-para-telephone p + .field-name-field-contact-telephone, .resources-selector p + h2, .resources-selector .video--left p + .video__title, .video--left .resources-selector p + .video__title, .resources-selector .video--right p + .video__title, .video--right .resources-selector p + .video__title, .news-events-selector p + h2, .news-events-selector .video--left p + .video__title, .video--left .news-events-selector p + .video__title, .news-events-selector .video--right p + .video__title, .video--right .news-events-selector p + .video__title {
   margin-top: 1.6em; }
 
-.uikit-display-4, h3, .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar h2, .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video--left .video__title, .video--left .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video__title, .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video--right .video__title, .video--right .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video__title, .paragraphs-item-para-links h2, .paragraphs-item-para-links .video--left .video__title, .video--left .paragraphs-item-para-links .video__title, .paragraphs-item-para-links .video--right .video__title, .video--right .paragraphs-item-para-links .video__title, .paragraphs-item-para-taxonomies h2, .paragraphs-item-para-taxonomies .video--left .video__title, .video--left .paragraphs-item-para-taxonomies .video__title, .paragraphs-item-para-taxonomies .video--right .video__title, .video--right .paragraphs-item-para-taxonomies .video__title, .paragraphs-item-para-statistics .view-mode-full h2, .paragraphs-item-para-statistics .view-mode-full .video--left .video__title, .video--left .paragraphs-item-para-statistics .view-mode-full .video__title, .paragraphs-item-para-statistics .view-mode-full .video--right .video__title, .video--right .paragraphs-item-para-statistics .view-mode-full .video__title, .paragraphs-item-two-columns.view-mode-full > .para-row > h2, .video--left .paragraphs-item-two-columns.view-mode-full > .para-row > .video__title, .video--right .paragraphs-item-two-columns.view-mode-full > .para-row > .video__title,
+.uikit-display-4, h3, .paragraphs-item-para-links h2, .paragraphs-item-para-links .video--left .video__title, .video--left .paragraphs-item-para-links .video__title, .paragraphs-item-para-links .video--right .video__title, .video--right .paragraphs-item-para-links .video__title, .paragraphs-item-para-taxonomies h2, .paragraphs-item-para-taxonomies .video--left .video__title, .video--left .paragraphs-item-para-taxonomies .video__title, .paragraphs-item-para-taxonomies .video--right .video__title, .video--right .paragraphs-item-para-taxonomies .video__title, .paragraphs-item-para-statistics .view-mode-full h2, .paragraphs-item-para-statistics .view-mode-full .video--left .video__title, .video--left .paragraphs-item-para-statistics .view-mode-full .video__title, .paragraphs-item-para-statistics .view-mode-full .video--right .video__title, .video--right .paragraphs-item-para-statistics .view-mode-full .video__title, .paragraphs-item-two-columns.view-mode-full > .para-row > h2, .video--left .paragraphs-item-two-columns.view-mode-full > .para-row > .video__title, .video--right .paragraphs-item-two-columns.view-mode-full > .para-row > .video__title,
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > h2, .video--left
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > .video__title, .video--right
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > .video__title, .paragraphs-item-para-block .field-name-field-title, .page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar h2, .page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video--left .video__title, .video--left .page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video__title, .page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video--right .video__title, .video--right .page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video__title,
@@ -2854,7 +2854,7 @@ p + .uikit-display-3, p + h4, .bean-image-and-text.view-mode-listing_vertical .f
 .page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left .video__title, .video--left
 .page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title,
 .page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--right .video__title, .video--right
-.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title {
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title, .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar h2, .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar .video--left .video__title, .video--left .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar .video__title, .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar .video--right .video__title, .video--right .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar .video__title {
   font-family: "Open Sans", Verdana, "Bitstream Vera Sans", sans-serif;
   color: #313131;
   display: block;
@@ -2863,7 +2863,7 @@ p + .uikit-display-3, p + h4, .bean-image-and-text.view-mode-listing_vertical .f
   font-size: 28px;
   font-weight: bold; }
 
-p + .uikit-display-4, p + h3, .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar p + h2, .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video--left p + .video__title, .video--left .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar p + .video__title, .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video--right p + .video__title, .video--right .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar p + .video__title, .paragraphs-item-para-links p + h2, .paragraphs-item-para-links .video--left p + .video__title, .video--left .paragraphs-item-para-links p + .video__title, .paragraphs-item-para-links .video--right p + .video__title, .video--right .paragraphs-item-para-links p + .video__title, .paragraphs-item-para-taxonomies p + h2, .paragraphs-item-para-taxonomies .video--left p + .video__title, .video--left .paragraphs-item-para-taxonomies p + .video__title, .paragraphs-item-para-taxonomies .video--right p + .video__title, .video--right .paragraphs-item-para-taxonomies p + .video__title, .paragraphs-item-para-statistics .view-mode-full p + h2, .paragraphs-item-para-statistics .view-mode-full .video--left p + .video__title, .video--left .paragraphs-item-para-statistics .view-mode-full p + .video__title, .paragraphs-item-para-statistics .view-mode-full .video--right p + .video__title, .video--right .paragraphs-item-para-statistics .view-mode-full p + .video__title, .paragraphs-item-two-columns.view-mode-full > .para-row > p + h2, .video--left .paragraphs-item-two-columns.view-mode-full > .para-row > p + .video__title, .video--right .paragraphs-item-two-columns.view-mode-full > .para-row > p + .video__title,
+p + .uikit-display-4, p + h3, .paragraphs-item-para-links p + h2, .paragraphs-item-para-links .video--left p + .video__title, .video--left .paragraphs-item-para-links p + .video__title, .paragraphs-item-para-links .video--right p + .video__title, .video--right .paragraphs-item-para-links p + .video__title, .paragraphs-item-para-taxonomies p + h2, .paragraphs-item-para-taxonomies .video--left p + .video__title, .video--left .paragraphs-item-para-taxonomies p + .video__title, .paragraphs-item-para-taxonomies .video--right p + .video__title, .video--right .paragraphs-item-para-taxonomies p + .video__title, .paragraphs-item-para-statistics .view-mode-full p + h2, .paragraphs-item-para-statistics .view-mode-full .video--left p + .video__title, .video--left .paragraphs-item-para-statistics .view-mode-full p + .video__title, .paragraphs-item-para-statistics .view-mode-full .video--right p + .video__title, .video--right .paragraphs-item-para-statistics .view-mode-full p + .video__title, .paragraphs-item-two-columns.view-mode-full > .para-row > p + h2, .video--left .paragraphs-item-two-columns.view-mode-full > .para-row > p + .video__title, .video--right .paragraphs-item-two-columns.view-mode-full > .para-row > p + .video__title,
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > p + h2, .video--left
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > p + .video__title, .video--right
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > p + .video__title, .paragraphs-item-para-block p + .field-name-field-title, .page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar p + h2, .page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video--left p + .video__title, .video--left .page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar p + .video__title, .page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video--right p + .video__title, .video--right .page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar p + .video__title,
@@ -2876,7 +2876,7 @@ p + .uikit-display-4, p + h3, .page-node .bean-call-to-action.view-mode-hotline_
 .page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left p + .video__title, .video--left
 .page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun p + .video__title,
 .page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--right p + .video__title, .video--right
-.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun p + .video__title {
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun p + .video__title, .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar p + h2, .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar .video--left p + .video__title, .video--left .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar p + .video__title, .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar .video--right p + .video__title, .video--right .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar p + .video__title {
   margin-top: 1.6em; }
 
 .uikit-display-5, h2, .video--left .video__title, .video--right .video__title {
@@ -3381,11 +3381,6 @@ h4,
 .video--right .news-events-selector .video__title,
 .uikit-display-4,
 h3,
-.page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar h2,
-.page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video--left .video__title,
-.video--left .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video__title,
-.page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video--right .video__title,
-.video--right .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video__title,
 .paragraphs-item-para-links h2,
 .paragraphs-item-para-links .video--left .video__title,
 .video--left .paragraphs-item-para-links .video__title,
@@ -3433,7 +3428,12 @@ h3,
 .page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title,
 .page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--right .video__title,
 .video--right
-.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title {
+.page-node-1156 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title,
+.page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar h2,
+.page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar .video--left .video__title,
+.video--left .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar .video__title,
+.page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar .video--right .video__title,
+.video--right .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar .video__title {
   font-weight: normal; }
 
 /*! @gov.au/inpage-nav v0.1.1 */
@@ -5102,68 +5102,22 @@ p.summary, .field-name-field-summary {
       width: 20%;
       margin-bottom: 0; } }
 
-.page-node .bean-call-to-action.view-mode-hotline_bar {
+.page-node .bean-call-to-action.view-mode-hotline_bar .field-name-field-title,
+.page-node .bean-call-to-action.view-mode-hotline_bar .health-cta-link:after, .block-bean-call-to-action .field-name-field-link-to
+.page-node .bean-call-to-action.view-mode-hotline_bar a:after,
+.page-node .bean-call-to-action.view-mode-hotline_bar .field-name-field-link-to a:after,
+.page-node .bean-call-to-action.view-mode-hotline_bar .video__cta:after,
+.page-node .bean-call-to-action.view-mode-hotline_bar .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:after, .region-title-supp .block-bean-call-to-action
+.page-node .bean-call-to-action.view-mode-hotline_bar .bean-call-to-action__title:after,
+.page-node .bean-call-to-action.view-mode-hotline_bar .paragraphs-item-para-statistics .field-name-field-link-internal a:after, .paragraphs-item-para-statistics .field-name-field-link-internal
+.page-node .bean-call-to-action.view-mode-hotline_bar a:after,
+.page-node .bean-call-to-action.view-mode-hotline_bar .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:after, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link
+.page-node .bean-call-to-action.view-mode-hotline_bar a:after,
+.page-node .bean-call-to-action.view-mode-hotline_bar .paragraphs-item-para-view .para-row > a:after, .paragraphs-item-para-view
+.page-node .bean-call-to-action.view-mode-hotline_bar .para-row > a:after,
+.page-node .bean-call-to-action.view-mode-hotline_bar .paragraphs-item-contacts .field-name-field-link-internal a:after, .paragraphs-item-contacts .field-name-field-link-internal
+.page-node .bean-call-to-action.view-mode-hotline_bar a:after {
   color: white; }
-  .page-node .bean-call-to-action.view-mode-hotline_bar .group-left {
-    padding-top: 2.4em; }
-    @media (min-width: 576px) {
-      .page-node .bean-call-to-action.view-mode-hotline_bar .group-left {
-        width: 100%; } }
-    @media (min-width: 768px) {
-      .page-node .bean-call-to-action.view-mode-hotline_bar .group-left {
-        width: 33.33333%; } }
-    @media (min-width: 1200px) {
-      .page-node .bean-call-to-action.view-mode-hotline_bar .group-left {
-        width: 25%; } }
-    @media (min-width: 768px) {
-      .page-node .bean-call-to-action.view-mode-hotline_bar .group-left {
-        padding-bottom: 2.4em;
-        padding-left: 1.6em;
-        padding-right: 1.6em;
-        background: #0070a3; } }
-  .page-node .bean-call-to-action.view-mode-hotline_bar .group-right {
-    padding-bottom: 2.4em; }
-    @media (min-width: 576px) {
-      .page-node .bean-call-to-action.view-mode-hotline_bar .group-right {
-        width: 100%; } }
-    @media (min-width: 768px) {
-      .page-node .bean-call-to-action.view-mode-hotline_bar .group-right {
-        width: 66.66666%; } }
-    @media (min-width: 1200px) {
-      .page-node .bean-call-to-action.view-mode-hotline_bar .group-right {
-        width: 75%; } }
-    @media (min-width: 768px) {
-      .page-node .bean-call-to-action.view-mode-hotline_bar .group-right {
-        padding-top: 2.4em;
-        padding-left: 3.2em; } }
-  .page-node .bean-call-to-action.view-mode-hotline_bar h2, .page-node .bean-call-to-action.view-mode-hotline_bar .video--left .video__title, .video--left .page-node .bean-call-to-action.view-mode-hotline_bar .video__title, .page-node .bean-call-to-action.view-mode-hotline_bar .video--right .video__title, .video--right .page-node .bean-call-to-action.view-mode-hotline_bar .video__title,
-  .page-node .bean-call-to-action.view-mode-hotline_bar i {
-    color: white; }
-  .page-node .bean-call-to-action.view-mode-hotline_bar a {
-    color: white;
-    border-bottom: 1px solid white; }
-    .page-node .bean-call-to-action.view-mode-hotline_bar a:hover {
-      color: white;
-      background: none;
-      border-bottom: none; }
-  .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar h2, .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video--left .video__title, .video--left .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video__title, .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video--right .video__title, .video--right .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video__title {
-    color: white; }
-  .page-node .bean-call-to-action.view-mode-hotline_bar .field-name-field-title,
-  .page-node .bean-call-to-action.view-mode-hotline_bar .health-cta-link:after, .block-bean-call-to-action .field-name-field-link-to
-  .page-node .bean-call-to-action.view-mode-hotline_bar a:after,
-  .page-node .bean-call-to-action.view-mode-hotline_bar .field-name-field-link-to a:after,
-  .page-node .bean-call-to-action.view-mode-hotline_bar .video__cta:after,
-  .page-node .bean-call-to-action.view-mode-hotline_bar .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:after, .region-title-supp .block-bean-call-to-action
-  .page-node .bean-call-to-action.view-mode-hotline_bar .bean-call-to-action__title:after,
-  .page-node .bean-call-to-action.view-mode-hotline_bar .paragraphs-item-para-statistics .field-name-field-link-internal a:after, .paragraphs-item-para-statistics .field-name-field-link-internal
-  .page-node .bean-call-to-action.view-mode-hotline_bar a:after,
-  .page-node .bean-call-to-action.view-mode-hotline_bar .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:after, .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link
-  .page-node .bean-call-to-action.view-mode-hotline_bar a:after,
-  .page-node .bean-call-to-action.view-mode-hotline_bar .paragraphs-item-para-view .para-row > a:after, .paragraphs-item-para-view
-  .page-node .bean-call-to-action.view-mode-hotline_bar .para-row > a:after,
-  .page-node .bean-call-to-action.view-mode-hotline_bar .paragraphs-item-contacts .field-name-field-link-internal a:after, .paragraphs-item-contacts .field-name-field-link-internal
-  .page-node .bean-call-to-action.view-mode-hotline_bar a:after {
-    color: white; }
 
 #block-bean-handbook-featured-block-in-immun .field-name-field-image {
   margin-bottom: 0; }
@@ -9288,6 +9242,55 @@ body {
 .page-conditions-and-diseases-vaccine-preventable-conditions-and-diseases .view-header {
   float: none;
   margin: 0; }
+
+.page-node-3406 .block-id__mrff-applying-for-funding.para-container {
+  color: white;
+  padding-top: 0;
+  padding-bottom: 0; }
+  .page-node-3406 .block-id__mrff-applying-for-funding.para-container .group-left {
+    padding-top: 2.4em; }
+    @media (min-width: 576px) {
+      .page-node-3406 .block-id__mrff-applying-for-funding.para-container .group-left {
+        width: 100%; } }
+    @media (min-width: 768px) {
+      .page-node-3406 .block-id__mrff-applying-for-funding.para-container .group-left {
+        width: 33.33333%; } }
+    @media (min-width: 1200px) {
+      .page-node-3406 .block-id__mrff-applying-for-funding.para-container .group-left {
+        width: 25%; } }
+    @media (min-width: 768px) {
+      .page-node-3406 .block-id__mrff-applying-for-funding.para-container .group-left {
+        padding-bottom: 2.4em;
+        padding-left: 1.6em;
+        padding-right: 1.6em;
+        background: #0070a3; } }
+  .page-node-3406 .block-id__mrff-applying-for-funding.para-container .group-right {
+    padding-bottom: 2.4em; }
+    @media (min-width: 576px) {
+      .page-node-3406 .block-id__mrff-applying-for-funding.para-container .group-right {
+        width: 100%; } }
+    @media (min-width: 768px) {
+      .page-node-3406 .block-id__mrff-applying-for-funding.para-container .group-right {
+        width: 66.66666%; } }
+    @media (min-width: 1200px) {
+      .page-node-3406 .block-id__mrff-applying-for-funding.para-container .group-right {
+        width: 75%; } }
+    @media (min-width: 768px) {
+      .page-node-3406 .block-id__mrff-applying-for-funding.para-container .group-right {
+        padding-top: 2.4em;
+        padding-left: 3.2em; } }
+  .page-node-3406 .block-id__mrff-applying-for-funding.para-container h2, .page-node-3406 .block-id__mrff-applying-for-funding.para-container .video--left .video__title, .video--left .page-node-3406 .block-id__mrff-applying-for-funding.para-container .video__title, .page-node-3406 .block-id__mrff-applying-for-funding.para-container .video--right .video__title, .video--right .page-node-3406 .block-id__mrff-applying-for-funding.para-container .video__title,
+  .page-node-3406 .block-id__mrff-applying-for-funding.para-container i {
+    color: white; }
+  .page-node-3406 .block-id__mrff-applying-for-funding.para-container a {
+    color: white;
+    border-bottom: 1px solid white; }
+    .page-node-3406 .block-id__mrff-applying-for-funding.para-container a:hover {
+      color: white;
+      background: none;
+      border-bottom: none; }
+  .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar h2, .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar .video--left .video__title, .video--left .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar .video__title, .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar .video--right .video__title, .video--right .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar .video__title {
+    color: white; }
 
 /** START UIKIT overrides */
 .node-type-health-topic .page-layout p:last-of-type,
