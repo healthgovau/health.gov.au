@@ -83,7 +83,7 @@
   background-color: #1b2a57;
   background: linear-gradient(to right, #1b2a57, #153a6e); }
 
-.page-title.header.header--light, body.node-type-health-topic .para-container.paragraphs-item-para-content-text, body.node-type-health-topic-hp .para-container.paragraphs-item-para-content-text, body.node-type-landing-page .para-container.paragraphs-item-para-content-text, .paragraphs-item-para-taxonomies.para-container, .uikit-body a.localnav__mobile-toggle, .page a.localnav__mobile-toggle, .rsbtn_colorskin a.localnav__mobile-toggle, .cke_editable a.localnav__mobile-toggle, .front .paragraphs-item-para-block.para-container.block-id__feedback-band {
+.page-title.header.header--light, body.node-type-health-topic .para-container.paragraphs-item-para-content-text, body.node-type-health-topic-hp .para-container.paragraphs-item-para-content-text, body.node-type-landing-page .para-container.paragraphs-item-para-content-text, .paragraphs-item-para-taxonomies.para-container, .uikit-body a.localnav__mobile-toggle, .page a.localnav__mobile-toggle, .rsbtn_colorskin a.localnav__mobile-toggle, .cke_editable a.localnav__mobile-toggle, .front .paragraphs-item-para-block.para-container.block-id__feedback-band, .page-node-3406 .block-id__mrff-patients.block-id__mrff-researchers.block-id__mrff-research-missions.block-id__mrff-research-translation {
   background-color: #ecedee;
   background: linear-gradient(to right, #ecedee, #f9f9f9); }
 
@@ -4958,7 +4958,7 @@ p.summary, .field-name-field-summary {
 .bean-image-and-text.active .bean-block-content {
   background: #e5e5e5; }
 
-.bean-image-and-text.view-mode-solid_full_card {
+.bean-image-and-text.view-mode-solid_full_card .bean-block-content {
   box-sizing: border-box;
   position: relative;
   min-height: 1px;
@@ -7479,6 +7479,9 @@ body.node-type-health-topic .para-container.paragraphs-item-image, body.node-typ
   .paragraphs-item-para-content-image .field-name-field-image {
     line-height: 0; }
 
+.paragraphs-item-featured-videos {
+  padding: 1.6em; }
+
 .paragraphs-item-contacts .field-name-field-para-contacts > .field-items > .field-item {
   text-align: center; }
 
@@ -9291,6 +9294,9 @@ body {
       border-bottom: none; }
   .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar h2, .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar .video--left .video__title, .video--left .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar .video__title, .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar .video--right .video__title, .video--right .page-node-3406 .block-id__mrff-applying-for-funding.para-container .view-mode-hotline_bar .video__title {
     color: white; }
+
+.page-node-3406 .block-id__mrff-patients.block-id__mrff-researchers.block-id__mrff-research-missions.block-id__mrff-research-translation {
+  padding: 1.6em; }
 
 /** START UIKIT overrides */
 .node-type-health-topic .page-layout p:last-of-type,
