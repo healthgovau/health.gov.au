@@ -306,3 +306,17 @@ body {
     }
   }
 }
+
+body {
+  &.node-type-program{
+
+    // Topic feature (nested paragraphs)
+    // Container for large and small features
+    .paragraphs-2-columns-news {
+      // Style band
+      &.para-container {
+        @extend %band--neutral-darkest;
+      }
+    }
+  }
+}
