@@ -1,3 +1,11 @@
+.page-node .bean-call-to-action.view-mode-hotline_bar .group-left {
+  width: 100%;
+}
+
+.page-node .bean-call-to-action.view-mode-hotline_bar .group-right {
+  width: 100%;
+}
+
 .taskbar .taskbar__item,
 .taskbar.view ul > .views-row .node,
 .taskbar
@@ -166,4 +174,14 @@
 
 .node-publication.view-mode-feature .group-left {
   padding-bottom: 0;
+}
+
+.page-node-1021 .paragraphs-item-para-contact.para-container .group-left,
+.page-node-1156 .paragraphs-item-para-contact.para-container .group-left {
+  width: 100%;
+}
+
+.page-node-1021 .paragraphs-item-para-contact.para-container .group-right,
+.page-node-1156 .paragraphs-item-para-contact.para-container .group-right {
+  width: 100%;
 }

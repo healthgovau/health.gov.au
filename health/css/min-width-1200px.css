@@ -110,7 +110,6 @@ body.node-type-health-topic-hp .page .messages {
 .node-contact.view-mode-inline .page .group-left,
 .uikit-grid .col-lg-3,
 .page .col-lg-3,
-.page .paragraphs-item-para-contact .group-left,
 .uikit-grid .col-lg-4,
 .page .col-lg-4,
 .uikit-grid .col-lg-5,
@@ -123,7 +122,6 @@ body.node-type-health-topic-hp .page .messages {
 .page .col-lg-8,
 .uikit-grid .col-lg-9,
 .page .col-lg-9,
-.page .paragraphs-item-para-contact .group-right,
 .uikit-grid .col-lg-10,
 .page .col-lg-10,
 .uikit-grid .node-contact.view-mode-inline .group-right,
@@ -152,8 +150,7 @@ body.node-type-health-topic-hp .page .messages {
 }
 
 .uikit-grid .col-lg-3,
-.page .col-lg-3,
-.page .paragraphs-item-para-contact .group-left {
+.page .col-lg-3 {
   width: 25%;
 }
 
@@ -183,8 +180,7 @@ body.node-type-health-topic-hp .page .messages {
 }
 
 .uikit-grid .col-lg-9,
-.page .col-lg-9,
-.page .paragraphs-item-para-contact .group-right {
+.page .col-lg-9 {
   width: 75%;
 }
 
@@ -400,4 +396,22 @@ body.node-type-health-topic-hp .page .messages {
 .uikit-grid .col-lg-offset-12,
 .page .col-lg-offset-12 {
   margin-left: 100%;
+}
+
+.page-node .bean-call-to-action.view-mode-hotline_bar .group-left {
+  width: 25%;
+}
+
+.page-node .bean-call-to-action.view-mode-hotline_bar .group-right {
+  width: 75%;
+}
+
+.page-node-1021 .paragraphs-item-para-contact.para-container .group-left,
+.page-node-1156 .paragraphs-item-para-contact.para-container .group-left {
+  width: 25%;
+}
+
+.page-node-1021 .paragraphs-item-para-contact.para-container .group-right,
+.page-node-1156 .paragraphs-item-para-contact.para-container .group-right {
+  width: 75%;
 }

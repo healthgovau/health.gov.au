@@ -195,6 +195,7 @@ body.node-type-landing-page .para-container.paragraphs-item-two-columns.in-our-p
   background: linear-gradient(to right, #006e7a, #008998);
 }
 
+.page-node .bean-call-to-action.view-mode-hotline_bar,
 .page-node-1021 .paragraphs-item-para-contact.para-container,
 .page-node-1156 .paragraphs-item-para-contact.para-container {
   background-color: #007cb5;
@@ -2725,7 +2726,8 @@ html [type='button']:disabled:hover,
 .region-title-supp .block-bean-call-to-action .bean-call-to-action__title,
 .paragraphs-item-para-statistics .field-name-field-link-internal a,
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a,
-.paragraphs-item-para-view .para-row > a {
+.paragraphs-item-para-view .para-row > a,
+.paragraphs-item-contacts .field-name-field-link-internal a {
   display: inline-block;
   position: relative;
   font-size: 21px;
@@ -2741,7 +2743,8 @@ html [type='button']:disabled:hover,
 .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:after,
 .paragraphs-item-para-statistics .field-name-field-link-internal a:after,
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:after,
-.paragraphs-item-para-view .para-row > a:after {
+.paragraphs-item-para-view .para-row > a:after,
+.paragraphs-item-contacts .field-name-field-link-internal a:after {
   content: ' ';
   display: inline-block;
   width: 0.8em;
@@ -2767,6 +2770,8 @@ html [type='button']:disabled:hover,
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link .ie8 a:after,
 .ie8 .paragraphs-item-para-view .para-row > a:after,
 .paragraphs-item-para-view .ie8 .para-row > a:after,
+.ie8 .paragraphs-item-contacts .field-name-field-link-internal a:after,
+.paragraphs-item-contacts .field-name-field-link-internal .ie8 a:after,
 .lt-ie8 .uikit-cta-link:after,
 .lt-ie8 .health-cta-link:after,
 .lt-ie8 .block-bean-call-to-action .field-name-field-link-to a:after,
@@ -2788,7 +2793,10 @@ html [type='button']:disabled:hover,
     .lt-ie8 a:after,
 .lt-ie8 .paragraphs-item-para-view .para-row > a:after,
 .paragraphs-item-para-view
-    .lt-ie8 .para-row > a:after {
+    .lt-ie8 .para-row > a:after,
+.lt-ie8 .paragraphs-item-contacts .field-name-field-link-internal a:after,
+.paragraphs-item-contacts .field-name-field-link-internal
+    .lt-ie8 a:after {
   content: ' > ';
   border: none;
 }
@@ -2802,6 +2810,7 @@ html [type='button']:disabled:hover,
 .paragraphs-item-para-statistics .field-name-field-link-internal a:hover,
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:hover,
 .paragraphs-item-para-view .para-row > a:hover,
+.paragraphs-item-contacts .field-name-field-link-internal a:hover,
 .uikit-cta-link:focus,
 .health-cta-link:focus,
 .block-bean-call-to-action .field-name-field-link-to a:focus,
@@ -2810,7 +2819,8 @@ html [type='button']:disabled:hover,
 .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:focus,
 .paragraphs-item-para-statistics .field-name-field-link-internal a:focus,
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:focus,
-.paragraphs-item-para-view .para-row > a:focus {
+.paragraphs-item-para-view .para-row > a:focus,
+.paragraphs-item-contacts .field-name-field-link-internal a:focus {
   color: #313131;
 }
 
@@ -2823,6 +2833,7 @@ html [type='button']:disabled:hover,
 .paragraphs-item-para-statistics .field-name-field-link-internal a:hover:after,
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:hover:after,
 .paragraphs-item-para-view .para-row > a:hover:after,
+.paragraphs-item-contacts .field-name-field-link-internal a:hover:after,
 .uikit-cta-link:focus:after,
 .health-cta-link:focus:after,
 .block-bean-call-to-action .field-name-field-link-to a:focus:after,
@@ -2831,7 +2842,8 @@ html [type='button']:disabled:hover,
 .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:focus:after,
 .paragraphs-item-para-statistics .field-name-field-link-internal a:focus:after,
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:focus:after,
-.paragraphs-item-para-view .para-row > a:focus:after {
+.paragraphs-item-para-view .para-row > a:focus:after,
+.paragraphs-item-contacts .field-name-field-link-internal a:focus:after {
   margin: 0 0.16em 0 0.64em;
 }
 
@@ -3599,6 +3611,7 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .p
 .page .paragraphs-item-para-links.inside-para-container > .para-row,
 .uikit-grid .paragraphs-item-para-taxonomies.inside-para-container > .para-row,
 .page .paragraphs-item-para-taxonomies.inside-para-container > .para-row,
+.uikit-grid .page .paragraphs-item-para-contact.inside-para-container > .para-row,
 .page .uikit-grid .paragraphs-item-para-contact.inside-para-container > .para-row,
 .page .paragraphs-item-para-contact.inside-para-container > .para-row,
 .uikit-grid .paragraphs-item-para-statistics.inside-para-container > .para-row,
@@ -3609,6 +3622,10 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .p
 .page .paragraphs-item-para-block.inside-para-container > .para-row,
 .uikit-grid .paragraphs-item-featured-videos.inside-para-container > .para-row,
 .page .paragraphs-item-featured-videos.inside-para-container > .para-row,
+.uikit-grid .paragraphs-item-contacts .field-name-field-para-contacts,
+.paragraphs-item-contacts .uikit-grid .field-name-field-para-contacts,
+.page .paragraphs-item-contacts .field-name-field-para-contacts,
+.paragraphs-item-contacts .page .field-name-field-para-contacts,
 .uikit-grid #block-views-categories-block-1 .item-list ul,
 #block-views-categories-block-1 .item-list .uikit-grid ul,
 .page #block-views-categories-block-1 .item-list ul,
@@ -3678,11 +3695,17 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .p
 .page .feedback-band.bean-basic-content .feedback-band:before,
 .feedback-band.bean-basic-content .page .feedback-band:before,
 .uikit-grid body.node-type-health-topic .paragraphs-item-two-columns.inside-para-container > .para-row:before,
+body.node-type-health-topic .uikit-grid .paragraphs-item-two-columns.inside-para-container > .para-row:before,
 .page body.node-type-health-topic .paragraphs-item-two-columns.inside-para-container > .para-row:before,
+body.node-type-health-topic .page .paragraphs-item-two-columns.inside-para-container > .para-row:before,
 .uikit-grid body.node-type-health-topic-hp .paragraphs-item-two-columns.inside-para-container > .para-row:before,
+body.node-type-health-topic-hp .uikit-grid .paragraphs-item-two-columns.inside-para-container > .para-row:before,
 .page body.node-type-health-topic-hp .paragraphs-item-two-columns.inside-para-container > .para-row:before,
+body.node-type-health-topic-hp .page .paragraphs-item-two-columns.inside-para-container > .para-row:before,
 .uikit-grid body.node-type-landing-page .paragraphs-item-two-columns.inside-para-container > .para-row:before,
+body.node-type-landing-page .uikit-grid .paragraphs-item-two-columns.inside-para-container > .para-row:before,
 .page body.node-type-landing-page .paragraphs-item-two-columns.inside-para-container > .para-row:before,
+body.node-type-landing-page .page .paragraphs-item-two-columns.inside-para-container > .para-row:before,
 .uikit-grid body.node-type-health-topic .paragraphs-item-para-reference-video.inside-para-container > .para-row:before,
 body.node-type-health-topic .uikit-grid .paragraphs-item-para-reference-video.inside-para-container > .para-row:before,
 .page body.node-type-health-topic .paragraphs-item-para-reference-video.inside-para-container > .para-row:before,
@@ -3711,6 +3734,7 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .p
 .page .paragraphs-item-para-links.inside-para-container > .para-row:before,
 .uikit-grid .paragraphs-item-para-taxonomies.inside-para-container > .para-row:before,
 .page .paragraphs-item-para-taxonomies.inside-para-container > .para-row:before,
+.uikit-grid .page .paragraphs-item-para-contact.inside-para-container > .para-row:before,
 .page .uikit-grid .paragraphs-item-para-contact.inside-para-container > .para-row:before,
 .page .paragraphs-item-para-contact.inside-para-container > .para-row:before,
 .uikit-grid .paragraphs-item-para-statistics.inside-para-container > .para-row:before,
@@ -3721,6 +3745,10 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .p
 .page .paragraphs-item-para-block.inside-para-container > .para-row:before,
 .uikit-grid .paragraphs-item-featured-videos.inside-para-container > .para-row:before,
 .page .paragraphs-item-featured-videos.inside-para-container > .para-row:before,
+.uikit-grid .paragraphs-item-contacts .field-name-field-para-contacts:before,
+.paragraphs-item-contacts .uikit-grid .field-name-field-para-contacts:before,
+.page .paragraphs-item-contacts .field-name-field-para-contacts:before,
+.paragraphs-item-contacts .page .field-name-field-para-contacts:before,
 .uikit-grid #block-views-categories-block-1 .item-list ul:before,
 #block-views-categories-block-1 .item-list .uikit-grid ul:before,
 .page #block-views-categories-block-1 .item-list ul:before,
@@ -3786,11 +3814,17 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .p
 .page .feedback-band.bean-basic-content .feedback-band:after,
 .feedback-band.bean-basic-content .page .feedback-band:after,
 .uikit-grid body.node-type-health-topic .paragraphs-item-two-columns.inside-para-container > .para-row:after,
+body.node-type-health-topic .uikit-grid .paragraphs-item-two-columns.inside-para-container > .para-row:after,
 .page body.node-type-health-topic .paragraphs-item-two-columns.inside-para-container > .para-row:after,
+body.node-type-health-topic .page .paragraphs-item-two-columns.inside-para-container > .para-row:after,
 .uikit-grid body.node-type-health-topic-hp .paragraphs-item-two-columns.inside-para-container > .para-row:after,
+body.node-type-health-topic-hp .uikit-grid .paragraphs-item-two-columns.inside-para-container > .para-row:after,
 .page body.node-type-health-topic-hp .paragraphs-item-two-columns.inside-para-container > .para-row:after,
+body.node-type-health-topic-hp .page .paragraphs-item-two-columns.inside-para-container > .para-row:after,
 .uikit-grid body.node-type-landing-page .paragraphs-item-two-columns.inside-para-container > .para-row:after,
+body.node-type-landing-page .uikit-grid .paragraphs-item-two-columns.inside-para-container > .para-row:after,
 .page body.node-type-landing-page .paragraphs-item-two-columns.inside-para-container > .para-row:after,
+body.node-type-landing-page .page .paragraphs-item-two-columns.inside-para-container > .para-row:after,
 .uikit-grid body.node-type-health-topic .paragraphs-item-para-reference-video.inside-para-container > .para-row:after,
 body.node-type-health-topic .uikit-grid .paragraphs-item-para-reference-video.inside-para-container > .para-row:after,
 .page body.node-type-health-topic .paragraphs-item-para-reference-video.inside-para-container > .para-row:after,
@@ -3819,6 +3853,7 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .p
 .page .paragraphs-item-para-links.inside-para-container > .para-row:after,
 .uikit-grid .paragraphs-item-para-taxonomies.inside-para-container > .para-row:after,
 .page .paragraphs-item-para-taxonomies.inside-para-container > .para-row:after,
+.uikit-grid .page .paragraphs-item-para-contact.inside-para-container > .para-row:after,
 .page .uikit-grid .paragraphs-item-para-contact.inside-para-container > .para-row:after,
 .page .paragraphs-item-para-contact.inside-para-container > .para-row:after,
 .uikit-grid .paragraphs-item-para-statistics.inside-para-container > .para-row:after,
@@ -3829,6 +3864,10 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .p
 .page .paragraphs-item-para-block.inside-para-container > .para-row:after,
 .uikit-grid .paragraphs-item-featured-videos.inside-para-container > .para-row:after,
 .page .paragraphs-item-featured-videos.inside-para-container > .para-row:after,
+.uikit-grid .paragraphs-item-contacts .field-name-field-para-contacts:after,
+.paragraphs-item-contacts .uikit-grid .field-name-field-para-contacts:after,
+.page .paragraphs-item-contacts .field-name-field-para-contacts:after,
+.paragraphs-item-contacts .page .field-name-field-para-contacts:after,
 .uikit-grid #block-views-categories-block-1 .item-list ul:after,
 #block-views-categories-block-1 .item-list .uikit-grid ul:after,
 .page #block-views-categories-block-1 .item-list ul:after,
@@ -3898,11 +3937,17 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .p
 .page .feedback-band.bean-basic-content .feedback-band:after,
 .feedback-band.bean-basic-content .page .feedback-band:after,
 .uikit-grid body.node-type-health-topic .paragraphs-item-two-columns.inside-para-container > .para-row:after,
+body.node-type-health-topic .uikit-grid .paragraphs-item-two-columns.inside-para-container > .para-row:after,
 .page body.node-type-health-topic .paragraphs-item-two-columns.inside-para-container > .para-row:after,
+body.node-type-health-topic .page .paragraphs-item-two-columns.inside-para-container > .para-row:after,
 .uikit-grid body.node-type-health-topic-hp .paragraphs-item-two-columns.inside-para-container > .para-row:after,
+body.node-type-health-topic-hp .uikit-grid .paragraphs-item-two-columns.inside-para-container > .para-row:after,
 .page body.node-type-health-topic-hp .paragraphs-item-two-columns.inside-para-container > .para-row:after,
+body.node-type-health-topic-hp .page .paragraphs-item-two-columns.inside-para-container > .para-row:after,
 .uikit-grid body.node-type-landing-page .paragraphs-item-two-columns.inside-para-container > .para-row:after,
+body.node-type-landing-page .uikit-grid .paragraphs-item-two-columns.inside-para-container > .para-row:after,
 .page body.node-type-landing-page .paragraphs-item-two-columns.inside-para-container > .para-row:after,
+body.node-type-landing-page .page .paragraphs-item-two-columns.inside-para-container > .para-row:after,
 .uikit-grid body.node-type-health-topic .paragraphs-item-para-reference-video.inside-para-container > .para-row:after,
 body.node-type-health-topic .uikit-grid .paragraphs-item-para-reference-video.inside-para-container > .para-row:after,
 .page body.node-type-health-topic .paragraphs-item-para-reference-video.inside-para-container > .para-row:after,
@@ -3931,6 +3976,7 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .p
 .page .paragraphs-item-para-links.inside-para-container > .para-row:after,
 .uikit-grid .paragraphs-item-para-taxonomies.inside-para-container > .para-row:after,
 .page .paragraphs-item-para-taxonomies.inside-para-container > .para-row:after,
+.uikit-grid .page .paragraphs-item-para-contact.inside-para-container > .para-row:after,
 .page .uikit-grid .paragraphs-item-para-contact.inside-para-container > .para-row:after,
 .page .paragraphs-item-para-contact.inside-para-container > .para-row:after,
 .uikit-grid .paragraphs-item-para-statistics.inside-para-container > .para-row:after,
@@ -3941,6 +3987,10 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .p
 .page .paragraphs-item-para-block.inside-para-container > .para-row:after,
 .uikit-grid .paragraphs-item-featured-videos.inside-para-container > .para-row:after,
 .page .paragraphs-item-featured-videos.inside-para-container > .para-row:after,
+.uikit-grid .paragraphs-item-contacts .field-name-field-para-contacts:after,
+.paragraphs-item-contacts .uikit-grid .field-name-field-para-contacts:after,
+.page .paragraphs-item-contacts .field-name-field-para-contacts:after,
+.paragraphs-item-contacts .page .field-name-field-para-contacts:after,
 .uikit-grid #block-views-categories-block-1 .item-list ul:after,
 #block-views-categories-block-1 .item-list .uikit-grid ul:after,
 .page #block-views-categories-block-1 .item-list ul:after,
@@ -4482,6 +4532,10 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
 .node-departmental-media.view-mode-inline .uikit-grid .group-left,
 .page .node-departmental-media.view-mode-inline .group-left,
 .node-departmental-media.view-mode-inline .page .group-left,
+.uikit-grid .paragraphs-item-contacts .field-name-field-para-contacts > .field-items > .field-item,
+.paragraphs-item-contacts .uikit-grid .field-name-field-para-contacts > .field-items > .field-item,
+.page .paragraphs-item-contacts .field-name-field-para-contacts > .field-items > .field-item,
+.paragraphs-item-contacts .page .field-name-field-para-contacts > .field-items > .field-item,
 .uikit-grid .col-md-3,
 .page .col-md-3,
 .uikit-grid .tile,
@@ -4508,7 +4562,6 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
 .footer__navigation .page .block,
 .uikit-grid .col-lg-3,
 .page .col-lg-3,
-.page .paragraphs-item-para-contact .group-left,
 .uikit-grid .col-xs-4,
 .page .col-xs-4,
 .uikit-grid .col-sm-4,
@@ -4521,7 +4574,6 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
 .page .sidebar,
 .uikit-grid .page-title__supp,
 .page .page-title__supp,
-.page .paragraphs-item-para-contact .group-left,
 .uikit-grid .paragraphs-item-para-statistics.listing__count--3 .field-name-field-statistics > .field-items > .field-item,
 .paragraphs-item-para-statistics.listing__count--3 .uikit-grid .field-name-field-statistics > .field-items > .field-item,
 .page .paragraphs-item-para-statistics.listing__count--3 .field-name-field-statistics > .field-items > .field-item,
@@ -4672,7 +4724,6 @@ body.node-type-landing-page .page .paragraphs-item-two-columns > .para-row > .gr
 .page .main-content,
 .uikit-grid .page-title__core,
 .page .page-title__core,
-.page .paragraphs-item-para-contact .group-right,
 .uikit-grid .page-search main,
 .page-search .uikit-grid main,
 .page .page-search main,
@@ -5185,7 +5236,6 @@ body.node-type-health-topic-hp #health-alert-ajax-container .messages .health-al
 .page .col-md-9,
 .uikit-grid .col-lg-9,
 .page .col-lg-9,
-.page .paragraphs-item-para-contact .group-right,
 .uikit-grid .col-xs-10,
 .page .col-xs-10,
 .uikit-grid .node-contact.view-mode-listing_vertical .group-right,
@@ -5464,12 +5514,6 @@ body.node-type-landing-page .page .group-header,
 .video--right .paragraphs-item-para-taxonomies .uikit-grid .video__title,
 .page .video--right .paragraphs-item-para-taxonomies .video__title,
 .video--right .paragraphs-item-para-taxonomies .page .video__title,
-.uikit-grid .page .paragraphs-item-para-contact .group-left,
-.page .paragraphs-item-para-contact .uikit-grid .group-left,
-.page .paragraphs-item-para-contact .group-left,
-.uikit-grid .page .paragraphs-item-para-contact .group-right,
-.page .paragraphs-item-para-contact .uikit-grid .group-right,
-.page .paragraphs-item-para-contact .group-right,
 .uikit-grid .paragraphs-item-para-statistics h2,
 .paragraphs-item-para-statistics .uikit-grid h2,
 .page .paragraphs-item-para-statistics h2,
@@ -5652,7 +5696,6 @@ body.node-type-landing-page .page .group-header,
 .node-health-topic.view-mode-listing_vertical_small .uikit-grid .group-right,
 .page .node-health-topic.view-mode-listing_vertical_small .group-right,
 .node-health-topic.view-mode-listing_vertical_small .page .group-right,
-.page .paragraphs-item-para-contact .field-name-field-related-contact,
 .uikit-grid .col-md-12,
 .page .col-md-12,
 .uikit-grid .video--left .video__title,
@@ -5964,12 +6007,6 @@ body.node-type-landing-page .page .group-header,
 .video--right .paragraphs-item-para-taxonomies .uikit-grid .video__title,
 .page .video--right .paragraphs-item-para-taxonomies .video__title,
 .video--right .paragraphs-item-para-taxonomies .page .video__title,
-.uikit-grid .page .paragraphs-item-para-contact .group-left,
-.page .paragraphs-item-para-contact .uikit-grid .group-left,
-.page .paragraphs-item-para-contact .group-left,
-.uikit-grid .page .paragraphs-item-para-contact .group-right,
-.page .paragraphs-item-para-contact .uikit-grid .group-right,
-.page .paragraphs-item-para-contact .group-right,
 .uikit-grid .paragraphs-item-para-statistics h2,
 .paragraphs-item-para-statistics .uikit-grid h2,
 .page .paragraphs-item-para-statistics h2,
@@ -6348,12 +6385,6 @@ body.node-type-landing-page .page .group-header,
 .video--right .paragraphs-item-para-taxonomies .uikit-grid .video__title,
 .page .video--right .paragraphs-item-para-taxonomies .video__title,
 .video--right .paragraphs-item-para-taxonomies .page .video__title,
-.uikit-grid .page .paragraphs-item-para-contact .group-left,
-.page .paragraphs-item-para-contact .uikit-grid .group-left,
-.page .paragraphs-item-para-contact .group-left,
-.uikit-grid .page .paragraphs-item-para-contact .group-right,
-.page .paragraphs-item-para-contact .uikit-grid .group-right,
-.page .paragraphs-item-para-contact .group-right,
 .uikit-grid .paragraphs-item-para-statistics h2,
 .paragraphs-item-para-statistics .uikit-grid h2,
 .page .paragraphs-item-para-statistics h2,
@@ -7974,7 +8005,7 @@ h4,
 #block-bean-homepage-portfolio-sport .video--right .video__title,
 .video--right
 #block-bean-homepage-portfolio-sport .video__title,
-.page .paragraphs-item-para-contact .view-mode-hotline_bar .paragraphs-item-para-telephone .field-name-field-contact-telephone,
+.page .paragraphs-item-para-contact .field-name-field-related-contact .paragraphs-item-para-telephone .field-name-field-contact-telephone,
 .resources-selector h2,
 .resources-selector .video--left .video__title,
 .video--left .resources-selector .video__title,
@@ -8469,7 +8500,7 @@ p + h4,
 #block-bean-homepage-portfolio-sport .video--right p + .video__title,
 .video--right
 #block-bean-homepage-portfolio-sport p + .video__title,
-.page .paragraphs-item-para-contact .view-mode-hotline_bar .paragraphs-item-para-telephone p + .field-name-field-contact-telephone,
+.page .paragraphs-item-para-contact .field-name-field-related-contact .paragraphs-item-para-telephone p + .field-name-field-contact-telephone,
 .resources-selector p + h2,
 .resources-selector .video--left p + .video__title,
 .video--left .resources-selector p + .video__title,
@@ -8485,6 +8516,11 @@ p + h4,
 
 .uikit-display-4,
 h3,
+.page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar h2,
+.page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video--left .video__title,
+.video--left .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video__title,
+.page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video--right .video__title,
+.video--right .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video__title,
 .paragraphs-item-para-links h2,
 .paragraphs-item-para-links .video--left .video__title,
 .video--left .paragraphs-item-para-links .video__title,
@@ -8495,11 +8531,6 @@ h3,
 .video--left .paragraphs-item-para-taxonomies .video__title,
 .paragraphs-item-para-taxonomies .video--right .video__title,
 .video--right .paragraphs-item-para-taxonomies .video__title,
-.page .paragraphs-item-para-contact .view-mode-hotline_bar h2,
-.page .paragraphs-item-para-contact .view-mode-hotline_bar .video--left .video__title,
-.video--left .page .paragraphs-item-para-contact .view-mode-hotline_bar .video__title,
-.page .paragraphs-item-para-contact .view-mode-hotline_bar .video--right .video__title,
-.video--right .page .paragraphs-item-para-contact .view-mode-hotline_bar .video__title,
 .paragraphs-item-para-statistics .view-mode-full h2,
 .paragraphs-item-para-statistics .view-mode-full .video--left .video__title,
 .video--left .paragraphs-item-para-statistics .view-mode-full .video__title,
@@ -8514,6 +8545,18 @@ h3,
 .video--right
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > .video__title,
 .paragraphs-item-para-block .field-name-field-title,
+.page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar h2,
+.page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video--left .video__title,
+.video--left .page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video__title,
+.page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video--right .video__title,
+.video--right .page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video__title,
+.page-node-1156 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar h2,
+.page-node-1156 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video--left .video__title,
+.video--left
+.page-node-1156 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video__title,
+.page-node-1156 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video--right .video__title,
+.video--right
+.page-node-1156 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video__title,
 .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun h2,
 .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left .video__title,
 .video--left .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title,
@@ -8537,6 +8580,11 @@ h3,
 
 p + .uikit-display-4,
 p + h3,
+.page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar p + h2,
+.page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video--left p + .video__title,
+.video--left .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar p + .video__title,
+.page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video--right p + .video__title,
+.video--right .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar p + .video__title,
 .paragraphs-item-para-links p + h2,
 .paragraphs-item-para-links .video--left p + .video__title,
 .video--left .paragraphs-item-para-links p + .video__title,
@@ -8547,11 +8595,6 @@ p + h3,
 .video--left .paragraphs-item-para-taxonomies p + .video__title,
 .paragraphs-item-para-taxonomies .video--right p + .video__title,
 .video--right .paragraphs-item-para-taxonomies p + .video__title,
-.page .paragraphs-item-para-contact .view-mode-hotline_bar p + h2,
-.page .paragraphs-item-para-contact .view-mode-hotline_bar .video--left p + .video__title,
-.video--left .page .paragraphs-item-para-contact .view-mode-hotline_bar p + .video__title,
-.page .paragraphs-item-para-contact .view-mode-hotline_bar .video--right p + .video__title,
-.video--right .page .paragraphs-item-para-contact .view-mode-hotline_bar p + .video__title,
 .paragraphs-item-para-statistics .view-mode-full p + h2,
 .paragraphs-item-para-statistics .view-mode-full .video--left p + .video__title,
 .video--left .paragraphs-item-para-statistics .view-mode-full p + .video__title,
@@ -8566,6 +8609,18 @@ p + h3,
 .video--right
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > p + .video__title,
 .paragraphs-item-para-block p + .field-name-field-title,
+.page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar p + h2,
+.page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video--left p + .video__title,
+.video--left .page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar p + .video__title,
+.page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video--right p + .video__title,
+.video--right .page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar p + .video__title,
+.page-node-1156 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar p + h2,
+.page-node-1156 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video--left p + .video__title,
+.video--left
+.page-node-1156 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar p + .video__title,
+.page-node-1156 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video--right p + .video__title,
+.video--right
+.page-node-1156 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar p + .video__title,
 .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun p + h2,
 .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left p + .video__title,
 .video--left .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun p + .video__title,
@@ -9483,7 +9538,7 @@ h4,
 #block-bean-homepage-portfolio-sport .video--right .video__title,
 .video--right
 #block-bean-homepage-portfolio-sport .video__title,
-.page .paragraphs-item-para-contact .view-mode-hotline_bar .paragraphs-item-para-telephone .field-name-field-contact-telephone,
+.page .paragraphs-item-para-contact .field-name-field-related-contact .paragraphs-item-para-telephone .field-name-field-contact-telephone,
 .resources-selector h2,
 .resources-selector .video--left .video__title,
 .video--left .resources-selector .video__title,
@@ -9496,6 +9551,11 @@ h4,
 .video--right .news-events-selector .video__title,
 .uikit-display-4,
 h3,
+.page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar h2,
+.page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video--left .video__title,
+.video--left .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video__title,
+.page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video--right .video__title,
+.video--right .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video__title,
 .paragraphs-item-para-links h2,
 .paragraphs-item-para-links .video--left .video__title,
 .video--left .paragraphs-item-para-links .video__title,
@@ -9506,11 +9566,6 @@ h3,
 .video--left .paragraphs-item-para-taxonomies .video__title,
 .paragraphs-item-para-taxonomies .video--right .video__title,
 .video--right .paragraphs-item-para-taxonomies .video__title,
-.page .paragraphs-item-para-contact .view-mode-hotline_bar h2,
-.page .paragraphs-item-para-contact .view-mode-hotline_bar .video--left .video__title,
-.video--left .page .paragraphs-item-para-contact .view-mode-hotline_bar .video__title,
-.page .paragraphs-item-para-contact .view-mode-hotline_bar .video--right .video__title,
-.video--right .page .paragraphs-item-para-contact .view-mode-hotline_bar .video__title,
 .paragraphs-item-para-statistics .view-mode-full h2,
 .paragraphs-item-para-statistics .view-mode-full .video--left .video__title,
 .video--left .paragraphs-item-para-statistics .view-mode-full .video__title,
@@ -9525,6 +9580,18 @@ h3,
 .video--right
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-header > .video__title,
 .paragraphs-item-para-block .field-name-field-title,
+.page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar h2,
+.page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video--left .video__title,
+.video--left .page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video__title,
+.page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video--right .video__title,
+.video--right .page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video__title,
+.page-node-1156 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar h2,
+.page-node-1156 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video--left .video__title,
+.video--left
+.page-node-1156 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video__title,
+.page-node-1156 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video--right .video__title,
+.video--right
+.page-node-1156 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video__title,
 .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun h2,
 .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video--left .video__title,
 .video--left .page-node-1021 .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun .video__title,
@@ -16347,6 +16414,70 @@ p.resource-title {
   margin-bottom: 24px;
 }
 
+.page-node .bean-call-to-action.view-mode-hotline_bar {
+  color: white;
+}
+
+.page-node .bean-call-to-action.view-mode-hotline_bar .group-left {
+  padding-top: 2.4em;
+}
+
+.page-node .bean-call-to-action.view-mode-hotline_bar .group-right {
+  padding-bottom: 2.4em;
+}
+
+.page-node .bean-call-to-action.view-mode-hotline_bar h2,
+.page-node .bean-call-to-action.view-mode-hotline_bar .video--left .video__title,
+.video--left .page-node .bean-call-to-action.view-mode-hotline_bar .video__title,
+.page-node .bean-call-to-action.view-mode-hotline_bar .video--right .video__title,
+.video--right .page-node .bean-call-to-action.view-mode-hotline_bar .video__title,
+.page-node .bean-call-to-action.view-mode-hotline_bar i {
+  color: white;
+}
+
+.page-node .bean-call-to-action.view-mode-hotline_bar a {
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+.page-node .bean-call-to-action.view-mode-hotline_bar a:hover {
+  color: white;
+  background: none;
+  border-bottom: none;
+}
+
+.page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar h2,
+.page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video--left .video__title,
+.video--left .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video__title,
+.page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video--right .video__title,
+.video--right .page-node .bean-call-to-action.view-mode-hotline_bar .view-mode-hotline_bar .video__title {
+  color: white;
+}
+
+.page-node .bean-call-to-action.view-mode-hotline_bar .field-name-field-title,
+.page-node .bean-call-to-action.view-mode-hotline_bar .health-cta-link:after,
+.block-bean-call-to-action .field-name-field-link-to
+  .page-node .bean-call-to-action.view-mode-hotline_bar a:after,
+.page-node .bean-call-to-action.view-mode-hotline_bar .field-name-field-link-to a:after,
+.page-node .bean-call-to-action.view-mode-hotline_bar .video__cta:after,
+.page-node .bean-call-to-action.view-mode-hotline_bar .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:after,
+.region-title-supp .block-bean-call-to-action
+  .page-node .bean-call-to-action.view-mode-hotline_bar .bean-call-to-action__title:after,
+.page-node .bean-call-to-action.view-mode-hotline_bar .paragraphs-item-para-statistics .field-name-field-link-internal a:after,
+.paragraphs-item-para-statistics .field-name-field-link-internal
+  .page-node .bean-call-to-action.view-mode-hotline_bar a:after,
+.page-node .bean-call-to-action.view-mode-hotline_bar .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:after,
+.paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link
+  .page-node .bean-call-to-action.view-mode-hotline_bar a:after,
+.page-node .bean-call-to-action.view-mode-hotline_bar .paragraphs-item-para-view .para-row > a:after,
+.paragraphs-item-para-view
+  .page-node .bean-call-to-action.view-mode-hotline_bar .para-row > a:after,
+.page-node .bean-call-to-action.view-mode-hotline_bar .paragraphs-item-contacts .field-name-field-link-internal a:after,
+.paragraphs-item-contacts .field-name-field-link-internal
+  .page-node .bean-call-to-action.view-mode-hotline_bar a:after {
+  color: white;
+}
+
 #block-bean-handbook-featured-block-in-immun .field-name-field-image {
   margin-bottom: 0;
 }
@@ -16500,7 +16631,8 @@ p.resource-title {
 .region-title-supp .block-bean-call-to-action .bean-call-to-action__title,
 .paragraphs-item-para-statistics .field-name-field-link-internal a,
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a,
-.paragraphs-item-para-view .para-row > a {
+.paragraphs-item-para-view .para-row > a,
+.paragraphs-item-contacts .field-name-field-link-internal a {
   display: inline;
   margin-bottom: 0;
   font-size: 1.1em;
@@ -17969,6 +18101,7 @@ fieldset .fieldset-legend {
 .paragraphs-item-para-statistics .field-name-field-link-internal a:focus,
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:focus,
 .paragraphs-item-para-view .para-row > a:focus,
+.paragraphs-item-contacts .field-name-field-link-internal a:focus,
 .page a:focus,
 .skip-link__link:focus {
   background-color: #008998;
@@ -18494,7 +18627,8 @@ ul.social__links .social__links-item a:after,
 .region-title-supp .block-bean-call-to-action .bean-call-to-action__title:after,
 .paragraphs-item-para-statistics .field-name-field-link-internal a:after,
 .paragraphs-item-two-columns.view-mode-full > .para-row > .group-footer .paragraphs-item-para-link a:after,
-.paragraphs-item-para-view .para-row > a:after {
+.paragraphs-item-para-view .para-row > a:after,
+.paragraphs-item-contacts .field-name-field-link-internal a:after {
   background-image: none;
   content: "\f061";
   font-family: FontAwesome;
@@ -20166,28 +20300,25 @@ body.node-type-landing-page .para-container.paragraphs-item-image {
   padding-bottom: 0;
 }
 
-.page .paragraphs-item-para-contact .group-left {
-  padding-top: 2.4em;
-}
-
-.page .paragraphs-item-para-contact .group-right {
-  padding-bottom: 2.4em;
-}
-
 .page .paragraphs-item-para-contact p {
   margin-left: auto;
   margin-right: auto;
 }
 
-.page .paragraphs-item-para-contact .view-mode-hotline_bar .paragraphs-item-para-telephone {
+.page .paragraphs-item-para-contact .field-name-field-related-contact {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.page .paragraphs-item-para-contact .field-name-field-related-contact .paragraphs-item-para-telephone {
   padding: 0;
 }
 
-.page .paragraphs-item-para-contact .view-mode-hotline_bar .paragraphs-item-para-telephone .field-name-field-contact-telephone {
+.page .paragraphs-item-para-contact .field-name-field-related-contact .paragraphs-item-para-telephone .field-name-field-contact-telephone {
   font-weight: 700;
 }
 
-.page .paragraphs-item-para-contact .view-mode-hotline_bar .paragraphs-item-para-telephone i {
+.page .paragraphs-item-para-contact .field-name-field-related-contact .paragraphs-item-para-telephone i {
   color: #fff;
 }
 
@@ -20229,6 +20360,10 @@ body.node-type-landing-page .para-container.paragraphs-item-image {
 
 .paragraphs-item-para-content-image .field-name-field-image {
   line-height: 0;
+}
+
+.paragraphs-item-contacts .field-name-field-para-contacts > .field-items > .field-item {
+  text-align: center;
 }
 
 div.contextual-links-region {
@@ -22321,6 +22456,8 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .r
 .region-content-top .paragraphs-item-two-columns.inside-para-container > .para-row,
 .region-content-top .paragraphs-item-para-block.inside-para-container > .para-row,
 .region-content-top .paragraphs-item-featured-videos.inside-para-container > .para-row,
+.region-content-top .paragraphs-item-contacts .field-name-field-para-contacts,
+.paragraphs-item-contacts .region-content-top .field-name-field-para-contacts,
 .region-content-top #block-views-categories-block-1 .item-list ul,
 #block-views-categories-block-1 .item-list .region-content-top ul,
 .region-content-top #block-views-related-content-block > .view,
@@ -22378,6 +22515,16 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .r
   color: white;
 }
 
+.page-node-1021 .paragraphs-item-para-contact.para-container .group-left,
+.page-node-1156 .paragraphs-item-para-contact.para-container .group-left {
+  padding-top: 2.4em;
+}
+
+.page-node-1021 .paragraphs-item-para-contact.para-container .group-right,
+.page-node-1156 .paragraphs-item-para-contact.para-container .group-right {
+  padding-bottom: 2.4em;
+}
+
 .page-node-1021 .paragraphs-item-para-contact.para-container h2,
 .page-node-1021 .paragraphs-item-para-contact.para-container .video--left .video__title,
 .video--left .page-node-1021 .paragraphs-item-para-contact.para-container .video__title,
@@ -22406,6 +22553,21 @@ body.node-type-landing-page .para-container.paragraphs-item-para-content-text .r
   color: white;
   background: none;
   border-bottom: none;
+}
+
+.page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar h2,
+.page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video--left .video__title,
+.video--left .page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video__title,
+.page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video--right .video__title,
+.video--right .page-node-1021 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video__title,
+.page-node-1156 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar h2,
+.page-node-1156 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video--left .video__title,
+.video--left
+  .page-node-1156 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video__title,
+.page-node-1156 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video--right .video__title,
+.video--right
+  .page-node-1156 .paragraphs-item-para-contact.para-container .view-mode-hotline_bar .video__title {
+  color: white;
 }
 
 .page-node-1021 .paragraphs-item-para-block.block-id__more-services-card.para-container .bean-image-and-text.view-mode-full,
