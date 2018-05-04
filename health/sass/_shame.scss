@@ -21,21 +21,7 @@
 .page-node-1156 {
   // Contact hot line bar for immunisation.
   .paragraphs-item-para-contact.para-container {
-    @extend %colour-Tertiary-2-background;
-    color: white;
-    h2,
-    i {
-      color: white;
-    }
-    a {
-      color: white;
-      border-bottom: 1px solid white;
-      &:hover {
-        color: white;
-        background: none;
-        border-bottom: none;
-      }
-    }
+    @include hotline-bar();
   }
 
   // Statistics
