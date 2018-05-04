@@ -311,6 +311,28 @@
   // This creates .container and .row from band markup for BS grid
   @include row-and-container; // Band title
   padding: uikit-space(1);
+  // layout
+  .group-left {
+    width: 100%;
+    @include uikit-media(sm) {
+      width: 40%;
+      float: left;
+    }
+  }
+  .group-right {
+    width: 100%;
+    @include uikit-media(sm) {
+      width: 60%;
+      float: right;
+    }
+  }
+
+  // field
+  .field-name-field-link-to {
+    a {
+      @extend .health-cta-link;
+    }
+  }
 }
 
 // Contacts
