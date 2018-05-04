@@ -125,30 +125,6 @@
   }
   @include row-and-container;
 
-  // Layout
-.group-left {
-  @extend .col-xs-12;
-  @extend .col-sm-4;
-  @extend .col-lg-3;
-  padding-top: uikit-space(1.5);
-  @include uikit-media(sm){
-    padding-bottom: uikit-space(1.5);
-    padding-left: uikit-space(1);
-    padding-right: uikit-space(1);
-    background: $colour-Tertiary-2-hover;
-  }
-}
-.group-right {
-  @extend .col-xs-12;
-  @extend .col-sm-8;
-  @extend .col-lg-9;
-  padding-bottom: uikit-space(1.5);
-  @include uikit-media(sm){
-    padding-top: uikit-space(1.5);
-    padding-left: uikit-space(2);
-  }
-}
-
   // Text align
   text-align: center;
   p {
@@ -162,14 +138,11 @@
       margin-right: 0;
     }
   }
+
   .field-name-field-related-contact {
-    @extend .col-sm-12;
-  }
-  // display mode
-  .view-mode-hotline_bar {
-    h2 {
-      @extend .uikit-display-4;
-    }
+    padding-left: 12px;
+    padding-right: 12px;
+
     .paragraphs-item-para-telephone {
       padding: 0;
       .field-name-field-contact-telephone {
@@ -335,9 +308,17 @@
   @include row-and-container; // Band title
 }
 
-// Text block on full width -0 Danny revisit
-.node-type-program{
-  .paragraphs-item-para-content-text {
-    @include row-and-container;
+// Contacts
+.paragraphs-item-contacts {
+  // Layout of contacts.
+  .field-name-field-para-contacts {
+    @extend .row;
+    > .field-items > .field-item {
+      @extend .col-sm-3;
+      text-align: center;
+    }
+  }
+  .field-name-field-link-internal a {
+    @extend .health-cta-link;
   }
 }
