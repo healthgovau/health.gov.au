@@ -318,5 +318,12 @@ body {
         @extend %band--neutral-darkest;
       }
     }
+
+    .paragraphs-2-columns-resources {
+      // Style band
+      &.para-container {
+        @extend %band;
+      }
+    }
   }
 }
