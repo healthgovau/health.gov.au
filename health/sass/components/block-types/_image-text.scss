@@ -21,7 +21,30 @@
       background: $colour-light-dark;
     }
   }
-  // Solid colour card.
+  // Solid colour card
+  // Colours for solid cards
+  &.colour-primary {
+    .bean-block-content {
+      @extend %colour-primary;
+    }
+  }
+  &.colour-secondary {
+    .bean-block-content {
+      @extend %colour-secondary;
+    }
+  }
+  &.colour-tertiary {
+    .bean-block-content {
+      @extend %colour-tertiary;
+    }
+  }
+  &.colour-tertiary-2{
+    .bean-block-content {
+      @extend %colour-tertiary-2;
+    }
+  }
+
+  // Other styles
   &.view-mode-solid_full_card {
     .bean-block-content {
       box-sizing: border-box;

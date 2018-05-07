@@ -59,102 +59,116 @@ $colour-lightest: #f9f9f9;
 $colour-light-darker: #cdcdcd;
 
 // Backgrounds
-.colour-primary {
+%colour-primary {
   background: $colour-Primary;
   &:hover {
     background: $colour-Primary-hover;
   }
 }
-.colour-primary-light {
-  background: $colour-Primary-light;
-  &:hover {
-    background: $colour-Primary-hover;
-  }
-}
-.colour-primary-dark {
-  background: $colour-Primary-dark;
-  &:hover {
-    background: $colour-Primary-hover;
-  }
-}
-.colour-primary-darker {
-  background: $colour-Primary-darker;
-  &:hover {
-    background: $colour-Primary-hover;
-  }
-}
-.colour-secondary {
-  background: $colour-Secondary;
+%colour-secondary {
+  background: $colour-Secondary-dark; // $colour-Secondary fails contrast
   &:hover {
     background: $colour-Secondary-hover;
   }
 }
-.colour-secondary-light {
-  background: $colour-Secondary-light;
-  &:hover {
-    background: $colour-Secondary-hover;
-  }
-}
-.colour-secondary-dark {
-  background: $colour-Secondary-dark;
-  &:hover {
-    background: $colour-Secondary-hover;
-  }
-}
-.colour-secondary-darker {
-  background: $colour-Secondary-darker;
-  &:hover {
-    background: $colour-Secondary-hover;
-  }
-}
-.colour-tertiary {
+%colour-tertiary {
   background: $colour-Tertiary;
   &:hover {
     background: $colour-Tertiary-hover;
   }
 }
-.colour-tertiary-light {
-  background: $colour-Tertiary-light;
-  &:hover {
-    background: $colour-Tertiary-hover;
-  }
-}
-.colour-tertiary-dark {
-  background: $colour-Tertiary-dark;
-  &:hover {
-    background: $colour-Tertiary-hover;
-  }
-}
-.colour-tertiary-darker {
-  background: $colour-Tertiary-darker;
-  &:hover {
-    background: $colour-Tertiary-hover;
-  }
-}
-.colour-tertiary-2 {
-  background: $colour-Tertiary-2;
+%colour-tertiary-2 {
+  background: $colour-Tertiary-2-darker; //$colour-Tertiary failt contrast
   &:hover {
     background: $colour-Tertiary-2-hover;
   }
 }
-.colour-tertiary-2-light {
-  background: $colour-Tertiary-2-light;
-  &:hover {
-    background: $colour-Tertiary-2-hover;
-  }
-}
-.colour-tertiary-2-dark {
-  background: $colour-Tertiary-2-dark;
-  &:hover {
-    background: $colour-Tertiary-2-hover;
-  }
-}
-.colour-tertiary-2-darker {
-  background: $colour-Tertiary-2-darker;
-  &:hover {
-    background: $colour-Tertiary-2-hover;
-  }
-}
+// Commented out as we don't want authors selecting inaccessible tints
+// %colour-primary-light {
+//   background: $colour-Primary-light;
+//   &:hover {
+//     background: $colour-Primary-hover;
+//   }
+// }
+// %colour-primary-dark {
+//   background: $colour-Primary-dark;
+//   &:hover {
+//     background: $colour-Primary-hover;
+//   }
+// }
+// %colour-primary-darker {
+//   background: $colour-Primary-darker;
+//   &:hover {
+//     background: $colour-Primary-hover;
+//   }
+// }
+// %colour-tertiary {
+//   background: $colour-Tertiary;
+//   &:hover {
+//     background: $colour-Tertiary-hover;
+//   }
+// }
+// %colour-secondary {
+//   background: $colour-Secondary;
+//   &:hover {
+//     background: $colour-Secondary-hover;
+//   }
+// }
+// %colour-secondary-light {
+//   background: $colour-Secondary-light;
+//   &:hover {
+//     background: $colour-Secondary-hover;
+//   }
+// }
+// %colour-secondary-dark {
+//   background: $colour-Secondary-dark;
+//   &:hover {
+//     background: $colour-Secondary-hover;
+//   }
+// }
+// %colour-secondary-darker {
+//   background: $colour-Secondary-darker;
+//   &:hover {
+//     background: $colour-Secondary-hover;
+//   }
+// }
+// %colour-tertiary-light {
+//   background: $colour-Tertiary-light;
+//   &:hover {
+//     background: $colour-Tertiary-hover;
+//   }
+// }
+// %colour-tertiary-dark {
+//   background: $colour-Tertiary-dark;
+//   &:hover {
+//     background: $colour-Tertiary-hover;
+//   }
+// }
+// %colour-tertiary-darker {
+//   background: $colour-Tertiary-darker;
+//   &:hover {
+//     background: $colour-Tertiary-hover;
+//   }
+// }
+
+// %colour-tertiary-2-light {
+//   background: $colour-Tertiary-2-light;
+//   &:hover {
+//     background: $colour-Tertiary-2-hover;
+//   }
+// }
+// %colour-tertiary-2-dark {
+//   background: $colour-Tertiary-2-dark;
+//   &:hover {
+//     background: $colour-Tertiary-2-hover;
+//   }
+// }
+// %colour-tertiary-2-darker {
+//   background: $colour-Tertiary-2-darker;
+//   &:hover {
+//     background: $colour-Tertiary-2-hover;
+//   }
+// }
 
 %colour-Primary-background {
   background-color: $colour-Primary-darker;
