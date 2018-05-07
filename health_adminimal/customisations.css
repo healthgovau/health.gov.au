@@ -5,8 +5,8 @@ body, input:not(#edit-module-filter-name), option, select, textarea {
 
 /* Layout checkboxes in 3 columns for long lists */
 @media screen and (min-width: 768px) {
-    #edit-field-language-und.form-radios,
-    #edit-field-related-health-topic-und.form-checkboxes
+    #edit-field-related-health-topics .form-checkboxes,
+    #edit-field-reference-conditions-and-d .form-radios
     {
         column-count: 3;
         -webkit-column-count: 3;
