@@ -300,7 +300,7 @@ body:not(.topic-subpage) {
 }
 
 // Fix overflow of content onto menu
-body:not(.node-type-health-topic, .node-type-health-topic-hp, .node-type-landing-page, .node-type-program) {
+body:not(.node-type-landing-page):not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-program) {
   #content {
     padding-top: uikit-space(1);
     @include uikit-media(sm) {
