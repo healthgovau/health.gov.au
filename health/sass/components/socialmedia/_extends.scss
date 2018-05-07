@@ -12,12 +12,13 @@ ul.social__links, // Getting specific with it nah nah nah nah na na na!
   .social__links-item {
 
     float: none;
-    margin-bottom: uikit-space(0.75);
+    display: block;
+    margin-bottom: uikit-space(0.5);
     list-style-type: none;
     margin-right: uikit-space(1);
-    display: inline;
     @include uikit-media(sm){
       float: left;
+      display: inline;
       margin-bottom: 0;
     }
 
