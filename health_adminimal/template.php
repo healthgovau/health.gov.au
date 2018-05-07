@@ -149,6 +149,60 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
   if (isset($form['field_contact_fax_number'])) {
     $form['field_contact_fax_number']['#element_validate'][] = '_health_adminimal_telephone_validator';
   }
+
+  // Content owner. Create groups.
+  if (isset($form['field_content_owner'])) {
+    $form['field_content_owner']['und']['#options'] = _health_adminimal_optgroup('content_owner');
+  }
+}
+
+/**
+ * Create a nested array of a taxonomy suitable for a select.
+ *
+ * @param $machine_name
+ *    Taxonomy machine name
+ *
+ * @return array|bool
+ */
+function _health_adminimal_optgroup($machine_name) {
+  $vocabulary = taxonomy_vocabulary_machine_name_load($machine_name);
+  $terms = entity_load('taxonomy_term', FALSE, array('vid' => $vocabulary->vid));
+  $new_options = array();
+  foreach ($terms as $options_key => $options_value) {
+    if (is_numeric($options_key)) {
+      $parents = taxonomy_get_parents($options_key);
+      if (count($parents) == 0) {
+        $new_options = _health_adminimal_optgroup_children($options_value);
+      }
+    }
+  }
+  return $new_options;
+}
+
+/**
+ * Return an array of children suitable for a select.
+ *
+ * @param $term
+ *   Taxonomy term object.
+ *
+ * @return array|bool
+ */
+function _health_adminimal_optgroup_children($term) {
+  $new_options = [];
+  $children = taxonomy_get_children($term->tid);
+  if (count($children)) {
+    foreach ($children as $child_term) {
+      $child_options = _health_adminimal_optgroup_children($child_term);
+      if ($child_options === FALSE) {
+        $new_options[$child_term->tid] = $child_term->name;
+      } else {
+        $new_options[$child_term->name] = $child_options;
+      }
+    }
+  } else {
+    return FALSE;
+  }
+  return $new_options;
 }
 
 /**
@@ -540,4 +594,46 @@ function _health_adminimal_publication_validate($form, &$form_state) {
       $form_state['values']['field_publication_nmm_id'][LANGUAGE_NONE][0]['value'] = NULL;
     }
   }
+}
+
+/**
+ * Implements hook_js_alter().
+ *
+ * Perform necessary alterations to the JavaScript before it is presented on the page.
+ *
+ * @param array $javascript
+ *   An array of all JavaScript being presented on the page.
+ */
+function health_adminimal_js_alter(&$javascript) {
+  // Add/replace chosen js.
+  $javascript['profiles/govcms/libraries/chosen/chosen.jquery.min.js'] = [
+    'data' => drupal_get_path('theme', 'health_adminimal') . '/js/libraries/chosen/chosen.jquery.min.js',
+    'version' => '1',
+    'group' => -100,
+    'type' => 'file',
+    'weight' => 1,
+    'every_page' => FALSE,
+    'preprocess' => TRUE,
+    'requires_jquery' => TRUE,
+    'scope' => 'header',
+    'cache' => TRUE,
+    'defer' => FALSE,
+  ];
+}
+
+/**
+ * Implements hook_css_alter().
+ */
+function health_adminimal_css_alter(&$css) {
+  // Add/replace chosen css.
+  $css['profiles/govcms/libraries/chosen/chosen.css'] = [
+    'data' => drupal_get_path('theme', 'health_adminimal') . '/js/libraries/chosen/chosen.min.css',
+    'group' => -100,
+    'type' => 'file',
+    'weight' => 1,
+    'every_page' => FALSE,
+    'media' => 'all',
+    'preprocess' => TRUE,
+    'browsers' => ['IE'=> TRUE, '!IE' => TRUE],
+  ];
 }
