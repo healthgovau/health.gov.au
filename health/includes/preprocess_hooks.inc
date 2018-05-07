@@ -1078,13 +1078,12 @@ function health_preprocess_page(&$variables) {
     }
 
     // Initiatives and programs
-    // Title doesn't appear in the active trail, so set one manually.
     if ($active_trail[1]['href'] == 'initiatives-and-programs') {
-      if (count($active_trail) > 2) {
-        $variables['section_title'] = theme('health_section_link', ['title' => 'Initiatives and programs', 'path' => 'initiatives-and-programs']);
-      }
       if (count($active_trail) > 3) {
-        $variables['section_title'] = theme('health_section_link', ['title' => $active_trail[2]['link_title'], 'path' => $active_trail[2]['link_path']]);
+        $variables['section_title'] = theme('health_section_link', [
+          'title' => $active_trail[2]['link_title'],
+          'path' => $active_trail[2]['link_path']
+        ]);
         $variables['summary'] = FALSE;
       }
     }
