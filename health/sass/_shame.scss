@@ -229,11 +229,14 @@
 .page-node-3406 {
   // hotline bar.
   .block-id__mrff-applying-for-funding.para-container {
+    text-align: center;
     @include hotline-bar();
     padding-top: 0;
     padding-bottom: 0;
+    @include uikit-media(sm){
+      text-align: left;
+    }
   }
-  // solid cards.
   .block-id__mrff-patients.block-id__mrff-researchers.block-id__mrff-research-missions.block-id__mrff-research-translation {
     @extend %colour-Light-background;
   }

@@ -98,8 +98,15 @@
 
   // Program logo - CHECK
   .field-name-field-image-featured {
-      padding: uikit-space(1.5) 0 0 0;
-      text-align: right;
+    display: none; // Hide for mobile
+    @include uikit-media(sm) {
+      display: block;
+      padding: uikit-space(2) 0;
+      text-align: center;
+      img {
+        max-width: 75%;
+      }
+    }
   }
 }
 
