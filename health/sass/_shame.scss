@@ -239,6 +239,20 @@
   }
 }
 
+// One-column - to fix scope
+.node-type-program {
+  .paragraphs-item-para-content-text {
+    > .paragraphs-item-para-content-text {
+      @extend %band;
+    }
+    // Layout
+    @include row-and-container;
+    >.para-row {
+      @extend .col-xs-12;
+    }
+  }
+}
+
 /** START UIKIT overrides */
 
 // Stop all last P tags from having a bottom margin, this happens across the

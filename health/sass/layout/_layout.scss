@@ -20,10 +20,18 @@ body {
 // Contain Drupal nav and messages
 body.front,
 body.node-type-health-topic,
-body.node-type-health-topic-hp {
+body.node-type-health-topic-hp,
+body.node-type-program
+ {
   #tabs,
   .messages {
     @extend .container;
+  }
+  .page {
+    .tabs {
+      margin-top: uikit-space(1);
+      margin-bottom: 0;
+    }
   }
 }
 

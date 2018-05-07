@@ -291,15 +291,6 @@ body {
       }
     }
 
-    // Text content.
-    .para-container.paragraphs-item-para-content-text {
-      @extend %band--neutral;
-      @extend .container;
-      .field-name-field-body {
-        @extend .row;
-      }
-    }
-
     // Statistics
     .paragraphs-item-para-statistics {
       @extend %colour-Light-background-reverse;

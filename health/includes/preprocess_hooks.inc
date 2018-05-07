@@ -894,7 +894,8 @@ function health_preprocess_page(&$variables) {
     'health_topic',
     'health_topic_hp',
     'listing',
-    'landing_page'
+    'landing_page',
+    'program'
   ];
   if (isset($variables['node']) && !in_array($variables['node']->type, $exclude)) {
     $render_readspeaker = [
