@@ -56,3 +56,11 @@
     <path fill="none" d="M0 0h24v24H0z"/>
   </svg>');
 }
+
+.fa-phone {
+  margin-left: 1em;
+  margin-right: 0.25em;
+  &:before {
+    margin-left: -1em;
+  }
+}
