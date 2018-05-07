@@ -1084,6 +1084,7 @@ function health_preprocess_page(&$variables) {
         $variables['section_title'] = theme('health_section_link', ['title' => 'Initiatives and programs', 'path' => 'initiatives-and-programs']);
       }
       if (count($active_trail) > 3) {
+        $variables['section_title'] = theme('health_section_link', ['title' => $active_trail[2]['link_title'], 'path' => $active_trail[2]['link_path']]);
         $variables['summary'] = FALSE;
       }
     }
