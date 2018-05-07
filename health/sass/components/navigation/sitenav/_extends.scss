@@ -43,6 +43,7 @@
         &:before {
           font-size: 22px;
           content: "\f0c9";
+          margin-left: -1.2em;
         }
       }
     }
@@ -55,7 +56,7 @@
         &:before {
           font-size: 22px;
           content: "\f002";
-
+          margin-left: -1.2em;
         }
       }
     }
@@ -85,4 +86,11 @@
 header, .header-top {
   position: relative;
   z-index: 500;
+}
+
+// Section header tweak mobile breadcrumbs
+.section-title {
+  [class*="fa-"]:before {
+    margin-left: -0.9em;
+  }
 }
