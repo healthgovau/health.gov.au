@@ -159,8 +159,8 @@
         return tmp.textContent || tmp.innerText || "";
       }
 
-      // Apply chosen.
-      $('#edit-field-content-owner-und, #edit-field-language-und, #edit-field-related-health-topics-und').chosen();
+      // Apply chosen using the new version of chosen.
+      $('.chosen-enable').chosen();
 
     }
   };

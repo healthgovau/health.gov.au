@@ -619,6 +619,10 @@ function health_adminimal_js_alter(&$javascript) {
     'cache' => TRUE,
     'defer' => FALSE,
   ];
+  // Remove standard chosen config as we will use our own.
+  if (key_exists('profiles/govcms/modules/contrib/chosen/chosen.js', $javascript)) {
+    unset($javascript['profiles/govcms/modules/contrib/chosen/chosen.js']);
+  }
 }
 
 /**
