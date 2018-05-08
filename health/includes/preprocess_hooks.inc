@@ -232,7 +232,7 @@ function health_preprocess_entity(&$variables) {
       // Generate the view.
       if ($view_name == 'generic_view') {
 
-        $content_type = $related_topics = $audience = $related_initiative = NULL;
+        $content_type = $related_topics = $audience = $related_initiative = 'all';
 
         // Content type filter.
         if (isset($para_item->field_content_type[LANGUAGE_NONE])) {
@@ -321,13 +321,7 @@ function health_preprocess_entity(&$variables) {
     if ($bean->type == 'image_and_text') {
       // Compose block wrapper link url.
       if ($bean->field_link_internal) {
-        if ($bean->field_link_internal[LANGUAGE_NONE][0]['query']) {
-          $variables['wrapper_link_url'] = $bean->field_link_internal[LANGUAGE_NONE][0]['url'] . '?' . drupal_http_build_query(
-              $bean->field_link_internal[LANGUAGE_NONE][0]['query']);
-        }
-        else {
-          $variables['wrapper_link_url'] = $bean->field_link_internal[LANGUAGE_NONE][0]['url'];
-        }
+        $variables['wrapper_link_url'] = url($bean->field_link_internal[LANGUAGE_NONE][0]['url'], $bean->field_link_internal[LANGUAGE_NONE][0]);
       }
 
       // Add 'active' to classes array if it is the current page of the image and text block link.

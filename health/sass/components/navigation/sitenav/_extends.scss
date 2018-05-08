@@ -26,6 +26,14 @@
         border-bottom: 6px solid transparent;
       }
       display: block;
+
+      // Hide menu links appended after Resources.
+      .sf-item-7,
+      .sf-item-8,
+      .sf-item-9,
+      .sf-item-10 {
+        display: none;
+      }
     }
   }
 
