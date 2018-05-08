@@ -9,7 +9,7 @@
 
 // Full width (no sidebar)
 // Non-landing pages only
-body:not(.node-type-landing-page):not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-program) {
+body:not(.node-type-landing-page):not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.page-node-3406) {
   .main-content-full {
     @extend .col-xs-12;
   }
