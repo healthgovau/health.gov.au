@@ -232,7 +232,7 @@ function health_preprocess_entity(&$variables) {
       // Generate the view.
       if ($view_name == 'generic_view') {
 
-        $content_type = $related_topics = $audience = $related_initiative = NULL;
+        $content_type = $related_topics = $audience = $related_initiative = 'all';
 
         // Content type filter.
         if (isset($para_item->field_content_type[LANGUAGE_NONE])) {
