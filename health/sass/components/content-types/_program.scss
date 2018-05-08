@@ -2,13 +2,13 @@
 // ======================
 
 // Default/full content
-.node-type-initiative-or-program {
+.node-type-program {
     @extend %dm-full-content;
 	@extend %page-help-and-currency;
 }
 
 // Display modes
-.node-initiative-or-program {
+.node-program {
 
 	// List vertical
 	&.view-mode-listing_vertical {
