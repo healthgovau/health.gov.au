@@ -78,18 +78,21 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
  */
 function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
 
-  $media_forms = array('file-entity-add-upload', 'media-internet-add-upload', 'file_entity_edit');
+  $add_media_forms = ['file_entity_add_upload', 'media_internet_add_upload'];
+  $edit_media_forms = ['file_entity_edit'];
 
-  if (in_array($form['#id'], $media_forms)) {
-
+  if (in_array($form['#form_id'], $add_media_forms)) {
     // Clear filename from title to force users to enter a sensible title.
     if (key_exists('filename', $form)) {
       $form['filename']['#default_value'] = '';
+      $form['#submit'][] = '_health_adminimal_file_rename_submitter';
     }
-
+  }
+  if (in_array($form['#form_id'], $edit_media_forms)) {
+    $form['actions']['submit']['#submit'][] = '_health_adminimal_file_rename_submitter';
   }
 
-  // Add logic of if a news or event node is marked as featured, it should be validated with value in featured image field. 
+  // Add logic of if a news or event node is marked as featured, it should be validated with value in featured image field.
   if ($form_id == 'news_article_node_form' || $form_id == 'event_node_form') {
     $form['#validate'][] = 'health_adminimal_feature_validator';
   }
@@ -147,6 +150,98 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
     $form['field_contact_fax_number']['#element_validate'][] = '_health_adminimal_telephone_validator';
   }
 
+  // Content owner. Create groups.
+  if (isset($form['field_content_owner'])) {
+    $form['field_content_owner']['und']['#options'] = _health_adminimal_optgroup('content_owner');
+  }
+}
+
+/**
+ * Create a nested array of a taxonomy suitable for a select.
+ *
+ * @param $machine_name
+ *    Taxonomy machine name
+ *
+ * @return array|bool
+ */
+function _health_adminimal_optgroup($machine_name) {
+  $vocabulary = taxonomy_vocabulary_machine_name_load($machine_name);
+  $terms = entity_load('taxonomy_term', FALSE, array('vid' => $vocabulary->vid));
+  $new_options = array();
+  foreach ($terms as $options_key => $options_value) {
+    if (is_numeric($options_key)) {
+      $parents = taxonomy_get_parents($options_key);
+      if (count($parents) == 0) {
+        $new_options = _health_adminimal_optgroup_children($options_value);
+      }
+    }
+  }
+  return $new_options;
+}
+
+/**
+ * Return an array of children suitable for a select.
+ *
+ * @param $term
+ *   Taxonomy term object.
+ *
+ * @return array|bool
+ */
+function _health_adminimal_optgroup_children($term) {
+  $new_options = [];
+  $children = taxonomy_get_children($term->tid);
+  if (count($children)) {
+    foreach ($children as $child_term) {
+      $child_options = _health_adminimal_optgroup_children($child_term);
+      if ($child_options === FALSE) {
+        $new_options[$child_term->tid] = $child_term->name;
+      } else {
+        $new_options[$child_term->name] = $child_options;
+      }
+    }
+  } else {
+    return FALSE;
+  }
+  return $new_options;
+}
+
+/**
+ * Submit handler to rename the file to what the user has entered for the file title.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function _health_adminimal_file_rename_submitter($form, &$form_state) {
+
+  $new_name = _health_adminimal_prepare_filename($form_state['values']['filename']);
+  $old_name = _health_adminimal_prepare_filename($form['filename']['#default_value']);
+
+  // First check if the filename actually needs renaming.
+  if ($new_name != $old_name || !empty($form_state['values']['replace_upload'])) {
+    // Get the file.
+    $file = $form_state['file'];
+    // Get the file extension.
+    $path_info = pathinfo($file->uri);
+    $new_name .= '.' . $path_info['extension'];
+    // Generate the filename, this checks if the file already exists and adds to it.
+    $new_name = file_create_filename($new_name, file_uri_scheme($file->uri) . '://');
+    // Rename the file (move it).
+    file_move($file, $new_name);
+    // Moving sets the actual file name as the title, so revert that back to what it should be.
+    $file = file_load($file->fid);
+    $file->filename = $form_state['values']['filename'];
+    file_save($file);
+  }
+}
+
+function _health_adminimal_prepare_filename($name) {
+  // Replace anything not normal with a hyphen.
+  $name = strtolower(preg_replace('/[^a-zA-Z\d]+/', '-', $name));
+  // Remove any hyphens at the start.
+  $name = preg_replace('/^-/', '', $name);
+  // Remove any hyphens at the end.
+  $name = preg_replace('/-$/', '', $name);
+  return $name;
 }
 
 /**
@@ -244,6 +339,11 @@ function health_adminimal_form_element($variables) {
     case 'invisible':
       $output .= ' ' . theme('form_element_label', $variables);
       // Help text.
+      // Add description back in if this is a text area.
+      if ($element['#type'] == 'textarea') {
+        $info = field_info_instance('node', 'field_summary', 'contact');
+        $element['#description'] = $info['description'];
+      }
       if (!empty($element['#description'])) {
         $output .= '<div class="description">' . $element['#description'] . "</div>\n";
       }
@@ -270,6 +370,18 @@ function health_adminimal_form_element($variables) {
       break;
   }
 
+  $output .= "</div>\n";
+
+  return $output;
+}
+
+/**
+ * Implements theme_text_format_wrapper
+ */
+function health_adminimal_text_format_wrapper($variables) {
+  $element = $variables['element'];
+  $output = '<div class="text-format-wrapper">';
+  $output .= $element['#children'];
   $output .= "</div>\n";
 
   return $output;
@@ -339,8 +451,8 @@ function _health_adminimal_telephone_validator($element, &$form_state) {
     $field_name = $element[LANGUAGE_NONE]['#field_name'];
     $value = $form_state['values'][$field_name][LANGUAGE_NONE][0]['value'];
   }
-  if (!empty($value) && preg_match('/^(\(\d{2}\)|\d{4}) ?(\d{4}|\d{3}) ?(\d{4}|\d{3})$/', $value) == 0) {
-    form_error($element, t('Telephone number is not in a valid format, eg:<br/>Local: (02) 1234 5678 <br/>Mobile: 0412 345 678 <br/>Hotline: 1300 123 456'));
+  if (!empty($value) && (preg_match('/^(\d{2}|\d{4}) ?(\d{4}|\d{3}) ?(\d{4}|\d{3})$/', $value) || preg_match('/^\d{3} \d{3}$/', $value)) == 0) {
+    form_error($element, t('Telephone number is not in a valid format, eg:<br/>Local: 02 1234 5678 <br/>Mobile: 0412 345 678 <br/>Hotline: 1300 123 456 <br/>Hotline: 130 000'));
   }
 }
 
@@ -482,4 +594,46 @@ function _health_adminimal_publication_validate($form, &$form_state) {
       $form_state['values']['field_publication_nmm_id'][LANGUAGE_NONE][0]['value'] = NULL;
     }
   }
+}
+
+/**
+ * Implements hook_js_alter().
+ *
+ * Perform necessary alterations to the JavaScript before it is presented on the page.
+ *
+ * @param array $javascript
+ *   An array of all JavaScript being presented on the page.
+ */
+function health_adminimal_js_alter(&$javascript) {
+  // Add/replace chosen js.
+  $javascript['profiles/govcms/libraries/chosen/chosen.jquery.min.js'] = [
+    'data' => drupal_get_path('theme', 'health_adminimal') . '/js/libraries/chosen/chosen.jquery.min.js',
+    'version' => '1',
+    'group' => -100,
+    'type' => 'file',
+    'weight' => 1,
+    'every_page' => FALSE,
+    'preprocess' => TRUE,
+    'requires_jquery' => TRUE,
+    'scope' => 'header',
+    'cache' => TRUE,
+    'defer' => FALSE,
+  ];
+}
+
+/**
+ * Implements hook_css_alter().
+ */
+function health_adminimal_css_alter(&$css) {
+  // Add/replace chosen css.
+  $css['profiles/govcms/libraries/chosen/chosen.css'] = [
+    'data' => drupal_get_path('theme', 'health_adminimal') . '/js/libraries/chosen/chosen.min.css',
+    'group' => -100,
+    'type' => 'file',
+    'weight' => 1,
+    'every_page' => FALSE,
+    'media' => 'all',
+    'preprocess' => TRUE,
+    'browsers' => ['IE'=> TRUE, '!IE' => TRUE],
+  ];
 }

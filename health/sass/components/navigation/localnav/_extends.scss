@@ -18,6 +18,11 @@
 
   @extend %uikit-localnav;
 
+  display: none;
+  @include uikit-media(sm) {
+    display: block;
+  }
+
   // Drupal block title as link helper styles
   &__title {
     font-size: 18px;
@@ -59,9 +64,6 @@
 }
 
 // Mobile toggle.
-.mobile-toggle.mobile-toggle__local-nav {
+.uikit-body a.localnav__mobile-toggle {
   @extend %uikit-localnav__mobile-toggle;
-  a {
-    border-bottom: 0;
-  }
 }

@@ -51,18 +51,16 @@
 
     > .group-left {
       width: 100%;
+      // Frustrating, cannot find the code that overrides this part to float:left.
+      float: right!important;
       @include uikit-clearfix;
-      @include uikit-media(md){
-        width: 40%;
-      }
+      @extend .col-md-7;
     }
     > .group-right {
       width: 100%;
+      float: left;
       @include uikit-clearfix;
-      @include uikit-media(md){
-        width: 60%;
-        margin-top: -50px;
-      }
+      @extend .col-md-5;
     }
 
 

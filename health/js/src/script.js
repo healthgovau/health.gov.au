@@ -68,6 +68,9 @@
 
       // Front page feedback band.
       $('.view-mode-view_selector .bean-block-content a', context).matchHeight();
+
+      // Bean block - solid colour card.
+      $('.view-mode-solid_full_card .bean-block-content a', context).matchHeight();
     }
   };
 

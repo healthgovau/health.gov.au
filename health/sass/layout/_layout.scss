@@ -9,7 +9,7 @@
 // which will be full width to permit bands
 // :not() supported by IE9+ so polyfill
 body {
-  &:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) {
+  &:not(.node-type-health-topic, .node-type-health-topic-hp, .node-type-landing-page, .page-node-3406){
     .page-layout {
       @extend .container;
     }
@@ -20,10 +20,18 @@ body {
 // Contain Drupal nav and messages
 body.front,
 body.node-type-health-topic,
-body.node-type-health-topic-hp {
+body.node-type-health-topic-hp,
+body.page-node-3406
+ {
   #tabs,
   .messages {
     @extend .container;
+  }
+  .page {
+    .tabs {
+      margin-top: uikit-space(1);
+      margin-bottom: 0;
+    }
   }
 }
 

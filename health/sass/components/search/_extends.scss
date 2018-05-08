@@ -69,13 +69,13 @@
     border-radius: 0;
     @include uikit-media(sm) {
       border-bottom: 0;
+      display: none;
     }
-
   }
 }
 
 // Global search in header
-.js .region-header {
+.region-header {
   div.block-search-api-page {
     display: none; // Hide the search in the header on mobile.
     @include uikit-media(sm) {

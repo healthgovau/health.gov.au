@@ -291,18 +291,30 @@ body {
       }
     }
 
-    // Text content.
-    .para-container.paragraphs-item-para-content-text {
-      @extend %band--neutral;
-      @extend .container;
-      .field-name-field-body {
-        @extend .row;
-      }
-    }
-
     // Statistics
     .paragraphs-item-para-statistics {
       @extend %colour-Light-background-reverse;
+    }
+  }
+}
+
+body {
+  &.page-node-3406{
+
+    // Topic feature (nested paragraphs)
+    // Container for large and small features
+    .paragraphs-2-columns-news {
+      // Style band
+      &.para-container {
+        @extend %band--neutral-darkest;
+      }
+    }
+
+    .paragraphs-2-columns-resources {
+      // Style band
+      &.para-container {
+        @extend %band;
+      }
     }
   }
 }

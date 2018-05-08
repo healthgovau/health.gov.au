@@ -6,17 +6,6 @@
   Drupal.behaviors.health_adminimal = {
     attach: function(context) {
 
-      // Content owner - prevent users from selecting anything except a branch (third level).
-      $('#edit-field-content-owner-und option').each(function() {
-        if ($(this).text().substring(0,2) !== '--') {
-          $(this).attr('disabled', 'disabled');
-        }
-        if ($(this).val() !== '_none') {
-          $(this).text($(this).text().replace(/-/g, '- '));
-          $(this).text($(this).text().replace(/- -/g, '--'));
-        }
-      });
-
       // Collapse and expand buttons for field components paragraph blocks  .
       if (!$('body').hasClass('node-type-health-topic')) {
         // Create buttons.
@@ -169,6 +158,9 @@
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || "";
       }
+
+      // Apply chosen.
+      $('#edit-field-content-owner-und, #edit-field-language-und, #edit-field-related-health-topics-und').chosen();
 
     }
   };

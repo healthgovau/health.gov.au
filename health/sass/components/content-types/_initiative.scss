@@ -2,23 +2,17 @@
 // ======================
 
 // Default/full content
-.node-type-campaign {
+.node-type-initiative {
     @extend %dm-full-content;
-	@extend %page-help-only;
+	@extend %page-help-and-currency;
 }
 
 // Display modes
-.node-campaign {	
+.node-initiative {
 
 	// List vertical
 	&.view-mode-listing_vertical {
 		@extend %dm-list-vertical;
-		.group-left {
-			@extend .col-xs-4;
-		}
-		.group-right {
-			@extend .col-xs-8;
-		}
 	}
 	// List vertical small
 	&.view-mode-listing_vertical_small {
@@ -37,7 +31,7 @@
 
 	// Inline style
 	&.view-mode-inline {
-		@extend %dm-inline;
+		@extend %dm-inline-2-col;
     }
     
     // Search

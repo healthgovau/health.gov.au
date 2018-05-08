@@ -1,10 +1,9 @@
 // Inline
 %dm-inline {
-  border-left: $health-borderize--fat;
   background: $uikit-colour-Background;
-
   padding: uikit-space(0.5);
   @include uikit-media(sm) {
+    border-left: $health-borderize--fat;
     padding: uikit-space(1);
   }
 
@@ -23,6 +22,7 @@
   .field-name-field-image-featured {
     img {
       border: $health-borderize;
+      margin-bottom: uikit-space(1);
     }
   }
 }
@@ -36,13 +36,35 @@
 
   // layout
   .group-left {
+    @extend .col-xs-4;
     @extend .col-sm-3;
   }
   .group-right {
+    @extend .col-xs-8;
     @extend .col-sm-9;
   }
 }
 
 %dm-inline-large {
+  .field-name-title {
+    font-weight: bold;
+  }
+  .group-name {
+      .field {
+          float: left;
+          margin-right: 4px;
+      }
+      @include uikit-clearfix;
+  }
+  p {
+      margin-bottom: 0;
+  }
+
   margin-bottom: uikit-space(1);
+  @include uikit-media(sm){
+      margin-bottom: uikit-space(2);
+  }
+  @include uikit-media(md){
+      margin-bottom: uikit-space(3);
+  }
 }

@@ -19,9 +19,11 @@
 
 // Block styles
 @import 'block-types/image-text';
+@import 'block-types/callout';
 @import 'block-types/extends';
 
 // Component types
+@import 'accordion/extends';
 @import 'alert/module';
 @import 'alert/extends';
 @import 'backtotop/module';

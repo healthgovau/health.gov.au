@@ -2,22 +2,30 @@ ul.social__links, // Getting specific with it nah nah nah nah na na na!
 .social__links
 {
   padding: 0;
-  margin: 0;
+  margin: uikit-space(1) 0 0 0;
+  @include uikit-media(sm){
+    margin-top: 0;
+  }
 
   overflow: hidden;
 
   .social__links-item {
 
-    float: left;
-
+    float: none;
+    display: block;
+    margin-bottom: uikit-space(0.5);
     list-style-type: none;
     margin-right: uikit-space(1);
-    margin-bottom: 0;
-    display: inline;
+    @include uikit-media(sm){
+      float: left;
+      display: inline;
+      margin-bottom: 0;
+    }
 
     // Font Awesome implementation
     a {
       @extend %baseicon;
+      margin-left: 2.6em !important;
       &.youtube:before {
         content: "\f16a";
       }

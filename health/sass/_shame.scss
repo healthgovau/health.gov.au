@@ -21,20 +21,7 @@
 .page-node-1156 {
   // Contact hot line bar for immunisation.
   .paragraphs-item-para-contact.para-container {
-    @extend %colour-Tertiary-2-background;
-    color: white;
-    h2,i {
-      color: white;
-    }
-    a {
-      color: white;
-      border-bottom: 1px solid white;
-      &:hover {
-        color: white;
-        background: none;
-        border-bottom: none;
-      }
-    }
+    @include hotline-bar();
   }
 
   // Statistics
@@ -238,6 +225,37 @@
   }
 }
 
+// MRFF landing page.
+.page-node-3406 {
+  // hotline bar.
+  .block-id__mrff-applying-for-funding.para-container {
+    text-align: center;
+    @include hotline-bar();
+    padding-top: 0;
+    padding-bottom: 0;
+    @include uikit-media(sm){
+      text-align: left;
+    }
+  }
+  .block-id__mrff-patients.block-id__mrff-researchers.block-id__mrff-research-missions.block-id__mrff-research-translation {
+    @extend %colour-Light-background;
+  }
+}
+
+// One-column - to fix scope
+.page-node-3406 {
+  .paragraphs-item-para-content-text {
+    > .paragraphs-item-para-content-text {
+      @extend %band;
+    }
+    // Layout
+    @include row-and-container;
+    >.para-row {
+      @extend .col-xs-12;
+    }
+  }
+}
+
 /** START UIKIT overrides */
 
 // Stop all last P tags from having a bottom margin, this happens across the
@@ -282,7 +300,7 @@ body:not(.topic-subpage) {
 }
 
 // Fix overflow of content onto menu
-body:not(.node-type-health-topic, .node-type-health-topic-hp, .node-type-landing-page) {
+body:not(.node-type-landing-page):not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.page-node-3406) {
   #content {
     padding-top: uikit-space(1);
     @include uikit-media(sm) {

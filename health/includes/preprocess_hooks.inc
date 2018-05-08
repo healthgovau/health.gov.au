@@ -230,6 +230,33 @@ function health_preprocess_entity(&$variables) {
       }
 
       // Generate the view.
+      if ($view_name == 'generic_view') {
+
+        $content_type = $related_topics = $audience = $related_initiative = NULL;
+
+        // Content type filter.
+        if (isset($para_item->field_content_type[LANGUAGE_NONE])) {
+          $content_type = $para_item->field_content_type[LANGUAGE_NONE][0]['value'];
+        }
+
+        // Related topic filter.
+        if (isset($para_item->field_related_health_topics[LANGUAGE_NONE])) {
+          $related_topics = $para_item->field_related_health_topics[LANGUAGE_NONE][0]['target_id'];
+        }
+
+        // Audience filter.
+        if (isset($para_item->field_audience[LANGUAGE_NONE])) {
+          $audience = $para_item->field_audience[LANGUAGE_NONE][0]['tid'];
+        }
+
+        // Related initiative filter.
+        if (isset($para_item->field_related_initiatives[LANGUAGE_NONE])) {
+          $related_initiative = $para_item->field_related_initiatives[LANGUAGE_NONE][0]['target_id'];
+        }
+
+        $view->set_arguments([$content_type, $related_topics, $audience, $related_initiative]);
+      }
+
       $view->execute();
 
       if ($view->total_rows > 0) {
@@ -305,12 +332,19 @@ function health_preprocess_entity(&$variables) {
 
       // Add 'active' to classes array if it is the current page of the image and text block link.
       if ($bean->view_mode == 'view_selector') {
-        $current_url = '/'.current_path();
+        $current_url = '/' . current_path();
         if (isset($bean->field_link_internal[LANGUAGE_NONE][0])) {
           $block_link = $bean->field_link_internal[LANGUAGE_NONE][0]['url'];
           if ($current_url == drupal_get_normal_path($block_link)) {
             $variables['classes_array'][] = 'active';
           }
+        }
+      }
+
+      // Add colour value to class for solid card.
+      if ($bean->view_mode == 'solid_full_card') {
+        if (isset($bean->field_bean_colour[LANGUAGE_NONE])) {
+          $variables['classes_array'][] = 'colour-' . $bean->field_bean_colour[LANGUAGE_NONE][0]['value'];
         }
       }
     }
@@ -425,8 +459,8 @@ function health_preprocess_field(&$variables) {
     }
   }
 
-  // Create variable for address field.
-  if ($variables['element']['#field_name'] == 'field_street_address') {
+  // Create variable for street address field.
+  if ($variables['element']['#field_name'] == 'field_contact_street_address') {
     $variables['location_map'] = '';
     // Only show the map in event node view.
     if (arg(0) == 'node' && is_numeric(arg(1))) {
@@ -441,6 +475,16 @@ function health_preprocess_field(&$variables) {
         $address = $variables['items'][0]['#address'];
         $variables['location_map'] ='<img src="' . $src . '" alt="' . $address['thoroughfare'] . ' ' . $address['locality'] .'" />';
       }
+    }
+  }
+
+  // Add title and organisation to postal address field.
+  if ($variables['element']['#field_name'] == 'field_contact_postal_address') {
+    $variables['title'] = $variables['element']['#object']->title;
+    $variables['organisation'] = '';
+
+    if (isset($variables['element']['#object']->field_contact_organisation[LANGUAGE_NONE])) {
+      $variables['organisation'] = $variables['element']['#object']->field_contact_organisation[LANGUAGE_NONE][0]['value'];
     }
   }
 
@@ -481,6 +525,15 @@ function health_preprocess_field(&$variables) {
           $variables['items'][0]['#access'] = FALSE;
         }
       }
+    }
+
+    // Contact
+    if ($variables['element']['#object']->type == 'contact') {
+      if ($variables['element']['#items'][0]['filename'] == 'Contact placeholder - group' && $variables['element']['#items'][0]['fid'] == 6186) {
+        // Add default to class if image value is default.
+        $variables['classes_array'][] = 'default';
+      }
+
     }
   }
 
@@ -551,7 +604,7 @@ function health_preprocess_field(&$variables) {
     // Add link wrapper and link to the image field.
     if ($variables['element']['#field_name'] == 'field_image_featured' &&
       $variables['element']['#view_mode'] == 'full' &&
-      isset($variables['element']['#object']->field_publication_files[LANGUAGE_NONE][0])) {
+      isset($variables['element']['#object']->field_publication_[LANGUAGE_NONE][0])) {
       $variables['items'][0]['#prefix'] = '<div class="link-wrapper"><a href="#" class="link-wrapper">';
       $variables['items'][0]['#suffix'] = '</a></div><div class="go-to-download-link rs_preserve">Go to <a href="#" class="link-wrapper" role="button">downloads</a></div>';
     }
@@ -700,8 +753,6 @@ function health_preprocess_html(&$variables, $hook) {
  *
  * @param array $variables
  *   Variables to pass to the theme template.
- * @param string $hook
- *   The name of the template being rendered ("node" in this case.)
  */
 function health_preprocess_node(&$variables) {
 
@@ -747,6 +798,12 @@ function health_preprocess_node(&$variables) {
 
   // Add the type as a name to the node e.g. "News article" or "Event"
   $variables['type_name'] = node_type_get_name($variables['node']);
+
+  // Add contact type to class for contact content type.
+  if ($variables['type'] == 'contact') {
+    $type = taxonomy_term_load($variables['field_contact_type'][LANGUAGE_NONE][0]['tid'])->name;
+    $variables['classes_array'][] = strtolower(str_replace(' ', '-', $type));
+  }
 
   // Display suite preprocess hooks.
   if (isset($variables['preprocess_fields'])) {
@@ -801,6 +858,10 @@ function health_preprocess_page(&$variables) {
     'type' => 'file',
   ];
   $variables['page']['content']['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/dist/health.accordion.min.js',
+    'type' => 'file',
+  ];
+  $variables['page']['content']['#attached']['js'][] = [
     'data' => path_to_theme() . '/pancake/js/pancake.js', // Already minified.
     'type' => 'file',
   ];
@@ -833,7 +894,8 @@ function health_preprocess_page(&$variables) {
     'health_topic',
     'health_topic_hp',
     'listing',
-    'landing_page'
+    'landing_page',
+    'program'
   ];
   if (isset($variables['node']) && !in_array($variables['node']->type, $exclude)) {
     $render_readspeaker = [
@@ -1016,12 +1078,12 @@ function health_preprocess_page(&$variables) {
     }
 
     // Initiatives and programs
-    // Title doesn't appear in the active trail, so set one manually.
     if ($active_trail[1]['href'] == 'initiatives-and-programs') {
-      if (count($active_trail) > 2) {
-        $variables['section_title'] = theme('health_section_link', ['title' => 'Initiatives and programs', 'path' => 'initiatives-and-programs']);
-      }
       if (count($active_trail) > 3) {
+        $variables['section_title'] = theme('health_section_link', [
+          'title' => $active_trail[2]['link_title'],
+          'path' => $active_trail[2]['link_path']
+        ]);
         $variables['summary'] = FALSE;
       }
     }
@@ -1065,10 +1127,12 @@ function health_preprocess_page(&$variables) {
 
   // Add the Initiatives and programs logo so it can be rendered in the header.
   if (isset($variables['node'])) {
-    if ($variables['node']->type == 'initiative_or_program') {
+    if ($variables['node']->type == 'program') {
       $logo = field_view_field('node', $variables['node'], 'field_image_featured', array('label'=> 'hidden', 'settings' => array('image_style' => 'title_section_image')));
-      $variables['initiative_or_program_logo'] = render($logo);
-      $variables['node']->field_image_featured = array();
+      if (!empty($logo)) {
+        $variables['header_image'] = render($logo);
+        $variables['node']->field_image_featured = [];
+      }
     }
   }
 
@@ -1076,7 +1140,6 @@ function health_preprocess_page(&$variables) {
   $render_health_alert_bar = [
     '#theme' => 'health_alert_bar',
   ];
-  $render_health_alert_bar['#attached']['library'][] = ['system', 'ui.datepicker'];
   $render_health_alert_bar['#attached']['js'][] = [
     'data' => path_to_theme() . '/js/dist/health.ajaxAlert.min.js',
     'type' => 'file',

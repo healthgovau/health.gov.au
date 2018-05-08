@@ -62,6 +62,11 @@
   box-shadow: 0px 3px 10px $colour;
 }
 
+@mixin circlefy(){
+  border-radius: 50%;
+  border: $health-borderize;
+}
+
 // UI-Kit link style
 %link {
   border-bottom: 1px solid $colour-Secondary;
@@ -194,4 +199,69 @@
     }
   }
   
+}
+
+@mixin hotline-bar($bgcolour: colour-Tertiary-2-background, $bgcolour-left: $colour-Tertiary-2-hover, $font-colour: white) {
+  @extend %#{$bgcolour};
+
+  // Layout
+  .group-left {
+    @include uikit-media(xs) {
+      width: 100%;
+    }
+    @include uikit-media(sm) {
+      width: 33.33333%;
+    }
+    @include uikit-media(lg) {
+      width: 25%;
+    }
+    padding-top: uikit-space(1.5);
+    @include uikit-media(sm){
+      padding-bottom: uikit-space(1.5);
+      padding-left: uikit-space(1);
+      padding-right: uikit-space(1);
+      background: $bgcolour-left;
+    }
+  }
+  .group-right {
+    @include uikit-media(xs) {
+      width: 100%;
+    }
+    @include uikit-media(sm) {
+      width: 66.66666%;
+    }
+    @include uikit-media(lg) {
+      width: 75%;
+    }
+    padding-bottom: uikit-space(1.5);
+    @include uikit-media(sm){
+      padding-top: uikit-space(1.5);
+      padding-left: uikit-space(2);
+    }
+  }
+
+  // font colour
+  color: $font-colour;
+  h2,
+  i {
+    color: $font-colour;
+  }
+  a {
+    color: $font-colour;
+    border-bottom: 1px solid $font-colour;
+    &:hover {
+      color: $font-colour;
+      background: none;
+      border-bottom: none;
+    }
+  }
+
+  // display mode
+  .view-mode-hotline_bar {
+    h2 {
+      @extend .uikit-display-4;
+      color: $font-colour;
+    }
+
+  }
 }

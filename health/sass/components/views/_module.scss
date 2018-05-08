@@ -9,7 +9,8 @@
 }
 
 // Generic Listing view
-.page-views {
+.page-views,
+.view-generic-view {
     .view-content {
         margin-bottom: uikit-space(1);
         .views-row {
@@ -30,6 +31,9 @@
                 border-bottom: 0;
             }
         }
+    }
+    ul.pager {
+        max-width: 100%;
     }
 }
 

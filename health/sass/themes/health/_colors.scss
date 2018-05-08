@@ -41,12 +41,11 @@ $colour-Tertiary-darker: #c42832;
 $colour-Tertiary-light: #ee303b;
 $colour-Tertiary-hover: #a31f26;
 
-// Dummy values to be replaced with real values
-$colour-Tertiary-2: #0099d9; // light
-$colour-Tertiary-2-dark: #0092d6; // mid
-$colour-Tertiary-2-darker: #007cb5; // dark - constrast compliant
-$colour-Tertiary-2-light: #28a9e0; // lightest
-$colour-Tertiary-2-hover: #0070a3; // darkest - constrast compliant
+$colour-Tertiary-2: #0099d9;
+$colour-Tertiary-2-dark: #0092d6;
+$colour-Tertiary-2-darker: #007cb5;
+$colour-Tertiary-2-light: #28a9e0;
+$colour-Tertiary-2-hover: #0070a3;
 
 $colour-dark: #6d6e70;
 $colour-darker: #626366;
@@ -58,6 +57,118 @@ $colour-light: #ecedee;
 $colour-lighter: #f1f1f2;
 $colour-lightest: #f9f9f9;
 $colour-light-darker: #cdcdcd;
+
+// Backgrounds
+%colour-primary {
+  background: $colour-Primary;
+  &:hover {
+    background: $colour-Primary-hover;
+  }
+}
+%colour-secondary {
+  background: $colour-Secondary-dark; // $colour-Secondary fails contrast
+  &:hover {
+    background: $colour-Secondary-hover;
+  }
+}
+%colour-tertiary {
+  background: $colour-Tertiary-dark;
+  &:hover {
+    background: $colour-Tertiary-hover;
+  }
+}
+%colour-tertiary-2 {
+  background: $colour-Tertiary-2-darker; //$colour-Tertiary failt contrast
+  &:hover {
+    background: $colour-Tertiary-2-hover;
+  }
+}
+// Commented out as we don't want authors selecting inaccessible tints
+// %colour-primary-light {
+//   background: $colour-Primary-light;
+//   &:hover {
+//     background: $colour-Primary-hover;
+//   }
+// }
+// %colour-primary-dark {
+//   background: $colour-Primary-dark;
+//   &:hover {
+//     background: $colour-Primary-hover;
+//   }
+// }
+// %colour-primary-darker {
+//   background: $colour-Primary-darker;
+//   &:hover {
+//     background: $colour-Primary-hover;
+//   }
+// }
+// %colour-tertiary {
+//   background: $colour-Tertiary;
+//   &:hover {
+//     background: $colour-Tertiary-hover;
+//   }
+// }
+// %colour-secondary {
+//   background: $colour-Secondary;
+//   &:hover {
+//     background: $colour-Secondary-hover;
+//   }
+// }
+// %colour-secondary-light {
+//   background: $colour-Secondary-light;
+//   &:hover {
+//     background: $colour-Secondary-hover;
+//   }
+// }
+// %colour-secondary-dark {
+//   background: $colour-Secondary-dark;
+//   &:hover {
+//     background: $colour-Secondary-hover;
+//   }
+// }
+// %colour-secondary-darker {
+//   background: $colour-Secondary-darker;
+//   &:hover {
+//     background: $colour-Secondary-hover;
+//   }
+// }
+// %colour-tertiary-light {
+//   background: $colour-Tertiary-light;
+//   &:hover {
+//     background: $colour-Tertiary-hover;
+//   }
+// }
+// %colour-tertiary-dark {
+//   background: $colour-Tertiary-dark;
+//   &:hover {
+//     background: $colour-Tertiary-hover;
+//   }
+// }
+// %colour-tertiary-darker {
+//   background: $colour-Tertiary-darker;
+//   &:hover {
+//     background: $colour-Tertiary-hover;
+//   }
+// }
+
+// %colour-tertiary-2-light {
+//   background: $colour-Tertiary-2-light;
+//   &:hover {
+//     background: $colour-Tertiary-2-hover;
+//   }
+// }
+// %colour-tertiary-2-dark {
+//   background: $colour-Tertiary-2-dark;
+//   &:hover {
+//     background: $colour-Tertiary-2-hover;
+//   }
+// }
+// %colour-tertiary-2-darker {
+//   background: $colour-Tertiary-2-darker;
+//   &:hover {
+//     background: $colour-Tertiary-2-hover;
+//   }
+// }
 
 %colour-Primary-background {
   background-color: $colour-Primary-darker;

@@ -88,52 +88,30 @@
         }
       }
     }
-
-
   }
 
   a {
     @extend %uikit-localnav__link;
   }
-
-  // Hide on mobile initially.
-  display: none;
-  @include uikit-media(sm) { // Always show on desktop.
-    display: block;
-  }
-  &.mobilemenu-active { // Show when toggled.
-    display: block;
-  }
 }
 
 // Mobile toggle.
 %uikit-localnav__mobile-toggle {
-
   @include uikit-media(sm) { // Hide on desktop.
     display: none;
   }
-
   display: block;
   border-bottom: $uikit-borderize;
-
-  // Toggles
-  .mobile-toggle__close,
-  .mobile-toggle__open {
-    padding: 6px 12px;
-    display: block;
+  padding: 6px 12px;
+  @extend %colour-Light-background;
+  &:after {
+    right: auto;
+    margin-left: 1em;
+    font-size: 0.8em;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E %3Cpath fill='black' d='M64 0l64 64-16 16-64-64'/%3E %3Cpath fill='black' d='M64 0l16 16-64 64L0 64'/%3E%3C/svg%3E");
   }
-  .mobile-toggle__close {
-    display: none;
-  }
-
-  // When expanded.
-  &.mobilemenu-active {
-    .mobile-toggle__open {
-      display: none;
-    }
-    .mobile-toggle__close {
-      display: block;
-    }
+  &:focus {
+    color: black;
   }
 }
 

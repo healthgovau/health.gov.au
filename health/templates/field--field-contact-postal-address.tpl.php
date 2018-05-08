@@ -49,11 +49,14 @@
     <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</div>
   <?php endif; ?>
   <div class="field-items"<?php print $content_attributes; ?>>
+      <?php if ($title): ?>
+        <div class="field-item even title" property="dc:title"><?php print $title ?></div>
+      <?php endif ?>
+      <?php if ($organisation): ?>
+        <div class="field-item even organisation"><?php print $organisation ?></div>
+      <?php endif ?>
     <?php foreach ($items as $delta => $item): ?>
       <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
     <?php endforeach; ?>
-  </div>
-  <div class="location-map">
-    <?php print $location_map; ?>
   </div>
 </div>
