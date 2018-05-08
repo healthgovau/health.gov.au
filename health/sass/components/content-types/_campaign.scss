@@ -4,11 +4,11 @@
 // Default/full content
 .node-type-campaign {
     @extend %dm-full-content;
-	@extend %page-help-and-currency;
+	@extend %page-help-only;
 }
 
 // Display modes
-.node-campaign {
+.node-campaign {	
 
 	// List vertical
 	&.view-mode-listing_vertical {
