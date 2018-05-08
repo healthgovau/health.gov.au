@@ -286,7 +286,7 @@ function health_preprocess_entity(&$variables) {
 
     // Term para.
     if ($para_item->bundle == 'para_taxonomy') {
-      $link_url = $para_item->field_link_external[LANGUAGE_NONE][0]['url'];
+      $link_url = url($para_item->field_link_external[LANGUAGE_NONE][0]['url']);
 
       // Pass link to template.
       $variables['link_url'] = $link_url;
