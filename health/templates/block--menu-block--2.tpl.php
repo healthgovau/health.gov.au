@@ -9,7 +9,7 @@
 ?>
 
 <div class="health-accordion">
-  <a href="#" class="localnav__mobile-toggle health-accordion__title health_accordion--closed" aria-controls="block-menu-block-2">
+  <a href="#" class="localnav__mobile-toggle health-accordion__title health-accordion--closed" aria-controls="block-menu-block-2">
     <span>In this section</span>
   </a>
 </div>
