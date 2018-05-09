@@ -1,0 +1,380 @@
+/* font sizes override */
+body, input:not(#edit-module-filter-name), option, select, textarea {
+  font-size: 14px !important;
+}
+
+/* Layout checkboxes in 3 columns for long lists */
+@media screen and (min-width: 768px) {
+  #edit-field-related-health-topics .form-checkboxes,
+  #edit-field-reference-conditions-and-d .form-radios {
+    column-count: 3;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    max-width: 72em;
+  }
+
+  /* Layout checkboxes in 2 columns for longish lists */
+  #edit-field-audience-life-stage-event-und.form-checkboxes {
+    column-count: 2;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    max-width: 44em;
+  }
+}
+
+body.adminimal-skin-material {
+
+  table {
+    tbody {
+      // Provide a divider between paragraph tables
+      tr.draggable {
+        //border-bottom: 1px solid #E0E0E0;
+      }
+
+      // Fixing issues with styles being applied to links inside a table (paragraph)
+      td fieldset legend a {
+        padding: 0px !important;
+      }
+    }
+
+    // Pop up calendar
+    &.ui-datepicker-calendar {
+      // Fix calendar popup appearing outside its container.
+      tbody td a {
+        padding: .5em .6em;
+      }
+      //Calendar popup days easier to read
+      thead th {
+        color: black;
+      }
+    }
+
+    // Remove extra padding around links inside list tables.
+    &.views-table tbody td a {
+      padding: 0 !important;
+    }
+
+    &.sticky-header {
+      display: none !important;
+    }
+  }
+
+  fieldset {
+
+    //box-shadow: 0 1px 7px rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid #E0E0E0 !important;
+
+    // Formatting information filter wrapper
+    &.filter-wrapper {
+      height: auto;
+      padding-top: 26px;
+      legend {
+        font-size: 14px;
+        margin-left: 1px;
+        top: 8px;
+
+        a {
+          padding: 0;
+        }
+      }
+    }
+
+    // Fix legend padding issue
+    &:not(.filter-wrapper) {
+      padding-top: 55px !important;
+      legend {
+        padding: 0px 0px 10px 3px !important;
+      }
+      &.collapsible {
+        padding-top: 40px !important;
+        &.collapsed {
+          padding-top: 22px !important;
+        }
+        legend {
+          padding: 0 !important;
+        }
+      }
+      > legend > span {
+        font-size: 22px;
+        color: #2196F3;
+      }
+    }
+
+    // Adjust the padding around fieldset descriptions as it was too big
+    .fieldset-wrapper {
+      .fieldset-description {
+        padding: 0 0 15px 0;
+      }
+    }
+  }
+
+  a {
+    &.cke_combo_button {
+      padding: 0;
+    }
+    &.cke_button {
+      padding: 4px 6px;
+    }
+    // Making all button text white instead of grey, in line with other buttons
+    &.button {
+      &:link,
+      &:visited,
+      &:hover,
+      &:active {
+        color: white !important;
+        margin-right: 1em;
+        padding: 5px 18px;
+        margin-top: -2px;
+      }
+      .browse,
+      .edit {
+        &:link,
+        &:visited,
+        &:hover,
+        &:active {
+          color: white !important;
+          margin-right: 1em;
+          padding: 5px 18px;
+          margin-top: -2px;
+        }
+      }
+    }
+  }
+
+
+  .field-type-paragraphs {
+
+    .form-item > p {
+      display: none;
+    }
+
+    // This is terrible, but the only way to target the label above a paragraph add more button.
+    > div > div > div {
+      &:not(.overflow-fix) {
+        border: 1px solid #E0E0E0;
+        background: white;
+        border-top: 0;
+        padding-top: 2px;
+        margin-top: -8px;
+      }
+      > div {
+        &:not(.tabledrag-toggle-weight-wrapper):not(.messages) {
+          padding: 3px 3px 3px 3px;
+          background: white;
+          margin: 9px 5px 8px 33px;
+          display: inline-block;
+          border: 1px solid #E0E0E0 !important;
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+          border-radius: 3px;
+          text-align: right;
+          position: relative;
+
+          svg {
+            width: 18px;
+            color: #2196F3;
+            position: absolute;
+            left: -26px;
+            top: 9px;
+          }
+
+          input {
+            background: #2196f3;
+            margin-top: 0;
+          }
+          > div {
+            margin-right: 15px;
+            display: inline;
+            > label {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Provide a more compact experience for content blocks
+  .field-name-field-components {
+    tr {
+      td {
+        position: relative;
+        padding: 5px 5px 1px 5px;
+        &.field-multiple-drag {
+          padding: 0px;
+          width: 20px;
+          .handle {
+            padding: 8px;
+            margin: 0;
+            width: 8px;
+          }
+          a.tabledrag-handle {
+            padding-right: 0;
+            margin-left: -0.5em;
+          }
+        }
+
+        &:nth-of-type(2) {
+          > .form-wrapper:first-child {
+            display: none;
+          }
+          .ajax-new-content > .form-wrapper:first-child {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .form-actions {
+      margin: 5px 0;
+      input[value='Remove'] {
+        position: absolute;
+        right: -7px;
+        top: 9px;
+      }
+    }
+
+    .field-multiple-table {
+      &#field-components-values > thead {
+        th {
+          background: white;
+          label {
+            margin: 0;
+          }
+        }
+      }
+      fieldset {
+        margin-bottom: 5px;
+        padding-top: 35px !important;
+        &.filter-wrapper {
+          padding-top: 22px !important;
+        }
+        &:not(.filter-wrapper) {
+          &.collapsed {
+            padding-top: 8px !important;
+          }
+          > legend > span > a {
+            width: 95%;
+            font-size: 0.9em;
+          }
+
+          > .fieldset-wrapper > div + div.form-wrapper {
+            margin-top: 2em;
+          }
+        }
+        legend {
+          top: 5px;
+          width: 90%;
+        }
+        > legend > span {
+          width: 95%;
+          font-size: 0.9em;
+        }
+
+      }
+      .form-actions input {
+        height: auto;
+      }
+    }
+
+    .form-wrapper {
+      margin-bottom: 5px;
+    }
+
+    .paragraphs-item-type-para-content-text .field-name-field-body,
+    .field-name-field-reference-video,
+    .field-name-field-reference-publication,
+    .field-name-field-image,
+    .field-name-field-reference-service,
+    .field-name-field-reference-programs-and-ini,
+    .field-name-field-reference-statistic,
+    .field-name-field-reference-news,
+    .field-name-field-reference-contact,
+    .field-name-field-reference-conditions-and-d {
+      label {
+        display: none;
+      }
+    }
+    .field-name-field-link-external > div > div > label {
+      display: none;
+    }
+
+    .warning.tabledrag-changed {
+      display: none;
+    }
+  }
+
+  /* Notification that the site is in dual author mode */
+  .maintenance-notification {
+    border: 1px solid #940000;
+    background: #ffd4da;
+    color: black;
+    font-size: 1.2em;
+    padding: 26px;
+    max-width: 42em;
+    margin-bottom: 20px;
+    a {
+      color: #940000;
+      font-weight: bold;
+    }
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .title {
+      font-size: 1.5em;
+      color: #940000;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+  }
+
+  /* Fixing padding issues on fields with Media browser button. */
+  .media-widget {
+    .preview {
+      margin-right: 0px;
+    }
+    input.remove {
+      margin-left: 10px;
+      margin-right: 1em;
+    }
+  }
+
+  /* Fixing padding on media browser tabs */
+  #media-browser-tabset ul.tabs.primary li.ui-state-default {
+    padding-bottom: 0px;
+    a:link {
+      padding: 14px 20px;
+    }
+  }
+
+  /* Fix overlay inconsistencies */
+  .ui-widget-overlay, .cke_dialog_background_cover {
+    background: #aaaaaa;
+    background-color: #000000 !important;
+  }
+
+  /* Make ckeditor dialog buttons consistent */
+  .cke_dialog_footer_buttons a.cke_dialog_ui_button {
+    &.cke_dialog_ui_button_ok span {
+      color: white;
+    }
+    &:not(.cke_dialog_ui_button_ok) {
+      background-color: #aaaaaa;
+      span {
+        color: white;
+      }
+    }
+  }
+}
+
+/* Workbench changes */
+.page-admin-workbench .admin.my-workbench > div {
+  width: 100%;
+  &:first-child {
+    display: none;
+  }
+}

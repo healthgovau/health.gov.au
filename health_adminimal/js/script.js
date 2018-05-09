@@ -17,7 +17,7 @@
         // Add to dom.
         $('.field-name-field-components .tabledrag-toggle-weight-wrapper').first().once('collapse-all-link').append(' | ' + collapse);
         $('.field-name-field-components .tabledrag-toggle-weight-wrapper').first().once('expand-all-link').append(expand);
-        $('.field-name-field-components .paragraphs-add-more-submit').once('links').after(links);
+        //$('.field-name-field-components .paragraphs-add-more-submit').once('links').after(links);
 
         // Collapse handler.
         $('.collapse-all-link').once('collapse-all-link-handler').click(function (e) {

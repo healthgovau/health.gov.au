@@ -1,0 +1,221 @@
+/* font sizes override */
+body, input:not(#edit-module-filter-name), option, select, textarea {
+  font-size: 14px !important; }
+
+/* Layout checkboxes in 3 columns for long lists */
+@media screen and (min-width: 768px) {
+  #edit-field-related-health-topics .form-checkboxes,
+  #edit-field-reference-conditions-and-d .form-radios {
+    column-count: 3;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    max-width: 72em; }
+  /* Layout checkboxes in 2 columns for longish lists */
+  #edit-field-audience-life-stage-event-und.form-checkboxes {
+    column-count: 2;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    max-width: 44em; } }
+
+body.adminimal-skin-material {
+  /* Notification that the site is in dual author mode */
+  /* Fixing padding issues on fields with Media browser button. */
+  /* Fixing padding on media browser tabs */
+  /* Fix overlay inconsistencies */
+  /* Make ckeditor dialog buttons consistent */ }
+  body.adminimal-skin-material table tbody td fieldset legend a {
+    padding: 0px !important; }
+  body.adminimal-skin-material table.ui-datepicker-calendar tbody td a {
+    padding: .5em .6em; }
+  body.adminimal-skin-material table.ui-datepicker-calendar thead th {
+    color: black; }
+  body.adminimal-skin-material table.views-table tbody td a {
+    padding: 0 !important; }
+  body.adminimal-skin-material table.sticky-header {
+    display: none !important; }
+  body.adminimal-skin-material fieldset {
+    border: 1px solid #E0E0E0 !important; }
+    body.adminimal-skin-material fieldset.filter-wrapper {
+      height: auto;
+      padding-top: 26px; }
+      body.adminimal-skin-material fieldset.filter-wrapper legend {
+        font-size: 14px;
+        margin-left: 1px;
+        top: 8px; }
+        body.adminimal-skin-material fieldset.filter-wrapper legend a {
+          padding: 0; }
+    body.adminimal-skin-material fieldset:not(.filter-wrapper) {
+      padding-top: 55px !important; }
+      body.adminimal-skin-material fieldset:not(.filter-wrapper) legend {
+        padding: 0px 0px 10px 3px !important; }
+      body.adminimal-skin-material fieldset:not(.filter-wrapper).collapsible {
+        padding-top: 40px !important; }
+        body.adminimal-skin-material fieldset:not(.filter-wrapper).collapsible.collapsed {
+          padding-top: 22px !important; }
+        body.adminimal-skin-material fieldset:not(.filter-wrapper).collapsible legend {
+          padding: 0 !important; }
+      body.adminimal-skin-material fieldset:not(.filter-wrapper) > legend > span {
+        font-size: 22px;
+        color: #2196F3; }
+    body.adminimal-skin-material fieldset .fieldset-wrapper .fieldset-description {
+      padding: 0 0 15px 0; }
+  body.adminimal-skin-material a.cke_combo_button {
+    padding: 0; }
+  body.adminimal-skin-material a.cke_button {
+    padding: 4px 6px; }
+  body.adminimal-skin-material a.button:link, body.adminimal-skin-material a.button:visited, body.adminimal-skin-material a.button:hover, body.adminimal-skin-material a.button:active {
+    color: white !important;
+    margin-right: 1em;
+    padding: 5px 18px;
+    margin-top: -2px; }
+  body.adminimal-skin-material a.button .browse:link, body.adminimal-skin-material a.button .browse:visited, body.adminimal-skin-material a.button .browse:hover, body.adminimal-skin-material a.button .browse:active,
+  body.adminimal-skin-material a.button .edit:link,
+  body.adminimal-skin-material a.button .edit:visited,
+  body.adminimal-skin-material a.button .edit:hover,
+  body.adminimal-skin-material a.button .edit:active {
+    color: white !important;
+    margin-right: 1em;
+    padding: 5px 18px;
+    margin-top: -2px; }
+  body.adminimal-skin-material .field-type-paragraphs .form-item > p {
+    display: none; }
+  body.adminimal-skin-material .field-type-paragraphs > div > div > div:not(.overflow-fix) {
+    border: 1px solid #E0E0E0;
+    background: white;
+    border-top: 0;
+    padding-top: 2px;
+    margin-top: -8px; }
+  body.adminimal-skin-material .field-type-paragraphs > div > div > div > div:not(.tabledrag-toggle-weight-wrapper):not(.messages) {
+    padding: 3px 3px 3px 3px;
+    background: white;
+    margin: 9px 5px 8px 33px;
+    display: inline-block;
+    border: 1px solid #E0E0E0 !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+    border-radius: 3px;
+    text-align: right;
+    position: relative; }
+    body.adminimal-skin-material .field-type-paragraphs > div > div > div > div:not(.tabledrag-toggle-weight-wrapper):not(.messages) svg {
+      width: 18px;
+      color: #2196F3;
+      position: absolute;
+      left: -26px;
+      top: 9px; }
+    body.adminimal-skin-material .field-type-paragraphs > div > div > div > div:not(.tabledrag-toggle-weight-wrapper):not(.messages) input {
+      background: #2196f3;
+      margin-top: 0; }
+    body.adminimal-skin-material .field-type-paragraphs > div > div > div > div:not(.tabledrag-toggle-weight-wrapper):not(.messages) > div {
+      margin-right: 15px;
+      display: inline; }
+      body.adminimal-skin-material .field-type-paragraphs > div > div > div > div:not(.tabledrag-toggle-weight-wrapper):not(.messages) > div > label {
+        display: none; }
+  body.adminimal-skin-material .field-name-field-components tr td {
+    position: relative;
+    padding: 5px 5px 1px 5px; }
+    body.adminimal-skin-material .field-name-field-components tr td.field-multiple-drag {
+      padding: 0px;
+      width: 20px; }
+      body.adminimal-skin-material .field-name-field-components tr td.field-multiple-drag .handle {
+        padding: 8px;
+        margin: 0;
+        width: 8px; }
+      body.adminimal-skin-material .field-name-field-components tr td.field-multiple-drag a.tabledrag-handle {
+        padding-right: 0;
+        margin-left: -0.5em; }
+    body.adminimal-skin-material .field-name-field-components tr td:nth-of-type(2) > .form-wrapper:first-child {
+      display: none; }
+    body.adminimal-skin-material .field-name-field-components tr td:nth-of-type(2) .ajax-new-content > .form-wrapper:first-child {
+      display: none; }
+  body.adminimal-skin-material .field-name-field-components .form-actions {
+    margin: 5px 0; }
+    body.adminimal-skin-material .field-name-field-components .form-actions input[value='Remove'] {
+      position: absolute;
+      right: -7px;
+      top: 9px; }
+  body.adminimal-skin-material .field-name-field-components .field-multiple-table#field-components-values > thead th {
+    background: white; }
+    body.adminimal-skin-material .field-name-field-components .field-multiple-table#field-components-values > thead th label {
+      margin: 0; }
+  body.adminimal-skin-material .field-name-field-components .field-multiple-table fieldset {
+    margin-bottom: 5px;
+    padding-top: 35px !important; }
+    body.adminimal-skin-material .field-name-field-components .field-multiple-table fieldset.filter-wrapper {
+      padding-top: 22px !important; }
+    body.adminimal-skin-material .field-name-field-components .field-multiple-table fieldset:not(.filter-wrapper).collapsed {
+      padding-top: 8px !important; }
+    body.adminimal-skin-material .field-name-field-components .field-multiple-table fieldset:not(.filter-wrapper) > legend > span > a {
+      width: 95%;
+      font-size: 0.9em; }
+    body.adminimal-skin-material .field-name-field-components .field-multiple-table fieldset:not(.filter-wrapper) > .fieldset-wrapper > div + div.form-wrapper {
+      margin-top: 2em; }
+    body.adminimal-skin-material .field-name-field-components .field-multiple-table fieldset legend {
+      top: 5px;
+      width: 90%; }
+    body.adminimal-skin-material .field-name-field-components .field-multiple-table fieldset > legend > span {
+      width: 95%;
+      font-size: 0.9em; }
+  body.adminimal-skin-material .field-name-field-components .field-multiple-table .form-actions input {
+    height: auto; }
+  body.adminimal-skin-material .field-name-field-components .form-wrapper {
+    margin-bottom: 5px; }
+  body.adminimal-skin-material .field-name-field-components .paragraphs-item-type-para-content-text .field-name-field-body label,
+  body.adminimal-skin-material .field-name-field-components .field-name-field-reference-video label,
+  body.adminimal-skin-material .field-name-field-components .field-name-field-reference-publication label,
+  body.adminimal-skin-material .field-name-field-components .field-name-field-image label,
+  body.adminimal-skin-material .field-name-field-components .field-name-field-reference-service label,
+  body.adminimal-skin-material .field-name-field-components .field-name-field-reference-programs-and-ini label,
+  body.adminimal-skin-material .field-name-field-components .field-name-field-reference-statistic label,
+  body.adminimal-skin-material .field-name-field-components .field-name-field-reference-news label,
+  body.adminimal-skin-material .field-name-field-components .field-name-field-reference-contact label,
+  body.adminimal-skin-material .field-name-field-components .field-name-field-reference-conditions-and-d label {
+    display: none; }
+  body.adminimal-skin-material .field-name-field-components .field-name-field-link-external > div > div > label {
+    display: none; }
+  body.adminimal-skin-material .field-name-field-components .warning.tabledrag-changed {
+    display: none; }
+  body.adminimal-skin-material .maintenance-notification {
+    border: 1px solid #940000;
+    background: #ffd4da;
+    color: black;
+    font-size: 1.2em;
+    padding: 26px;
+    max-width: 42em;
+    margin-bottom: 20px; }
+    body.adminimal-skin-material .maintenance-notification a {
+      color: #940000;
+      font-weight: bold; }
+    body.adminimal-skin-material .maintenance-notification p:last-of-type {
+      margin-bottom: 0; }
+    body.adminimal-skin-material .maintenance-notification .title {
+      font-size: 1.5em;
+      color: #940000;
+      font-weight: bold; }
+    body.adminimal-skin-material .maintenance-notification .subtitle {
+      font-size: 1.3em;
+      font-weight: bold; }
+  body.adminimal-skin-material .media-widget .preview {
+    margin-right: 0px; }
+  body.adminimal-skin-material .media-widget input.remove {
+    margin-left: 10px;
+    margin-right: 1em; }
+  body.adminimal-skin-material #media-browser-tabset ul.tabs.primary li.ui-state-default {
+    padding-bottom: 0px; }
+    body.adminimal-skin-material #media-browser-tabset ul.tabs.primary li.ui-state-default a:link {
+      padding: 14px 20px; }
+  body.adminimal-skin-material .ui-widget-overlay, body.adminimal-skin-material .cke_dialog_background_cover {
+    background: #aaaaaa;
+    background-color: #000000 !important; }
+  body.adminimal-skin-material .cke_dialog_footer_buttons a.cke_dialog_ui_button.cke_dialog_ui_button_ok span {
+    color: white; }
+  body.adminimal-skin-material .cke_dialog_footer_buttons a.cke_dialog_ui_button:not(.cke_dialog_ui_button_ok) {
+    background-color: #aaaaaa; }
+    body.adminimal-skin-material .cke_dialog_footer_buttons a.cke_dialog_ui_button:not(.cke_dialog_ui_button_ok) span {
+      color: white; }
+
+/* Workbench changes */
+.page-admin-workbench .admin.my-workbench > div {
+  width: 100%; }
+  .page-admin-workbench .admin.my-workbench > div:first-child {
+    display: none; }
+
+/*# sourceMappingURL=customisations.css.map */

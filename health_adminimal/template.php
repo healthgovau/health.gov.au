@@ -261,6 +261,12 @@ function health_adminimal_field_widget_form_alter(&$element, &$form_state, $cont
   if (isset($element['#field_name']) && $element['#field_name'] == 'field_contact_telephone') {
     $element['#element_validate'][] = '_health_adminimal_telephone_validator';
   }
+
+  // Change the add button label and also add an icon.
+  if (isset($element['#instance']['widget']['module']) && $element['#instance']['widget']['module'] == 'paragraphs') {
+    $element['add_more']['add_more']['#value'] = t('Add');
+    $element['add_more']['type']['#prefix'] = '<svg aria-hidden="true" data-prefix="fas" data-icon="plus-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-plus-circle fa-w-16 fa-3x"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z" class=""></path></svg>';
+  }
 }
 
 /**
