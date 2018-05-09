@@ -162,6 +162,10 @@
       // Apply chosen using the new version of chosen.
       $('.chosen-enable').chosen();
 
+      // Make sure users can only use the HTML Table format for table paragraphs.
+      var formats = $('.paragraphs-item-type-content-table .field-name-field-body .filter-list');
+      formats.val('html_table'); // Switch to that format for new tables.
+      formats.hide();
     }
   };
 
