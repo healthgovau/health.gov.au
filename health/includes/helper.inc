@@ -16,6 +16,7 @@ function health_get_friendly_mime($mimetype) {
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document' => '<abbr title="Microsoft Word document">Word</abbr>',
     'application/msword' => '<abbr title="Microsoft Word document">Word</abbr>',
     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' => '<abbr title="Microsoft Excel document">Excel</abbr>',
+    'application/vnd.openxmlformats-officedocument.presentationml.presentation' => '<abbr title="Microsoft PowerPoint document">PowerPoint</abbr>',
     'text/plain' => 'plain text',
     'image/jpeg' => '<abbr title="Joint Photographic Experts Group">JPEG</abbr>',
     'image/png' => '<abbr title="Portable Network Graphics">PNG</abbr>',
