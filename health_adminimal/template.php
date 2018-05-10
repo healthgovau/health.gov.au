@@ -67,9 +67,9 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
     $form['field_related_contact']['#access'] = FALSE;
   }
 
-  // Add character limit to 200 to summary field.
+  // Add character limit to 300 to summary field.
   if ($form['field_summary']) {
-    $form['field_summary'][LANGUAGE_NONE][0]['value']['#attributes']['maxlength'] = 200;
+    $form['field_summary'][LANGUAGE_NONE][0]['value']['#attributes']['maxlength'] = 300;
   }
 }
 
@@ -341,8 +341,10 @@ function health_adminimal_form_element($variables) {
       // Help text.
       // Add description back in if this is a text area.
       if ($element['#type'] == 'textarea') {
-        $info = field_info_instance('node', 'field_summary', 'contact');
-        $element['#description'] = $info['description'];
+        if (key_exists('#entity_type', $element)) {
+          $info = field_info_instance($element['#entity_type'], $element['#field_name'], $element['#bundle']);
+          $element['#description'] = $info['description'];
+        }
       }
       if (!empty($element['#description'])) {
         $output .= '<div class="description">' . $element['#description'] . "</div>\n";
