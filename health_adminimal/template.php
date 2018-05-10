@@ -67,9 +67,9 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
     $form['field_related_contact']['#access'] = FALSE;
   }
 
-  // Add character limit to 200 to summary field.
+  // Add character limit to 300 to summary field.
   if ($form['field_summary']) {
-    $form['field_summary'][LANGUAGE_NONE][0]['value']['#attributes']['maxlength'] = 200;
+    $form['field_summary'][LANGUAGE_NONE][0]['value']['#attributes']['maxlength'] = 300;
   }
 }
 
