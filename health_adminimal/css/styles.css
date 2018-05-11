@@ -112,20 +112,90 @@ body.adminimal-skin-material {
   .cke_dialog_footer_buttons a.cke_dialog_ui_button:not(.cke_dialog_ui_button_ok) span {
     color: white; }
 
-.field-name-field-file .media-widget .media-item {
+.media-item.media-type__document {
   padding: 0;
   background: transparent;
   border: none;
   box-shadow: none; }
-  .field-name-field-file .media-widget .media-item .file a {
+  .media-item.media-type__document .file a {
     padding: 0;
     margin-top: -5px;
     font-size: 16px;
     display: inline-block; }
-  .field-name-field-file .media-widget .media-item .file .file-icon {
-    display: inline-block; }
-  .field-name-field-file .media-widget .media-item .label-wrapper {
+  .media-item.media-type__document .file svg {
+    width: 30px; }
+  .media-item.media-type__document .label-wrapper {
     display: none; }
+
+.media-item.media-type__image {
+  background: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+  max-width: 152px;
+  overflow: hidden; }
+  .media-item.media-type__image .media-thumbnail__image {
+    display: inline-block;
+    background: #eeeeee;
+    position: relative;
+    border: 1px solid #CCCCCC;
+    width: 150px;
+    height: 150px; }
+  .media-item.media-type__image .label-wrapper {
+    background: none;
+    position: relative;
+    box-shadow: none; }
+    .media-item.media-type__image .label-wrapper label {
+      margin: 0;
+      padding: 0 5px;
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 1.2em; }
+  .media-item.media-type__image img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+
+.media-list-thumbnails li {
+  margin: 0 10px 3px 0; }
+
+.media-list-thumbnails .media-type__document {
+  padding: 5px;
+  background: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+  max-width: 152px;
+  height: 200px;
+  overflow: hidden;
+  border: 1px solid #CCCCCC; }
+  .media-list-thumbnails .media-type__document .media-thumbnail__image {
+    display: inline-block;
+    background: #EEEEEE;
+    position: relative;
+    border: 1px solid #CCCCCC;
+    width: 150px;
+    height: 150px; }
+    .media-list-thumbnails .media-type__document .media-thumbnail__image .file svg {
+      height: 100px;
+      width: 100px;
+      margin: 25px;
+      color: lightgrey; }
+    .media-list-thumbnails .media-type__document .media-thumbnail__image .file a {
+      display: none; }
+  .media-list-thumbnails .media-type__document .label-wrapper {
+    display: block;
+    background: none;
+    position: relative;
+    box-shadow: none; }
+    .media-list-thumbnails .media-type__document .label-wrapper label {
+      margin: 0;
+      padding: 0 5px;
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 1.2em; }
+
+.media-list-thumbnails .media-type__image {
+  height: 200px; }
 
 .maintenance-notification {
   border: 1px solid #940000;
@@ -331,10 +401,6 @@ body.adminimal-skin-material .field-name-field-components .paragraphs-item-type-
 body.adminimal-skin-material .field-name-field-publication-files .paragraphs-item-type-document .field-name-field-resource-file-pages label,
 body.adminimal-skin-material .field-name-field-publication-files .paragraphs-item-type-document .field-name-field-file label {
   font-size: 18px; }
-
-body.adminimal-skin-material .field-name-field-components .media-thumbnail .label-wrapper label,
-body.adminimal-skin-material .field-name-field-publication-files .media-thumbnail .label-wrapper label {
-  font-size: 14px; }
 
 body.adminimal-skin-material .field-name-field-components .warning.tabledrag-changed,
 body.adminimal-skin-material .field-name-field-publication-files .warning.tabledrag-changed {

@@ -44,7 +44,7 @@
 
       // Content
       legendSummary('.paragraphs-item-type-para-content-text', 'Text', 'textarea');
-      legendSummary('.paragraphs-item-type-para-content-image', 'Image', 'img');
+      legendSummary('.paragraphs-item-type-para-content-image', 'Image', '.media-item');
       legendSummary('.paragraphs-item-type-para-content-external-link', 'External link', 'input');
 
       // Landing pages
@@ -65,7 +65,7 @@
 
       // Publications
       legendSummary('.paragraphs-item-type-documents', 'Part', '.field-name-field-resource-file-title input');
-      legendSummary('.paragraphs-item-type-document', 'File', 'img');
+      //legendSummary('.paragraphs-item-type-document', 'File', '.media-item');
       //
       //
 
@@ -107,15 +107,31 @@
         $(paraSelector).each(function () {
           var summary = '';
           if ($(this).find(inputSelector).length) {
-            if (inputSelector == 'img') {
-              var alt = $(this).find(inputSelector).attr('alt');
-              if (alt == '') {
-                alt = $(this).find(inputSelector).parents('.media-item').attr('title');
+
+            // Media browser preview
+            if (inputSelector === '.media-item') {
+
+              // File
+              if ($(this).find(inputSelector).hasClass('media-type__file')) {
+                var label = $(this).find(inputSelector).find('a').text();
+                label += convert_mime($(this).find(inputSelector).find('img').attr('title'));
+                summary = createSummary(label, initialText);
+
+              // Image
+              } else if ($(this).find(inputSelector).hasClass('media-type__image')) {
+                var alt = $(this).find(inputSelector).attr('title');
+                if (alt === '') {
+                  alt = $(this).find(inputSelector).find('img').attr('alt');
+                }
+                alt += ' (Image)';
+                summary = createSummary(alt, initialText);
               }
-              summary = createSummary(alt, initialText);
+
             } else if (inputSelector.indexOf('select') !== -1) {
               var value = $(this).find(inputSelector).first().find(':selected').text();
-              if (value === '- Select a value -' || value === '- None -') { value = '' }
+              if (value === '- Select a value -' || value === '- None -') {
+                value = ''
+              }
               summary = createSummary(value, initialText);
             } else {
               summary = createSummary($(this).find(inputSelector).val(), initialText);
@@ -148,7 +164,11 @@
                 alt = $(this).find(inputSelector).parents('.media-item').attr('title');
               }
               summary = createSummary(alt, initialText);
-            } if (inputSelector.indexOf('select') !== -1) {
+            } else if (inputSelector.indexOf('.file') !== -1) {
+              var label = $(this).find(inputSelector).text();
+              label += convert_mime($(this).find(inputSelector).attr('type'));
+              summary = createSummary(label, initialText);
+            } else if (inputSelector.indexOf('select') !== -1) {
               summary = createSummary($(this).find('option:selected').text(), initialText);
             } else {
               summary = createSummary($(this).val(), initialText);
@@ -172,8 +192,8 @@
         if (text == '') {
           return initialText;
         }
-        if (text.length > 75) {
-          return initialText + ': ' + strip(text).replace(/(\(\d+\))/, '').substr(0, 75) + '…';
+        if (text.length > 100) {
+          return initialText + ': ' + strip(text).replace(/(\(\d+\))/, '').substr(0, 100) + '…';
         } else {
           return initialText + ': ' + strip(text).replace(/(\(\d+\))/, '');
         }
@@ -190,6 +210,30 @@
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || "";
       }
+
+      function convert_mime(type) {
+        switch(type) {
+          case 'application/pdf':
+            return ' (PDF)';
+          case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+          case 'application/msword':
+            return ' (Word)';
+          case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
+            return ' (Excel)';
+          case 'application/vnd.openxmlformats-officedocument.presentationml.presentation':
+            return ' (Powerpoint)';
+          case 'text/plain':
+            return ' (Text)';
+          case 'image/jpeg':
+            return ' (JPG)';
+          case 'image/png':
+            return ' (PNG)';
+          case 'image/gif':
+            return ' (GIF)';
+        }
+        return '';
+      }
+
 
       // Apply chosen using the new version of chosen.
       $('.chosen-enable').chosen();
