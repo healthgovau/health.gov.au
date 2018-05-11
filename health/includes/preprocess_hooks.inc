@@ -598,7 +598,7 @@ function health_preprocess_field(&$variables) {
     // Add link wrapper and link to the image field.
     if ($variables['element']['#field_name'] == 'field_image_featured' &&
       $variables['element']['#view_mode'] == 'full' &&
-      isset($variables['element']['#object']->field_publication_[LANGUAGE_NONE][0])) {
+      isset($variables['element']['#object']->field_publication_files[LANGUAGE_NONE][0])) {
       $variables['items'][0]['#prefix'] = '<div class="link-wrapper"><a href="#" class="link-wrapper">';
       $variables['items'][0]['#suffix'] = '</a></div><div class="go-to-download-link rs_preserve">Go to <a href="#" class="link-wrapper" role="button">downloads</a></div>';
     }
