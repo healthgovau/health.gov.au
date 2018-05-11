@@ -7,67 +7,88 @@
     attach: function(context) {
 
       // Collapse and expand buttons for field components paragraph blocks  .
-      if (!$('body').hasClass('node-type-health-topic')) {
-        // Create buttons.
-        var collapse = '<a href="#" class="collapse-all-link">Collapse all</a> | ';
-        var expand = '<a href="#" class="expand-all-link">Expand all</a>';
+      // Create buttons.
+      var collapse = '<a href="#" class="collapse-all-link">Collapse all</a> | ';
+      var expand = '<a href="#" class="expand-all-link">Expand all</a>';
 
-        var links = '<div>' + collapse + expand + '</div>';
+      var links = '<div>' + collapse + expand + '</div>';
 
-        // Add to dom.
-        $('.field-name-field-components .tabledrag-toggle-weight-wrapper').first().once('collapse-all-link').append(' | ' + collapse);
-        $('.field-name-field-components .tabledrag-toggle-weight-wrapper').first().once('expand-all-link').append(expand);
-        //$('.field-name-field-components .paragraphs-add-more-submit').once('links').after(links);
+      // Add to dom.
+      $('.field-name-field-components .tabledrag-toggle-weight-wrapper').first().once('collapse-all-link').append(' | ' + collapse);
+      $('.field-name-field-components .tabledrag-toggle-weight-wrapper').first().once('expand-all-link').append(expand);
 
-        // Collapse handler.
-        $('.collapse-all-link').once('collapse-all-link-handler').click(function (e) {
-          e.preventDefault();
-          $('.field-name-field-components fieldset:not(.collapsed) .fieldset-legend a').trigger('click');
-        });
-        // Expand handler.
-        $('.expand-all-link').once('expand-all-link-handler').click(function (e) {
-          e.preventDefault();
-          $('.field-name-field-components fieldset.collapsed:not(.filter-wrapper) .fieldset-legend a').trigger('click');
-        });
+      // Collapse handler.
+      $('.collapse-all-link').once('collapse-all-link-handler').click(function (e) {
+        e.preventDefault();
+        $('.field-name-field-components fieldset:not(.collapsed) .fieldset-legend a').trigger('click');
+      });
+      // Expand handler.
+      $('.expand-all-link').once('expand-all-link-handler').click(function (e) {
+        e.preventDefault();
+        $('.field-name-field-components fieldset.collapsed:not(.filter-wrapper) .fieldset-legend a').trigger('click');
+      });
 
-        // Add a summary to the legend of what content is in a block.
-        legendSummary('.paragraphs-item-type-para-reference-video', 'Video', 'input[type="text"]');
-        legendSummary('.paragraphs-item-type-para-reference-publication', 'Publication', 'input[type="text"]');
-        legendSummary('.paragraphs-item-type-para-reference-service', 'Service', 'input[type="text"]');
-        legendSummary('.paragraphs-item-type-para-reference-campaign', 'Campaign', 'input[type="text"]');
-        legendSummary('.paragraphs-item-type-para-reference-conditions-and-di', 'Conditions and diseases', 'input[type="text"]');
-        legendSummary('.paragraphs-item-type-para-reference-contact', 'Contact', 'input[type="text"]');
-        legendSummary('.paragraphs-item-type-para-reference-event', 'Event', 'input[type="text"]');
-        legendSummary('.paragraphs-item-type-para-reference-program-and-initi', 'Programs and initiatives', 'input[type="text"]');
-        legendSummary('.paragraphs-item-type-para-reference-news', 'News', 'input[type="text"]');
-        legendSummary('.paragraphs-item-type-para-reference-health-alert', 'Health alert', 'input[type="text"]');
-        legendSummary('.paragraphs-item-type-reference-statistic', 'Statistic', 'input[type="text"]');
+      // Add a summary to the legend of what content is in a block.
+      // References
+      legendSummary('.paragraphs-item-type-para-reference-video', 'Video', 'input[type="text"]');
+      legendSummary('.paragraphs-item-type-para-reference-publication', 'Publication', 'input[type="text"]');
+      legendSummary('.paragraphs-item-type-para-reference-service', 'Service', 'input[type="text"]');
+      legendSummary('.paragraphs-item-type-para-reference-campaign', 'Campaign', 'input[type="text"]');
+      legendSummary('.paragraphs-item-type-para-reference-conditions-and-di', 'Conditions and diseases', 'input[type="text"]');
+      legendSummary('.paragraphs-item-type-para-reference-contact', 'Contact', 'input[type="text"]');
+      legendSummary('.paragraphs-item-type-para-reference-event', 'Event', 'input[type="text"]');
+      legendSummary('.paragraphs-item-type-para-reference-program-and-initi', 'Programs and initiatives', 'input[type="text"]');
+      legendSummary('.paragraphs-item-type-para-reference-news', 'News', 'input[type="text"]');
+      legendSummary('.paragraphs-item-type-para-reference-health-alert', 'Health alert', 'input[type="text"]');
+      legendSummary('.paragraphs-item-type-reference-statistic', 'Statistic', 'input[type="text"]');
 
-        legendSummary('.paragraphs-item-type-para-content-text', 'Text', 'textarea');
-        legendSummary('.paragraphs-item-type-para-content-image', 'Image', 'img');
-        legendSummary('.paragraphs-item-type-para-content-external-link', 'External link', 'input');
+      // Content
+      legendSummary('.paragraphs-item-type-para-content-text', 'Text', 'textarea');
+      legendSummary('.paragraphs-item-type-para-content-image', 'Image', 'img');
+      legendSummary('.paragraphs-item-type-para-content-external-link', 'External link', 'input');
 
-        // If collapsed already has saved states in it, restore those states.
-        if (collapsed.length > 0) {
-          $('.field-name-field-components .field-multiple-table tbody tr').each(function (index) {
-            if (collapsed[index] == true) {
-              $(this).find('td > fieldset').addClass('collapsed');
-            }
-          });
-        }
+      // Landing pages
+      legendSummary('.paragraphs-item-type-para-view', 'Listing', '.field-name-field-title input');
+      legendSummary('.paragraphs-item-type-featured-videos', 'Featured video', 'select:not(".filter-list")');
+      legendSummary('.paragraphs-item-type-featured-resource', 'Featured resource', 'select:not(".filter-list")');
+      legendSummary('.paragraphs-item-type-featured-news-events', 'Featured news', 'select:not(".filter-list")');
+      legendSummary('.paragraphs-item-type-para-block', 'Block', '.field-name-field-title input, .field-name-field-para-block-id input');
+      legendSummary('.paragraphs-item-type-two-columns', 'Two columns', '.field-name-field-pbundle-title input');
+      legendSummary('.paragraphs-item-type-para-link', 'Link', 'input[type="text"]');
+      legendSummary('.paragraphs-item-type-para-links', 'Links', '.field-name-field-pbundle-title input');
+      legendSummary('.paragraphs-item-type-para-taxonomies', 'Taxonomies', '.field-name-field-pbundle-title input');
+      legendSummary('.paragraphs-item-type-para-taxonomy', 'Taxonomy', '.field-name-field-related-term input');
+      legendSummary('.paragraphs-item-type-para-statistics', 'Statistics', '.field-name-field-title input');
 
-        // When the add more button is clicked, save the current state of the collapsed sections.
-        $('.paragraphs-add-more-submit').once('add-another-paragraph').mousedown(function() {
-          collapsed = [];
-          $('.field-name-field-components .field-multiple-table tbody tr').each(function (index) {
-            if ($(this).find('td fieldset').first().hasClass('collapsed')) {
-              collapsed[index] = true;
-            } else {
-              collapsed[index] = false;
-            }
-          });
+      //paragraphs-item-type-para-contact
+      //field-name-field-related-term
+
+      // Publications
+      legendSummary('.paragraphs-item-type-documents', 'Part', '.field-name-field-resource-file-title input');
+      legendSummary('.paragraphs-item-type-document', 'File', 'img');
+      //
+      //
+
+      // If collapsed already has saved states in it, restore those states.
+      if (collapsed.length > 0) {
+        $('.field-name-field-components .field-multiple-table tbody tr').each(function (index) {
+          if (collapsed[index] == true) {
+            $(this).find('td > fieldset').addClass('collapsed');
+          }
         });
       }
+
+      // When the add more button is clicked, save the current state of the collapsed sections.
+      $('.paragraphs-add-more-submit').once('add-another-paragraph').mousedown(function() {
+        collapsed = [];
+        $('.field-name-field-components .field-multiple-table tbody tr').each(function (index) {
+          if ($(this).find('td fieldset').first().hasClass('collapsed')) {
+            collapsed[index] = true;
+          } else {
+            collapsed[index] = false;
+          }
+        });
+      });
 
       /**
        * Generate a summary of the content in a block and put it in the legend.
@@ -84,7 +105,7 @@
 
         // Update the summary on load.
         $(paraSelector).each(function () {
-          var inputElement = $(this).find(inputSelector), summary = '';
+          var summary = '';
           if ($(this).find(inputSelector).length) {
             if (inputSelector == 'img') {
               var alt = $(this).find(inputSelector).attr('alt');
@@ -92,6 +113,10 @@
                 alt = $(this).find(inputSelector).parents('.media-item').attr('title');
               }
               summary = createSummary(alt, initialText);
+            } else if (inputSelector.indexOf('select') !== -1) {
+              var value = $(this).find(inputSelector).first().find(':selected').text();
+              if (value === '- Select a value -' || value === '- None -') { value = '' }
+              summary = createSummary(value, initialText);
             } else {
               summary = createSummary($(this).find(inputSelector).val(), initialText);
             }
@@ -108,7 +133,7 @@
               if (evt.editor.name == id) {
                 evt.editor.on('blur', function (evt2) {
                   var summary = createSummary(evt2.editor.getData(), initialText);
-                  $('#' + id).parents('fieldset').first().find('legend a').first().text(summary);
+                  $('#' + id).parents('fieldset').first().find('legend a').first().html(summary);
                 });
               }
             });
@@ -116,13 +141,19 @@
         } else {
           // If the input changes, update the summary.
           $(paraSelector + ' ' + inputSelector).once(initialText).blur(function () {
-            var inputElement = $(this), summary = '';
+            var summary = '';
             if (inputSelector == 'img') {
-              summary = createSummary($(this).attr('alt'), initialText);
+              var alt = $(this).find(inputSelector).attr('alt');
+              if (alt == '') {
+                alt = $(this).find(inputSelector).parents('.media-item').attr('title');
+              }
+              summary = createSummary(alt, initialText);
+            } if (inputSelector.indexOf('select') !== -1) {
+              summary = createSummary($(this).find('option:selected').text(), initialText);
             } else {
               summary = createSummary($(this).val(), initialText);
             }
-            $(this).parents(paraSelector).find('legend a').text(summary);
+            $(this).parents(paraSelector).find('legend a').first().html(summary);
           });
         }
       }
@@ -137,11 +168,12 @@
        * @returns string
        */
       function createSummary(text, initialText) {
+        initialText = '<strong>' + initialText + '</strong>';
         if (text == '') {
           return initialText;
         }
-        if (text.length > 50) {
-          return initialText + ': ' + strip(text).replace(/(\(\d+\))/, '').substr(0, 50) + '…';
+        if (text.length > 75) {
+          return initialText + ': ' + strip(text).replace(/(\(\d+\))/, '').substr(0, 75) + '…';
         } else {
           return initialText + ': ' + strip(text).replace(/(\(\d+\))/, '');
         }
@@ -161,6 +193,18 @@
 
       // Apply chosen using the new version of chosen.
       $('.chosen-enable').chosen();
+
+      // Add some placeholder text.
+      $('.form-item-title input').attr('placeholder', 'Enter a title');
+
+      // Remove mandatory from empty labels.
+      // We would do this in the template override, but forms_accessible is such a terrible module that the override doesn't work
+      // https://www.drupal.org/project/accessible_forms/issues/2971863
+      $('label').each(function() {
+        if ($(this).text().trim() === '(mandatory)') {
+          $(this).hide();
+        }
+      });
 
     }
   };

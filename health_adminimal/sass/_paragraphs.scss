@@ -1,0 +1,227 @@
+body.adminimal-skin-material {
+
+  .field-type-paragraphs {
+
+    margin-top: 1.5em;
+
+    .form-item > p {
+      display: none;
+    }
+
+    // This is terrible, but the only way to target the label above a paragraph add more button.
+    > div > div > div {
+      &:not(.overflow-fix) {
+        border: 1px solid #E0E0E0;
+        background: white;
+        margin-top: -1px;
+      }
+      > div {
+        &:not(.tabledrag-toggle-weight-wrapper):not(.messages) {
+          padding: 3px 3px 3px 3px;
+          background: white;
+          margin: 7px 5px 8px 33px;
+          display: inline-block;
+          border: 1px solid #E0E0E0 !important;
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+          border-radius: 3px;
+          text-align: right;
+          position: relative;
+
+          svg {
+            width: 18px;
+            color: #2196F3;
+            position: absolute;
+            left: -26px;
+            top: 9px;
+          }
+
+          input {
+            background: #2196f3;
+            margin-top: 0;
+          }
+
+          .ajax-progress-throbber {
+            position: absolute;
+            right: -50px;
+            top: 5px;
+          }
+
+          > div {
+            margin-right: 15px;
+            display: inline;
+            > label {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Provide a more compact experience for content blocks
+  .field-name-field-components,
+  .field-name-field-publication-files {
+    tr {
+      td {
+        position: relative;
+        padding: 5px 5px 1px 5px;
+        &.field-multiple-drag {
+          padding: 0px;
+          width: 20px;
+          .handle {
+            padding: 8px;
+            margin: 0;
+            width: 8px;
+          }
+          a.tabledrag-handle {
+            padding-right: 0;
+            margin-left: -0.5em;
+          }
+        }
+
+        &:nth-of-type(2) {
+          > .form-wrapper:first-child {
+            display: none;
+          }
+          .ajax-new-content > .form-wrapper:first-child {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .form-actions {
+      margin: 5px 0;
+      input[value='Remove'] {
+        position: absolute;
+        right: -7px;
+        top: 9px;
+      }
+
+      .ajax-progress-throbber {
+        position: absolute;
+        top: 13px;
+        right: 105px;
+      }
+    }
+
+    .field-multiple-table {
+
+      > thead {
+        th {
+          padding: 5px 11px 0 11px;
+        }
+      }
+
+      fieldset {
+        margin-bottom: 5px;
+        padding-top: 35px !important;
+        &.filter-wrapper {
+          padding-top: 22px !important;
+        }
+        &:not(.filter-wrapper) {
+          &.collapsed {
+            padding-top: 8px !important;
+          }
+          > legend > span > a {
+            width: 95%;
+            font-size: 0.9em;
+          }
+
+          > .fieldset-wrapper > div + div.form-wrapper {
+            //margin-top: 2em;
+          }
+        }
+        legend {
+          top: 5px;
+          width: 90%;
+        }
+        > legend > span {
+          width: 95%;
+          font-size: 0.9em;
+        }
+
+      }
+      .form-actions input {
+        height: auto;
+      }
+
+      .tabledrag-toggle-weight-wrapper {
+        margin-bottom: 0;
+        a {
+          padding: 0;
+        }
+      }
+    }
+
+    .form-wrapper {
+      margin-bottom: 5px;
+    }
+
+    .paragraphs-item-type-para-content-text .field-name-field-body,
+    .field-name-field-reference-video,
+    .field-name-field-reference-publication,
+    .field-name-field-image,
+    .field-name-field-reference-service,
+    .field-name-field-reference-programs-and-ini,
+    .field-name-field-reference-statistic,
+    .field-name-field-reference-news,
+    .field-name-field-reference-contact,
+    .field-name-field-reference-conditions-and-d,
+    .field-name-field-related,
+    .field-name-field-topic-featured-resource {
+      label {
+        display: none;
+      }
+    }
+
+    // Paragraph title field
+    .field-name-field-pbundle-title,
+    .field-name-field-title {
+      label {
+        display: inline;
+      }
+      input {
+        font-size: 18px;
+        font-weight: normal;
+        margin-left: 15px;
+        margin-top: 20px;
+        &::placeholder {
+          color: lightgrey;
+        }
+      }
+    }
+
+    // Files
+    .paragraphs-item-type-document {
+      .field-name-field-resource-file-pages,
+      .field-name-field-file {
+        label {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .media-thumbnail {
+      .label-wrapper {
+        label {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .warning.tabledrag-changed {
+      display: none;
+    }
+
+    .ajax-progress {
+      .message {
+        display: none;
+      }
+      .throbber {
+
+      }
+    }
+  }
+
+}

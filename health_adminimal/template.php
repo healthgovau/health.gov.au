@@ -252,6 +252,7 @@ function _health_adminimal_prepare_filename($name) {
  * @param $context
  */
 function health_adminimal_field_widget_form_alter(&$element, &$form_state, $context) {
+
   // Add email validator to email paragraph.
   if (isset($element['#field_name']) && $element['#field_name'] == 'field_contact_email') {
     $element['#element_validate'][] = '_health_adminimal_email_validator';

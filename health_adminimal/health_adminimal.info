@@ -3,7 +3,7 @@ description = Health customisations to the Adminimal theme.
 core = 7.x
 base theme = adminimal
 
-stylesheets[all][] = css/customisations.css
+stylesheets[all][] = css/styles.css
 
 scripts[] = js/script.js
 

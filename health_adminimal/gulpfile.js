@@ -17,11 +17,12 @@ options.rootPath = {
 options.theme = {
   root  : options.rootPath.theme,
   css   : options.rootPath.theme + 'css/',
-  sass  : options.rootPath.theme + 'sass/',
+  sass  : options.rootPath.theme + 'sass/'
 };
 
 var sassFiles = [
   options.theme.sass + '**/*.scss',
+  '!' + options.theme.sass + '**/_*.scss',
 ];
 
 // Set the URL used to access the Drupal website under development. This will

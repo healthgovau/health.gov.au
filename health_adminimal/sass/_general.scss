@@ -1,0 +1,171 @@
+
+
+/* Layout checkboxes in 3 columns for long lists */
+@media screen and (min-width: 768px) {
+  #edit-field-related-health-topics .form-checkboxes,
+  #edit-field-reference-conditions-and-d .form-radios {
+    column-count: 3;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    max-width: 72em;
+  }
+
+  /* Layout checkboxes in 2 columns for longish lists */
+  #edit-field-audience-life-stage-event-und.form-checkboxes {
+    column-count: 2;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    max-width: 44em;
+  }
+}
+
+body.adminimal-skin-material {
+
+  // Font sizes override
+  font-size: 14px;
+  input, option, select, textarea {
+    font-size: 14px;
+  }
+
+  .fieldset-wrapper {
+    label {
+      margin-top: 1.5em;
+    }
+    > div:first-of-type {
+      label {
+        margin-top: 1em;
+      }
+    }
+    th > label {
+      margin-top: 0;
+    }
+  }
+
+
+
+
+  // Tables
+  table {
+    tbody {
+      // Fixing issues with styles being applied to links inside a table (paragraph)
+      td fieldset legend a {
+        padding: 0px !important;
+      }
+    }
+
+    // Pop up calendar
+    &.ui-datepicker-calendar {
+      // Fix calendar popup appearing outside its container.
+      tbody td a {
+        padding: .5em .6em;
+      }
+      //Calendar popup days easier to read
+      thead th {
+        color: black;
+      }
+    }
+
+    // Remove extra padding around links inside list tables.
+    &.views-table tbody td a {
+      padding: 0 !important;
+    }
+
+    &.sticky-header {
+      display: none !important;
+    }
+  }
+
+  fieldset {
+
+    border: 1px solid #E0E0E0 !important;
+
+    // Formatting information filter wrapper
+    &.filter-wrapper {
+      height: auto;
+      padding-top: 26px;
+      white-space: normal !important;
+      legend {
+        font-size: 14px;
+        margin-left: 1px;
+        top: 8px;
+
+        a {
+          padding: 0;
+        }
+      }
+      label {
+        font-size: 14px;
+        font-weight: normal;
+      }
+    }
+
+    // Fix legend padding issue
+    &:not(.filter-wrapper) {
+      padding-top: 55px !important;
+      legend {
+        padding: 0px 0px 10px 3px !important;
+      }
+      &.collapsible {
+        padding-top: 40px !important;
+        &.collapsed {
+          padding-top: 22px !important;
+        }
+        legend {
+          padding: 0 !important;
+        }
+      }
+      > legend > span {
+        font-size: 22px;
+        color: #2196F3;
+      }
+    }
+
+    // Adjust the padding around fieldset descriptions as it was too big
+    .fieldset-wrapper {
+      .fieldset-description {
+        padding: 0 0 15px 0;
+      }
+    }
+  }
+
+  a {
+    &.cke_combo_button {
+      padding: 0;
+    }
+    &.cke_button {
+      padding: 4px 6px;
+    }
+    // Making all button text white instead of grey, in line with other buttons
+    &.button {
+      &:link,
+      &:visited,
+      &:hover,
+      &:active {
+        color: white !important;
+        margin-right: 1em;
+        padding: 5px 18px;
+        margin-top: -2px;
+      }
+      .browse,
+      .edit {
+        &:link,
+        &:visited,
+        &:hover,
+        &:active {
+          color: white !important;
+          margin-right: 1em;
+          padding: 5px 18px;
+          margin-top: -2px;
+        }
+      }
+    }
+  }
+}
+
+/* Workbench changes */
+.page-admin-workbench .admin.my-workbench > div {
+  width: 100%;
+  &:first-child {
+    display: none;
+  }
+}
