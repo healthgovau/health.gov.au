@@ -65,7 +65,7 @@
 
       // Publications
       legendSummary('.paragraphs-item-type-documents', 'Part', '.field-name-field-resource-file-title input');
-      //legendSummary('.paragraphs-item-type-document', 'File', '.media-item');
+      legendSummary('.paragraphs-item-type-document', 'File', '.media-item');
       //
       //
 
@@ -112,7 +112,7 @@
             if (inputSelector === '.media-item') {
 
               // File
-              if ($(this).find(inputSelector).hasClass('media-type__file')) {
+              if ($(this).find(inputSelector).hasClass('media-type__document')) {
                 var label = $(this).find(inputSelector).find('a').text();
                 label += convert_mime($(this).find(inputSelector).find('img').attr('title'));
                 summary = createSummary(label, initialText);
@@ -158,17 +158,7 @@
           // If the input changes, update the summary.
           $(paraSelector + ' ' + inputSelector).once(initialText).blur(function () {
             var summary = '';
-            if (inputSelector == 'img') {
-              var alt = $(this).find(inputSelector).attr('alt');
-              if (alt == '') {
-                alt = $(this).find(inputSelector).parents('.media-item').attr('title');
-              }
-              summary = createSummary(alt, initialText);
-            } else if (inputSelector.indexOf('.file') !== -1) {
-              var label = $(this).find(inputSelector).text();
-              label += convert_mime($(this).find(inputSelector).attr('type'));
-              summary = createSummary(label, initialText);
-            } else if (inputSelector.indexOf('select') !== -1) {
+            if (inputSelector.indexOf('select') !== -1) {
               summary = createSummary($(this).find('option:selected').text(), initialText);
             } else {
               summary = createSummary($(this).val(), initialText);

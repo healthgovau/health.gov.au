@@ -123,7 +123,8 @@ body.adminimal-skin-material {
     font-size: 16px;
     display: inline-block; }
   .media-item.media-type__document .file svg {
-    width: 30px; }
+    width: 15px;
+    margin-left: 6px; }
   .media-item.media-type__document .label-wrapper {
     display: none; }
 
