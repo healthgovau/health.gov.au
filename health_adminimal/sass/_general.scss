@@ -19,6 +19,20 @@
 
 body.adminimal-skin-material {
 
+  // Autocomplete dropdown.
+  #autocomplete {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+    border: 1px solid #E0E0E0 !important;
+    opacity: 0.95;
+    li {
+      padding: 4px 8px;
+      &.selected {
+        background: #2196F3;
+        cursor: pointer;
+      }
+    }
+  }
+
   // Chosen fixes
   input.chosen-search-input {
     -webkit-box-sizing: border-box;
