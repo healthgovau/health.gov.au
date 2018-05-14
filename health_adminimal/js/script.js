@@ -14,18 +14,23 @@
       var links = '<div>' + collapse + expand + '</div>';
 
       // Add to dom.
-      $('.field-name-field-components .tabledrag-toggle-weight-wrapper').first().once('collapse-all-link').append(' | ' + collapse);
-      $('.field-name-field-components .tabledrag-toggle-weight-wrapper').first().once('expand-all-link').append(expand);
+      $('.field-name-field-components .tabledrag-toggle-weight-wrapper').first()
+        .once('collapse-all-link').append(' | ' + collapse)
+        .once('expand-all-link').append(expand);
 
       // Collapse handler.
       $('.collapse-all-link').once('collapse-all-link-handler').click(function (e) {
         e.preventDefault();
-        $('.field-name-field-components fieldset:not(.collapsed) .fieldset-legend a').trigger('click');
+        $('.field-name-field-components fieldset:not(.filter-wrapper)').not('.collapsed').each(function() {
+          $(this).find('.fieldset-legend a').first().trigger('click');
+        });
       });
       // Expand handler.
       $('.expand-all-link').once('expand-all-link-handler').click(function (e) {
         e.preventDefault();
-        $('.field-name-field-components fieldset:not(.filter-wrapper).collapsed .fieldset-legend a').trigger('click');
+        $('.field-name-field-components fieldset:not(.filter-wrapper)').filter('.collapsed').each(function() {
+          $(this).find('.fieldset-legend a').first().trigger('click');
+        });
       });
 
       // Add a summary to the legend of what content is in a block.
@@ -67,7 +72,7 @@
       // If collapsed already has saved states in it, restore those states.
       if (collapsed.length > 0) {
         $('.field-name-field-components .field-multiple-table tbody tr').each(function (index) {
-          if (collapsed[index] == true) {
+          if (collapsed[index] === true) {
             $(this).find('td > fieldset').addClass('collapsed');
           }
         });
