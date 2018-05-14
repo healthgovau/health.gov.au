@@ -181,7 +181,7 @@
        * @returns string
        */
       function createSummary(text, initialText) {
-        initialText = '<strong>' + initialText + '</strong>';
+        initialText = '<span class="block-title">' + initialText + '</span>';
         if (text == '') {
           return initialText;
         }
@@ -230,6 +230,7 @@
           $(this).hide();
         }
       });
+      $('span.form-required').text('*');
 
     }
   };

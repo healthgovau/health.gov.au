@@ -15,8 +15,27 @@
 
 body.adminimal-skin-material {
   font-size: 14px; }
+  body.adminimal-skin-material #autocomplete {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+    border: 1px solid #E0E0E0 !important;
+    opacity: 0.95; }
+    body.adminimal-skin-material #autocomplete li {
+      padding: 4px 8px; }
+      body.adminimal-skin-material #autocomplete li.selected {
+        background: #2196F3;
+        cursor: pointer; }
+  body.adminimal-skin-material input.chosen-search-input {
+    box-sizing: border-box; }
   body.adminimal-skin-material input, body.adminimal-skin-material option, body.adminimal-skin-material select, body.adminimal-skin-material textarea {
     font-size: 14px; }
+  body.adminimal-skin-material .form-required {
+    color: #c70000 !important; }
+  body.adminimal-skin-material .form-item input.error, body.adminimal-skin-material .form-item textarea.error, body.adminimal-skin-material .form-item select.error {
+    border: 1px solid #c70000 !important; }
+  body.adminimal-skin-material .form-item label {
+    font-weight: normal; }
+    body.adminimal-skin-material .form-item label.option {
+      font-weight: lighter; }
   body.adminimal-skin-material .fieldset-wrapper label {
     margin-top: 1.5em; }
   body.adminimal-skin-material .fieldset-wrapper > div:first-of-type label {
@@ -130,9 +149,10 @@ body.adminimal-skin-material {
       line-height: 1.2em;
       color: black;
       font-weight: 300;
-      margin: -10px 0 0 5px; }
+      margin: -8px 0 0 5px; }
     .media-item.media-type__document .file svg {
-      width: 14px; }
+      width: 14px;
+      margin-top: 8px; }
     .media-item.media-type__document .label-wrapper {
       display: none; }
   .media-item.media-type__image {
@@ -244,86 +264,144 @@ body.adminimal-skin-material .field-type-paragraphs {
       body.adminimal-skin-material .field-type-paragraphs > div > div > div > div:not(.tabledrag-toggle-weight-wrapper):not(.messages) > div > label {
         display: none; }
 
+body.adminimal-skin-material .field-name-field-components #field-components-add-more-wrapper label,
+body.adminimal-skin-material .field-name-field-publication-files #field-components-add-more-wrapper label,
+body.adminimal-skin-material .field-name-field-para-email #field-components-add-more-wrapper label,
+body.adminimal-skin-material .field-name-field-para-telephone #field-components-add-more-wrapper label {
+  padding: 5px 11px 4px 11px;
+  margin: 0;
+  background-color: #e0e0e0; }
+
 body.adminimal-skin-material .field-name-field-components tr td,
-body.adminimal-skin-material .field-name-field-publication-files tr td {
+body.adminimal-skin-material .field-name-field-publication-files tr td,
+body.adminimal-skin-material .field-name-field-para-email tr td,
+body.adminimal-skin-material .field-name-field-para-telephone tr td {
   position: relative;
   padding: 5px 5px 1px 5px; }
   body.adminimal-skin-material .field-name-field-components tr td.field-multiple-drag,
-  body.adminimal-skin-material .field-name-field-publication-files tr td.field-multiple-drag {
+  body.adminimal-skin-material .field-name-field-publication-files tr td.field-multiple-drag,
+  body.adminimal-skin-material .field-name-field-para-email tr td.field-multiple-drag,
+  body.adminimal-skin-material .field-name-field-para-telephone tr td.field-multiple-drag {
     padding: 0px;
     width: 20px; }
     body.adminimal-skin-material .field-name-field-components tr td.field-multiple-drag .handle,
-    body.adminimal-skin-material .field-name-field-publication-files tr td.field-multiple-drag .handle {
+    body.adminimal-skin-material .field-name-field-publication-files tr td.field-multiple-drag .handle,
+    body.adminimal-skin-material .field-name-field-para-email tr td.field-multiple-drag .handle,
+    body.adminimal-skin-material .field-name-field-para-telephone tr td.field-multiple-drag .handle {
       padding: 8px;
       margin: 0;
       width: 8px; }
     body.adminimal-skin-material .field-name-field-components tr td.field-multiple-drag a.tabledrag-handle,
-    body.adminimal-skin-material .field-name-field-publication-files tr td.field-multiple-drag a.tabledrag-handle {
+    body.adminimal-skin-material .field-name-field-publication-files tr td.field-multiple-drag a.tabledrag-handle,
+    body.adminimal-skin-material .field-name-field-para-email tr td.field-multiple-drag a.tabledrag-handle,
+    body.adminimal-skin-material .field-name-field-para-telephone tr td.field-multiple-drag a.tabledrag-handle {
       padding-right: 0;
       margin-left: -0.5em; }
   body.adminimal-skin-material .field-name-field-components tr td:nth-of-type(2) > .form-wrapper:first-child,
-  body.adminimal-skin-material .field-name-field-publication-files tr td:nth-of-type(2) > .form-wrapper:first-child {
+  body.adminimal-skin-material .field-name-field-publication-files tr td:nth-of-type(2) > .form-wrapper:first-child,
+  body.adminimal-skin-material .field-name-field-para-email tr td:nth-of-type(2) > .form-wrapper:first-child,
+  body.adminimal-skin-material .field-name-field-para-telephone tr td:nth-of-type(2) > .form-wrapper:first-child {
     display: none; }
   body.adminimal-skin-material .field-name-field-components tr td:nth-of-type(2) .ajax-new-content > .form-wrapper:first-child,
-  body.adminimal-skin-material .field-name-field-publication-files tr td:nth-of-type(2) .ajax-new-content > .form-wrapper:first-child {
+  body.adminimal-skin-material .field-name-field-publication-files tr td:nth-of-type(2) .ajax-new-content > .form-wrapper:first-child,
+  body.adminimal-skin-material .field-name-field-para-email tr td:nth-of-type(2) .ajax-new-content > .form-wrapper:first-child,
+  body.adminimal-skin-material .field-name-field-para-telephone tr td:nth-of-type(2) .ajax-new-content > .form-wrapper:first-child {
     display: none; }
 
 body.adminimal-skin-material .field-name-field-components .form-actions,
-body.adminimal-skin-material .field-name-field-publication-files .form-actions {
+body.adminimal-skin-material .field-name-field-publication-files .form-actions,
+body.adminimal-skin-material .field-name-field-para-email .form-actions,
+body.adminimal-skin-material .field-name-field-para-telephone .form-actions {
   margin: 5px 0; }
   body.adminimal-skin-material .field-name-field-components .form-actions input[value='Remove'],
-  body.adminimal-skin-material .field-name-field-publication-files .form-actions input[value='Remove'] {
+  body.adminimal-skin-material .field-name-field-publication-files .form-actions input[value='Remove'],
+  body.adminimal-skin-material .field-name-field-para-email .form-actions input[value='Remove'],
+  body.adminimal-skin-material .field-name-field-para-telephone .form-actions input[value='Remove'] {
     position: absolute;
     right: -7px;
     top: 9px;
     padding-top: 4px;
     padding-bottom: 4px; }
   body.adminimal-skin-material .field-name-field-components .form-actions .ajax-progress-throbber,
-  body.adminimal-skin-material .field-name-field-publication-files .form-actions .ajax-progress-throbber {
+  body.adminimal-skin-material .field-name-field-publication-files .form-actions .ajax-progress-throbber,
+  body.adminimal-skin-material .field-name-field-para-email .form-actions .ajax-progress-throbber,
+  body.adminimal-skin-material .field-name-field-para-telephone .form-actions .ajax-progress-throbber {
     position: absolute;
     top: 13px;
     right: 105px; }
 
 body.adminimal-skin-material .field-name-field-components .field-multiple-table > thead th,
-body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table > thead th {
+body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table > thead th,
+body.adminimal-skin-material .field-name-field-para-email .field-multiple-table > thead th,
+body.adminimal-skin-material .field-name-field-para-telephone .field-multiple-table > thead th {
   padding: 5px 11px 0 11px; }
 
 body.adminimal-skin-material .field-name-field-components .field-multiple-table fieldset,
-body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table fieldset {
+body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table fieldset,
+body.adminimal-skin-material .field-name-field-para-email .field-multiple-table fieldset,
+body.adminimal-skin-material .field-name-field-para-telephone .field-multiple-table fieldset {
   margin-bottom: 5px;
   padding-top: 35px !important; }
   body.adminimal-skin-material .field-name-field-components .field-multiple-table fieldset.filter-wrapper,
-  body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table fieldset.filter-wrapper {
+  body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table fieldset.filter-wrapper,
+  body.adminimal-skin-material .field-name-field-para-email .field-multiple-table fieldset.filter-wrapper,
+  body.adminimal-skin-material .field-name-field-para-telephone .field-multiple-table fieldset.filter-wrapper {
     padding-top: 22px !important; }
   body.adminimal-skin-material .field-name-field-components .field-multiple-table fieldset:not(.filter-wrapper).collapsed,
-  body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table fieldset:not(.filter-wrapper).collapsed {
+  body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table fieldset:not(.filter-wrapper).collapsed,
+  body.adminimal-skin-material .field-name-field-para-email .field-multiple-table fieldset:not(.filter-wrapper).collapsed,
+  body.adminimal-skin-material .field-name-field-para-telephone .field-multiple-table fieldset:not(.filter-wrapper).collapsed {
     padding-top: 8px !important; }
   body.adminimal-skin-material .field-name-field-components .field-multiple-table fieldset:not(.filter-wrapper) > legend > span > a,
-  body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table fieldset:not(.filter-wrapper) > legend > span > a {
+  body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table fieldset:not(.filter-wrapper) > legend > span > a,
+  body.adminimal-skin-material .field-name-field-para-email .field-multiple-table fieldset:not(.filter-wrapper) > legend > span > a,
+  body.adminimal-skin-material .field-name-field-para-telephone .field-multiple-table fieldset:not(.filter-wrapper) > legend > span > a {
     width: 95%;
     font-size: 0.9em; }
   body.adminimal-skin-material .field-name-field-components .field-multiple-table fieldset legend,
-  body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table fieldset legend {
+  body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table fieldset legend,
+  body.adminimal-skin-material .field-name-field-para-email .field-multiple-table fieldset legend,
+  body.adminimal-skin-material .field-name-field-para-telephone .field-multiple-table fieldset legend {
     top: 5px;
     width: 90%; }
   body.adminimal-skin-material .field-name-field-components .field-multiple-table fieldset > legend > span,
-  body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table fieldset > legend > span {
+  body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table fieldset > legend > span,
+  body.adminimal-skin-material .field-name-field-para-email .field-multiple-table fieldset > legend > span,
+  body.adminimal-skin-material .field-name-field-para-telephone .field-multiple-table fieldset > legend > span {
     width: 95%;
     font-size: 0.9em; }
+  body.adminimal-skin-material .field-name-field-components .field-multiple-table fieldset .fieldset-title,
+  body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table fieldset .fieldset-title,
+  body.adminimal-skin-material .field-name-field-para-email .field-multiple-table fieldset .fieldset-title,
+  body.adminimal-skin-material .field-name-field-para-telephone .field-multiple-table fieldset .fieldset-title {
+    font-weight: normal; }
+    body.adminimal-skin-material .field-name-field-components .field-multiple-table fieldset .fieldset-title .block-title,
+    body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table fieldset .fieldset-title .block-title,
+    body.adminimal-skin-material .field-name-field-para-email .field-multiple-table fieldset .fieldset-title .block-title,
+    body.adminimal-skin-material .field-name-field-para-telephone .field-multiple-table fieldset .fieldset-title .block-title {
+      font-weight: bold; }
 
 body.adminimal-skin-material .field-name-field-components .field-multiple-table .form-actions input,
-body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table .form-actions input {
+body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table .form-actions input,
+body.adminimal-skin-material .field-name-field-para-email .field-multiple-table .form-actions input,
+body.adminimal-skin-material .field-name-field-para-telephone .field-multiple-table .form-actions input {
   height: auto; }
 
 body.adminimal-skin-material .field-name-field-components .field-multiple-table .tabledrag-toggle-weight-wrapper,
-body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table .tabledrag-toggle-weight-wrapper {
+body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table .tabledrag-toggle-weight-wrapper,
+body.adminimal-skin-material .field-name-field-para-email .field-multiple-table .tabledrag-toggle-weight-wrapper,
+body.adminimal-skin-material .field-name-field-para-telephone .field-multiple-table .tabledrag-toggle-weight-wrapper {
   margin-bottom: 0; }
   body.adminimal-skin-material .field-name-field-components .field-multiple-table .tabledrag-toggle-weight-wrapper a,
-  body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table .tabledrag-toggle-weight-wrapper a {
+  body.adminimal-skin-material .field-name-field-publication-files .field-multiple-table .tabledrag-toggle-weight-wrapper a,
+  body.adminimal-skin-material .field-name-field-para-email .field-multiple-table .tabledrag-toggle-weight-wrapper a,
+  body.adminimal-skin-material .field-name-field-para-telephone .field-multiple-table .tabledrag-toggle-weight-wrapper a {
     padding: 0; }
 
 body.adminimal-skin-material .field-name-field-components .form-wrapper,
-body.adminimal-skin-material .field-name-field-publication-files .form-wrapper {
+body.adminimal-skin-material .field-name-field-publication-files .form-wrapper,
+body.adminimal-skin-material .field-name-field-para-email .form-wrapper,
+body.adminimal-skin-material .field-name-field-para-telephone .form-wrapper {
   margin-bottom: 5px; }
 
 body.adminimal-skin-material .field-name-field-components .paragraphs-item-type-para-content-text .field-name-field-body label,
@@ -338,6 +416,7 @@ body.adminimal-skin-material .field-name-field-components .field-name-field-refe
 body.adminimal-skin-material .field-name-field-components .field-name-field-reference-conditions-and-d label,
 body.adminimal-skin-material .field-name-field-components .field-name-field-related label,
 body.adminimal-skin-material .field-name-field-components .field-name-field-topic-featured-resource label,
+body.adminimal-skin-material .field-name-field-components .field-name-field-related-contact label,
 body.adminimal-skin-material .field-name-field-publication-files .paragraphs-item-type-para-content-text .field-name-field-body label,
 body.adminimal-skin-material .field-name-field-publication-files .field-name-field-reference-video label,
 body.adminimal-skin-material .field-name-field-publication-files .field-name-field-reference-publication label,
@@ -349,19 +428,54 @@ body.adminimal-skin-material .field-name-field-publication-files .field-name-fie
 body.adminimal-skin-material .field-name-field-publication-files .field-name-field-reference-contact label,
 body.adminimal-skin-material .field-name-field-publication-files .field-name-field-reference-conditions-and-d label,
 body.adminimal-skin-material .field-name-field-publication-files .field-name-field-related label,
-body.adminimal-skin-material .field-name-field-publication-files .field-name-field-topic-featured-resource label {
+body.adminimal-skin-material .field-name-field-publication-files .field-name-field-topic-featured-resource label,
+body.adminimal-skin-material .field-name-field-publication-files .field-name-field-related-contact label,
+body.adminimal-skin-material .field-name-field-para-email .paragraphs-item-type-para-content-text .field-name-field-body label,
+body.adminimal-skin-material .field-name-field-para-email .field-name-field-reference-video label,
+body.adminimal-skin-material .field-name-field-para-email .field-name-field-reference-publication label,
+body.adminimal-skin-material .field-name-field-para-email .field-name-field-image label,
+body.adminimal-skin-material .field-name-field-para-email .field-name-field-reference-service label,
+body.adminimal-skin-material .field-name-field-para-email .field-name-field-reference-programs-and-ini label,
+body.adminimal-skin-material .field-name-field-para-email .field-name-field-reference-statistic label,
+body.adminimal-skin-material .field-name-field-para-email .field-name-field-reference-news label,
+body.adminimal-skin-material .field-name-field-para-email .field-name-field-reference-contact label,
+body.adminimal-skin-material .field-name-field-para-email .field-name-field-reference-conditions-and-d label,
+body.adminimal-skin-material .field-name-field-para-email .field-name-field-related label,
+body.adminimal-skin-material .field-name-field-para-email .field-name-field-topic-featured-resource label,
+body.adminimal-skin-material .field-name-field-para-email .field-name-field-related-contact label,
+body.adminimal-skin-material .field-name-field-para-telephone .paragraphs-item-type-para-content-text .field-name-field-body label,
+body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-reference-video label,
+body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-reference-publication label,
+body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-image label,
+body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-reference-service label,
+body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-reference-programs-and-ini label,
+body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-reference-statistic label,
+body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-reference-news label,
+body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-reference-contact label,
+body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-reference-conditions-and-d label,
+body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-related label,
+body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-topic-featured-resource label,
+body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-related-contact label {
   display: none; }
 
 body.adminimal-skin-material .field-name-field-components .field-name-field-pbundle-title label,
 body.adminimal-skin-material .field-name-field-components .field-name-field-title label,
 body.adminimal-skin-material .field-name-field-publication-files .field-name-field-pbundle-title label,
-body.adminimal-skin-material .field-name-field-publication-files .field-name-field-title label {
+body.adminimal-skin-material .field-name-field-publication-files .field-name-field-title label,
+body.adminimal-skin-material .field-name-field-para-email .field-name-field-pbundle-title label,
+body.adminimal-skin-material .field-name-field-para-email .field-name-field-title label,
+body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-pbundle-title label,
+body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-title label {
   display: inline; }
 
 body.adminimal-skin-material .field-name-field-components .field-name-field-pbundle-title input,
 body.adminimal-skin-material .field-name-field-components .field-name-field-title input,
 body.adminimal-skin-material .field-name-field-publication-files .field-name-field-pbundle-title input,
-body.adminimal-skin-material .field-name-field-publication-files .field-name-field-title input {
+body.adminimal-skin-material .field-name-field-publication-files .field-name-field-title input,
+body.adminimal-skin-material .field-name-field-para-email .field-name-field-pbundle-title input,
+body.adminimal-skin-material .field-name-field-para-email .field-name-field-title input,
+body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-pbundle-title input,
+body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-title input {
   font-size: 18px;
   font-weight: normal;
   margin-left: 15px;
@@ -369,36 +483,60 @@ body.adminimal-skin-material .field-name-field-publication-files .field-name-fie
   body.adminimal-skin-material .field-name-field-components .field-name-field-pbundle-title input::-webkit-input-placeholder,
   body.adminimal-skin-material .field-name-field-components .field-name-field-title input::-webkit-input-placeholder,
   body.adminimal-skin-material .field-name-field-publication-files .field-name-field-pbundle-title input::-webkit-input-placeholder,
-  body.adminimal-skin-material .field-name-field-publication-files .field-name-field-title input::-webkit-input-placeholder {
+  body.adminimal-skin-material .field-name-field-publication-files .field-name-field-title input::-webkit-input-placeholder,
+  body.adminimal-skin-material .field-name-field-para-email .field-name-field-pbundle-title input::-webkit-input-placeholder,
+  body.adminimal-skin-material .field-name-field-para-email .field-name-field-title input::-webkit-input-placeholder,
+  body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-pbundle-title input::-webkit-input-placeholder,
+  body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-title input::-webkit-input-placeholder {
     color: lightgrey; }
   body.adminimal-skin-material .field-name-field-components .field-name-field-pbundle-title input::-moz-placeholder,
   body.adminimal-skin-material .field-name-field-components .field-name-field-title input::-moz-placeholder,
   body.adminimal-skin-material .field-name-field-publication-files .field-name-field-pbundle-title input::-moz-placeholder,
-  body.adminimal-skin-material .field-name-field-publication-files .field-name-field-title input::-moz-placeholder {
+  body.adminimal-skin-material .field-name-field-publication-files .field-name-field-title input::-moz-placeholder,
+  body.adminimal-skin-material .field-name-field-para-email .field-name-field-pbundle-title input::-moz-placeholder,
+  body.adminimal-skin-material .field-name-field-para-email .field-name-field-title input::-moz-placeholder,
+  body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-pbundle-title input::-moz-placeholder,
+  body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-title input::-moz-placeholder {
     color: lightgrey; }
   body.adminimal-skin-material .field-name-field-components .field-name-field-pbundle-title input:-ms-input-placeholder,
   body.adminimal-skin-material .field-name-field-components .field-name-field-title input:-ms-input-placeholder,
   body.adminimal-skin-material .field-name-field-publication-files .field-name-field-pbundle-title input:-ms-input-placeholder,
-  body.adminimal-skin-material .field-name-field-publication-files .field-name-field-title input:-ms-input-placeholder {
+  body.adminimal-skin-material .field-name-field-publication-files .field-name-field-title input:-ms-input-placeholder,
+  body.adminimal-skin-material .field-name-field-para-email .field-name-field-pbundle-title input:-ms-input-placeholder,
+  body.adminimal-skin-material .field-name-field-para-email .field-name-field-title input:-ms-input-placeholder,
+  body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-pbundle-title input:-ms-input-placeholder,
+  body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-title input:-ms-input-placeholder {
     color: lightgrey; }
   body.adminimal-skin-material .field-name-field-components .field-name-field-pbundle-title input::placeholder,
   body.adminimal-skin-material .field-name-field-components .field-name-field-title input::placeholder,
   body.adminimal-skin-material .field-name-field-publication-files .field-name-field-pbundle-title input::placeholder,
-  body.adminimal-skin-material .field-name-field-publication-files .field-name-field-title input::placeholder {
+  body.adminimal-skin-material .field-name-field-publication-files .field-name-field-title input::placeholder,
+  body.adminimal-skin-material .field-name-field-para-email .field-name-field-pbundle-title input::placeholder,
+  body.adminimal-skin-material .field-name-field-para-email .field-name-field-title input::placeholder,
+  body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-pbundle-title input::placeholder,
+  body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-title input::placeholder {
     color: lightgrey; }
 
 body.adminimal-skin-material .field-name-field-components .paragraphs-item-type-document .field-name-field-resource-file-pages label,
 body.adminimal-skin-material .field-name-field-components .paragraphs-item-type-document .field-name-field-file label,
 body.adminimal-skin-material .field-name-field-publication-files .paragraphs-item-type-document .field-name-field-resource-file-pages label,
-body.adminimal-skin-material .field-name-field-publication-files .paragraphs-item-type-document .field-name-field-file label {
+body.adminimal-skin-material .field-name-field-publication-files .paragraphs-item-type-document .field-name-field-file label,
+body.adminimal-skin-material .field-name-field-para-email .paragraphs-item-type-document .field-name-field-resource-file-pages label,
+body.adminimal-skin-material .field-name-field-para-email .paragraphs-item-type-document .field-name-field-file label,
+body.adminimal-skin-material .field-name-field-para-telephone .paragraphs-item-type-document .field-name-field-resource-file-pages label,
+body.adminimal-skin-material .field-name-field-para-telephone .paragraphs-item-type-document .field-name-field-file label {
   font-size: 18px; }
 
 body.adminimal-skin-material .field-name-field-components .warning.tabledrag-changed,
-body.adminimal-skin-material .field-name-field-publication-files .warning.tabledrag-changed {
+body.adminimal-skin-material .field-name-field-publication-files .warning.tabledrag-changed,
+body.adminimal-skin-material .field-name-field-para-email .warning.tabledrag-changed,
+body.adminimal-skin-material .field-name-field-para-telephone .warning.tabledrag-changed {
   display: none; }
 
 body.adminimal-skin-material .field-name-field-components .ajax-progress .message,
-body.adminimal-skin-material .field-name-field-publication-files .ajax-progress .message {
+body.adminimal-skin-material .field-name-field-publication-files .ajax-progress .message,
+body.adminimal-skin-material .field-name-field-para-email .ajax-progress .message,
+body.adminimal-skin-material .field-name-field-para-telephone .ajax-progress .message {
   display: none; }
 
 .ajax-progress-throbber {
@@ -444,22 +582,22 @@ body.adminimal-skin-material .field-name-field-publication-files .ajax-progress 
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
 
-body.adminimal-skin-material.page-node-edit .form-item-title label {
+body.adminimal-skin-material.page-node-edit .form-item-title label, body.adminimal-skin-material.page-node-add .form-item-title label {
   display: none; }
 
-body.adminimal-skin-material.page-node-edit .form-item-title input {
+body.adminimal-skin-material.page-node-edit .form-item-title input, body.adminimal-skin-material.page-node-add .form-item-title input {
   font-size: 30px;
   padding: 10px 15px;
   font-weight: 300;
   margin: 20px 0; }
-  body.adminimal-skin-material.page-node-edit .form-item-title input::-webkit-input-placeholder {
-    color: lightgrey; }
-  body.adminimal-skin-material.page-node-edit .form-item-title input::-moz-placeholder {
-    color: lightgrey; }
-  body.adminimal-skin-material.page-node-edit .form-item-title input:-ms-input-placeholder {
-    color: lightgrey; }
-  body.adminimal-skin-material.page-node-edit .form-item-title input::placeholder {
-    color: lightgrey; }
+  body.adminimal-skin-material.page-node-edit .form-item-title input::-webkit-input-placeholder, body.adminimal-skin-material.page-node-add .form-item-title input::-webkit-input-placeholder {
+    color: #c75051; }
+  body.adminimal-skin-material.page-node-edit .form-item-title input::-moz-placeholder, body.adminimal-skin-material.page-node-add .form-item-title input::-moz-placeholder {
+    color: #c75051; }
+  body.adminimal-skin-material.page-node-edit .form-item-title input:-ms-input-placeholder, body.adminimal-skin-material.page-node-add .form-item-title input:-ms-input-placeholder {
+    color: #c75051; }
+  body.adminimal-skin-material.page-node-edit .form-item-title input::placeholder, body.adminimal-skin-material.page-node-add .form-item-title input::placeholder {
+    color: #c75051; }
 
 body.adminimal-skin-material .link-field-column {
   float: none;

@@ -63,6 +63,13 @@ body.adminimal-skin-material {
   .field-name-field-publication-files,
   .field-name-field-para-email,
   .field-name-field-para-telephone {
+
+    #field-components-add-more-wrapper label {
+      padding: 5px 11px 4px 11px;
+      margin: 0;
+      background-color: rgb(224, 224, 224);
+    }
+
     tr {
       td {
         position: relative;
@@ -131,10 +138,6 @@ body.adminimal-skin-material {
             width: 95%;
             font-size: 0.9em;
           }
-
-          > .fieldset-wrapper > div + div.form-wrapper {
-            //margin-top: 2em;
-          }
         }
         legend {
           top: 5px;
@@ -145,7 +148,15 @@ body.adminimal-skin-material {
           font-size: 0.9em;
         }
 
+        .fieldset-title {
+          font-weight: normal;
+          .block-title {
+            font-weight: bold;
+          }
+        }
+
       }
+
       .form-actions input {
         height: auto;
       }

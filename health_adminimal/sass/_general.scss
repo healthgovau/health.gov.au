@@ -45,6 +45,23 @@ body.adminimal-skin-material {
     font-size: 14px;
   }
 
+  // Error.
+  .form-required {
+    color: #c70000 !important;
+  }
+  .form-item input.error, .form-item textarea.error, .form-item select.error {
+    border: 1px solid #c70000 !important;
+  }
+
+  .form-item {
+    label {
+      font-weight: normal;
+      &.option {
+        font-weight: lighter;
+      }
+    }
+  }
+
   .fieldset-wrapper {
     label {
       margin-top: 1.5em;
