@@ -64,6 +64,7 @@
       legendSummary('.paragraphs-item-type-para-taxonomies', 'Taxonomies', '.field-name-field-pbundle-title input');
       legendSummary('.paragraphs-item-type-para-taxonomy', 'Taxonomy', '.field-name-field-related-term input');
       legendSummary('.paragraphs-item-type-para-statistics', 'Statistics', '.field-name-field-title input');
+      legendSummary('.paragraphs-item-type-para-contact', 'Contact', 'select:not(".filter-list")');
 
       // Publications
       legendSummary('.paragraphs-item-type-documents', 'Part', '.field-name-field-resource-file-title input');
@@ -216,7 +217,7 @@
 
 
       // Apply chosen using the new version of chosen.
-      $('.chosen-enable').chosen();
+      $('.chosen-enable').chosen({width: '40%'});
 
       // Add some placeholder text.
       $('.form-item-title input').attr('placeholder', 'Enter a title');
