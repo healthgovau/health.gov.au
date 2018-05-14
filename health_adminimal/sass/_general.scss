@@ -1,5 +1,3 @@
-
-
 /* Layout checkboxes in 3 columns for long lists */
 @media screen and (min-width: 768px) {
   #edit-field-related-health-topics .form-checkboxes,
@@ -20,6 +18,12 @@
 }
 
 body.adminimal-skin-material {
+
+  // Chosen fixes
+  input.chosen-search-input {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
 
   // Font sizes override
   font-size: 14px;
@@ -43,9 +47,6 @@ body.adminimal-skin-material {
       margin-top: 0;
     }
   }
-
-
-
 
   // Tables
   table {

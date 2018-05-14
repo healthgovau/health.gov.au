@@ -217,7 +217,7 @@
 
 
       // Apply chosen using the new version of chosen.
-      $('.chosen-enable').chosen({width: '40%'});
+      $('.chosen-enable').chosen({width: 400});
 
       // Add some placeholder text.
       $('.form-item-title input').attr('placeholder', 'Enter a title');
