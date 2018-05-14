@@ -21,6 +21,8 @@ body.adminimal-skin-material {
     margin-top: 1.5em; }
   body.adminimal-skin-material .fieldset-wrapper > div:first-of-type label {
     margin-top: 1em; }
+  body.adminimal-skin-material .fieldset-wrapper > div:first-of-type th > label {
+    margin-top: 0; }
   body.adminimal-skin-material .fieldset-wrapper th > label {
     margin-top: 0; }
   body.adminimal-skin-material table tbody td fieldset legend a {
@@ -273,7 +275,9 @@ body.adminimal-skin-material .field-name-field-publication-files .form-actions {
   body.adminimal-skin-material .field-name-field-publication-files .form-actions input[value='Remove'] {
     position: absolute;
     right: -7px;
-    top: 9px; }
+    top: 9px;
+    padding-top: 4px;
+    padding-bottom: 4px; }
   body.adminimal-skin-material .field-name-field-components .form-actions .ajax-progress-throbber,
   body.adminimal-skin-material .field-name-field-publication-files .form-actions .ajax-progress-throbber {
     position: absolute;

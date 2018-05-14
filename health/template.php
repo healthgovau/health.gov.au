@@ -599,55 +599,8 @@ function health_file_entity_download_link($variables) {
       // Default is the resource title.
       $title = $node->title;
 
-      // Publications.
-      if ($node->type == 'publication') {
-        $docs = $node->field_publication_files[$node->language];
-        foreach ($docs as $doc) {
-          $entities = entity_load('paragraphs_item', [$doc['value']]);
-          if (!empty($entities)) {
-            $para_documents = array_pop($entities);
-            foreach ($para_documents->field_resource_document[LANGUAGE_NONE] as $resource_document) {
-              $entities = entity_load('paragraphs_item', [$resource_document['value']]);
-              if (!empty($entities)) {
-                $para_document = array_pop($entities);
-                if ($para_document->field_file[LANGUAGE_NONE][0]['fid'] == $file->fid) {
-                  if (count($docs) > 1) { // Multiple document parts.
-                    $title .= ': ' . $para_documents->field_resource_file_title[LANGUAGE_NONE][0]['value'];
-                  }
-                  // Get page count.
-                  if (isset($para_document->field_resource_file_pages)) {
-                    $no_of_pages = $para_document->field_resource_file_pages[LANGUAGE_NONE][0]['value'];
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-
-      // Images.
-      if ($node->type == 'image') {
-        $docs = $node->field_image_files[$node->language];
-        foreach ($docs as $doc) {
-          $entities = entity_load('paragraphs_item', [$doc['value']]);
-          if (!empty($entities)) {
-            $para_documents = array_pop($entities);
-            foreach($para_documents->field_images[LANGUAGE_NONE] as $image) {
-              if ($image['fid'] == $file->fid) {
-                // Get sizing.
-                if (isset($para_documents->field_image_size) && !empty($para_documents->field_image_size)) {
-                  $size = $para_documents->field_image_size[LANGUAGE_NONE][0]['value'];
-                }
-              }
-            }
-          }
-        }
-      }
-
       // Construct the link.
       $variables['text'] = '<div class="file__link">Download <span class="file__link-title">' . $title . ' as</span> ' . health_get_friendly_mime($file->filemime) . '</div>';
-
-      // Add metatdata (file size, image size, no of pages)
 
       // Round to 1 decimal for MB and whole number for KB in terms of the file size format.
       $file_size = explode(' ', format_size($file->filesize));
@@ -659,16 +612,17 @@ function health_file_entity_download_link($variables) {
           $formatted_filesize = round($file_size[0], 0) . ' ' . $file_size[1];
         }
       }
-
       $variables['text'].= '<span class="file__meta"> - ' . $formatted_filesize;
-      if (isset($no_of_pages)) {
-        $variables['text'].= ', ' . $no_of_pages . ' page';
-        if ($no_of_pages > 1) {
-          $variables['text'].= 's';
+
+      // No of pages.
+      if (isset($file->field_resource_file_pages[LANGUAGE_NONE])) {
+        $no_of_pages = $file->field_resource_file_pages[LANGUAGE_NONE][0]['value'];
+        if (isset($no_of_pages)) {
+          $variables['text'] .= ', ' . $no_of_pages . ' page';
+          if ($no_of_pages > 1) {
+            $variables['text'] .= 's';
+          }
         }
-      }
-      if (isset($size)) {
-        $variables['text'].= ', ' . $size;
       }
       $variables['text'].= '</span>';
 

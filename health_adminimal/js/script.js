@@ -114,7 +114,7 @@
               // File
               if ($(this).find(inputSelector).hasClass('media-type__document')) {
                 var label = $(this).find(inputSelector).find('a').text();
-                label += convert_mime($(this).find(inputSelector).find('img').attr('title'));
+                label += convert_mime($(this).find(inputSelector).find('svg').attr('data-mime'));
                 summary = createSummary(label, initialText);
 
               // Image
