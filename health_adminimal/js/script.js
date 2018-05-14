@@ -25,7 +25,7 @@
       // Expand handler.
       $('.expand-all-link').once('expand-all-link-handler').click(function (e) {
         e.preventDefault();
-        $('.field-name-field-components fieldset.collapsed:not(.filter-wrapper) .fieldset-legend a').trigger('click');
+        $('.field-name-field-components fieldset:not(.filter-wrapper).collapsed .fieldset-legend a').trigger('click');
       });
 
       // Add a summary to the legend of what content is in a block.
@@ -60,14 +60,9 @@
       legendSummary('.paragraphs-item-type-para-taxonomy', 'Taxonomy', '.field-name-field-related-term input');
       legendSummary('.paragraphs-item-type-para-statistics', 'Statistics', '.field-name-field-title input');
 
-      //paragraphs-item-type-para-contact
-      //field-name-field-related-term
-
       // Publications
       legendSummary('.paragraphs-item-type-documents', 'Part', '.field-name-field-resource-file-title input');
       legendSummary('.paragraphs-item-type-document', 'File', '.media-item');
-      //
-      //
 
       // If collapsed already has saved states in it, restore those states.
       if (collapsed.length > 0) {
