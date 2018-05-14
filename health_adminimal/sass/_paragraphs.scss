@@ -60,7 +60,9 @@ body.adminimal-skin-material {
 
   // Provide a more compact experience for content blocks
   .field-name-field-components,
-  .field-name-field-publication-files {
+  .field-name-field-publication-files,
+  .field-name-field-para-email,
+  .field-name-field-para-telephone {
     tr {
       td {
         position: relative;
