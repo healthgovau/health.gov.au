@@ -39,7 +39,7 @@ body.adminimal-skin-material {
   body.adminimal-skin-material .fieldset-wrapper label {
     margin-top: 1.5em; }
   body.adminimal-skin-material .fieldset-wrapper > div:first-of-type label {
-    margin-top: 1em; }
+    margin-top: 0.25em; }
   body.adminimal-skin-material .fieldset-wrapper > div:first-of-type th > label {
     margin-top: 0; }
   body.adminimal-skin-material .fieldset-wrapper th > label {
@@ -319,9 +319,7 @@ body.adminimal-skin-material .field-name-field-para-telephone .form-actions {
   body.adminimal-skin-material .field-name-field-para-telephone .form-actions input[value='Remove'] {
     position: absolute;
     right: -7px;
-    top: 9px;
-    padding-top: 4px;
-    padding-bottom: 4px; }
+    top: 9px; }
   body.adminimal-skin-material .field-name-field-components .form-actions .ajax-progress-throbber,
   body.adminimal-skin-material .field-name-field-publication-files .form-actions .ajax-progress-throbber,
   body.adminimal-skin-material .field-name-field-para-email .form-actions .ajax-progress-throbber,
