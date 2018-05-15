@@ -189,23 +189,6 @@ body.adminimal-skin-material {
       }
     }
 
-    // Paragraph title field
-    .field-name-field-pbundle-title,
-    .field-name-field-title {
-      label {
-        display: inline;
-      }
-      input {
-        font-size: 18px;
-        font-weight: normal;
-        margin-left: 15px;
-        margin-top: 20px;
-        &::placeholder {
-          color: lightgrey;
-        }
-      }
-    }
-
     // File labels.
     .paragraphs-item-type-document {
       .field-name-field-resource-file-pages,
