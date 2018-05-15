@@ -76,8 +76,8 @@
       // If collapsed already has saved states in it, restore those states.
       if (collapsed.length > 0) {
         $('.field-name-field-components .field-multiple-table tbody tr').each(function (index) {
-          if (collapsed[index] === true) {
-            $(this).find('td > fieldset').addClass('collapsed');
+          if (collapsed[index] === false) {
+            $(this).find('td > fieldset').removeClass('collapsed');
           }
         });
       }
