@@ -582,22 +582,19 @@ body.adminimal-skin-material .field-name-field-para-telephone .ajax-progress .me
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
 
-body.adminimal-skin-material.page-node-edit .form-item-title label, body.adminimal-skin-material.page-node-add .form-item-title label {
-  display: none; }
-
 body.adminimal-skin-material.page-node-edit .form-item-title input, body.adminimal-skin-material.page-node-add .form-item-title input {
   font-size: 30px;
   padding: 10px 15px;
   font-weight: 300;
-  margin: 20px 0; }
+  margin: 0 0 20px 0; }
   body.adminimal-skin-material.page-node-edit .form-item-title input::-webkit-input-placeholder, body.adminimal-skin-material.page-node-add .form-item-title input::-webkit-input-placeholder {
-    color: #c75051; }
+    color: #cecece; }
   body.adminimal-skin-material.page-node-edit .form-item-title input::-moz-placeholder, body.adminimal-skin-material.page-node-add .form-item-title input::-moz-placeholder {
-    color: #c75051; }
+    color: #cecece; }
   body.adminimal-skin-material.page-node-edit .form-item-title input:-ms-input-placeholder, body.adminimal-skin-material.page-node-add .form-item-title input:-ms-input-placeholder {
-    color: #c75051; }
+    color: #cecece; }
   body.adminimal-skin-material.page-node-edit .form-item-title input::placeholder, body.adminimal-skin-material.page-node-add .form-item-title input::placeholder {
-    color: #c75051; }
+    color: #cecece; }
 
 body.adminimal-skin-material .link-field-column {
   float: none;
