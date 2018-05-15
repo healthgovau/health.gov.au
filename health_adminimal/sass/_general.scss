@@ -33,12 +33,6 @@ body.adminimal-skin-material {
     }
   }
 
-  // Chosen fixes
-  input.chosen-search-input {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-
   // Font sizes override
   font-size: 14px;
   input, option, select, textarea {
@@ -60,6 +54,11 @@ body.adminimal-skin-material {
         font-weight: lighter;
       }
     }
+  }
+
+  // Border box fix
+  input {
+    box-sizing: border-box;
   }
 
   .fieldset-wrapper {
