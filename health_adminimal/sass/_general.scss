@@ -19,6 +19,16 @@
 
 body.adminimal-skin-material {
 
+  // Pull padding in a bit in line with the navigation.
+  #page {
+    padding: 20px;
+  }
+  // Push out the secondary menu in line with other navs.
+  div.tabs-secondary {
+    padding-left: 10px;
+    background: white;
+  }
+
   // Autocomplete dropdown.
   #autocomplete {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
@@ -57,8 +67,12 @@ body.adminimal-skin-material {
   }
 
   // Border box fix
-  input {
+  input[type='text'] {
     box-sizing: border-box;
+  }
+
+  .form-item {
+    padding-right: 0;
   }
 
   .fieldset-wrapper {
@@ -202,4 +216,16 @@ body.adminimal-skin-material {
   &:first-child {
     display: none;
   }
+
+  &:nth-child(2) {
+    > h3 {
+      padding-top: 0;
+    }
+  }
+  h3 {
+    font-weight: normal;
+    padding-top: 2em;
+    font-size: 20px;
+  }
+
 }

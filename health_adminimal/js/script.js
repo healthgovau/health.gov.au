@@ -6,6 +6,9 @@
   Drupal.behaviors.health_adminimal = {
     attach: function(context) {
 
+      // Do a fake resize to get the toolbar top padding to fix itself.
+      $(window).trigger('resize');
+
       // Collapse and expand buttons for field components paragraph blocks  .
       // Create buttons.
       var collapse = '<a href="#" class="collapse-all-link">Collapse all</a> | ';
