@@ -75,9 +75,9 @@
 
       // If collapsed already has saved states in it, restore those states.
       if (collapsed.length > 0) {
-        $('.field-name-field-components .field-multiple-table tbody tr').each(function (index) {
+        $('.field-name-field-components > div > div > div > .field-multiple-table > tbody > tr').each(function (index) {
           if (collapsed[index] === false) {
-            $(this).find('td > fieldset').removeClass('collapsed');
+            $(this).find('> td > fieldset').removeClass('collapsed');
           }
         });
       }
@@ -85,8 +85,8 @@
       // When the add more button is clicked, save the current state of the collapsed sections.
       $('.paragraphs-add-more-submit').once('add-another-paragraph').mousedown(function() {
         collapsed = [];
-        $('.field-name-field-components .field-multiple-table tbody tr').each(function (index) {
-          if ($(this).find('td fieldset').first().hasClass('collapsed')) {
+        $('.field-name-field-components > div > div > div > .field-multiple-table > tbody > tr').each(function (index) {
+          if ($(this).find('td:nth-of-type(2) fieldset').first().hasClass('collapsed')) {
             collapsed[index] = true;
           } else {
             collapsed[index] = false;
