@@ -125,6 +125,32 @@ function health_preprocess_block(&$variables, $hook) {
       }
     }
   }
+
+  // Book navigation.
+  if ($variables['block_html_id'] == 'block-book-navigation') {
+    // Reload the book navigation so that we can add numbering to the links.
+    if ($node = menu_get_object()) {
+      $tree = menu_tree_all_data($node->book['menu_name'], $node->book);
+      _health_heading_children($tree, '0', $active_num);
+      $data = array_shift($tree);
+      $content = ($data['below']) ? menu_tree_output($data['below']) : '';
+      $variables['content'] = drupal_render($content);
+
+      // Add css that will number the headings on the page.
+      $noClearFix = 'display: inline-block !important;';
+      $numberStyle = 'h1:before { content: "'.$active_num.'\\0000a0" !important; ' . $noClearFix . ' }';
+      $numberStyle .= '.region-content { counter-reset: h2counter; }';
+      for ($i=2;$i<=6;$i++) {
+        $numberStyle .= '.region-content h'.$i.' { counter-reset: h'.($i+1).'counter; }';
+        $numberStyle .= '.region-content h'.$i.':before { counter-increment: h'.$i.'counter 1; content: "'.$active_num.'" ';
+        for ($j=2;$j<=$i;$j++) {
+          $numberStyle .= '"." counter(h'.$j.'counter) ';
+        }
+        $numberStyle .= '"\\0000a0";' . $noClearFix . '}';
+      }
+      drupal_add_css($numberStyle, 'inline');
+    }
+  }
 }
 
 /**
