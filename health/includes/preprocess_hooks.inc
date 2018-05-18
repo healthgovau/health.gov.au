@@ -137,18 +137,20 @@ function health_preprocess_block(&$variables, $hook) {
       $variables['content'] = drupal_render($content);
 
       // Add css that will number the headings on the page.
-      $noClearFix = 'display: inline-block !important;';
-      $numberStyle = 'h1:before { content: "'.$active_num.'\\0000a0" !important; ' . $noClearFix . ' }';
-      $numberStyle .= '.region-content { counter-reset: h2counter; }';
-      for ($i=2;$i<=6;$i++) {
-        $numberStyle .= '.region-content h'.$i.' { counter-reset: h'.($i+1).'counter; }';
-        $numberStyle .= '.region-content h'.$i.':before { counter-increment: h'.$i.'counter 1; content: "'.$active_num.'" ';
-        for ($j=2;$j<=$i;$j++) {
-          $numberStyle .= '"." counter(h'.$j.'counter) ';
+      if ($active_num) {
+        $noClearFix = 'display: inline-block !important;';
+        $numberStyle = 'h1:before { content: "' . $active_num . '" !important; ' . $noClearFix . ' }';
+        $numberStyle .= '.region-content { counter-reset: h2counter; }';
+        for ($i = 2; $i <= 6; $i++) {
+          $numberStyle .= '.region-content h' . $i . ' { counter-reset: h' . ($i + 1) . 'counter; }';
+          $numberStyle .= '.region-content h' . $i . ':before { counter-increment: h' . $i . 'counter 1; content: "' . $active_num . '" ';
+          for ($j = 2; $j <= $i; $j++) {
+            $numberStyle .= '"." counter(h' . $j . 'counter) ';
+          }
+          $numberStyle .= '"\\0000a0";' . $noClearFix . '}';
         }
-        $numberStyle .= '"\\0000a0";' . $noClearFix . '}';
+        drupal_add_css($numberStyle, 'inline');
       }
-      drupal_add_css($numberStyle, 'inline');
     }
   }
 }
@@ -1083,7 +1085,13 @@ function health_preprocess_page(&$variables) {
         $variables['summary'] = NULL;
       }
       if (count($active_trail) > 3) {
-        $variables['section_title'] = theme('health_section_link', ['title' => 'Resources', 'path' => 'resources/']);
+        // See if this is a long document.
+        if ($active_trail[2]['module'] == 'book') {
+          $variables['section_title'] = theme('health_section_link', ['title' => $active_trail[2]['title'], 'path' => $active_trail[2]['href']]);
+        } else {
+          // If not, go to resources listing.
+          $variables['section_title'] = theme('health_section_link', ['title' => 'Resources', 'path' => 'resources/']);
+        }
       } else {
         $variables['section_title'] = NULL;
       }
