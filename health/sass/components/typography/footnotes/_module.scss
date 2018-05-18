@@ -1,0 +1,22 @@
+%footnotes {
+  border-top: 1px solid #CCC;
+  max-width: 42em;
+  padding-top: uikit-space(.5);
+}
+
+%footnote {
+  font-size: 0.8em;
+  div,p {
+    display: inline;
+  }
+  margin-bottom: uikit-space(.5);
+  padding-left: uikit-space(1.5);
+}
+
+%footnote__number {
+  position: absolute;
+  margin-left: uikit-space(-1.5);
+}
+
+
+@import 'extends';

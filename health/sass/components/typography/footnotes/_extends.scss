@@ -1,0 +1,9 @@
+.field-name-field-footnotes {
+  @extend %footnotes;
+  p {
+    @extend %footnote;
+    .footnote__number {
+      @extend %footnote__number;
+    }
+  }
+}

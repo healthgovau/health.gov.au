@@ -7,7 +7,12 @@
  * @see https://drupal.org/node/1728246
  */
 ?>
-<div class="<?php print $classes; ?>"<?php print $attributes; ?> id="<?php print $block_html_id; ?>">
+<div class="health-accordion">
+  <a href="#" class="localnav__mobile-toggle health-accordion__title health-accordion--closed" aria-controls="<?php print $block_html_id; ?>">
+    <span>In this section</span>
+  </a>
+</div>
+<div class="<?php print $classes; ?> health-accordion health-accordion__body"<?php print $attributes; ?> id="<?php print $block_html_id; ?>">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <h3<?php print $title_attributes; ?>><?php print $title; ?></h3>

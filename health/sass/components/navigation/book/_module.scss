@@ -5,7 +5,7 @@
 //-------------------------------------------------------------
 
 .book-navigation {
-  width: 42em;
+  max-width: 42em;
   margin: uikit-space(1) 0;
   border-top: 1px solid $uikit-colour-Border;
 }

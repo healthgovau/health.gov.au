@@ -589,11 +589,17 @@ function health_preprocess_field(&$variables) {
   foreach($fields as $field) {
     if ($variables['element']['#field_name'] == $field) {
       if (isset($variables['element']['#items'][0])) {
+        $markup = $variables['items'][0]['#markup'];
+
         // Add rs_preserve class to any H2's
-        $variables['items'][0]['#markup'] = preg_replace("/<h2>(.*?)<\/h2>/", '<h2 class="rs_preserve">$1</h2>', $variables['items'][0]['#markup']);
+        $markup = preg_replace("/<h2>(.*?)<\/h2>/", '<h2 class="rs_preserve">$1</h2>', $markup);
         // Add a div around tables so they can be made responsive.
-        $variables['items'][0]['#markup'] = str_replace('<table', '<div class="responsive-table-wrapper"><table', $variables['items'][0]['#markup']);
-        $variables['items'][0]['#markup'] = str_replace('</table>', '</table></div>', $variables['items'][0]['#markup']);
+        $markup = str_replace('<table', '<div class="responsive-table-wrapper"><table', $markup);
+        $markup = str_replace('</table>', '</table></div>', $markup);
+        // Convert footnotes tokens to links.
+        $markup = preg_replace("/\[\[(\d+)+\]\]/", '<sup class="footnote"><a href="#footnote-$1">[$1]</a></sup>', $markup);
+
+        $variables['items'][0]['#markup'] = $markup;
       }
     }
   }
@@ -662,6 +668,13 @@ function health_preprocess_field(&$variables) {
     if ($variables['element']['#object']->type == 'survey') {
       $variables['items'][0]['#element']['attributes']['class'] = 'button button--large';
     }
+  }
+
+  // Footnotes
+  if ($variables['element']['#field_name'] == 'field_footnotes') {
+    $markup = $variables['items'][0]['#markup'];
+    $markup = preg_replace("/\[\[(\d+)+\]\]/", '<a name="footnote-$1"></a><span class="footnote__number">$1</span>', $markup);
+    $variables['items'][0]['#markup'] = $markup;
   }
 }
 
