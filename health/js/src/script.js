@@ -109,4 +109,10 @@
     }
   };
 
+  Drupal.behaviors.footnotes = {
+    attach: function (context, settings) {
+      Drupal.health.footnotes();
+    }
+  };
+
 })(jQuery, Drupal, this, this.document);

@@ -11,11 +11,17 @@
   }
   margin-bottom: uikit-space(.5);
   padding-left: uikit-space(1.5);
+  transition: background-color 1s;
 }
 
 %footnote__number {
   position: absolute;
   margin-left: uikit-space(-1.5);
+}
+
+%footnote--highlight {
+  background-color: #ffffc6;
+  transition: background-color 1s;
 }
 
 

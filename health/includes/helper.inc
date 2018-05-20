@@ -391,3 +391,18 @@ function _health_next_number($num) {
   $parts[count($parts)-1] = ++$last;
   return implode('.', $parts);
 }
+
+/**
+ * @param $name
+ *
+ * @return mixed|string
+ */
+function _health_prepare_filename($name) {
+  // Replace anything not normal with a hyphen.
+  $name = strtolower(preg_replace('/[^a-zA-Z\d]+/', '-', $name));
+  // Remove any hyphens at the start.
+  $name = preg_replace('/^-/', '', $name);
+  // Remove any hyphens at the end.
+  $name = preg_replace('/-$/', '', $name);
+  return $name;
+}

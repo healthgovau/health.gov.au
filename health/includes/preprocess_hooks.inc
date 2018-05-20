@@ -142,8 +142,8 @@ function health_preprocess_block(&$variables, $hook) {
         $numberStyle = 'h1:before { content: "' . $active_num . '" !important; ' . $noClearFix . ' }';
         $numberStyle .= '.region-content { counter-reset: h2counter; }';
         for ($i = 2; $i <= 6; $i++) {
-          $numberStyle .= '.region-content h' . $i . ' { counter-reset: h' . ($i + 1) . 'counter; }';
-          $numberStyle .= '.region-content h' . $i . ':before { counter-increment: h' . $i . 'counter 1; content: "' . $active_num . '" ';
+          $numberStyle .= '.region-content h' . $i . ':not(.no-number) { counter-reset: h' . ($i + 1) . 'counter; }';
+          $numberStyle .= '.region-content h' . $i . ':not(.no-number):before { counter-increment: h' . $i . 'counter 1; content: "' . $active_num . '" ';
           for ($j = 2; $j <= $i; $j++) {
             $numberStyle .= '"." counter(h' . $j . 'counter) ';
           }
@@ -596,8 +596,30 @@ function health_preprocess_field(&$variables) {
         // Add a div around tables so they can be made responsive.
         $markup = str_replace('<table', '<div class="responsive-table-wrapper"><table', $markup);
         $markup = str_replace('</table>', '</table></div>', $markup);
-        // Convert footnotes tokens to links.
-        $markup = preg_replace("/\[\[(\d+)+\]\]/", '<sup class="footnote"><a href="#footnote-$1">[$1]</a></sup>', $markup);
+
+        // Replace non breaking spaces with normal spaces.
+        $markup = htmlentities($markup, null, 'utf-8');
+        $markup = str_replace("&nbsp;", "", $markup);
+        $markup = html_entity_decode($markup);
+
+        // Convert footnotes and reference tokens to links.
+        if (preg_match_all("/\[\[([^\[\]]+)+\]\]/", $markup, $matches) > 0) {
+          foreach ($matches[1] as $delta => $match) {
+            $split = explode(',', $match);
+            $inner = [];
+            if (is_numeric($split[0])) {
+              foreach($split as $ref) {
+                $inner[] = '<a href="#footnote-' . $ref . '">' . $ref . '</a>';
+              }
+              $markup = str_replace($matches[0][$delta], '<sup class="footnote__link">[' . implode(',', $inner) . ']</sup>', $markup);
+            } else {
+              foreach($split as $ref) {
+                $inner[] = '<span class="reference__link"><a href="#reference-' . _health_prepare_filename($ref) . '">' . $ref . '</a></span>';
+              }
+              $markup = str_replace($matches[0][$delta], '(' . implode('; ', $inner) . ')', $markup);
+            }
+          }
+        }
 
         $variables['items'][0]['#markup'] = $markup;
       }
@@ -673,8 +695,23 @@ function health_preprocess_field(&$variables) {
   // Footnotes
   if ($variables['element']['#field_name'] == 'field_footnotes') {
     $markup = $variables['items'][0]['#markup'];
-    $markup = preg_replace("/\[\[(\d+)+\]\]/", '<a name="footnote-$1"></a><span class="footnote__number">$1</span>', $markup);
+    $markup = preg_replace("/\[\[(\d+)+\]\]/", '<a name="footnote-$1" id="footnote-$1" ></a><span class="footnote__number">$1</span>', $markup);
     $variables['items'][0]['#markup'] = $markup;
+    $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.footnotes.min.js';
+  }
+
+  // References
+  if ($variables['element']['#field_name'] == 'field_references') {
+    $markup = $variables['items'][0]['#markup'];
+    $markup = preg_replace("/([\s|&nbsp;]*\[\[[^\[\]]+\]\][\s|&nbsp;]*)/", "$1", $markup);
+    if (preg_match_all("/(\[\[[^\[\]]+\]\])/", $markup, $matches) > 0) {
+      foreach ($matches[1] as $delta => $match) {
+        $clean = 'reference-' . _health_prepare_filename($match);
+        $markup = str_replace($matches[0][$delta], '<a name="' . $clean . '" id="' . $clean . '"></a>', $markup);
+      }
+    }
+    $variables['items'][0]['#markup'] = $markup;
+    $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.footnotes.min.js';
   }
 }
 

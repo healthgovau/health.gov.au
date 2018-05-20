@@ -1,0 +1,11 @@
+%reference {
+  font-size: 0.80em;
+  transition: background-color 1s;
+}
+
+%reference--highlight {
+  background-color: #ffffc6;
+  transition: background-color 1s;
+}
+
+@import 'extends';
