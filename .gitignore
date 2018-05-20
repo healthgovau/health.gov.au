@@ -1,4 +1,4 @@
 .idea/
-health/node_modules/
+*/node_modules/
 health/sass/vendors/uikit.scss
 health/styleguide
