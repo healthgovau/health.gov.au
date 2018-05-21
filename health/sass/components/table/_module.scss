@@ -7,6 +7,7 @@
 // @todo We shouldn't need to import this here, but it won't compile without it.
 @import '../../abstracts/mixins';
 
+// Table.
 %table {
   margin-bottom: uikit-space(1);
   border-collapse: collapse;
@@ -52,5 +53,32 @@
     overflow: auto;
   }
 }
+
+// Table title.
+%table__title {
+  font-weight: bold;
+  padding-bottom: uikit-space(.75);
+}
+
+// Table source.
+%table__source {
+  @extend .row;
+}
+
+%table__source-label {
+  font-size: 0.8em;
+  margin: 0;
+  font-weight: normal;
+  @extend .col-sm-2;
+  @extend .col-md-1;
+}
+
+%table__source-text {
+  font-size: 0.8em;
+  margin: 0;
+  @extend .col-sm-10;
+  @extend .col-md-11;
+}
+
 
 @import 'print';
