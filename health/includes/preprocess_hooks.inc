@@ -125,34 +125,6 @@ function health_preprocess_block(&$variables, $hook) {
       }
     }
   }
-
-  // Book navigation.
-  if ($variables['block_html_id'] == 'block-book-navigation') {
-    // Reload the book navigation so that we can add numbering to the links.
-    if ($node = menu_get_object()) {
-      $tree = menu_tree_all_data($node->book['menu_name'], $node->book);
-      _health_heading_children($tree, '0', $active_num);
-      $data = array_shift($tree);
-      $content = ($data['below']) ? menu_tree_output($data['below']) : '';
-      $variables['content'] = drupal_render($content);
-
-      // Add css that will number the headings on the page.
-      if ($active_num) {
-        $noClearFix = 'display: inline-block !important;';
-        $numberStyle = 'h1:before { content: "' . $active_num . '" !important; ' . $noClearFix . ' }';
-        $numberStyle .= '.region-content { counter-reset: h2counter; }';
-        for ($i = 2; $i <= 6; $i++) {
-          $numberStyle .= '.region-content h' . $i . ':not(.no-number) { counter-reset: h' . ($i + 1) . 'counter; }';
-          $numberStyle .= '.region-content h' . $i . ':not(.no-number):before { counter-increment: h' . $i . 'counter 1; content: "' . $active_num . '" ';
-          for ($j = 2; $j <= $i; $j++) {
-            $numberStyle .= '"." counter(h' . $j . 'counter) ';
-          }
-          $numberStyle .= '"\\0000a0";' . $noClearFix . '}';
-        }
-        drupal_add_css($numberStyle, 'inline');
-      }
-    }
-  }
 }
 
 /**
@@ -598,29 +570,33 @@ function health_preprocess_field(&$variables) {
         $markup = str_replace('</table>', '</table></div>', $markup);
 
         // Replace non breaking spaces with normal spaces.
-        $markup = htmlentities($markup, null, 'utf-8');
-        $markup = str_replace("&nbsp;", "", $markup);
-        $markup = html_entity_decode($markup);
+        $markup = _health_replace_nbsp($markup);
+
+        // Add glossary terms
+        $glossary = &drupal_static('book_glossary_terms');
+        foreach ($glossary as $term => $definition) {
+          $markup = preg_replace("/([^A-Z\[])(" . $term . ")([^A-Z\]])/", '$1<abbr title="' . $definition . '">$2</abbr>$3', $markup);
+        }
 
         // Convert footnotes and reference tokens to links.
-        if (preg_match_all("/\[\[([^\[\]]+)+\]\]/", $markup, $matches) > 0) {
-          foreach ($matches[1] as $delta => $match) {
+        if (preg_match_all("/(\[\[)([^\[\]]+)+(\]\])/", $markup, $matches) > 0) {
+          foreach ($matches[2] as $delta => $match) {
             $split = explode(',', $match);
             $inner = [];
             if (is_numeric($split[0])) {
-              foreach($split as $ref) {
+              foreach ($split as $ref) {
                 $inner[] = '<a href="#footnote-' . $ref . '">' . $ref . '</a>';
               }
               $markup = str_replace($matches[0][$delta], '<sup class="footnote__link">[' . implode(',', $inner) . ']</sup>', $markup);
-            } else {
-              foreach($split as $ref) {
+            }
+            else {
+              foreach ($split as $ref) {
                 $inner[] = '<span class="reference__link"><a href="#reference-' . _health_prepare_filename($ref) . '">' . $ref . '</a></span>';
               }
               $markup = str_replace($matches[0][$delta], '(' . implode('; ', $inner) . ')', $markup);
             }
           }
         }
-
         $variables['items'][0]['#markup'] = $markup;
       }
     }
@@ -695,6 +671,7 @@ function health_preprocess_field(&$variables) {
   // Footnotes
   if ($variables['element']['#field_name'] == 'field_footnotes') {
     $markup = $variables['items'][0]['#markup'];
+    $markup = _health_replace_nbsp($markup);
     $markup = preg_replace("/\[\[(\d+)+\]\]/", '<a name="footnote-$1" id="footnote-$1" ></a><span class="footnote__number">$1</span>', $markup);
     $variables['items'][0]['#markup'] = $markup;
     $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.footnotes.min.js';
@@ -703,6 +680,7 @@ function health_preprocess_field(&$variables) {
   // References
   if ($variables['element']['#field_name'] == 'field_references') {
     $markup = $variables['items'][0]['#markup'];
+    $markup = _health_replace_nbsp($markup);
     $markup = preg_replace("/([\s|&nbsp;]*\[\[[^\[\]]+\]\][\s|&nbsp;]*)/", "$1", $markup);
     if (preg_match_all("/(\[\[[^\[\]]+\]\])/", $markup, $matches) > 0) {
       foreach ($matches[1] as $delta => $match) {
@@ -901,6 +879,49 @@ function health_preprocess_node(&$variables) {
     }
   }
 
+  // Books
+  $book_types = ['book_page', 'book_glossary'];
+  if (in_array($node->type, $book_types)) {
+
+    // Add css that will number the headings on the page.
+    if (isset($node->field_exclude_from_numbering[LANGUAGE_NONE]) && $node->field_exclude_from_numbering[LANGUAGE_NONE][0]['value'] == 0) {
+      preg_match("/^([\d\.]+)/", $node->title, $matches);
+      if ($matches[0]) {
+        $active_num = $matches[0];
+        $noClearFix = 'display: inline-block !important;';
+        $numberStyle = '.region-content { counter-reset: h2counter; }';
+        for ($i = 2; $i <= 6; $i++) {
+          $numberStyle .= '.region-content h' . $i . ':not(.no-number) { counter-reset: h' . ($i + 1) . 'counter; }';
+          $numberStyle .= '.region-content h' . $i . ':not(.no-number):before { counter-increment: h' . $i . 'counter 1; content: "' . $active_num . '" ';
+          for ($j = 2; $j <= $i; $j++) {
+            $numberStyle .= '"." counter(h' . $j . 'counter) ';
+          }
+          $numberStyle .= '"\\0000a0";' . $noClearFix . '}';
+        }
+        drupal_add_css($numberStyle, 'inline');
+      }
+    }
+
+    // Load and save glossary terms.
+    $glossary = &drupal_static('book_glossary_terms');
+    $glossary = [];
+    $tree = menu_tree_all_data(book_menu_name($node->book['bid']));
+    $glossary_nodes = _health_book_find_glossary($tree);
+    foreach($glossary_nodes as $glossary_node) {
+      $pids = [];
+      foreach($glossary_node->field_components[LANGUAGE_NONE] as $paragraph) {
+        $pids[] = $paragraph['value'];
+      }
+      $paragraphs = entity_load('paragraphs_item', $pids);
+      foreach($paragraphs as $paragraph) {
+        if ($paragraph->bundle == 'glossary_term') {
+          $term = $paragraph->field_glossary_term[LANGUAGE_NONE][0]['value'];
+          $definition = $paragraph->field_glossary_definition[LANGUAGE_NONE][0]['value'];
+          $glossary[$term] = $definition;
+        }
+      }
+    }
+  }
 }
 
 /**

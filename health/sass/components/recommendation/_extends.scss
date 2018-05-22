@@ -1,0 +1,8 @@
+.paragraphs-item-recommendation {
+  @extend %recommendation;
+  @extend %recommendation--pp;
+
+  .field-name-field-recommendation-grade {
+    @extend %recommendation__grade;
+  }
+}
