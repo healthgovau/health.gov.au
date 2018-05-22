@@ -65,7 +65,7 @@
       legendSummary('.paragraphs-item-type-para-link', 'Link', 'input[type="text"]');
       legendSummary('.paragraphs-item-type-para-links', 'Links', '.field-name-field-pbundle-title input');
       legendSummary('.paragraphs-item-type-para-taxonomies', 'Taxonomies', '.field-name-field-pbundle-title input');
-      legendSummary('.paragraphs-item-type-para-taxonomy', 'Taxonomy', '.field-name-field-related-term input');
+      legendSummary('.paragraphs-item-type-para-taxonomy', 'Term', '.field-name-field-related-term input');
       legendSummary('.paragraphs-item-type-para-statistics', 'Statistics', '.field-name-field-title input');
       legendSummary('.paragraphs-item-type-para-contact', 'Contact', 'select:not(".filter-list")');
 

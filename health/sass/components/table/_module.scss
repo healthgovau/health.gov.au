@@ -62,23 +62,8 @@
 
 // Table source.
 %table__source {
-  @extend .row;
+  @extend %minor-text;
+  margin-bottom: uikit-space(1);
 }
-
-%table__source-label {
-  font-size: 0.8em;
-  margin: 0;
-  font-weight: normal;
-  @extend .col-sm-2;
-  @extend .col-md-1;
-}
-
-%table__source-text {
-  font-size: 0.8em;
-  margin: 0;
-  @extend .col-sm-10;
-  @extend .col-md-11;
-}
-
 
 @import 'print';

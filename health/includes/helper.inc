@@ -438,10 +438,14 @@ function _health_next_number($num) {
  */
 function _health_prepare_filename($name) {
   // Replace anything not normal with a hyphen.
-  $name = strtolower(preg_replace('/[^a-zA-Z\d]+/', '-', $name));
+  $clean = strtolower(preg_replace('/[^a-zA-Z\d]+/', '-', $name));
   // Remove any hyphens at the start.
-  $name = preg_replace('/^-/', '', $name);
+  $clean = preg_replace('/^-/', '', $clean);
   // Remove any hyphens at the end.
-  $name = preg_replace('/-$/', '', $name);
-  return $name;
+  $clean = preg_replace('/-$/', '', $clean);
+  // If this was only special characters, base 64 encode it so it is usable
+  if (empty($clean)) {
+    return base64_encode($name);
+  }
+  return $clean;
 }

@@ -20,13 +20,7 @@ table {
   .field-name-field-title {
     @extend %table__title;
   }
-  .field-name-field-source {
+  .field-name-field-table-source {
     @extend %table__source;
-    .field-label {
-      @extend %table__source-label;
-    }
-    .field-items {
-      @extend %table__source-text;
-    }
   }
 }

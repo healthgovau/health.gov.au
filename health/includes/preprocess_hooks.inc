@@ -575,26 +575,33 @@ function health_preprocess_field(&$variables) {
         // Add glossary terms
         $glossary = &drupal_static('book_glossary_terms');
         foreach ($glossary as $term => $definition) {
-          $markup = preg_replace("/([^A-Z\[])(" . $term . ")([^A-Z\]])/", '$1<abbr title="' . $definition . '">$2</abbr>$3', $markup);
+          $markup = preg_replace("/([^A-Z\[\{])(" . $term . ")([^A-Z\]\}])/", '$1<abbr title="' . $definition . '">$2</abbr>$3', $markup);
         }
 
         // Convert footnotes and reference tokens to links.
-        if (preg_match_all("/(\[\[)([^\[\]]+)+(\]\])/", $markup, $matches) > 0) {
+
+        // Footnotes.
+        if (preg_match_all("/(\[\[)(.+)(\]\])/", $markup, $matches) > 0) {
           foreach ($matches[2] as $delta => $match) {
             $split = explode(',', $match);
             $inner = [];
-            if (is_numeric($split[0])) {
-              foreach ($split as $ref) {
-                $inner[] = '<a href="#footnote-' . $ref . '">' . $ref . '</a>';
-              }
-              $markup = str_replace($matches[0][$delta], '<sup class="footnote__link">[' . implode(',', $inner) . ']</sup>', $markup);
+            foreach ($split as $ref) {
+              $clean = _health_prepare_filename($ref);
+              $inner[] = '<a href="#footnote-' . $clean . '">' . $ref . '</a>';
             }
-            else {
-              foreach ($split as $ref) {
-                $inner[] = '<span class="reference__link"><a href="#reference-' . _health_prepare_filename($ref) . '">' . $ref . '</a></span>';
-              }
-              $markup = str_replace($matches[0][$delta], '(' . implode('; ', $inner) . ')', $markup);
+            $markup = str_replace($matches[0][$delta], '<sup class="footnote__link">[' . implode(',', $inner) . ']</sup>', $markup);
+          }
+        }
+
+        // References
+        if (preg_match_all("/(\{\{)([^\{\}]+)+(\}\})/", $markup, $matches) > 0) {
+          foreach ($matches[2] as $delta => $match) {
+            $split = explode(',', $match);
+            $inner = [];
+            foreach ($split as $ref) {
+              $inner[] = '<span class="reference__link"><a href="#reference-' . _health_prepare_filename($ref) . '">' . $ref . '</a></span>';
             }
+            $markup = str_replace($matches[0][$delta], '(' . implode('; ', $inner) . ')', $markup);
           }
         }
         $variables['items'][0]['#markup'] = $markup;
@@ -669,10 +676,16 @@ function health_preprocess_field(&$variables) {
   }
 
   // Footnotes
-  if ($variables['element']['#field_name'] == 'field_footnotes') {
+  $footnotes = ['field_footnotes', 'field_table_source'];
+  if (in_array($variables['element']['#field_name'], $footnotes)) {
     $markup = $variables['items'][0]['#markup'];
     $markup = _health_replace_nbsp($markup);
-    $markup = preg_replace("/\[\[(\d+)+\]\]/", '<a name="footnote-$1" id="footnote-$1" ></a><span class="footnote__number">$1</span>', $markup);
+    if (preg_match_all("/\[\[(.+)\]\]/", $markup, $matches) > 0) {
+      foreach ($matches[1] as $delta => $match) {
+        $clean = _health_prepare_filename($match);
+        $markup = str_replace($matches[0][$delta], '<a name="footnote-' . $clean . '" id="footnote-' . $clean . '"></a><span class="footnote__number">' . $match . '</span>', $markup);
+      }
+    }
     $variables['items'][0]['#markup'] = $markup;
     $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.footnotes.min.js';
   }
@@ -681,8 +694,7 @@ function health_preprocess_field(&$variables) {
   if ($variables['element']['#field_name'] == 'field_references') {
     $markup = $variables['items'][0]['#markup'];
     $markup = _health_replace_nbsp($markup);
-    $markup = preg_replace("/([\s|&nbsp;]*\[\[[^\[\]]+\]\][\s|&nbsp;]*)/", "$1", $markup);
-    if (preg_match_all("/(\[\[[^\[\]]+\]\])/", $markup, $matches) > 0) {
+    if (preg_match_all("/\{\{([^\(\)]+)\}\}/", $markup, $matches) > 0) {
       foreach ($matches[1] as $delta => $match) {
         $clean = 'reference-' . _health_prepare_filename($match);
         $markup = str_replace($matches[0][$delta], '<a name="' . $clean . '" id="' . $clean . '"></a>', $markup);
@@ -1157,7 +1169,7 @@ function health_preprocess_page(&$variables) {
       }
       if (count($active_trail) > 3) {
         // See if this is a long document.
-        if ($active_trail[2]['module'] == 'book') {
+        if (isset($active_trail[2]['module']) && $active_trail[2]['module'] == 'book') {
           $variables['section_title'] = theme('health_section_link', ['title' => $active_trail[2]['title'], 'path' => $active_trail[2]['href']]);
         } else {
           // If not, go to resources listing.

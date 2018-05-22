@@ -5,7 +5,7 @@
 }
 
 %footnote {
-  font-size: 0.8em;
+  @extend %minor-text;
   div,p {
     display: inline;
   }

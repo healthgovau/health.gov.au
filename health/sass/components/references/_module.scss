@@ -1,5 +1,5 @@
 %reference {
-  font-size: 0.80em;
+  @extend %minor-text;
   transition: background-color 1s;
 }
 

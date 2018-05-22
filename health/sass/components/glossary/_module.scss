@@ -1,0 +1,20 @@
+// Table source.
+%glossary {
+  @extend .row;
+  margin-bottom: uikit-space(.5);
+  border-top: $uikit-borderize;
+  padding-top: uikit-space(.5);
+}
+
+%glossary__term {
+  margin: 0;
+  font-weight: bold;
+  @extend .col-sm-3;
+}
+
+%glossary__definition {
+  margin: 0;
+  @extend .col-sm-9;
+}
+
+@import 'extends';
