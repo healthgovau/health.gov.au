@@ -14,7 +14,12 @@
     max-width: 44em; } }
 
 body.adminimal-skin-material {
-  font-size: 14px; }
+  font-size: 15px; }
+  body.adminimal-skin-material #page {
+    padding: 20px; }
+  body.adminimal-skin-material div.tabs-secondary {
+    padding-left: 10px;
+    background: white; }
   body.adminimal-skin-material #autocomplete {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
     border: 1px solid #E0E0E0 !important;
@@ -24,10 +29,8 @@ body.adminimal-skin-material {
       body.adminimal-skin-material #autocomplete li.selected {
         background: #2196F3;
         cursor: pointer; }
-  body.adminimal-skin-material input.chosen-search-input {
-    box-sizing: border-box; }
   body.adminimal-skin-material input, body.adminimal-skin-material option, body.adminimal-skin-material select, body.adminimal-skin-material textarea {
-    font-size: 14px; }
+    font-size: 15px; }
   body.adminimal-skin-material .form-required {
     color: #c70000 !important; }
   body.adminimal-skin-material .form-item input.error, body.adminimal-skin-material .form-item textarea.error, body.adminimal-skin-material .form-item select.error {
@@ -36,6 +39,10 @@ body.adminimal-skin-material {
     font-weight: normal; }
     body.adminimal-skin-material .form-item label.option {
       font-weight: lighter; }
+  body.adminimal-skin-material input[type='text'] {
+    box-sizing: border-box; }
+  body.adminimal-skin-material .form-item {
+    padding-right: 0; }
   body.adminimal-skin-material .fieldset-wrapper label {
     margin-top: 1.5em; }
   body.adminimal-skin-material .fieldset-wrapper > div:first-of-type label {
@@ -108,6 +115,12 @@ body.adminimal-skin-material {
   width: 100%; }
   .page-admin-workbench .admin.my-workbench > div:first-child {
     display: none; }
+  .page-admin-workbench .admin.my-workbench > div:nth-child(2) > h3 {
+    padding-top: 0; }
+  .page-admin-workbench .admin.my-workbench > div h3 {
+    font-weight: normal;
+    padding-top: 2em;
+    font-size: 20px; }
 
 .media-widget .preview {
   margin-right: 0px; }
@@ -231,6 +244,10 @@ body.adminimal-skin-material .field-type-paragraphs {
   margin-top: 1.5em; }
   body.adminimal-skin-material .field-type-paragraphs .form-item > p {
     display: none; }
+  body.adminimal-skin-material .field-type-paragraphs.field-widget-paragraphs-embed > div > .form-item > label {
+    padding: 5px 11px 4px 11px;
+    margin: 0;
+    background-color: #e0e0e0; }
   body.adminimal-skin-material .field-type-paragraphs > div > div > div:not(.overflow-fix) {
     border: 1px solid #E0E0E0;
     background: white;
@@ -263,14 +280,6 @@ body.adminimal-skin-material .field-type-paragraphs {
       display: inline; }
       body.adminimal-skin-material .field-type-paragraphs > div > div > div > div:not(.tabledrag-toggle-weight-wrapper):not(.messages) > div > label {
         display: none; }
-
-body.adminimal-skin-material .field-name-field-components #field-components-add-more-wrapper label,
-body.adminimal-skin-material .field-name-field-publication-files #field-components-add-more-wrapper label,
-body.adminimal-skin-material .field-name-field-para-email #field-components-add-more-wrapper label,
-body.adminimal-skin-material .field-name-field-para-telephone #field-components-add-more-wrapper label {
-  padding: 5px 11px 4px 11px;
-  margin: 0;
-  background-color: #e0e0e0; }
 
 body.adminimal-skin-material .field-name-field-components tr td,
 body.adminimal-skin-material .field-name-field-publication-files tr td,
@@ -456,65 +465,6 @@ body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-
 body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-related-contact label {
   display: none; }
 
-body.adminimal-skin-material .field-name-field-components .field-name-field-pbundle-title label,
-body.adminimal-skin-material .field-name-field-components .field-name-field-title label,
-body.adminimal-skin-material .field-name-field-publication-files .field-name-field-pbundle-title label,
-body.adminimal-skin-material .field-name-field-publication-files .field-name-field-title label,
-body.adminimal-skin-material .field-name-field-para-email .field-name-field-pbundle-title label,
-body.adminimal-skin-material .field-name-field-para-email .field-name-field-title label,
-body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-pbundle-title label,
-body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-title label {
-  display: inline; }
-
-body.adminimal-skin-material .field-name-field-components .field-name-field-pbundle-title input,
-body.adminimal-skin-material .field-name-field-components .field-name-field-title input,
-body.adminimal-skin-material .field-name-field-publication-files .field-name-field-pbundle-title input,
-body.adminimal-skin-material .field-name-field-publication-files .field-name-field-title input,
-body.adminimal-skin-material .field-name-field-para-email .field-name-field-pbundle-title input,
-body.adminimal-skin-material .field-name-field-para-email .field-name-field-title input,
-body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-pbundle-title input,
-body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-title input {
-  font-size: 18px;
-  font-weight: normal;
-  margin-left: 15px;
-  margin-top: 20px; }
-  body.adminimal-skin-material .field-name-field-components .field-name-field-pbundle-title input::-webkit-input-placeholder,
-  body.adminimal-skin-material .field-name-field-components .field-name-field-title input::-webkit-input-placeholder,
-  body.adminimal-skin-material .field-name-field-publication-files .field-name-field-pbundle-title input::-webkit-input-placeholder,
-  body.adminimal-skin-material .field-name-field-publication-files .field-name-field-title input::-webkit-input-placeholder,
-  body.adminimal-skin-material .field-name-field-para-email .field-name-field-pbundle-title input::-webkit-input-placeholder,
-  body.adminimal-skin-material .field-name-field-para-email .field-name-field-title input::-webkit-input-placeholder,
-  body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-pbundle-title input::-webkit-input-placeholder,
-  body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-title input::-webkit-input-placeholder {
-    color: lightgrey; }
-  body.adminimal-skin-material .field-name-field-components .field-name-field-pbundle-title input::-moz-placeholder,
-  body.adminimal-skin-material .field-name-field-components .field-name-field-title input::-moz-placeholder,
-  body.adminimal-skin-material .field-name-field-publication-files .field-name-field-pbundle-title input::-moz-placeholder,
-  body.adminimal-skin-material .field-name-field-publication-files .field-name-field-title input::-moz-placeholder,
-  body.adminimal-skin-material .field-name-field-para-email .field-name-field-pbundle-title input::-moz-placeholder,
-  body.adminimal-skin-material .field-name-field-para-email .field-name-field-title input::-moz-placeholder,
-  body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-pbundle-title input::-moz-placeholder,
-  body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-title input::-moz-placeholder {
-    color: lightgrey; }
-  body.adminimal-skin-material .field-name-field-components .field-name-field-pbundle-title input:-ms-input-placeholder,
-  body.adminimal-skin-material .field-name-field-components .field-name-field-title input:-ms-input-placeholder,
-  body.adminimal-skin-material .field-name-field-publication-files .field-name-field-pbundle-title input:-ms-input-placeholder,
-  body.adminimal-skin-material .field-name-field-publication-files .field-name-field-title input:-ms-input-placeholder,
-  body.adminimal-skin-material .field-name-field-para-email .field-name-field-pbundle-title input:-ms-input-placeholder,
-  body.adminimal-skin-material .field-name-field-para-email .field-name-field-title input:-ms-input-placeholder,
-  body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-pbundle-title input:-ms-input-placeholder,
-  body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-title input:-ms-input-placeholder {
-    color: lightgrey; }
-  body.adminimal-skin-material .field-name-field-components .field-name-field-pbundle-title input::placeholder,
-  body.adminimal-skin-material .field-name-field-components .field-name-field-title input::placeholder,
-  body.adminimal-skin-material .field-name-field-publication-files .field-name-field-pbundle-title input::placeholder,
-  body.adminimal-skin-material .field-name-field-publication-files .field-name-field-title input::placeholder,
-  body.adminimal-skin-material .field-name-field-para-email .field-name-field-pbundle-title input::placeholder,
-  body.adminimal-skin-material .field-name-field-para-email .field-name-field-title input::placeholder,
-  body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-pbundle-title input::placeholder,
-  body.adminimal-skin-material .field-name-field-para-telephone .field-name-field-title input::placeholder {
-    color: lightgrey; }
-
 body.adminimal-skin-material .field-name-field-components .paragraphs-item-type-document .field-name-field-resource-file-pages label,
 body.adminimal-skin-material .field-name-field-components .paragraphs-item-type-document .field-name-field-file label,
 body.adminimal-skin-material .field-name-field-publication-files .paragraphs-item-type-document .field-name-field-resource-file-pages label,
@@ -584,7 +534,8 @@ body.adminimal-skin-material.page-node-edit .form-item-title input, body.adminim
   font-size: 30px;
   padding: 10px 15px;
   font-weight: 300;
-  margin: 0 0 20px 0; }
+  margin: 0 0 20px 0;
+  width: 100%; }
   body.adminimal-skin-material.page-node-edit .form-item-title input::-webkit-input-placeholder, body.adminimal-skin-material.page-node-add .form-item-title input::-webkit-input-placeholder {
     color: #cecece; }
   body.adminimal-skin-material.page-node-edit .form-item-title input::-moz-placeholder, body.adminimal-skin-material.page-node-add .form-item-title input::-moz-placeholder {
