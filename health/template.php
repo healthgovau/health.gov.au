@@ -625,25 +625,6 @@ function health_file_entity_download_link($variables) {
         }
       }
 
-      // Images.
-      if ($node->type == 'image') {
-        $docs = $node->field_image_files[$node->language];
-        foreach ($docs as $doc) {
-          $entities = entity_load('paragraphs_item', [$doc['value']]);
-          if (!empty($entities)) {
-            $para_documents = array_pop($entities);
-            foreach($para_documents->field_images[LANGUAGE_NONE] as $image) {
-              if ($image['fid'] == $file->fid) {
-                // Get sizing.
-                if (isset($para_documents->field_image_size) && !empty($para_documents->field_image_size)) {
-                  $size = $para_documents->field_image_size[LANGUAGE_NONE][0]['value'];
-                }
-              }
-            }
-          }
-        }
-      }
-
       // Construct the link.
       $variables['text'] = '<div class="file__link">Download <span class="file__link-title">' . $title . ' as</span> ' . health_get_friendly_mime($file->filemime) . '</div>';
 

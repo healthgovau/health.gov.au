@@ -1,0 +1,39 @@
+// Fields
+
+body.adminimal-skin-material {
+
+  // Title field
+  &.page-node-edit,&.page-node-add {
+    .form-item-title {
+      input {
+        font-size: 30px;
+        padding: 10px 15px;
+        font-weight: 300;
+        &::placeholder {
+          color: #cecece;
+        }
+        margin: 0 0 20px 0;
+        width: 100%;
+      }
+    }
+  }
+
+  // URL field.
+  .link-field-column {
+    float: none;
+    width: auto;
+    margin-bottom: 7px;
+    label {
+      font-size: 14px;
+      display: inline;
+      font-weight: 500;
+    }
+    input {
+      width: auto;
+      margin-left: 10px;
+    }
+    .description {
+      display: none;
+    }
+  }
+}

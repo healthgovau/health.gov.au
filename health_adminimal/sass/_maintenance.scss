@@ -1,0 +1,28 @@
+// Notification that the site is in dual author mode
+.maintenance-notification {
+  border: 1px solid #940000;
+  background: #ffd4da;
+  color: black;
+  font-size: 1.2em;
+  padding: 26px;
+  max-width: 42em;
+  margin-bottom: 20px;
+  a {
+    color: #940000;
+    font-weight: bold;
+  }
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .title {
+    font-size: 1.5em;
+    color: #940000;
+    font-weight: bold;
+  }
+
+  .subtitle {
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+}

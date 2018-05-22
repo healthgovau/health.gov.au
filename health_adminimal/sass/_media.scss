@@ -1,0 +1,147 @@
+.media-widget {
+  // Fixing padding issues on fields with Media browser button.
+  .preview {
+    margin-right: 0px;
+  }
+  input.remove {
+    margin-left: 10px;
+    margin-right: 1em;
+  }
+}
+
+// Fixing padding on media browser tabs
+#media-browser-tabset ul.tabs.primary li.ui-state-default {
+  padding-bottom: 0px;
+  a:link {
+    padding: 14px 20px;
+  }
+}
+
+// Fix overlay inconsistencies
+.ui-widget-overlay, .cke_dialog_background_cover {
+  background: #aaaaaa;
+  background-color: #000000 !important;
+}
+
+// Make ckeditor dialog buttons consistent
+.cke_dialog_footer_buttons a.cke_dialog_ui_button {
+  &.cke_dialog_ui_button_ok span {
+    color: white;
+  }
+  &:not(.cke_dialog_ui_button_ok) {
+    background-color: #aaaaaa;
+    span {
+      color: white;
+    }
+  }
+}
+
+
+// Media browser preview
+.media-item {
+
+  padding: 0;
+
+  .media-thumbnail {
+    line-height: 0;
+  }
+
+  // Files
+  &.media-type__document {
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    .file {
+      a {
+        padding: 0;
+        font-size: 15px;
+        display: inline-block;
+        line-height: 1.2em;
+        color: black;
+        font-weight: 300;
+        margin: -8px 0 0 5px;
+      }
+      svg {
+        width: 14px;
+        margin-top: 8px;
+      }
+    }
+
+    .label-wrapper {
+      display: none;
+    }
+  }
+
+  // Images
+  &.media-type__image {
+    background: white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+
+    .media-thumbnail__image {
+      display: inline-block;
+      position: relative;
+    }
+    .label-wrapper {
+      display: none;
+      background: none;
+      position: relative;
+      box-shadow: none;
+      label {
+        margin: 0;
+        padding: 0 5px;
+        font-size: 12px;
+        font-weight: normal;
+        line-height: 1.2em;
+      }
+    }
+
+  }
+}
+
+
+// Media browser popup preview
+.media-list-thumbnails {
+  li {
+    margin: 0 10px 3px 0;
+  }
+
+  // Files
+  .media-type__document {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+    max-width: 152px;
+    overflow: hidden;
+    border: 1px solid #CCCCCC;
+    .media-thumbnail__image {
+      display: inline-block;
+      background: #EEEEEE;
+      position: relative;
+      width: 150px;
+      height: 150px;
+      .file {
+        svg {
+          height: 120px;
+          width: 120px;
+          margin: 15px;
+          color: lightgrey;
+        }
+        a {
+          display: none;
+        }
+      }
+    }
+    .label-wrapper {
+      display: block;
+      box-shadow: none;
+      opacity: 0.8;
+      label {
+        margin: 0;
+        padding: 8px;
+        font-size: 12px;
+        font-weight: normal;
+        line-height: 1.2em;
+      }
+    }
+  }
+}
