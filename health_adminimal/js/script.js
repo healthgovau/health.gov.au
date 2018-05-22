@@ -73,6 +73,11 @@
       legendSummary('.paragraphs-item-type-documents', 'Part', '.field-name-field-resource-file-title input');
       legendSummary('.paragraphs-item-type-document', 'File', '.media-item');
 
+      // Long docs
+      legendSummary('.paragraphs-item-type-recommendation', 'Recommendation', 'textarea');
+      legendSummary('.paragraphs-item-type-content-table', 'Table', 'input');
+      legendSummary('.paragraphs-item-type-glossary-term', 'Term', 'input');
+
       // If collapsed already has saved states in it, restore those states.
       if (collapsed.length > 0) {
         $('.field-name-field-components > div > div > div > .field-multiple-table > tbody > tr').each(function (index) {
