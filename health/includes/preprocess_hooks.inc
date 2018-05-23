@@ -319,24 +319,26 @@ function health_preprocess_entity(&$variables) {
           $recommendations = _health_book_tree_traverse($node->book['bid'], '_health_book_find_recommendations');
           foreach($recommendations as $nid => $group) {
             $entities = entity_view('paragraphs_item', $group['recommendations']);
-            $output .= theme('health_summary_list_group', ['node' => $group['node'], 'items' => $entities]);
+            $output .= theme('health_summary_list_group', ['node' => $group['node'], 'items' => render($entities)]);
           }
           break;
 
         case 'Tables':
           $tables = _health_book_tree_traverse($node->book['bid'], '_health_book_find_tables');
-          $items = [];
+
           foreach($tables as $nid => $group) {
+            $items = [];
             foreach($group['tables'] as $table) {
               $items[] = l($table->field_title[LANGUAGE_NONE][0]['value'], 'node/' . $group['node']->nid);
             }
+            $items = theme_item_list([
+              'items' => $items,
+              'title' => NULL,
+              'type' => 'ul',
+              'attributes' => [],
+            ]);
+            $output .= theme('health_summary_list_group', ['node' => $group['node'], 'items' => $items]);
           }
-          $output .= theme_item_list([
-            'items' => $items,
-            'title' => NULL,
-            'type' => 'ul',
-            'attributes' => [],
-          ]);
           break;
       }
       $variables['content']['field_summary_list_type'][0]['#markup'] = $output;
