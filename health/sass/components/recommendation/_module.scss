@@ -26,8 +26,8 @@
   color: black;
 }
 
-// Practice point.
-%recommendation--pp {
+// Yellow (practice point)
+%recommendation--yellow {
   border-color: #caca09;
   border-left-width: 6px;
   background: #ffffef;
@@ -35,6 +35,30 @@
   %recommendation__grade {
     border-color: #b7b748;
     background: #ffffb0;
+  }
+}
+
+// Purple (Grade A-D)
+%recommendation--purple {
+  border-color: #6622ad;
+  border-left-width: 6px;
+  background: #ead5ff;
+
+  %recommendation__grade {
+    border-color: #6622ad;
+    background: #cfabf5;
+  }
+}
+
+// Green (CBR)
+%recommendation--green {
+  border-color: #4b7300;
+  border-left-width: 6px;
+  background: #e4fbba;
+
+  %recommendation__grade {
+    border-color: #4b7300;
+    background: #b1e849;
   }
 }
 

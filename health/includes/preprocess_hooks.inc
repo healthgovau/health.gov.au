@@ -303,6 +303,40 @@ function health_preprocess_entity(&$variables) {
         $variables['classes_array'][] = 'block-id__' . $bid['value'];
       }
     }
+
+    // Recommendations
+    if ($para_item->bundle == 'recommendation') {
+      // Add a class to identify what grade it is.
+      $variables['classes_array'][] = 'recommendation-grade-tid-' . $para_item->field_recommendation_grade[LANGUAGE_NONE][0]['tid'];
+    }
+
+    // Summary lists
+    if ($para_item->bundle == 'summary_list') {
+      $output = '';
+      $node = menu_get_object('node');
+      switch ($para_item->field_summary_list_type[LANGUAGE_NONE][0]['value']) {
+        case 'Recommendations':
+          $tree = menu_tree_all_data(book_menu_name($node->book['bid']));
+          $recommendations = _health_book_find_recommendations($tree);
+          // Group the recommendations into the nodes.
+          $grouped = [];
+          $nodes = [];
+          foreach($recommendations as $rec) {
+            if (isset($grouped[$rec->parent_node->nid])) {
+              $grouped[$rec->parent_node->nid][] = $rec;
+            } else {
+              $grouped[$rec->parent_node->nid] = [$rec];
+              $nodes[$rec->parent_node->nid] = $rec->parent_node;
+            }
+          }
+          foreach($grouped as $nid => $group) {
+            $entities = entity_view('paragraphs_item', $group);
+            $output .= theme('health_summary_list_group', ['node' => $nodes[$nid], 'items' => $entities]);
+          }
+          break;
+      }
+      $variables['content']['field_summary_list_type'][0]['#markup'] = $output;
+    }
   }
 
   // Custom token replacement.
@@ -581,35 +615,20 @@ function health_preprocess_field(&$variables) {
           $variables['items'][0]['#attached']['js'][] = 'https://unpkg.com/tippy.js@2.5.2/dist/tippy.all.min.js';
         }
 
-        // Convert footnotes and reference tokens to links.
-
         // Footnotes.
-        if (preg_match_all("/(\[\[)(.+)(\]\])/", $markup, $matches) > 0) {
-          foreach ($matches[2] as $delta => $match) {
-            $split = explode(',', $match);
-            $inner = [];
-            foreach ($split as $ref) {
-              $clean = _health_prepare_filename($ref);
-              $inner[] = '<a href="#footnote-' . $clean . '">' . $ref . '</a>';
-            }
-            $markup = str_replace($matches[0][$delta], '<sup class="footnote__link">[' . implode(',', $inner) . ']</sup>', $markup);
-          }
-        }
-
+        $markup = _health_footnotes($markup);
         // References
-        if (preg_match_all("/(\{\{)([^\{\}]+)+(\}\})/", $markup, $matches) > 0) {
-          foreach ($matches[2] as $delta => $match) {
-            $split = explode(',', $match);
-            $inner = [];
-            foreach ($split as $ref) {
-              $inner[] = '<span class="reference__link"><a href="#reference-' . _health_prepare_filename($ref) . '">' . $ref . '</a></span>';
-            }
-            $markup = str_replace($matches[0][$delta], '(' . implode('; ', $inner) . ')', $markup);
-          }
-        }
+        $markup = _health_references($markup);
+
         $variables['items'][0]['#markup'] = $markup;
       }
     }
+  }
+
+  // Title
+  if ($variables['element']['#field_name'] == 'field_title') {
+    // Footnotes.
+    $variables['items'][0]['#markup'] = _health_footnotes($variables['items'][0]['#markup']);
   }
 
   // Publication date

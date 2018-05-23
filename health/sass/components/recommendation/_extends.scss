@@ -1,6 +1,17 @@
 .paragraphs-item-recommendation {
   @extend %recommendation;
-  @extend %recommendation--pp;
+
+  &.recommendation-grade-tid-2386 {
+    @extend %recommendation--yellow;
+  }
+
+  &.recommendation-grade-tid-2391 {
+    @extend %recommendation--purple;
+  }
+
+  &.recommendation-grade-tid-2393 {
+    @extend %recommendation--green;
+  }
 
   .field-name-field-recommendation-grade {
     @extend %recommendation__grade;

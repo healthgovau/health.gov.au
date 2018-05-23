@@ -150,6 +150,15 @@ function health_theme() {
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
   ];
 
+  $theme['health_summary_list_group'] = [
+    'variables' => [
+      'items' => [],
+      'node' => NULL
+    ],
+    'template' => 'health_summary_list_group',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
   return $theme;
 }
 

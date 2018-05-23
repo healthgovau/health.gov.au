@@ -400,7 +400,7 @@ function _health_book_find_glossary($tree) {
   $glossary = [];
   foreach($tree as $key => $item) {
     $nid = str_replace('node/', '', $item['link']['link_path']);
-    $node = node_load($nid, NULL, TRUE);
+    $node = node_load($nid);
     if ($node->type == 'book_glossary') {
       $glossary[] = $node;
     }
@@ -410,6 +410,33 @@ function _health_book_find_glossary($tree) {
   }
   return $glossary;
 }
+
+function _health_book_find_recommendations($tree) {
+  $found = [];
+  foreach($tree as $key => $item) {
+    $nid = str_replace('node/', '', $item['link']['link_path']);
+    $node = node_load($nid);
+    // Go through and find all recommendation paragraphs
+    $pids = [];
+    if (isset($node->field_components[LANGUAGE_NONE])) {
+      foreach ($node->field_components[LANGUAGE_NONE] as $ref) {
+        $pids[] = $ref['value'];
+      }
+      $paras = entity_load('paragraphs_item', $pids);
+      foreach ($paras as $para) {
+        if ($para->bundle == 'recommendation') {
+          $para->parent_node = $node;
+          $found[] = $para;
+        }
+      }
+    }
+    if (isset($item['below'])) {
+      $found = array_merge($found, _health_book_find_recommendations($item['below']));
+    }
+  }
+  return $found;
+}
+
 
 function _health_replace_nbsp($markup) {
   $markup = htmlentities($markup, null, 'utf-8');
@@ -448,4 +475,33 @@ function _health_prepare_filename($name) {
     return base64_encode($name);
   }
   return $clean;
+}
+
+function _health_footnotes($markup) {
+  if (preg_match_all("/(\[\[)(.+)(\]\])/", $markup, $matches) > 0) {
+    foreach ($matches[2] as $delta => $match) {
+      $split = explode(',', $match);
+      $inner = [];
+      foreach ($split as $ref) {
+        $clean = _health_prepare_filename($ref);
+        $inner[] = '<a href="#footnote-' . $clean . '">' . $ref . '</a>';
+      }
+      $markup = str_replace($matches[0][$delta], '<sup class="footnote__link">[' . implode(',', $inner) . ']</sup>', $markup);
+    }
+  }
+  return $markup;
+}
+
+function _health_references($markup) {
+  if (preg_match_all("/(\{\{)([^\{\}]+)+(\}\})/", $markup, $matches) > 0) {
+    foreach ($matches[2] as $delta => $match) {
+      $split = explode(',', $match);
+      $inner = [];
+      foreach ($split as $ref) {
+        $inner[] = '<span class="reference__link"><a href="#reference-' . _health_prepare_filename($ref) . '">' . $ref . '</a></span>';
+      }
+      $markup = str_replace($matches[0][$delta], '(' . implode('; ', $inner) . ')', $markup);
+    }
+  }
+  return $markup;
 }
