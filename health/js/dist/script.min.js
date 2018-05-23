@@ -118,7 +118,7 @@
   Drupal.behaviors.glossary = {
     attach: function (context, settings) {
       if (typeof tippy !== 'undefined') {
-        tippy('[title]', {
+        tippy('.reference__link a, .footnote__link a, abbr', {
           arrow: true,
           theme: 'health-tooltip',
           performance: true
