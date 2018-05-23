@@ -316,23 +316,27 @@ function health_preprocess_entity(&$variables) {
       $node = menu_get_object('node');
       switch ($para_item->field_summary_list_type[LANGUAGE_NONE][0]['value']) {
         case 'Recommendations':
-          $tree = menu_tree_all_data(book_menu_name($node->book['bid']));
-          $recommendations = _health_book_find_recommendations($tree);
-          // Group the recommendations into the nodes.
-          $grouped = [];
-          $nodes = [];
-          foreach($recommendations as $rec) {
-            if (isset($grouped[$rec->parent_node->nid])) {
-              $grouped[$rec->parent_node->nid][] = $rec;
-            } else {
-              $grouped[$rec->parent_node->nid] = [$rec];
-              $nodes[$rec->parent_node->nid] = $rec->parent_node;
+          $recommendations = _health_book_tree_traverse($node->book['bid'], '_health_book_find_recommendations');
+          foreach($recommendations as $nid => $group) {
+            $entities = entity_view('paragraphs_item', $group['recommendations']);
+            $output .= theme('health_summary_list_group', ['node' => $group['node'], 'items' => $entities]);
+          }
+          break;
+
+        case 'Tables':
+          $tables = _health_book_tree_traverse($node->book['bid'], '_health_book_find_tables');
+          $items = [];
+          foreach($tables as $nid => $group) {
+            foreach($group['tables'] as $table) {
+              $items[] = l($table->field_title[LANGUAGE_NONE][0]['value'], 'node/' . $group['node']->nid);
             }
           }
-          foreach($grouped as $nid => $group) {
-            $entities = entity_view('paragraphs_item', $group);
-            $output .= theme('health_summary_list_group', ['node' => $nodes[$nid], 'items' => $entities]);
-          }
+          $output .= theme_item_list([
+            'items' => $items,
+            'title' => NULL,
+            'type' => 'ul',
+            'attributes' => [],
+          ]);
           break;
       }
       $variables['content']['field_summary_list_type'][0]['#markup'] = $output;
@@ -938,23 +942,7 @@ function health_preprocess_node(&$variables) {
 
     // Load and save glossary terms.
     $glossary = &drupal_static('book_glossary_terms');
-    $glossary = [];
-    $tree = menu_tree_all_data(book_menu_name($node->book['bid']));
-    $glossary_nodes = _health_book_find_glossary($tree);
-    foreach($glossary_nodes as $glossary_node) {
-      $pids = [];
-      foreach($glossary_node->field_components[LANGUAGE_NONE] as $paragraph) {
-        $pids[] = $paragraph['value'];
-      }
-      $paragraphs = entity_load('paragraphs_item', $pids);
-      foreach($paragraphs as $paragraph) {
-        if ($paragraph->bundle == 'glossary_term') {
-          $term = $paragraph->field_glossary_term[LANGUAGE_NONE][0]['value'];
-          $definition = $paragraph->field_glossary_definition[LANGUAGE_NONE][0]['value'];
-          $glossary[$term] = $definition;
-        }
-      }
-    }
+    $glossary = _health_book_tree_traverse($node->book['bid'], '_health_book_find_glossary');
   }
 }
 
