@@ -1,0 +1,4 @@
+.health-tooltip-theme {
+  @extend %tooltip;
+  @extend %tooltip--light;
+}

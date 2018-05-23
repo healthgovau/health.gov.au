@@ -574,8 +574,11 @@ function health_preprocess_field(&$variables) {
 
         // Add glossary terms
         $glossary = &drupal_static('book_glossary_terms');
-        foreach ($glossary as $term => $definition) {
-          $markup = preg_replace("/([^A-Z\[\{])(" . $term . ")([^A-Z\]\}])/", '$1<abbr title="' . $definition . '">$2</abbr>$3', $markup);
+        if (!empty($glossary)) {
+          foreach ($glossary as $term => $definition) {
+            $markup = preg_replace("/([^A-Z\[\{])(" . $term . ")([^A-Z\]\}])/", '$1<abbr title="' . $definition . '">$2</abbr>$3', $markup);
+          }
+          $variables['items'][0]['#attached']['js'][] = 'https://unpkg.com/tippy.js@2.5.2/dist/tippy.all.min.js';
         }
 
         // Convert footnotes and reference tokens to links.

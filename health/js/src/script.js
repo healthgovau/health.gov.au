@@ -115,4 +115,16 @@
     }
   };
 
+  Drupal.behaviors.glossary = {
+    attach: function (context, settings) {
+      if (typeof tippy !== 'undefined') {
+        tippy('abbr', {
+          arrow: true,
+          theme: 'health-tooltip',
+          performance: true
+        });
+      }
+    }
+  }
+
 })(jQuery, Drupal, this, this.document);
