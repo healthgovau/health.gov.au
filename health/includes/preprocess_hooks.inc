@@ -176,6 +176,14 @@ function health_preprocess_entity(&$variables) {
       }
     }
 
+    // Taxonomy term.
+    if ($para_item->bundle == 'para_taxonomy') {
+      if (isset($para_item->field_related_term[LANGUAGE_NONE])) {
+        $term_name = $para_item->field_related_term[LANGUAGE_NONE][0]['entity']->name;
+        $variables['term_name'] = $term_name;
+      }
+    }
+
     // Views.
     if ($para_item->bundle == 'para_view') {
 
