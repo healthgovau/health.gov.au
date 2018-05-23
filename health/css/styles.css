@@ -9277,25 +9277,33 @@ ul.social__links,
   margin-right: 5px; }
 
 .paragraphs-item-recommendation {
-  padding: 0.8em 1.6em;
   margin-bottom: 1.6em;
-  border: 1px solid lightgrey;
-  border-left: 6px solid grey;
-  background: lightgrey; }
+  border: 1px solid #cdcdcd;
+  border-left: 6px solid #cdcdcd;
+  background: #ecedee; }
   .paragraphs-item-recommendation p:last-of-type {
     margin-bottom: 0; }
 
+.paragraphs-item-recommendation .field-name-field-body {
+  padding: 0.8em 1.6em; }
+
 .paragraphs-item-recommendation .field-name-field-recommendation-grade {
-  display: inline-block;
-  padding: 0.2em 0.8em;
-  border-radius: 7px;
-  font-size: 13px;
-  text-transform: UPPERCASE;
+  padding: 0.8em 1.6em;
   margin-bottom: 0.8em;
   font-weight: bold;
-  border: 2px solid grey;
-  background: lightgrey;
+  border-bottom: 1px solid #cdcdcd;
+  background: #e5e5e5;
   color: black; }
+
+.paragraphs-item-recommendation strong {
+  background: white;
+  border-radius: 5px;
+  padding: 0 5px;
+  min-width: 2em;
+  display: inline-block;
+  text-align: center;
+  margin-right: 0.8em;
+  border: 1px solid #cdcdcd; }
 
 .paragraphs-item-recommendation.recommendation-grade-tid-2386 {
   border-color: #caca09;
@@ -9304,6 +9312,8 @@ ul.social__links,
   .paragraphs-item-recommendation.recommendation-grade-tid-2386 .field-name-field-recommendation-grade {
     border-color: #b7b748;
     background: #ffffb0; }
+  .paragraphs-item-recommendation.recommendation-grade-tid-2386 strong {
+    border-color: #b7b748; }
 
 .paragraphs-item-recommendation.recommendation-grade-tid-2391 {
   border-color: #6622ad;
@@ -9312,6 +9322,8 @@ ul.social__links,
   .paragraphs-item-recommendation.recommendation-grade-tid-2391 .field-name-field-recommendation-grade {
     border-color: #6622ad;
     background: #cfabf5; }
+  .paragraphs-item-recommendation.recommendation-grade-tid-2391 strong {
+    border-color: #6622ad; }
 
 .paragraphs-item-recommendation.recommendation-grade-tid-2401 {
   border-color: #4b7300;
@@ -9320,6 +9332,8 @@ ul.social__links,
   .paragraphs-item-recommendation.recommendation-grade-tid-2401 .field-name-field-recommendation-grade {
     border-color: #4b7300;
     background: #b1e849; }
+  .paragraphs-item-recommendation.recommendation-grade-tid-2401 strong {
+    border-color: #4b7300; }
 
 .field-name-field-footnotes {
   border-top: 1px solid #CCC;

@@ -1,29 +1,41 @@
 %recommendation {
-  padding: 0.8em 1.6em;
   margin-bottom: 1.6em;
   // Neutral colour.
-  border: 1px solid lightgrey;
-  border-left: 6px solid grey;
-  background: lightgrey;
+  border: 1px solid $colour-light-darker;
+  border-left: 6px solid $colour-light-darker;
+  background: $colour-light;
 
   p:last-of-type {
     margin-bottom: 0;
   }
 }
 
+%recommendation__body {
+  padding: 0.8em 1.6em;
+}
+
 %recommendation__grade {
-  display: inline-block;
-  padding: 0.2em 0.8em;
-  border-radius: 7px;
-  font-size: 13px;
-  text-transform: UPPERCASE;
+  padding: 0.8em 1.6em;
   margin-bottom: 0.8em;
   font-weight: bold;
 
   // Neutral colour.
-  border: 2px solid grey;
-  background: lightgrey;
+  border-bottom: 1px solid $colour-light-darker;
+  background: $colour-light-dark;
   color: black;
+}
+
+%recommendation__number {
+  background: white;
+  border-radius: 5px;
+  padding: 0 5px;
+  min-width: 2em;
+  display: inline-block;
+  text-align: center;
+  margin-right: 0.8em;
+
+  // Neutral colour.
+  border: 1px solid $colour-light-darker;
 }
 
 // Yellow (practice point)
@@ -35,6 +47,10 @@
   %recommendation__grade {
     border-color: #b7b748;
     background: #ffffb0;
+  }
+
+  %recommendation__number {
+    border-color: #b7b748;
   }
 }
 
@@ -48,6 +64,10 @@
     border-color: #6622ad;
     background: #cfabf5;
   }
+
+  %recommendation__number {
+    border-color: #6622ad;
+  }
 }
 
 // Green (CBR)
@@ -59,6 +79,10 @@
   %recommendation__grade {
     border-color: #4b7300;
     background: #b1e849;
+  }
+
+  %recommendation__number {
+    border-color: #4b7300;
   }
 }
 

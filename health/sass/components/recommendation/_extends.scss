@@ -1,6 +1,14 @@
 .paragraphs-item-recommendation {
   @extend %recommendation;
 
+  .field-name-field-body {
+    @extend %recommendation__body;
+  }
+
+  strong {
+    @extend %recommendation__number;
+  }
+
   &.recommendation-grade-tid-2386 {
     @extend %recommendation--yellow;
   }
