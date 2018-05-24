@@ -6795,13 +6795,6 @@ ul.social__links,
   font-family: "Open Sans", Verdana, "Bitstream Vera Sans", sans-serif;
   padding: 0.8em; }
 
-.health-tooltip-theme {
-  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.24);
-  color: #313131;
-  background: white; }
-  .health-tooltip-theme .tippy-arrow {
-    border-top-color: white !important; }
-
 .page-node, .node-type-news-article, .node-type-event, .node-type-health-alert, .node-type-publication, .node-type-publication-collection, .node-type-video, .node-type-campaign, .node-type-committee-or-group, .node-type-condition-or-disease, .node-type-contact, .node-type-program, .node-type-initiative, .node-type-release, .node-type-statistic, .node-type-service, .node-type-survey, .node-type-health-topic,
 .node-type-health-topic-hp, .node-type-departmental-media, .node-type-book-glossary, .node-type-book-page {
   width: 100%; }

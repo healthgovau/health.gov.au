@@ -612,13 +612,12 @@ function health_preprocess_field(&$variables) {
         // Replace non breaking spaces with normal spaces.
         $markup = _health_replace_nbsp($markup);
 
-        // Add glossary terms
+        // Set glossary terms
         $glossary = &drupal_static('book_glossary_terms');
         if (!empty($glossary)) {
           foreach ($glossary as $term => $definition) {
             $markup = preg_replace("/([^A-Z\[\{])(" . $term . ")([^A-Z\]\}])/", '$1<abbr title="' . $definition . '">$2</abbr>$3', $markup);
           }
-          $variables['items'][0]['#attached']['js'][] = 'https://unpkg.com/tippy.js@2.5.2/dist/tippy.all.min.js';
         }
 
         // Footnotes.
@@ -945,6 +944,9 @@ function health_preprocess_node(&$variables) {
     // Load and save glossary terms.
     $glossary = &drupal_static('book_glossary_terms');
     $glossary = _health_book_tree_traverse($node->book['bid'], '_health_book_find_glossary');
+
+    // Add tippy library to all book pages.
+    drupal_add_js('https://unpkg.com/tippy.js@2.5.2/dist/tippy.all.min.js', 'external');
   }
 }
 

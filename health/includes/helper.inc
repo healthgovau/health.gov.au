@@ -397,19 +397,27 @@ function _health_heading_children(&$tree, $num = '0', &$active_num) {
  * @param $vars
  */
 function _health_book_find_glossary($node, &$vars) {
-  if ($node->type == 'book_glossary') {
-    $pids = [];
-    foreach($node->field_components[LANGUAGE_NONE] as $paragraph) {
+  $pids = []; // All paragraph ids
+  $ptids = []; // Glossary term paragraph ids
+  if (isset($node->field_components[LANGUAGE_NONE])) {
+    foreach ($node->field_components[LANGUAGE_NONE] as $paragraph) {
       $pids[] = $paragraph['value'];
     }
     $paragraphs = entity_load('paragraphs_item', $pids);
-    foreach($paragraphs as $paragraph) {
-      if ($paragraph->bundle == 'glossary_term') {
-        $term = $paragraph->field_glossary_term[LANGUAGE_NONE][0]['value'];
-        $definition = $paragraph->field_glossary_definition[LANGUAGE_NONE][0]['value'];
-        $vars[$term] = $definition;
+    foreach ($paragraphs as $paragraph) {
+      if ($paragraph->bundle == 'glossary') {
+        foreach ($paragraph->field_glossary_terms[LANGUAGE_NONE] as $para_terms) {
+          $ptids[] = $para_terms['value'];
+        }
       }
     }
+  }
+
+  $terms = entity_load('paragraphs_item', $ptids);
+  foreach($terms as $term_para) {
+    $term = $term_para->field_glossary_term[LANGUAGE_NONE][0]['value'];
+    $definition = $term_para->field_glossary_definition[LANGUAGE_NONE][0]['value'];
+    $vars[$term] = $definition;
   }
 }
 
