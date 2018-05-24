@@ -109,12 +109,6 @@
     }
   };
 
-  Drupal.behaviors.footnotes = {
-    attach: function (context, settings) {
-      Drupal.health.footnotes();
-    }
-  };
-
   Drupal.behaviors.glossary = {
     attach: function (context, settings) {
       if (typeof tippy !== 'undefined') {

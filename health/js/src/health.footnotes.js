@@ -17,4 +17,7 @@
         }, 2000);
       });
   };
+
+  Drupal.health.footnotes();
+  
 })(jQuery);
