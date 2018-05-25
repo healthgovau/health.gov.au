@@ -147,7 +147,8 @@ function _health_book_find_tables($node, &$vars) {
  */
 function _health_book_table_of_contents($bid) {
   $tree = menu_tree_all_data(book_menu_name($bid));
-  return _health_book_table_of_contents_recursive($tree);
+  $tree = array_pop($tree);
+  return _health_book_table_of_contents_recursive($tree['below']);
 }
 
 /**
@@ -230,7 +231,7 @@ function _health_book_footnotes($markup) {
         $clean = _health_prepare_filename($ref);
         $inner[] = '<a href="#footnote-' . $clean . '">' . $ref . '</a>';
       }
-      $markup = str_replace($matches[0][$delta], '<sup class="footnote__link">[' . implode(',', $inner) . ']</sup>', $markup);
+      $markup = str_replace($matches[0][$delta], '<sup class="footnote__link">' . implode(',', $inner) . '</sup>', $markup);
     }
   }
   return $markup;

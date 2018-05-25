@@ -346,7 +346,7 @@ function health_preprocess_entity(&$variables) {
             'items' => _health_book_table_of_contents($node->book['bid']),
             'title' => NULL,
             'type' => 'ul',
-            'attributes' => [],
+            'attributes' => ['class' => 'toc'],
           ]);
           break;
       }
