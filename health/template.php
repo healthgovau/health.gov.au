@@ -9,6 +9,7 @@
 
 // Include inc files.
 include_once drupal_get_path('theme', 'health') . '/includes/helper.inc';
+include_once drupal_get_path('theme', 'health') . '/includes/book_helper.inc';
 include_once drupal_get_path('theme', 'health') . '/includes/preprocess_hooks.inc';
 include_once drupal_get_path('theme', 'health') . '/includes/ds_preprocess_hooks.inc';
 include_once drupal_get_path('theme', 'health') . '/includes/process_hooks.inc';

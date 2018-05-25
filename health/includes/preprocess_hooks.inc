@@ -340,6 +340,15 @@ function health_preprocess_entity(&$variables) {
             $output .= theme('health_summary_list_group', ['node' => $group['node'], 'items' => $items]);
           }
           break;
+
+        case 'TOC':
+          $output = theme_item_list([
+            'items' => _health_book_table_of_contents($node->book['bid']),
+            'title' => NULL,
+            'type' => 'ul',
+            'attributes' => [],
+          ]);
+          break;
       }
       $variables['content']['field_summary_list_type'][0]['#markup'] = $output;
     }
@@ -621,9 +630,9 @@ function health_preprocess_field(&$variables) {
         }
 
         // Footnotes.
-        $markup = _health_footnotes($markup);
+        $markup = _health_book_footnotes($markup);
         // References
-        $markup = _health_references($markup);
+        $markup = _health_book_references($markup);
 
         $variables['items'][0]['#markup'] = $markup;
       }
@@ -633,7 +642,7 @@ function health_preprocess_field(&$variables) {
   // Title
   if ($variables['element']['#field_name'] == 'field_title') {
     // Footnotes.
-    $variables['items'][0]['#markup'] = _health_footnotes($variables['items'][0]['#markup']);
+    $variables['items'][0]['#markup'] = _health_book_footnotes($variables['items'][0]['#markup']);
   }
 
   // Publication date
@@ -942,8 +951,10 @@ function health_preprocess_node(&$variables) {
     }
 
     // Load and save glossary terms.
-    $glossary = &drupal_static('book_glossary_terms');
-    $glossary = _health_book_tree_traverse($node->book['bid'], '_health_book_find_glossary');
+    if (isset($node->book['bid'])) {
+      $glossary = &drupal_static('book_glossary_terms');
+      $glossary = _health_book_tree_traverse($node->book['bid'], '_health_book_find_glossary');
+    }
 
     // Add tippy library to all book pages.
     drupal_add_js('https://unpkg.com/tippy.js@2.5.2/dist/tippy.all.min.js', 'external');

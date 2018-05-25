@@ -577,7 +577,7 @@ function _health_adminimal_book_submitter($form, &$form_state) {
     // Get the entire book structure.
     $tree = menu_tree_all_data(book_menu_name($bid));
     // Go through each page, load it and update the title.
-    _health_heading_children($tree, '0', $active_num);
+    _health_book_heading_children($tree, '0', $active_num);
   }
 }
 
