@@ -9,6 +9,7 @@
 
 // Include inc files.
 include_once drupal_get_path('theme', 'health') . '/includes/helper.inc';
+include_once drupal_get_path('theme', 'health') . '/includes/book_helper.inc';
 
 /**
  * Implement THEME_toc_filter().
