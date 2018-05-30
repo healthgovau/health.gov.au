@@ -24,12 +24,15 @@
   padding: 0.8em 1.6em;
 }
 %recommendation--full__grade {
-  position: absolute;
   font-weight: bold;
-  right: 0;
-  top: 0;
-  padding: 7px 0.8em;
-  border-left: 1px solid $colour-light-darker;
+  padding: 12px 1.6em 0;
+  @include uikit-media(sm) {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 7px 0.8em;
+    border-left: 1px solid $colour-light-darker;
+  }
 }
 %recommendation--full__number {
   background: white;

@@ -109,7 +109,7 @@
     }
   };
 
-  Drupal.behaviors.glossary = {
+  Drupal.behaviors.tooltips = {
     attach: function (context, settings) {
       if (typeof tippy !== 'undefined') {
         tippy('.reference__link a, .footnote__link a, abbr', {

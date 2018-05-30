@@ -550,6 +550,7 @@ function health_js_alter(&$javascript) {
   unset($javascript['profiles/govcms/libraries/superfish/superfish.js']);
   unset($javascript['profiles/govcms/libraries/superfish/supersubs.js']);
   unset($javascript['profiles/govcms/libraries/superfish/supposition.js']);
+  unset($javascript['profiles/govcms/modules/contrib/toc_filter/toc_filter.js']);
 }
 
 /**

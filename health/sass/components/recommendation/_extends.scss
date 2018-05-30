@@ -1,3 +1,5 @@
+
+// Inline display (full)
 .inside-para-container.paragraphs-item-recommendation {
   @extend %recommendation;
 
@@ -19,7 +21,7 @@
   }
 }
 
-
+// Summary display (vertical listing)
 .inside-para-container.paragraphs-item-summary-list {
 
   h3 {

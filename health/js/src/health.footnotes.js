@@ -12,9 +12,12 @@
           $(this).attr('title', $($(this).attr('href')).parent('li,p').text());
         })
         .click(function(e) {
-          e.preventDefault();
+          // Don't scroll down if we are on mobile.
+          if ($(window).width() < 768) {
+            e.preventDefault();
+          }
           $(e.target.hash).parent('li,p').addClass('highlight');
-          window.setTimeout(function() {
+          window.setTimeout(function () {
             $(e.target.hash).parent('li,p').removeClass('highlight');
           }, 2000);
         });
