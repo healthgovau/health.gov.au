@@ -1,27 +1,48 @@
-.paragraphs-item-recommendation {
+.inside-para-container.paragraphs-item-recommendation {
   @extend %recommendation;
 
-  .field-name-field-body {
-    @extend %recommendation__body;
+  &.view-mode-full {
+
+    // Fields
+    .group-title {
+      position: relative;
+    }
+    .field-name-recommendation-title {
+      @extend %recommendation--full__title;
+    }
+    .field-name-field-recommendation-text {
+      @extend %recommendation--full__body;
+    }
+    .field-name-field-recommendation-grade {
+      @extend %recommendation--full__grade;
+    }
+  }
+}
+
+
+.inside-para-container.paragraphs-item-summary-list {
+
+  h3 {
+    @extend %recommendation--vertical-listing__group-title;
   }
 
-  strong {
-    @extend %recommendation__number;
+  .paragraphs-item-recommendation {
+    @extend %recommendation--vertical-listing;
+
+    &.view-mode-listing_vertical {
+
+      .wrapper {
+        display: table-row;
+      }
+
+      .field-name-field-recommendation-text {
+        @extend %recommendation--vertical-listing__body;
+      }
+      .field-name-field-recommendation-grade {
+        @extend %recommendation--vertical-listing__grade;
+      }
+    }
   }
 
-  &.recommendation-grade-tid-2386 {
-    @extend %recommendation--yellow;
-  }
-
-  &.recommendation-grade-tid-2391 {
-    @extend %recommendation--purple;
-  }
-
-  &.recommendation-grade-tid-2401 {
-    @extend %recommendation--green;
-  }
-
-  .field-name-field-recommendation-grade {
-    @extend %recommendation__grade;
-  }
+  margin-bottom: uikit-space(1);
 }

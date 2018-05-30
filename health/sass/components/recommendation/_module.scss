@@ -2,30 +2,36 @@
   margin-bottom: 1.6em;
   // Neutral colour.
   border: 1px solid $colour-light-darker;
-  border-left: 6px solid $colour-light-darker;
-  background: $colour-light;
+  border-left: 6px solid #9cccff;
+  background: #ebf5ff;
 
+  // UIkit cleanup
   p:last-of-type {
     margin-bottom: 0;
   }
 }
 
-%recommendation__body {
-  padding: 0.8em 1.6em;
-}
-
-%recommendation__grade {
-  padding: 0.8em 1.6em;
-  margin-bottom: 0.8em;
+// Full
+%recommendation--full__title {
+  padding: 0.4em 1.6em;
   font-weight: bold;
-
   // Neutral colour.
   border-bottom: 1px solid $colour-light-darker;
-  background: $colour-light-dark;
+  background: #d7eaff;
   color: black;
 }
-
-%recommendation__number {
+%recommendation--full__body {
+  padding: 0.8em 1.6em;
+}
+%recommendation--full__grade {
+  position: absolute;
+  font-weight: bold;
+  right: 0;
+  top: 0;
+  padding: 7px 0.8em;
+  border-left: 1px solid $colour-light-darker;
+}
+%recommendation--full__number {
   background: white;
   border-radius: 5px;
   padding: 0 5px;
@@ -33,58 +39,32 @@
   display: inline-block;
   text-align: center;
   margin-right: 0.8em;
-
   // Neutral colour.
   border: 1px solid $colour-light-darker;
 }
 
-// Yellow (practice point)
-%recommendation--yellow {
-  border-color: #caca09;
-  border-left-width: 6px;
-  background: #ffffef;
-
-  %recommendation__grade {
-    border-color: #b7b748;
-    background: #ffffb0;
-  }
-
-  %recommendation__number {
-    border-color: #b7b748;
-  }
+// Vertical listing
+%recommendation--vertical-listing {
+  @extend %recommendation;
+  margin-bottom: 0;
+  display: table;
+}
+%recommendation--vertical-listing__group-title {
+  margin: uikit-space(.75) 0 uikit-space(.5) 0;
+  @extend .uikit-display-3;
+}
+%recommendation--vertical-listing__body {
+  display: table-cell;
+  @extend %recommendation--full__body;
+}
+%recommendation--vertical-listing__grade {
+  display: table-cell;
+  border-left: 1px solid $colour-light-darker;
+  padding-left: uikit-space(1);
+  width: 25%;
 }
 
-// Purple (Grade A-D)
-%recommendation--purple {
-  border-color: #6622ad;
-  border-left-width: 6px;
-  background: #ead5ff;
 
-  %recommendation__grade {
-    border-color: #6622ad;
-    background: #cfabf5;
-  }
-
-  %recommendation__number {
-    border-color: #6622ad;
-  }
-}
-
-// Green (CBR)
-%recommendation--green {
-  border-color: #4b7300;
-  border-left-width: 6px;
-  background: #e4fbba;
-
-  %recommendation__grade {
-    border-color: #4b7300;
-    background: #b1e849;
-  }
-
-  %recommendation__number {
-    border-color: #4b7300;
-  }
-}
 
 @import "print";
 @import "extends";
