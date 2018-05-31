@@ -150,6 +150,20 @@ function health_theme() {
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
   ];
 
+  $theme['health_filter'] = [
+    'variables' => [
+      'query_string' => NULL,
+      'items' => NULL,
+      'title' => NULL,
+      'id' => NULL,
+      'class' => NULL,
+      'filter_machine_name' => NULL,
+      'list_style' => NULL,
+    ],
+    'template' => 'health_filter',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
   return $theme;
 }
 
@@ -846,6 +860,59 @@ function health_block_view_alter(&$data, $block) {
       $item['data'] = str_replace('(0)', '', $item['data']);
       $data['content']['field_audience']['#items'][$key] = $item;
     }
+  }
+
+  // The filter blocks in topic/conditions/diseases listing page.
+  if ($block->delta == 2) {
+    // Compose a-z filter.
+    $query_string = drupal_get_query_parameters();
+    $title_filter = isset($query_string['title']) ? $query_string['title'] : '';
+    unset($query_string['title']);
+    $az = [];
+    foreach (range('A', 'Z') as $key) {
+      $az[$key] = [
+        'name' => $key,
+        'status' => (strtolower($key) == $title_filter) ? TRUE : FALSE,
+      ];
+    }
+    $az_filter = [
+      '#theme' => 'health_filter',
+      '#query_string' => $query_string,
+      '#items' => $az,
+      '#title' => t('Filter by letter'),
+      '#id' => 'block-az-filter',
+      '#class' => 'filter-topics-by-letter',
+      '#filter_machine_name' => 'title',
+      '#list_style' => 'uikit-link-list--inline',
+    ];
+
+    // Compose content type filter.
+    $query_string = drupal_get_query_parameters();
+    $content_type_filter_value = isset($query_string['content_type']) ? $query_string['content_type'] : '';
+    unset($query_string['content_type']);
+    $content_types = [
+      'health_topic' => [
+        'name' => 'Health topic',
+        'status' => ($content_type_filter_value == 'health_topic') ? TRUE : FALSE,
+      ],
+      'condition_or_disease' => [
+        'name' => 'Condition or disease',
+        'status' => ($content_type_filter_value == 'condition_or_disease') ? TRUE : FALSE,
+      ],
+    ];
+    $content_types_filter = [
+      '#theme' => 'health_filter',
+      '#query_string' => $query_string,
+      '#items' => $content_types,
+      '#title' => t('Filter by content type'),
+      '#id' => 'block-contenttype-filter',
+      '#class' => 'filter-topics-by-type',
+      '#filter_machine_name' => 'content_type',
+      '#list_style' => 'filter-topics-by-type',
+    ];
+    $data['content'] = drupal_render($az_filter) .
+    drupal_render($content_types_filter) .
+    '<p class="block-facetapi"><a href="/topics">Clear all filters</a></p>';
   }
 }
 

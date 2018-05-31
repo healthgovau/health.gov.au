@@ -75,8 +75,10 @@ p.filter__help {
   }
 }
 
-.filter-topics-by-letter {
-  @extend %mobile-menu;
+.filter-topics-by-letter,
+.filter-topics-by-type {
+  //@extend %mobile-menu;
+  padding-right: 0;
   &.facetshow {
     visibility: visible;
     opacity: 1;
