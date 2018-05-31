@@ -630,9 +630,9 @@ function health_preprocess_field(&$variables) {
         }
 
         // Footnotes.
-        $markup = _health_book_footnotes($markup);
+        $markup = _health_book_footnote_links($markup);
         // References
-        $markup = _health_book_references($markup);
+        $markup = _health_book_reference_links($markup);
 
         $variables['items'][0]['#markup'] = $markup;
       }
@@ -642,7 +642,7 @@ function health_preprocess_field(&$variables) {
   // Title
   if ($variables['element']['#field_name'] == 'field_title') {
     // Footnotes.
-    $variables['items'][0]['#markup'] = _health_book_footnotes($variables['items'][0]['#markup']);
+    $variables['items'][0]['#markup'] = _health_book_footnote_links($variables['items'][0]['#markup']);
   }
 
   // Publication date
@@ -712,31 +712,44 @@ function health_preprocess_field(&$variables) {
   }
 
   // Footnotes
-  $footnotes = ['field_footnotes', 'field_table_source'];
+  $footnotes = ['field_book_footnotes', 'field_table_source'];
   if (in_array($variables['element']['#field_name'], $footnotes)) {
-    $markup = $variables['items'][0]['#markup'];
-    $markup = _health_replace_nbsp($markup);
-    if (preg_match_all("/\[\[(.+)\]\]/", $markup, $matches) > 0) {
-      foreach ($matches[1] as $delta => $match) {
-        $clean = _health_prepare_filename($match);
-        $markup = str_replace($matches[0][$delta], '<a name="footnote-' . $clean . '" id="footnote-' . $clean . '"></a><span class="footnote__number">' . $match . '</span>', $markup);
+    foreach($variables['items'] as &$item) {
+      $markup = $item['#markup'];
+      $markup = _health_replace_nbsp($markup);
+      if (preg_match_all("/\[\[(.+)\]\]/", $markup, $matches) > 0) {
+        foreach ($matches[1] as $delta => $match) {
+          $clean = 'footnote-' . _health_prepare_filename($match);
+          $markup = theme('health_footnote', [
+            'type' => 'footnote',
+            'number' => $match,
+            'id' => $clean,
+            'text' => str_replace($matches[0][$delta], '', $markup)
+          ]);
+        }
       }
+      $item['#markup'] = $markup;
     }
-    $variables['items'][0]['#markup'] = $markup;
     $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.footnotes.min.js';
   }
 
   // References
   if ($variables['element']['#field_name'] == 'field_references') {
-    $markup = $variables['items'][0]['#markup'];
-    $markup = _health_replace_nbsp($markup);
-    if (preg_match_all("/\{\{([^\(\)]+)\}\}/", $markup, $matches) > 0) {
-      foreach ($matches[1] as $delta => $match) {
-        $clean = 'reference-' . _health_prepare_filename($match);
-        $markup = str_replace($matches[0][$delta], '<a name="' . $clean . '" id="' . $clean . '"></a>', $markup);
+    foreach($variables['items'] as &$item) {
+      $markup = $item['#markup'];
+      $markup = _health_replace_nbsp($markup);
+      if (preg_match_all("/\{\{([^\(\)]+)\}\}/", $markup, $matches) > 0) {
+        foreach ($matches[1] as $delta => $match) {
+          $clean = 'reference-' . _health_prepare_filename($match);
+          $markup = theme('health_footnote', [
+            'type' => 'reference',
+            'id' => $clean,
+            'text' => str_replace($matches[0][$delta], '', $markup)
+          ]);
+        }
       }
+      $item['#markup'] = $markup . "</span>";
     }
-    $variables['items'][0]['#markup'] = $markup;
     $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.footnotes.min.js';
   }
 }
@@ -918,17 +931,15 @@ function health_preprocess_node(&$variables) {
 
   // Check to see if this role has access to view this content type.
   global $user;
-  if (key_exists('node', $variables)) {
-    // Deny access to anonymous users for Help pages.
-    if ($variables['node']->type == 'help') {
-      if (key_exists(1, $user->roles)) {
-        drupal_access_denied();
-      }
+  // Deny access to anonymous users for Help pages.
+  if ($node->type == 'help') {
+    if (key_exists(1, $user->roles)) {
+      drupal_access_denied();
     }
   }
 
   // Books
-  $book_types = ['book_page', 'book_glossary'];
+  $book_types = ['book_page'];
   if (in_array($node->type, $book_types)) {
 
     // Add css that will number the headings on the page.

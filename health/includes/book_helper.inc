@@ -222,16 +222,23 @@ function _health_book_tree_traverse_recursive(&$tree, $callback, &$vars) {
  *
  * @return mixed
  */
-function _health_book_footnotes($markup) {
+function _health_book_footnote_links($markup) {
   if (preg_match_all("/(\[\[)(.+)(\]\])/", $markup, $matches) > 0) {
     foreach ($matches[2] as $delta => $match) {
       $split = explode(',', $match);
-      $inner = [];
+      $items = [];
       foreach ($split as $ref) {
         $clean = _health_prepare_filename($ref);
-        $inner[] = '<a href="#footnote-' . $clean . '">' . $ref . '</a>';
+        $items[$clean] = $ref;
       }
-      $markup = str_replace($matches[0][$delta], '<sup class="footnote__link">' . implode(',', $inner) . '</sup>', $markup);
+      $replacement = theme('health_footnote-link', [
+        'type' => 'footnote',
+        'prefix' => '',
+        'suffix' => '',
+        'divider' => ',',
+        'items' => $items
+      ]);
+      $markup = str_replace($matches[0][$delta], $replacement, $markup);
     }
   }
   return $markup;
@@ -244,15 +251,23 @@ function _health_book_footnotes($markup) {
  *
  * @return mixed
  */
-function _health_book_references($markup) {
+function _health_book_reference_links($markup) {
   if (preg_match_all("/(\{\{)([^\{\}]+)+(\}\})/", $markup, $matches) > 0) {
     foreach ($matches[2] as $delta => $match) {
       $split = explode(',', $match);
-      $inner = [];
+      $items = [];
       foreach ($split as $ref) {
-        $inner[] = '<span class="reference__link"><a href="#reference-' . _health_prepare_filename($ref) . '">' . $ref . '</a></span>';
+        $clean = _health_prepare_filename($ref);
+        $items[$clean] = $ref;
       }
-      $markup = str_replace($matches[0][$delta], '(' . implode('; ', $inner) . ')', $markup);
+      $replacement = theme('health_footnote-link', [
+        'type' => 'reference',
+        'prefix' => '(',
+        'suffix' => ')',
+        'divider' => '; ',
+        'items' => $items
+      ]);
+      $markup = str_replace($matches[0][$delta], $replacement, $markup);
     }
   }
   return $markup;
