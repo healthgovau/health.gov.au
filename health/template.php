@@ -971,3 +971,22 @@ function health_metatag_metatags_view_alter(&$output, $instance, $options) {
     }
   }
 }
+
+/**
+ * Implements hook_node_access_alter().
+ *
+ * Stolen from https://www.drupal.org/project/menu_view_unpublished.
+ *
+ * @param \QueryAlterableInterface $query
+ */
+function health_query_node_access_alter(QueryAlterableInterface $query) {
+  $c = &$query->conditions();
+  // Remove the status condition if we suspect this query originates from
+  // menu_tree_check_access().
+  if (count($c) == 3 &&
+    is_string($c[0]['field']) && $c[0]['field'] == 'n.status' &&
+    is_string($c[1]['field']) && $c[1]['field'] == 'n.nid' && $c[1]['operator'] == 'IN'
+  ) {
+    unset($c[0]);
+  }
+}

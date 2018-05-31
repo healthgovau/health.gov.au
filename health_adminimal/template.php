@@ -73,7 +73,9 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
     $form['field_summary'][LANGUAGE_NONE][0]['value']['#attributes']['maxlength'] = 200;
   }
 
+  // Book pages
   if ($form['#form_id'] == 'book_page_node_form') {
+    // Update numbering on submit.
     $form['actions']['submit']['#submit'][] = '_health_adminimal_book_submitter';
   }
 }
@@ -750,5 +752,23 @@ function health_adminimal_file_icon($variables) {
       return '<svg data-mime="'.$mime.'" aria-hidden="true" data-prefix="far" data-icon="file-powerpoint" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-file-powerpoint fa-w-12 fa-3x"><path fill="currentColor" d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48zm72-60V236c0-6.6 5.4-12 12-12h69.2c36.7 0 62.8 27 62.8 66.3 0 74.3-68.7 66.5-95.5 66.5V404c0 6.6-5.4 12-12 12H132c-6.6 0-12-5.4-12-12zm48.5-87.4h23c7.9 0 13.9-2.4 18.1-7.2 8.5-9.8 8.4-28.5.1-37.8-4.1-4.6-9.9-7-17.4-7h-23.9v52z" class=""></path></svg>';
     default:
       return '<svg data-mime="'.$mime.'" aria-hidden="true" data-prefix="far" data-icon="file-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-file-alt fa-w-12 fa-5x"><path fill="currentColor" d="M288 248v28c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-28c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm-12 72H108c-6.6 0-12 5.4-12 12v28c0 6.6 5.4 12 12 12h168c6.6 0 12-5.4 12-12v-28c0-6.6-5.4-12-12-12zm108-188.1V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V48C0 21.5 21.5 0 48 0h204.1C264.8 0 277 5.1 286 14.1L369.9 98c9 8.9 14.1 21.2 14.1 33.9zm-128-80V128h76.1L256 51.9zM336 464V176H232c-13.3 0-24-10.7-24-24V48H48v416h288z" class=""></path></svg>';
+  }
+}
+
+/**
+ * Implements hook_node_access_alter().
+ *
+ * Stolen from https://www.drupal.org/project/menu_view_unpublished.
+ *
+ * @param \QueryAlterableInterface $query
+ */
+function health_adminimal_query_node_access_alter(QueryAlterableInterface $query) {
+  $c = &$query->conditions();
+  // Remove the status condition if we suspect this query originates from
+  // menu_tree_check_access().
+  if (count($c) == 3 &&
+    is_string($c[0]['field']) && $c[0]['field'] == 'n.status' &&
+    is_string($c[1]['field']) && $c[1]['field'] == 'n.nid' && $c[1]['operator'] == 'IN') {
+    unset($c[0]);
   }
 }
