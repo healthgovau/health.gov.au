@@ -3,7 +3,7 @@
 
 // Default/full content
 .node-type-contact {
-  @extend %dm-full-content;
+    @extend %dm-full-content;
 	@extend %page-help-and-currency;
 }
 
@@ -12,24 +12,7 @@
 
 	// List vertical
 	&.view-mode-listing_vertical {
-    @extend %dm-list-vertical;
-    .group-left {
-      @extend .col-xs-2;
-    }
-    .group-right {
-      @extend .col-xs-10;
-    }
-    // Labels
-    .field-label {
-      @extend %visually-hidden;
-    }
-
-    // Telephone and email paragraphs
-    .inside-para-container,
-    .field-name-field-summary {
-      padding-bottom: uikit-space(.5);
-    }
-
+		@extend %dm-list-vertical;
 	}
 	// List vertical small
 	&.view-mode-listing_vertical_small {
@@ -48,19 +31,13 @@
 
 	// Inline style
 	&.view-mode-inline {
-    @extend %dm-inline-2-col;
-    // layout override
-    display: flex;
-    .group-left {
-      @extend .col-xs-2;
-      @extend .col-sm-2;
-      @extend .col-md-2;
-      @extend .col-lg-2;
-      background: $colour-light;
-      text-align: center;
-      padding-top: uikit-space(1);
-      padding-bottom: uikit-space(1);
+		@extend %dm-inline-2-col;
+    }
 
+  // Inline style
+  &.view-mode-inline_large {
+    .field-name-title {
+      font-weight: bold;
     }
     .group-name {
       .field {
@@ -69,33 +46,16 @@
       }
       @include AU-clearfix;
     }
-    .group-right {
-      @extend .col-xs-10;
-      @extend .col-sm-10;
-      @extend .col-md-10;
-      @extend .col-lg-10;
-      @include AU-space('padding', 1unit .5unit .5unit 1.5unit)!important;
+    p {
+      margin-bottom: 0;
     }
-    // Styling
-    border: 1px solid #ccc;
-    background: none;
 
     @include AU-space('margin-bottom', 1unit);
-    @include AU-media(sm) {
-      @include AU-space('margin-bottom', 2 unit);
-      padding: 0;
+    @include AU-media(sm){
+      @include AU-space('margin-bottom', 2unit);
     }
-    @include AU-media(md) {
-      @include AU-space('margin-bottom', 3 unit);
-    }
-    // Labels
-    .field-label {
-      @extend %visually-hidden;
-    }
-
-    // Telephone and email paragraphs
-    .inside-para-container {
-      padding-bottom: uikit-space(.5);
+    @include AU-media(md){
+      @include AU-space('margin-bottom', 3unit);
     }
   }
 

@@ -4,10 +4,7 @@
 //
 //------------------------------------------------------------
 
-// Set page width based on content type
-// Default is to contain .page-layout unless content type is listed below
-// which will be full width to permit bands
-// :not() supported by IE9+ so polyfill
+
 body {
   &:not(.node-type-health-topic, .node-type-health-topic-hp, .node-type-landing-page, .page-node-3406){
 
@@ -67,12 +64,6 @@ body.page-node-3406
       @include AU-space('margin', 1unit 0 0 0);
     }
   }
-}
-
-// Default spacing for body elements
-.page-layout {
-  margin-bottom: uikit-space(2);
-  @extend .container-fluid;
 }
 
 // Global styling

@@ -16,13 +16,7 @@ body:not(.node-type-landing-page):not(.node-type-health-topic):not(.node-type-he
 }
 
 // Content and sidebar
-.main-content {
-  @extend .col-sm-8;
-}
 
-.sidebar {
-  @extend .col-sm-4;
-}
 // If need to differentiate
 //.sidebar-right,
 //.sidebar-left {}

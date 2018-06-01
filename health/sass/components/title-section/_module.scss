@@ -63,10 +63,6 @@
       margin-left: 20px;
       margin-right: 90px;
       float: left;
-      border-bottom: 0;
-      span {
-        border-bottom: 1px solid $colour-Secondary;
-      }
     }
 
     @include AU-clearfix;

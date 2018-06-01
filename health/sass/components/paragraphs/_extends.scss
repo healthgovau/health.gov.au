@@ -67,9 +67,11 @@
             @include AU-space('margin-bottom', .5unit);
             h3 {
               @extend %list-item-title--medium;
-              border-bottom: 1px solid white;
               text-decoration: underline;
               display: inline;
+              &:hover {
+                text-decoration: none;
+              }
             }
           } // Override drupal taxonomy term style.
           .taxonomy-term-description {
