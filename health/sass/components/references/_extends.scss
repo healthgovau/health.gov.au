@@ -1,5 +1,5 @@
 .field-name-field-book-references {
-  li,p {
+  li {
     @extend %reference;
     &.highlight {
       @extend %reference--highlight;

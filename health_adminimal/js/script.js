@@ -200,6 +200,12 @@
         }
       }
 
+      /**
+       * Provide a human readable version of file types based on their mime type.
+       *
+       * @param type
+       * @returns {*}
+       */
       function convert_mime(type) {
         switch(type) {
           case 'application/pdf':
@@ -223,6 +229,19 @@
         return '';
       }
 
+      /**
+       * Prevent users from choosing a text format.
+       *
+       * @param format
+       * @param fields
+       */
+      function lockTextFormat(format, fields) {
+        for(var i=0;i<fields.length;i++) {
+          $(fields[i]).val(format);
+          $(fields[i]).hide();
+        }
+      }
+
       // Apply chosen using the new version of chosen.
       $('.chosen-enable').chosen({width: 400});
 
@@ -239,11 +258,19 @@
       });
       $('span.form-required').text('*');
 
-      // Make sure users can only use the HTML Table format for table paragraphs.
-      var formats = $('.paragraphs-item-type-content-table .field-name-field-body .filter-list');
-      formats.val('html_table'); // Switch to that format for new tables.
-      formats.hide();
+      // Lock down the text format authors can use.
 
+      // HTML table.
+      lockTextFormat('html_table', [
+        '.paragraphs-item-type-content-table .field-name-field-body .filter-list'
+      ]);
+
+      // Simple.
+      lockTextFormat('simple', [
+        '.paragraphs-item-type-content-table .field-name-field-table-source .filter-list',
+        '.paragraphs-item-type-references .field-name-field-book-references .filter-list',
+        '.paragraphs-item-type-footnotes .field-name-field-book-footnotes .filter-list'
+      ]);
     }
   };
 
