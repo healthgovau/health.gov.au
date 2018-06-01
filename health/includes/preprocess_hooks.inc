@@ -733,7 +733,7 @@ function health_preprocess_field(&$variables) {
   }
 
   // References
-  if ($variables['element']['#field_name'] == 'field_references') {
+  if ($variables['element']['#field_name'] == 'field_book_references') {
     foreach($variables['items'] as &$item) {
       $markup = $item['#markup'];
       $markup = _health_replace_nbsp($markup);
