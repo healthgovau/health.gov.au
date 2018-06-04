@@ -14,19 +14,22 @@
 }
 
 // Local navigation
-.uikit-body .sidebar #block-menu-block-2 {
+.uikit-body .sidebar {
+  #block-menu-block-2,
+  #block-book-navigation {
 
-  @extend %uikit-localnav;
+    @extend %uikit-localnav;
 
-  display: none;
-  @include uikit-media(sm) {
-    display: block;
-  }
+    display: none;
+    @include uikit-media(sm) {
+      display: block;
+    }
 
-  // Drupal block title as link helper styles
-  &__title {
-    font-size: 18px;
-    margin-bottom: 0;
+    // Drupal block title as link helper styles
+    &__title {
+      font-size: 18px;
+      margin-bottom: 0;
+    }
   }
 }
 

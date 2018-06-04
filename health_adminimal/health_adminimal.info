@@ -3,9 +3,10 @@ description = Health customisations to the Adminimal theme.
 core = 7.x
 base theme = adminimal
 
-stylesheets[all][] = customisations.css
+stylesheets[all][] = css/styles.css
 
-scripts[] = script.js
+scripts[] = js/script.js
+scripts[] = js/libraries/jquery.matchHeight-min.js
 
 settings[content_freeze_flag] = 0
 settings[dual_author_environment] = 'https://betarelease-site.govcms.gov.au'
