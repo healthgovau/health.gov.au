@@ -45,6 +45,32 @@ $colour-lighter: #f1f1f2;
 $colour-lightest: #f9f9f9;
 $colour-light-darker: #cdcdcd;
 
+// Backgrounds
+%colour-primary {
+  background: $colour-Primary;
+  &:hover {
+    background: $colour-Primary-hover;
+  }
+}
+%colour-secondary {
+  background: $colour-Secondary-dark; // $colour-Secondary fails contrast
+  &:hover {
+    background: $colour-Secondary-hover;
+  }
+}
+%colour-tertiary {
+  background: $colour-Tertiary-dark;
+  &:hover {
+    background: $colour-Tertiary-hover;
+  }
+}
+%colour-tertiary-2 {
+  background: $colour-Tertiary-2-darker; //$colour-Tertiary failt contrast
+  &:hover {
+    background: $colour-Tertiary-2-hover;
+  }
+}
+
 %colour-Primary-background {
   background-color: $colour-Primary-darker;
   background: -webkit-linear-gradient(left, $colour-Primary-darker, $colour-Primary);

@@ -200,37 +200,34 @@
 
   // Layout
   .group-left {
-    @include uikit-media(xs) {
+    @include AU-media(xs) {
       width: 100%;
     }
-    @include uikit-media(sm) {
+    @include AU-media(sm) {
       width: 33.33333%;
     }
-    @include uikit-media(lg) {
+    @include AU-media(lg) {
       width: 25%;
     }
-    padding-top: uikit-space(1.5);
-    @include uikit-media(sm){
-      padding-bottom: uikit-space(1.5);
-      padding-left: uikit-space(1);
-      padding-right: uikit-space(1);
+    @include AU-space('padding-topo', 1.5unit);
+    @include AU-media(sm){
+      @include AU-space('padding', 0 1unit 1.5unit 1unit);
       background: $bgcolour-left;
     }
   }
   .group-right {
-    @include uikit-media(xs) {
+    @include AU-media(xs) {
       width: 100%;
     }
-    @include uikit-media(sm) {
+    @include AU-media(sm) {
       width: 66.66666%;
     }
-    @include uikit-media(lg) {
+    @include AU-media(lg) {
       width: 75%;
     }
-    padding-bottom: uikit-space(1.5);
-    @include uikit-media(sm){
-      padding-top: uikit-space(1.5);
-      padding-left: uikit-space(2);
+    @include AU-space('padding-bottom', 1.5unit);
+    @include AU-media(sm){
+      @include AU-space('padding', 1.5unit 0 0 2unit);
     }
   }
 
@@ -253,7 +250,7 @@
   // display mode
   .view-mode-hotline_bar {
     h2 {
-      @extend .uikit-display-4;
+      @include AU-fontgrid(lg, heading);
       color: $font-colour;
     }
 

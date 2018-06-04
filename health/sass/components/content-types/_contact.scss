@@ -74,7 +74,7 @@
     img {
       border: 0; // Clear for company logos, crests, etc
       max-width: 100%;
-      @include uikit-media(md){
+      @include AU-media(md){
         max-width: 80%
       }
     }

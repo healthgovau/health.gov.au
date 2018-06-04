@@ -172,7 +172,7 @@
     .paragraphs-item-para-telephone {
       padding: 0;
       .field-name-field-contact-telephone {
-        @extend %heading--xl;
+        @include AU-fontgrid(xl, heading);
         font-weight: 700;
       }
       i {

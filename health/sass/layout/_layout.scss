@@ -6,42 +6,43 @@
 
 
 body {
-  &:not(.node-type-health-topic, .node-type-health-topic-hp, .node-type-landing-page, .page-node-3406){
+  &:not(.node-type-health-topic, .node-type-health-topic-hp, .node-type-landing-page, .page-node-3406) {
 
-  // Everything gets full width by default.
-  .page .page-layout {
-    @include AU-space('margin-bottom', 2 unit);
-    @extend .container-fluid;
-  }
-
-  // Non-landing pages then get the layout with a gutter on either side.
-  // Then they get columns within.
-  &:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) {
+    // Everything gets full width by default.
     .page .page-layout {
-      @extend .container;
+      @include AU-space('margin-bottom', 2 unit);
+      @extend .container-fluid;
+    }
 
-      // Single column
-      .main-content-full {
-        @extend .col-sm-12;
-      }
+    // Non-landing pages then get the layout with a gutter on either side.
+    // Then they get columns within.
+    &:not(.node-type-health-topic):not(.node-type-health-topic-hp):not(.node-type-landing-page) {
+      .page .page-layout {
+        @extend .container;
 
-      // 2 columns
-      .main-content {
-        @extend .col-sm-8;
-      }
+        // Single column
+        .main-content-full {
+          @extend .col-sm-12;
+        }
 
-      .sidebar-left,
-      .sidebar-right {
-        @extend .col-sm-4;
-      }
+        // 2 columns
+        .main-content {
+          @extend .col-sm-8;
+        }
 
-      .sidebar-right {
-        // Right sidebar is in the markup first, but we want it to display on the right.
-        float: none;
-        padding: 0; // Remove the gutters on mobile.
-        @include AU-media(sm) {
-          float: right;
-          padding: 0 ($AU-grid-12-gutter-width / 2); // Put them back on tablet+ to work with the grid.
+        .sidebar-left,
+        .sidebar-right {
+          @extend .col-sm-4;
+        }
+
+        .sidebar-right {
+          // Right sidebar is in the markup first, but we want it to display on the right.
+          float: none;
+          padding: 0; // Remove the gutters on mobile.
+          @include AU-media(sm) {
+            float: right;
+            padding: 0 ($AU-grid-12-gutter-width / 2); // Put them back on tablet+ to work with the grid.
+          }
         }
       }
     }
