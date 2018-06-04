@@ -1,0 +1,15 @@
+%tooltip {
+  font-family: $uikit-font;
+  padding: uikit-space(.5);
+}
+
+%tooltip--light {
+  box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.24);
+  color: $uikit-colour-Text;
+  background: white;
+  .tippy-arrow {
+    border-top-color: white !important;
+  }
+}
+
+@import 'extends';

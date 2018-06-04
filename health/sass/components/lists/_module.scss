@@ -52,3 +52,7 @@ ul.list--large {
     max-width: $uikit-maxwidth;
   }
 }
+
+%list--remove {
+  list-style: none;
+}

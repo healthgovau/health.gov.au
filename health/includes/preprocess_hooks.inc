@@ -311,6 +311,55 @@ function health_preprocess_entity(&$variables) {
         $variables['classes_array'][] = 'block-id__' . $bid['value'];
       }
     }
+
+    // Recommendations
+    if ($para_item->bundle == 'recommendation') {
+      // Add a class to identify what grade it is.
+      $variables['classes_array'][] = 'recommendation-grade-tid-' . $para_item->field_recommendation_grade[LANGUAGE_NONE][0]['tid'];
+    }
+
+    // Summary lists
+    if ($para_item->bundle == 'summary_list') {
+      $output = '';
+      $node = menu_get_object('node');
+      switch ($para_item->field_summary_list_type[LANGUAGE_NONE][0]['value']) {
+        case 'Recommendations':
+          $recommendations = _health_book_tree_traverse($node->book['bid'], '_health_book_find_recommendations');
+          foreach($recommendations as $nid => $group) {
+            $entities = entity_view('paragraphs_item', $group['recommendations'], 'listing_vertical', NULL, TRUE);
+            $output .= theme('health_summary_list_group', ['node' => $group['node'], 'items' => render($entities)]);
+          }
+          break;
+
+        case 'Tables':
+          $tables = _health_book_tree_traverse($node->book['bid'], '_health_book_find_tables');
+
+          foreach($tables as $nid => $group) {
+            $items = [];
+            foreach($group['tables'] as $table) {
+              $items[] = l($table->field_title[LANGUAGE_NONE][0]['value'], 'node/' . $group['node']->nid);
+            }
+            $items = theme_item_list([
+              'items' => $items,
+              'title' => NULL,
+              'type' => 'ul',
+              'attributes' => [],
+            ]);
+            $output .= theme('health_summary_list_group', ['node' => $group['node'], 'items' => $items]);
+          }
+          break;
+
+        case 'TOC':
+          $output = theme_item_list([
+            'items' => _health_book_table_of_contents($node->book['bid']),
+            'title' => NULL,
+            'type' => 'ul',
+            'attributes' => ['class' => 'toc'],
+          ]);
+          break;
+      }
+      $variables['content']['field_summary_list_type'][0]['#markup'] = $output;
+    }
   }
 
   // Custom token replacement.
@@ -569,13 +618,39 @@ function health_preprocess_field(&$variables) {
   foreach($fields as $field) {
     if ($variables['element']['#field_name'] == $field) {
       if (isset($variables['element']['#items'][0])) {
+        $markup = $variables['items'][0]['#markup'];
+
         // Add rs_preserve class to any H2's
-        $variables['items'][0]['#markup'] = preg_replace("/<h2>(.*?)<\/h2>/", '<h2 class="rs_preserve">$1</h2>', $variables['items'][0]['#markup']);
+        $markup = preg_replace("/<h2>(.*?)<\/h2>/", '<h2 class="rs_preserve">$1</h2>', $markup);
         // Add a div around tables so they can be made responsive.
-        $variables['items'][0]['#markup'] = str_replace('<table', '<div class="responsive-table-wrapper"><table', $variables['items'][0]['#markup']);
-        $variables['items'][0]['#markup'] = str_replace('</table>', '</table></div>', $variables['items'][0]['#markup']);
+        $markup = str_replace('<table', '<div class="responsive-table-wrapper"><table', $markup);
+        $markup = str_replace('</table>', '</table></div>', $markup);
+
+        // Replace non breaking spaces with normal spaces.
+        $markup = _health_replace_nbsp($markup);
+
+        // Set glossary terms
+        $glossary = &drupal_static('book_glossary_terms');
+        if (!empty($glossary)) {
+          foreach ($glossary as $term => $definition) {
+            $markup = preg_replace("/([^A-Z\[\{])(" . $term . ")([^A-Z\]\}])/", '$1<abbr title="' . $definition . '">$2</abbr>$3', $markup);
+          }
+        }
+
+        // Footnotes.
+        $markup = _health_book_footnote_links($markup);
+        // References
+        $markup = _health_book_reference_links($markup);
+
+        $variables['items'][0]['#markup'] = $markup;
       }
     }
+  }
+
+  // Title
+  if ($variables['element']['#field_name'] == 'field_title') {
+    // Footnotes.
+    $variables['items'][0]['#markup'] = _health_book_footnote_links($variables['items'][0]['#markup']);
   }
 
   // Publication date
@@ -642,6 +717,46 @@ function health_preprocess_field(&$variables) {
     if ($variables['element']['#object']->type == 'survey') {
       $variables['items'][0]['#element']['attributes']['class'] = 'button button--large';
     }
+  }
+
+  // Footnotes
+  $footnotes = ['field_book_footnotes', 'field_table_source'];
+  if (in_array($variables['element']['#field_name'], $footnotes)) {
+    foreach($variables['items'] as &$item) {
+      $markup = $item['#markup'];
+      $markup = _health_replace_nbsp($markup);
+      if (preg_match_all("/\[\[(.+)\]\]/", $markup, $matches) > 0) {
+        foreach ($matches[1] as $delta => $match) {
+          $markup = theme('health_footnote', [
+            'type' => 'footnote',
+            'id' => $match,
+            'number' => $match,
+            'text' => str_replace($matches[0][$delta], '', $markup)
+          ]);
+        }
+      }
+      $item['#markup'] = $markup;
+    }
+    $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.footnotes.min.js';
+  }
+
+  // References
+  if ($variables['element']['#field_name'] == 'field_book_references') {
+    foreach($variables['items'] as &$item) {
+      $markup = $item['#markup'];
+      $markup = _health_replace_nbsp($markup);
+      if (preg_match_all("/\{\{([^\(\)]+)\}\}/", $markup, $matches) > 0) {
+        foreach ($matches[1] as $delta => $match) {
+          $markup = theme('health_footnote', [
+            'type' => 'reference',
+            'id' => $match,
+            'text' => str_replace($matches[0][$delta], '', $markup)
+          ]);
+        }
+      }
+      $item['#markup'] = $markup . "</span>";
+    }
+    $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.footnotes.min.js';
   }
 }
 
@@ -822,15 +937,45 @@ function health_preprocess_node(&$variables) {
 
   // Check to see if this role has access to view this content type.
   global $user;
-  if (key_exists('node', $variables)) {
-    // Deny access to anonymous users for Help pages.
-    if ($variables['node']->type == 'help') {
-      if (key_exists(1, $user->roles)) {
-        drupal_access_denied();
-      }
+  // Deny access to anonymous users for Help pages.
+  if ($node->type == 'help') {
+    if (key_exists(1, $user->roles)) {
+      drupal_access_denied();
     }
   }
 
+  // Books
+  $book_types = ['book_page'];
+  if (in_array($node->type, $book_types)) {
+
+    // Add css that will number the headings on the page.
+    if (isset($node->field_exclude_from_numbering[LANGUAGE_NONE]) && $node->field_exclude_from_numbering[LANGUAGE_NONE][0]['value'] == 0) {
+      preg_match("/^([\d\.]+)/", $node->title, $matches);
+      if ($matches[0]) {
+        $active_num = $matches[0];
+        $noClearFix = 'display: inline-block !important;';
+        $numberStyle = '.region-content { counter-reset: h2counter; }';
+        for ($i = 2; $i <= 6; $i++) {
+          $numberStyle .= '.region-content h' . $i . ':not(.no-number) { counter-reset: h' . ($i + 1) . 'counter; }';
+          $numberStyle .= '.region-content h' . $i . ':not(.no-number):before { counter-increment: h' . $i . 'counter 1; content: "' . $active_num . '" ';
+          for ($j = 2; $j <= $i; $j++) {
+            $numberStyle .= '"." counter(h' . $j . 'counter) ';
+          }
+          $numberStyle .= '"\\0000a0";' . $noClearFix . '}';
+        }
+        drupal_add_css($numberStyle, 'inline');
+      }
+    }
+
+    // Load and save glossary terms.
+    if (isset($node->book['bid'])) {
+      $glossary = &drupal_static('book_glossary_terms');
+      $glossary = _health_book_tree_traverse($node->book['bid'], '_health_book_find_glossary');
+    }
+
+    // Add tippy library to all book pages.
+    drupal_add_js('https://unpkg.com/tippy.js@2.5.2/dist/tippy.all.min.js', 'external');
+  }
 }
 
 /**
@@ -1065,7 +1210,13 @@ function health_preprocess_page(&$variables) {
         $variables['summary'] = NULL;
       }
       if (count($active_trail) > 3) {
-        $variables['section_title'] = theme('health_section_link', ['title' => 'Resources', 'path' => 'resources/']);
+        // See if this is a long document.
+        if (isset($active_trail[2]['module']) && $active_trail[2]['module'] == 'book') {
+          $variables['section_title'] = theme('health_section_link', ['title' => $active_trail[2]['title'], 'path' => $active_trail[2]['href']]);
+        } else {
+          // If not, go to resources listing.
+          $variables['section_title'] = theme('health_section_link', ['title' => 'Resources', 'path' => 'resources/']);
+        }
       } else {
         $variables['section_title'] = NULL;
       }

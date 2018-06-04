@@ -1,0 +1,50 @@
+
+// Inline display (full)
+.inside-para-container.paragraphs-item-recommendation {
+  @extend %recommendation;
+
+  &.view-mode-full {
+
+    // Fields
+    .group-title {
+      position: relative;
+    }
+    .field-name-recommendation-title {
+      @extend %recommendation--full__title;
+    }
+    .field-name-field-recommendation-text {
+      @extend %recommendation--full__body;
+    }
+    .field-name-field-recommendation-grade {
+      @extend %recommendation--full__grade;
+    }
+  }
+}
+
+// Summary display (vertical listing)
+.inside-para-container.paragraphs-item-summary-list {
+
+  h3 {
+    @extend %recommendation--vertical-listing__group-title;
+  }
+
+  .paragraphs-item-recommendation {
+    @extend %recommendation--vertical-listing;
+
+    &.view-mode-listing_vertical {
+
+      .wrapper {
+        display: table-row;
+      }
+
+      .field-name-field-recommendation-text {
+        @extend %recommendation--vertical-listing__body;
+      }
+      .field-name-field-recommendation-grade {
+        @extend %recommendation--vertical-listing__grade;
+      }
+    }
+  }
+
+  margin-bottom: uikit-space(1);
+}

@@ -1,0 +1,11 @@
+.paragraphs-item-glossary-term {
+  @extend %glossary;
+
+  .field-name-field-glossary-term {
+    @extend %glossary__term;
+  }
+
+  .field-name-field-glossary-definition {
+    @extend %glossary__definition;
+  }
+}

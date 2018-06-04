@@ -28,10 +28,10 @@
       display: block;
 
       // Hide menu links appended after Resources.
+      .sf-item-6,
       .sf-item-7,
       .sf-item-8,
-      .sf-item-9,
-      .sf-item-10 {
+      .sf-item-9 {
         display: none;
       }
     }

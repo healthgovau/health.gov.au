@@ -5,22 +5,21 @@
 //-------------------------------------------------------------
 
 %uikit-blockquote {
+  padding: uikit-space(.75) uikit-space(.75) uikit-space(.75) uikit-space(1.25);
+  background-size: 27px;
+  background-position: 0px 22px;
   font-family: $uikit-font-system;
   color: $uikit-colour-Text;
   line-height: $uikit-leading;
-  margin: uikit-space(1) uikit-space(.25) uikit-space(1) 0;
-  padding: uikit-space(.75) uikit-space(.75) uikit-space(.75) uikit-space(3);
-  border-radius: $uikit-border-radius;
-  box-shadow: 2px 0 6px transparentize($uikit-colour-Text, 0.3);
-  max-width: $uikit-maxwidth;
-  border-left: 6px solid $uikit-colour-Border;
+  font-size: 1.1em;
+  margin: 0;
   background-repeat: no-repeat;
-  background-size: 70px;
-  background-position: center left;
-  background-image: uikit-svguri('<svg fill="#{ $uikit-colour-Text }" xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 32 32">
-        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
-        <path d="M0 0h24v24H0z" fill="none"/>
-      </svg>');
+  background-image: uikit-svguri('<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#{$uikit-colour-Text}" d="M464 32H336c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48zm-288 0H48C21.5 32 0 53.5 0 80v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48z"></path></svg>');
+
+  @include uikit-media(sm) {
+    padding: uikit-space(.75) uikit-space(.75) uikit-space(.75) uikit-space(2);
+    background-size: 35px;
+  }
 
   :first-child {
     margin-top: 0;

@@ -1,0 +1,8 @@
+.field-name-field-book-references {
+  li {
+    @extend %reference;
+    &.highlight {
+      @extend %reference--highlight;
+    }
+  }
+}
