@@ -4,11 +4,7 @@
 //
 //-------------------------------------------------------------
 
-%au-blockquote {
-
-  //color: $AU-color-foreground-text;
-  //line-height: $AU-leading;
-  @include AU-space('margin', 1unit .25unit 1unit 0);
+%uikit-blockquote {
   @include AU-space('padding', .75unit .75unit .75unit 3unit);
   border-radius: $AU-border-radius;
   box-shadow: 2px 0 6px transparentize($AU-color-foreground-text, 0.3);
@@ -21,6 +17,11 @@
         <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
         <path d="M0 0h24v24H0z" fill="none"/>
       </svg>');
+
+  @include AU-media(sm) {
+    @include AU-space('padding', .75unit .75unit .75unit 2unit);
+    background-size: 35px;
+  }
 
   :first-child {
     margin-top: 0;

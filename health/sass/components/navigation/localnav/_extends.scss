@@ -14,18 +14,22 @@
 }
 
 // Local navigation
-.au-body .sidebar #block-menu-block-2 .menu-block-wrapper {
-  @extend %health-localnav;
+.uikit-body .sidebar {
+  #block-menu-block-2,
+  #block-book-navigation {
 
-  display: none;
-  @include AU-media(sm) {
-    display: block;
-  }
+    @extend %health-localnav;
 
-  // Drupal block title as link helper styles
-  &__title {
-    font-size: 18px;
-    margin-bottom: 0;
+    display: none;
+    @include AU-media(sm) {
+      display: block;
+    }
+
+    // Drupal block title as link helper styles
+    &__title {
+      font-size: 18px;
+      margin-bottom: 0;
+    }
   }
 }
 

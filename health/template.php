@@ -9,6 +9,7 @@
 
 // Include inc files.
 include_once drupal_get_path('theme', 'health') . '/includes/helper.inc';
+include_once drupal_get_path('theme', 'health') . '/includes/book_helper.inc';
 include_once drupal_get_path('theme', 'health') . '/includes/preprocess_hooks.inc';
 include_once drupal_get_path('theme', 'health') . '/includes/ds_preprocess_hooks.inc';
 include_once drupal_get_path('theme', 'health') . '/includes/process_hooks.inc';
@@ -147,6 +148,38 @@ function health_theme() {
   $theme['health_alert_bar'] = [
     'variables' => [],
     'template' => 'health_alert_bar',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
+  $theme['health_summary_list_group'] = [
+    'variables' => [
+      'items' => [],
+      'node' => NULL
+    ],
+    'template' => 'health_summary_list_group',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
+  $theme['health_footnote'] = [
+    'variables' => [
+      'type' => '',
+      'number' => '',
+      'id' => '',
+      'text' => ''
+    ],
+    'template' => 'health_footnote',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
+  $theme['health_footnote-link'] = [
+    'variables' => [
+      'type' => '',
+      'items' => [],
+      'prefix' => '',
+      'suffix' => '',
+      'divider' => '',
+    ],
+    'template' => 'health_footnote-link',
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
   ];
 
@@ -539,6 +572,7 @@ function health_js_alter(&$javascript) {
   unset($javascript['profiles/govcms/libraries/superfish/superfish.js']);
   unset($javascript['profiles/govcms/libraries/superfish/supersubs.js']);
   unset($javascript['profiles/govcms/libraries/superfish/supposition.js']);
+  unset($javascript['profiles/govcms/modules/contrib/toc_filter/toc_filter.js']);
 }
 
 /**
@@ -617,25 +651,6 @@ function health_file_entity_download_link($variables) {
                   if (isset($para_document->field_resource_file_pages)) {
                     $no_of_pages = $para_document->field_resource_file_pages[LANGUAGE_NONE][0]['value'];
                   }
-                }
-              }
-            }
-          }
-        }
-      }
-
-      // Images.
-      if ($node->type == 'image') {
-        $docs = $node->field_image_files[$node->language];
-        foreach ($docs as $doc) {
-          $entities = entity_load('paragraphs_item', [$doc['value']]);
-          if (!empty($entities)) {
-            $para_documents = array_pop($entities);
-            foreach($para_documents->field_images[LANGUAGE_NONE] as $image) {
-              if ($image['fid'] == $file->fid) {
-                // Get sizing.
-                if (isset($para_documents->field_image_size) && !empty($para_documents->field_image_size)) {
-                  $size = $para_documents->field_image_size[LANGUAGE_NONE][0]['value'];
                 }
               }
             }
@@ -976,5 +991,24 @@ function health_metatag_metatags_view_alter(&$output, $instance, $options) {
       $value = &$metatag['#attached']['drupal_add_html_head'][0][0]['#value'];
       $value = str_replace(urlencode(THEME_PATH_TOKEN_GENERIC), path_to_theme(), $value);
     }
+  }
+}
+
+/**
+ * Implements hook_node_access_alter().
+ *
+ * Stolen from https://www.drupal.org/project/menu_view_unpublished.
+ *
+ * @param \QueryAlterableInterface $query
+ */
+function health_query_node_access_alter(QueryAlterableInterface $query) {
+  $c = &$query->conditions();
+  // Remove the status condition if we suspect this query originates from
+  // menu_tree_check_access().
+  if (count($c) == 3 &&
+    is_string($c[0]['field']) && $c[0]['field'] == 'n.status' &&
+    is_string($c[1]['field']) && $c[1]['field'] == 'n.nid' && $c[1]['operator'] == 'IN'
+  ) {
+    unset($c[0]);
   }
 }

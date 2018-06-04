@@ -1,0 +1,36 @@
+%footnotes {
+  border-top: 1px solid #CCC;
+  max-width: $AU-maxwidth;
+  @include AU-space('padding-top', .5unit);
+}
+
+%footnote {
+  @extend %minor-text;
+  div,p {
+    display: inline;
+  }
+  @include AU-space('margin-bottom', .5unit);
+  @include AU-space('padding-left', 1.5unit);
+  transition: background-color 1s;
+}
+
+%footnote__number {
+  position: absolute;
+  @include AU-space('margin-left', -1.5unit);
+}
+
+%footnote--highlight {
+  background-color: #ffffc6;
+  transition: background-color 1s;
+}
+
+
+%footnote__links {
+
+}
+
+%footnote__link {
+  @extend sup;
+}
+
+@import 'extends';

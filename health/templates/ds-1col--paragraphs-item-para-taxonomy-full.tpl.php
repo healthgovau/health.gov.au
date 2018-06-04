@@ -11,7 +11,7 @@
       <?php print render($title_suffix['contextual_links']); ?>
     <?php endif; ?>
     <div class="para-row">
-        <a href="<?php print $link_url; ?>" title="Link to term" rel="Link to term">
+        <a href="<?php print $link_url; ?>" title="<?php print $term_name ?>" rel="<?php print $term_name ?>">
           <?php print $ds_content; ?>
         </a>
     </div>

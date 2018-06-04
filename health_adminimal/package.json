@@ -1,0 +1,32 @@
+{
+  "name": "zen-subtheme",
+  "author": "You!",
+  "description": "The node.js requirements to build this project.",
+  "version": "1.0.0",
+  "repository": {},
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "3.9.1",
+    "gulp-autoprefixer": "3.1.1",
+    "gulp-babel": "6.1.2",
+    "gulp-clean-css": "3.9.2",
+    "gulp-load-plugins": "1.2.4",
+    "gulp-minify": "2.1.0",
+    "gulp-rename": "1.2.2",
+    "gulp-sass": "3.1.0",
+    "gulp-size": "2.1.0",
+    "gulp-sourcemaps": "2.6.0",
+    "path": "0.12.7",
+    "run-sequence": "2.2.1",
+    "sass-versioning": "0.2.2"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "private": true,
+  "//": "The postinstall script is needed to work-around this Drupal core bug: https://www.drupal.org/node/2329453",
+  "scripts": {
+    "postinstall": "npm rebuild node-sass && find node_modules/ -name '*.info' -type f -delete",
+    "test": "gulp"
+  }
+}

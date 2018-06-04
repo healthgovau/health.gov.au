@@ -1,0 +1,15 @@
+%tooltip {
+  font-family: $AU-font;
+  @include AU-space('padding', .5unit)
+}
+
+%tooltip--light {
+  box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.24);
+  color: $colour-Primary;
+  background: white;
+  .tippy-arrow {
+    border-top-color: white !important;
+  }
+}
+
+@import 'extends';

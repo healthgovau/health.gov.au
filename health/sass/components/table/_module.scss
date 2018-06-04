@@ -7,6 +7,7 @@
 // @todo We shouldn't need to import this here, but it won't compile without it.
 @import '../../abstracts/mixins';
 
+// Table.
 %table {
   @include AU-space('margin-bottom', 1unit);
   border-collapse: collapse;
@@ -51,6 +52,18 @@
   @include AU-media( md ) {
     overflow: auto;
   }
+}
+
+// Table title.
+%table__title {
+  font-weight: bold;
+  padding-bottom: uikit-space(.75);
+}
+
+// Table source.
+%table__source {
+  @extend %minor-text;
+  margin-bottom: uikit-space(1);
 }
 
 @import 'print';

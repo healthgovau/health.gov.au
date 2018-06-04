@@ -1,0 +1,65 @@
+//--------------------------------------------------------------
+// Book navigation
+// Next, Previous, Up
+//
+//-------------------------------------------------------------
+
+.book-navigation {
+  max-width: 42em;
+  @include AU-space('margin', 1unit);
+  border-top: 1px solid $AU-color-foreground-border;
+}
+
+.book-navigation__links {
+  @include AU-space('margin-top', 1unit);
+}
+
+.book-navigation__link-wrapper {
+  width: 50%;
+  display: block;
+  @include AU-space('padding', 1unit);
+}
+
+.book-navigation__link {
+  @extend .au-display-md;
+  border-bottom: 1px solid #008998;
+  display: inline;
+  font-weight: bold;
+  i {
+    display: inline;
+    margin-left: 1em;
+    &:before {
+      margin-left: -.3em;
+    }
+  }
+}
+
+.book-navigation__link--previous {
+  text-align: left;
+  float: left;
+  i {
+    &:before {
+      margin-left: -.7em;
+    }
+  }
+}
+
+.book-navigation__link--next {
+  text-align: right;
+  float: right;
+  i {
+    &:before {
+      margin-left: -.3em;
+    }
+  }
+}
+
+.book-navigation__link-title {
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  @include AU-space('margin-top', .5unit);
+}
+
+@import 'extends';
+@import 'print';

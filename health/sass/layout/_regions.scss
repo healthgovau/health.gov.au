@@ -9,7 +9,11 @@
 .region-navigation {
   background: white;
   box-shadow: 0 -6px $colour-light-dark inset;
+  .item-list ul {
+    @extend %list--remove;
+  }
 }
+
 
 // .front {
 //   .region-content-top {
@@ -26,17 +30,17 @@
 //   @include AU-space('margin-bottom', .5unit);;
 // }
 
-.item-list ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+
+
 
 // Listing pages
 .view-filters,
 .view-content {
   @include AU-clearfix;
   width: 100%;
+  .item-list ul {
+    @extend %list--remove;
+  }
 }
 
 .region-content-top {
@@ -50,6 +54,13 @@
   .row {
     margin-left: 0; // to fix outdent for view selector tool
     margin-right: 0;
+  }
+}
+
+.region-sidebar-first {
+  .item-list ul {
+    @extend %list--remove;
+    padding-left: 0;
   }
 }
 

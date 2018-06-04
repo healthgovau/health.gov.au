@@ -342,3 +342,35 @@ function _health_get_featured_item_nid($featured, $featured_bundle_type) {
   }
   return FALSE;
 }
+
+/**
+ * Replaces non breaking spaces with normal spaces.
+ *
+ * @param $markup
+ *
+ * @return string
+ */
+function _health_replace_nbsp($markup) {
+  $markup = htmlentities($markup, null, 'utf-8');
+  $markup = str_replace("&nbsp;", " ", $markup);
+  return html_entity_decode($markup);
+}
+
+/**
+ * @param $name
+ *
+ * @return mixed|string
+ */
+function _health_prepare_filename($name) {
+  // Replace anything not normal with a hyphen.
+  $clean = strtolower(preg_replace('/[^a-zA-Z\d]+/', '-', $name));
+  // Remove any hyphens at the start.
+  $clean = preg_replace('/^-/', '', $clean);
+  // Remove any hyphens at the end.
+  $clean = preg_replace('/-$/', '', $clean);
+  // If this was only special characters, base 64 encode it so it is usable
+  if (empty($clean)) {
+    return base64_encode($name);
+  }
+  return $clean;
+}

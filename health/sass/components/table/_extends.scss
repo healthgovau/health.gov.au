@@ -15,3 +15,12 @@ table {
 .responsive-table-wrapper {
   @extend %table__responsive-wrapper;
 }
+
+.paragraphs-item-content-table {
+  .field-name-field-title {
+    @extend %table__title;
+  }
+  .field-name-field-table-source {
+    @extend %table__source;
+  }
+}

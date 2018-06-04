@@ -1,0 +1,73 @@
+%recommendation {
+  margin-bottom: 1.6em;
+  // Neutral colour.
+  border: 1px solid $colour-light-darker;
+  border-left: 6px solid #9cccff;
+  background: #ebf5ff;
+
+  // UIkit cleanup
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+// Full
+%recommendation--full__title {
+  padding: 0.4em 1.6em;
+  font-weight: bold;
+  // Neutral colour.
+  border-bottom: 1px solid $colour-light-darker;
+  background: #d7eaff;
+  color: black;
+}
+%recommendation--full__body {
+  padding: 0.8em 1.6em;
+}
+%recommendation--full__grade {
+  font-weight: bold;
+  padding: 12px 1.6em 0;
+  @include AU-media(sm) {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 7px 0.8em;
+    border-left: 1px solid $colour-light-darker;
+  }
+}
+%recommendation--full__number {
+  background: white;
+  border-radius: 5px;
+  padding: 0 5px;
+  min-width: 2em;
+  display: inline-block;
+  text-align: center;
+  margin-right: 0.8em;
+  // Neutral colour.
+  border: 1px solid $colour-light-darker;
+}
+
+// Vertical listing
+%recommendation--vertical-listing {
+  @extend %recommendation;
+  margin-bottom: 0;
+  display: table;
+}
+%recommendation--vertical-listing__group-title {
+  @include AU-space('margin', .75unit 0 .5unit 0);
+  @extend .au-display-sm;
+}
+%recommendation--vertical-listing__body {
+  display: table-cell;
+  @extend %recommendation--full__body;
+}
+%recommendation--vertical-listing__grade {
+  display: table-cell;
+  border-left: 1px solid $colour-light-darker;
+  @include AU-space('padding-left', 1unit);
+  width: 25%;
+}
+
+
+
+@import "print";
+@import "extends";
