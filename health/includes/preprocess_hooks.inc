@@ -333,20 +333,19 @@ function health_preprocess_entity(&$variables) {
 
         case 'Tables':
           $tables = _health_book_tree_traverse($node->book['bid'], '_health_book_find_tables');
-
+          $items = [];
           foreach($tables as $nid => $group) {
-            $items = [];
             foreach($group['tables'] as $table) {
-              $items[] = l($table->field_title[LANGUAGE_NONE][0]['value'], 'node/' . $group['node']->nid);
+              $items[] = l($table->field_title[LANGUAGE_NONE][0]['value'], 'node/' . $group['node']->nid, ['fragment' => _health_prepare_filename($table->field_title[LANGUAGE_NONE][0]['value'])]);
             }
-            $items = theme_item_list([
-              'items' => $items,
-              'title' => NULL,
-              'type' => 'ul',
-              'attributes' => [],
-            ]);
-            $output .= theme('health_summary_list_group', ['node' => $group['node'], 'items' => $items]);
           }
+          $items = theme_item_list([
+            'items' => $items,
+            'title' => NULL,
+            'type' => 'ul',
+            'attributes' => [],
+          ]);
+          $output .= $items;
           break;
 
         case 'TOC':
@@ -359,6 +358,11 @@ function health_preprocess_entity(&$variables) {
           break;
       }
       $variables['content']['field_summary_list_type'][0]['#markup'] = $output;
+    }
+
+    if ($para_item->bundle == 'content_table') {
+      // Add a class to identify what grade it is.
+      $variables['content']['field_title']['#prefix'] = '<a name="' . _health_prepare_filename($variables['content']['field_title'][0]['#markup']) . '"></a>';
     }
   }
 
