@@ -573,7 +573,7 @@ function health_preprocess_field(&$variables) {
   // Feature image.
   if ($variables['element']['#field_name'] == 'field_image_featured') {
     // News.
-    if ($variables['element']['#object']->type == 'news_article') {
+    if (property_exists($variables['element']['#object'],'type') && $variables['element']['#object']->type == 'news_article') {
       // If it is full display and the image is the default, don't show it.
       if ($variables['element']['#view_mode'] == 'full') {
         if ($variables['element'][0]['#item']['fid'] == 956) {
@@ -583,7 +583,7 @@ function health_preprocess_field(&$variables) {
     }
 
     // Contact
-    if ($variables['element']['#object']->type == 'contact') {
+    if (property_exists($variables['element']['#object'],'type') && $variables['element']['#object']->type == 'contact') {
       if ($variables['element']['#items'][0]['filename'] == 'Contact placeholder - group' && $variables['element']['#items'][0]['fid'] == 6186) {
         // Add default to class if image value is default.
         $variables['classes_array'][] = 'default';
@@ -658,6 +658,11 @@ function health_preprocess_field(&$variables) {
   // Title
   if ($variables['element']['#field_name'] == 'field_title') {
     // Footnotes.
+    $variables['items'][0]['#markup'] = _health_book_footnote_links($variables['items'][0]['#markup']);
+  }
+
+  // Table/figure footnote
+  if ($variables['element']['#field_name'] == 'field_table_source') {
     $variables['items'][0]['#markup'] = _health_book_footnote_links($variables['items'][0]['#markup']);
   }
 

@@ -1,0 +1,38 @@
+//--------------------------------------------------------------
+// Figure module
+//
+//--------------------------------------------------------------
+
+// Figure.
+%figure__wrapper {
+  border: $uikit-borderize;
+  margin-bottom: uikit-space(1);
+}
+
+%figure {
+  margin: 0;
+}
+
+%figure__image {
+  padding: uikit-space(1);
+}
+
+%figure__caption {
+  @extend %minor-text;
+  border-bottom: $uikit-borderize;
+  border-top: $uikit-borderize;
+  padding: uikit-space(.5) uikit-space(1);
+}
+
+%figure__title {
+  font-weight: bold;
+  padding-bottom: uikit-space(.75);
+}
+
+%figure__footnote {
+  @extend %minor-text;
+  padding: uikit-space(1);
+}
+
+@import 'extends';
+@import 'print';

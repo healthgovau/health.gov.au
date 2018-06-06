@@ -268,6 +268,7 @@
       // Simple.
       lockTextFormat('simple', [
         '.paragraphs-item-type-content-table .field-name-field-table-source .filter-list',
+        '.paragraphs-item-type-content-figure .field-name-field-table-source .filter-list',
         '.paragraphs-item-type-references .field-name-field-book-references .filter-list',
         '.paragraphs-item-type-footnotes .field-name-field-book-footnotes .filter-list'
       ]);
