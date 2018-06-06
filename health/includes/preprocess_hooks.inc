@@ -636,8 +636,12 @@ function health_preprocess_field(&$variables) {
         // Set glossary terms
         $glossary = &drupal_static('book_glossary_terms');
         if (!empty($glossary)) {
-          foreach ($glossary as $term => $definition) {
-            $markup = preg_replace("/([^A-Z\[\{])(" . $term . ")([^A-Z\]\}])/", '$1<abbr title="' . $definition . '">$2</abbr>$3', $markup);
+          foreach ($glossary as $glossary_item) {
+            if (strtoupper($glossary_item['term']) === $glossary_item['term']) { // If glossary term is all uppercase, we assume this is an abbreviation.
+              $markup = _health_book_definition('abbreviation', $glossary_item['term'], $glossary_item['definition'], $markup, 'node/' . $glossary_item['nid']);
+            } else { // If the glossary term is not all uppercase, we assume it is a definition.
+              $markup = _health_book_definition('definition', $glossary_item['term'], $glossary_item['definition'], $markup, 'node/' . $glossary_item['nid']);
+            }
           }
         }
 

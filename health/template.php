@@ -183,6 +183,26 @@ function health_theme() {
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
   ];
 
+  $theme['health_abbreviation'] = [
+    'variables' => [
+      'term' => '',
+      'definition' => '',
+      'url' => ''
+    ],
+    'template' => 'health_abbreviation',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
+  $theme['health_definition'] = [
+    'variables' => [
+      'term' => '',
+      'definition' => '',
+      'url' => ''
+    ],
+    'template' => 'health_definition',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
   return $theme;
 }
 
