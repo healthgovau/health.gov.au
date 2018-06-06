@@ -14,7 +14,7 @@
 }
 
 // Local navigation
-.uikit-body .sidebar {
+.au-body .sidebar {
   #block-menu-block-2,
   #block-book-navigation {
 
@@ -60,7 +60,7 @@
 }
 
 // Mobile toggle.
-.mobile-toggle.mobile-toggle__local-nav {
+.au-body .localnav__mobile-toggle.health-accordion__title {
   @extend %health-localnav__mobile-toggle;
   a {
     border-bottom: 0;

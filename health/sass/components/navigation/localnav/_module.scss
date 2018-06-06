@@ -8,12 +8,15 @@
 %health-localnav {
 
   padding: 0;
-
+  a {
+    @extend %health-localnav__link;
+  }
+  // Level 1
   ul {
     @extend .au-link-list;
     padding: 0;
     text-transform: none;
-    li {
+    > li {
       margin: 0;
       padding: 0;
       border-bottom: $health-borderize--very-thin;
@@ -27,29 +30,23 @@
       }
 
       a {
-        @extend %health-localnav__link;
-      }
-    }
-  }
-
-  // Level 1
-  > ul {
-    > li {
-      a {
         @include AU-space('padding', .5unit 12px);
         @include AU-media(sm) {
           @include AU-space('padding', .5unit 1unit);
         }
       }
-
       // Level 2
       > ul {
         > li {
+          &:first-child {
+            border-top: $health-borderize--very-thin;
+          }
           a {
             @include AU-space('padding', .5unit 1unit);
             @include AU-media(sm) {
               @include AU-space('padding', .5unit 1.75unit);
             }
+            border-bottom: 0;
           }
 
           // Level 3
