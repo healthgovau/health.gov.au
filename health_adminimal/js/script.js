@@ -261,7 +261,7 @@
       // Lock down the text format authors can use.
 
       // HTML table.
-      lockTextFormat('html_table', [
+      lockTextFormat('table', [
         '.paragraphs-item-type-content-table .field-name-field-body .filter-list'
       ]);
 
