@@ -151,14 +151,14 @@ endif;
 
   </div>
 
-  <footer class="footer <?php print $classes; ?>" role="contentinfo">
+  <footer class="au-footer <?php print $classes; ?>" role="contentinfo">
     <div class="container">
-      <div class="footer__navigation row">
+      <div class="au-footer__navigation row">
       <?php print render($page['footer_top']); ?>
       </div>
-      <div class="footer__end row">
+      <div class="au-footer__end row">
       <?php print render($page['footer_bottom']); ?>
-        <div class="footer__logo">
+        <div class="au-footer__logo">
           <div class="image-wrapper image-loading rs_preserve rs_skip" style="padding-bottom: 73%">
             <div class="image">
               <img typeof="foaf:Image" width="201" height="147"
@@ -167,7 +167,7 @@ endif;
             </div>
           </div>
         </div>
-        <p class="footer__attribution">
+        <p class="au-footer__attribution">
           <small>© Commonwealth of Australia</small>
         </p>
       </div>

@@ -47,7 +47,7 @@
  */
 ?>
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <dl class="tags"<?php print $content_attributes; ?>>
+  <dl class="au-tags"<?php print $content_attributes; ?>>
     <?php if (!$label_hidden): ?>
       <dt <?php print $title_attributes; ?>><?php print $label ?>:</dt>
     <?php endif; ?>

@@ -2,8 +2,7 @@
 //
 // We all know what a footer is.
 .page {
-  .footer {
-    @extend .au-footer;
+  .au-footer {
 
     // for IE 9.
     background-color: $colour-Primary-darker;
@@ -40,7 +39,7 @@
       }
     }
 
-    .footer__end {
+    .au-footer__end {
       padding-top: 1.6em;
       border-top: 1px solid #ccc;
       margin-top: 1.6em;

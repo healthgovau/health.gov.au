@@ -1,4 +1,4 @@
-.footer {
+.au-footer {
   padding: 0;
   @include AU-space('padding-top', 1unit);
 
@@ -42,10 +42,7 @@
   ul > li {
     margin-left: 0;
   }
-  .footer__navigation {
 
-  }
-  
   .field-name-field-link-to {
     // As UX request.
     margin-top: 2.8em;
