@@ -256,7 +256,8 @@ function _health_book_footnote_links($markup) {
  * @return mixed
  */
 function _health_book_definition($type, $term, $definition, $markup, $url) {
-  if (preg_match_all("/([^A-Z\[\{])(" . $term . ")([^A-Z\]\}])/", $markup, $matches) > 0) {
+  $term_regex = str_replace('/', '\/', preg_quote(check_plain($term)));
+  if (preg_match_all("/([^A-Z\[\{])(" . $term_regex . ")([^A-Z\]\}])/", $markup, $matches) > 0) {
     foreach ($matches[2] as $delta => $match) {
       $split = explode(',', $match);
       $items = [];

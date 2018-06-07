@@ -1181,7 +1181,7 @@ function health_preprocess_page(&$variables) {
   if (!empty($active_trail)) {
 
     // Topics
-    if ($active_trail[1]['href'] == 'topics') {
+    if ($active_trail[1]['href'] == 'health-topics') {
       if (isset($variables['node'])) {
         if (count($active_trail) > 3) {
           if ($variables['node']->type != 'health_topic_hp') {
