@@ -162,7 +162,6 @@ function health_theme() {
 
   $theme['health_footnote'] = [
     'variables' => [
-      'type' => '',
       'number' => '',
       'id' => '',
       'text' => ''
@@ -173,13 +172,26 @@ function health_theme() {
 
   $theme['health_footnote-link'] = [
     'variables' => [
-      'type' => '',
       'items' => [],
-      'prefix' => '',
-      'suffix' => '',
-      'divider' => '',
     ],
     'template' => 'health_footnote-link',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
+  $theme['health_reference'] = [
+    'variables' => [
+      'id' => '',
+      'text' => ''
+    ],
+    'template' => 'health_reference',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
+  $theme['health_reference-link'] = [
+    'variables' => [
+      'items' => [],
+    ],
+    'template' => 'health_reference-link',
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
   ];
 

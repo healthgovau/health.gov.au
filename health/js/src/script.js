@@ -109,16 +109,4 @@
     }
   };
 
-  Drupal.behaviors.tooltips = {
-    attach: function (context, settings) {
-      if (typeof tippy !== 'undefined') {
-        tippy('.reference__link a, .footnote__link a, .abbreviation, .definition', {
-          arrow: true,
-          theme: 'health-tooltip',
-          performance: true
-        });
-      }
-    }
-  }
-
 })(jQuery, Drupal, this, this.document);

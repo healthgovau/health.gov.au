@@ -237,13 +237,7 @@ function _health_book_footnote_links($markup) {
         $clean = _health_prepare_filename($ref);
         $items[$clean] = $ref;
       }
-      $replacement = theme('health_footnote-link', [
-        'type' => 'footnote',
-        'prefix' => '',
-        'suffix' => '',
-        'divider' => ',',
-        'items' => $items
-      ]);
+      $replacement = theme('health_footnote-link', ['items' => $items]);
       $markup = str_replace($matches[0][$delta], $replacement, $markup);
     }
   }
@@ -297,13 +291,7 @@ function _health_book_reference_links($markup) {
         $clean = _health_prepare_filename($ref);
         $items[$clean] = $ref;
       }
-      $replacement = theme('health_footnote-link', [
-        'type' => 'reference',
-        'prefix' => '(',
-        'suffix' => ')',
-        'divider' => '; ',
-        'items' => $items
-      ]);
+      $replacement = theme('health_reference-link', ['items' => $items]);
       $markup = str_replace($matches[0][$delta], $replacement, $markup);
     }
   }

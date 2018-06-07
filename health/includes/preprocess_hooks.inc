@@ -741,7 +741,6 @@ function health_preprocess_field(&$variables) {
       if (preg_match_all("/\[\[(.+)\]\]/", $markup, $matches) > 0) {
         foreach ($matches[1] as $delta => $match) {
           $markup = theme('health_footnote', [
-            'type' => 'footnote',
             'id' => $match,
             'number' => $match,
             'text' => str_replace($matches[0][$delta], '', $markup)
@@ -760,8 +759,7 @@ function health_preprocess_field(&$variables) {
       $markup = _health_replace_nbsp($markup);
       if (preg_match_all("/\{\{([^\(\)]+)\}\}/", $markup, $matches) > 0) {
         foreach ($matches[1] as $delta => $match) {
-          $markup = theme('health_footnote', [
-            'type' => 'reference',
+          $markup = theme('health_reference', [
             'id' => $match,
             'text' => str_replace($matches[0][$delta], '', $markup)
           ]);
