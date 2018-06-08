@@ -1053,7 +1053,7 @@ function health_query_node_access_alter(QueryAlterableInterface $query) {
   $c = &$query->conditions();
   // Remove the status condition if we suspect this query originates from
   // menu_tree_check_access().
-  if (count($c) == 3 &&
+  if (count($c) == 4 &&
     is_string($c[0]['field']) && $c[0]['field'] == 'n.status' &&
     is_string($c[1]['field']) && $c[1]['field'] == 'n.nid' && $c[1]['operator'] == 'IN'
   ) {
