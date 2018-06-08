@@ -34,6 +34,10 @@
       background: $colour-Secondary;
     }
   }
+
+  &.menu--unpublished {
+    background: $colour-Error-light;
+  }
 }
 
 // Menu with indentation

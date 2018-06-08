@@ -849,6 +849,21 @@ function health_menu_link(array $variables) {
   if ($query = _health_default_audience_menu($variables['element']['#href'])) {
     $variables['element']['#localized_options']['query'] = $query;
   }
+  // Mark unpublished pages, only if logged in.
+  global $user;
+  if (key_exists(2, $user->roles)) {
+    $href = $variables['element']['#href'];
+    if (strpos($href, 'node/') !== FALSE) {
+      $nid = str_replace('node/', '', $href);
+      if (is_numeric($nid)) {
+        if ($node = node_load($nid)) {
+          if ($node->status == 0) {
+            $variables['element']['#localized_options']['attributes']['class'][] = 'menu--unpublished';
+          }
+        }
+      }
+    }
+  }
   return theme_menu_link($variables);
 }
 
