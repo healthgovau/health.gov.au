@@ -67,80 +67,100 @@ endif;
 
   <?php print render($page['highlighted']); ?>
 
-  <div class="page-content" id="page-content">
+  <div class="page-content container-fluid" id="page-content">
 
-  <?php if(!drupal_is_front_page()): ?>
-    <div class="page-title header header--light">
-    <div class="container">
-      <div class="row">
-      <div class="page-title__core col<?php print isset($section_title) ? ' section-title' : '';
-      print count($page['title_supp']) > 0 || isset($header_image) ? '': ' full'; ?>">
-        <?php print $breadcrumb; ?>
+    <?php if(!drupal_is_front_page()): ?>
+      <div class="page-title row header header--light">
+          <div class="container">
+              <div class="row">
+                  <div class="page-title__core col<?php print isset($section_title) ? ' section-title' : '';
+                  print count($page['title_supp']) > 0 || isset($header_image) ? '': ' full'; ?>">
+                    <?php print $breadcrumb; ?>
 
-        <?php print render($page['title_core']); ?>
+                    <?php print render($page['title_core']); ?>
 
-        <?php if (isset($section_title)): ?>
-          <div class="section-header rs_skip <?php print count($page['title_supp']) > 0 ? '' : 'full'; ?>">
-            <?php print $section_title; ?>
+                    <?php if (isset($section_title)): ?>
+                        <div class="section-header rs_skip <?php print count($page['title_supp']) > 0 ? '' : 'full'; ?>">
+                          <?php print $section_title; ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ($title): ?>
+                      <?php print render($title_prefix); ?>
+                        <h1 class="au-header-heading">
+                          <?php print $title; ?>
+                        </h1>
+                      <?php print render($title_suffix); ?>
+                    <?php endif; ?>
+
+                    <?php if (isset($summary)): ?>
+                        <p class="summary"><?php print $summary; ?></p>
+                    <?php endif; ?>
+
+                  </div>
+
+                <?php if (count($page['title_supp']) > 0 || isset($header_image)): ?>
+                    <div class="page-title__supp col <?php print isset($section_title) ? 'section-title' : '' ?>">
+                      <?php print render($page['title_supp']); ?>
+                      <?php print isset($header_image) ? $header_image : ''; ?>
+                    </div>
+                <?php endif; ?>
+              </div>
           </div>
-        <?php endif; ?>
-
-        <?php if ($title): ?>
-        <?php print render($title_prefix); ?>
-        <h1 class="au-header-heading">
-          <?php print $title; ?>
-        </h1>
-        <?php print render($title_suffix); ?>
-        <?php endif; ?>
-
-        <?php if (isset($summary)): ?>
-        <p class="summary"><?php print $summary; ?></p>
-        <?php endif; ?>
-
       </div>
-
-      <?php if (count($page['title_supp']) > 0 || isset($header_image)): ?>
-        <div class="page-title__supp col <?php print isset($section_title) ? 'section-title' : '' ?>">
-          <?php print render($page['title_supp']); ?>
-          <?php print isset($header_image) ? $header_image : ''; ?>
-        </div>
-      <?php endif; ?>
-      </div>
-    </div>
-    </div>
-  <?php endif; ?>
+    <?php endif; ?>
 
   <?php print render($page['content_top']); ?>
 
-  <div class="page-layout">
+    <?php if(!drupal_is_front_page()): ?>
+      <div class="container">
+        <?php else: ?>
+          <div>
+            <?php endif; ?>
     <div class="row">
 
-    <?php if ($sidebar_first): ?>
-      <aside class="sidebar sidebar-left rs_skip" role="complementary">
-      <?php print $sidebar_first; ?>
-      </aside>
-    <?php endif; ?>
+      <?php if ($sidebar_first || $sidebar_second): ?>
+        <?php if ($sidebar_first): ?>
+              <aside class="sidebar sidebar-left rs_skip col-xs-12 col-md-4" role="complementary">
+                <?php print $sidebar_first; ?>
+              </aside>
+        <?php endif; ?>
 
-    <?php if ($sidebar_second): ?>
-      <aside class="sidebar sidebar-right rs_skip" role="complementary">
-        <?php print $sidebar_second; ?>
-      </aside>
-    <?php endif; ?>
+        <?php if ($sidebar_second): ?>
+              <aside class="sidebar sidebar-right rs_skip col-xs-12 col-md-4" role="complementary">
+                <?php print $sidebar_second; ?>
+              </aside>
+        <?php endif; ?>
+          <main class="col-xs-12 col-md-8 <?php print $content_class; ?>" id="content" role="main">
+              <div id="tabs" class="rs_skip"><?php print render($tabs); ?></div>
+            <?php print render($page['help']); ?>
+            <?php if ($action_links): ?>
+                <ul class="action-links rs_skip"><?php print render($action_links); ?></ul>
+            <?php endif; ?>
 
-    <main class="<?php print $content_class; ?>" id="content" role="main">
-      <div id="tabs" class="rs_skip"><?php print render($tabs); ?></div>
-      <?php print render($page['help']); ?>
-      <?php if ($action_links): ?>
-        <ul class="action-links rs_skip"><?php print render($action_links); ?></ul>
+            <?php print $messages; ?>
+
+            <?php print $readspeaker; ?>
+
+            <?php print render($page['content']); ?>
+            <?php print $feed_icons; ?>
+          </main>
+      <?php else: ?>
+          <main class="<?php print $content_class; ?>" id="content" role="main">
+              <div id="tabs" class="rs_skip"><?php print render($tabs); ?></div>
+            <?php print render($page['help']); ?>
+            <?php if ($action_links): ?>
+                <ul class="action-links rs_skip"><?php print render($action_links); ?></ul>
+            <?php endif; ?>
+
+            <?php print $messages; ?>
+
+            <?php print $readspeaker; ?>
+
+            <?php print render($page['content']); ?>
+            <?php print $feed_icons; ?>
+          </main>
       <?php endif; ?>
-
-      <?php print $messages; ?>
-
-      <?php print $readspeaker; ?>
-
-      <?php print render($page['content']); ?>
-      <?php print $feed_icons; ?>
-    </main>
 
     </div>
   </div>
