@@ -72,7 +72,7 @@ endif;
       <div class="page-title row header header--light">
           <div class="container">
               <div class="row">
-                  <div class="page-title__core col<?php print isset($section_title) ? ' section-title' : '';
+                  <div class="page-title__core col <?php print isset($section_title) ? ' section-title' : '';
                   print count($page['title_supp']) > 0 || isset($header_image) ? 'col-sm-8': ' col-xs-12'; ?>">
                     <?php print $breadcrumb; ?>
 
