@@ -2,8 +2,20 @@
 
 // Default/full content for all nodes
 .page-node {
-    @extend %dm-full-content;
-	@extend %page-help-and-currency;
+  @extend %dm-full-content;
+  @extend %page-help-and-currency;
+
+  .node-unpublished {
+    &:before {
+      content: 'Draft';
+      background: #ffe7ea;
+      display: block;
+      margin-bottom: 30px;
+      padding: 10px;
+      font-size: 24px;
+      text-transform: uppercase;
+    }
+  }
 }
 
 // Home page
