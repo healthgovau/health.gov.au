@@ -18,23 +18,26 @@ function _health_book_find_glossary($node, &$vars) {
     $paragraphs = entity_load('paragraphs_item', $pids);
     foreach ($paragraphs as $paragraph) {
       if ($paragraph->bundle == 'glossary') {
+        $type = $paragraph->field_glossary_type[LANGUAGE_NONE][0]['value'];
         foreach ($paragraph->field_glossary_terms[LANGUAGE_NONE] as $para_terms) {
-          if (isset($ptids[$node->nid])) {
-            $ptids[$node->nid][] = $para_terms['value'];
+          if (isset($ptids[$type][$node->nid])) {
+            $ptids[$type][$node->nid][] = $para_terms['value'];
           } else {
-            $ptids[$node->nid] = [$para_terms['value']];
+            $ptids[$type][$node->nid] = [$para_terms['value']];
           }
         }
       }
     }
   }
 
-  foreach($ptids as $nid => $ids) {
-    $terms = entity_load('paragraphs_item', $ids);
-    foreach ($terms as $term_para) {
-      $term = $term_para->field_glossary_term[LANGUAGE_NONE][0]['value'];
-      $definition = $term_para->field_glossary_definition[LANGUAGE_NONE][0]['value'];
-      $vars[] = ['term' => $term, 'definition' => $definition, 'nid' => $nid];
+  foreach($ptids as $type => $items) {
+    foreach($items as $nid => $ids) {
+      $terms = entity_load('paragraphs_item', $ids);
+      foreach ($terms as $term_para) {
+        $term = $term_para->field_glossary_term[LANGUAGE_NONE][0]['value'];
+        $definition = $term_para->field_glossary_definition[LANGUAGE_NONE][0]['value'];
+        $vars[] = ['type' => $type, 'term' => $term, 'definition' => $definition, 'nid' => $nid];
+      }
     }
   }
 }
@@ -202,32 +205,32 @@ function _health_book_footnote_links($markup) {
 /**
  * Format a definition (or abbreviation) for accessibility and replace it within the markup.
  *
- * @param $type
+ * @param string $type
  *   abbreviation or definition
- * @param $term
- * @param $definition
- * @param $markup
+ * @param string $term
+ *   The term being defined
+ * @param string $definition
+ *   The full definition
+ * @param string $markup
+ *   The markup to find and replace in.
  *
- * @return mixed
+ * @return string $markup
  */
 function _health_book_definition($type, $term, $definition, $markup, $url) {
   $term_regex = str_replace('/', '\/', preg_quote(check_plain($term)));
-  if (preg_match_all("/([^A-Z\[\{])(" . $term_regex . ")([^A-Z\]\}])/", $markup, $matches) > 0) {
-    foreach ($matches[2] as $delta => $match) {
-      $split = explode(',', $match);
-      $items = [];
-      foreach ($split as $ref) {
-        $clean = _health_prepare_filename($ref);
-        $items[$clean] = $ref;
-      }
-      $replacement = theme('health_' . $type, [
-        'term' => $term,
-        'definition' => $definition,
-        'url' => $url
-      ]);
-      $markup = str_replace($matches[0][$delta], $matches[1][$delta] . $replacement . $matches[3][$delta], $markup);
-    }
+  $modifiers = 'm';
+  if ($type == 'definition') {
+    $modifiers = 'mi';
   }
+
+  $replacement = theme('health_' . $type, [
+    'term' => $term,
+    'definition' => preg_replace("/[\"'<>]/", "", $definition),
+    'url' => $url
+  ]);
+
+  $markup = preg_replace("/([\s\(\)<>\.\[\]%])(" . $term_regex . ")([\s\(\)<>\.\[\]%])/" . $modifiers,"$1" . $replacement . "$3", $markup);
+
   return $markup;
 }
 

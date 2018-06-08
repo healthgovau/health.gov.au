@@ -637,10 +637,13 @@ function health_preprocess_field(&$variables) {
         $glossary = &drupal_static('book_glossary_terms');
         if (!empty($glossary)) {
           foreach ($glossary as $glossary_item) {
-            if (strtoupper($glossary_item['term']) === $glossary_item['term']) { // If glossary term is all uppercase, we assume this is an abbreviation.
-              $markup = _health_book_definition('abbreviation', $glossary_item['term'], $glossary_item['definition'], $markup, 'node/' . $glossary_item['nid']);
-            } else { // If the glossary term is not all uppercase, we assume it is a definition.
-              $markup = _health_book_definition('definition', $glossary_item['term'], $glossary_item['definition'], $markup, 'node/' . $glossary_item['nid']);
+            switch($glossary_item['type']) {
+              case 'abbr':
+                $markup = _health_book_definition('abbreviation', $glossary_item['term'], $glossary_item['definition'], $markup, 'node/' . $glossary_item['nid']);
+                break;
+              case 'glossary':
+                $markup = _health_book_definition('definition', $glossary_item['term'], $glossary_item['definition'], $markup, 'node/' . $glossary_item['nid']);
+                break;
             }
           }
         }
@@ -737,8 +740,7 @@ function health_preprocess_field(&$variables) {
   if (in_array($variables['element']['#field_name'], $footnotes)) {
     foreach($variables['items'] as &$item) {
       $markup = $item['#markup'];
-      $markup = _health_replace_nbsp($markup);
-      if (preg_match_all("/\[\[(.+)\]\]/", $markup, $matches) > 0) {
+      if (preg_match_all("/[\s(&nbsp;)]*\[\[(.+)\]\][\s(&nbsp;)]*/", $markup, $matches) > 0) {
         foreach ($matches[1] as $delta => $match) {
           $markup = theme('health_footnote', [
             'id' => $match,
@@ -756,8 +758,7 @@ function health_preprocess_field(&$variables) {
   if ($variables['element']['#field_name'] == 'field_book_references') {
     foreach($variables['items'] as &$item) {
       $markup = $item['#markup'];
-      $markup = _health_replace_nbsp($markup);
-      if (preg_match_all("/\{\{([^\(\)]+)\}\}/", $markup, $matches) > 0) {
+      if (preg_match_all("/[\s(&nbsp;)]*\{\{(.+)\}\}[\s(&nbsp;)]*/", $markup, $matches) > 0) {
         foreach ($matches[1] as $delta => $match) {
           $markup = theme('health_reference', [
             'id' => $match,

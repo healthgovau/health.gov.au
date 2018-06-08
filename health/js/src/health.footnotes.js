@@ -27,7 +27,7 @@
   Drupal.behaviors.tooltips = {
     attach: function (context, settings) {
       if (typeof tippy !== 'undefined') {
-        tippy('.reference__link a, .footnote__link a, .abbreviation, .definition', {
+        tippy('.reference__link a, .footnote__link a, abbr > a, dfn > a', {
           arrow: true,
           theme: 'health-tooltip',
           performance: true
