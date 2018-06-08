@@ -1059,6 +1059,19 @@ function health_preprocess_page(&$variables) {
     $variables['readspeaker'] = drupal_render($render_readspeaker);
   }
 
+  // Add full width indicator.
+  if (isset($variables['node'])) {
+    if (theme_get_setting('full_content_types')[$variables['node']->type] !== 0 ) {
+      $variables['full_width'] = TRUE;
+    }
+    else {
+      $variables['full_width'] = FALSE;
+    }
+  }
+  else {
+    $variables['full_width'] = FALSE;
+  }
+
   // Add parameters to JS.
   global $base_url;
   $variables['page']['content']['#attached']['js'][] = [
@@ -1170,7 +1183,7 @@ function health_preprocess_page(&$variables) {
   if (!empty($active_trail)) {
 
     // Topics
-    if ($active_trail[1]['href'] == 'health_topics') {
+    if ($active_trail[1]['href'] == 'topics') {
       if (isset($variables['node'])) {
         if (count($active_trail) > 3) {
           if ($variables['node']->type != 'health_topic_hp') {

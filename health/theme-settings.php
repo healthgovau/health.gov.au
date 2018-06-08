@@ -24,6 +24,19 @@ function health_form_system_theme_settings_alter(&$form, $form_state, $form_id =
                         ),
     '#description'   => t('IE 6-8 require a JavaScript polyfill solution to add basic support of HTML5. Mobile devices require a few meta tags for responsive designs.'),
   );
+  // List all content types.
+  $content_types = node_type_get_types();
+  $options = [];
+  foreach ($content_types as $key => $content_type) {
+    $options[$key] = $content_type->name;
+  }
+  $form['support']['full_content_types'] = array(
+    '#type' => 'checkboxes',
+    '#options' => $options,
+    '#title' => t('Which content types are full width?'),
+    '#default_value' => theme_get_setting('full_content_types'),
+    '#description' => t('Select which content type should use full width grid.'),
+  );
   $form['themedev'] = array(
     '#type'          => 'fieldset',
     '#title'         => t('Theme development settings'),

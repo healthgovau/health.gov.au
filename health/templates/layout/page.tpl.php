@@ -68,8 +68,7 @@ endif;
   <?php print render($page['highlighted']); ?>
 
   <div class="page-content container-fluid" id="page-content">
-
-    <?php if(!drupal_is_front_page()): ?>
+    <?php if(!$full_width): ?>
       <div class="page-title row header header--light">
           <div class="container">
               <div class="row">
@@ -112,7 +111,7 @@ endif;
 
   <?php print render($page['content_top']); ?>
 
-    <?php if(!drupal_is_front_page()): ?>
+    <?php if(!$full_width): ?>
       <div class="container">
         <?php else: ?>
           <div>
