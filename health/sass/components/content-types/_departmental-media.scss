@@ -4,7 +4,6 @@
 // Default/full content
 .node-type-departmental-media {
   @extend %dm-full-content;
-  @extend %page-title-no-supp;
   @extend %page-help-only;
 }
 

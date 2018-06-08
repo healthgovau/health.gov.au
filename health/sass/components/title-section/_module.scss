@@ -23,7 +23,6 @@
 }
 
 .page-title__core {
-  @extend .col-sm-8;
   padding: 12px;
   @include AU-media(sm){
     @include AU-space('padding', 1unit 0 1unit 0);
@@ -78,7 +77,6 @@
 }
 
 .page-title__supp {
-  @extend .col-sm-4;
   display: block; // default unless over-ridden
   @include AU-media( sm ) {
     display: table;
@@ -105,16 +103,6 @@
         max-width: 75%;
       }
     }
-  }
-}
-
-// Hide page-title__supp.
-%page-title-no-supp {
-  .page-title__supp {
-    display: none;
-  }
-  .page-title__core {
-    @extend .col-xs-12;
   }
 }
 
