@@ -209,9 +209,9 @@
     @include AU-media(lg) {
       width: 25%;
     }
-    @include AU-space('padding-topo', 1.5unit);
+    @include AU-space('padding-top', 1.5unit);
     @include AU-media(sm){
-      @include AU-space('padding', 0 1unit 1.5unit 1unit);
+      @include AU-space('padding', 1.5unit 1unit 1.5unit 1unit);
       background: $bgcolour-left;
     }
   }
@@ -239,11 +239,8 @@
   }
   a {
     color: $font-colour;
-    border-bottom: 1px solid $font-colour;
     &:hover {
-      color: $font-colour;
       background: none;
-      border-bottom: none;
     }
   }
 
