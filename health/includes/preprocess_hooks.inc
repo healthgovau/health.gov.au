@@ -225,7 +225,7 @@ function health_preprocess_entity(&$variables) {
         switch($view_mode) {
           case "resources_for_public_in_hp":
           case "latest_resources_public":
-          case "latest_news_events_public_program":
+          case "latest_resources_public_program":
             if ($nid = _health_get_featured_item('featured_resource')) {
               $view->set_arguments([NULL, $nid]);
             }
