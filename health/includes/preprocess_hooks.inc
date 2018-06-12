@@ -639,7 +639,8 @@ function health_preprocess_field(&$variables) {
         $glossary = &drupal_static('book_glossary_terms');
         if (!empty($glossary)) {
           foreach ($glossary as $term => $definition) {
-            $markup = preg_replace("/([^A-Z\[\{])(" . $term . ")([^A-Z\]\}])/", '$1<abbr title="' . $definition . '">$2</abbr>$3', $markup);
+            $term_regex = str_replace('/', '\/', preg_quote(check_plain($term)));
+            $markup = preg_replace("/([^A-Z\[\{])(" . $term_regex . ")([^A-Z\]\}])/", '$1<abbr title="' . $definition . '">$2</abbr>$3', $markup);
           }
         }
 
