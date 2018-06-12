@@ -26,7 +26,5 @@
 ?>
 
 <dl class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php
-  print $content;
-  ?>
+  <?php print $content; ?>
 </dl>
