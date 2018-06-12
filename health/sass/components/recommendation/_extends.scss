@@ -1,50 +1,39 @@
-
-// Inline display (full)
-.inside-para-container.paragraphs-item-recommendation {
+// Recommendation
+.inside-para-container.paragraphs-item-recommendation,
+.inside-para-container .paragraphs-item-recommendation
+{
   @extend %recommendation;
 
-  &.view-mode-full {
-
-    // Fields
-    .group-title {
-      position: relative;
-    }
-    .field-name-recommendation-title {
-      @extend %recommendation--full__title;
-    }
-    .field-name-field-recommendation-text {
-      @extend %recommendation--full__body;
-    }
-    .field-name-field-recommendation-grade {
-      @extend %recommendation--full__grade;
-    }
+  // Fields
+  .field-name-recommendation-title {
+    @extend %recommendation__title;
   }
-}
-
-// Summary display (vertical listing)
-.inside-para-container.paragraphs-item-summary-list {
-
-  h3 {
-    @extend %recommendation--vertical-listing__group-title;
+  .field-name-field-body {
+    @extend %recommendation__body;
+  }
+  .field-name-field-recommendation-grade {
+    @extend %recommendation__grade;
   }
 
-  .paragraphs-item-recommendation {
-    @extend %recommendation--vertical-listing;
-
-    &.view-mode-listing_vertical {
-
-      .wrapper {
-        display: table-row;
-      }
-
-      .field-name-field-recommendation-text {
-        @extend %recommendation--vertical-listing__body;
-      }
-      .field-name-field-recommendation-grade {
-        @extend %recommendation--vertical-listing__grade;
-      }
-    }
+  .field-name-field-recommendation-number {
+    @extend %recommendation__number;
   }
 
-  margin-bottom: uikit-space(1);
+  // Practice point.
+  &.recommendation-grade-tid-2406 {
+    @extend %recommendation--practice-point;
+  }
+
+  // NHMRC grades
+  &.recommendation-grade-tid-2386, // Grade A
+  &.recommendation-grade-tid-2391, // Grade B
+  &.recommendation-grade-tid-2396, // Grade C
+  &.recommendation-grade-tid-2401  // Grade D
+  {
+    @extend %recommendation--nhmrc-grade;
+  }
+
+  &.recommendation-grade-tid-2411 {
+    @extend %recommendation--cbr;
+  }
 }
