@@ -75,8 +75,9 @@
 
       // Long docs
       legendSummary('.paragraphs-item-type-recommendation', 'Recommendation', 'textarea');
-      legendSummary('.paragraphs-item-type-content-table', 'Table', 'input');
+      legendSummary('.paragraphs-item-type-content-table', 'Table', '.field-name-field-title input');
       legendSummary('.paragraphs-item-type-glossary-term', 'Term', 'input');
+      legendSummary('.paragraphs-item-type-figure', 'Figure', '.field-name-field-title input');
 
       // If collapsed already has saved states in it, restore those states.
       if (collapsed.length > 0) {
