@@ -113,9 +113,10 @@ endif;
 
     <?php if(!$full_width): ?>
       <div class="container">
-        <?php else: ?>
-          <div>
-            <?php endif; ?>
+    <?php else: ?>
+      <div>
+    <?php endif; ?>
+
     <div class="row">
 
       <?php if ($sidebar_first || $sidebar_second): ?>

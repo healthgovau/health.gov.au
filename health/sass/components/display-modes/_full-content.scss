@@ -1,19 +1,4 @@
 %dm-full-content {
-  width: 100%;
-
-  // layout
-  .group-left {
-    width: 100%;
-    @include AU-media(xs) {
-      width: 30%;
-    }
-  }
-  .group-right {
-    width: 100%;
-    @include AU-media(xs) {
-      width: 70%;
-    }
-  }
   .group-footer {
     padding-top: 0;
     @include AU-media(sm) {
