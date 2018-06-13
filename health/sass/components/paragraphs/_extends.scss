@@ -119,19 +119,15 @@
 }
 
 // Contact hot line bar
-.page .paragraphs-item-para-contact {
+.paragraphs-item-para-contact {
   // This creates .container and .row from band markup for BS grid
-  &.para-container {
+  &.para-row {
     padding-top: 0;
     padding-bottom: 0;
   }
-  @include row-and-container;
 
   // Layout
   .group-left {
-    @extend .col-xs-12;
-    @extend .col-sm-4;
-    @extend .col-lg-3;
     @include AU-space('padding-top', 1.5unit);
     @include AU-media(sm){
       @include AU-space('padding-bottom', 1.5unit);
@@ -141,9 +137,6 @@
     }
   }
   .group-right {
-    @extend .col-xs-12;
-    @extend .col-sm-8;
-    @extend .col-lg-9;
     @include AU-space('padding-bottom', 1.5unit);
     @include AU-media(sm){
       @include AU-space('padding-top', 1.5unit);

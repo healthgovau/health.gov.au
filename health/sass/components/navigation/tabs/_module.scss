@@ -24,7 +24,6 @@
   @extend .au-link-list;
   @extend .au-link-list--inline;
   border-bottom: $health-borderize--thin;
-  width: 100%;
   // Need to use body otherwise padding gets hit with uikitbody ul
   .au-body & {
     padding-bottom: 0;
