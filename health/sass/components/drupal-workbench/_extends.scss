@@ -1,8 +1,7 @@
 .block-workbench {
-  @extend %uikit-workbench;
-
-  // Drupal related style resets
   .workbench-info-block {
+    @extend %uikit-workbench;
+
     background: none;
     border: 0;
     color: inherit;
