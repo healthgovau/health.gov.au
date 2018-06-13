@@ -35,22 +35,23 @@
 <?php if ($has_links): ?>
   <div id="book-navigation-<?php print $book_id; ?>" class="book-navigation" role="navigation" aria-label="Book">
     <div class="row">
-      <?php if ($prev_url): ?>
-        <div class="book-navigation__link-wrapper col-sm-6">
-          <a class="uikit-direction-link uikit-direction-link--left" href="<?php print $prev_url; ?>">
-            Previous
-          </a>
-          <span class="book-navigation__link-title"><?php print $prev_title; ?></span>
-        </div>
-      <?php endif; ?>
-      <?php if ($next_url): ?>
+      <div class="book-navigation__link-wrapper col-sm-6">
+        <?php if ($prev_url): ?>
+        <a class="uikit-direction-link uikit-direction-link--left" href="<?php print $prev_url; ?>">
+          Previous
+        </a>
+        <span class="book-navigation__link-title"><?php print $prev_title; ?></span>
+        <?php endif; ?>
+      </div>
+
       <div class="book-navigation__link-wrapper book-navigation__link-wrapper--right col-sm-6">
+        <?php if ($next_url): ?>
         <a class="uikit-direction-link uikit-direction-link--right" href="<?php print $next_url; ?>">
           Next
         </a>
         <span class="book-navigation__link-title"><?php print $next_title; ?></span>
+        <?php endif; ?>
       </div>
-      <?php endif; ?>
     </div>
   </div>
 <?php endif; ?>

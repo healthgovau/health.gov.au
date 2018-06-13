@@ -909,6 +909,17 @@ function health_block_view_alter(&$data, $block) {
       $data['content']['field_audience']['#items'][$key] = $item;
     }
   }
+
+  // Clean up the workbench moderation block.
+  if ($block->module == 'workbench' && $block->delta == 'block') {
+    $data['content']['#markup'] = str_replace('Revision state: ', '', $data['content']['#markup']);
+    $data['content']['#markup'] = str_replace('Most recent revision: ', '', $data['content']['#markup']);
+    $data['content']['#markup'] = str_replace('<em>Yes</em>', '', $data['content']['#markup']);
+    $data['content']['#markup'] = str_replace('<em>No</em>', '', $data['content']['#markup']);
+    $data['content']['#markup'] = str_replace('<br />', '', $data['content']['#markup']);
+    $data['content']['#markup'] = str_replace('Actions: ', '<br/>', $data['content']['#markup']);
+    $data['content']['#markup'] = str_replace('Set moderation state:', '<i class="fa fa-arrow-right"></i>', $data['content']['#markup']);
+  }
 }
 
 /**

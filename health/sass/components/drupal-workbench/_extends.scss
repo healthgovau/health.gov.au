@@ -7,5 +7,17 @@
     border: 0;
     color: inherit;
     font-size: inherit;
+
+    em:first-of-type {
+      font-weight: bold;
+      font-style: normal;
+      font-size: 22px;
+    }
+    .fa {
+      margin-left: 3.6em;
+      &:before {
+        position: static;
+      }
+    }
   }
 }
