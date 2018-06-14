@@ -311,6 +311,10 @@ function health_preprocess_entity(&$variables) {
       // Add total block number in current para to class.
       $block_num = count($para_item->field_para_block_id[LANGUAGE_NONE]);
       $variables['classes_array'][] = 'block__count--' . $block_num;
+      foreach ($variables['paragraphs_item']->field_para_block_id[LANGUAGE_NONE] as $key => $block) {
+        $block['value'] .= '-num'. $block_num;
+        $variables['paragraphs_item']->field_para_block_id[LANGUAGE_NONE][$key] = $block;
+      }
 
       // Add class to identify specific block.
       foreach($para_item->field_para_block_id[LANGUAGE_NONE] as $bid) {
@@ -380,6 +384,26 @@ function health_preprocess_entity(&$variables) {
 
     // Add template suggestions for bean types.
     $variables['theme_hook_suggestions'][] = 'block__bean__' . $bean->type;
+
+    // Add grid class accordingly.
+    $count = isset($variables['elements']['num']) ? $variables['elements']['num'] : 1;
+    $variables['classes_array'][] = 'col-xs-12';
+    switch ($count) {
+      case 2:
+        $variables['classes_array'][] = 'col-sm-6';
+        break;
+      case 3:
+        $variables['classes_array'][] = 'col-sm-4';
+        break;
+      case 4:
+        $variables['classes_array'][] = 'col-sm-3';
+        break;
+      case 6:
+        $variables['classes_array'][] = 'col-sm-2';
+        break;
+      default:
+        $variables['classes_array'][] = 'col-sm-3';
+    }
 
     if ($bean->type == 'image_and_text') {
       // Compose block wrapper link url.

@@ -6,7 +6,7 @@
  */
 ?>
 <div class="row para-row <?php print $classes; ?>">
-  <<?php print $ds_content_wrapper; print $layout_attributes; ?> class="container ds-1col <?php print $classes;?> clearfix">
+  <<?php print $ds_content_wrapper; print $layout_attributes; ?> class="container ds-1col clearfix">
     <?php if (isset($title_suffix['contextual_links'])): ?>
       <?php print render($title_suffix['contextual_links']); ?>
     <?php endif; ?>

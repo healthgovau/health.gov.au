@@ -144,10 +144,11 @@ function health_preprocess_ds_para_rendered_blocks($variable) {
   $output = '';
   if (isset($para_item->field_para_block_id[LANGUAGE_NONE])) {
     foreach ($para_item->field_para_block_id[LANGUAGE_NONE] as $block_delta) {
-      $block = block_load('bean', $block_delta['value']);
-      $block_render = _block_render_blocks(array($block));
-      $block_renderable_array = _block_get_renderable_array($block_render);
-      $output .= drupal_render($block_renderable_array);
+      $count = explode('-num', $block_delta['value'])[1];
+      $block_delta['value'] = explode('-num', $block_delta['value'])[0];
+      $block = module_invoke('bean', 'block_view', $block_delta['value']);
+      $block['content']['bean'][$block_delta['value']]['num'] = $count;
+      $output .= drupal_render($block['content']);
     }
   }
   return $output;

@@ -6,7 +6,7 @@
  */
 ?>
 <div class="para-container <?php print $classes; ?>">
-  <<?php print $layout_wrapper; print $layout_attributes; ?> class="inside-para-container ds-2col <?php print $classes;?> clearfix">
+  <<?php print $layout_wrapper; print $layout_attributes; ?> class="inside-para-container ds-2col clearfix">
 
   <div class="para-row">
 
