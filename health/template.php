@@ -195,7 +195,7 @@ function health_theme() {
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
   ];
 
-  $theme['health_abbreviation'] = [
+  $theme['health_abbr'] = [
     'variables' => [
       'term' => '',
       'definition' => '',
@@ -205,7 +205,7 @@ function health_theme() {
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
   ];
 
-  $theme['health_definition'] = [
+  $theme['health_glossary'] = [
     'variables' => [
       'term' => '',
       'definition' => '',

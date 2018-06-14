@@ -630,21 +630,12 @@ function health_preprocess_field(&$variables) {
         $markup = str_replace('<table', '<div class="responsive-table-wrapper"><table', $markup);
         $markup = str_replace('</table>', '</table></div>', $markup);
 
-        // Replace non breaking spaces with normal spaces.
-        $markup = _health_replace_nbsp($markup);
-
         // Set glossary terms
         $glossary = &drupal_static('book_glossary_terms');
         if (!empty($glossary)) {
           foreach ($glossary as $glossary_item) {
-            switch($glossary_item['type']) {
-              case 'abbr':
-                $markup = _health_book_definition('abbreviation', $glossary_item['term'], $glossary_item['definition'], $markup, 'node/' . $glossary_item['nid']);
-                break;
-              case 'glossary':
-                $markup = _health_book_definition('definition', $glossary_item['term'], $glossary_item['definition'], $markup, 'node/' . $glossary_item['nid']);
-                break;
-            }
+            $term_regex = str_replace('/', '\/', preg_quote(check_plain($glossary_item['term'])));
+            $markup = preg_replace("/([\s\(\)<>\[\]%])(" . $term_regex . ")([\s\(\)<>\.\[\]%])/mi",'$1<span class="definition">$2</span>$3', $markup);
           }
         }
 
@@ -983,9 +974,20 @@ function health_preprocess_node(&$variables) {
     if (isset($node->book['bid'])) {
       $glossary = &drupal_static('book_glossary_terms');
       $glossary = _health_book_tree_traverse($node->book['bid'], '_health_book_find_glossary');
+      // Add all the glossary terms to javascript so it can be used on the page.
+      if (!empty($glossary)) {
+        drupal_add_js(['health' => [
+          'definitions' => [
+            'terms' => $glossary,
+            'templates' => ['abbr' => theme('health_abbr'), 'glossary' => theme('health_glossary')]
+          ],
+        ]], 'setting');
+        drupal_add_js(path_to_theme() . '/js/dist/health.definitions.min.js', 'file');
+      }
     }
 
     // Add tippy library to all book pages.
+    drupal_add_js(path_to_theme() . '/js/dist/health.tooltips.min.js', array('type' => 'file', 'scope' => 'footer', 'weight' => 100 ));
     drupal_add_js('https://unpkg.com/tippy.js@2.5.2/dist/tippy.all.min.js', 'external');
   }
 }

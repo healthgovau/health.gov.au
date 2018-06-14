@@ -36,7 +36,13 @@ function _health_book_find_glossary($node, &$vars) {
       foreach ($terms as $term_para) {
         $term = $term_para->field_glossary_term[LANGUAGE_NONE][0]['value'];
         $definition = $term_para->field_glossary_definition[LANGUAGE_NONE][0]['value'];
-        $vars[] = ['type' => $type, 'term' => $term, 'definition' => $definition, 'nid' => $nid];
+        $vars[] = [
+          'type' => $type,
+          'term' => $term,
+          'definition' => $definition,
+          'url' => url('node/' . $nid) . '#' . _health_prepare_filename($term),
+          'id' => _health_prepare_filename($term)
+        ];
       }
     }
   }
@@ -199,38 +205,6 @@ function _health_book_footnote_links($markup) {
       $markup = str_replace($matches[0][$delta], $replacement, $markup);
     }
   }
-  return $markup;
-}
-
-/**
- * Format a definition (or abbreviation) for accessibility and replace it within the markup.
- *
- * @param string $type
- *   abbreviation or definition
- * @param string $term
- *   The term being defined
- * @param string $definition
- *   The full definition
- * @param string $markup
- *   The markup to find and replace in.
- *
- * @return string $markup
- */
-function _health_book_definition($type, $term, $definition, $markup, $url) {
-  $term_regex = str_replace('/', '\/', preg_quote(check_plain($term)));
-  $modifiers = 'm';
-  if ($type == 'definition') {
-    $modifiers = 'mi';
-  }
-
-  $replacement = theme('health_' . $type, [
-    'term' => $term,
-    'definition' => preg_replace("/[\"'<>]/", "", $definition),
-    'url' => $url
-  ]);
-
-  $markup = preg_replace("/([\s\(\)<>\.\[\]%])(" . $term_regex . ")([\s\(\)<>\.\[\]%])/" . $modifiers,"$1" . $replacement . "$3", $markup);
-
   return $markup;
 }
 
