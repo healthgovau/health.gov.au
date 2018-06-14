@@ -106,25 +106,6 @@ function health_preprocess_block(&$variables, $hook) {
   if ($variables['elements']['#block']->module == 'menu_block' && $variables['elements']['#config']['title_link']) {
     $variables['classes_array'][] = 'block-menu-block--title-link';
   }
-
-  // Facet blocks.
-  if (key_exists('#facet', $variables['elements'])) {
-
-    // Collapse all by default.
-    $variables['collapsed'] = TRUE;
-
-    // Get the currently selected facets from the URL.
-    $query_string = drupal_get_query_parameters();
-    if (isset($query_string['f'])) {
-      foreach ($query_string['f'] as $string) {
-        $parts = explode(':', $string);
-        // If there is a selected value in this filter, then we open the filter group.
-        if ($variables['elements']['#facet']['field'] == $parts[0]) {
-          $variables['collapsed'] = FALSE;
-        }
-      }
-    }
-  }
 }
 
 /**
