@@ -1293,6 +1293,14 @@ function health_preprocess_page(&$variables) {
     'type' => 'file',
   ];
   $variables['health_alert_bar'] = drupal_render($render_health_alert_bar);
+
+  // Books.
+  if (isset($variables['node'])) {
+    if ($variables['node']->type == 'book_page') {
+      $book = node_load($variables['node']->book['bid']);
+      $variables['title_alt'] = l($book->title, 'node/' . $book->nid);
+    }
+  }
 }
 
 /**

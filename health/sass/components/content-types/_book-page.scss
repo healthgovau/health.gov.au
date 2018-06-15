@@ -12,6 +12,14 @@
 
   // Full
   &.view-mode-full {
+    .field-name-field-page-number {
+      @extend h1;
+      float: left;
+      margin: 0 uikit-space(.5) 0 0;
+    }
+    h1 {
+      margin-bottom: uikit-space(1);
+    }
   }
 
   // List vertical
