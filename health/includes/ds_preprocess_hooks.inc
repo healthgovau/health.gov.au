@@ -302,7 +302,7 @@ function health_preprocess_ds_associated_release(&$variables) {
 }
 
 /**
- * DS - Content type.
+ * DS - Book navigation - Previous and next
  *
  * @param $variables
  *
@@ -312,4 +312,29 @@ function health_preprocess_ds_book_navigation_prev_next(&$variables) {
   if (isset($variables['content']['book_navigation'])) {
     return render($variables['content']['book_navigation']);
   }
+}
+
+/**
+ * DS - Recommendation tags.
+ *
+ * @param $variables
+ *
+ * @return string
+ */
+function health_preprocess_ds_recommendation_tags(&$variables) {
+  // Grade
+  $items = [[
+    'data' => $variables['content']['field_recommendation_grade'][0]['#markup'],
+    'class' => ['recommendation__grade']
+  ]];
+  // Number
+  if (!empty($variables['content']['field_recommendation_number'])) {
+    $items[] = ['data' => $variables['content']['field_recommendation_number'][0]['#markup']];
+  }
+  // Put them both in a tags list.
+  return theme('item_list',[
+    'items' => $items,
+    'attributes' => ['class' => ['au-tags']],
+    'type' => 'ul'
+  ]);
 }
