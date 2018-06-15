@@ -75,8 +75,9 @@
 
       // Long docs
       legendSummary('.paragraphs-item-type-recommendation', 'Recommendation', 'textarea');
-      legendSummary('.paragraphs-item-type-content-table', 'Table', 'input');
+      legendSummary('.paragraphs-item-type-content-table', 'Table', '.field-name-field-title input');
       legendSummary('.paragraphs-item-type-glossary-term', 'Term', 'input');
+      legendSummary('.paragraphs-item-type-figure', 'Figure', '.field-name-field-title input');
 
       // If collapsed already has saved states in it, restore those states.
       if (collapsed.length > 0) {
@@ -261,13 +262,14 @@
       // Lock down the text format authors can use.
 
       // HTML table.
-      lockTextFormat('html_table', [
+      lockTextFormat('table', [
         '.paragraphs-item-type-content-table .field-name-field-body .filter-list'
       ]);
 
       // Simple.
       lockTextFormat('simple', [
         '.paragraphs-item-type-content-table .field-name-field-table-source .filter-list',
+        '.paragraphs-item-type-content-figure .field-name-field-table-source .filter-list',
         '.paragraphs-item-type-references .field-name-field-book-references .filter-list',
         '.paragraphs-item-type-footnotes .field-name-field-book-footnotes .filter-list'
       ]);

@@ -123,3 +123,8 @@ h6 {
     font-size: 24px;
   }
 }
+
+.title-alt {
+  @extend h4;
+  font-weight: normal;
+}

@@ -1,10 +1,15 @@
 //--------------------------------------------------------------
-// Print styles
+// Table module print styles
 //
 //-------------------------------------------------------------
 
 @media print {
-  .book-navigation {
-    display: none;
-  }
+  table {
+    td,
+    th,
+    thead {
+      border-color: #000 !important;
+      background: #fff !important;
+   }
+ }
 }
