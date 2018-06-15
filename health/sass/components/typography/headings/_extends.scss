@@ -27,6 +27,7 @@
 }
 
 // Add margin top to missing uikit headers
+// @todo Is this needed anymore?
 @for $i from 1 through 6 {
   table + h#{$i},
   div.responsive-table-wrapper + h#{$i},
@@ -38,5 +39,9 @@
 
 // Section header
 .au-header-heading {
+  margin-top: 0;
+}
+.title-alt {
+  @include health-fontgrid('md', 'default', 'light');
   margin-top: 0;
 }

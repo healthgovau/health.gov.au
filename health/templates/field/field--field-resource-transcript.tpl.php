@@ -51,7 +51,7 @@
        aria-expanded="false"
        aria-selected="false"
        role="tab">
-        <h6 class="block__title">Read transcript</h6></a>
+       <h6 class="block__title">Read transcript</h6></a>
 
     <div class="health-accordion__body health-accordion--closed" id="<?php print 'accordion-' . $element['#object']->nid; ?>" aria-hidden="true">
         <div class="health-accordion__body-wrapper">
@@ -61,4 +61,3 @@
         </div>
     </div>
 </div>
-

@@ -24,13 +24,4 @@
   transition: background-color 1s;
 }
 
-
-%footnote__links {
-
-}
-
-%footnote__link {
-  @extend sup;
-}
-
 @import 'extends';

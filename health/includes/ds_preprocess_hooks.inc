@@ -300,3 +300,16 @@ function health_preprocess_ds_associated_release(&$variables) {
   }
   return '';
 }
+
+/**
+ * DS - Content type.
+ *
+ * @param $variables
+ *
+ * @return string
+ */
+function health_preprocess_ds_book_navigation_prev_next(&$variables) {
+  if (isset($variables['content']['book_navigation'])) {
+    return render($variables['content']['book_navigation']);
+  }
+}

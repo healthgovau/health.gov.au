@@ -72,12 +72,6 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
   if ($form['field_summary']) {
     $form['field_summary'][LANGUAGE_NONE][0]['value']['#attributes']['maxlength'] = 300;
   }
-
-  // Book pages
-  if ($form['#form_id'] == 'book_page_node_form') {
-    // Update numbering on submit.
-    $form['actions']['submit']['#submit'][] = '_health_adminimal_book_submitter';
-  }
 }
 
 /**
@@ -160,11 +154,6 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
   // Content owner. Create groups.
   if (isset($form['field_content_owner'])) {
     $form['field_content_owner']['und']['#options'] = _health_adminimal_optgroup('content_owner');
-  }
-
-  // Book outline restructure.
-  if ($form_id == 'book_admin_edit') {
-    $form['#submit'][] = '_health_adminimal_book_submitter';
   }
 }
 
@@ -561,26 +550,6 @@ function _health_adminimal_process_date($form, &$form_state) {
     if (strtotime($form_state['values']['field_last_updated'][LANGUAGE_NONE][0]['value']) > strtotime($form_state['values']['field_last_reviewed'][LANGUAGE_NONE][0]['value'])) {
       $form_state['values']['field_last_reviewed'][LANGUAGE_NONE][0] = $form_state['values']['field_last_updated'][LANGUAGE_NONE][0];
     }
-  }
-}
-
-/**
- * Custom node form submit handler to update book structure numbering.
- * @param $form
- * @param $form_state
- */
-function _health_adminimal_book_submitter($form, &$form_state) {
-  // Is this a book page, or an outline page?
-  if (arg(2) == 'book') { // Outline
-    $bid = arg(3);
-  } else { // Book
-    $bid = $form_state['values']['book']['bid'];
-  }
-  if ($bid) {
-    // Get the entire book structure.
-    $tree = menu_tree_all_data(book_menu_name($bid));
-    // Go through each page, load it and update the title.
-    _health_book_heading_children($tree, '0', $active_num);
   }
 }
 

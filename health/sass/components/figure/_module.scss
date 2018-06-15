@@ -1,0 +1,38 @@
+//--------------------------------------------------------------
+// Figure module
+//
+//--------------------------------------------------------------
+
+// Figure.
+%figure__wrapper {
+  border: $health-borderize--very-thin;
+  @include AU-space('margin-bottom', 1unit);
+}
+
+%figure {
+  margin: 0;
+}
+
+%figure__image {
+  @include AU-space('padding', .5unit);
+}
+
+%figure__caption {
+  @extend %minor-text;
+  border-bottom: $health-borderize--very-thin;
+  border-top: $health-borderize--very-thin;
+  @include AU-space('padding', .5unit 1unit);
+}
+
+%figure__title {
+  font-weight: bold;
+  @include AU-space('padding-bottom', .75unit);
+}
+
+%figure__footnote {
+  @extend %minor-text;
+  @include AU-space('padding', 1unit);
+}
+
+@import 'extends';
+@import 'print';

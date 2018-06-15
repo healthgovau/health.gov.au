@@ -8,7 +8,7 @@
  */
 ?>
 <?php if ($content): ?>
-  <nav id="nav" class="<?php print $classes; ?>">
+  <nav id="nav" role="navigation" class="<?php print $classes; ?>">
     <div class="container">
       <div class="row health-accordion health-accordion--skip-auto">
 

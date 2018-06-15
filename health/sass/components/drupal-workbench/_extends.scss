@@ -1,11 +1,20 @@
 .block-workbench {
-  @extend %au-workbench;
-
-  // Drupal related style resets
   .workbench-info-block {
+    @extend %au-workbench;
+
     background: none;
-    border: 0;
-    color: inherit;
     font-size: inherit;
+
+    em:first-of-type {
+      font-weight: bold;
+      font-style: normal;
+      font-size: 22px;
+    }
+    .fa {
+      @include AU-space('margin-left', 2unit);
+      &:before {
+        position: static;
+      }
+    }
   }
 }
