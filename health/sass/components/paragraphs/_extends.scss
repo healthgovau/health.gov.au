@@ -7,11 +7,8 @@
     @include health-fontgrid('xl', 'default', 'light');
     @include AU-space('padding-bottom', .25unit);
     @include AU-space('margin-bottom', .5unit);;
-  } // Each item
-  .paragraphs-item-para-link {
-    @extend .col-sm-6;
-    @extend .col-md-3;
-  } // Item link
+  }
+  // Each item
   .field-type-link-field {
     @extend %list-item-title--medium;
   }
@@ -202,21 +199,6 @@
   .field-name-field-link-internal {
     a {
       @extend .health-cta-link;
-    }
-  } // 2 in a row.
-  &.listing__count--2 {
-    .field-name-field-statistics>.field-items>.field-item {
-      @extend .col-md-6;
-    }
-  } // 3 in a row.
-  &.listing__count--3 {
-    .field-name-field-statistics>.field-items>.field-item {
-      @extend .col-sm-4;
-    }
-  } // 4 in a row.
-  &.listing__count--4 {
-    .field-name-field-statistics>.field-items>.field-item {
-      @extend .col-md-3;
     }
   }
 }
