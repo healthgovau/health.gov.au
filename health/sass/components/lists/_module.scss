@@ -1,3 +1,30 @@
+// Lists
+//
+// A collection of list types.
+//
+// Markup: lists.twig
+//
+// Style guide: Lists
+
+
+// / UIKit only specifies that <p> has a max width.
+// However if a list is mostly text, we want it to be easy to read like paragraphs.
+ul.list--text {
+  li {
+    max-width: $AU-maxwidth;
+  }
+}
+
+// Highlight an item in a list.
+ul {
+  li {
+    transition: background-color 1s;
+    &.highlight {
+      background-color: #ffffc6;
+    }
+  }
+}
+
 // Large list styles
 %list--large {
     list-style-type: none;

@@ -11,7 +11,6 @@
 
 // Typography
 @import 'typography/blockquote/module';
-@import 'typography/blockquote/extends';
 @import 'typography/headings/module';
 @import 'typography/fields/module';
 
@@ -50,12 +49,18 @@
 @import 'socialmedia/extends';
 @import 'link/module';
 @import 'link/extends';
+
+
+// Books
+//
+// Components for long documents, HTML versions of publications and books.
+//
+// Style guide: Components.books
 @import 'recommendation/module';
 @import 'footnotes/module';
-@import 'references/module';
-@import 'glossary/module';
 @import 'tooltip/module';
 @import 'table-of-contents/module';
+@import 'figure/module';
 
 // Display modes
 @import 'display-modes/module';
@@ -73,9 +78,7 @@
 
 // Drupal
 @import 'drupal-contextual-links/module';
-@import 'drupal-contextual-links/extends';
 @import 'drupal-workbench/module';
-@import 'drupal-workbench/extends';
 
 // Forms
 //
@@ -126,8 +129,6 @@
 // Style guide: navigation
 @import 'navigation/book/module';
 @import 'navigation/breadcrumb/module';
-@import 'navigation/breadcrumb/extends';
-@import 'navigation/direction-link/extends';
 @import 'navigation/dropdown/module';
 @import 'navigation/dropdown/extends';
 @import 'navigation/inpage-nav/extends';

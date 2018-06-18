@@ -84,12 +84,16 @@ endif;
                         </div>
                     <?php endif; ?>
 
-                    <?php if ($title): ?>
+                    <?php if ($title && !isset($title_alt)): ?>
                       <?php print render($title_prefix); ?>
                         <h1 class="au-header-heading">
                           <?php print $title; ?>
                         </h1>
                       <?php print render($title_suffix); ?>
+                    <?php endif; ?>
+
+                    <?php if (isset($title_alt)): ?>
+                      <div class="title-alt"><?php print $title_alt; ?></div>
                     <?php endif; ?>
 
                     <?php if (isset($summary)): ?>

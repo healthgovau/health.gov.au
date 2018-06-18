@@ -66,7 +66,6 @@ function health_preprocess_block(&$variables, $hook) {
     case 'comment':
     case 'forum':
     case 'shortcut':
-    case 'statistics':
       $variables['attributes_array']['role'] = 'navigation';
       break;
     case 'search':
@@ -105,25 +104,6 @@ function health_preprocess_block(&$variables, $hook) {
   // Add a class to the block if it is a block menu with the title as a link.
   if ($variables['elements']['#block']->module == 'menu_block' && $variables['elements']['#config']['title_link']) {
     $variables['classes_array'][] = 'block-menu-block--title-link';
-  }
-
-  // Facet blocks.
-  if (key_exists('#facet', $variables['elements'])) {
-
-    // Collapse all by default.
-    $variables['collapsed'] = TRUE;
-
-    // Get the currently selected facets from the URL.
-    $query_string = drupal_get_query_parameters();
-    if (isset($query_string['f'])) {
-      foreach ($query_string['f'] as $string) {
-        $parts = explode(':', $string);
-        // If there is a selected value in this filter, then we open the filter group.
-        if ($variables['elements']['#facet']['field'] == $parts[0]) {
-          $variables['collapsed'] = FALSE;
-        }
-      }
-    }
   }
 }
 
@@ -358,7 +338,8 @@ function health_preprocess_entity(&$variables) {
     // Recommendations
     if ($para_item->bundle == 'recommendation') {
       // Add a class to identify what grade it is.
-      $variables['classes_array'][] = 'recommendation-grade-tid-' . $para_item->field_recommendation_grade[LANGUAGE_NONE][0]['tid'];
+      $term = taxonomy_term_load($para_item->field_recommendation_grade[LANGUAGE_NONE][0]['tid']);
+      $variables['classes_array'][] = 'recommendation--grade-' . _health_prepare_filename($term->name);
     }
 
     // Summary lists
@@ -376,20 +357,19 @@ function health_preprocess_entity(&$variables) {
 
         case 'Tables':
           $tables = _health_book_tree_traverse($node->book['bid'], '_health_book_find_tables');
-
+          $items = [];
           foreach($tables as $nid => $group) {
-            $items = [];
             foreach($group['tables'] as $table) {
-              $items[] = l($table->field_title[LANGUAGE_NONE][0]['value'], 'node/' . $group['node']->nid);
+              $items[] = l($table->field_title[LANGUAGE_NONE][0]['value'], 'node/' . $group['node']->nid, ['fragment' => _health_prepare_filename($table->field_title[LANGUAGE_NONE][0]['value'])]);
             }
-            $items = theme_item_list([
-              'items' => $items,
-              'title' => NULL,
-              'type' => 'ul',
-              'attributes' => [],
-            ]);
-            $output .= theme('health_summary_list_group', ['node' => $group['node'], 'items' => $items]);
           }
+          $items = theme_item_list([
+            'items' => $items,
+            'title' => NULL,
+            'type' => 'ul',
+            'attributes' => [],
+          ]);
+          $output .= $items;
           break;
 
         case 'TOC':
@@ -402,6 +382,11 @@ function health_preprocess_entity(&$variables) {
           break;
       }
       $variables['content']['field_summary_list_type'][0]['#markup'] = $output;
+    }
+
+    if ($para_item->bundle == 'content_table') {
+      // Add a class to identify what grade it is.
+      $variables['content']['field_title']['#prefix'] = '<a name="' . _health_prepare_filename($variables['content']['field_title'][0]['#markup']) . '"></a>';
     }
   }
 
@@ -616,7 +601,7 @@ function health_preprocess_field(&$variables) {
   // Feature image.
   if ($variables['element']['#field_name'] == 'field_image_featured') {
     // News.
-    if ($variables['element']['#object']->type == 'news_article') {
+    if (property_exists($variables['element']['#object'],'type') && $variables['element']['#object']->type == 'news_article') {
       // If it is full display and the image is the default, don't show it.
       if ($variables['element']['#view_mode'] == 'full') {
         if ($variables['element'][0]['#item']['fid'] == 956) {
@@ -626,7 +611,7 @@ function health_preprocess_field(&$variables) {
     }
 
     // Contact
-    if ($variables['element']['#object']->type == 'contact') {
+    if (property_exists($variables['element']['#object'],'type') && $variables['element']['#object']->type == 'contact') {
       if ($variables['element']['#items'][0]['filename'] == 'Contact placeholder - group' && $variables['element']['#items'][0]['fid'] == 6186) {
         // Add default to class if image value is default.
         $variables['classes_array'][] = 'default';
@@ -673,15 +658,12 @@ function health_preprocess_field(&$variables) {
         $markup = str_replace('<table', '<div class="responsive-table-wrapper"><table', $markup);
         $markup = str_replace('</table>', '</table></div>', $markup);
 
-        // Replace non breaking spaces with normal spaces.
-        $markup = _health_replace_nbsp($markup);
-
         // Set glossary terms
         $glossary = &drupal_static('book_glossary_terms');
         if (!empty($glossary)) {
-          foreach ($glossary as $term => $definition) {
-            $term_regex = str_replace('/', '\/', preg_quote(check_plain($term)));
-            $markup = preg_replace("/([^A-Z\[\{])(" . $term_regex . ")([^A-Z\]\}])/", '$1<abbr title="' . $definition . '">$2</abbr>$3', $markup);
+          foreach ($glossary as $glossary_item) {
+            $term_regex = str_replace('/', '\/', preg_quote(check_plain($glossary_item['term'])));
+            $markup = preg_replace("/([\s\(\)<>\[\]%])(" . $term_regex . ")([\s\(\)<>\.\[\]%])/mi",'$1<span class="definition">$2</span>$3', $markup);
           }
         }
 
@@ -698,6 +680,11 @@ function health_preprocess_field(&$variables) {
   // Title
   if ($variables['element']['#field_name'] == 'field_title') {
     // Footnotes.
+    $variables['items'][0]['#markup'] = _health_book_footnote_links($variables['items'][0]['#markup']);
+  }
+
+  // Table/figure footnote
+  if ($variables['element']['#field_name'] == 'field_table_source') {
     $variables['items'][0]['#markup'] = _health_book_footnote_links($variables['items'][0]['#markup']);
   }
 
@@ -772,11 +759,9 @@ function health_preprocess_field(&$variables) {
   if (in_array($variables['element']['#field_name'], $footnotes)) {
     foreach($variables['items'] as &$item) {
       $markup = $item['#markup'];
-      $markup = _health_replace_nbsp($markup);
-      if (preg_match_all("/\[\[(.+)\]\]/", $markup, $matches) > 0) {
+      if (preg_match_all("/[\s(&nbsp;)]*\[\[(.+)\]\][\s(&nbsp;)]*/", $markup, $matches) > 0) {
         foreach ($matches[1] as $delta => $match) {
           $markup = theme('health_footnote', [
-            'type' => 'footnote',
             'id' => $match,
             'number' => $match,
             'text' => str_replace($matches[0][$delta], '', $markup)
@@ -792,11 +777,9 @@ function health_preprocess_field(&$variables) {
   if ($variables['element']['#field_name'] == 'field_book_references') {
     foreach($variables['items'] as &$item) {
       $markup = $item['#markup'];
-      $markup = _health_replace_nbsp($markup);
-      if (preg_match_all("/\{\{([^\(\)]+)\}\}/", $markup, $matches) > 0) {
+      if (preg_match_all("/[\s(&nbsp;)]*\{\{(.+)\}\}[\s(&nbsp;)]*/", $markup, $matches) > 0) {
         foreach ($matches[1] as $delta => $match) {
-          $markup = theme('health_footnote', [
-            'type' => 'reference',
+          $markup = theme('health_reference', [
             'id' => $match,
             'text' => str_replace($matches[0][$delta], '', $markup)
           ]);
@@ -1026,10 +1009,29 @@ function health_preprocess_node(&$variables) {
     if (isset($node->book['bid'])) {
       $glossary = &drupal_static('book_glossary_terms');
       $glossary = _health_book_tree_traverse($node->book['bid'], '_health_book_find_glossary');
+      // Add all the glossary terms to javascript so it can be used on the page.
+      if (!empty($glossary)) {
+        drupal_add_js(['health' => [
+          'definitions' => [
+            'terms' => $glossary,
+            'templates' => ['abbr' => theme('health_abbr'), 'glossary' => theme('health_glossary')]
+          ],
+        ]], 'setting');
+        drupal_add_js(path_to_theme() . '/js/dist/health.definitions.min.js', 'file');
+      }
     }
 
     // Add tippy library to all book pages.
+    drupal_add_js(path_to_theme() . '/js/dist/health.tooltips.min.js', array('type' => 'file', 'scope' => 'footer', 'weight' => 100 ));
     drupal_add_js('https://unpkg.com/tippy.js@2.5.2/dist/tippy.all.min.js', 'external');
+  }
+
+  // Statistic.
+  if ($node->type == 'statistic') {
+    // Add no-trend variant if trend info hasn't been added.
+    if (empty($node->field_statistic_trend_text)) {
+      $variables['classes_array'][] = 'stat--no-trend';
+    }
   }
 }
 
@@ -1238,7 +1240,7 @@ function health_preprocess_page(&$variables) {
   if (!empty($active_trail)) {
 
     // Topics
-    if ($active_trail[1]['href'] == 'topics') {
+    if ($active_trail[1]['href'] == 'health-topics') {
       if (isset($variables['node'])) {
         if (count($active_trail) > 3) {
           if ($variables['node']->type != 'health_topic_hp') {
@@ -1366,6 +1368,14 @@ function health_preprocess_page(&$variables) {
     'type' => 'file',
   ];
   $variables['health_alert_bar'] = drupal_render($render_health_alert_bar);
+
+  // Books.
+  if (isset($variables['node'])) {
+    if ($variables['node']->type == 'book_page') {
+      $book = node_load($variables['node']->book['bid']);
+      $variables['title_alt'] = l($book->title, 'node/' . $book->nid);
+    }
+  }
 }
 
 /**

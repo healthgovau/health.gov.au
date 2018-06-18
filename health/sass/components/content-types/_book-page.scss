@@ -12,6 +12,14 @@
 
   // Full
   &.view-mode-full {
+    .field-name-field-page-number {
+      @include health-fontgrid('xxl');
+      float: left;
+      @include AU-space('margin', 0 .5unit 0 0);
+    }
+    h1 {
+      @include AU-space('margin-bottom', 1unit);
+    }
   }
 
   // List vertical

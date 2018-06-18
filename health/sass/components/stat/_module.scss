@@ -1,97 +1,84 @@
 // Statistics
 //
-// Displaying statistics in various ways.
+// Display a quick stat as a way to engage users.
 //
-// .stat--no-trend  - No trend info
+// .stat--secondary - Secondary colour
+// .stat--tertiary - Tertiary colour
+// .stat--dark - Dark colour
+// .stat--no-trend - Don't display trend information
 //
 // Markup: stat.twig
 //
-// Style guide: components.stats
+// Style guide: Components.stats
 
-%stat {
-  @extend .row;
+.stat {
   text-align: center;
   margin-bottom: 12px;
-}
-
-// Stat wrapper.
-%stat__wrapper {
-  @extend .col-xs-12;
+  max-width: 27em;
 }
 
 // Card wrapper.
-%stat__card {
+.stat__card {
   overflow: hidden;
   width: 100%;
-  @include cardify();
+  color: white;
+  background-color: $colour-Primary-darker;
+  @include cardify($colour-Primary-darker);
   @include AU-media('md') {
-    %stat__text {
-      border-bottom: 8px solid white;
+    .stat__text {
+      border-bottom: 8px solid $colour-Primary;
     }
     border-bottom: 0;
   }
-  border-bottom: 8px solid white;
+  border-bottom: 8px solid $colour-Primary;
+
 }
 
-// Colours
-%stat__card--primary {
-  @extend %stat__card;
-  background-color: $colour-Primary-darker;
-  color: white;
-  @include AU-media('md') {
-    %stat__text {
-      border-color: $colour-Primary;
+.stat--secondary {
+  .stat__card {
+    background-color: $colour-Secondary-darker;
+    @include AU-media('md') {
+      .stat__text {
+        border-color: $colour-Secondary;
+      }
     }
+    border-color: $colour-Secondary;
   }
-  border-color: $colour-Primary;
 }
 
-%stat__card--secondary {
-  @extend %stat__card;
-  background-color: $colour-Secondary-darker;
-  color: white;
-  @include AU-media('md') {
-    %stat__text {
-      border-color: $colour-Secondary;
+.stat--tertiary {
+  .stat__card {
+    background-color: $colour-Tertiary-darker;
+    @include AU-media('md') {
+      .stat__text {
+        border-color: $colour-Tertiary;
+      }
     }
+    border-color: $colour-Tertiary;
   }
-  border-color: $colour-Secondary;
 }
 
-%stat__card--tertiary {
-  @extend %stat__card;
-  background-color: $colour-Tertiary-darker;
-  color: white;
-  @include AU-media('md') {
-    %stat__text {
-      border-color: $colour-Tertiary;
+.stat--dark {
+  .stat__card {
+    background-color: $colour-darker;
+    @include AU-media('md') {
+      .stat__text {
+        border-color: $colour-dark;
+      }
     }
+    border-color: $colour-dark;
   }
-  border-color: $colour-Tertiary;
-}
-
-%stat__card--dark {
-  @extend %stat__card;
-  background-color: $colour-darker;
-  color: white;
-  @include AU-media('md') {
-    %stat__text {
-      border-color: $colour-dark;
-    }
-  }
-  border-color: $colour-dark;
 }
 
 // Statistic value.
-%stat__value {
-  @extend .col-xs-12;
+.stat__value {
   @include AU-space('padding', .5unit 0);
   @include AU-media('md') {
     @include AU-space('padding', 1unit 0);
   }
 }
 
-%stat__value-value {
+.stat__value-value {
   font-size: 3rem;
   @include AU-media('sm') {
     font-size: 4rem;
@@ -102,13 +89,13 @@
   color: white;
 }
 
-%stat__value-suffix,
-%stat__value-prefix {
+.stat__value-suffix,
+.stat__value-prefix {
   @include health-fontgrid('xl', 'default', 'light');
 }
 
 // Statistic text.
-%stat__text {
+.stat__text {
   @include health-fontgrid('md', 'default', 'light');
   @include AU-space('padding', 0 1unit .25unit 1unit);
   @include AU-media('md') {
@@ -117,51 +104,44 @@
 }
 
 // The trend.
-%stat__trend {
-  @extend .col-xs-12;
+.stat__trend {
   padding-top: 12px;
   padding-bottom: 12px;
 }
 
-%stat__trend-value {
+.stat__trend-value {
   padding: 0;
   margin: 0;
   display: inline;
 }
 
-%stat__trend-icon {
+.stat__trend-icon {
   margin-right: 5px;
   color: white;
+  &:before {
+    @include AU-space('margin-top', -1unit);
+  }
 }
 
 // Variation with no trend.
-%stat--no-trend {
+.stat--no-trend {
   .stat__trend {
-    @extend %stat__trend--no-trend;
+    display: none;
   }
   .stat__value {
-    @extend %stat__value--no-trend;
+    border-bottom: 0;
   }
-}
-%stat__trend--no-trend {
-  display: none;
-}
-%stat__value--no-trend {
-  @extend %stat__value;
-  border-bottom: 0;
-  @extend .col-xs-12;
+  .stat__trend-icon {
+    display: none;
+  }
 }
 
 // UIKit overrides.
-// Shame!
-// @todo There has to be a better way to do this... Danny, help!
-.page {
+.au-body {
   i.stat__trend-value--positive, i.stat__trend-value--negative {
     font-style: normal;
   }
   p.stat__trend, p.stat__value, p.stat__text {
-    margin: 0;
+    margin-top: 0;
   }
 }
-
-@import '_print.scss';

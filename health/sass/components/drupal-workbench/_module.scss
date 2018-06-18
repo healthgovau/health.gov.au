@@ -3,8 +3,32 @@
 // Styling for the workbench section
 //
 //-------------------------------------------------------------
-@import 'print';
 
-%au-workbench {
-  @extend .au-page-alerts;
+.block-workbench {
+  .workbench-info-block {
+
+    border: 0;
+    color: $AU-color-foreground-text;
+    background: none;
+    font-size: inherit;
+
+    em:first-of-type {
+      font-weight: bold;
+      font-style: normal;
+      font-size: 22px;
+    }
+    .fa {
+      @include AU-space('margin-left', 2unit);
+      &:before {
+        position: static;
+      }
+    }
+  }
+}
+
+
+@media print {
+  .au-workbench {
+    display: none;
+  }
 }

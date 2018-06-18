@@ -1,0 +1,1 @@
+<a href="{url}" title="{definition}" aria-describedby="def-{id}">{term}</a><span style="display:none;" id="def-{id}">{definition}</span></dfn>

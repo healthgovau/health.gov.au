@@ -20,6 +20,12 @@
 	@extend .au-body;
 }
 
+.kss-toolbar {
+  svg {
+    margin-top: 0;
+  }
+}
+
 .palette {
 	overflow: hidden;
 }

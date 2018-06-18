@@ -1,36 +1,31 @@
-%footnotes {
-  border-top: 1px solid #CCC;
-  max-width: $AU-maxwidth;
-  @include AU-space('padding-top', .5unit);
-}
+// Footnotes
+//
+// A list of footnotes useful for HTML versions of publications or books.
+//
+// Markup: footnotes.twig
+//
+// Style guide: Components.books.footnotes
+.au-body {
+  .footnotes {
+    border-top: $health-borderize--very-thin;
+    @include AU-space('margin-top', 2unit);
 
-%footnote {
-  @extend %minor-text;
-  div,p {
-    display: inline;
+    .footnote {
+
+      @include AU-space('padding-left', 3unit);
+
+      .footnote__number {
+        position: absolute;
+        @include AU-space('margin-left', -3unit);
+      }
+    }
   }
-  @include AU-space('margin-bottom', .5unit);
-  @include AU-space('padding-left', 1.5unit);
-  transition: background-color 1s;
 }
 
-%footnote__number {
-  position: absolute;
-  @include AU-space('margin-left', -1.5unit);
-}
-
-%footnote--highlight {
-  background-color: #ffffc6;
-  transition: background-color 1s;
-}
-
-
-%footnote__links {
-
-}
-
-%footnote__link {
-  @extend sup;
-}
-
-@import 'extends';
+// References
+//
+// A list of references useful for HTML versions of publications or books.
+//
+// Markup: references.twig
+//
+// Style guide: Components.books.references

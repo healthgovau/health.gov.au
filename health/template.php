@@ -162,7 +162,6 @@ function health_theme() {
 
   $theme['health_footnote'] = [
     'variables' => [
-      'type' => '',
       'number' => '',
       'id' => '',
       'text' => ''
@@ -173,13 +172,46 @@ function health_theme() {
 
   $theme['health_footnote-link'] = [
     'variables' => [
-      'type' => '',
       'items' => [],
-      'prefix' => '',
-      'suffix' => '',
-      'divider' => '',
     ],
     'template' => 'health_footnote-link',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
+  $theme['health_reference'] = [
+    'variables' => [
+      'id' => '',
+      'text' => ''
+    ],
+    'template' => 'health_reference',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
+  $theme['health_reference-link'] = [
+    'variables' => [
+      'items' => [],
+    ],
+    'template' => 'health_reference-link',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
+  $theme['health_abbr'] = [
+    'variables' => [
+      'term' => '',
+      'definition' => '',
+      'url' => ''
+    ],
+    'template' => 'health_abbreviation',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
+  $theme['health_glossary'] = [
+    'variables' => [
+      'term' => '',
+      'definition' => '',
+      'url' => ''
+    ],
+    'template' => 'health_definition',
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
   ];
 
@@ -816,6 +848,21 @@ function health_menu_link(array $variables) {
   if ($query = _health_default_audience_menu($variables['element']['#href'])) {
     $variables['element']['#localized_options']['query'] = $query;
   }
+  // Mark unpublished pages, only if logged in.
+  global $user;
+  if (key_exists(2, $user->roles)) {
+    $href = $variables['element']['#href'];
+    if (strpos($href, 'node/') !== FALSE) {
+      $nid = str_replace('node/', '', $href);
+      if (is_numeric($nid)) {
+        if ($node = node_load($nid)) {
+          if ($node->status == 0) {
+            $variables['element']['#localized_options']['attributes']['class'][] = 'menu--unpublished';
+          }
+        }
+      }
+    }
+  }
   return theme_menu_link($variables);
 }
 
@@ -860,6 +907,17 @@ function health_block_view_alter(&$data, $block) {
       $item['data'] = str_replace('(0)', '', $item['data']);
       $data['content']['field_audience']['#items'][$key] = $item;
     }
+  }
+
+  // Clean up the workbench moderation block.
+  if ($block->module == 'workbench' && $block->delta == 'block') {
+    $data['content']['#markup'] = str_replace('Revision state: ', '', $data['content']['#markup']);
+    $data['content']['#markup'] = str_replace('Most recent revision: ', '', $data['content']['#markup']);
+    $data['content']['#markup'] = str_replace('<em>Yes</em>', '', $data['content']['#markup']);
+    $data['content']['#markup'] = str_replace('<em>No</em>', '', $data['content']['#markup']);
+    $data['content']['#markup'] = str_replace('<br />', '', $data['content']['#markup']);
+    $data['content']['#markup'] = str_replace('Actions: ', '<br/>', $data['content']['#markup']);
+    $data['content']['#markup'] = str_replace('Set moderation state:', '<i class="fa fa-arrow-right"></i>', $data['content']['#markup']);
   }
 }
 
@@ -1005,10 +1063,43 @@ function health_query_node_access_alter(QueryAlterableInterface $query) {
   $c = &$query->conditions();
   // Remove the status condition if we suspect this query originates from
   // menu_tree_check_access().
-  if (count($c) == 3 &&
+  if ((count($c) == 4 || count($c) == 3) &&
     is_string($c[0]['field']) && $c[0]['field'] == 'n.status' &&
     is_string($c[1]['field']) && $c[1]['field'] == 'n.nid' && $c[1]['operator'] == 'IN'
   ) {
     unset($c[0]);
   }
+}
+
+/**
+ * Implements theme_status_messages().
+ *
+ * Add role="alert".
+ */
+function health_status_messages($variables) {
+  $display = $variables['display'];
+  $output = '';
+  $status_heading = array(
+    'status' => t('Status message'),
+    'error' => t('Error message'),
+    'warning' => t('Warning message'),
+  );
+  foreach (drupal_get_messages($display) as $type => $messages) {
+    $output .= "<div role=\"alert\" class=\"messages {$type}\">\n";
+    if (!empty($status_heading[$type])) {
+      $output .= '<h2 class="element-invisible">' . $status_heading[$type] . "</h2>\n";
+    }
+    if (count($messages) > 1) {
+      $output .= " <ul>\n";
+      foreach ($messages as $message) {
+        $output .= '  <li>' . $message . "</li>\n";
+      }
+      $output .= " </ul>\n";
+    }
+    else {
+      $output .= reset($messages);
+    }
+    $output .= "</div>\n";
+  }
+  return $output;
 }
