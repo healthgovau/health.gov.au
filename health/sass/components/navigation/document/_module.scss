@@ -1,36 +1,44 @@
-%document-link {
-    @include AU-space('padding-bottom', .5unit);
-    h2,h3 {
-        @include AU-fontgrid('sm');
-        @include AU-space('margin-bottom', .5unit);
-    }
-    .file-icon {
-        float: left;
-        margin-right: 10px;
-        margin-top: 5px;
-    }
-    a {
-        border-bottom: 0;
-    }
-    .file__link {
-        display: inline;
-        span {
-            @extend %visually-hidden;
-        }
-    }
-    .file__meta {}
-    .field-name-field-file,
-    .field-name-field-images .field-item {
-      @include link-pullout;
-      .field-items {
-        padding-bottom: 0px;
-      }
-      .field-item {
-        padding-bottom: 6px;
-      }
-    }
+// File download
+//
+// A link with metadata to download a file.
+//
+// Markup: document.twig
+//
+// Style guide: navigation.document
 
-    .field-name-field-image-files .field-items {
+.file-download {
+  .file-icon {
+    @include AU-space('margin-right', .5unit);
+  }
+  a {
+    text-decoration: none;
+    .file-download__visible-link {
+      text-decoration: underline;
+    }
+  }
+
+}
+
+%document-link {
+  @include AU-space('padding-bottom', .5unit);
+  h2,h3 {
+      @include AU-fontgrid('sm');
+      @include AU-space('margin-bottom', .5unit);
+  }
+  .field-name-field-image-files .field-items {
+    padding-bottom: 0px;
+  }
+
+  .field-name-field-file,
+  .field-name-field-images .field-item {
+    @include link-pullout;
+    .field-items {
       padding-bottom: 0px;
     }
+    .field-item {
+      padding-bottom: 6px;
+    }
+  }
 }
+
+
