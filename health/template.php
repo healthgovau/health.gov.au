@@ -215,6 +215,19 @@ function health_theme() {
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
   ];
 
+  $theme['health_file_download_link'] = [
+    'variables' => [
+      'title' => '',
+      'mime' => '',
+      'size' => '',
+      'pages' => '',
+      'icon' => '',
+      'uri' => ''
+    ],
+    'template' => 'health_file_download_link',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
   return $theme;
 }
 
@@ -690,9 +703,6 @@ function health_file_entity_download_link($variables) {
         }
       }
 
-      // Construct the link.
-      $variables['text'] = '<span class="file__link">Download <span class="file__link-title">' . $title . ' as</span> ' . health_get_friendly_mime($file->filemime) . '</span>';
-
       // Add metatdata (file size, image size, no of pages)
 
       // Round to 1 decimal for MB and whole number for KB in terms of the file size format.
@@ -706,17 +716,13 @@ function health_file_entity_download_link($variables) {
         }
       }
 
-      $variables['text'].= '<span class="file__meta"> - ' . $formatted_filesize;
       if (isset($no_of_pages)) {
-        $variables['text'].= ', ' . $no_of_pages . ' page';
         if ($no_of_pages > 1) {
-          $variables['text'].= 's';
+          $no_of_pages .= ' pages';
+        } else {
+          $no_of_pages .= ' page';
         }
       }
-      if (isset($size)) {
-        $variables['text'].= ', ' . $size;
-      }
-      $variables['text'].= '</span>';
 
       // Get the icon.
       $icon_directory = $variables['icon_directory'];
@@ -728,14 +734,20 @@ function health_file_entity_download_link($variables) {
       // Set options as per anchor format described at
       // http://microformats.org/wiki/file-format-examples
       $uri['options']['attributes']['type'] = $file->filemime . '; length=' . $file->filesize;
-      $uri['options']['html'] = TRUE;
 
       // Add filename attribute for analytics.
       $uri['options']['attributes']['data-filename'] = $title;
       $uri['options']['attributes']['data-filetype'] = $file->filemime;
 
       // Output the link.
-      $output = '<span class="file"> ' . $icon . ' ' . l($variables['text'], $uri['path'], $uri['options']) . '</span>';
+      $output = theme('health_file_download_link', [
+        'title' => $title,
+        'mime' => health_get_friendly_mime($file->filemime),
+        'size' => $formatted_filesize,
+        'pages' => $no_of_pages,
+        'icon' => $icon,
+        'uri' => $uri
+      ]);
 
       return $output;
     }
