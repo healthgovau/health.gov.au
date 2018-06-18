@@ -52,7 +52,7 @@
   <?php endif; ?>
   <ul <?php print $content_attributes; ?>>
     <?php foreach ($items as $item): ?>
-      <li>
+      <li class="text--minor">
         <?php print render($item); ?>
       </li>
     <?php endforeach; ?>

@@ -48,7 +48,7 @@
 ?>
 <ul class="footnotes list--text au-link-list <?php print $classes; ?>" <?php print $attributes; ?>>
   <?php foreach ($items as $item): ?>
-    <li>
+    <li class="footnote text--minor">
       <?php print render($item); ?>
     </li>
   <?php endforeach; ?>
