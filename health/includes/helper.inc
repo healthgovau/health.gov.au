@@ -374,3 +374,35 @@ function _health_prepare_filename($name) {
   }
   return $clean;
 }
+
+/**
+ * Add grid class according to the total number of items in a row.
+ *
+ * @param $total_number
+ * @param $classes_array
+ *
+ * @return array
+ */
+function _health_grid_class($total_number, $classes_array) {
+  $classes_array[] = 'col-xs-12';
+  switch ($total_number) {
+    case 1:
+      break;
+    case 2:
+      $classes_array[] = 'col-sm-6';
+      break;
+    case 3:
+      $classes_array[] = 'col-sm-4';
+      break;
+    case 4:
+      $classes_array[] = 'col-sm-3';
+      break;
+    case 6:
+      $classes_array[] = 'col-sm-2';
+      break;
+    default:
+      $classes_array[] = 'col-sm-3';
+  }
+
+  return $classes_array;
+}

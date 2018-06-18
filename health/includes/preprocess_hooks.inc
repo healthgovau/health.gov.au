@@ -148,6 +148,46 @@ function health_preprocess_entity(&$variables) {
       $variables['classes_array'][] = strtolower(str_replace(' ', '-', $title));
     }
 
+    // Links.
+    if ($para_item->bundle == 'para_links') {
+      $count = count($variables['field_link_paragraph']);
+      foreach ($variables['content']['field_link_paragraph'] as $key => $item) {
+        if (is_array($item) && isset($item['entity'])) {
+          foreach ($item['entity']['paragraphs_item'] as $entity_id => $entity) {
+            if (is_array($entity)) {
+              $entity['num'] = $count;
+              $variables['content']['field_link_paragraph'][$key]['entity']['paragraphs_item'][$entity_id] = $entity;
+            }
+          }
+        }
+      }
+    }
+
+    // Link.
+    if ($para_item->bundle == 'para_link') {
+      $count = $variables['content']['num'];
+      $variables['classes_array'] = _health_grid_class($count, $variables['classes_array']);
+    }
+
+    // Statistic.
+    if ($para_item->bundle == 'para_statistics') {// Add no-trend variant if trend info hasn't been added.
+      // Find out number of statistics node.
+      $count = count($variables['field_statistics']);
+      // Pass total number to each node entity.
+      foreach ($variables['content']['field_statistics'] as $key => $item) {
+        if (is_array($item) && isset($item['node'])) {
+          foreach ($item['node'] as $node_id => $node) {
+            if (is_array($node)) {
+              $node['num'] = $count;
+              $variables['content']['field_statistics'][$key]['node'][$node_id] = $node;
+            }
+          }
+        }
+      }
+      if (empty($variables['elements']['#entity']->field_statistic_trend) && empty($variables['elements']['#entity']->field_statistic_trend_timeframe)) {
+        $variables['classes_array'][] = 'no-trend';
+      }
+    }
 
     // Taxonomy term.
     if ($para_item->bundle == 'para_taxonomy') {
@@ -365,23 +405,7 @@ function health_preprocess_entity(&$variables) {
 
     // Add grid class accordingly.
     $count = isset($variables['elements']['num']) ? $variables['elements']['num'] : 1;
-    $variables['classes_array'][] = 'col-xs-12';
-    switch ($count) {
-      case 2:
-        $variables['classes_array'][] = 'col-sm-6';
-        break;
-      case 3:
-        $variables['classes_array'][] = 'col-sm-4';
-        break;
-      case 4:
-        $variables['classes_array'][] = 'col-sm-3';
-        break;
-      case 6:
-        $variables['classes_array'][] = 'col-sm-2';
-        break;
-      default:
-        $variables['classes_array'][] = 'col-sm-3';
-    }
+    $variables['classes_array'] = _health_grid_class($count, $variables['classes_array']);
 
     if ($bean->type == 'image_and_text') {
       // Compose block wrapper link url.
@@ -927,6 +951,13 @@ function health_preprocess_node(&$variables) {
   if ($variables['type'] == 'contact') {
     $type = taxonomy_term_load($variables['field_contact_type'][LANGUAGE_NONE][0]['tid'])->name;
     $variables['classes_array'][] = strtolower(str_replace(' ', '-', $type));
+  }
+
+  // Add grid class to statistics card.
+  if ($node->type == 'statistic') {
+    if (isset($variables['content']['num'])) {
+      $variables['classes_array'] = _health_grid_class($variables['content']['num'], $variables['classes_array']);
+    }
   }
 
   // Display suite preprocess hooks.
