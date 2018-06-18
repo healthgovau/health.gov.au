@@ -66,7 +66,6 @@ function health_preprocess_block(&$variables, $hook) {
     case 'comment':
     case 'forum':
     case 'shortcut':
-    case 'statistics':
       $variables['attributes_array']['role'] = 'navigation';
       break;
     case 'search':
@@ -149,13 +148,6 @@ function health_preprocess_entity(&$variables) {
       $variables['classes_array'][] = strtolower(str_replace(' ', '-', $title));
     }
 
-    // Statistic.
-    if ($para_item->bundle == 'para_statistic') {
-      // Add no-trend variant if trend info hasn't been added.
-      if (empty($variables['elements']['#entity']->field_statistic_trend) && empty($variables['elements']['#entity']->field_statistic_trend_timeframe)) {
-        $variables['classes_array'][] = 'no-trend';
-      }
-    }
 
     // Taxonomy term.
     if ($para_item->bundle == 'para_taxonomy') {
@@ -1001,6 +993,14 @@ function health_preprocess_node(&$variables) {
     // Add tippy library to all book pages.
     drupal_add_js(path_to_theme() . '/js/dist/health.tooltips.min.js', array('type' => 'file', 'scope' => 'footer', 'weight' => 100 ));
     drupal_add_js('https://unpkg.com/tippy.js@2.5.2/dist/tippy.all.min.js', 'external');
+  }
+
+  // Statistic.
+  if ($node->type == 'statistic') {
+    // Add no-trend variant if trend info hasn't been added.
+    if (empty($node->field_statistic_trend_text)) {
+      $variables['classes_array'][] = 'stat--no-trend';
+    }
   }
 }
 

@@ -1,1 +1,1 @@
-<i class="fas fa-arrow-<?php print $direction ?> statistic-icon <?php print $indication ?>" aria-hidden="true"></i>
+<i class="fa fa--right fa-arrow-<?php print $direction ?> stat__trend-icon <?php print $indication ?>" aria-hidden="true"></i>

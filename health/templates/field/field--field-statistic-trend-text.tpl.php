@@ -47,7 +47,7 @@
  */
 ?>
 <?php foreach ($items as $delta => $item): ?>
-  <p class="field-name-field-statistic-trend-text">
+  <p class="stat__trend-value">
     <?php print render($item); ?>
   </p>
 <?php endforeach; ?>
