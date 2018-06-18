@@ -3,9 +3,7 @@
 // Gets the main nav styling with dropdown menu styles
 //
 //-------------------------------------------------------------
-@import 'print';
-
-%au-contextual-links {
+div.contextual-links-region {
   z-index: 450; // reducing z-index so admin menu goes over it
 
   a.contextual-links-trigger {
@@ -34,4 +32,15 @@
       @include AU-space('padding', .5unit .75unit);
     }
   }
-}  
+
+  // Active styling over other contextual links
+  &-active .contextual-links-wrapper {
+    z-index: 455;
+  }
+}
+
+@media print {
+  div.contextual-links-region {
+    display: none;
+  }
+}
