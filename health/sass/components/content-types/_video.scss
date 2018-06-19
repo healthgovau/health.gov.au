@@ -49,17 +49,13 @@
     }
 
     > .group-left {
-      width: 100%;
       // Frustrating, cannot find the code that overrides this part to float:left.
       float: right!important;
       @include AU-clearfix;
-      @extend .col-md-7;
     }
     > .group-right {
-      width: 100%;
       float: left;
       @include AU-clearfix;
-      @extend .col-md-5;
     }
 
 

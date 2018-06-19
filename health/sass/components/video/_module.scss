@@ -106,28 +106,4 @@
     @extend .health-cta-link;
   }
 
-  // Video on left.
-  .video--left {
-    @extend %video;
-    .video__left {
-      @extend .col-md-8;
-      @extend .col-xs-12;
-    }
-    .video__right {
-      @extend .col-md-4;
-      @extend .col-xs-12;
-    }
-  }
-  // Video on right.
-  .video--right {
-    @extend %video;
-    .video__left {
-      @extend .col-md-4;
-      @extend .col-xs-12;
-    }
-    .video__right {
-      @extend .col-md-8;
-      @extend .col-xs-12;
-    }
-  }
   @import '_print.scss';
