@@ -7,26 +7,20 @@
 //
 // Style guide: navigation.pager
 
-%au-pager {
-  clear: both;
-  @include AU-space('padding', 1unit 0);
-  //text-align: center;
+.au-body {
 
-  @media print {
-    display: none;
+  .pager {
+    text-align: center;
+    @include AU-space('padding', 1unit 0);
+    border-top: $health-borderize--very-thin;
+
+    li {
+      @include AU-space('padding', 0 .25unit);
+      &.pager__item--active {
+        font-weight: bold;
+      }
+    }
   }
 
-  // A page item in the pager list.
-  &__item {
-    display: inline;
-    padding: 0 .5em;
-    list-style-type: none;
-    background-image: none;
-  }
-
-  // The current page's list item.
-  &__current-item {
-    @extend %au-pager__item;
-    font-weight: bold;
-  }
 }
+
