@@ -50,11 +50,5 @@
   <?php if (!$label_hidden): ?>
     <h2 class="field-label no-number"<?php print $title_attributes; ?>><?php print $label ?></h2>
   <?php endif; ?>
-  <ul <?php print $content_attributes; ?>>
-    <?php foreach ($items as $item): ?>
-      <li>
-        <?php print render($item); ?>
-      </li>
-    <?php endforeach; ?>
-  </ul>
+  <?php print render($items); ?>
 </div>
