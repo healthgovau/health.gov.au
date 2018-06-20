@@ -6,15 +6,6 @@
 //
 // Style guide: Lists
 
-
-// / UIKit only specifies that <p> has a max width.
-// However if a list is mostly text, we want it to be easy to read like paragraphs.
-ul.list--text {
-  li {
-    max-width: $AU-maxwidth;
-  }
-}
-
 // Highlight an item in a list.
 ul {
   li {
@@ -33,7 +24,7 @@ ul {
     >li {
         vertical-align: top;
         position: relative;
-        margin: 0 0 AU-space(1);
+        @include AU-space('margin', 0 0 1unit);
         padding: 15px 15px 15px 50px;
         background: $colour-lighter;
         &::before {
@@ -66,15 +57,44 @@ ul.list--large {
     >li {
         padding-left: 50px;
         &::before {
-        top: 0;
-        content: '■';
-        counter-increment: none;
+          top: 0;
+          content: '■';
+          counter-increment: none;
         }
     }
 }
 
+// Plain list
+ul,ol {
+  &.list--large--plain {
+    @extend %list--large;
+    > li {
+      @include AU-space('padding-left', 1unit);
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+// Checklist style
+ul {
+  &.list--large--checklist {
+    @extend %list--large;
+    > li {
+      padding-left: 50px;
+      &::before {
+        top: 0;
+        counter-increment: none;
+        content: '◻';
+        font-size: 37px;
+      }
+    }
+  }
+}
+
 // List items shouldn't be 100% as it is too long and hard to read, just like p tags.
-.main-content, .main-content-full {
+.region-content {
   ul, ol {
     max-width: $AU-maxwidth;
   }
