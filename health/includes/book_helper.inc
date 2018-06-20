@@ -18,12 +18,15 @@ function _health_book_find_glossary($node, &$vars) {
     $paragraphs = entity_load('paragraphs_item', $pids);
     foreach ($paragraphs as $paragraph) {
       if ($paragraph->bundle == 'glossary') {
-        $type = $paragraph->field_glossary_type[LANGUAGE_NONE][0]['value'];
-        foreach ($paragraph->field_glossary_terms[LANGUAGE_NONE] as $para_terms) {
-          if (isset($ptids[$type][$node->nid])) {
-            $ptids[$type][$node->nid][] = $para_terms['value'];
-          } else {
-            $ptids[$type][$node->nid] = [$para_terms['value']];
+        if (property_exists($paragraph, 'field_glossary_apply_tooltips') && $paragraph->field_glossary_apply_tooltips) {
+          $type = $paragraph->field_glossary_type[LANGUAGE_NONE][0]['value'];
+          foreach ($paragraph->field_glossary_terms[LANGUAGE_NONE] as $para_terms) {
+            if (isset($ptids[$type][$node->nid])) {
+              $ptids[$type][$node->nid][] = $para_terms['value'];
+            }
+            else {
+              $ptids[$type][$node->nid] = [$para_terms['value']];
+            }
           }
         }
       }
