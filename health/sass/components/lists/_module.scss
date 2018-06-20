@@ -69,7 +69,7 @@ ul,ol {
   &.list--large--plain {
     @extend %list--large;
     > li {
-      @include AU-space('padding-left', 1unit);
+      padding-left: uikit-space(.5);
       &:before {
         display: none;
       }
