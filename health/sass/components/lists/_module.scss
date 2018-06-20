@@ -1,3 +1,21 @@
+// Lists
+//
+// A collection of list types.
+//
+// Markup: lists.twig
+//
+// Style guide: Lists
+
+// Highlight an item in a list.
+ul {
+  li {
+    transition: background-color 1s;
+    &.highlight {
+      background-color: #ffffc6;
+    }
+  }
+}
+
 // Large list styles
 %list--large {
     list-style-type: none;
@@ -39,15 +57,44 @@ ul.list--large {
     >li {
         padding-left: 50px;
         &::before {
-        top: 0;
-        content: '■';
-        counter-increment: none;
+          top: 0;
+          content: '■';
+          counter-increment: none;
         }
     }
 }
 
+// Plain list
+ul,ol {
+  &.list--large--plain {
+    @extend %list--large;
+    > li {
+      @include AU-space('padding-left', 1unit);
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+// Checklist style
+ul {
+  &.list--large--checklist {
+    @extend %list--large;
+    > li {
+      padding-left: 50px;
+      &::before {
+        top: 0;
+        counter-increment: none;
+        content: '◻';
+        font-size: 37px;
+      }
+    }
+  }
+}
+
 // List items shouldn't be 100% as it is too long and hard to read, just like p tags.
-.main-content, .main-content-full {
+.region-content {
   ul, ol {
     max-width: $uikit-maxwidth;
   }
