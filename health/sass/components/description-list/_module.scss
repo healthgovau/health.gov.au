@@ -1,0 +1,27 @@
+// Description list
+//
+// A list of definitions
+//
+// Markup: description-list.twig
+//
+// Style guide: Components.description-list
+
+.au-body {
+  dl {
+    border-bottom: $health-borderize--very-thin;
+    @include AU-space('margin-bottom', 2unit);
+    dt {
+      font-weight: bold;
+      border-top: $health-borderize--very-thin;
+      @include AU-space('padding-top', 1unit);
+    }
+    dd {
+      margin-left: 0;
+      @include AU-space('margin-bottom', 1unit);
+      border-top: $health-borderize--very-thin;
+      @include AU-space('padding-top', 1unit);
+    }
+  }
+}
+
+@media print {}
