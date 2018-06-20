@@ -374,3 +374,25 @@ function _health_prepare_filename($name) {
   }
   return $clean;
 }
+
+/**
+ * Loads a node using a node path.
+ *
+ * @param string $node_path
+ *   node/123
+ *
+ * @return bool|mixed
+ *   FALSE if not a node path or if node is not found
+ *   Otherwise returns node object via node_load().
+ */
+function _health_load_node_from_node_path($node_path) {
+  if (strpos($node_path, 'node/') !== FALSE) {
+    $nid = str_replace('node/', '', $node_path);
+    if (is_numeric($nid)) {
+      if ($node = node_load($nid)) {
+        return $node;
+      }
+    }
+  }
+  return FALSE;
+}
