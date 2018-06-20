@@ -52,6 +52,13 @@
 @import 'socialmedia/extends';
 @import 'link/module';
 @import 'link/extends';
+@import 'description-list/module';
+
+// Books
+//
+// Components for long documents, HTML versions of publications and books.
+//
+// Style guide: Components.books
 @import 'recommendation/module';
 @import 'footnotes/module';
 @import 'references/module';
