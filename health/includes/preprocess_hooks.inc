@@ -630,15 +630,10 @@ function health_preprocess_field(&$variables) {
     }
   }
 
-  // Title
-  if ($variables['element']['#field_name'] == 'field_title') {
-    // Footnotes.
-    $variables['items'][0]['#markup'] = _health_book_footnote_links($variables['items'][0]['#markup']);
-  }
-
-  // Table/figure footnote
+  // Table/figure footnote and references
   if ($variables['element']['#field_name'] == 'field_table_source') {
     $variables['items'][0]['#markup'] = _health_book_footnote_links($variables['items'][0]['#markup']);
+    $variables['items'][0]['#markup'] = _health_book_reference_links($variables['items'][0]['#markup']);
   }
 
   // Publication date
