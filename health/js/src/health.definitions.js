@@ -17,7 +17,9 @@
                     template = template.replace(new RegExp('{' + prop + '}', 'g'), term[prop]);
                   }
                 }
-                $(this)[0].outerHTML = template;
+                if ($(this).parent().length !== 0) {
+                  $(this)[0].outerHTML = template;
+                }
               }
             }
           }
