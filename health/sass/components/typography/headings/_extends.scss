@@ -128,3 +128,26 @@ h6 {
   @extend h4;
   font-weight: normal;
 }
+
+body.logged-in {
+  .region-content {
+    h2, h3, h4, h5, h6 {
+      position: relative;
+      .anchor-helper {
+        display: none;
+        font-size: 14px;
+        position: absolute;
+        top: -17px;
+        left: 0;
+        color: grey;
+        font-weight: normal;
+      }
+
+      &:hover {
+        .anchor-helper {
+          display: block;
+        }
+      }
+    }
+  }
+}
