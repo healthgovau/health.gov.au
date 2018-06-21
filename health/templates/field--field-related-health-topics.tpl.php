@@ -50,9 +50,9 @@
   <?php if (!$label_hidden): ?>
     <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</div>
   <?php endif; ?>
-  <dl class="tags"<?php print $content_attributes; ?>>
+  <ul class="tags"<?php print $content_attributes; ?>>
     <?php foreach ($items as $delta => $item): ?>
-      <dt class="tags__item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></dt>
+      <li class="tags__item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></li>
     <?php endforeach; ?>
-  </dl>
+  </ul>
 </div>
