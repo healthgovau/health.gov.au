@@ -1,0 +1,29 @@
+// Description list
+//
+// A list of definitions
+//
+// Markup: description-list.twig
+//
+// Style guide: Components.description-list
+
+.page {
+  dl {
+    margin-top: uikit-space(1);
+    border-bottom: $uikit-borderize;
+    dt {
+      font-weight: bold;
+      border-top: $uikit-borderize;
+      padding-top: uikit-space(.5);
+      margin-top: 0;
+      clear: both;
+    }
+    dd {
+      margin-left: 0;
+      margin-bottom: uikit-space(.5);
+      border-top: $uikit-borderize;
+      padding-top: uikit-space(.5);
+    }
+  }
+}
+
+@media print {}

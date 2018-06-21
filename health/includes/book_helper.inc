@@ -18,12 +18,15 @@ function _health_book_find_glossary($node, &$vars) {
     $paragraphs = entity_load('paragraphs_item', $pids);
     foreach ($paragraphs as $paragraph) {
       if ($paragraph->bundle == 'glossary') {
-        $type = $paragraph->field_glossary_type[LANGUAGE_NONE][0]['value'];
-        foreach ($paragraph->field_glossary_terms[LANGUAGE_NONE] as $para_terms) {
-          if (isset($ptids[$type][$node->nid])) {
-            $ptids[$type][$node->nid][] = $para_terms['value'];
-          } else {
-            $ptids[$type][$node->nid] = [$para_terms['value']];
+        if (property_exists($paragraph, 'field_glossary_apply_tooltips') && $paragraph->field_glossary_apply_tooltips) {
+          $type = $paragraph->field_glossary_type[LANGUAGE_NONE][0]['value'];
+          foreach ($paragraph->field_glossary_terms[LANGUAGE_NONE] as $para_terms) {
+            if (isset($ptids[$type][$node->nid])) {
+              $ptids[$type][$node->nid][] = $para_terms['value'];
+            }
+            else {
+              $ptids[$type][$node->nid] = [$para_terms['value']];
+            }
           }
         }
       }
@@ -133,7 +136,14 @@ function _health_book_table_of_contents_recursive($tree) {
   $toc = [];
   foreach ($tree as $key => $item) {
     $list_item = [];
-    $list_item['data'] = l($item['link']['title'], $item['link']['link_path']);
+    $title = $item['link']['title'];
+    if ($node = _health_load_node_from_node_path($item['link']['link_path'])) {
+      $title = $node->title;
+      if ($node->field_page_number) {
+        $title = $node->field_page_number[LANGUAGE_NONE][0]['value'] . ' ' . $title;
+      }
+    }
+    $list_item['data'] = l($title, $item['link']['link_path']);
     if (isset($item['below'])) {
       $list_item['children'] = _health_book_table_of_contents_recursive($item['below']);
     }

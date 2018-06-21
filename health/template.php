@@ -840,6 +840,7 @@ function health_webform_element($variables) {
 /**
  * Implements theme_menu_link().
  * Add default audience filter to specific paths.
+ * @todo Is loading all the menu nodes here a performance issue?
  *
  * @param array $variables
  *
@@ -852,18 +853,20 @@ function health_menu_link(array $variables) {
   // Mark unpublished pages, only if logged in.
   global $user;
   if (key_exists(2, $user->roles)) {
-    $href = $variables['element']['#href'];
-    if (strpos($href, 'node/') !== FALSE) {
-      $nid = str_replace('node/', '', $href);
-      if (is_numeric($nid)) {
-        if ($node = node_load($nid)) {
-          if ($node->status == 0) {
-            $variables['element']['#localized_options']['attributes']['class'][] = 'menu--unpublished';
-          }
-        }
+    if ($node = _health_load_node_from_node_path($variables['element']['#href'])) {
+      if ($node->status == 0) {
+        $variables['element']['#localized_options']['attributes']['class'][] = 'menu--unpublished';
       }
     }
   }
+
+  // Add page numbers for books, if available.
+  if ($node = _health_load_node_from_node_path($variables['element']['#href'])) {
+    if (property_exists($node, 'field_page_number') && $node->field_page_number) {
+      $variables['element']['#title'] = $node->field_page_number[LANGUAGE_NONE][0]['value'] . ' ' . $variables['element']['#title'];
+    }
+  }
+
   return theme_menu_link($variables);
 }
 

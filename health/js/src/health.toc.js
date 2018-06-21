@@ -27,9 +27,9 @@
     // Scroll to hash target
     $('html, body').animate({scrollTop: $a.offset().top}, 'medium');
     return false;
-  }
+  };
 
-  // Generating table of content.
+  // Generating table of contents.
   Drupal.behaviors.toc = {
     attach: function (context, settings) {
       $('.uikit-inpage-nav-links__heading', context).text(Drupal.settings.toc.title);
@@ -38,7 +38,7 @@
         headers: 'h2',
       });
     }
-  }
+  };
 
   // Triggering smooth scrolling.
   Drupal.behaviors.tocSmoothScroll = {
