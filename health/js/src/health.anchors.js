@@ -14,6 +14,9 @@
             .toLowerCase();
           $(this).attr('id', id);
         }
+        if ($('body').hasClass('logged-in')) {
+          $(this).append('<span class="anchor-helper">#'+$(this).attr('id')+'</span>');
+        }
       });
       // Once it has finished adding anchors, check the url anchor fragment and scroll to that heading if needed.
       if (window.location.hash) {
@@ -31,3 +34,4 @@
   };
 
 })(jQuery, Drupal, this, this.document);
+
