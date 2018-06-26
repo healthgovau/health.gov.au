@@ -8,7 +8,9 @@
         tippy('.region-content a[title]', {
           arrow: true,
           theme: 'health-tooltip',
-          performance: true
+          performance: true,
+          allowTitleHTML: true,
+          interactive: true
         });
       }
     }
