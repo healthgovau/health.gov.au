@@ -658,6 +658,11 @@ function health_preprocess_field(&$variables) {
         $markup = str_replace('<table', '<div class="responsive-table-wrapper"><table', $markup);
         $markup = str_replace('</table>', '</table></div>', $markup);
 
+        // Footnotes.
+        $markup = _health_book_footnote_links($markup);
+        // References
+        $markup = _health_book_reference_links($markup);
+
         // Set glossary terms
         $glossary = &drupal_static('book_glossary_terms');
         if (!empty($glossary)) {
@@ -666,11 +671,6 @@ function health_preprocess_field(&$variables) {
             $markup = preg_replace("/([\s\(\)<>\[\]%])(" . $term_regex . ")([\s\(\)<>\.\[\]%])/mi",'$1<span class="definition">$2</span>$3', $markup);
           }
         }
-
-        // Footnotes.
-        $markup = _health_book_footnote_links($markup);
-        // References
-        $markup = _health_book_reference_links($markup);
 
         $variables['items'][0]['#markup'] = $markup;
       }
