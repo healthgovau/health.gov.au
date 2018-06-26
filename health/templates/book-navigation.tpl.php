@@ -35,7 +35,7 @@
 <?php if ($has_links): ?>
   <div id="book-navigation-<?php print $book_id; ?>" class="book-navigation" role="navigation" aria-label="Book">
     <div class="row">
-      <div class="book-navigation__link-wrapper col-sm-6">
+      <div class="book-navigation__link-wrapper col-xs-6">
         <?php if ($prev_url): ?>
         <a class="uikit-direction-link uikit-direction-link--left" href="<?php print $prev_url; ?>">
           Previous
@@ -44,7 +44,7 @@
         <?php endif; ?>
       </div>
 
-      <div class="book-navigation__link-wrapper book-navigation__link-wrapper--right col-sm-6">
+      <div class="book-navigation__link-wrapper book-navigation__link-wrapper--right col-xs-6">
         <?php if ($next_url): ?>
         <a class="uikit-direction-link uikit-direction-link--right" href="<?php print $next_url; ?>">
           Next
