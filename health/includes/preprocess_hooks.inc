@@ -1390,3 +1390,24 @@ function health_preprocess_views_view_rss(&$variables) {
     drupal_page_is_cacheable(FALSE);
   }
 }
+
+/**
+ * Implements THEME_preprocess_book_navigation().
+ */
+function health_preprocess_book_navigation(&$variables) {
+  if (!empty($variables['next_url'])) {
+    $node_path = drupal_get_normal_path(substr($variables['next_url'], 1));
+    $node = _health_load_node_from_node_path($node_path);
+    if (property_exists($node, 'field_page_number') && $node->field_page_number) {
+      $variables['next_title'] = $node->field_page_number[LANGUAGE_NONE][0]['value'] . ' ' . $variables['next_title'];
+    }
+  }
+
+  if (!empty($variables['prev_url'])) {
+    $node_path = drupal_get_normal_path(substr($variables['prev_url'], 1));
+    $node = _health_load_node_from_node_path($node_path);
+    if (property_exists($node, 'field_page_number') && $node->field_page_number) {
+      $variables['prev_title'] = $node->field_page_number[LANGUAGE_NONE][0]['value'] . ' ' . $variables['prev_title'];
+    }
+  }
+}
