@@ -707,16 +707,28 @@ function health_preprocess_field(&$variables) {
   if (in_array($variables['element']['#field_name'], $footnotes)) {
     foreach($variables['items'] as &$item) {
       $markup = $item['#markup'];
-      if (preg_match_all("/[\s(&nbsp;)]*\[\[(\d+?)\]\][\s(&nbsp;)]*/", $markup, $matches) > 0) {
+
+      // Split up the footnotes by p tags
+      if (preg_match_all("/<p\b[^>]*>(.+?)<\/p>/", $markup, $matches) > 0) {
+        $footnotes_list = [];
         foreach ($matches[1] as $delta => $match) {
-          $markup = theme('health_footnote', [
-            'id' => $match,
-            'number' => $match,
-            'text' => str_replace($matches[0][$delta], '', $markup)
-          ]);
+          // Pull out the reference token and apply markup replacement.
+          if (preg_match_all("/[\s(&nbsp;)]*\[\[(\d+?)\]\][\s(&nbsp;)]*/", $match, $matches2) > 0) {
+            foreach ($matches2[1] as $delta2 => $match2) {
+              $footnotes_list[] = ['data' => theme('health_footnote', [
+                'id' => $match2,
+                'text' => str_replace($matches2[0][$delta2], '', $match)
+              ]), 'class' => ['text--minor']];
+            }
+          } else { // No reference token found, just use the whole string.
+            $footnotes_list[] = ['data' => $match, 'class' => ['text--minor']];
+          }
         }
+        $variables['items'][0]['#markup'] = theme('item_list',[
+          'items' => $footnotes_list,
+          'type' => 'ul',
+        ]);
       }
-      $item['#markup'] = $markup;
     }
     $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.footnotes.min.js';
   }
