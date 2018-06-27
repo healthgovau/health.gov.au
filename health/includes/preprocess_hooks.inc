@@ -606,7 +606,7 @@ function health_preprocess_field(&$variables) {
         $markup = $variables['items'][0]['#markup'];
 
         // Add rs_preserve class to any H2's
-        $markup = preg_replace("/<h2>(.*?)<\/h2>/", '<h2 class="rs_preserve">$1</h2>', $markup);
+        $markup = preg_replace("/<h2>(.+?)<\/h2>/", '<h2 class="rs_preserve">$1</h2>', $markup);
         // Add a div around tables so they can be made responsive.
         $markup = str_replace('<table', '<div class="responsive-table-wrapper"><table', $markup);
         $markup = str_replace('</table>', '</table></div>', $markup);
@@ -707,7 +707,7 @@ function health_preprocess_field(&$variables) {
   if (in_array($variables['element']['#field_name'], $footnotes)) {
     foreach($variables['items'] as &$item) {
       $markup = $item['#markup'];
-      if (preg_match_all("/[\s(&nbsp;)]*\[\[(.+)\]\][\s(&nbsp;)]*/", $markup, $matches) > 0) {
+      if (preg_match_all("/[\s(&nbsp;)]*\[\[(\d+?)\]\][\s(&nbsp;)]*/", $markup, $matches) > 0) {
         foreach ($matches[1] as $delta => $match) {
           $markup = theme('health_footnote', [
             'id' => $match,
@@ -726,7 +726,7 @@ function health_preprocess_field(&$variables) {
     $markup = $variables['items'][0]['#markup'];
 
     // Split up the references by p tags
-    if (preg_match_all("/<p\b[^>]*>(.*?)<\/p>/", $markup, $matches) > 0) {
+    if (preg_match_all("/<p\b[^>]*>(.+?)<\/p>/", $markup, $matches) > 0) {
       $references = [];
       foreach ($matches[1] as $delta => $match) {
         // Pull out the reference token and apply markup replacement.
