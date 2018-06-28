@@ -24,4 +24,14 @@
   }
 }
 
+.definition {
+  border-bottom: 1px dotted #CCC;
+  cursor: help;
+}
+
+abbr {
+  border-bottom: 1px dotted #CCC;
+  cursor: help;
+}
+
 @media print {}

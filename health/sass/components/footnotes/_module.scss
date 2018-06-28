@@ -20,12 +20,9 @@
       }
     }
   }
+  
+  .footnote__link {
+  border-bottom: 1px dotted #CCC;
+  cursor: help;
 }
-
-// References
-//
-// A list of references useful for HTML versions of publications or books.
-//
-// Markup: references.twig
-//
-// Style guide: Components.books.references
+}

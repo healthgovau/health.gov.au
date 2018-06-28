@@ -1,1 +1,1 @@
-<abbr title="{definition}" ><a href="{url}" title="{definition}" aria-describedby="abbr-{id}">{term}</a></abbr><span style="display:none;" id="abbr-{id}">{definition}</span>
+<abbr title="{definition}" aria-describedby="abbr-{id}" aria-label="Abbreviation">{term}</abbr><span style="display:none;" id="abbr-{id}">{definition}</span>

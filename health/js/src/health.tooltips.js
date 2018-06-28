@@ -5,7 +5,7 @@
   Drupal.behaviors.tooltips = {
     attach: function (context, settings) {
       if (typeof tippy !== 'undefined') {
-        tippy('.region-content a[title]', {
+        tippy('.region-content span[title], .region-content abbr', {
           arrow: true,
           theme: 'health-tooltip',
           performance: true
