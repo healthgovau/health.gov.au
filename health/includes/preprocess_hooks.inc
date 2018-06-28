@@ -621,7 +621,7 @@ function health_preprocess_field(&$variables) {
         if (!empty($glossary)) {
           foreach ($glossary as $glossary_item) {
             $term_regex = str_replace('/', '\/', preg_quote(check_plain($glossary_item['term'])));
-            $markup = preg_replace("/([\s\(\)<>\[\]%])(" . $term_regex . ")([\s\(\)<>\.\[\]%])/mi",'$1<span class="definition">$2</span>$3', $markup);
+            $markup = preg_replace("/([\s\(\)<>\[\]%])(" . $term_regex . ")([\s\(\)<>\.\[\]%])/m",'$1<span class="definition--candidate">$2</span>$3', $markup);
           }
         }
 
