@@ -3,36 +3,39 @@
 //
 //--------------------------------------------------------------
 
-// Figure.
-%figure__wrapper {
-  border: $uikit-borderize;
-  margin-bottom: uikit-space(1);
-}
-
-%figure {
-  margin: 0;
-}
-
-%figure__image {
-  padding: uikit-space(.5);
-}
-
-%figure__caption {
-  @extend %minor-text;
-  border-bottom: $uikit-borderize;
-  border-top: $uikit-borderize;
-  padding: uikit-space(.5) uikit-space(1);
-}
-
-%figure__title {
+.field-name-field-title {
   font-weight: bold;
   padding-bottom: uikit-space(.75);
 }
+.page {
+  .figure__wrapper {
+    border: $uikit-borderize;
+    margin-bottom: uikit-space(1);
 
-%figure__footnote {
-  @extend %minor-text;
-  padding: uikit-space(1);
+    figure {
+      margin: 0;
+      @extend %image--link;
+      a {
+        margin: uikit-space(.5);
+      }
+
+      figcaption {
+        @extend %minor-text;
+        border-bottom: $uikit-borderize;
+        border-top: $uikit-borderize;
+        padding: uikit-space(.5) uikit-space(1);
+        p:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .field-name-field-table-source {
+      @extend %minor-text;
+      padding: uikit-space(1);
+      p:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
-
-@import 'extends';
-@import 'print';
