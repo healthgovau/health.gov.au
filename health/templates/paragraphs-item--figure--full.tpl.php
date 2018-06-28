@@ -29,9 +29,7 @@
 <?php print render($content['field_title']);?>
 <div class="figure__wrapper">
 <figure>
-  <a href="<?php print image_style_url('full', $content['field_figure'][0]['#item']['uri'])?>">
-    <?php print render($content['field_figure']);?>
-  </a>
+  <?php print render($content['field_figure']);?>
   <figcaption>
     <p><?php print render($content['field_image_long_description'][0]['#markup']);?></p>
   </figcaption>
