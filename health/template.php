@@ -162,7 +162,6 @@ function health_theme() {
 
   $theme['health_footnote'] = [
     'variables' => [
-      'number' => '',
       'id' => '',
       'text' => ''
     ],

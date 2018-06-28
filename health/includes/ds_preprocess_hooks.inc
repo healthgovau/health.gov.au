@@ -161,7 +161,7 @@ function health_preprocess_ds_para_rendered_blocks($variable) {
  * @return string
  */
 function health_preprocess_ds_download_image_link(&$variables) {
-  return l("View text version and larger image of '" . $variables['title'] . "' graphic", 'node/' . $variables['nid']);
+  return l("View text version and larger image of '" . $variables['title'] . "' graphic", 'node/' . $variables['nid'], ['html' => true]);
 }
 
 /**

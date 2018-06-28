@@ -7,12 +7,15 @@
     attach: function (context, settings) {
 
       // Generate id's for all headings that don't have them so we can deep link.
-      $('h2,h3,h4,h5,h6').each(function () {
+      $('body:not(.page-views)').find('.region-content').find('h2,h3,h4,h5,h6').each(function () {
         if ($(this).attr('id') === undefined) {
           var id = $(this).text().replace(/[^\w\s]/gi, '')
             .replace(/\s+/g, '-')
             .toLowerCase();
           $(this).attr('id', id);
+        }
+        if ($('body').hasClass('logged-in')) {
+          $(this).append('<span class="anchor-helper">#'+$(this).attr('id')+'</span>');
         }
       });
       // Once it has finished adding anchors, check the url anchor fragment and scroll to that heading if needed.
@@ -31,3 +34,4 @@
   };
 
 })(jQuery, Drupal, this, this.document);
+

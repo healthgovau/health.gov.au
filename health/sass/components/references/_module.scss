@@ -8,4 +8,9 @@
   transition: background-color 1s;
 }
 
+.reference__link {
+  border-bottom: 1px dotted #CCC;
+  cursor: help;
+}
+
 @import 'extends';

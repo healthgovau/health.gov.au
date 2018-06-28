@@ -24,4 +24,8 @@
   transition: background-color 1s;
 }
 
+.footnote__link {
+  border-bottom: 1px dotted #CCC;
+  cursor: help;
+}
 @import 'extends';
