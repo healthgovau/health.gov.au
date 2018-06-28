@@ -6,9 +6,12 @@
     attach: function (context, settings) {
       if (typeof tippy !== 'undefined') {
         tippy('.region-content span[title], .region-content abbr', {
-          arrow: true,
+          arrow: false,
           theme: 'health-tooltip',
-          performance: true
+          performance: true,
+          allowTitleHTML: true,
+          interactive: true,
+          animateFill: false,
         });
       }
     }
