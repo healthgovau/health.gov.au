@@ -750,7 +750,7 @@ function health_preprocess_field(&$variables) {
   }
 
   // Footnotes
-  $footnotes = ['field_book_footnotes', 'field_table_source'];
+  $footnotes = ['field_book_footnotes'];
   if (in_array($variables['element']['#field_name'], $footnotes)) {
     foreach($variables['items'] as &$item) {
       $markup = $item['#markup'];
