@@ -741,11 +741,7 @@ function health_preprocess_field(&$variables) {
       $references = [];
       foreach ($matches[1] as $delta => $match) {
         // Pull out the reference token and apply markup replacement.
-        // Our version of PHP regex does not perform the same as other PHP regex.
-        // Put this regex into https://www.phpliveregex.com/ with "{{NMBA 2006}}&nbsp;NMBA (2006) <cite>National Competency Standards for the Midwife</cite>. Melbourne: Nursing and Midwifery Board of Australia."
-        // The full match on phpliveregex is "{{NMBA 2006}}&nbsp;" but in ours it is "{{NMBA 2006}}".
-        // Have no idea why, but to fix this we do _health_replace_nbsp() on the markup before matching.
-        if (preg_match_all("/\s*(&nbsp;)*\{\{(.+?)\}\}\s*(&nbsp;)*/", $match, $matches2) > 0) {
+        if (preg_match_all("/\s*\{\{(.+?)\}\}\s*/", $match, $matches2) > 0) {
           foreach ($matches2[1] as $delta2 => $match2) {
             $references[] = ['data' => theme('health_reference', [
               'id' => $match2,
