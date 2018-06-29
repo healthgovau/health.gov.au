@@ -69,7 +69,7 @@
 
   // Summary
   .summary {
-    @extend .au-header-subline;
+    @extend .au-header__subline;
     @include AU-space('margin-bottom', .5unit);
     @include AU-space('margin-top', .5unit);
   }

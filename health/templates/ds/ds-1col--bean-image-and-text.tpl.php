@@ -27,20 +27,18 @@
  * @see template_process()
  */
 ?>
-<div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<li class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-    <div class="bean-block-content"<?php print $content_attributes; ?>>
-        <a href="<?php print $wrapper_link_url; ?>">
+    <a class="au-card au-card--shadow au-cta-link" href="<?php print $wrapper_link_url; ?>">
+        <div class="au-card__image au-card__fullwidth">
           <?php print render($content['field_image']); ?>
-            <div class="field field-name-field-link-internal field-type-link-field field-label-hidden">
-                <div class="field-items">
-                    <div class="field-item even">
-                      <?php print render($content['field_link_internal']['#items'][0]['title']); ?>
-                    </div>
-                </div>
-            </div>
+        </div>
+        <h3 class="au-card__title">
+          <?php print render($content['field_link_internal']['#items'][0]['title']); ?>
+        </h3>
+        <div class="au-card__text">
           <?php print render($content['field_bean_text']); ?>
-        </a>
-    </div>
+        </div>
+    </a>
 
-</div>
+</li>
