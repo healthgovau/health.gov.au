@@ -7,7 +7,7 @@
     attach: function (context, settings) {
 
       // Generate id's for all headings that don't have them so we can deep link.
-      $('body:not(.page-views)').find('.region-content').find('h2,h3,h4,h5,h6').each(function () {
+      $('body.logged-in.node-type-page, body.logged-in.node-type-book-page').find('.region-content').find('h2,h3,h4,h5,h6').each(function () {
         if ($(this).attr('id') === undefined) {
           var id = $(this).text().replace(/[^\w\s]/gi, '')
             .replace(/\s+/g, '-')
