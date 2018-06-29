@@ -1,9 +1,9 @@
 .health-tooltip-theme {
-  font-family: $uikit-font-system;
-  padding: uikit-space(.5);
+  font-family: $AU-font;
+  @include AU-space('padding', .5unit);
 
   text-align: left;
-  color: $uikit-colour-Text;
+  color: $AU-color-foreground-text;
 
   font-size: .9em;
   background-color: #fff;

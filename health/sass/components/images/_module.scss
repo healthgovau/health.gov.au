@@ -47,7 +47,7 @@
   a {
     border-bottom: 0;
     line-height: 0;
-    @include uikit-media(sm) {
+    @include AU-media(sm) {
       background-color: black;
       display: block;
     }
@@ -56,7 +56,7 @@
     }
 
     img {
-      @include uikit-media(sm) {
+      @include AU-media(sm) {
         &:hover, &:focus, &:active {
           opacity: 0.75;
         }
