@@ -203,7 +203,7 @@ function _health_book_tree_traverse_recursive(&$tree, $callback, &$vars) {
  * @return mixed
  */
 function _health_book_footnote_links($markup) {
-  if (preg_match_all("/(\[\[)(.+)(\]\])/", $markup, $matches) > 0) {
+  if (preg_match_all("/(\[\[)(\d+)(\]\])/", $markup, $matches) > 0) {
     foreach ($matches[2] as $delta => $match) {
       $split = explode(',', $match);
       $items = [];
@@ -226,7 +226,7 @@ function _health_book_footnote_links($markup) {
  * @return mixed
  */
 function _health_book_reference_links($markup) {
-  if (preg_match_all("/(\{\{)([^\{\}]+)+(\}\})/", $markup, $matches) > 0) {
+  if (preg_match_all("/(\{\{)([^\{\}]+)(\}\})/", $markup, $matches) > 0) {
     foreach ($matches[2] as $delta => $match) {
       $split = explode(',', $match);
       $items = [];

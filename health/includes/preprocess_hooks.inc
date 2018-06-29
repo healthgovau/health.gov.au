@@ -653,24 +653,24 @@ function health_preprocess_field(&$variables) {
         $markup = $variables['items'][0]['#markup'];
 
         // Add rs_preserve class to any H2's
-        $markup = preg_replace("/<h2>(.*?)<\/h2>/", '<h2 class="rs_preserve">$1</h2>', $markup);
+        $markup = preg_replace("/<h2>(.+?)<\/h2>/", '<h2 class="rs_preserve">$1</h2>', $markup);
         // Add a div around tables so they can be made responsive.
         $markup = str_replace('<table', '<div class="responsive-table-wrapper"><table', $markup);
         $markup = str_replace('</table>', '</table></div>', $markup);
+
+        // Footnotes.
+        $markup = _health_book_footnote_links($markup);
+        // References
+        $markup = _health_book_reference_links($markup);
 
         // Set glossary terms
         $glossary = &drupal_static('book_glossary_terms');
         if (!empty($glossary)) {
           foreach ($glossary as $glossary_item) {
             $term_regex = str_replace('/', '\/', preg_quote(check_plain($glossary_item['term'])));
-            $markup = preg_replace("/([\s\(\)<>\[\]%])(" . $term_regex . ")([\s\(\)<>\.\[\]%])/mi",'$1<span class="definition">$2</span>$3', $markup);
+            $markup = preg_replace("/([\s\(\)<>\[\]%])(" . $term_regex . ")([\s\(\)<>\.\[\]%])/m",'$1<span class="definition--candidate">$2</span>$3', $markup);
           }
         }
-
-        // Footnotes.
-        $markup = _health_book_footnote_links($markup);
-        // References
-        $markup = _health_book_reference_links($markup);
 
         $variables['items'][0]['#markup'] = $markup;
       }
@@ -750,34 +750,45 @@ function health_preprocess_field(&$variables) {
   }
 
   // Footnotes
-  $footnotes = ['field_book_footnotes', 'field_table_source'];
+  $footnotes = ['field_book_footnotes'];
   if (in_array($variables['element']['#field_name'], $footnotes)) {
     foreach($variables['items'] as &$item) {
       $markup = $item['#markup'];
-      if (preg_match_all("/[\s(&nbsp;)]*\[\[(.+)\]\][\s(&nbsp;)]*/", $markup, $matches) > 0) {
+
+      // Split up the footnotes by p tags
+      if (preg_match_all("/<p\b[^>]*>(.+?)<\/p>/", $markup, $matches) > 0) {
+        $footnotes_list = [];
         foreach ($matches[1] as $delta => $match) {
-          $markup = theme('health_footnote', [
-            'id' => $match,
-            'number' => $match,
-            'text' => str_replace($matches[0][$delta], '', $markup)
-          ]);
+          // Pull out the reference token and apply markup replacement.
+          if (preg_match_all("/[\s(&nbsp;)]*\[\[(\d+?)\]\][\s(&nbsp;)]*/", $match, $matches2) > 0) {
+            foreach ($matches2[1] as $delta2 => $match2) {
+              $footnotes_list[] = ['data' => theme('health_footnote', [
+                'id' => $match2,
+                'text' => str_replace($matches2[0][$delta2], '', $match)
+              ]), 'class' => ['text--minor']];
+            }
+          } else { // No reference token found, just use the whole string.
+            $footnotes_list[] = ['data' => $match, 'class' => ['text--minor']];
+          }
         }
+        $variables['items'][0]['#markup'] = theme('item_list',[
+          'items' => $footnotes_list,
+          'type' => 'ul',
+        ]);
       }
-      $item['#markup'] = $markup;
     }
     $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.footnotes.min.js';
   }
 
   // References
   if ($variables['element']['#field_name'] == 'field_book_references') {
-    $markup = $variables['items'][0]['#markup'];
-
+    $markup = _health_replace_nbsp($variables['items'][0]['#markup']);
     // Split up the references by p tags
-    if (preg_match_all("/<p\b[^>]*>(.*?)<\/p>/", $markup, $matches) > 0) {
+    if (preg_match_all("/<p\b[^>]*>(.+?)<\/p>/", $markup, $matches) > 0) {
       $references = [];
       foreach ($matches[1] as $delta => $match) {
         // Pull out the reference token and apply markup replacement.
-        if (preg_match_all("/[\s(&nbsp;)]*\{\{(.+?)\}\}[\s(&nbsp;)]*/", $match, $matches2) > 0) {
+        if (preg_match_all("/\s*\{\{(.+?)\}\}\s*/", $match, $matches2) > 0) {
           foreach ($matches2[1] as $delta2 => $match2) {
             $references[] = ['data' => theme('health_reference', [
               'id' => $match2,
@@ -1085,6 +1096,10 @@ function health_preprocess_page(&$variables) {
   ];
   $variables['page']['content']['#attached']['js'][] = [
     'data' => path_to_theme() . '/js/dist/health.facetapi.min.js',
+    'type' => 'file',
+  ];
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/dist/health.anchors.min.js',
     'type' => 'file',
   ];
 
@@ -1459,5 +1474,26 @@ function health_preprocess_views_view_rss(&$variables) {
   if ($variables['view']->plugin_name == 'rss' && $variables['view']->name == 'health_alerts') {
     drupal_add_http_header('Cache-Control', 'no-cache, no-store');
     drupal_page_is_cacheable(FALSE);
+  }
+}
+
+/**
+ * Implements THEME_preprocess_book_navigation().
+ */
+function health_preprocess_book_navigation(&$variables) {
+  if (!empty($variables['next_url'])) {
+    $node_path = drupal_get_normal_path(substr($variables['next_url'], 1));
+    $node = _health_load_node_from_node_path($node_path);
+    if (property_exists($node, 'field_page_number') && $node->field_page_number) {
+      $variables['next_title'] = $node->field_page_number[LANGUAGE_NONE][0]['value'] . ' ' . $variables['next_title'];
+    }
+  }
+
+  if (!empty($variables['prev_url'])) {
+    $node_path = drupal_get_normal_path(substr($variables['prev_url'], 1));
+    $node = _health_load_node_from_node_path($node_path);
+    if (property_exists($node, 'field_page_number') && $node->field_page_number) {
+      $variables['prev_title'] = $node->field_page_number[LANGUAGE_NONE][0]['value'] . ' ' . $variables['prev_title'];
+    }
   }
 }

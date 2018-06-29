@@ -18,6 +18,7 @@
 
     figure {
       margin: 0;
+      @extend %image--link;
 
       img {
         @include AU-space('padding', .5unit);

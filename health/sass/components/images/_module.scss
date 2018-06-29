@@ -41,6 +41,32 @@
     }
   }
 }
+
+// An image inside a link.
+%image--link {
+  a {
+    border-bottom: 0;
+    line-height: 0;
+    @include uikit-media(sm) {
+      background-color: black;
+      display: block;
+    }
+    &:focus {
+      border: 2px solid $colour-Secondary-hover;
+    }
+
+    img {
+      @include uikit-media(sm) {
+        &:hover, &:focus, &:active {
+          opacity: 0.75;
+        }
+      }
+
+    }
+  }
+
+}
+
 // Make the background colour white for images that are loading that have a link around them.
 // Normal this background is black and it looks ugly.
 a .image-wrapper {
