@@ -11,6 +11,17 @@
 // Display modes
 .node-release {
 
+  // Full
+  &.view-mode-full {
+    .field-name-field-date-release {
+      @extend %spaced-inline-label;
+    }
+
+    .wrapper > .field-name-field-image-featured {
+      padding-bottom: uikit-space(1);
+    }
+  }
+
   // List vertical
   &.view-mode-listing_vertical {
     @extend %dm-list-vertical;
@@ -25,9 +36,22 @@
     @extend %dm-list-horizontal;
   }
 
-  // Feature
+  // Feature.
   &.view-mode-feature {
-    @extend %dm-list-horizontal;
+    @extend %dm-feature;
+    .field-name-field-image-featured {
+      @extend %image--full;
+    }
+    .group-right {
+      padding-top: 0;
+      p {
+        margin-bottom: 0;
+      }
+    }
+    @include cardify();
+    border: $health-borderize--thin;
+    width: 50%;
+    margin-bottom: uikit-space(1);
   }
 
   // Inline style

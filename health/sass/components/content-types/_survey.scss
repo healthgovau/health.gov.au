@@ -51,37 +51,22 @@
     @extend %dm-list-horizontal;
   }
 
-  // Feature
+  // Feature.
   &.view-mode-feature {
-    @extend %dm-inline;
-    display: inline-block;
-    .field-label-inline .field-items {
-      padding-bottom: 0;
-      margin-right: 0;
+    @extend %dm-feature;
+    .field-name-field-image-featured {
+      @extend %image--full;
     }
-    border-left-color: $colour-Primary;
-    .circle-highlight {
-      border-radius: 50%;
-      border: 2px solid $colour-Primary;
-      padding: 5px;
-      background-color: white;
-      font-weight: bold;
-    }
-    .field-name-field-time-required {
-      .field-label {
-        font-weight: normal;
+    .group-right {
+      padding-top: 0;
+      p {
+        margin-bottom: 0;
       }
     }
-    .field-name-field-status {
-      text-transform: uppercase;
-      font-weight: bold;
-    }
-    .field-name-title h2 {
-      font-weight: bold;
-    }
-    .survey-button {
-      margin-top: uikit-space(.5);
-    }
+    @include cardify();
+    border: $health-borderize--thin;
+    width: 50%;
+    margin-bottom: uikit-space(1);
   }
 
   // Inline style
