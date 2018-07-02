@@ -19,8 +19,7 @@
     <h3 class="au-card__title"><?php print $title?></h3>
 
     <div class="au-card__text">
-      <?php print render($content['field_status']); ?>
-      <?php print render($content['field_time_required']); ?>
+      <?php print render($content['field_date_release']); ?>
       <?php print render($content['field_summary']); ?>
     </div>
   </a>
