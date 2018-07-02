@@ -14,7 +14,7 @@
 
     // Full
     &.view-mode-full {
-      .field-name-field-date-updated,
+      .field-name-field-date-published,
       .field-name-ds-content-type,
       .field-name-field-audience {
         @extend %spaced-inline-label;
