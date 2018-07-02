@@ -31,9 +31,9 @@
 
       a {
         position: relative;
-        @include AU-space('padding', .5unit 12px);
+        @include AU-space('padding', .75unit 12px);
         @include AU-media(sm) {
-          @include AU-space('padding', .5unit 1unit);
+          @include AU-space('padding', .75unit 1.25unit);
         }
       }
       // Level 2
@@ -43,9 +43,9 @@
             border-top: $health-borderize--very-thin;
           }
           a {
-            @include AU-space('padding', .5unit 1unit);
+            @include AU-space('padding', .75unit 1unit);
             @include AU-media(sm) {
-              @include AU-space('padding', .5unit 1unit .5unit 1.75unit);
+              @include AU-space('padding', .75unit 1.25unit .75unit 2.5unit);
             }
             border-bottom: 0;
           }
@@ -53,7 +53,7 @@
           // Level 3
           > ul {
             > li a {
-              @include AU-space('padding', .5unit 1unit .5unit 2.5unit);
+              @include AU-space('padding', .75unit 1.25unit .75unit 4unit);
             }
           }
         }
