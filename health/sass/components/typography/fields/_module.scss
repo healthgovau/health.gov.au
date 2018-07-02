@@ -15,7 +15,8 @@
   .field-name-field-time-required,
   .field-name-ds-content-type,
   .field-name-field-publication-type,
-  .field-name-field-video-type {
+  .field-name-field-video-type,
+  .field-name-field-media-type {
     @extend %meta-date;
     float: left;
     .tags__item {
@@ -27,7 +28,8 @@
   .field-name-ds-content-type,
   .field-name-field-time-required,
   .field-name-field-publication-type,
-  .field-name-field-video-type {
+  .field-name-field-video-type,
+  .field-name-field-media-type {
     padding-left: uikit-space(.5);
     border-left: 1px solid $colour-minorText;
   }
