@@ -1,5 +1,5 @@
-// A basic mixin to supply the cards for blogs and news items.
-@mixin cards-blogs-news {
+// A basic mixin to supply the cards for resources and news items.
+@mixin cards-news-resources {
   .au-card-list {
     & ul {
       max-width: 100%;
@@ -47,13 +47,13 @@
         @include AU-space( height, 6.25unit );
         border-radius: 50%;
         object-fit: cover;
-        border: 4px solid $AU-color-foreground-background;
+        border: 4px solid $AU-color-foreground-border;
         background-color: $AU-color-background-alt-shade-suggestion;
         box-sizing: border-box;
         height: auto;
       }
     }
-    .au-card__fullwidth:first-child {
+    .au-card__fullwidth {
       @include AU-space( margin, -2unit -2unit 3unit -2unit );
       height: auto;
     }

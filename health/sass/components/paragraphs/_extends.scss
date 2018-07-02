@@ -284,20 +284,6 @@
   }
 }
 
-// View para
-.paragraphs-item-para-view {
-  .para-row {
-    >a {
-      @extend .health-cta-link;
-    }
-  }
-}
-.node-type-page {
-  .paragraphs-item-para-view {
-    @include AU-space('padding-bottom', 1unit);
-  }
-}
-
 // Image
 .paragraphs-item-para-content-image {
   .field-name-field-image {

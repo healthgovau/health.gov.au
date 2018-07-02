@@ -187,24 +187,6 @@ body {
     // Topic feature (nested paragraphs)
     // Container for large and small features
     .paragraphs-item-two-columns {
-      // Style band
-      &.para-container {
-        @extend %band--neutral-darkest;
-      }
-      &.general-public-resources.para-container {
-        background: white;
-      }
-
-      // Stop the double banding when there are nested paragraphs.
-      .para-container {
-        padding-top: 0;
-        padding-bottom: 0;
-      }
-
-      &.resources {
-        background: white;
-      }
-
       // Layout
       @include row-and-container;
       > .para-row {
@@ -218,19 +200,6 @@ body {
           @extend .col-sm-6;
         }
       }
-    }
-
-    // Main feature
-    .paragraphs-item-featured-news-events,
-    .paragraphs-item-featured-news-events-hp {
-      padding: 0;
-      &.inside-para-container {
-        padding: 0;
-      }
-    }
-    // Sub features
-    .paragraphs-item-para-view {
-      padding: 0;
     }
 
     // 2 col resources.
