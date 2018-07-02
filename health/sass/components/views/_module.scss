@@ -49,22 +49,24 @@
     }
 }
 
-// Features - small
+// Latest items - card
 .paragraphs-view-news_and_events,
 .paragraphs-view-display-latest_resources_hp,
 .paragraphs-view-display-resources_for_public_in_hp,
 .paragraphs-view-display-latest_resources_public,
 .paragraphs-view-display-global_public,
 .paragraphs-view-latest_rsources
- {
-    .views-row {
-        @include AU-space('margin-bottom', .5unit);;
+{
+    @include AU-space( margin-top, 2unit );
+    @include cards-news-resources;
+    @extend %band--neutral-darkest;
+    h2 {
+        @include AU-space('margin-bottom', 1.5unit);
+    }
+    .more-link {
+        float: left;
         @include AU-media(sm) {
-          @include AU-space('margin-bottom', 1unit);
-        }
-        @include AU-clearfix;
-        &:last-of-type {
-          margin-bottom: 0;
+            float: right;
         }
     }
 }

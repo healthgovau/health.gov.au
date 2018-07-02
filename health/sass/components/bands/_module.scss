@@ -6,8 +6,8 @@
   @include AU-space('padding-top', 1unit);
   @include AU-space('padding-bottom', 1unit);
   @include AU-media(md) {
-    @include AU-space('padding-top', 1.5unit);
-    @include AU-space('padding-bottom', 1.5unit);
+    @include AU-space('padding-top', 5unit);
+    @include AU-space('padding-bottom', 5unit);
   }
 }
 %band--neutral {
