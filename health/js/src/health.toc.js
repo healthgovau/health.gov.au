@@ -36,7 +36,7 @@
       $('.region-content', context).anchorific({
         navigation: '.au-inpage-nav-links',
         headers: 'h2',
-        anchorText: ''
+        anchorText: false
       });
     }
   };

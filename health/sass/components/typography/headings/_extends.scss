@@ -41,12 +41,20 @@
 .au-header-heading {
   margin-top: 0;
 }
+
+// Alternative title.
 .title-alt {
+  display: none;
   @include health-fontgrid('md', 'default', 'light');
   margin-top: 0;
+  @include AU-media(sm) {
+    display: block;
+  }
 }
 
-// Heading anchor helper.
+// Anchor helpers.
+// When hover on a heading, show the ID of the heading.
+// Logged in users only, in content only.
 body.logged-in {
   .region-content {
     h2, h3, h4, h5, h6 {
