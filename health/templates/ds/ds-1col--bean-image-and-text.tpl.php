@@ -27,7 +27,7 @@
  * @see template_process()
  */
 ?>
-<li class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<article class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
     <a class="au-card au-card--shadow au-cta-link" href="<?php print $wrapper_link_url; ?>">
         <div class="au-card__image au-card__fullwidth">
@@ -41,4 +41,4 @@
         </div>
     </a>
 
-</li>
+</article>

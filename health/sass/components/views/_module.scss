@@ -51,11 +51,7 @@
 
 // Latest items - card
 .paragraphs-view-news_and_events,
-.paragraphs-view-display-latest_resources_hp,
-.paragraphs-view-display-resources_for_public_in_hp,
-.paragraphs-view-display-latest_resources_public,
-.paragraphs-view-display-global_public,
-.paragraphs-view-latest_rsources
+.paragraphs-view-display-global_public
 {
     @include AU-space( margin-top, 2unit );
     @include cards-news-resources;
