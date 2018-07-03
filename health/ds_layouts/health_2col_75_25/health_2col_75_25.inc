@@ -1,7 +1,7 @@
 <?php
-function ds_health_2col_25_75() {
+function ds_health_2col_75_25() {
   return array(
-    'label' => t('Health - 2 column - 25% / 75%'),
+    'label' => t('Health - 2 column - 75% / 25%'),
     'regions' => array(
       'left' => t('Left'),
       'right' => t('Right'),
