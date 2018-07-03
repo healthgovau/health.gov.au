@@ -150,23 +150,12 @@ function health_preprocess_entity(&$variables) {
 
     // Links.
     if ($para_item->bundle == 'para_links') {
-      $count = count($variables['field_link_paragraph']);
-      foreach ($variables['content']['field_link_paragraph'] as $key => $item) {
-        if (is_array($item) && isset($item['entity'])) {
-          foreach ($item['entity']['paragraphs_item'] as $entity_id => $entity) {
-            if (is_array($entity)) {
-              $entity['num'] = $count;
-              $variables['content']['field_link_paragraph'][$key]['entity']['paragraphs_item'][$entity_id] = $entity;
-            }
-          }
-        }
+      // Hide title if hide title field is checked.
+      $checked = $para_item->field_hide_title;
+      if (isset($checked[LANGUAGE_NONE]) && $checked[LANGUAGE_NONE][0]['value'] == 1) {
+        // Hide the para title.
+        $variables['classes_array'][] = 'hide-title';
       }
-    }
-
-    // Link.
-    if ($para_item->bundle == 'para_link') {
-      $count = $variables['content']['num'];
-      $variables['classes_array'] = _health_grid_class($count, $variables['classes_array']);
     }
 
     // Statistic.
