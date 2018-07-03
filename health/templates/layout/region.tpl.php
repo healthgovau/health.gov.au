@@ -9,10 +9,6 @@
 ?>
 <?php if ($content): ?>
   <div class="<?php print $classes; ?>">
-    <div class="container">
-      <div class="row">
         <?php print $content; ?>
-      </div>
-    </div>
   </div>
 <?php endif; ?>
