@@ -1,19 +1,7 @@
 // Getting started
 .paragraphs-item-para-links {
-  // This creates .container and .row from band markup for BS grid
-  @include row-and-container; // Band title
-  h2 {
-    @extend .col-xs-12;
-    @include health-fontgrid('xl', 'default', 'light');
-    @include AU-space('padding-bottom', .25unit);
-    @include AU-space('margin-bottom', .5unit);;
-  }
-  // Each item
-  .field-type-link-field {
-    @extend %list-item-title--medium;
-  }
-  .field-name-field-summary {
-    @include AU-space('margin-bottom', 1unit);
+  .paragraphs-items-field-link-paragraph {
+    width: 100%;
   }
 }
 
