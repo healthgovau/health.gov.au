@@ -24,7 +24,9 @@ endif;
 <div class="page au-body">
   <div class="header-top">
     <div class="container">
-      <?php print render($page['header-top']); ?>
+      <div class="row">
+        <?php print render($page['header-top']); ?>
+      </div>
     </div>
   </div>
   <header class="au-header au-header--light" role="banner">
@@ -67,13 +69,13 @@ endif;
 
   <?php print render($page['highlighted']); ?>
 
-  <div class="page-content container-fluid" id="page-content">
+  <div class="page-content" id="page-content">
     <?php if(!drupal_is_front_page()): ?>
-      <div class="page-title row header header--light">
+      <div class="page-title header header--light">
           <div class="container">
               <div class="row">
                   <div class="page-title__core col <?php print isset($section_title) ? ' section-title' : '';
-                  print count($page['title_supp']) > 0 || isset($header_image) ? 'col-sm-8': ' col-xs-12'; ?>">
+                  print count($page['title_supp']) > 0 || isset($header_image) ? ' col-sm-8': ' col-xs-12'; ?>">
                     <?php print $breadcrumb; ?>
 
                     <?php print render($page['title_core']); ?>
@@ -104,8 +106,10 @@ endif;
 
                 <?php if (count($page['title_supp']) > 0 || isset($header_image)): ?>
                     <div class="page-title__supp col-sm-4 <?php print isset($section_title) ? 'section-title' : '' ?>">
-                      <?php print render($page['title_supp']); ?>
-                      <?php print isset($header_image) ? $header_image : ''; ?>
+                      <div class="row">
+                        <?php print render($page['title_supp']); ?>
+                        <?php print isset($header_image) ? $header_image : ''; ?>
+                      </div>
                     </div>
                 <?php endif; ?>
               </div>
@@ -114,58 +118,57 @@ endif;
     <?php endif; ?>
 
   <?php print render($page['content_top']); ?>
-
-    <?php if(!$full_width): ?>
-      <div class="container">
+    <?php if (!$full_width): ?>
+      <div class="container-fluid full-width">
     <?php else: ?>
-      <div>
+      <div class="container not-full-width">
     <?php endif; ?>
 
-    <div class="row">
+      <div class="row">
+        <?php if ($sidebar_first || $sidebar_second): ?>
+          <?php if ($sidebar_first): ?>
+            <aside class="sidebar sidebar-left rs_skip col-xs-12 col-md-4" role="complementary">
+              <?php print $sidebar_first; ?>
+            </aside>
+          <?php endif; ?>
 
-      <?php if ($sidebar_first || $sidebar_second): ?>
-        <?php if ($sidebar_first): ?>
-              <aside class="sidebar sidebar-left rs_skip col-xs-12 col-md-4" role="complementary">
-                <?php print $sidebar_first; ?>
-              </aside>
+          <?php if ($sidebar_second): ?>
+            <aside class="sidebar sidebar-right rs_skip col-xs-12 col-md-4" role="complementary">
+              <?php print $sidebar_second; ?>
+            </aside>
+          <?php endif; ?>
+            <main class="col-xs-12 col-md-8 <?php print $content_class; ?>" id="content" role="main">
+                <div id="tabs" class="rs_skip"><?php print render($tabs); ?></div>
+              <?php print render($page['help']); ?>
+              <?php if ($action_links): ?>
+                  <ul class="action-links rs_skip"><?php print render($action_links); ?></ul>
+              <?php endif; ?>
+
+              <?php print $messages; ?>
+
+              <?php print $readspeaker; ?>
+
+              <?php print render($page['content']); ?>
+              <?php print $feed_icons; ?>
+            </main>
+        <?php else: ?>
+            <main class="col-xs-12 <?php print $content_class; ?>" id="content" role="main">
+                <div id="tabs" class="rs_skip"><?php print render($tabs); ?></div>
+              <?php print render($page['help']); ?>
+              <?php if ($action_links): ?>
+                  <ul class="action-links rs_skip"><?php print render($action_links); ?></ul>
+              <?php endif; ?>
+
+              <?php print $messages; ?>
+
+              <?php print $readspeaker; ?>
+
+              <?php print render($page['content']); ?>
+              <?php print $feed_icons; ?>
+            </main>
         <?php endif; ?>
 
-        <?php if ($sidebar_second): ?>
-              <aside class="sidebar sidebar-right rs_skip col-xs-12 col-md-4" role="complementary">
-                <?php print $sidebar_second; ?>
-              </aside>
-        <?php endif; ?>
-          <main class="col-xs-12 col-md-8 <?php print $content_class; ?>" id="content" role="main">
-              <div id="tabs" class="rs_skip"><?php print render($tabs); ?></div>
-            <?php print render($page['help']); ?>
-            <?php if ($action_links): ?>
-                <ul class="action-links rs_skip"><?php print render($action_links); ?></ul>
-            <?php endif; ?>
-
-            <?php print $messages; ?>
-
-            <?php print $readspeaker; ?>
-
-            <?php print render($page['content']); ?>
-            <?php print $feed_icons; ?>
-          </main>
-      <?php else: ?>
-          <main class="<?php print $content_class; ?>" id="content" role="main">
-              <div id="tabs" class="rs_skip"><?php print render($tabs); ?></div>
-            <?php print render($page['help']); ?>
-            <?php if ($action_links): ?>
-                <ul class="action-links rs_skip"><?php print render($action_links); ?></ul>
-            <?php endif; ?>
-
-            <?php print $messages; ?>
-
-            <?php print $readspeaker; ?>
-
-            <?php print render($page['content']); ?>
-            <?php print $feed_icons; ?>
-          </main>
-      <?php endif; ?>
-
+      </div>
     </div>
   </div>
 
