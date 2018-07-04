@@ -72,6 +72,12 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
   if ($form['field_summary']) {
     $form['field_summary'][LANGUAGE_NONE][0]['value']['#attributes']['maxlength'] = 300;
   }
+
+  // Update status field on Surveys and Events.
+  if ($form['field_status']) {
+    $form['field_status']['#disabled'] = 'disabled';
+    array_unshift($form['actions']['submit']['#submit'], '_health_adminimal_set_status');
+  }
 }
 
 /**
@@ -587,6 +593,22 @@ function _health_adminimal_find_first_publish_date($nid) {
   }
 
   return $date;
+}
+
+/**
+ * Set the status based on the start and end dates.
+ */
+function _health_adminimal_set_status($form, &$form_state) {
+  if (isset($form_state['values']['field_date_start'][LANGUAGE_NONE][0]) && isset($form_state['values']['field_date_end'][LANGUAGE_NONE][0])) {
+    if (strtotime('now') < strtotime($form_state['values']['field_date_start'][LANGUAGE_NONE][0]['value'])) {
+      $status = "Upcoming";
+    } else if (strtotime('now') < strtotime($form_state['values']['field_date_end'][LANGUAGE_NONE][0]['value'])) {
+      $status = "Open";
+    } else {
+      $status = "Closed";
+    }
+    $form_state['values']['field_status'][LANGUAGE_NONE][0]['value'] = $status;
+  }
 }
 
 /**
