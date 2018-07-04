@@ -34,11 +34,10 @@ function health_adminimal_toc_filter_back_to_top($variables) {
  * Implements hook_form_BASE_FORM_alter().
  */
 function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
-  array_unshift($form['actions']['submit']['#submit'],'_health_adminimal_process_date');
 
   // Hide option for publication collection content type.
   if ($form_id == 'publication_collection_node_form') {
-    $form['field_publication_type']['#access'] = FALSE;
+    $form['field_publication_type']['#disabled'] = 'disabled';
   }
 
   // Remove publication collection option from publication type list.
@@ -60,17 +59,23 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
 
   // Prevent users from being able to change the default image for media releases.
   if ($form_id == 'departmental_media_node_form') {
-    $form['field_image_featured']['#access'] = FALSE;
+    $form['field_image_featured']['#disabled'] = 'disabled';
   }
 
   // Prevent users from being able to change the default related contact for news and departmental media releases.
   if ($form_id == 'departmental_media_node_form' || $form_id == 'news_article_node_form') {
-    $form['field_related_contact']['#access'] = FALSE;
+    $form['field_related_contact']['#disabled'] = 'disabled';
   }
 
   // Add character limit to 300 to summary field.
   if ($form['field_summary']) {
     $form['field_summary'][LANGUAGE_NONE][0]['value']['#attributes']['maxlength'] = 300;
+  }
+
+  // Update status field on Surveys and Events.
+  if ($form['field_status']) {
+    $form['field_status']['#disabled'] = 'disabled';
+    array_unshift($form['actions']['submit']['#submit'], '_health_adminimal_set_status');
   }
 }
 
@@ -106,8 +111,8 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
   // Handle updates to dates for all nodes.
   if (key_exists('#node', $form)) {
     if (!theme_get_setting('manually_edit_dates')) {
-      $form['field_date_published']['#access'] = FALSE;
-      $form['field_date_updated']['#access'] = FALSE;
+      $form['field_date_published']['#disabled'] = 'disabled';
+      $form['field_date_updated']['#disabled'] = 'disabled';
     }
     $form['#submit'][] = '_health_adminimal_date_updated_submitter';
     $form['#submit'][] = '_health_adminimal_date_published_submitter';
@@ -542,18 +547,6 @@ function _health_adminimal_date_updated_submitter($form, &$form_state) {
 }
 
 /**
- * Custom node form submit handler to compare the last update and last review
- * date.
- */
-function _health_adminimal_process_date($form, &$form_state) {
-  if (isset($form_state['values']['field_last_updated'][LANGUAGE_NONE][0]) && isset($form_state['values']['field_last_reviewed'][LANGUAGE_NONE][0])) {
-    if (strtotime($form_state['values']['field_last_updated'][LANGUAGE_NONE][0]['value']) > strtotime($form_state['values']['field_last_reviewed'][LANGUAGE_NONE][0]['value'])) {
-      $form_state['values']['field_last_reviewed'][LANGUAGE_NONE][0] = $form_state['values']['field_last_updated'][LANGUAGE_NONE][0];
-    }
-  }
-}
-
-/**
  * Find the first publish date by given node ID.
  *
  * @param $nid
@@ -587,6 +580,22 @@ function _health_adminimal_find_first_publish_date($nid) {
   }
 
   return $date;
+}
+
+/**
+ * Set the status based on the start and end dates.
+ */
+function _health_adminimal_set_status($form, &$form_state) {
+  if (isset($form_state['values']['field_date_start'][LANGUAGE_NONE][0]) && isset($form_state['values']['field_date_end'][LANGUAGE_NONE][0])) {
+    if (strtotime('now') < strtotime($form_state['values']['field_date_start'][LANGUAGE_NONE][0]['value'])) {
+      $status = "Upcoming";
+    } else if (strtotime('now') < strtotime($form_state['values']['field_date_end'][LANGUAGE_NONE][0]['value'])) {
+      $status = "Open";
+    } else {
+      $status = "Closed";
+    }
+    $form_state['values']['field_status'][LANGUAGE_NONE][0]['value'] = $status;
+  }
 }
 
 /**

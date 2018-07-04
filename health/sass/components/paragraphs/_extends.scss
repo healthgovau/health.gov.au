@@ -167,31 +167,16 @@
 
 // Statistics
 .paragraphs-item-para-statistics {
-  // This creates .container and .row from band markup for BS grid
-  &.para-container {
-    @extend %band;
-  }
-  @include row-and-container;
   .view-mode-full {
     h2 {
       @include health-fontgrid('xl', 'default', 'light');
       @include AU-space('padding-bottom', .75unit);
     }
-  } // Wrapper title/summary
-  h2,
-  .field-name-field-summary,
-  .field-name-field-link-internal {
-    @extend .col-xs-12;
   }
   .field-name-field-summary {
     p {
       @include AU-space('margin-top', .5unit);
       @include AU-space('margin-bottom', .5unit);
-    }
-  }
-  .field-name-field-link-internal {
-    a {
-      @extend .health-cta-link;
     }
   }
 }
