@@ -1,6 +1,6 @@
 @import "card-cta-link";
 @import "cards-colours";
-@import "cards-news-resources";
+@import "cards-modifier";
 
 .au-card {
   @include AU-space( padding, 1.5unit );
@@ -196,6 +196,12 @@ a.au-card {
       @supports( display: flex ) {
         display:flex;
         flex-direction: column;
+        &.au-card--vertical {
+          flex-direction: initial;
+          border-top-width: 3px;
+          border-top-style: solid;
+          transition: background-color 0.3s ease-in-out,color 0.3s ease-in-out;
+        }
       }
     }
 

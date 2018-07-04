@@ -7,7 +7,7 @@
 ?>
 <div class="row <?php print $classes; ?>">
   <div class="container">
-    <<?php print $ds_content_wrapper; print $layout_attributes; ?> class="row ds-1col clearfix">
+    <<?php print $ds_content_wrapper; print $layout_attributes; ?> class="ds-1col clearfix">
       <?php if (isset($title_suffix['contextual_links'])): ?>
         <?php print render($title_suffix['contextual_links']); ?>
       <?php endif; ?>

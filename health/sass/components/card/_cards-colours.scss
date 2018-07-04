@@ -2,14 +2,14 @@
 
 @mixin AU-card-colours {
   li, article {
-    a.au-cta-link {
+    .au-cta-link {
       border-top-width: 3px;
       border-top-style: solid;
       transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
     }
     // Top borders for cards.
     &:nth-of-type(5n+1) {
-      a.au-cta-link {
+      .au-cta-link {
         border-top-color: $colour-Primary;
         &:hover {
           background-color: $AU-colordark-foreground-action;
@@ -18,7 +18,7 @@
     }
 
     &:nth-of-type(5n+2) {
-      a.au-cta-link {
+      .au-cta-link {
         border-top-color: $colour-Secondary;
         &:hover {
           background-color: $AU-colordark-foreground-action;
@@ -27,7 +27,7 @@
     }
 
     &:nth-of-type(5n+3) {
-      a.au-cta-link {
+      .au-cta-link {
         border-top-color: $colour-Tertiary;
         &:hover {
           background-color: $AU-colordark-foreground-action;
@@ -36,7 +36,7 @@
     }
 
     &:nth-of-type(5n+4) {
-      a.au-cta-link {
+      .au-cta-link {
         border-top-color: $colour-Tertiary-2;
         &:hover {
           background-color: $AU-colordark-foreground-action;
@@ -45,7 +45,7 @@
     }
 
     &:nth-of-type(5n+5) {
-      a.au-cta-link {
+      .au-cta-link {
         border-top-color: $colour-dark;
         &:hover {
           background-color: $AU-colordark-foreground-action;

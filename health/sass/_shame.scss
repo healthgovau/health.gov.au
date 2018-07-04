@@ -40,24 +40,6 @@
     }
   }
 
-  // More on immunisation.
-  .paragraphs-item-para-block.block-id__more-services-card {
-    &.para-container {
-      .bean-image-and-text.view-mode-full {
-        color: $colour-Secondary;
-        &.more-services-card {
-          @include block-card($colour-Primary-dark, $colour-Primary-hover);
-        }
-        &.more-conditions-and-diseases-car {
-          @include block-card($colour-Tertiary-dark, $colour-Tertiary-hover);
-        }
-        &.more-programs-and-initiatives-ca {
-          @include block-card($colour-Secondary-dark, $colour-Secondary-hover);
-        }
-      }
-    }
-  }
-
   // Featured resource
   .para-container.paragraphs-item-para-block.block-id__handbook-featured-block-in-immun {
     @extend %colour-Secondary-background;
@@ -116,34 +98,6 @@
 // For homepage only.
 // Shame for home page background colour.
 .front .paragraphs-item-para-block.para-container {
-
-  // Task accelerator.
-  &.block__count--5.block-id__topic-tile{
-    background: white;
-    .bean-image-and-text {
-      // Set colours for each accelerator
-      &.topic-tile {
-        @include block-card($colour-Primary, $colour-Primary-hover);
-      }
-
-      &.conditions--diseases {
-        @include block-card($colour-Tertiary, $colour-Tertiary-hover);
-      }
-
-      &.medicare-tile {
-        @include block-card($colour-Secondary, $colour-Secondary-hover);
-      }
-
-      &.symptoms {
-        @include block-card($colour-Tertiary-2, $colour-Tertiary-2-hover);
-      }
-
-      &.services--support {
-        @include block-card($colour-dark, $colour-dark-hover);
-      }
-
-    }
-  }
 
   // About us.
   &.block-id__homepage-about-us {
