@@ -730,14 +730,6 @@ function health_preprocess_field(&$variables) {
     }
   }
 
-  // External link.
-  if ($variables['element']['#field_name'] == 'field_link_external') {
-    // If it is on the survey page, add button class.
-    if ($variables['element']['#object']->type == 'survey') {
-      $variables['items'][0]['#element']['attributes']['class'] = 'button button--large';
-    }
-  }
-
   // Footnotes
   $footnotes = ['field_book_footnotes'];
   if (in_array($variables['element']['#field_name'], $footnotes)) {
@@ -1037,6 +1029,16 @@ function health_preprocess_node(&$variables) {
     // Add no-trend variant if trend info hasn't been added.
     if (empty($node->field_statistic_trend_text)) {
       $variables['classes_array'][] = 'stat--no-trend';
+    }
+  }
+
+  // Survey
+  if ($node->type == 'survey') {
+    if ($node->field_status[LANGUAGE_NONE][0]['value'] == 'Upcoming' || $node->field_status[LANGUAGE_NONE][0]['value'] == 'Closed') {
+      $variables['content']['field_link_external']['#access'] = FALSE;
+    } else {
+      $variables['content']['field_link_external'][0]['#element']['attributes']['class'] = 'au-btn';
+      $variables['content']['survey_link_closed_']['#access'] = FALSE;
     }
   }
 }

@@ -20,17 +20,6 @@
       @extend %spaced-inline-label;
     }
 
-    .field-name-field-link-external {
-      @include AU-space('padding-bottom', 1.5unit);
-      .field-items {
-        border: none;
-        padding: 0;
-      }
-      .external-link-url {
-        display: none;
-      }
-    }
-
     .field-name-field-image-featured {
       @include AU-space('padding-bottom', 1unit);
     }
