@@ -5,6 +5,10 @@
  * Display Suite 2 column template.
  */
 ?>
+<?php
+// We deliberately don't have a row here because we want the left border of the
+// callout to line up.
+?>
 <div class="container">
   <div class="row">
     <div <?php print $layout_attributes; ?> class=" au-callout <?php print $classes;?> clearfix">
