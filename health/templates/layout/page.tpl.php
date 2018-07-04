@@ -126,47 +126,46 @@ endif;
 
       <div class="row">
         <?php if ($sidebar_first || $sidebar_second): ?>
+          <?php $main_col_classes = 'col-md-8'; ?>
           <?php if ($sidebar_first): ?>
-            <aside class="sidebar sidebar-left rs_skip col-xs-12 col-md-4" role="complementary">
+            <aside class="sidebar sidebar-left rs_skip col-md-4" role="complementary">
               <?php print $sidebar_first; ?>
             </aside>
           <?php endif; ?>
 
           <?php if ($sidebar_second): ?>
-            <aside class="sidebar sidebar-right rs_skip col-xs-12 col-md-4" role="complementary">
+            <aside class="sidebar sidebar-right rs_skip col-md-4" role="complementary">
               <?php print $sidebar_second; ?>
             </aside>
           <?php endif; ?>
-            <main class="col-xs-12 col-md-8 <?php print $content_class; ?>" id="content" role="main">
-                <div id="tabs" class="rs_skip"><?php print render($tabs); ?></div>
-              <?php print render($page['help']); ?>
-              <?php if ($action_links): ?>
-                  <ul class="action-links rs_skip"><?php print render($action_links); ?></ul>
-              <?php endif; ?>
 
-              <?php print $messages; ?>
-
-              <?php print $readspeaker; ?>
-
-              <?php print render($page['content']); ?>
-              <?php print $feed_icons; ?>
-            </main>
         <?php else: ?>
-            <main class="col-xs-12 <?php print $content_class; ?>" id="content" role="main">
-                <div id="tabs" class="rs_skip"><?php print render($tabs); ?></div>
-              <?php print render($page['help']); ?>
-              <?php if ($action_links): ?>
-                  <ul class="action-links rs_skip"><?php print render($action_links); ?></ul>
-              <?php endif; ?>
 
-              <?php print $messages; ?>
+          <?php
+          if (!$full_width) {
+            $main_col_classes = 'col-md-8';
+          } else {
+            $main_col_classes = '';
+          }
+          ?>
 
-              <?php print $readspeaker; ?>
-
-              <?php print render($page['content']); ?>
-              <?php print $feed_icons; ?>
-            </main>
         <?php endif; ?>
+
+
+        <main class="<?php print $main_col_classes ?> <?php print $content_class; ?>" id="content" role="main">
+            <div id="tabs" class="rs_skip"><?php print render($tabs); ?></div>
+          <?php print render($page['help']); ?>
+          <?php if ($action_links): ?>
+              <ul class="action-links rs_skip"><?php print render($action_links); ?></ul>
+          <?php endif; ?>
+
+          <?php print $messages; ?>
+
+          <?php print $readspeaker; ?>
+
+          <?php print render($page['content']); ?>
+          <?php print $feed_icons; ?>
+        </main>
 
       </div>
     </div>
