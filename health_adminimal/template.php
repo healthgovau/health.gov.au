@@ -37,7 +37,7 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
 
   // Hide option for publication collection content type.
   if ($form_id == 'publication_collection_node_form') {
-    $form['field_publication_type']['#access'] = FALSE;
+    $form['field_publication_type']['#disabled'] = 'disabled';
   }
 
   // Remove publication collection option from publication type list.
@@ -59,12 +59,12 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
 
   // Prevent users from being able to change the default image for media releases.
   if ($form_id == 'departmental_media_node_form') {
-    $form['field_image_featured']['#access'] = FALSE;
+    $form['field_image_featured']['#disabled'] = 'disabled';
   }
 
   // Prevent users from being able to change the default related contact for news and departmental media releases.
   if ($form_id == 'departmental_media_node_form' || $form_id == 'news_article_node_form') {
-    $form['field_related_contact']['#access'] = FALSE;
+    $form['field_related_contact']['#disabled'] = 'disabled';
   }
 
   // Add character limit to 300 to summary field.
@@ -111,8 +111,8 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
   // Handle updates to dates for all nodes.
   if (key_exists('#node', $form)) {
     if (!theme_get_setting('manually_edit_dates')) {
-      $form['field_date_published']['#access'] = FALSE;
-      $form['field_date_updated']['#access'] = FALSE;
+      $form['field_date_published']['#disabled'] = 'disabled';
+      $form['field_date_updated']['#disabled'] = 'disabled';
     }
     $form['#submit'][] = '_health_adminimal_date_updated_submitter';
     $form['#submit'][] = '_health_adminimal_date_published_submitter';
