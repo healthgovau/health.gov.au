@@ -1,5 +1,5 @@
 // A basic mixin to supply the cards for resources and news items.
-@mixin cards-news-resources {
+@mixin cards-news {
   .au-card-list {
     & ul {
       max-width: 100%;

@@ -51,10 +51,10 @@
 
 // Latest items - card
 .paragraphs-view-news_and_events,
-.paragraphs-view-display-global_public
+.paragraphs-view-display-global_public,
+.paragraphs-view-latest_rsources
 {
     @include AU-space( margin-top, 2unit );
-    @include cards-news-resources;
     @extend %band--neutral-darkest;
     h2 {
         @include AU-space('margin-bottom', 1.5unit);
@@ -65,6 +65,9 @@
             float: right;
         }
     }
+}
+.paragraphs-view-news_and_events {
+  @include cards-news;
 }
 
 // Popular resources
