@@ -52,22 +52,23 @@
 // Latest items - card
 .paragraphs-view-news_and_events,
 .paragraphs-view-display-global_public,
-.paragraphs-view-latest_rsources
-{
-    @include AU-space( margin-top, 2unit );
-    @extend %band--neutral-darkest;
-    h2 {
-        @include AU-space('margin-bottom', 1.5unit);
+.paragraphs-view-latest_rsources {
+  @extend %band--neutral-darkest;
+  h2 {
+    @include AU-space('margin-bottom', 1.5unit);
+  }
+  .more-link {
+    float: left;
+    @include AU-media(sm) {
+      float: right;
     }
-    .more-link {
-        float: left;
-        @include AU-media(sm) {
-            float: right;
-        }
-    }
+  }
 }
 .paragraphs-view-news_and_events {
-  @include cards-news;
+  @include cards-modifier( 32unit );
+}
+.paragraphs-view-latest_rsources {
+  @include cards-modifier( 21unit );
 }
 
 // Popular resources
