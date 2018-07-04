@@ -118,15 +118,35 @@ endif;
     <?php endif; ?>
 
   <?php print render($page['content_top']); ?>
-    <?php if ($full_width): ?>
-      <div class="container-fluid full-width">
-    <?php else: ?>
-      <div class="container not-full-width">
-    <?php endif; ?>
 
+    <?php
+    if ($full_width) {
+      $outer_container_class = "container-fluid full-width";
+      $layout_row = false;
+    } else {
+      $outer_container_class = "container not-full-width";
+      $layout_row = true;
+    }
+
+    if ($sidebar_first || $sidebar_second) {
+      $main_col_classes = 'col-md-8';
+    } else {
+      if (!$full_width) {
+        $main_col_classes = 'col-md-8';
+      } else {
+        $main_col_classes = '';
+      }
+    }
+
+    ?>
+
+    <div class="<?php print $outer_container_class?>">
+
+      <?php if ($layout_row): ?>
       <div class="row">
+      <?php endif ;?>
+
         <?php if ($sidebar_first || $sidebar_second): ?>
-          <?php $main_col_classes = 'col-md-8'; ?>
           <?php if ($sidebar_first): ?>
             <aside class="sidebar sidebar-left rs_skip col-md-4" role="complementary">
               <?php print $sidebar_first; ?>
@@ -138,16 +158,6 @@ endif;
               <?php print $sidebar_second; ?>
             </aside>
           <?php endif; ?>
-
-        <?php else: ?>
-
-          <?php
-          if (!$full_width) {
-            $main_col_classes = 'col-md-8';
-          } else {
-            $main_col_classes = '';
-          }
-          ?>
 
         <?php endif; ?>
 
@@ -167,7 +177,10 @@ endif;
           <?php print $feed_icons; ?>
         </main>
 
+      <?php if ($layout_row): ?>
       </div>
+      <?php endif ;?>
+
     </div>
   </div>
 
