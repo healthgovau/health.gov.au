@@ -156,9 +156,6 @@ a.au-card {
 
 // Card listing match height
 .au-card-list {
-  // This makes the card lists behave like rows so negative margins are added to
-  // cancel out left and right padding.
-  @extend .row;
   list-style: none;
   padding: 0;
   @include AU-card-cta-link($AU-color-foreground-text, $AU-color-foreground-text);
