@@ -118,7 +118,7 @@ endif;
     <?php endif; ?>
 
   <?php print render($page['content_top']); ?>
-    <?php if (!$full_width): ?>
+    <?php if ($full_width): ?>
       <div class="container-fluid full-width">
     <?php else: ?>
       <div class="container not-full-width">

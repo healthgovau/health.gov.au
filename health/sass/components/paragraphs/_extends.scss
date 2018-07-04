@@ -1,5 +1,10 @@
 // Getting started
 .paragraphs-item-para-links {
+  &.hide-title {
+    h2 {
+      display: none;
+    }
+  }
   .paragraphs-items-field-link-paragraph {
     width: 100%;
   }
