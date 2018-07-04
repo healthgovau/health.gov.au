@@ -6,7 +6,6 @@
 
 // Display modes
 .node-publication {
-    background: transparent;
 
     &.view-mode-full {
 
@@ -53,7 +52,7 @@
     }	
 	// Inline style
 	&.view-mode-inline {
-		@extend %dm-inline-2-col;
+
 	}
 
     &.view-mode-inline_large {
