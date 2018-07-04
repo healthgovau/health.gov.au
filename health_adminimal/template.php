@@ -73,7 +73,7 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
   }
 
   // Update status field on Surveys and Events.
-  if ($form['field_status']) {
+  if (key_exists('field_status', $form)) {
     $form['field_status']['#disabled'] = 'disabled';
     array_unshift($form['actions']['submit']['#submit'], '_health_adminimal_set_status');
   }
