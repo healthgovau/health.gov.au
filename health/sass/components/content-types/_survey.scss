@@ -17,7 +17,8 @@
     .field-name-field-date-end,
     .field-name-field-time-required,
     .field-name-field-audience,
-    .field-name-ds-associated-release {
+    .field-name-ds-associated-release,
+    .field-name-ds-start-end-date-friendly {
       @extend %spaced-inline-label;
     }
 
