@@ -21,17 +21,6 @@
       @extend %spaced-inline-label;
     }
 
-    .field-name-field-link-external {
-      padding-bottom: uikit-space(1.5);
-      .field-items {
-        border: none;
-        padding: 0;
-      }
-      .external-link-url {
-        display: none;
-      }
-    }
-
     .field-name-field-image-featured {
       padding-bottom: uikit-space(1);
     }
