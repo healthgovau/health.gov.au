@@ -428,3 +428,25 @@ function _health_load_node_from_node_path($node_path) {
   }
   return FALSE;
 }
+
+/**
+ * Returns a human readable 'ago' (past) or 'in' (future) time.
+ *
+ * @param string $date
+ *   Any date string compatible with strtotime.
+ *
+ * @return array
+ *   text - The friendly text
+ *   ago - TRUE|FALSE if this date is in the past or not
+ */
+function _health_friendly_interval_date($date) {
+  $date = strtotime($date);
+
+  if ($date > REQUEST_TIME) {
+    $friendly = format_interval($date - REQUEST_TIME, 1);
+    return ['text' => $friendly, 'ago' => FALSE];
+  } else {
+    $friendly = format_interval( REQUEST_TIME - $date, 1);
+    return ['text' => $friendly, 'ago' => TRUE];
+  }
+}

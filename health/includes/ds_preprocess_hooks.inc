@@ -338,3 +338,44 @@ function health_preprocess_ds_recommendation_tags(&$variables) {
     'type' => 'ul'
   ]);
 }
+
+/**
+ * DS - Survey link (disabled)
+ *
+ * @param $variables
+ *
+ * @return string
+ */
+function health_preprocess_ds_survey_link_disabled(&$variables) {
+  if ($variables['field_status'][0]['value'] == 'Upcoming') {
+    $friendly = _health_friendly_interval_date($variables['field_date_start'][LANGUAGE_NONE][0]['value']);
+    return "<button class='au-btn' disabled='disabled'>Survey will open {$friendly['text']}</button>";
+  } else if ($variables['field_status'][0]['value'] == 'Closed') {
+    return "<button class='au-btn' disabled='disabled'>Survey is closed</button>";
+  }
+}
+
+/**
+ * DS - Start end date friendly
+ * Only works if this node has start and end dates.
+ *
+ * @param $variables
+ *
+ * @return string
+ */
+function health_preprocess_ds_start_end_date_friendly(&$variables) {
+  $field_variables = _health_label_display($variables, 'start_end_date_friendly');
+  $start = _health_friendly_interval_date($variables['field_date_start'][LANGUAGE_NONE][0]['value']);
+  if ($start['ago'] == FALSE) {
+    $field_variables['label'] = 'Opens in';
+    $field_variables['items'] = [['#markup' => $start['text']]];
+    return theme_field($field_variables);
+  }
+
+  $end = _health_friendly_interval_date($variables['field_date_end'][LANGUAGE_NONE][0]['value']);
+  if ($end['ago'] == FALSE) {
+    $field_variables['label'] = 'Time remaining';
+    $field_variables['items'] = [['#markup' => $end['text']]];
+    return theme_field($field_variables);
+  }
+}
