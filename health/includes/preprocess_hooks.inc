@@ -158,6 +158,22 @@ function health_preprocess_entity(&$variables) {
       }
     }
 
+    // Feature content.
+    if ($para_item->bundle == 'para_feature_content') {
+      if (isset($para_item->field_grid[LANGUAGE_NONE])) {
+        $grid = $para_item->field_grid[LANGUAGE_NONE][0]['value'];
+        $nid = $para_item->field_feature_content[LANGUAGE_NONE][0]['target_id'];
+        // Pass grid to node.
+        $grid_map =[
+          'col-sm-6' => 'col-sm-6',
+          'col-sm-5' => 'col-sm-7',
+          'col-sm-4' => 'col-sm-8',
+        ];
+        $variables['content']['field_feature_content'][0]['node'][$nid]['#node']->left_grid = $grid;
+        $variables['content']['field_feature_content'][0]['node'][$nid]['#node']->right_grid = $grid_map[$grid];
+      }
+    }
+
     // Statistic.
     if ($para_item->bundle == 'para_statistics') {// Add no-trend variant if trend info hasn't been added.
       // Find out number of statistics node.

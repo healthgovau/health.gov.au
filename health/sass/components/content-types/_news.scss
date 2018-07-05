@@ -48,13 +48,7 @@
 
 	// Feature
 	&.view-mode-feature {
-		@extend %dm-feature;
-		.field-name-field-image-featured {
-			@extend %image--full;
-		}
-		.group-right {
-			padding-top: 0;
-		}
+      @extend %dm-feature;
       @include cardify();
 
 	}
