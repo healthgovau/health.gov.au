@@ -49,8 +49,6 @@
 	// Feature
 	&.view-mode-feature {
       @extend %dm-feature;
-      @include cardify();
-
 	}
 	
 	// Inline style

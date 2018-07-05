@@ -270,35 +270,6 @@
   @include AU-space('margin-bottom', 1unit);
 }
 
-// Featured video
-.paragraphs-item-featured-videos {
-  // This creates .container and .row from band markup for BS grid
-  @include row-and-container; // Band title
-  @include AU-space('padding', 1unit);
-  // layout
-  .group-left {
-    width: 100%;
-    @include AU-media(sm) {
-      width: 40%;
-      float: left;
-    }
-  }
-  .group-right {
-    width: 100%;
-    @include AU-media(sm) {
-      width: 60%;
-      float: right;
-    }
-  }
-
-  // field
-  .field-name-field-link-to {
-    a {
-      @extend .health-cta-link;
-    }
-  }
-}
-
 // Contacts
 .paragraphs-item-contacts {
   // Layout of contacts.
@@ -311,5 +282,13 @@
   }
   .field-name-field-link-internal a {
     @extend .health-cta-link;
+  }
+}
+
+// Feature content
+.paragraphs-item-para-feature-content {
+  @include AU-space('padding', 5unit 0);
+  .more-link {
+    float: right;
   }
 }
