@@ -240,6 +240,23 @@
   .block-id__mrff-patients.block-id__mrff-researchers.block-id__mrff-research-missions.block-id__mrff-research-translation {
     @extend %colour-Light-background;
   }
+  .paragraphs-item-featured-videos {
+    @extend %colour-Light-background;
+    .field-name-field-title {
+      @extend .uikit-display-4;
+    }
+  }
+  .paragraphs-item-band-static-content {
+    > .paragraphs-item-band-static-content {
+      @extend %band;
+      h2 {
+        @extend .uikit-display-4;
+      }
+    }
+  }
+  .para-container.paragraphs-2-columns-resources {
+    @extend %colour-Light-background-reverse;
+  }
 }
 
 // One-column - to fix scope
@@ -247,6 +264,9 @@
   .paragraphs-item-para-content-text {
     > .paragraphs-item-para-content-text {
       @extend %band;
+      h2 {
+        @extend .uikit-display-4;
+      }
     }
     // Layout
     @include row-and-container;

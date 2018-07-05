@@ -309,18 +309,10 @@
   padding: uikit-space(1);
   // layout
   .group-left {
-    width: 100%;
-    @include uikit-media(sm) {
-      width: 40%;
-      float: left;
-    }
+    @extend .col-sm-5;
   }
   .group-right {
-    width: 100%;
-    @include uikit-media(sm) {
-      width: 60%;
-      float: right;
-    }
+    @extend .col-sm-7;
   }
 
   // field
