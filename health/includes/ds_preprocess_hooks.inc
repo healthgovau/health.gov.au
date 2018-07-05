@@ -348,9 +348,9 @@ function health_preprocess_ds_recommendation_tags(&$variables) {
 function health_preprocess_ds_survey_link_disabled(&$variables) {
   if ($variables['field_status'][0]['value'] == 'Upcoming') {
     $friendly = _health_friendly_interval_date($variables['field_date_start'][LANGUAGE_NONE][0]['value']);
-    return "<button class='au-btn' disabled='disabled'>Survey will open {$friendly['text']}</button>";
+    return "<button class='button' disabled='disabled'>Survey will open in {$friendly['text']}</button>";
   } else if ($variables['field_status'][0]['value'] == 'Closed') {
-    return "<button class='au-btn' disabled='disabled'>Survey is closed</button>";
+    return "<button class='button' disabled='disabled'>Survey is closed</button>";
   }
 }
 

@@ -994,7 +994,7 @@ function health_preprocess_node(&$variables) {
     if ($node->field_status[LANGUAGE_NONE][0]['value'] == 'Upcoming' || $node->field_status[LANGUAGE_NONE][0]['value'] == 'Closed') {
       $variables['content']['field_link_external']['#access'] = FALSE;
     } else {
-      $variables['content']['field_link_external'][0]['#element']['attributes']['class'] = 'au-btn';
+      $variables['content']['field_link_external'][0]['#element']['attributes']['class'] = 'button';
       $variables['content']['survey_link_closed_']['#access'] = FALSE;
     }
   }
