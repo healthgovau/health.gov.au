@@ -27,7 +27,7 @@
 @import 'accordion/extends';
 @import 'alert/module';
 @import 'backtotop/module';
-@import 'call-to-action/extends';
+@import 'au-cta-link';
 @import 'table/module';
 @import 'table/extends';
 @import 'responsive-media/module';
@@ -70,8 +70,9 @@
 
 // Views, bands and layouts
 @import 'views/module';
-@import 'bands/module';
-@import 'bands/extends';
+@import 'au-band';
+@import 'au-band/extends';
+@import 'au-band/print';
 
 // Views, bands and layouts
 @import 'paragraphs/extends';
