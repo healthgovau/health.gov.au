@@ -15,7 +15,7 @@
   clear: both;
   @include AU-clearfix; // This creates .container and .row from band markup for BS grid
   &.para-container {
-    @extend %band--neutral;
+    @extend %band;
     padding-bottom: 0;
     margin-bottom: -12px;
     @include AU-media(sm) {
@@ -288,12 +288,8 @@
 // Paragraph row.
 .entity-paragraphs-item {
   &.para-row {
-    @include AU-space('padding', 2.4unit 0);
     .more-link {
       float: right;
-    }
-    @include AU-media( md ) {
-      @include AU-space('padding', 5unit 0);
     }
   }
 }

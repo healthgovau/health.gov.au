@@ -99,7 +99,7 @@
   @include health-fontgrid('md', 'default', 'light');
   @include AU-space('padding', 0 1unit .25unit 1unit);
   @include AU-media('md') {
-    @include AU-space('padding-bottom', 1unit);
+    @include AU-space('padding-bottom', 1.75unit);
   }
 }
 
@@ -125,9 +125,6 @@
 
 // Variation with no trend.
 .stat--no-trend {
-  .stat__trend {
-    display: none;
-  }
   .stat__value {
     border-bottom: 0;
   }

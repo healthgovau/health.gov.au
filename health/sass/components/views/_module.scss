@@ -53,7 +53,7 @@
 .paragraphs-view-news_and_events,
 .paragraphs-view-display-global_public,
 .paragraphs-view-latest_rsources {
-  @extend %band--neutral-darkest;
+  @extend %band;
   h2 {
     @include AU-space('margin-bottom', 1.5unit);
   }

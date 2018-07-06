@@ -264,3 +264,9 @@ body:not(.node-type-landing-page):not(.node-type-health-topic):not(.node-type-he
 }
 
 /** END Local nav and HP link **/
+
+.print--hide {
+  @media print {
+    display: none;
+  }
+}

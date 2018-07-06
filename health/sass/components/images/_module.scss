@@ -1,3 +1,10 @@
+// Reset the line height on images as this causes gaps at the bottom of some images.
+.au-body {
+  .media div, img {
+    line-height: 0;
+  }
+}
+
 // Image caption
 .field-name-field-image-caption {
     margin-bottom: 2em;
