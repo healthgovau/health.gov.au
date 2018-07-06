@@ -49,6 +49,7 @@
       legendSummary('.paragraphs-item-type-para-reference-news', 'News', 'input[type="text"]');
       legendSummary('.paragraphs-item-type-para-reference-health-alert', 'Health alert', 'input[type="text"]');
       legendSummary('.paragraphs-item-type-reference-statistic', 'Statistic', 'input[type="text"]');
+      legendSummary('.paragraphs-item-type-para-feature-content', 'Featured content', 'input[type="text"]');
 
       // Content
       legendSummary('.paragraphs-item-type-para-content-text', 'Text', 'textarea');

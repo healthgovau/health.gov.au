@@ -7,7 +7,7 @@
  * @see https://drupal.org/node/1728246
  */
 ?>
-<div class="<?php print $classes; ?>"<?php print $attributes; ?> id="<?php print $block_html_id; ?>">
+<div class="container <?php print $classes; ?>"<?php print $attributes; ?> id="<?php print $block_html_id; ?>">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <h3<?php print $title_attributes; ?>><?php print $title; ?></h3>
