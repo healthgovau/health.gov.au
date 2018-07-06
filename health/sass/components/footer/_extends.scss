@@ -1,51 +1,50 @@
 // Footer
 //
 // We all know what a footer is.
-.page {
-  .au-footer {
+.au-footer {
 
-    // for IE 9.
-    background-color: $colour-Primary-darker;
+  // for IE 9.
+  background-color: $colour-Primary-darker;
 
-    @extend %colour-Primary-background;
+  @extend %colour-Primary-background;
 
-    padding-left: 0;
-    padding-right: 0;
-    border: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border: 0;
 
-    a {
-      color: white;
-      &:hover {
-        background: none;
-        border-bottom: none;
-      }
-      &[rel~='external']:after {
-        color: white
-      }
-    }
-    h3.block__title {
-      color: white;
-    }
+  a {
     color: white;
-    .bean-large-button .field-name-field-link-to a {
-      background-color: transparent;
-      color: white;
-      border: 1px solid white;
-      // By UX request.
-      border-radius: 0px;
-      &:hover,
-      &:focus {
-        background-color: $colour-Primary-hover;
-      }
+    &:hover {
+      background: none;
+      border-bottom: none;
     }
+    &[rel~='external']:after {
+      color: white
+    }
+  }
+  h3.block__title {
+    color: white;
+  }
+  color: white;
+  .bean-large-button .field-name-field-link-to a {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    // By UX request.
+    border-radius: 0px;
+    &:hover,
+    &:focus {
+      background-color: $colour-Primary-hover;
+    }
+  }
 
-    .au-footer__end {
-      padding-top: 1.6em;
-      border-top: 1px solid #ccc;
-      margin-top: 1.6em;
-      small {
-        color: white;
-      }
+  .au-footer__end {
+    padding-top: 1.6em;
+    border-top: 1px solid #ccc;
+    margin-top: 1.6em;
+    small {
+      color: white;
     }
   }
 }
+
