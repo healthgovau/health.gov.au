@@ -288,12 +288,8 @@
 // Paragraph row.
 .entity-paragraphs-item {
   &.para-row {
-    @include AU-space('padding', 2.4unit 0);
     .more-link {
       float: right;
-    }
-    @include AU-media( md ) {
-      @include AU-space('padding', 5unit 0);
     }
   }
 }
