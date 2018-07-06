@@ -1,41 +1,52 @@
 @import "_print.scss";
 
-// Generic band styles
 %band {
-  @include AU-clearfix;
-  @include AU-space('padding-top', 1unit);
-  @include AU-space('padding-bottom', 1unit);
-  @include AU-media(md) {
-    @include AU-space('padding-top', 5unit);
-    @include AU-space('padding-bottom', 5unit);
+  @extend .au-band;
+}
+
+// Bands.
+.au-body {
+  .au-band {
+    @include AU-clearfix;
+    @include AU-space('padding-top', 1.25unit);
+    @include AU-space('padding-bottom', 1.25unit);
+    @include AU-media(md) {
+      @include AU-space('padding-top', 2.5unit);
+      @include AU-space('padding-bottom', 2.5unit);
+    }
+
+    // Variation with less padding at the top and bottom.
+    &--short {
+      @include AU-space('padding-top', 1unit);
+      @include AU-space('padding-bottom', 1unit);
+      @include AU-media(md) {
+        @include AU-space('padding-top', 1unit);
+        @include AU-space('padding-bottom', 1unit);
+      }
+    }
+
+    // Title.
+    .au-band__title {
+      @include health-fontgrid('xl', 'default', 'light');
+      @include AU-space('padding-bottom', .75unit);
+    }
+
+    // Background colours.
+    &--neutral-1 {
+      @extend %colour-Light-background;
+    }
+
+    &--neutral-2 {
+      @extend %colour-Light-background-reverse;
+    }
+
+    &--primary {
+      @extend %colour-Primary-background;
+    }
+
+    &--secondary {
+      @extend %colour-Secondary-background;
+    }
   }
-}
-%band--neutral {
-    @extend %band;
-    @extend %colour-Light-background;
-}
 
-%band--neutral-darkest {
-    @extend %band;
-    @extend %colour-Light-dark-background;
-}
-
-%band--primary {
-    @extend %band;
-    @extend %colour-Primary-background;
-}
-
-%band--primary-dark {
-    @extend %band;
-    //background: $colour-Primary-dark;
-}
-
-%band--primary-darker {
-    @extend %band;
-    //background: $colour-Primary-darkest;
-}
-
-%band--primary-darkest {
-    @extend %band;
-    //background: $colour-Primary-darkest;
 }

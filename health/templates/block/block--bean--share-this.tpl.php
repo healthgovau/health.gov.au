@@ -7,7 +7,7 @@
  * @see https://drupal.org/node/1728246
  */
 ?>
-<div class="<?php print $classes; ?>"<?php print $attributes; ?> id="<?php print $block_html_id; ?>">
+<div class="au-band au-band--short au-band--neutral-1 print--hide <?php print $classes; ?>"<?php print $attributes; ?> id="<?php print $block_html_id; ?>">
   <div class="container">
     <div class="row">
       <div class="col-md-2 col-sm-3">

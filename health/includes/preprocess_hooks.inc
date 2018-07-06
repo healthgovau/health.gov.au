@@ -148,6 +148,14 @@ function health_preprocess_entity(&$variables) {
       $variables['classes_array'][] = strtolower(str_replace(' ', '-', $title));
     }
 
+    // Add band background colour.
+    if (property_exists($para_item, 'field_band_background_colour')) {
+      if (!empty($para_item->field_band_background_colour)) {
+        $colour = taxonomy_term_load($para_item->field_band_background_colour[LANGUAGE_NONE][0]['tid']);
+        $variables['classes_array'][] = $colour->description;
+      }
+    }
+
     // Links.
     if ($para_item->bundle == 'para_links') {
       // Hide title if hide title field is checked.

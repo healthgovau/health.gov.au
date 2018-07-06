@@ -15,7 +15,7 @@
   clear: both;
   @include AU-clearfix; // This creates .container and .row from band markup for BS grid
   &.para-container {
-    @extend %band--neutral;
+    @extend %band;
     padding-bottom: 0;
     margin-bottom: -12px;
     @include AU-media(sm) {
