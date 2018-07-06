@@ -1,24 +1,3 @@
-// Listing back button band.
-.listing-back {
-  @extend %band;
-  @include AU-space('padding', .8unit 0);
-  border-top: $health-borderize--very-thin;
-  .wrapper {
-    @extend .container;
-    text-align: center;
-  }
-  a {
-    font-size: 1em;
-    @include AU-media(md) {
-      font-size: 1.1em;
-    }
-  }
-  .listing-back__icon {
-    font-size: 1.25em;
-    line-height: 1.25;
-  }
-}
-
 // Landing pages only.
 body {
   &.node-type-health-topic,
