@@ -1,11 +1,13 @@
 .au-body {
   .au-callout {
-    // Remove the padding on either side of the
-    > div:first-of-type {
-      padding-left: 0;
-    }
-    > div:last-of-type {
-      padding-right: 0;
+
+    // Variation to use au-callout on the row level of the grid.
+    // eg container > row > au-callout--grid-row > col-sm-3 | col-sm-9
+    &--grid-row {
+      @include AU-space('margin-left', $AU-grid-12-gutter-width/2);
+      @include AU-space('margin-right', $AU-grid-12-gutter-width/2);
+      @include AU-space('padding-left', 24px - $AU-grid-12-gutter-width/2);
+      @include AU-space('padding-right', 24px - $AU-grid-12-gutter-width/2);
     }
   }
 }
