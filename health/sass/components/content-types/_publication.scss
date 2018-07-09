@@ -11,11 +11,9 @@
 
       // Image
       .field-name-field-image-featured {
-        @extend %image--full;
         .go-to-download-link {
           line-height: 2;
           margin-top: 10px;
-
         }
       }
 
