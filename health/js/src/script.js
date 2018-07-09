@@ -74,6 +74,9 @@
 
       // Bean block - solid colour card.
       $('.view-mode-solid_full_card .bean-block-content a', context).matchHeight();
+
+      // au-card.
+      $('.au-card-list--matchheight .au-card', context).matchHeight();
     }
   };
 

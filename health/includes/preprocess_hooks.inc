@@ -289,6 +289,10 @@ function health_preprocess_entity(&$variables) {
       $view->execute();
 
       if ($view->total_rows > 0) {
+        // Add grid if there is no manual grid col set.
+        if ($view->style_plugin->options['row_class'] == '') {
+          $view->style_plugin->options['row_class'] = implode(' ', _health_grid_class(count($view->result), []));
+        }
         // Render the view.
         $variables['para_rendered_view'] = $view->preview();
         // If there are no more records to show, hide the more link.
@@ -298,8 +302,6 @@ function health_preprocess_entity(&$variables) {
         // Add some classes to help identify it.
         $variables['classes_array'][] = 'paragraphs-view-' . $view->name;
         $variables['classes_array'][] = 'paragraphs-view-display-' . $view->current_display;
-        // Add css count.
-        $variables['classes_array'][] = 'listing__count--' . count($view->result);
       }
     }
 
@@ -976,6 +978,16 @@ function health_preprocess_node(&$variables) {
   if ($node->type == 'statistic') {
     if (isset($variables['content']['num'])) {
       $variables['classes_array'] = _health_grid_class($variables['content']['num'], $variables['classes_array']);
+    }
+  }
+
+  // Hide summary if there is a featured image for horizontal listing display
+  // with initiative, program, campaign content type.
+  if (in_array($node->type, ['initiative', 'program', 'campaign'])) {
+    if ($variables['view_mode'] == 'listing_horizontal') {
+      if (isset($node->field_image_featured[LANGUAGE_NONE][0])) {
+        unset($variables['content']['field_summary']);
+      }
     }
   }
 

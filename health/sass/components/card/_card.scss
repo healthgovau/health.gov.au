@@ -182,9 +182,6 @@ a.au-card {
 
     li, article {
       display: table-cell;
-      @include AU-media( sm ) {
-        min-height: 17rem;
-      }
       @supports( display: flex ) {
         display: flex;
       }
