@@ -9,34 +9,15 @@
 
   // Desktop
   @include AU-media(sm) {
-    float: right;
-  }
-}
-
-// On pages with 2 columns, readspeaker pushes down the right column if we use
-// float:right.
-.node-type-publication {
-  #readspeaker {
-    // Desktop
-    @include AU-media(sm) {
-      float: none;
-      position: absolute;
-      right: 12px;
-    }
+    position: absolute;
+    right: $AU-grid-12-gutter-width / 2;
   }
 }
 
 // Video goes to full width at tablet, so use mobile styling for tablet.
 .node-type-video {
   #readspeaker {
-    // Desktop
-    @include AU-media(md) {
-      float: none;
-      position: absolute;
-      right: 12px;
-    }
     @include AU-media(sm) {
-      float: none;
       .rsbtn_colorskin {
         margin: 0 0 AU-space(.5) 0;
       }
