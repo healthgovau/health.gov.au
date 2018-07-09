@@ -1,12 +1,10 @@
 <?php
-function ds_health_2col_stacked_50_50() {
+function ds_health_2col() {
   return array(
-    'label' => t('Health - 2 column stacked - 50% / 50%'),
+    'label' => t('Health - 2 column - Grid - Flexible'),
     'regions' => array(
-      'top' => t('Top'),
       'left' => t('Left'),
       'right' => t('Right'),
-      'bottom' => t('Bottom'),
     ),
     // Add this line if there is a default css file.
     'css' => FALSE,

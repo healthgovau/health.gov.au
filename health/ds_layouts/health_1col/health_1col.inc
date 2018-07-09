@@ -1,10 +1,9 @@
 <?php
-function ds_health_2col_50_50() {
+function ds_health_1col() {
   return array(
-    'label' => t('Health - 2 column - 50% / 50%'),
+    'label' => t('Health - 1 column - Grid - Flexible'),
     'regions' => array(
-      'left' => t('Left'),
-      'right' => t('Right'),
+      'middle' => t('Middle'),
     ),
     // Add this line if there is a default css file.
     'css' => FALSE,
