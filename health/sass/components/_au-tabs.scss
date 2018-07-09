@@ -12,13 +12,16 @@
   ul.au-tabs {
 
     padding: 0;
-
+    border-bottom: $health-borderize--thin;
     @include AU-space('margin-top', 2unit);
+    width: 100%;
 
     li {
       margin: 0;
       padding: 0;
       transition: none;
+
+
 
       &:first-of-type {
         a {
@@ -28,13 +31,13 @@
 
       a {
         @include AU-space('padding', .75unit 1unit);
-        border-bottom: $health-borderize--thin;
+
         margin-left: -5px;
         display: inline-block;
+        background-color: $colour-lighter;
 
         &:hover, &:active {
-          background-color: $colour-Secondary-hover;
-          color: white;
+          background-color: $colour-light-darker;
         }
 
       }
