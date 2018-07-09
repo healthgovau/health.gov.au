@@ -376,6 +376,34 @@ function _health_prepare_filename($name) {
 }
 
 /**
+ * Helper function to add total number of node in the para to node render array.
+ *
+ * @param $para
+ *   Preprocess variable.
+ * @param $node_field
+ *   Node reference field machine name.
+ *
+ * @return array
+ *   Preprocess variable.
+ */
+function _health_total_children($para, $node_field) {
+  $count = count($para[$node_field]);
+  // Pass total number to each node entity.
+  foreach ($para['content'][$node_field] as $key => $item) {
+    if (is_array($item) && isset($item['node'])) {
+      foreach ($item['node'] as $node_id => $node) {
+        if (is_array($node)) {
+          $node['num'] = $count;
+          $para['content'][$node_field][$key]['node'][$node_id] = $node;
+        }
+      }
+    }
+  }
+
+  return $para;
+}
+
+/**
  * Add grid class according to the total number of items in a row.
  *
  * @param $total_number
@@ -389,16 +417,19 @@ function _health_grid_class($total_number, $classes_array) {
     case 1:
       break;
     case 2:
-      $classes_array[] = 'col-sm-6';
+      $classes_array[] = 'col-md-6';
       break;
     case 3:
-      $classes_array[] = 'col-sm-4';
+      $classes_array[] = 'col-md-4';
       break;
     case 4:
-      $classes_array[] = 'col-sm-3';
+      $classes_array[] = 'col-md-6';
+      break;
+    case 5:
+      $classes_array[] = 'col-md-4';
       break;
     case 6:
-      $classes_array[] = 'col-sm-2';
+      $classes_array[] = 'col-sm-4';
       break;
     default:
       $classes_array[] = 'col-sm-3';
