@@ -23,24 +23,6 @@ body {
 
 }
 
-// Danny - move this
-// Contain Drupal nav and messages
-body.front,
-body.node-type-health-topic,
-body.node-type-health-topic-hp,
-body.page-node-3406
- {
-  #tabs,
-  .messages {
-    @extend .container;
-  }
-  .page {
-    .tabs {
-      @include AU-space('margin', 1unit 0 0 0);
-    }
-  }
-}
-
 // Global styling
 // .uikit-body .view ul > .views-row,
 // .node > .field,

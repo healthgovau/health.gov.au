@@ -1,0 +1,57 @@
+// Tabs
+//
+// The primary and secondary tabs.
+//
+// Markup: tabs.twig
+//
+// .tabs--secondary - Secondary tabs
+//
+// Style guide: navigation.tabs
+
+.au-body {
+  ul.au-tabs {
+
+    padding: 0;
+
+    @include AU-space('margin-top', 2unit);
+
+    li {
+      margin: 0;
+      padding: 0;
+      transition: none;
+
+      &:first-of-type {
+        a {
+          margin-left: 0;
+        }
+      }
+
+      a {
+        @include AU-space('padding', .75unit 1unit);
+        border-bottom: $health-borderize--thin;
+        margin-left: -5px;
+
+        &:hover, &:active {
+          background-color: $colour-Secondary-hover;
+          color: white;
+        }
+
+      }
+
+      &.active {
+        a {
+          font-weight: bold;
+          background-color: $colour-Secondary;
+          color: white;
+        }
+      }
+    }
+  }
+
+  @media print {
+    .au-tabs {
+      display: none;
+    }
+  }
+
+}

@@ -163,7 +163,15 @@ endif;
 
 
         <main class="<?php print $main_col_classes ?> <?php print $content_class; ?>" id="content" role="main">
-            <div id="tabs" class="rs_skip container"><?php print render($tabs); ?></div>
+          <div class="row">
+            <div id="tabs" class="rs_skip container">
+              <div class="row">
+                <div class="col-xs-12">
+                  <?php print render($tabs); ?>
+                </div>
+              </div>
+            </div>
+          </div>
           <?php print render($page['help']); ?>
           <?php if ($action_links): ?>
               <ul class="action-links rs_skip"><?php print render($action_links); ?></ul>
