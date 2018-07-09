@@ -756,6 +756,15 @@ function health_file_entity_download_link($variables) {
 
 }
 
+function health_file_icon($variables) {
+  $file = $variables['file'];
+  $alt = $variables['alt'];
+  $icon_directory = $variables['icon_directory'];
+  $mime = check_plain($file->filemime);
+  $icon_url = file_icon_url($file, $icon_directory);
+  return '<img class="au-file__icon" alt="' . check_plain($alt) . '" title="' . $mime . '" src="' . $icon_url . '" />';
+}
+
 /**
  * Implements theme_webform_element().
  *

@@ -9,5 +9,9 @@
       @include AU-space('padding-left', 24px - $AU-grid-12-gutter-width/2);
       @include AU-space('padding-right', 24px - $AU-grid-12-gutter-width/2);
     }
+
+    &--secondary {
+      border-left-color: $colour-Secondary;
+    }
   }
 }

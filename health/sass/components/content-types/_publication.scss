@@ -16,21 +16,6 @@
           margin-top: 10px;
         }
       }
-
-      // Document download
-      .paragraphs-item-documents {
-        @include AU-space('padding-bottom', 1unit);
-        @extend %document-link;
-      }
-
-      .paragraphs-items-field-publication-files,
-      .field-name-field-publication-nmm-id {
-        > h2 {
-          @include AU-fontgrid('lg');
-          @include AU-space('margin-bottom', 1unit);
-        }
-      }
-
     }
 
 	// Major list
