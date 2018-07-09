@@ -143,6 +143,7 @@ function health_preprocess_ds_para_rendered_blocks($variable) {
   $para_item = $variable['paragraphs_item'];
   $output = '';
   if (isset($para_item->field_para_block_id[LANGUAGE_NONE])) {
+    $output = '<div class="row">';
     foreach ($para_item->field_para_block_id[LANGUAGE_NONE] as $block_delta) {
       $count = explode('-num', $block_delta['value'])[1];
       $block_delta['value'] = explode('-num', $block_delta['value'])[0];
@@ -150,6 +151,7 @@ function health_preprocess_ds_para_rendered_blocks($variable) {
       $block['content']['bean'][$block_delta['value']]['num'] = $count;
       $output .= drupal_render($block['content']);
     }
+    $output.= '</div>';
   }
   return $output;
 }
