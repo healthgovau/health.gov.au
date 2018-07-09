@@ -185,18 +185,7 @@ function health_preprocess_entity(&$variables) {
     // Statistic.
     if ($para_item->bundle == 'para_statistics') {// Add no-trend variant if trend info hasn't been added.
       // Find out number of statistics node.
-      $count = count($variables['field_statistics']);
-      // Pass total number to each node entity.
-      foreach ($variables['content']['field_statistics'] as $key => $item) {
-        if (is_array($item) && isset($item['node'])) {
-          foreach ($item['node'] as $node_id => $node) {
-            if (is_array($node)) {
-              $node['num'] = $count;
-              $variables['content']['field_statistics'][$key]['node'][$node_id] = $node;
-            }
-          }
-        }
-      }
+      $variables = _health_total_children($variables, 'field_statistics');
       if (empty($variables['elements']['#entity']->field_statistic_trend) && empty($variables['elements']['#entity']->field_statistic_trend_timeframe)) {
         $variables['classes_array'][] = 'no-trend';
       }
@@ -810,6 +799,14 @@ function health_preprocess_field(&$variables) {
       ]);
     }
     $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.footnotes.min.js';
+  }
+
+  // Related related conditions or diseases.
+  if ($variables['element']['#field_name'] == 'field_related_conditions_disease') {
+    // Add dynamic col class to item div according to the total number of items.
+    $classes = [];
+    $classes = _health_grid_class(count($variables['items']), $classes);
+    $variables['ds-config']['fi-cl'] = implode(' ', $classes);
   }
 }
 
