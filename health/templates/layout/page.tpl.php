@@ -132,7 +132,7 @@ endif;
       $main_col_classes = 'col-md-8';
     } else {
       if (!$full_width) {
-        $main_col_classes = 'col-md-8';
+        $main_col_classes = 'col-md-12';
       } else {
         $main_col_classes = '';
       }
