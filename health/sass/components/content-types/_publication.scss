@@ -11,11 +11,9 @@
 
       // Image
       .field-name-field-image-featured {
-        @extend %image--full;
         .go-to-download-link {
           line-height: 2;
           margin-top: 10px;
-
         }
       }
 
@@ -49,14 +47,6 @@
     // Feature
 	&.view-mode-feature {
 		@extend %dm-feature-2-col;
-    }	
-	// Inline style
-	&.view-mode-inline {
-
-	}
-
-    &.view-mode-inline_large {
-        @extend %dm-inline-large;
     }
 
     // Search

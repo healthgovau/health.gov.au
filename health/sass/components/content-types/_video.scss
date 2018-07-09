@@ -70,22 +70,6 @@
     }
   }
 
-  // Inline style
-  &.view-mode-inline {
-    @extend %dm-inline-2-col;
-    @extend %video__extend--small;
-    .group-left {
-      @extend .col-sm-6;
-    }
-    div.group-right {
-      @extend .col-sm-6;
-    }
-    .field-name-field-resource-duration .field-items .field-item {
-      margin-right: 3px;
-      margin-bottom: 9px;
-    }
-  }
-
   // Search
   &.view-mode-search_result {
     @extend %dm-search-index;

@@ -51,11 +51,6 @@
     @include AU-space('margin-bottom', 1unit);
   }
 
-  // Inline style
-  &.view-mode-inline {
-    @extend %dm-inline;
-  }
-
   // Search
   &.view-mode-search_result {
     @extend %dm-search-index;

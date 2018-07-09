@@ -29,11 +29,6 @@
 		@extend %dm-list-horizontal;
     }
 
-	// Inline style
-	&.view-mode-inline {
-		@extend %dm-inline-2-col;
-    }
-
   // Inline style
   &.view-mode-inline_large {
     .field-name-title {
@@ -58,11 +53,6 @@
       @include AU-space('margin-bottom', 3unit);
     }
   }
-
-  // Inline style
-  // &.view-mode-inline_large {
-  //   @extend %dm-inline-large;
-  // }
 
   // Search
   &.view-mode-search_result {

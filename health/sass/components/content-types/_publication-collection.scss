@@ -33,8 +33,4 @@
       display: block;
     }
   }
-  // Inline style
-  &.view-mode-inline {
-    @extend %dm-inline-2-col;
-  }
 }

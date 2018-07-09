@@ -1,0 +1,11 @@
+
+.au-grid {
+
+  /* This is what allows the same paragraph twig to work in all scenarios */
+  .not-full-width .container {
+    width: auto;
+    clear: both;
+    /* This overides fixed widths */
+  }
+
+}

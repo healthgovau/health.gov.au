@@ -13,7 +13,7 @@
         <?php print render($title_suffix['contextual_links']); ?>
       <?php endif; ?>
 
-      <div class="col-sm-12<?php print $middle_classes; ?>">
+      <div class="<?php print $middle_classes; ?>">
         <?php print $middle; ?>
       </div>
 

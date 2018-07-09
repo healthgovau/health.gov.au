@@ -29,11 +29,6 @@
 		@extend %dm-list-horizontal;
     }
 
-	// Inline style
-	&.view-mode-inline {
-		@extend %dm-inline-2-col;
-    }
-    
     // Search
     &.view-mode-search_result {
         @extend %dm-search-index;
