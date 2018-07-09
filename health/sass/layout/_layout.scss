@@ -4,13 +4,6 @@
 //
 //------------------------------------------------------------
 
-/* This is what allows the same paragraph twig to work in all scenarios */
-.au-grid .not-full-width .container {
-  width: auto;
-  clear: both;
-  /* This overides fixed widths */
-}
-
 body {
 
   // Everything gets full width by default.

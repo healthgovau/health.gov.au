@@ -35,10 +35,6 @@
 		}
         @include cardify();
     }	
-	// Inline style
-	&.view-mode-inline {
-		@extend %dm-inline;
-	}
 
 	// Search
 	&.view-mode-search_result {

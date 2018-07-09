@@ -7,7 +7,7 @@
 //
 // Style guide: component
 
-@import 'layout/layout';
+//@import 'layout/layout';
 
 // Typography
 @import 'typography/blockquote/module';
@@ -24,6 +24,8 @@
 @import 'block-types/extends';
 
 // Component types
+@import 'au-callout';
+@import 'au-grid';
 @import 'accordion/extends';
 @import 'alert/module';
 @import 'backtotop/module';

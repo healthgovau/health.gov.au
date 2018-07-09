@@ -49,14 +49,6 @@
     // Feature
 	&.view-mode-feature {
 		@extend %dm-feature-2-col;
-    }	
-	// Inline style
-	&.view-mode-inline {
-
-	}
-
-    &.view-mode-inline_large {
-        @extend %dm-inline-large;
     }
 
     // Search

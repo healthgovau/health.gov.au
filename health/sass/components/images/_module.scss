@@ -5,6 +5,14 @@
   }
 }
 
+// Add a border to the image.
+.image--border {
+  border: $health-borderize;
+  div {
+    line-height: 0;
+  }
+}
+
 // Image caption
 .field-name-field-image-caption {
     margin-bottom: 2em;
