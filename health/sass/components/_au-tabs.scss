@@ -30,6 +30,7 @@
         @include AU-space('padding', .75unit 1unit);
         border-bottom: $health-borderize--thin;
         margin-left: -5px;
+        display: inline-block;
 
         &:hover, &:active {
           background-color: $colour-Secondary-hover;
