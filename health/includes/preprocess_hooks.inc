@@ -13,7 +13,6 @@ CONST RESOURCES_TYPE = [
 ];
 CONST THEME_PATH_TOKEN_GENERIC = '[theme-path]';
 CONST PUBLICATION_TYPE_INFOGRAPHIC = 2176;
-CONST GOOGLE_FONT_API = '//fonts.googleapis.com/css?family=Open+Sans:400,700';
 
 /**
  * Override or insert variables into the block templates.
@@ -1080,12 +1079,6 @@ function health_preprocess_node(&$variables) {
  * Implements THEME_preprocess_page().
  */
 function health_preprocess_page(&$variables) {
-  // Add google font api.
-  $variables['page']['content']['#attached']['css'][] = [
-    'data' => GOOGLE_FONT_API,
-    'type' => 'external',
-  ];
-
   // Vuejs is added in html.tpl.php as its the only way to exclude it from IE8.
   // LazyLoad is added in html.tpl.php as its the only way to exclude it from IE8.
 
