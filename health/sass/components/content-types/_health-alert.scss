@@ -26,24 +26,6 @@
       }
     }
 
-	// Major list
-	&.view-mode-listing_vertical {
-      @extend %dm-list-vertical;
-	}
-
-    // list vertical three tags
-    &.view-mode-listing_vertical_three_tags {
-      @extend %dm-list-vertical;
-      .field-type-taxonomy-term-reference {
-        @include AU-space('padding-right', .5unit);
-      }
-    }
-
-    // List vertical small
-    &.view-mode-listing_vertical_small {
-      @extend %dm-list-vertical--small;
-    }
-
 	// Feature
 	&.view-mode-feature {
 		@extend %dm-feature;

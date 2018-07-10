@@ -25,12 +25,4 @@
     }
 
   }
-
-  // Major list
-  &.view-mode-listing_vertical {
-    @extend %dm-list-vertical;
-    .group-left {
-      display: block;
-    }
-  }
 }

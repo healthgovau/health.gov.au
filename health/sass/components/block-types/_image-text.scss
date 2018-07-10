@@ -122,7 +122,7 @@
     }
   } // Vertical listing
   &.view-mode-listing_vertical {
-    @extend %dm-list-vertical;
+    //@extend %dm-list-vertical;
   }
   // View selector component
   &.view-mode-view_selector {
@@ -167,6 +167,7 @@
       @include block-card($border-colour-top: $colour-light-dark, $bg-hover-colour: #fff);
       a {
        border-left: 1px solid $colour-light-dark;
+       border-right: 1px solid $colour-light-dark;
        border-right: 1px solid $colour-light-dark;
        border-bottom: 1px solid $colour-light-dark;
       }

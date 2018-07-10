@@ -27,26 +27,6 @@
     }
   }
 
-  // Major list
-  &.view-mode-listing_vertical {
-    @extend %dm-list-vertical;
-  }
-
-  // List vertical small
-  &.view-mode-listing_vertical_small {
-    @extend %dm-list-vertical--small;
-    @include cardify-small();
-    img {
-      border: 0 !important;
-    }
-    @include AU-media(md) {
-      .group-details {
-        position: absolute;
-        bottom: 10px;
-      }
-    }
-  }
-
   // Feature
   &.view-mode-feature {
     @extend %dm-feature;
