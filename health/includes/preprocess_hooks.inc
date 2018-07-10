@@ -166,6 +166,15 @@ function health_preprocess_entity(&$variables) {
       }
     }
 
+    // Contact
+    if ($para_item->bundle == 'para_contact') {
+      // Add more link to referenced node.
+      if (isset($para_item->field_link_internal[LANGUAGE_NONE][0])) {
+        $nid = $para_item->field_related_contact[LANGUAGE_NONE][0]['target_id'];
+        $variables['content']['field_related_contact'][0]['node'][$nid]['#node']->link = $para_item->field_link_internal[LANGUAGE_NONE][0];
+      }
+    }
+
     // Feature content.
     if ($para_item->bundle == 'para_feature_content') {
       if (isset($para_item->field_grid[LANGUAGE_NONE])) {
