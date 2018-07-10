@@ -7,28 +7,6 @@
 // Display modes
 .node-publication {
 
-    &.view-mode-full {
-
-      // Image
-      .field-name-field-image-featured {
-        .go-to-download-link {
-          line-height: 2;
-          margin-top: 10px;
-        }
-      }
-    }
-
-	// Major list
-	&.view-mode-listing_vertical {
-		@extend %dm-list-vertical;
-		.group-left {
-			display: block;
-		}
-	}
-    &.view-mode-listing_vertical_small {
-		@extend %dm-list-vertical--small;
-    }
-
     // Feature
 	&.view-mode-feature {
 		@extend %dm-feature-2-col;

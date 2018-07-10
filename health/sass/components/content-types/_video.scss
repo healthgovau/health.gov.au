@@ -9,49 +9,9 @@
 
 .node-video {
 
-  // List vertical
-  &.view-mode-listing_vertical {
-    @extend %dm-list-vertical;
-    margin-right: 14px;
-    margin-bottom: 22px;
-    @include AU-media(sm) {
-      margin-bottom: 2px;
-    }
-  }
-
-  // List vertical small
-  &.view-mode-listing_vertical_small {
-	@extend %dm-list-vertical--small;
-    .field-name-field-resource-duration .field-item {
-      margin-right: 2px;
-      margin-bottom: 2px;
-    }
-  }
-
   // List horizontal
   &.view-mode-listing_horizontal {
     @extend %dm-list-horizontal;
-  }
-
-  // Feature
-  &.view-mode-feature {
-
-    // Layout
-    .group-left {
-      @include AU-media(md){
-        @include AU-space('padding-right', 1unit);
-      }
-    }
-
-    > .group-left {
-      // Frustrating, cannot find the code that overrides this part to float:left.
-      float: right!important;
-      @include AU-clearfix;
-    }
-    > .group-right {
-      float: left;
-      @include AU-clearfix;
-    }
   }
 
   // Search

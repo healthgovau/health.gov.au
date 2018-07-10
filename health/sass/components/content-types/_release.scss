@@ -10,26 +10,6 @@
 // Display modes
 .node-release {
 
-  // Full
-  &.view-mode-full {
-    .field-name-field-date-release {
-      @extend %spaced-inline-label;
-    }
-
-    .wrapper > .field-name-field-image-featured {
-      @include AU-space('padding-bottom', 1unit);
-    }
-  }
-
-  // List vertical
-  &.view-mode-listing_vertical {
-    @extend %dm-list-vertical;
-  }
-  // List vertical small
-  &.view-mode-listing_vertical_small {
-    @extend %dm-list-vertical--small-noimage;
-  }
-
   // List horizontal
   &.view-mode-listing_horizontal {
     @extend %dm-list-horizontal;
