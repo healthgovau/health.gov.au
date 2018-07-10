@@ -8,12 +8,12 @@
  */
 ?>
 
-<div class="au-local-navigation__mobile-toggle health-accordion">
-  <a href="#" class="health-accordion__title health-accordion--closed" aria-controls="block-menu-block-2">
+<div class="au-local-navigation__mobile-toggle au-accordion">
+  <a href="#" class="au-accordion__title au-accordion--closed" aria-controls="block-menu-block-2">
     <span>In this section</span>
   </a>
 </div>
 
-<div class="<?php print $classes; ?> health-accordion health-accordion__body"<?php print $attributes; ?> id="<?php print $block_html_id; ?>">
+<div class="<?php print $classes; ?> au-accordion au-accordion__body"<?php print $attributes; ?> id="<?php print $block_html_id; ?>">
   <?php print $content; ?>
 </div>

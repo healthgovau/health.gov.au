@@ -13,7 +13,6 @@ CONST RESOURCES_TYPE = [
 ];
 CONST THEME_PATH_TOKEN_GENERIC = '[theme-path]';
 CONST PUBLICATION_TYPE_INFOGRAPHIC = 2176;
-CONST GOOGLE_FONT_API = '//fonts.googleapis.com/css?family=Open+Sans:400,700';
 
 /**
  * Override or insert variables into the block templates.
@@ -715,21 +714,6 @@ function health_preprocess_field(&$variables) {
     }
   }
 
-  // For resources with featured image and document download link, add anchor
-  // link under the featured image field.
-  if ($variables['element']['#bundle'] == 'publication') {
-    // Add JS.
-    $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.imageAnchor.min.js';
-
-    // Add link wrapper and link to the image field.
-    if ($variables['element']['#field_name'] == 'field_image_featured' &&
-      $variables['element']['#view_mode'] == 'full' &&
-      isset($variables['element']['#object']->field_publication_files[LANGUAGE_NONE][0])) {
-      $variables['items'][0]['#prefix'] = '<div class="link-wrapper"><a href="#" class="link-wrapper">';
-      $variables['items'][0]['#suffix'] = '</a></div><div class="go-to-download-link rs_preserve">Go to <a href="#" class="link-wrapper" role="button">downloads</a></div>';
-    }
-  }
-
   // Render publication orderable nmm contact details.
   if ($variables['element']['#field_name'] == 'field_publication_nmm_id') {
     $render_array = [
@@ -1089,12 +1073,6 @@ function health_preprocess_node(&$variables) {
  * Implements THEME_preprocess_page().
  */
 function health_preprocess_page(&$variables) {
-  // Add google font api.
-  $variables['page']['content']['#attached']['css'][] = [
-    'data' => GOOGLE_FONT_API,
-    'type' => 'external',
-  ];
-
   // Vuejs is added in html.tpl.php as its the only way to exclude it from IE8.
   // LazyLoad is added in html.tpl.php as its the only way to exclude it from IE8.
 

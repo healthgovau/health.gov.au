@@ -1,0 +1,11 @@
+// UIKit uses height 0 for closed, which messes up our jQuery toggle height animation.
+.js .au-accordion__body.au-accordion--closed {
+  height: auto;
+}
+
+// Remove border on the mobile menu triggers.
+.region-navigation {
+  .au-accordion {
+    border: none;
+  }
+}

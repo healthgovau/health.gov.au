@@ -1,6 +1,8 @@
 // Reset the line height on images as this causes gaps at the bottom of some images.
 .au-body {
-  .media div, img {
+  .media div,
+  .au-responsive-media-img div,
+  img {
     line-height: 0;
   }
 }

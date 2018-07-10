@@ -7,11 +7,11 @@
  * @see https://drupal.org/node/1728246
  */
 ?>
-<div class="<?php print $classes; ?> health-accordion" <?php print $attributes; ?> id="<?php print $block_html_id; ?>">
+<div class="<?php print $classes; ?> au-accordion " <?php print $attributes; ?> id="<?php print $block_html_id; ?>">
     <?php print render($title_prefix); ?>
     <?php if ($title): ?>
     <a href="<?php print '#accordion-' . $block_html_id?>"
-       class="health-accordion__title health-accordion--open"
+       class="au-accordion__title au-accordion--open"
        aria-controls="<?php print 'accordion-' . $block_html_id; ?>"
        aria-expanded="true"
        aria-selected="false"
@@ -20,8 +20,8 @@
     <?php endif; ?>
     <?php print render($title_suffix); ?>
 
-    <div class="health-accordion__body health-accordion--open" id="<?php print 'accordion-' . $block_html_id; ?>" aria-hidden="true">
-      <div class="health-accordion__body-wrapper">
+    <div class="au-accordion__body au-accordion--open" id="<?php print 'accordion-' . $block_html_id; ?>" aria-hidden="true">
+      <div class="au-accordion__body-wrapper">
         <?php print $content; ?>
       </div>
     </div>
