@@ -172,6 +172,8 @@ function health_preprocess_entity(&$variables) {
         $nid = $para_item->field_related_contact[LANGUAGE_NONE][0]['target_id'];
         $variables['content']['field_related_contact'][0]['node'][$nid]['#node']->link = $para_item->field_link_internal[LANGUAGE_NONE][0];
       }
+      // Pass selected display field name to node.
+      $variables['content']['field_related_contact'][0]['node'][$nid]['#node']->selected_field = $para_item->field_display_field[LANGUAGE_NONE][0]['value'];
     }
 
     // Feature content.
@@ -965,6 +967,17 @@ function health_preprocess_node(&$variables) {
   if ($variables['type'] == 'contact') {
     $type = taxonomy_term_load($variables['field_contact_type'][LANGUAGE_NONE][0]['tid'])->name;
     $variables['classes_array'][] = strtolower(str_replace(' ', '-', $type));
+
+    // Only render selected field for hotline bar view mode.
+    if ($variables['view_mode'] == 'hotline_bar') {
+      foreach ($variables as $key => $item) {
+        if (substr($key, 0, 6) == 'field_') {
+          if ($key != $variables['node']->selected_field) {
+            unset($variables['content'][$key]);
+          }
+        }
+      }
+    }
   }
 
   // Add grid class to statistics card.

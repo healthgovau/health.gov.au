@@ -203,9 +203,9 @@
   h2 {
     color: $font-colour;
   }
-  .au-cta-link {
+  .au-cta-link,
+  .au-callout {
     color: $font-colour;
-    padding-left: 0;
     a {
       color: $font-colour;
       &:hover {
@@ -217,6 +217,17 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='white' d='M128 64l-64 64-16-16 64-64'/%3E%3Cpath fill='white' d='M128 64l-16 16-64-64L64 0'/%3E%3C/svg%3E");
     }
   }
+  .au-callout {
+    background: none;
+    border-left: .25rem solid #fff;
+    .field-label {
+      font-size: 1.5rem;
+    }
+    margin-bottom: 0;
+  }
+  .au-cta-link {
+    padding-left: 0;
+  }
 
   // display mode
   .view-mode-hotline_bar {
@@ -224,6 +235,5 @@
       @include AU-fontgrid(lg, heading);
       color: $font-colour;
     }
-
   }
 }
