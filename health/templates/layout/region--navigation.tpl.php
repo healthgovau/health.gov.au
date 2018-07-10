@@ -10,7 +10,7 @@
 <?php if ($content): ?>
   <nav id="nav" role="navigation" class="<?php print $classes; ?>">
     <div class="container">
-      <div class="row health-accordion health-accordion--skip-auto">
+      <div class="row au-accordion au-accordion--skip-auto">
 
         <button
           class="mobile-toggle mobile-toggle--main-menu col-xs-6 js-au-accordion"

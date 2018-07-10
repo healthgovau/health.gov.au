@@ -1,0 +1,10 @@
+// UIKit uses height 0 for closed, which messes up our jQuery toggle height animation.
+.js .au-accordion__body.au-accordion--closed {
+  height: auto;
+}
+
+.region-navigation {
+  .au-accordion {
+    border: none;
+  }
+}
