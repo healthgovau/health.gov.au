@@ -19,11 +19,6 @@
 // immunisation
 .page-node-1021,
 .page-node-1156 {
-  // Contact hot line bar for immunisation.
-  .paragraphs-item-para-contact.para-container {
-    @include hotline-bar();
-  }
-
   // Statistics
   .paragraphs-item-para-statistics {
     .field-name-field-statistics .field-item {

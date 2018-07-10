@@ -114,6 +114,7 @@
   &.para-row {
     padding-top: 0;
     padding-bottom: 0;
+    @include hotline-bar();
   }
 
   // Layout

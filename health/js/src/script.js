@@ -77,6 +77,9 @@
 
       // au-card.
       $('.au-card-list--matchheight .au-card', context).matchHeight();
+
+      // Featured contact.
+      $('.view-mode-hotline_bar .hotline', context).matchHeight();
     }
   };
 

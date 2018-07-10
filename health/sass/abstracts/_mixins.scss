@@ -195,52 +195,26 @@
   
 }
 
-@mixin hotline-bar($bgcolour: colour-Tertiary-2-background, $bgcolour-left: $colour-Tertiary-2-hover, $font-colour: white) {
-  @extend %#{$bgcolour};
-
-  // Layout
-  .group-left {
-    @include AU-media(xs) {
-      width: 100%;
-    }
-    @include AU-media(sm) {
-      width: 33.33333%;
-    }
-    @include AU-media(lg) {
-      width: 25%;
-    }
-    @include AU-space('padding-top', 1.5unit);
-    @include AU-media(sm){
-      @include AU-space('padding', 1.5unit 1unit 1.5unit 1unit);
-      background: $bgcolour-left;
-    }
-  }
-  .group-right {
-    @include AU-media(xs) {
-      width: 100%;
-    }
-    @include AU-media(sm) {
-      width: 66.66666%;
-    }
-    @include AU-media(lg) {
-      width: 75%;
-    }
-    @include AU-space('padding-bottom', 1.5unit);
-    @include AU-media(sm){
-      @include AU-space('padding', 1.5unit 0 0 2unit);
-    }
-  }
+@mixin hotline-bar($bgcolour: $colour-light-dark, $bgcolour-left: $colour-Tertiary-2-hover, $font-colour: white) {
+  @extend %colour-Tertiary-2-background;
 
   // font colour
   color: $font-colour;
-  h2,
-  i {
+  h2 {
     color: $font-colour;
   }
-  a {
+  .au-cta-link {
     color: $font-colour;
-    &:hover {
-      background: none;
+    padding-left: 0;
+    a {
+      color: $font-colour;
+      &:hover {
+        color: $font-colour;
+        background: none;
+      }
+    }
+    &:after {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='white' d='M128 64l-64 64-16-16 64-64'/%3E%3Cpath fill='white' d='M128 64l-16 16-64-64L64 0'/%3E%3C/svg%3E");
     }
   }
 
