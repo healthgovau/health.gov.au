@@ -168,8 +168,8 @@ function health_preprocess_entity(&$variables) {
     // Contact
     if ($para_item->bundle == 'para_contact') {
       // Add more link to referenced node.
+      $nid = $para_item->field_related_contact[LANGUAGE_NONE][0]['target_id'];
       if (isset($para_item->field_link_internal[LANGUAGE_NONE][0])) {
-        $nid = $para_item->field_related_contact[LANGUAGE_NONE][0]['target_id'];
         $variables['content']['field_related_contact'][0]['node'][$nid]['#node']->link = $para_item->field_link_internal[LANGUAGE_NONE][0];
       }
       // Pass selected display field name to node.
