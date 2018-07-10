@@ -20,9 +20,11 @@
     <div class="au-callout">
       <?php print $right; ?>
     </div>
-    <div class="more-link au-cta-link col-xs-12">
-      <?php print l($node->link['title'], $node->link['url']); ?>
-    </div>
+    <?php if (isset($node->link['title'])): ?>
+        <div class="more-link au-cta-link col-xs-12">
+          <?php print l($node->link['title'], $node->link['url']); ?>
+        </div>
+    <?php endif; ?>
   </<?php print $right_wrapper ?>>
 
 </<?php print $layout_wrapper ?>>
