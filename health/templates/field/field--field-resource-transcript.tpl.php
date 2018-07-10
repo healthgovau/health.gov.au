@@ -44,17 +44,17 @@
  * @ingroup themeable
  */
 ?>
-<div class="<?php print $classes; ?> health-accordion"<?php print $attributes; ?> id="transcript-accordion-<?php print $element['#object']->nid; ?>">
+<div class="<?php print $classes; ?> au-accordion"<?php print $attributes; ?> id="transcript-accordion-<?php print $element['#object']->nid; ?>">
     <a href="<?php print '#accordion-' . $element['#object']->nid?>"
-       class="health-accordion__title health-accordion--closed"
+       class="au-accordion__title au-accordion--closed"
        aria-controls="<?php print 'accordion-' . $element['#object']->nid; ?>"
        aria-expanded="false"
        aria-selected="false"
        role="tab">
-       <h6 class="block__title">Read transcript</h6></a>
+       Read transcript</a>
 
-    <div class="health-accordion__body health-accordion--closed" id="<?php print 'accordion-' . $element['#object']->nid; ?>" aria-hidden="true">
-        <div class="health-accordion__body-wrapper">
+    <div class="au-accordion__body au-accordion--closed" id="<?php print 'accordion-' . $element['#object']->nid; ?>" aria-hidden="true">
+        <div class="au-accordion__body-wrapper">
           <?php foreach ($items as $delta => $item): ?>
               <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
           <?php endforeach; ?>

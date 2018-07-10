@@ -51,9 +51,14 @@
   <div class="field-items"<?php print $content_attributes; ?>>
     <?php foreach ($items as $delta => $item): ?>
       <?php if ($element['#view_mode'] == 'full' || $element['#view_mode'] == 'feature'): ?>
-        <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><a class="js-video-play" href="#" title="Play video" data-youtubeid="<?php print $youtube_code; ?>">
-          <?php print render($item); ?>
-        <div class="video__play-button"></div></a></div>
+        <div class="field-item "<?php print $item_attributes[$delta]; ?>>
+          <a class="au-video__preview__link" href="#" title="Play video" data-youtubeid="<?php print $youtube_code; ?>">
+            <div class="au-responsive-media-img">
+              <?php print render($item); ?>
+            </div>
+            <div class="au-video__preview__play-button"></div>
+          </a>
+        </div>
       <?php else: ?>
         <?php print render($item); ?>
       <?php endif ?>

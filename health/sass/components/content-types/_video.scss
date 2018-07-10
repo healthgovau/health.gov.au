@@ -12,20 +12,16 @@
   // List vertical
   &.view-mode-listing_vertical {
     @extend %dm-list-vertical;
-    @extend %video__extend--small;
-    .field-name-field-resource-duration .field-item {
-      margin-right: 14px;
-      margin-bottom: 22px;
-      @include AU-media(sm) {
-        margin-bottom: 2px;
-      }
+    margin-right: 14px;
+    margin-bottom: 22px;
+    @include AU-media(sm) {
+      margin-bottom: 2px;
     }
   }
 
   // List vertical small
   &.view-mode-listing_vertical_small {
 	@extend %dm-list-vertical--small;
-    @extend %video__extend--small;
     .field-name-field-resource-duration .field-item {
       margin-right: 2px;
       margin-bottom: 2px;
@@ -39,7 +35,6 @@
 
   // Feature
   &.view-mode-feature {
-    @extend %video__extend;
 
     // Layout
     .group-left {
@@ -57,17 +52,6 @@
       float: left;
       @include AU-clearfix;
     }
-
-
-  }
-
-  // Full content.
-  &.view-mode-full {
-    @extend %video__extend;
-
-    .field-name-field-resource-duration .field-items .field-item {
-      margin-bottom: 7px;
-    }
   }
 
   // Search
@@ -75,36 +59,3 @@
     @extend %dm-search-index;
   }
 }
-
-
-// Extend the video classes onto our fields.
-%video__extend {
-  .group-video-preview {
-    position: relative;
-  }
-
-  .field-name-field-resource-duration .field-item {
-    @extend %video__length;
-  }
-
-  .field-name-field-image-featured {
-    @extend %video__preview;
-    img {
-      width: 100%;
-    }
-    padding-bottom: 0 !important;
-  }
-
-  .video-youtube-wrapper {
-    @extend %video__youtube;
-  }
-}
-
-// Small variety.
-%video__extend--small {
-  @extend %video__extend;
-  .field-name-field-resource-duration .field-item {
-    @extend %video__length--small;
-  }
-}
-
