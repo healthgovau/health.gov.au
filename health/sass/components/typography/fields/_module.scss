@@ -224,8 +224,9 @@ p.summary, .field-name-field-summary {
 // Fields
 .field {
 
-  // @todo Should we always put this margin-bottom on or should we have a variant called .field--space which adds it and we specify it per field in the markup?
-  @include AU-space(margin-bottom, 1.5unit);
+  * + & {
+    @include AU-space(margin-top, 1.5unit);
+  }
 
   @include AU-clearfix();
 
@@ -244,5 +245,4 @@ p.summary, .field-name-field-summary {
       width: 11rem;
     }
   }
-
 }
