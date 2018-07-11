@@ -10,11 +10,6 @@
 // Display modes
 .node-survey {
 
-    .field-name-field-image-featured {
-      @include AU-space('padding-bottom', 1unit);
-    }
-  }
-
   // Feature.
   &.view-mode-feature {
     @extend %dm-feature;
