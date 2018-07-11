@@ -10,11 +10,6 @@
 // Display modes
 .node-release {
 
-  // List horizontal
-  &.view-mode-listing_horizontal {
-    @extend %dm-list-horizontal;
-  }
-
   // Feature.
   &.view-mode-feature {
     @extend %dm-feature;
