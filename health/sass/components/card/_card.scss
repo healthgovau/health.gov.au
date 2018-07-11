@@ -4,7 +4,6 @@
 
 .au-card {
   @include AU-space( padding, 1.5unit );
-  @include AU-space( margin, 1unit 0);
   @include AU-media( md ) {
     @include AU-space( padding, 2unit );
   }
@@ -121,6 +120,10 @@
     &:not(:first-child) {
       @include AU-space( margin-top, 1unit );
     }
+  }
+
+  &.au-card--solid {
+    @include AU-space( margin, 1unit 0);
   }
 }
 
