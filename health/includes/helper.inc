@@ -207,10 +207,12 @@ function _health_label_display($variables, $field) {
         break;
       case 'inline':
         $field_variables['label_hidden'] = FALSE;
-        $field_variables['classes'] .= ' field-label-inline';
+        $field_variables['classes'] .= ' field--inline';
         break;
     }
   }
+
+  $field_variables['settings'] = $field_settings;
   return $field_variables;
 }
 

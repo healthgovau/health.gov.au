@@ -1,6 +1,7 @@
 @import "_print.scss";
 
 // Date
+// @todo Remove this and use .metadata and .metadata--inline instead
 %meta-date {
     color: $colour-minorText;
     font-size: 87.5%;
@@ -8,6 +9,7 @@
 }
 
 // Wrapper for date and tag
+// @todo Remove this and use .metadata and .metadata--inline instead
 %date-and-tag {
 
   .field-type-datetime,
@@ -33,6 +35,7 @@
   }
 }
 
+// @todo Remove this and use .metadata and .metadata--inline instead
 %date-and-tag--small {
 
   .field-type-datetime,
@@ -58,49 +61,6 @@
     @include AU-space('padding-left', .5unit);
     border-left: 1px solid $colour-minorText;
   }
-}
-
-// All fields
-%field-label,
-.field-label-ui label {
-    font-weight: bold;
-  @include AU-space('margin-bottom', .25unit);
-}
-
-%field-item {
-    @include AU-space('padding-bottom', 1unit);
-    display: block;
-}
-
-// Stacked vs inline
-.field-label-inline {
-    clear: both;
-    @include AU-media(sm) {
-      clear: none;
-    }
-
-    .field-label {
-        @extend %field-label;
-      @include AU-space('margin-right', .25unit);
-        @include AU-media(sm) {
-          @include AU-space('margin-right', .5unit);
-          float: left;
-        }
-    }
-    .field-items, dl.tags {
-        @extend %field-item;
-        @include AU-media(sm) {
-          float: none;
-        }
-    }
-}
-.field-label-above {
-    .field-label {
-        @extend %field-label;
-    }
-    .field-items {
-        @extend %field-item;
-    }
 }
 
 // Styling by field name
@@ -240,14 +200,14 @@ p.summary, .field-name-field-summary {
 %media-enquiry {
   .media-enquiry{
     @extend %bottom-border;
-    @include AU-space('margin-bottom', .5unit);;
+    @include AU-space('margin-bottom', .5unit);
     color: $colour-minorText;
   }
 
   .field-name-field-related-contact {
     @include AU-space('margin-bottom', 1.5unit);
     > .field-items > .field-item {
-      @include AU-space('margin-bottom', .5unit);;
+      @include AU-space('margin-bottom', .5unit);
     }
   }
 }
@@ -261,26 +221,28 @@ p.summary, .field-name-field-summary {
 }
 
 
-// Field labels
-.field-label {
+// Fields
+.field {
 
-  @include AU-space(margin-bottom, 1unit);
+  // @todo Should we always put this margin-bottom on or should we have a variant called .field--space which adds it and we specify it per field in the markup?
+  @include AU-space(margin-bottom, 1.5unit);
 
   @include AU-clearfix();
 
-  > div:first-of-type {
+  .field__label, .field-label {
     font-weight: bold;
   }
 
-  &--inline {
-    > div, > span {
+  &--inline, &-label-inline {
+    .field-label, .field__label {
       float: left;
     }
+  }
 
-    &--aligned {
-      > div:first-of-type {
-        width: 11em;
-      }
+  &--inline--aligned {
+    .field-label, .field__label {
+      width: 11rem;
     }
   }
+
 }
