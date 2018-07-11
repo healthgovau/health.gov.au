@@ -27,15 +27,6 @@
 //
 // Style guide: navigation.tags
 
-// Parent label
-.field-name-field-related-health-topics {
-  .label-above,
-  .label-inline {
-    @extend %field-label;
-    @include AU-space('margin-bottom', .5unit);
-  }
-}
-
 .tags {
   @extend .au-tags;
   dt {

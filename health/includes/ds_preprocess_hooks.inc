@@ -27,6 +27,10 @@ function health_preprocess_ds_content_type(&$variables) {
   }
   $field_variables['items'] = [['#markup' => $name]];
 
+  if ($field_variables['settings']['content_type']['label'] == 'inline') {
+    $field_variables['classes'] .= ' field--inline--aligned';
+  }
+
   return theme_field($field_variables);
 }
 
@@ -298,6 +302,9 @@ function health_preprocess_ds_associated_release(&$variables) {
   if (!empty($view->result)) {
     $link = l($view->result[0]->node_title, 'node/' . $view->result[0]->nid);
     $field_variables['items'] = [['#markup'=> $link]];
+    if ($field_variables['settings']['associated_release']['label'] == 'inline') {
+      $field_variables['classes'] .= ' field--inline--aligned';
+    }
     return theme_field($field_variables);
   }
   return '';
@@ -371,6 +378,9 @@ function health_preprocess_ds_start_end_date_friendly(&$variables) {
   if ($start['ago'] == FALSE) {
     $field_variables['label'] = 'Opens in';
     $field_variables['items'] = [['#markup' => $start['text']]];
+    if ($field_variables['settings']['start_end_date_friendly']['label'] == 'inline') {
+      $field_variables['classes'] .= ' field--inline--aligned';
+    }
     return theme_field($field_variables);
   }
 
@@ -378,6 +388,9 @@ function health_preprocess_ds_start_end_date_friendly(&$variables) {
   if ($end['ago'] == FALSE) {
     $field_variables['label'] = 'Time remaining';
     $field_variables['items'] = [['#markup' => $end['text']]];
+    if ($field_variables['settings']['start_end_date_friendly']['label'] == 'inline') {
+      $field_variables['classes'] .= ' field--inline--aligned';
+    }
     return theme_field($field_variables);
   }
 }
