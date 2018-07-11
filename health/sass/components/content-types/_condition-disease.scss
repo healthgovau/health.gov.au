@@ -11,16 +11,6 @@
 .node-condition-or-disease {
 
 
-    // List horizontal
-    &.view-mode-listing_horizontal {
-		@extend %dm-list-horizontal;
-    }
-
-	// Feature
-	&.view-mode-feature {
-		@extend %dm-list-horizontal;
-    }
-
     // Search
     &.view-mode-search_result {
         @extend %dm-search-index;

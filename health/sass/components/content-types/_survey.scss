@@ -10,26 +10,6 @@
 // Display modes
 .node-survey {
 
-  // Full
-  &.view-mode-full {
-    .field-name-field-status,
-    .field-name-field-date-end,
-    .field-name-field-time-required,
-    .field-name-field-audience,
-    .field-name-ds-associated-release {
-      @extend %spaced-inline-label;
-    }
-
-    .field-name-field-image-featured {
-      @include AU-space('padding-bottom', 1unit);
-    }
-  }
-
-  // List horizontal
-  &.view-mode-listing_horizontal {
-    @extend %dm-list-horizontal;
-  }
-
   // Feature.
   &.view-mode-feature {
     @extend %dm-feature;

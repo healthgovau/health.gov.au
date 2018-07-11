@@ -252,17 +252,35 @@ p.summary, .field-name-field-summary {
   }
 }
 
-// Put a consistent space between the label and the value when displayed inline.
-%spaced-inline-label {
-  .field-label {
-    width: 11em;
-  }
-}
-
 // Override the line height from UIKit on image fields.
 .field-name-field-image,
 .field-name-field-image-featured {
   div {
     line-height: 0;
+  }
+}
+
+
+// Field labels
+.field-label {
+
+  @include AU-space(margin-bottom, 1unit);
+
+  @include AU-clearfix();
+
+  > div:first-of-type {
+    font-weight: bold;
+  }
+
+  &--inline {
+    > div, > span {
+      float: left;
+    }
+
+    &--aligned {
+      > div:first-of-type {
+        width: 11em;
+      }
+    }
   }
 }

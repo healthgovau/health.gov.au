@@ -16,18 +16,23 @@
     &--inline {
       > div, > span {
         color: $colour-minorText;
-        display: inline-block;
-        border-left: 1px solid $colour-minorText;
-        @include AU-space(margin-left, .5unit);
-        @include AU-space(padding-left, .5unit);
+        display: block;
+
+        @include AU-media(sm) {
+          display: inline-block;
+          border-left: 1px solid $colour-minorText;
+          @include AU-space(margin-left, .5unit);
+          @include AU-space(padding-left, .5unit);
+        }
       }
 
       > :first-child {
-        border-left: none;
-        margin-left: 0;
-        padding-left: 0;
+        @include AU-media(sm) {
+          border-left: none;
+          margin-left: 0;
+          padding-left: 0;
+        }
       }
     }
   }
-
 }

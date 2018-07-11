@@ -10,16 +10,6 @@
 // Display modes
 .node-contact {
 
-    // List horizontal
-    &.view-mode-listing_horizontal {
-		@extend %dm-list-horizontal;
-    }
-
-	// Feature
-	&.view-mode-feature {
-		@extend %dm-list-horizontal;
-    }
-
   // Inline style
   &.view-mode-inline_large {
     .field-name-title {
