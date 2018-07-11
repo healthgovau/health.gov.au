@@ -5,7 +5,7 @@
  * Display Suite 2 column template.
  */
 ?>
-<<?php print $layout_wrapper; print $layout_attributes; ?> class="ds-2col col-xs-12 <?php print $classes;?> clearfix">
+<<?php print $layout_wrapper; print $layout_attributes; ?> class="ds-2col row <?php print $classes;?> clearfix">
 
   <?php if (isset($title_suffix['contextual_links'])): ?>
   <?php print render($title_suffix['contextual_links']); ?>
