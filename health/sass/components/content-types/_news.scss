@@ -11,21 +11,6 @@
 // Display modes
 .node-news-article {
 
-    // Full
-    &.view-mode-full {
-      .field-name-field-date-updated,
-      .field-name-ds-content-type,
-      .field-name-field-audience {
-        @extend %spaced-inline-label;
-      }
-      .field-name-field-image-featured {
-        @include AU-space('margin-bottom', 1unit);
-      }
-      .field-name-field-related-health-topics {
-        margin-top: 0;
-      }
-    }
-
 	// Feature
 	&.view-mode-feature {
       @extend %dm-feature;
