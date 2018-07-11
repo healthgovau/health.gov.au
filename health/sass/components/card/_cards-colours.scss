@@ -12,7 +12,16 @@
       .au-cta-link {
         border-top-color: $colour-Primary;
         &:hover {
-          background-color: $AU-colordark-foreground-action;
+          background-color: $colour-Primary-hover;
+          color: white;
+        }
+      }
+      .au-card--solid {
+        background: $colour-Primary;
+        color: white;
+        &:hover {
+          background-color: $colour-Primary-hover;
+          color: white;
         }
       }
     }
@@ -21,7 +30,16 @@
       .au-cta-link {
         border-top-color: $colour-Secondary;
         &:hover {
-          background-color: $AU-colordark-foreground-action;
+          background-color: $colour-Secondary-hover;
+          color: white;
+        }
+      }
+      .au-card--solid {
+        background: $colour-Secondary;
+        color: white;
+        &:hover {
+          background-color: $colour-Secondary-hover;
+          color: white;
         }
       }
     }
@@ -30,7 +48,16 @@
       .au-cta-link {
         border-top-color: $colour-Tertiary;
         &:hover {
-          background-color: $AU-colordark-foreground-action;
+          background-color: $colour-Tertiary-hover;
+          color: white;
+        }
+      }
+      .au-card--solid {
+        background: $colour-Tertiary;
+        color: white;
+        &:hover {
+          background-color: $colour-Tertiary-hover;
+          color: white;
         }
       }
     }
@@ -39,7 +66,16 @@
       .au-cta-link {
         border-top-color: $colour-Tertiary-2;
         &:hover {
-          background-color: $AU-colordark-foreground-action;
+          background-color: $colour-Tertiary-2-hover;
+          color: white;
+        }
+      }
+      .au-card--solid {
+        background: $colour-Tertiary-2;
+        color: white;
+        &:hover {
+          background-color: $colour-Tertiary-2-hover;
+          color: white;
         }
       }
     }
@@ -48,7 +84,16 @@
       .au-cta-link {
         border-top-color: $colour-dark;
         &:hover {
-          background-color: $AU-colordark-foreground-action;
+          background-color: $colour-dark-hover;
+          color: white;
+        }
+      }
+      .au-card--solid {
+        background: $colour-dark;
+        color: white;
+        &:hover {
+          background-color: $colour-dark-hover;
+          color: white;
         }
       }
     }
