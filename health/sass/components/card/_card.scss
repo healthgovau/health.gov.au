@@ -43,7 +43,8 @@
     }
   }
 
-  &.au-cta-link:hover {
+  &.au-cta-link:hover,
+  &.au-card--solid:hover {
     .au-card__title {
       text-decoration-color: transparent;
     }
