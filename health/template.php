@@ -1193,8 +1193,8 @@ function health_pager($variables) {
     if ($li_first) {
       $items[] = array(
         'class' => array(
-          'pager__item',
-          'pager__item--first',
+          'au-pager__item',
+          'au-pager__item--first',
         ),
         'data' => $li_first,
       );
@@ -1202,8 +1202,8 @@ function health_pager($variables) {
     if ($li_previous) {
       $items[] = array(
         'class' => array(
-          'pager__item',
-          'pager__item--previous',
+          'au-pager__item',
+          'au-pager__item--previous',
         ),
         'data' => $li_previous,
       );
@@ -1214,8 +1214,8 @@ function health_pager($variables) {
       if ($i > 1) {
         $items[] = array(
           'class' => array(
-            'pager__item',
-            'pager__item--ellipsis',
+            'au-pager__item',
+            'au-pager__item--ellipsis',
           ),
           'data' => '…',
         );
@@ -1226,7 +1226,7 @@ function health_pager($variables) {
         if ($i < $pager_current) {
           $items[] = array(
             'class' => array(
-              'pager__item',
+              'au-pager__item',
             ),
             'data' => theme('pager_previous', array(
               'text' => $i,
@@ -1239,8 +1239,8 @@ function health_pager($variables) {
         if ($i == $pager_current) {
           $items[] = array(
             'class' => array(
-              'pager__item',
-              'pager__item--active',
+              'au-pager__item',
+              'au-pager__item--active',
             ),
             'data' => $i,
           );
@@ -1248,7 +1248,7 @@ function health_pager($variables) {
         if ($i > $pager_current) {
           $items[] = array(
             'class' => array(
-              'pager__item',
+              'au-pager__item',
             ),
             'data' => theme('pager_next', array(
               'text' => $i,
@@ -1262,8 +1262,8 @@ function health_pager($variables) {
       if ($i < $pager_max) {
         $items[] = array(
           'class' => array(
-            'pager__item',
-            'pager__item--ellipsis',
+            'au-pager__item',
+            'au-pager__item--ellipsis',
           ),
           'data' => '…',
         );
@@ -1274,8 +1274,8 @@ function health_pager($variables) {
     if ($li_next) {
       $items[] = array(
         'class' => array(
-          'pager__item',
-          'pager__item--next',
+          'au-pager__item',
+          'au-pager__item--next',
         ),
         'data' => $li_next,
       );
@@ -1283,13 +1283,13 @@ function health_pager($variables) {
     if ($li_last) {
       $items[] = array(
         'class' => array(
-          'pager__item',
-          'pager__item--last',
+          'au-pager__item',
+          'au-pager__item--last',
         ),
         'data' => $li_last,
       );
     }
-    return '<div class="pager"><h2 class="sr-only">' . t('Pages') . '</h2>' . theme('item_list', array(
+    return '<div class="au-pager"><h2 class="sr-only">' . t('Pages') . '</h2>' . theme('item_list', array(
         'items' => $items,
         'attributes' => array(
           'class' => array(

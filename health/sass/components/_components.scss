@@ -134,13 +134,13 @@
 // Style guide: navigation
 @import 'au-tabs';
 @import 'au-file';
+@import 'au-pager';
 @import 'navigation/book/module';
 @import 'navigation/breadcrumb/module';
 @import 'navigation/dropdown/module';
 @import 'navigation/dropdown/extends';
 @import 'au-local-navigation';
 @import 'navigation/menu/extends';
-@import 'navigation/pager/module';
 @import 'navigation/sitenav/module';
 @import 'navigation/sitenav/extends';
 @import 'navigation/tags/extends';

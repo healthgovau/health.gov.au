@@ -35,7 +35,7 @@
  */
 
 ?>
-<div class="search <?php print $classes;?>">
+<div class="search au-listing <?php print $classes;?>">
   <?php print render($spellcheck); ?>
   <?php if ($result_count): ?>
     <h2><?php print t('Search results');?></h2>
