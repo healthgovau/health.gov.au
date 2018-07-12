@@ -1,0 +1,14 @@
+.au-listing {
+
+  // Yes this should only be __, however drupal sometimes converts __ into -- when adding classes.
+  // https://www.drupal.org/project/views/issues/1371118
+  // https://www.drupal.org/project/drupal/issues/2009584
+  &--item, &__item {
+    border-bottom: $health-borderize--thin;
+    @include AU-space(padding-bottom, 2unit);
+
+    & + & {
+      @include AU-space(margin-top, 2unit);
+    }
+  }
+}

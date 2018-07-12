@@ -8,35 +8,6 @@
 	@extend %page-help-only;
 }
 
-// Generic Listing view
-.page-views,
-.view-generic-view {
-    .view-content {
-        @include AU-space('margin-bottom', 1unit);
-        .views-row {
-            @include AU-clearfix;
-            border-bottom: $health-borderize--very-thin;
-            @include AU-space('padding-top', .5unit);
-            @include AU-space('padding-bottom', .5unit);
-            @include AU-media(md){
-                @include AU-space('padding-top', 1.5unit);
-                @include AU-space('padding-bottom', 1unit);
-            }
-            &:first-child,
-            &.views-row-first {
-                padding-top: 1.6em;
-            }
-            &:last-child,
-            &.views-row-last {
-                border-bottom: 0;
-            }
-        }
-    }
-    ul.pager {
-        max-width: 100%;
-    }
-}
-
 // Topic listing
 .page-topics {
     .view-content {
@@ -78,16 +49,3 @@
         @include AU-clearfix;
     }
 }
-
-// Generic listing
-.view-header .view-result-summary {
-    @include health-fontgrid('md', 'default', 'light');
-    span {
-      @include health-fontgrid('xl', 'nospace');
-    }
-    @include AU-media(sm) {
-      float: left;
-      margin-right: 45px;
-    }
-}
-

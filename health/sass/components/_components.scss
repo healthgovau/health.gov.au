@@ -10,10 +10,10 @@
 //@import 'layout/layout';
 
 // Typography
+@import 'au-body';
 @import 'typography/blockquote/module';
 @import 'typography/headings/module';
 @import 'typography/fields/module';
-@import 'au-body';
 
 // Component styles
 @import 'tile/module';
@@ -28,16 +28,18 @@
 @import 'au-callout';
 @import 'au-grid';
 @import 'au-accordion';
+@import 'au-listing';
+@import 'au-field';
+@import 'au-cta-link';
+@import 'au-video';
 @import 'alert/module';
 @import 'backtotop/module';
-@import 'au-cta-link';
 @import 'table/module';
 @import 'table/extends';
 @import 'responsive-media/module';
 @import 'table-drag/module';
 @import 'table-drag/extends';
 @import 'page-alerts/extends';
-@import 'au-video';
 @import 'images/module';
 @import 'stat/module';
 @import 'taskbar/module';
@@ -52,6 +54,7 @@
 @import 'link/module';
 @import 'link/extends';
 @import 'description-list/module';
+
 
 // Books
 //
@@ -71,8 +74,9 @@
 @import 'content-types/module';
 
 // Views, bands and layouts
-@import 'views/module';
 @import 'au-band';
+@import 'views/module';
+
 
 // Views, bands and layouts
 @import 'paragraphs/extends';
@@ -128,6 +132,8 @@
 // Weight: 2
 //
 // Style guide: navigation
+@import 'au-tabs';
+@import 'au-file';
 @import 'navigation/book/module';
 @import 'navigation/breadcrumb/module';
 @import 'navigation/dropdown/module';
@@ -137,12 +143,10 @@
 @import 'navigation/pager/module';
 @import 'navigation/sitenav/module';
 @import 'navigation/sitenav/extends';
-@import 'au-tabs';
 @import 'navigation/tags/extends';
 @import 'navigation/filters/module';
 @import 'navigation/filters/extends';
 @import 'navigation/external/module';
-@import 'au-file';
 @import 'navigation/faceted-block/module';
 @import 'navigation/faceted-block/extends';
 @import 'navigation/selector/module';
