@@ -7,7 +7,6 @@
       float: right;
     }
 
-
     // Hide mobile search initially.
     &--mobile-hide {
       display: none;
@@ -36,18 +35,10 @@
 
       &-wrapper {
         float: left;
-        margin: 0;
-        @include AU-media(sm) {
-          margin: 5px 0 5px 5px;
-        }
       }
     }
 
     &__submit {
-      margin: 0;
-      @include AU-media(sm) {
-        margin-top: 5px;
-      }
       background-color: $colour-Secondary;
       width: 46px;
       height: 46px;

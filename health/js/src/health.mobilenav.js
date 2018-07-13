@@ -68,11 +68,12 @@
       // We are outputting 2 search forms, one for desktop and one for mobile.
       // It uses the same ID, which causes an accessibility issue.
       // So update the ID of the mobile one so it is different.
-      $('.region-navigation #search-api-page-search-form').attr('id', 'search-api-page-search-form-mobile');
+      //$('.region-navigation #search-api-page-search-form').attr('id', 'search-api-page-search-form-mobile');
 
       // Show the desktop search bar.
       $('.region-header #block-search-api-page-default-search').removeClass('au-accordion--closed');
-      
+      $('.region-navigation #search-api-page-search-form-default-search--2').removeClass('au-search--mobile-hide').addClass('col-xs-12');
+
       /**
        * Enable the overlay.
        */
