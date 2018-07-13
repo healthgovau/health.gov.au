@@ -12,8 +12,7 @@
       .au-cta-link {
         border-top-color: $colour-Primary;
         &:hover {
-          background-color: $colour-Primary-hover;
-          color: white;
+          background-color: $colour-light-darker;
         }
       }
       .au-card--solid {
@@ -30,8 +29,7 @@
       .au-cta-link {
         border-top-color: $colour-Secondary;
         &:hover {
-          background-color: $colour-Secondary-hover;
-          color: white;
+          background-color: $colour-light-darker;
         }
       }
       .au-card--solid {
@@ -48,8 +46,7 @@
       .au-cta-link {
         border-top-color: $colour-Tertiary;
         &:hover {
-          background-color: $colour-Tertiary-hover;
-          color: white;
+          background-color: $colour-light-darker;
         }
       }
       .au-card--solid {
@@ -66,8 +63,7 @@
       .au-cta-link {
         border-top-color: $colour-Tertiary-2;
         &:hover {
-          background-color: $colour-Tertiary-2-hover;
-          color: white;
+          background-color: $colour-light-darker;
         }
       }
       .au-card--solid {
@@ -84,8 +80,7 @@
       .au-cta-link {
         border-top-color: $colour-dark;
         &:hover {
-          background-color: $colour-dark-hover;
-          color: white;
+          background-color: $colour-light-darker;
         }
       }
       .au-card--solid {

@@ -414,7 +414,7 @@ function _health_total_children($para, $node_field) {
  * @return array
  */
 function _health_grid_class($total_number, $classes_array) {
-  $classes_array[] = 'col-xs-12';
+  $classes_array[] = '';
   switch ($total_number) {
     case 1:
       break;
