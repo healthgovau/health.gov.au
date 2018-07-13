@@ -19,5 +19,16 @@
           '<path fill="#{ $color-hover }" d="M128 64l-16 16-64-64L64 0"/>' +
         '</svg>');
     }
+    &:hover {
+      .au-card__image {
+        display: block;
+        svg {
+          path,
+          rect {
+            fill: $AU-colordark-foreground-text;
+          }
+        }
+      }
+    }
   }
 }

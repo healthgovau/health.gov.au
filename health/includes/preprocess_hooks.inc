@@ -104,6 +104,20 @@ function health_preprocess_block(&$variables, $hook) {
   if ($variables['elements']['#block']->module == 'menu_block' && $variables['elements']['#config']['title_link']) {
     $variables['classes_array'][] = 'block-menu-block--title-link';
   }
+
+  // Add grid class to blocks in content_top region.
+  if ($variables['block']->region == 'content_top') {
+    if ($plugin = context_get_plugin('reaction', 'block')) {
+      $blocks = $plugin->block_get_blocks_by_region('content_top');
+      $count = 0;
+      foreach ($blocks as $key => $block) {
+        if (substr($key, 0, 1) != '#') {
+          $count++;
+        }
+      }
+      $variables['classes_array'] = _health_grid_class($count, $variables['classes_array']);
+    }
+  }
 }
 
 /**

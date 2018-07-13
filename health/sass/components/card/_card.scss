@@ -153,10 +153,6 @@ a.au-card {
     text-decoration-skip: ink;
   }
 
-  &:hover .au-card__link {
-    text-decoration: none;
-    color: $AU-color-foreground-text;
-  }
 }
 
 // Card listing match height
