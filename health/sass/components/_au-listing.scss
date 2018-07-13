@@ -1,0 +1,33 @@
+.au-listing {
+
+  // Yes this should only be __, however drupal sometimes converts __ into -- when adding classes.
+  // https://www.drupal.org/project/views/issues/1371118
+  // https://www.drupal.org/project/drupal/issues/2009584
+  &--item, &__item {
+    border-bottom: $health-borderize--thin;
+    @include AU-space(padding-bottom, 2unit);
+
+    // Add spacing between items.
+    & + & {
+      @include AU-space(margin-top, 2unit);
+    }
+  }
+
+
+}
+
+// Views.
+.view {
+  &__filters {
+    @include AU-space(margin-bottom, 2unit);
+  }
+
+  &__summary {
+    font-size: 20px;
+
+    &__count {
+      font-size: 30px;
+      font-weight: bold;
+    }
+  }
+}

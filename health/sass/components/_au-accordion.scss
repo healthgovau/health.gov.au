@@ -4,7 +4,7 @@
 }
 
 // Remove border on the mobile menu triggers.
-.region-navigation {
+.region-navigation, .region-sidebar-second {
   .au-accordion {
     border: none;
   }

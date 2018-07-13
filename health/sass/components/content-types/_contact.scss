@@ -35,11 +35,6 @@
     }
   }
 
-  // Search
-  &.view-mode-search_result {
-      @extend %dm-search-index;
-  }
-
   // Contact type subsets for differential styling
   .field-name-field-image-featured {
     img {

@@ -288,6 +288,13 @@ function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
     // Add placeholder.
     $form['search_api_views_fulltext']['#attributes']['placeholder'] = t('Enter your search term');
 
+    // Add classes.
+    $form['search_api_views_fulltext']['#attributes']['class'][] = 'au-search__input au-text-input';
+    $form['search_api_views_fulltext']['#prefix'] = '<div class="au-search__input-wrapper">';
+    $form['search_api_views_fulltext']['#suffix'] = '</div>';
+    $form['submit']['#attributes']['class'][] = 'au-search__submit au-btn';
+    $form['#attributes']['class'] = 'au-search';
+
     // Append selected filters.
     $query_string = drupal_get_query_parameters();
 
@@ -378,16 +385,30 @@ function health_form_alter(&$form, &$form_state, $form_id) {
     drupal_add_http_header('Cache-Control', 'no-cache, no-store');
     drupal_page_is_cacheable(FALSE);
   }
+
 }
 
 /**
  * Implements hook_form_FORM_ID_alter().
  */
 function health_form_search_api_page_search_form_alter(&$form, &$form_state) {
-  // Add wrapper to apply the uikit search form style.
-  $form['#prefix'] = '<div class="block block-search-api-page contextual-links-region last even" id="search-api-page-search-form">';
-  $form['#suffix'] = '</div>';
-  $form['keys_1']['#attributes']['placeholder'] = t('Enter your search term');
+
+  if (key_exists('keys_1', $form)) {
+    $form['keys_1']['#attributes']['placeholder'] = t('Enter your search terms');
+    $form['keys_1']['#attributes']['class'][] = 'au-search__input au-text-input';
+    $form['keys_1']['#prefix'] = '<div class="au-search__input-wrapper">';
+    $form['keys_1']['#suffix'] = '</div>';
+    $form['submit_1']['#attributes']['class'][] = 'au-search__submit au-btn';
+  } else if (key_exists('form', $form)) {
+    $form['form']['keys_1']['#attributes']['placeholder'] = t('Enter your search terms');
+    $form['form']['keys_1']['#attributes']['class'][] = 'au-search__input au-text-input';
+    $form['form']['keys_1']['#prefix'] = '<div class="au-search__input-wrapper">';
+    $form['form']['keys_1']['#suffix'] = '</div>';
+    $form['form']['submit_1']['#attributes']['class'][] = 'au-search__submit au-btn';
+  }
+
+  $form['#attributes']['class'] = 'au-search';
+
 }
 
 /**
@@ -1193,8 +1214,8 @@ function health_pager($variables) {
     if ($li_first) {
       $items[] = array(
         'class' => array(
-          'pager__item',
-          'pager__item--first',
+          'au-pager__item',
+          'au-pager__item--first',
         ),
         'data' => $li_first,
       );
@@ -1202,8 +1223,8 @@ function health_pager($variables) {
     if ($li_previous) {
       $items[] = array(
         'class' => array(
-          'pager__item',
-          'pager__item--previous',
+          'au-pager__item',
+          'au-pager__item--previous',
         ),
         'data' => $li_previous,
       );
@@ -1214,8 +1235,8 @@ function health_pager($variables) {
       if ($i > 1) {
         $items[] = array(
           'class' => array(
-            'pager__item',
-            'pager__item--ellipsis',
+            'au-pager__item',
+            'au-pager__item--ellipsis',
           ),
           'data' => '…',
         );
@@ -1226,7 +1247,7 @@ function health_pager($variables) {
         if ($i < $pager_current) {
           $items[] = array(
             'class' => array(
-              'pager__item',
+              'au-pager__item',
             ),
             'data' => theme('pager_previous', array(
               'text' => $i,
@@ -1239,8 +1260,8 @@ function health_pager($variables) {
         if ($i == $pager_current) {
           $items[] = array(
             'class' => array(
-              'pager__item',
-              'pager__item--active',
+              'au-pager__item',
+              'au-pager__item--active',
             ),
             'data' => $i,
           );
@@ -1248,7 +1269,7 @@ function health_pager($variables) {
         if ($i > $pager_current) {
           $items[] = array(
             'class' => array(
-              'pager__item',
+              'au-pager__item',
             ),
             'data' => theme('pager_next', array(
               'text' => $i,
@@ -1262,8 +1283,8 @@ function health_pager($variables) {
       if ($i < $pager_max) {
         $items[] = array(
           'class' => array(
-            'pager__item',
-            'pager__item--ellipsis',
+            'au-pager__item',
+            'au-pager__item--ellipsis',
           ),
           'data' => '…',
         );
@@ -1274,8 +1295,8 @@ function health_pager($variables) {
     if ($li_next) {
       $items[] = array(
         'class' => array(
-          'pager__item',
-          'pager__item--next',
+          'au-pager__item',
+          'au-pager__item--next',
         ),
         'data' => $li_next,
       );
@@ -1283,13 +1304,13 @@ function health_pager($variables) {
     if ($li_last) {
       $items[] = array(
         'class' => array(
-          'pager__item',
-          'pager__item--last',
+          'au-pager__item',
+          'au-pager__item--last',
         ),
         'data' => $li_last,
       );
     }
-    return '<div class="pager"><h2 class="sr-only">' . t('Pages') . '</h2>' . theme('item_list', array(
+    return '<div class="au-pager"><h2 class="sr-only">' . t('Pages') . '</h2>' . theme('item_list', array(
         'items' => $items,
         'attributes' => array(
           'class' => array(

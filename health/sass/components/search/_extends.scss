@@ -15,41 +15,6 @@
 //		style1 = xxx;
 //	}
 
-.page-search {
-  main {
-    @extend .col-xs-12;
-    @extend .col-sm-8;
-    .block-search-api-page {
-      width: 100%;
-      @include AU-media(sm) {
-        width: 50%;
-      }
-    }
-    .search-api-page-results {
-      @include AU-space('margin', 1unit 0);
-      .search-performance {
-        font-size: 1.5em;
-      }
-      .search-results {
-        padding-left: 0;
-      }
-      .view-mode-search_result {
-        @extend %dm-search-index;
-        @include AU-clearfix;
-        border-bottom: $health-borderize--thin;
-        @include AU-space('padding-top', .5unit);
-        @include AU-space('padding-bottom', .5unit);
-        @include AU-media(md){
-          @include AU-space('padding-top', 1.5unit);
-          @include AU-space('padding-bottom', 1.5unit);
-        }
-      }
-    }
-    .pager {
-      border: none;
-    }
-  }
-}
 
 // Mobile search
 .region-navigation {
@@ -70,17 +35,6 @@
     @include AU-media(sm) {
       border-bottom: 0;
       display: none;
-    }
-  }
-}
-
-// Global search in header
-.region-header {
-  div.block-search-api-page {
-    display: none; // Hide the search in the header on mobile.
-    @include AU-media(sm) {
-      display: block;
-      height: auto;
     }
   }
 }

@@ -110,12 +110,13 @@
     attach: function (context, settings) {
       var total = $('.view-header span', context).text();
       if (total === '1') {
-        $('.view-header span', context).after(' result');
+        $('.view__header span', context).after(' result');
       }
       else {
-        $('.view-header span', context).after(' results');
+        $('.view__header span', context).after(' results');
       }
     }
   };
 
 })(jQuery, Drupal, this, this.document);
+

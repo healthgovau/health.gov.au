@@ -16,8 +16,4 @@
       @extend %dm-feature;
 	}
 	
-    // Search
-    &.view-mode-search_result {
-      @extend %dm-search-index;
-    }
 }
