@@ -188,9 +188,6 @@ a.au-card {
       }
     }
     .au-card {
-      @include AU-media( sm ) {
-        @include AU-space( min-height, 17unit );
-      }
       @supports( display: flex ) {
         display:flex;
         flex-direction: column;
