@@ -288,6 +288,13 @@ function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
     // Add placeholder.
     $form['search_api_views_fulltext']['#attributes']['placeholder'] = t('Enter your search term');
 
+    // Add classes.
+    $form['search_api_views_fulltext']['#attributes']['class'][] = 'au-search__input au-text-input';
+    $form['search_api_views_fulltext']['#prefix'] = '<div class="au-search__input-wrapper">';
+    $form['search_api_views_fulltext']['#suffix'] = '</div>';
+    $form['submit']['#attributes']['class'][] = 'au-search__submit au-btn';
+    $form['#attributes']['class'] = 'au-search';
+
     // Append selected filters.
     $query_string = drupal_get_query_parameters();
 
