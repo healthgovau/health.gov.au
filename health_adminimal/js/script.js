@@ -49,26 +49,29 @@
       legendSummary('.paragraphs-item-type-para-reference-news', 'News', 'input[type="text"]');
       legendSummary('.paragraphs-item-type-para-reference-health-alert', 'Health alert', 'input[type="text"]');
       legendSummary('.paragraphs-item-type-reference-statistic', 'Statistic', 'input[type="text"]');
-      legendSummary('.paragraphs-item-type-para-feature-content', 'Featured content', 'input[type="text"]');
 
       // Content
       legendSummary('.paragraphs-item-type-para-content-text', 'Text', 'textarea');
       legendSummary('.paragraphs-item-type-para-content-image', 'Image', '.media-item');
       legendSummary('.paragraphs-item-type-para-content-external-link', 'External link', 'input');
 
-      // Landing pages
-      legendSummary('.paragraphs-item-type-para-view', 'Listing', '.field-name-field-title input');
-      legendSummary('.paragraphs-item-type-featured-videos', 'Featured video', 'select:not(".filter-list")');
-      legendSummary('.paragraphs-item-type-featured-resource', 'Featured resource', 'select:not(".filter-list")');
-      legendSummary('.paragraphs-item-type-featured-news-events', 'Featured news', 'select:not(".filter-list")');
-      legendSummary('.paragraphs-item-type-para-block', 'Block', '.field-name-field-title input, .field-name-field-para-block-id input');
+      // Bands.
+      legendSummary('.paragraphs-item-type-para-view', 'Band - Listing', '.field-name-field-title input');
+      legendSummary('.paragraphs-item-type-featured-videos', 'Band - Featured video', 'select:not(".filter-list")');
+      legendSummary('.paragraphs-item-type-featured-resource', 'Band - Featured resource', 'select:not(".filter-list")');
+      legendSummary('.paragraphs-item-type-featured-news-events', 'Band - Featured news', 'select:not(".filter-list")');
+      legendSummary('.paragraphs-item-type-para-block', 'Band - Block', '.field-name-field-title input, .field-name-field-para-block-id input');
       legendSummary('.paragraphs-item-type-two-columns', 'Two columns', '.field-name-field-pbundle-title input');
-      legendSummary('.paragraphs-item-type-para-link', 'Link', 'input[type="text"]');
-      legendSummary('.paragraphs-item-type-para-links', 'Links', '.field-name-field-pbundle-title input');
-      legendSummary('.paragraphs-item-type-para-taxonomies', 'Taxonomies', '.field-name-field-pbundle-title input');
-      legendSummary('.paragraphs-item-type-para-taxonomy', 'Term', '.field-name-field-related-term input');
-      legendSummary('.paragraphs-item-type-para-statistics', 'Statistics', '.field-name-field-title input');
-      legendSummary('.paragraphs-item-type-para-contact', 'Contact', 'select:not(".filter-list")');
+      legendSummary('.paragraphs-item-type-para-link', 'Band - Link', 'input[type="text"]');
+      legendSummary('.paragraphs-item-type-para-links', 'Band - Links', '.field-name-field-pbundle-title input');
+      legendSummary('.paragraphs-item-type-para-taxonomies', 'Band - Taxonomies', '.field-name-field-pbundle-title input');
+      legendSummary('.paragraphs-item-type-para-taxonomy', 'Band - Term', '.field-name-field-related-term input');
+      legendSummary('.paragraphs-item-type-para-statistics', 'Band - Statistics', '.field-name-field-title input');
+      legendSummary('.paragraphs-item-type-para-contact', 'Band - Contact', 'select:not(".filter-list")');
+      legendSummary('.paragraphs-item-type-para-feature-content', 'Band - Featured content', 'input[type="text"]');
+      legendSummary('.paragraphs-item-type-para-conditions-and-diseases', 'Band - Conditions and diseases', 'input[type="text"]');
+      legendSummary('.paragraphs-item-type-band-static-content', 'Band - Static', 'textarea');
+
 
       // Publications
       legendSummary('.paragraphs-item-type-documents', 'Part', '.field-name-field-resource-file-title input');
@@ -145,7 +148,7 @@
               }
               summary = createSummary(value, initialText);
             } else if (inputSelector.indexOf('textarea') !== -1) {
-              summary = createSummary($($(this).find(inputSelector).val()).first().text(), initialText);
+              summary = createSummary($($(this).find(inputSelector).val()).find('h2,h3,h4,h5,h6,p').first().text(), initialText);
             } else {
               summary = createSummary($(this).find(inputSelector).val(), initialText);
             }
@@ -161,7 +164,7 @@
               var id = $(this).attr('id');
               if (evt.editor.name == id) {
                 evt.editor.on('blur', function (evt2) {
-                  var summary = createSummary($(evt2.editor.getData()).first().text(), initialText);
+                  var summary = createSummary($(evt2.editor.getData()).find('h2,h3,h4,h5,h6,p').first().text(), initialText);
                   $('#' + id).parents('fieldset').first().find('legend a').first().html(summary);
                 });
               }
@@ -196,9 +199,9 @@
           return initialText;
         }
         if (text.length > 100) {
-          return initialText + ': ' + text.replace(/(\(\d+\))/, '').substr(0, 100) + '…';
+          return initialText + ': ' + text.substr(0, 75) + '…';
         } else {
-          return initialText + ': ' + text.replace(/(\(\d+\))/, '');
+          return initialText + ': ' + text;
         }
       }
 
