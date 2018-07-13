@@ -13,12 +13,38 @@
     }
   }
 
+  @include AU-space(margin-bottom, 2unit);
+
+  // Filters
+  &__filters {
+
+    &--inline {
+      > * {
+        display: inline-block;
+        @include  AU-space(margin-right, 1unit);
+      }
+    }
+
+    // Fix the inline display of the icon.
+    .fa {
+      display: inline;
+      font-size: 0.8em;
+      padding-left: 0.5em;
+      &:before {
+        position: relative;
+        margin-left: 0;
+      }
+      bottom: -3px;
+      margin-left: 0;
+    }
+  }
 
 }
 
 // Views.
+// @todo Should this be included in .au-listing?
 .view {
-  &__filters {
+  &__top {
     @include AU-space(margin-bottom, 2unit);
   }
 
@@ -31,3 +57,4 @@
     }
   }
 }
+
