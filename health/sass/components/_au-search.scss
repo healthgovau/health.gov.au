@@ -1,55 +1,64 @@
-.au-search {
-  @include AU-clearfix;
-  position: relative;
+.au-grid {
+  .au-search {
+    @include AU-clearfix;
+    position: relative;
 
-  max-width: 28rem;
-
-  // Hide mobile search initially.
-  &--mobile-hide {
-    display: none;
     @include AU-media(sm) {
-      display: block;
-    }
-  }
-
-  // Don't override the display if there are accordion classes.
-  .au-accordion--open &,
-  .au-accordion--closed &{
-    display: inherit;
-  }
-
-  label {
-    @include AU-sronly();
-  }
-
-  &__input {
-    border-color: $colour-Secondary;
-
-    // Allow full width, so the button is always on the right.
-    &[type='text'] {
-      max-width: none;
+      float: right;
     }
 
-    &-wrapper {
-      margin: 5px 35px 0 0;
-    }
-  }
 
-  &__submit {
-    position: absolute;
-    top: 5px;
-    right: 0;
-    border: 0;
-    background-color: $colour-Secondary;
-    width: 46px;
-    height: 46px;
-    text-indent: 999px;
-    border-radius: 0;
-    background-image: AU-svguri('<svg viewBox="-5 -5 32 32" fill="#{ $AU-color-background }" xmlns="http://www.w3.org/2000/svg">
+    // Hide mobile search initially.
+    &--mobile-hide {
+      display: none;
+      @include AU-media(sm) {
+        display: block;
+      }
+    }
+
+    // Don't override the display if there are accordion classes.
+    .au-accordion--open &,
+    .au-accordion--closed & {
+      display: inherit;
+    }
+
+    label {
+      @include AU-sronly();
+    }
+
+    // @todo Get this into a class.
+    .views-exposed-widget {
+      float: left;
+    }
+
+    &__input {
+      border-color: $colour-Secondary;
+
+      &-wrapper {
+        float: left;
+        margin: 0;
+        @include AU-media(sm) {
+          margin: 5px 0 5px 5px;
+        }
+      }
+    }
+
+    &__submit {
+      margin: 0;
+      @include AU-media(sm) {
+        margin-top: 5px;
+      }
+      background-color: $colour-Secondary;
+      width: 46px;
+      height: 46px;
+      text-indent: 999px;
+      border-radius: 0;
+      background-image: AU-svguri('<svg viewBox="-5 -5 32 32" fill="#{ $AU-color-background }" xmlns="http://www.w3.org/2000/svg">
     <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
-    &:hover:not(:disabled),
-    &:focus:not(:disabled) {
-      background-color: $colour-Secondary-hover;
+      &:hover:not(:disabled),
+      &:focus:not(:disabled) {
+        background-color: $colour-Secondary-hover;
+      }
     }
   }
 }
