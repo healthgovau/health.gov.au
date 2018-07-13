@@ -33,15 +33,17 @@
     <?php print $title; ?>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
-  <?php if ($header): ?>
-    <div class="view__header">
-      <?php print $header; ?>
-    </div>
-  <?php endif; ?>
 
-  <?php if ($exposed): ?>
-    <div class="view__filters">
-      <?php print $exposed; ?>
+  <?php if ($exposed || $header): ?>
+    <div class="view__top row">
+
+      <?php if ($header): ?>
+        <?php print $header; ?>
+      <?php endif; ?>
+
+      <?php if ($exposed): ?>
+        <?php print $exposed; ?>
+      <?php endif; ?>
     </div>
   <?php endif; ?>
 

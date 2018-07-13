@@ -110,10 +110,10 @@
     attach: function (context, settings) {
       var total = $('.view-header span', context).text();
       if (total === '1') {
-        $('.view__header span', context).after(' result');
+        $('.view__top span', context).after(' result');
       }
       else {
-        $('.view__header span', context).after(' results');
+        $('.view__top span', context).after(' results');
       }
     }
   };

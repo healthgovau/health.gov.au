@@ -2,13 +2,17 @@
   @include AU-clearfix;
   position: relative;
 
+  max-width: 28rem;
+
   // Hide mobile search initially.
-  display: none;
-  @include AU-media(sm) {
-    display: block;
+  &--mobile-hide {
+    display: none;
+    @include AU-media(sm) {
+      display: block;
+    }
   }
 
-  // Always show if the accordion it is in is open.
+  // Don't override the display if there are accordion classes.
   .au-accordion--open &,
   .au-accordion--closed &{
     display: inherit;
@@ -27,7 +31,7 @@
     }
 
     &-wrapper {
-      margin: 5px 45px 0 0;
+      margin: 5px 35px 0 0;
     }
   }
 
