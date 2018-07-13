@@ -70,9 +70,9 @@
       // So update the ID of the mobile one so it is different.
       $('.region-navigation #search-api-page-search-form').attr('id', 'search-api-page-search-form-mobile');
 
-      // Hide the mobile search body initially.
+      // Show the desktop search bar.
       $('.region-header #block-search-api-page-default-search').removeClass('au-accordion--closed');
-
+      
       /**
        * Enable the overlay.
        */

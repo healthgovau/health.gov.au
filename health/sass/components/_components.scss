@@ -93,6 +93,7 @@
 // Weight: 3
 //
 // Style guide: forms
+@import 'au-search';
 @import 'forms/autocomplete/module';
 @import 'forms/autocomplete/extends';
 @import 'forms/better-exposed-filter/module';
@@ -115,8 +116,6 @@
 @import 'forms/progress-throbber/extends';
 @import 'forms/resizable-textarea/module';
 @import 'forms/resizable-textarea/extends';
-@import 'forms/search/module';
-@import 'forms/search/extends';
 @import 'forms/select/extends';
 @import 'forms/textarea/extends';
 

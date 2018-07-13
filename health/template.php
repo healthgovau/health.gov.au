@@ -378,16 +378,30 @@ function health_form_alter(&$form, &$form_state, $form_id) {
     drupal_add_http_header('Cache-Control', 'no-cache, no-store');
     drupal_page_is_cacheable(FALSE);
   }
+
 }
 
 /**
  * Implements hook_form_FORM_ID_alter().
  */
 function health_form_search_api_page_search_form_alter(&$form, &$form_state) {
-  // Add wrapper to apply the uikit search form style.
-  $form['#prefix'] = '<div class="block block-search-api-page contextual-links-region last even" id="search-api-page-search-form">';
-  $form['#suffix'] = '</div>';
-  $form['keys_1']['#attributes']['placeholder'] = t('Enter your search term');
+
+  if (key_exists('keys_1', $form)) {
+    $form['keys_1']['#attributes']['placeholder'] = t('Enter your search terms');
+    $form['keys_1']['#attributes']['class'][] = 'au-search__input au-text-input';
+    $form['keys_1']['#prefix'] = '<div class="au-search__input-wrapper">';
+    $form['keys_1']['#suffix'] = '</div>';
+    $form['submit_1']['#attributes']['class'][] = 'au-search__submit au-btn';
+  } else if (key_exists('form', $form)) {
+    $form['form']['keys_1']['#attributes']['placeholder'] = t('Enter your search terms');
+    $form['form']['keys_1']['#attributes']['class'][] = 'au-search__input au-text-input';
+    $form['form']['keys_1']['#prefix'] = '<div class="au-search__input-wrapper">';
+    $form['form']['keys_1']['#suffix'] = '</div>';
+    $form['form']['submit_1']['#attributes']['class'][] = 'au-search__submit au-btn';
+  }
+
+  $form['#attributes']['class'] = 'au-search';
+
 }
 
 /**
