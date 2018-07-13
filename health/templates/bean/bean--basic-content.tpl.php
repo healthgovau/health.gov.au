@@ -27,6 +27,6 @@
  * @see template_process()
  */
 ?>
-<div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<div class="container <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print render($content); ?>
 </div>
