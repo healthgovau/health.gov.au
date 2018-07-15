@@ -428,7 +428,7 @@ function _health_grid_class($total_number, $classes_array) {
       $classes_array[] = 'col-md-6';
       break;
     case 5:
-      $classes_array[] = 'col-md-4';
+      $classes_array[] = 'col-md-5ths';
       break;
     case 6:
       $classes_array[] = 'col-sm-4';
