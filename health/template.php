@@ -398,6 +398,7 @@ function health_form_search_api_page_search_form_alter(&$form, &$form_state) {
     $form['keys_1']['#attributes']['class'][] = 'au-search__input au-text-input';
     $form['keys_1']['#prefix'] = '<div class="au-search__input-wrapper">';
     $form['keys_1']['#suffix'] = '</div>';
+    $form['keys_1']['#attributes']['size'] = 30;
     $form['submit_1']['#attributes']['class'][] = 'au-search__submit au-btn';
   } else if (key_exists('form', $form)) {
     $form['form']['keys_1']['#attributes']['placeholder'] = t('Enter your search terms');
