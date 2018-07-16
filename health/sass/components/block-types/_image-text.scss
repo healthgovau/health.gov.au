@@ -19,110 +19,6 @@
     padding-left: 12px;
     padding-right: 12px;
     text-align: center;
-    .bean-block-content {
-      @include block-card();
-    }
-  }
-  &.active {
-    .bean-block-content {
-      background: $colour-light-dark;
-    }
-  }
-  // Solid colour card
-  // Colours for solid cards
-  &.colour-primary {
-    .bean-block-content {
-      @extend %colour-primary;
-    }
-  }
-  &.colour-secondary {
-    .bean-block-content {
-      @extend %colour-secondary;
-    }
-  }
-  &.colour-tertiary {
-    .bean-block-content {
-      @extend %colour-tertiary;
-    }
-  }
-  &.colour-tertiary-2{
-    .bean-block-content {
-      @extend %colour-tertiary-2;
-    }
-  }
-
-  // Other styles
-  &.view-mode-solid_full_card {
-    .bean-block-content {
-      box-sizing: border-box;
-      position: relative;
-      min-height: 1px;
-      @include AU-space('padding', 1unit 1unit 1unit 1unit);
-      a {
-        display: block;
-        border-bottom: none;
-
-        // Move external link icon to title not whole <a>
-        &:after {
-          display: none;
-        }
-
-        .field-name-field-bean-text {
-          color: white;
-        }
-        .field-name-field-link-internal {
-          .field-item {
-            display: inline;
-            color: white;
-            font-weight: 700;
-            margin-bottom: 0;
-            font-family: $AU-font;
-          }
-        }
-        &[rel~='external'] {
-          .field-name-field-link-internal {
-            .field-item:after {
-              @extend %ext-link;
-              // Move into corner as breaks mobile layout
-              color: white;
-              position: absolute;
-              @include AU-space('top', .75unit);
-              @include AU-space('right', .25unit);
-            }
-          }
-        }
-      }
-    }
-  }
-
-  // Large feature
-  &.view-mode-feature_large {
-    float: left;
-    .group-left,
-    .group-right {
-      @extend .col-xs-12;
-      @extend .col-sm-6;
-    }
-    .group-right {
-      @include AU-space('padding-top', 1unit);
-      @include AU-media(sm){
-        padding-top: 0;
-      }
-    }
-    .field-name-field-image {
-      @extend %image--full;
-    }
-  }
-  &.view-mode-feature {
-    @include cardify();
-    .group-left,
-    .group-right {
-      float: none;
-      width: 100%;
-    }
-  } // Vertical listing
-  &.view-mode-listing_vertical {
-    //@extend %dm-list-vertical;
   }
   // View selector component
   &.view-mode-view_selector {
@@ -161,23 +57,6 @@
         margin: 0 auto;
         max-width: 75%;
         display: inline-block;
-      }
-    }
-    .bean-block-content {
-      @include block-card($border-colour-top: $colour-light-dark, $bg-hover-colour: #fff);
-      a {
-       border-left: 1px solid $colour-light-dark;
-       border-right: 1px solid $colour-light-dark;
-       border-right: 1px solid $colour-light-dark;
-       border-bottom: 1px solid $colour-light-dark;
-      }
-    }
-  }
-  &.active {
-    .bean-block-content {
-      a {
-        background: #fff;
-        border-top-color: $colour-Tertiary-2;
       }
     }
   }

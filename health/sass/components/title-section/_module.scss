@@ -147,7 +147,7 @@
     // Extend onto title
     a {
       @include AU-fontgrid('md');
-      @extend .health-cta-link;
+      //@extend .health-cta-link;
       font-weight: normal;
     }
 
