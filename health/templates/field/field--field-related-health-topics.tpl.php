@@ -50,7 +50,7 @@
   <?php if (!$label_hidden): ?>
     <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</div>
   <?php endif; ?>
-  <ul class="au-tags"<?php print $content_attributes; ?>>
+  <ul class="au-tags au-tags--inline"<?php print $content_attributes; ?>>
     <?php foreach ($items as $delta => $item): ?>
       <li <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></li>
     <?php endforeach; ?>

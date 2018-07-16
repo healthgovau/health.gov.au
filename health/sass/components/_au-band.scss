@@ -47,10 +47,18 @@
 
     &--primary {
       @extend %colour-Primary-background;
+      color: $AU-colordark-foreground-text;
+      a {
+        color: $AU-colordark-foreground-text;
+      }
     }
 
     &--secondary {
       @extend %colour-Secondary-background;
+      color: $AU-colordark-foreground-text;
+      a {
+        color: $AU-colordark-foreground-text;
+      }
     }
   }
 

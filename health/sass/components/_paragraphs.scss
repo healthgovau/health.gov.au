@@ -10,18 +10,13 @@
   }
 }
 
-
-// contact hotline
+// Contact hot line bar
 .paragraphs-item-para-contact {
   text-align: center;
   p {
     margin-left: auto;
     margin-right: auto;
   }
-}
-
-// Contact hot line bar
-.paragraphs-item-para-contact {
   // This creates .container and .row from band markup for BS grid
   &.para-row {
     padding-top: 0;
@@ -47,8 +42,6 @@
     }
   }
 
-  // Text align
-  text-align: center;
   p {
     margin-left: auto;
     margin-right: auto;

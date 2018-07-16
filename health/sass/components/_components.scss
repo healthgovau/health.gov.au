@@ -31,6 +31,7 @@
 @import 'au-field';
 @import 'au-cta-link';
 @import 'au-video';
+@import 'au-tags';
 @import 'alert/module';
 @import 'backtotop/module';
 @import 'table/module';
@@ -76,7 +77,7 @@
 @import 'au-band';
 
 // Views, bands and layouts
-@import 'paragraphs/extends';
+@import 'paragraphs';
 
 // Drupal
 @import 'drupal-contextual-links/module';
