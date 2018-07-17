@@ -158,14 +158,6 @@ p.summary, .field-name-field-summary {
 }
 %page-help-only {
   .page {
-    .field-name-field-date-updated,
-    .field-name-field-date-published {
-      &.field-label-inline, &.field-label-above {
-        border: 0;
-        padding-top: 0;
-        margin-top: 0;
-      }
-    }
     .field-name-field-related-health-topics {
       @extend %bottom-border;
     }
