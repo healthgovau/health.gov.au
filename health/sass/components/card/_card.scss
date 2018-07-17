@@ -27,18 +27,16 @@
     font-weight: normal;
   }
   .au-card__title {
-    @include AU-fontgrid( lg );
+    @include AU-fontgrid( sm );
     @include AU-space( margin-bottom, 1unit );
     text-decoration: underline;
     text-decoration-color: currentColor;
     transition: text-decoration-color 0.3s ease-in-out;
-    font-weight: normal;
+    font-weight: bold;
     @include AU-media( sm ) {
-      @include AU-fontgrid( md );
       @include AU-space( margin-bottom, 1.5unit );
     }
     @include AU-media( md ) {
-      @include AU-fontgrid( lg );
       @include AU-space( margin-bottom, 1.5unit );
     }
   }
@@ -52,13 +50,11 @@
 
   .au-card__text {
     @include AU-space( margin-bottom, 1unit );
-    @include AU-fontgrid( md );
+    @include AU-fontgrid( sm );
     @include AU-media( sm ) {
-      @include AU-fontgrid( sm );
       @include AU-space( margin-bottom, 2unit );
     }
     @include AU-media( md ) {
-      @include AU-fontgrid( md );
       @include AU-space( margin-bottom, 2.5unit );
     }
   }
