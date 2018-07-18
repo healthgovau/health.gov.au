@@ -8,9 +8,11 @@
  */
 ?>
 <?php if ($content): ?>
-  <div class="<?php print $classes; ?>">
-      <div class="container au-card-list au-card-list--matchheight">
-        <?php print $content; ?>
+  <div class="container <?php print $classes; ?>">
+      <div class="row">
+          <div class="au-card-list au-card-list--matchheight">
+            <?php print $content; ?>
+          </div>
       </div>
   </div>
 <?php endif; ?>
