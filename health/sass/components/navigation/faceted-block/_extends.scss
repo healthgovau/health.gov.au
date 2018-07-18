@@ -55,6 +55,24 @@ p.filter__help {
   }
 }
 
+.block-facetapi {
+  @extend %mobile-menu;
+  @extend .au-accordion;
+  @include AU-media(sm){
+    @include AU-space('margin-top', .5unit);
+  }
+
+  .facetapi-facetapi-checkbox-links a {
+    border: none;
+  }
+  &.facetshow {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    @include AU-space('margin-top', .5unit);
+  }
+}
+
 .filter-topics-by-letter {
   @extend %mobile-menu;
   &.facetshow {
