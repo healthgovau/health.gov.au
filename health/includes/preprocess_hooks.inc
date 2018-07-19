@@ -115,7 +115,7 @@ function health_preprocess_block(&$variables, $hook) {
           $count++;
         }
       }
-      $variables['classes_array'] = _health_grid_class($count, $variables['classes_array']);
+      $variables['classes_array'] = _health_grid_class($count, $variables['classes_array'], TRUE);
     }
   }
 }

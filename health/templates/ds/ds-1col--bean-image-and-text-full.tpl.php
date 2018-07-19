@@ -27,20 +27,24 @@
  * @see template_process()
  */
 ?>
-<div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<article class="col-xs-12 <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-  <div class="bean-block-content"<?php print $content_attributes; ?>>
-    <a href="<?php print $wrapper_link_url; ?>">
-      <?php print render($content['field_image']); ?>
-      <div class="field field-name-field-link-internal field-type-link-field field-label-hidden">
-        <div class="field-items">
-          <div class="field-item even">
-            <?php print render($content['field_link_internal']['#items'][0]['title']); ?>
+    <a class="au-card au-card--shadow au-cta-link" href="<?php print $wrapper_link_url; ?>">
+        <?php if (isset($content['field_image'])): ?>
+          <div class="au-card__image au-card__fullwidth">
+            <?php print render($content['field_image']); ?>
           </div>
-        </div>
-      </div>
-      <?php print render($content['field_bean_text']); ?>
+        <?php endif; ?>
+        <?php if (isset($content['field_link_internal']['#items'][0])): ?>
+          <h3 class="au-card__title">
+            <?php print render($content['field_link_internal']['#items'][0]['title']); ?>
+          </h3>
+        <?php endif; ?>
+        <?php if (isset($content['field_bean_text'])): ?>
+          <div class="au-card__text">
+            <?php print render($content['field_bean_text']); ?>
+          </div>
+        <?php endif; ?>
     </a>
-  </div>
 
-</div>
+</article>

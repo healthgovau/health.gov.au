@@ -410,37 +410,49 @@ function _health_total_children($para, $node_field) {
  *
  * @param $total_number
  * @param $classes_array
+ * @param $consistency
  *
  * @return array
  */
-function _health_grid_class($total_number, $classes_array) {
-  $classes_array[] = '';
+function _health_grid_class($total_number, $classes_array, $consistency = FALSE) {
   switch ($total_number) {
     case 1:
       break;
     case 2:
-      $classes_array[] = 'col-xs-12';
       $classes_array[] = 'col-md-6';
+      if ($consistency) {
+        $classes_array[] = 'col-xs-6';
+      }
       break;
     case 3:
-      $classes_array[] = 'col-xs-12';
       $classes_array[] = 'col-md-4';
+      if ($consistency) {
+        $classes_array[] = 'col-xs-4';
+      }
       break;
     case 4:
-      $classes_array[] = 'col-xs-12';
       $classes_array[] = 'col-md-6';
+      if ($consistency) {
+        $classes_array[] = 'col-xs-6';
+      }
       break;
     case 5:
-      $classes_array[] = 'col-xs-12';
       $classes_array[] = 'col-md-5ths';
+      if ($consistency) {
+        $classes_array[] = 'col-xs-5ths';
+      }
       break;
     case 6:
-      $classes_array[] = 'col-xs-12';
-      $classes_array[] = 'col-sm-4';
+      $classes_array[] = 'col-md-4';
+      if ($consistency) {
+        $classes_array[] = 'col-xx-4';
+      }
       break;
     default:
-      $classes_array[] = 'col-xs-12';
-      $classes_array[] = 'col-sm-3';
+      $classes_array[] = 'col-md-3';
+      if ($consistency) {
+        $classes_array[] = 'col-xs-3';
+      }
   }
 
   return $classes_array;

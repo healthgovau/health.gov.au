@@ -22,7 +22,6 @@
   }
   // View selector component
   &.view-mode-view_selector {
-    float: left;
     box-sizing: border-box;
     position: relative;
     min-height: 1px;
@@ -43,7 +42,7 @@
     .field-name-field-link-internal {
       font-size: 14px;
       word-break: break-word;
-      @include AU-media(sm){
+      @include AU-media( sm ){
         font-size: 16px;
       }
     }
@@ -52,11 +51,27 @@
     }
     .field-name-field-bean-text {
       display: none;
-      @include AU-media(sm){
+      @include AU-media( sm ){
         font-size: 14px;
         margin: 0 auto;
         max-width: 75%;
-        display: inline-block;
+        display: block;
+      }
+    }
+    .bean-block-content {
+      @include block-card($border-colour-top: $colour-light-dark, $bg-hover-colour: #fff);
+      a {
+        border-left: 1px solid $colour-light-dark;
+        border-right: 1px solid $colour-light-dark;
+        border-bottom: 1px solid $colour-light-dark;
+      }
+    }
+  }
+  &.active {
+    .bean-block-content {
+      a {
+        background: #fff;
+        border-top-color: $colour-Tertiary-2;
       }
     }
   }
