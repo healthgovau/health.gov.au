@@ -423,11 +423,17 @@ function _health_grid_class($total_number, $classes_array, $consistency = FALSE)
       if ($consistency) {
         $classes_array[] = 'col-xs-6';
       }
+      else {
+        $classes_array[] = 'col-xs-12';
+      }
       break;
     case 3:
       $classes_array[] = 'col-md-4';
       if ($consistency) {
         $classes_array[] = 'col-xs-4';
+      }
+      else {
+        $classes_array[] = 'col-xs-12';
       }
       break;
     case 4:
@@ -435,11 +441,17 @@ function _health_grid_class($total_number, $classes_array, $consistency = FALSE)
       if ($consistency) {
         $classes_array[] = 'col-xs-6';
       }
+      else {
+        $classes_array[] = 'col-xs-12';
+      }
       break;
     case 5:
       $classes_array[] = 'col-md-5ths';
       if ($consistency) {
         $classes_array[] = 'col-xs-5ths';
+      }
+      else {
+        $classes_array[] = 'col-xs-12';
       }
       break;
     case 6:
@@ -447,11 +459,17 @@ function _health_grid_class($total_number, $classes_array, $consistency = FALSE)
       if ($consistency) {
         $classes_array[] = 'col-xx-4';
       }
+      else {
+        $classes_array[] = 'col-xs-12';
+      }
       break;
     default:
       $classes_array[] = 'col-md-3';
       if ($consistency) {
         $classes_array[] = 'col-xs-3';
+      }
+      else {
+        $classes_array[] = 'col-xs-12';
       }
   }
 

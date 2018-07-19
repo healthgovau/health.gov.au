@@ -106,10 +106,8 @@ endif;
 
                 <?php if (count($page['title_supp']) > 0 || isset($header_image)): ?>
                     <div class="page-title__supp col-sm-4 <?php print isset($section_title) ? 'section-title' : '' ?>">
-                      <div class="row">
-                        <?php print render($page['title_supp']); ?>
-                        <?php print isset($header_image) ? $header_image : ''; ?>
-                      </div>
+                      <?php print render($page['title_supp']); ?>
+                      <?php print isset($header_image) ? $header_image : ''; ?>
                     </div>
                 <?php endif; ?>
               </div>

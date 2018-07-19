@@ -210,11 +210,11 @@ function health_preprocess_entity(&$variables) {
         $nid = $para_item->field_feature_content[LANGUAGE_NONE][0]['target_id'];
         // Pass grid to node.
         $grid_map =[
-          'col-sm-6' => 'col-sm-6',
-          'col-sm-5' => 'col-sm-7',
-          'col-sm-4' => 'col-sm-8',
+          'col-sm-6' => 'col-xs-12 col-sm-6',
+          'col-sm-5' => 'col-xs-12 col-sm-7',
+          'col-sm-4' => 'col-xs-12 col-sm-8',
         ];
-        $variables['content']['field_feature_content'][0]['node'][$nid]['#node']->left_grid = $grid;
+        $variables['content']['field_feature_content'][0]['node'][$nid]['#node']->left_grid = 'col-xs-12 ' . $grid;
         $variables['content']['field_feature_content'][0]['node'][$nid]['#node']->right_grid = $grid_map[$grid];
       }
     }
