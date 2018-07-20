@@ -179,7 +179,6 @@ a.au-card {
 
     li, article {
       display: table-cell;
-      @include AU-space('margin-bottom', 1unit);
       @supports( display: flex ) {
         display: flex;
       }

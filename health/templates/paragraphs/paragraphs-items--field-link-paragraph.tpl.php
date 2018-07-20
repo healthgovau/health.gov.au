@@ -27,6 +27,9 @@
 
 <div class="<?php print $classes; ?> row au-card-list au-card-list--matchheight"<?php print $attributes; ?>>
   <?php foreach ($element['#items'] as $item): ?>
-      <?php print render(entity_view('paragraphs_item', entity_load('paragraphs_item', array($item['value'])), 'listing_horizontal')); ?>
+      <?php
+          $render_array = entity_view('paragraphs_item', entity_load('paragraphs_item', array($item['value'])), 'listing_horizontal');
+          print render($render_array);
+      ?>
   <?php endforeach; ?>
 </div>

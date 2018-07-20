@@ -108,14 +108,7 @@ function health_preprocess_block(&$variables, $hook) {
   // Add grid class to blocks in content_top region.
   if ($variables['block']->region == 'content_top') {
     if ($plugin = context_get_plugin('reaction', 'block')) {
-      $blocks = $plugin->block_get_blocks_by_region('content_top');
-      $count = 0;
-      foreach ($blocks as $key => $block) {
-        if (substr($key, 0, 1) != '#') {
-          $count++;
-        }
-      }
-      $variables['classes_array'] = _health_grid_class($count, $variables['classes_array'], TRUE);
+      $variables['classes_array'] = _health_grid_class(count($plugin->block_list('content_top')), $variables['classes_array'], 'col-xs-4');
     }
   }
 }
@@ -446,7 +439,7 @@ function health_preprocess_entity(&$variables) {
 
     // Add grid class accordingly.
     $count = isset($variables['elements']['num']) ? $variables['elements']['num'] : 1;
-    $variables['classes_array'] = _health_grid_class($count, $variables['classes_array']);
+    $variables['classes_array'] = _health_grid_class($count, $variables['classes_array'], '');
 
     if ($bean->type == 'image_and_text') {
       // Compose block wrapper link url.
@@ -462,13 +455,6 @@ function health_preprocess_entity(&$variables) {
           if ($current_url == drupal_get_normal_path($block_link)) {
             $variables['classes_array'][] = 'active';
           }
-        }
-      }
-
-      // Add colour value to class for solid card.
-      if ($bean->view_mode == 'solid_full_card') {
-        if (isset($bean->field_bean_colour[LANGUAGE_NONE])) {
-          $variables['classes_array'][] = 'colour-' . $bean->field_bean_colour[LANGUAGE_NONE][0]['value'];
         }
       }
     }
