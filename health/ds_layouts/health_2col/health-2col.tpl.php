@@ -5,10 +5,10 @@
  * Display Suite 2 column template.
  */
 ?>
-<div class="row">
+<div class="row <?php print $classes; ?> clearfix">
   <div class="container">
     <div class="row">
-      <div <?php print $layout_attributes; ?> class="<?php print $classes;?> clearfix">
+      <div <?php print $layout_attributes; ?>>
 
         <?php if (isset($title_suffix['contextual_links'])): ?>
           <?php print render($title_suffix['contextual_links']); ?>
