@@ -60,11 +60,8 @@
       // About us boxes
       $('#block-bean-homepage-healthcare-system .group-left, #block-bean-homepage-healthcare-system .group-right', context).matchHeight();
 
-      // Homepage - The Australian healthcare system
-      $('.health__home__static__the-australian-healthcare-system > div', context).matchHeight();
-
-      // Homepage - In our portfolio
-      $('#block-bean-ageing-and-aged-care .bean-image-and-text, #block-bean-homepage-portfolio-sport .bean-image-and-text', context).matchHeight();
+      // Vertical static text para cols
+      $('.paragraphs-item-para-static-vertical-text .col-match-height', context).matchHeight();
 
       // Immunisation more on immunisation band
       $('.paragraphs-item-para-block.block-id__more-services-card .bean-image-and-text a', context).matchHeight();

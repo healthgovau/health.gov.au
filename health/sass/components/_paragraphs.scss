@@ -115,3 +115,30 @@
     }
   }
 }
+
+// Vertical static text para.
+.paragraphs-item-para-static-vertical-text {
+  .col-text {
+    background: white;
+    @include AU-space('padding', 1.75unit);
+    // Need to do this more specifically to override col padding left and right.
+    @include AU-space('padding-left', 1.75unit);
+    @include AU-space('padding-right', 1.75unit);
+    // No gap between left and right cols.
+    margin-left: -$AU-grid-12-gutter-width/2;
+  }
+  h2 {
+    @include health-fontgrid('xl', 'default', 'light');
+  }
+  p {
+    @include health-fontgrid('md', 'default', 'light');
+  }
+}
+
+// Horizontal static text para.
+.paragraphs-item-para-static-horizontal-text {
+  .col-text {
+    background: white;
+    @include AU-space('padding', 2unit);
+  }
+}

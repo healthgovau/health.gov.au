@@ -7,36 +7,6 @@
 
 .au-body {
 
-  // Home
-
-  // The Australian Healthcare System
-  .health__home__static__the-australian-healthcare-system {
-    &__right {
-      background: white;
-      @include AU-space('padding', 1.75unit);
-      // Need to do this more specifically to override col padding left and right.
-      @include AU-space('padding-left', 1.75unit);
-      @include AU-space('padding-right', 1.75unit);
-      // No gap between left and right cols.
-      margin-left: -$AU-grid-12-gutter-width/2;
-    }
-    h2 {
-      @include health-fontgrid('xl', 'default', 'light');
-    }
-    p {
-      @include health-fontgrid('md', 'default', 'light');
-    }
-  }
-
-  // In our portfolio
-  .health__home__static__in-our-portfolio {
-    // @todo This should be replaced by a card style??
-    &__card {
-      background: white;
-      @include AU-space('padding', 2unit);
-    }
-  }
-
   // Views block -- card style modifier.
   .paragraphs-view-news_and_events {
     @include cards-modifier();
