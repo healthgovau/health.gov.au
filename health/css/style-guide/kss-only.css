@@ -2970,9 +2970,9 @@ textarea.au-text-input {
     content: "Text: #313131"; }
 
 .palette__color--link {
-  background-color: #313131; }
+  background-color: #00698f; }
   .palette__color--link:after {
-    content: "Link: #313131"; }
+    content: "Link: #00698f"; }
 
 .palette__color--error {
   background-color: #ff635c; }
@@ -2990,9 +2990,9 @@ textarea.au-text-input {
     content: "Warning: #f69900"; }
 
 .palette__color--info {
-  background-color: #0099d9; }
+  background-color: #00bfe9; }
   .palette__color--info:after {
-    content: "Info: #0099d9"; }
+    content: "Info: #00bfe9"; }
 
 .contrast-box--white {
   background-color: #fff; }
@@ -3013,7 +3013,7 @@ textarea.au-text-input {
   background-color: gray; }
 
 .contrast-box--link {
-  background-color: #313131; }
+  background-color: #00698f; }
 
 .colorbox__colour-Secondary {
   background-color: #008998; }
@@ -3036,9 +3036,9 @@ textarea.au-text-input {
     content: "#313131"; }
 
 .colorbox__colour-Link {
-  background-color: #313131; }
+  background-color: #00698f; }
   .colorbox__colour-Link > span:after {
-    content: "#313131"; }
+    content: "#00698f"; }
 
 .colorbox__colour-Error {
   background-color: #ff635c; }
@@ -3056,6 +3056,6 @@ textarea.au-text-input {
     content: "#f69900"; }
 
 .colorbox__colour-Info {
-  background-color: #0099d9; }
+  background-color: #00bfe9; }
   .colorbox__colour-Info > span:after {
-    content: "#0099d9"; }
+    content: "#00bfe9"; }
