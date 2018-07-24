@@ -16,10 +16,9 @@
 //	}
 
 fieldset {
-  //@extend %fieldset;
-
   .fieldset-legend {
-    @extend %fieldset__legend;
+    @include AU-space('margin', .25unit);
+    @include AU-fontgrid('md');
   }
 }
 

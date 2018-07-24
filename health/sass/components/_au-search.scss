@@ -53,3 +53,26 @@
     }
   }
 }
+
+// Mobile search
+.region-navigation {
+  #search-api-page-search-form-mobile {
+    position: absolute;
+    background: white;
+    width: 100%;
+    margin-top: -6px;
+    .search-wrapper {
+      @include AU-clearfix;
+      border-bottom: 6px solid #cccccc;
+      padding: 12px;
+      form > div {
+        position: relative;
+      }
+    }
+    border-radius: 0;
+    @include AU-media(sm) {
+      border-bottom: 0;
+      display: none;
+    }
+  }
+}

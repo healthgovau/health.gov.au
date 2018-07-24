@@ -16,7 +16,6 @@
 @import 'typography/fields/module';
 
 // Component styles
-@import 'tile/module';
 @import 'card/module';
 
 // Block styles
@@ -33,27 +32,23 @@
 @import 'au-video';
 @import 'au-tags';
 @import 'alert/module';
-@import 'backtotop/module';
-@import 'table/module';
-@import 'table/extends';
+@import 'backtotop';
+@import 'table';
 @import 'responsive-media/module';
 @import 'table-drag/module';
 @import 'table-drag/extends';
-@import 'page-alerts/extends';
-@import 'images/module';
-@import 'stat/module';
+@import 'page-alerts';
+@import 'images';
+@import 'stat';
 @import 'taskbar/module';
-@import 'fieldset/module';
-@import 'header/extends';
-@import 'title-section/module';
-@import 'title-section/extends';
-@import 'footer/module';
-@import 'footer/extends';
-@import 'readspeaker/extends';
-@import 'socialmedia/extends';
-@import 'link/module';
-@import 'link/extends';
-@import 'description-list/module';
+@import 'fieldset';
+@import 'au-header';
+@import 'title-section';
+@import 'au-footer';
+@import 'readspeaker';
+@import 'socialmedia';
+@import 'link';
+@import 'description-list';
 
 
 // Books
@@ -61,11 +56,11 @@
 // Components for long documents, HTML versions of publications and books.
 //
 // Style guide: Components.books
-@import 'recommendation/module';
-@import 'footnotes/module';
-@import 'tooltip/module';
-@import 'table-of-contents/module';
-@import 'figure/module';
+@import 'recommendation';
+@import 'footnotes';
+@import 'tooltip';
+@import 'table-of-contents';
+@import 'figure';
 
 // Display modes
 @import 'display-modes/module';
@@ -80,8 +75,8 @@
 @import 'paragraphs';
 
 // Drupal
-@import 'drupal-contextual-links/module';
-@import 'drupal-workbench/module';
+@import 'au-contextual-links';
+@import 'au-workbench';
 
 // Forms
 //
@@ -117,8 +112,7 @@
 @import 'forms/textarea/extends';
 
 // Icons
-@import 'icons/module';
-@import 'icons/extends';
+@import 'icons';
 
 // Navigation
 //
@@ -147,11 +141,8 @@
 @import 'navigation/faceted-block/extends';
 @import 'navigation/selector/module';
 
-// Search page
-@import 'search/extends';
-
 // Inline styles
-@import 'lists/module';
+@import 'lists';
 
 // Health bespoke styles.
 @import '_health';

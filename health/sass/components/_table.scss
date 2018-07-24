@@ -1,14 +1,17 @@
-//--------------------------------------------------------------
-// Table module
-// Tables help users view tabular data.
+// Tables
 //
-//--------------------------------------------------------------
+// The `<table>` element displays tabular data in rows, columns, and cells.
+//
+// Markup: tables-table.twig
+//
+// Weight: 1
+//
+// Style guide: base.table
 
 // @todo We shouldn't need to import this here, but it won't compile without it.
-@import '../../abstracts/mixins';
+@import '../abstracts/mixins';
 
-// Table.
-%table {
+table {
   @include AU-space('margin-bottom', 1unit);
   border-collapse: collapse;
   border: $health-borderize--thin;
@@ -47,23 +50,20 @@
   }
 }
 
-%table__responsive-wrapper {
+.responsive-table-wrapper {
   overflow: scroll;
   @include AU-media( md ) {
     overflow: auto;
   }
 }
 
-// Table title.
-%table__title {
-  font-weight: bold;
-  padding-bottom: uikit-space(.75);
+.paragraphs-item-content-table {
+  .field-name-field-title {
+    font-weight: bold;
+    @include AU-space('padding-bottom', .75unit);
+  }
+  .field-name-field-table-source {
+    @extend %minor-text;
+    @include AU-space('margin-bottom', 1unit);
+  }
 }
-
-// Table source.
-%table__source {
-  @extend %minor-text;
-  margin-bottom: uikit-space(1);
-}
-
-@import 'print';

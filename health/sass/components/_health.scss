@@ -15,3 +15,14 @@
     @include cards-modifier();
   }
 }
+
+// For all landing pages.
+.node-type-health-topic,
+.node-type-health-topic-hp,
+.page-node-3406 {
+  .page-title {
+    &.header.header--light {
+      margin-bottom: 0;
+    }
+  }
+}

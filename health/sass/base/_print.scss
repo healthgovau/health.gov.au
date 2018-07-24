@@ -1,0 +1,55 @@
+@media print {
+  // Hide back to top.
+  #backtotop {
+    display: none;
+  }
+  // Hide workbench block.
+  .au-workbench {
+    display: none;
+  }
+  // Hide contextual links.
+  div.contextual-links-region {
+    display: none;
+  }
+  // Hide readspeaker.
+  #readspeaker {
+    display: none;
+  }
+  // Table.
+  table {
+    td,
+    th,
+    thead {
+      border-color: #000 !important;
+      background: #fff !important;
+    }
+  }
+  // Image.
+  .image-wrapper {
+    &.image-loading {
+      border: 1px solid black;
+      &:before {
+        content: "This image hasn't loaded yet. Close the print dialog and try again.";
+      }
+    }
+  }
+  // Footer.
+  .footer {
+    display: none;
+  }
+  // Links.
+  .page {
+    a:after {
+      display: none;
+    }
+  }
+  // Title section.
+  .page-title__core {
+    .section-header {
+      display: none;
+    }
+  }
+  .page-title__supp {
+    display: none;
+  }
+}

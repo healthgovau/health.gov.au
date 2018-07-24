@@ -63,5 +63,8 @@
 @import 'layout/footer';
 @import 'layout/regions';
 
+// Print style.
+@import 'base/print';
+
 // Not good things that should be replaced
 @import 'shame';

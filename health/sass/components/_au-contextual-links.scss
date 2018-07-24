@@ -38,9 +38,3 @@ div.contextual-links-region {
     z-index: 455;
   }
 }
-
-@media print {
-  div.contextual-links-region {
-    display: none;
-  }
-}
