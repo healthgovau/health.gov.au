@@ -1,0 +1,26 @@
+// File download
+//
+// A link with metadata to download a file.
+//
+// Markup: document.twig
+//
+// Style guide: navigation.document
+
+.au-body {
+  .au-file {
+    &__icon {
+      @include AU-space('margin-right', .5unit);
+    }
+    &__link {
+      text-decoration: none;
+      &--visible {
+        font-weight: bold;
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+

@@ -4,7 +4,6 @@
 // Default/full content
 .node-type-release {
   @extend %dm-full-content;
-  @extend %page-title-no-supp;
   @extend %page-help-and-currency;
 }
 
@@ -18,7 +17,7 @@
     }
 
     .wrapper > .field-name-field-image-featured {
-      padding-bottom: uikit-space(1);
+      @include AU-space('padding-bottom', 1unit);
     }
   }
 
@@ -51,7 +50,7 @@
     @include cardify();
     border: $health-borderize--thin;
     width: 50%;
-    margin-bottom: uikit-space(1);
+    @include AU-space('margin-bottom', 1unit);
   }
 
   // Inline style

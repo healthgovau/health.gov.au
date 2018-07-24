@@ -1,13 +1,15 @@
 @import "_print.scss";
 
 // Date
+// @todo Remove this and use .metadata and .metadata--inline instead
 %meta-date {
     color: $colour-minorText;
     font-size: 87.5%;
-    margin-bottom: uikit-space(0.5);
+    @include AU-space('margin-bottom', .5unit);
 }
 
 // Wrapper for date and tag
+// @todo Remove this and use .metadata and .metadata--inline instead
 %date-and-tag {
 
   .field-type-datetime,
@@ -22,7 +24,7 @@
     .tags__item {
       font-weight: normal;
     }
-    padding-right: uikit-space(.5);
+    @include AU-space('padding-right', .5unit);
   }
 
   .field-name-ds-content-type,
@@ -30,11 +32,12 @@
   .field-name-field-publication-type,
   .field-name-field-video-type,
   .field-name-field-media-type {
-    padding-left: uikit-space(.5);
+    @include AU-space('padding-left', .5unit);
     border-left: 1px solid $colour-minorText;
   }
 }
 
+// @todo Remove this and use .metadata and .metadata--inline instead
 %date-and-tag--small {
 
   .field-type-datetime,
@@ -46,12 +49,12 @@
   .field-name-field-media-type {
     @extend %meta-date;
     font-size: 12px;
-    @include uikit-media(md) {
+    @include AU-media(md) {
       font-size: 14px;
     }
     float: left;
     margin-bottom: 0;
-    padding-right: uikit-space(.5);
+    @include AU-space('padding-right', .5unit);
   }
 
   .field-name-ds-content-type,
@@ -59,52 +62,9 @@
   .field-name-field-publication-type,
   .field-name-field-video-type,
   .field-name-field-media-type {
-    padding-left: uikit-space(.5);
+    @include AU-space('padding-left', .5unit);
     border-left: 1px solid $colour-minorText;
   }
-}
-
-// All fields
-%field-label,
-.field-label-ui label {
-    font-weight: bold;
-    margin-bottom: uikit-space(.25);
-}
-
-%field-item {
-    padding-bottom: uikit-space(1);
-    display: block;
-}
-
-// Stacked vs inline
-.field-label-inline {
-    clear: both;
-    @include uikit-media(sm) {
-      clear: none;
-    }
-
-    .field-label {
-        @extend %field-label;
-        margin-right: uikit-space(0.25);
-        @include uikit-media(sm) {
-          margin-right: uikit-space(.5);
-          float: left;
-        }
-    }
-    .field-items, dl.tags {
-        @extend %field-item;
-        @include uikit-media(sm) {
-          float: none;
-        }
-    }
-}
-.field-label-above {
-    .field-label {
-        @extend %field-label;
-    }
-    .field-items {
-        @extend %field-item;
-    }
 }
 
 // Styling by field name
@@ -120,9 +80,9 @@
 
 // Ext link
 .field-name-field-link-external {
-    padding-bottom: uikit-space(1.5);
+    @include AU-space('padding-bottom', 1.5unit);
     .field-label {
-        @extend .uikit-display-3;
+        @include AU-fontgrid('lg');
         font-weight: normal;
     }
     .field-items {
@@ -167,7 +127,7 @@
 
 // Document accessibility
 .document-accessibility-form {
-  padding: uikit-space(1.5) 0 uikit-space(0.5) 0;
+  @include AU-space('padding', 1.5unit 0);
   color: $colour-minorText;
   a {
     color: $colour-minorText;
@@ -177,14 +137,14 @@
 
 // Summary
 p.summary, .field-name-field-summary {
-    @include uikit-clearfix();
+    @include AU-clearfix;
     clear: both;
 }
 
 // Resource title.
 .resource-title, p.resource-title {
-  @extend .uikit-display-2;
-  margin-bottom: uikit-space(0.5);
+  @include AU-fontgrid('md');
+  @include AU-space('margin-bottom', .5unit);
 }
 
 // Page currency
@@ -196,28 +156,12 @@ p.summary, .field-name-field-summary {
     .field-name-field-date-updated,
     .field-name-field-date-published {
         &.field-label-inline {
-            border-top: $uikit-borderize;
-            padding-top: uikit-space(1);
-            margin-top: uikit-space(1);
-            @include uikit-media(sm){
-                margin-top: uikit-space(2);
-            }
-            @include uikit-media(md){
-                margin-top: uikit-space(3);
-            }
+          @extend %bottom-border;
         }
     }
 }
 %page-help-only {
   .page {
-    .field-name-field-date-updated,
-    .field-name-field-date-published {
-      &.field-label-inline, &.field-label-above {
-        border: 0;
-        padding-top: 0;
-        margin-top: 0;
-      }
-    }
     .field-name-field-related-health-topics {
       @extend %bottom-border;
     }
@@ -238,36 +182,29 @@ p.summary, .field-name-field-summary {
 }
 
 %bottom-border {
-  border-top: $uikit-borderize;
-  padding-top: uikit-space(1);
-  margin-top: uikit-space(1);
-  @include uikit-media(sm){
-    margin-top: uikit-space(2);
+  border-top: $health-borderize--very-thin;
+  @include AU-space('padding-top', 1unit);
+  @include AU-space('margin-top', 1unit);
+  @include AU-media(sm){
+    @include AU-space('margin-top', 2unit);
   }
-  @include uikit-media(md){
-    margin-top: uikit-space(3);
+  @include AU-media(md){
+    @include AU-space('margin-top', 3unit);
   }
 }
 
 %media-enquiry {
   .media-enquiry{
     @extend %bottom-border;
-    margin-bottom: uikit-space(.5);
+    @include AU-space('margin-bottom', .5unit);
     color: $colour-minorText;
   }
 
   .field-name-field-related-contact {
-    margin-bottom: uikit-space(1.5);
+    @include AU-space('margin-bottom', 1.5unit);
     > .field-items > .field-item {
-      margin-bottom: uikit-space(.5);
+      @include AU-space('margin-bottom', .5unit);
     }
-  }
-}
-
-// Put a consistent space between the label and the value when displayed inline.
-%spaced-inline-label {
-  .field-label {
-    width: 11em;
   }
 }
 
@@ -277,8 +214,4 @@ p.summary, .field-name-field-summary {
   div {
     line-height: 0;
   }
-}
-
-%minor-text {
-  font-size: 13px;
 }

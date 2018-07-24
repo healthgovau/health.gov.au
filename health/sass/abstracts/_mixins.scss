@@ -20,33 +20,33 @@
  */
 @mixin media-max( $breakpoint ) {
   @if type-of( $breakpoint ) != 'string' {
-    @error "Captain I’m giving it all she’s got but; the uikit-media mixin only takes a string!";
+    @error "Captain I’m giving it all she’s got but; the AU-media mixin only takes a string!";
   }
 
   @if $breakpoint != 'xs' and $breakpoint != 'sm' and $breakpoint != 'md' and $breakpoint != 'lg' {
-    @error "There’s no crying in baseball; the uikit-media mixin only takes the following breakpoint strings: xs, sm, md, lg";
+    @error "There’s no crying in baseball; the AU-media mixin only takes the following breakpoint strings: xs, sm, md, lg";
   }
 
   @if( $breakpoint == "xs" ) {
-    @media (max-width: $uikit-media-xs) {
+    @media (max-width: $AU-media-xs) {
       @content;
     }
   }
 
   @if( $breakpoint == "sm" ) {
-    @media (max-width: $uikit-media-sm) {
+    @media (max-width: $AU-media-sm) {
       @content;
     }
   }
 
   @if( $breakpoint == "md" ) {
-    @media (max-width: $uikit-media-md) {
+    @media (max-width: $AU-media-md) {
       @content;
     }
   }
 
   @if( $breakpoint == "lg" ) {
-    @media (max-width: $uikit-media-lg) {
+    @media (max-width: $AU-media-lg) {
       @content;
     }
   }
@@ -55,7 +55,7 @@
 @mixin link-pullout($border-width: 6px, $border-color: $colour-Secondary-darker, $pad: 20px){
   border-left: $border-width solid $border-color;
   padding-left: $pad;
-  padding-top: uikit-space(.5);
+  @include AU-space('padding-top', .5unit);
 }
 
 @mixin shadowfy($colour: $colour-Shadow){
@@ -69,10 +69,6 @@
 
 // UI-Kit link style
 %link {
-  border-bottom: 1px solid $colour-Secondary;
-  &:hover {
-    border: none;
-  }
 }
 
 // Mixin to apply row and container
@@ -101,9 +97,9 @@
 // Mixin to apply card (border top colour) style to bean blocks.
 @mixin block-card($border-colour-top: $colour-Tertiary-2, $border-hover-colour: $colour-Tertiary-2-hover, $bg-colour: $colour-lightest, $bg-hover-colour: $colour-light-dark) {
   a {
-    padding: uikit-space(.5);
-    @include uikit-media(md) {
-      padding: uikit-space(1);
+    @include AU-space('padding', 0.5unit);
+    @include AU-media(md) {
+      @include AU-space('padding', 1unit);
     }
     border-bottom: none;
     display: block;
@@ -126,7 +122,7 @@
     }
 
     .field-name-field-bean-text {
-      color: $uikit-colour-Secondary;
+      //color: $colour-Secondary;
     }
 
     &:hover,
@@ -144,10 +140,8 @@
     .field-name-field-link-internal {
       .field-item {
         display: inline;
-        border-bottom: 1px solid $uikit-colour-Link;
         font-weight: 700;
         margin-bottom: 0;
-        font-family: $uikit-font-system;
       }
     }
     &[rel~='external'] {
@@ -156,8 +150,8 @@
           @extend %ext-link;
           // Move into corner as breaks mobile layout
           position: absolute;
-          top: uikit-space(.75);
-          right: uikit-space(.25);
+          @include AU-space('top', .75unit);
+          @include AU-space('right', .75unit);
         }
       }
     }
@@ -173,11 +167,11 @@
       // IE doesn't handle max-width scaling correctly, so we have to specify width and height in px
       max-width: 75px;
       max-height: 75px;
-      // @include uikit-media(sm) {
+      // @include AU-media(sm) {
       //   max-width: 75px;
       //   max-height: 75px;
       // }
-      @include uikit-media(md) {
+      @include AU-media(md) {
         max-width: 105px;
         max-height: 105px;
       }
@@ -188,11 +182,11 @@
       // IE doesn't handle max-width scaling correctly, so we have to specify width and height in px
       max-width: 30px;
       max-height: 30px;
-      // @include uikit-media(sm) {
+      // @include AU-media(sm) {
       //   max-width: 30px;
       //   max-height: 30px;
       // }
-      @include uikit-media(md) {
+      @include AU-media(md) {
         max-width: 40px;
         max-height: 40px;
       }
@@ -201,67 +195,45 @@
   
 }
 
-@mixin hotline-bar($bgcolour: colour-Tertiary-2-background, $bgcolour-left: $colour-Tertiary-2-hover, $font-colour: white) {
-  @extend %#{$bgcolour};
-
-  // Layout
-  .group-left {
-    @include uikit-media(xs) {
-      width: 100%;
-    }
-    @include uikit-media(sm) {
-      width: 33.33333%;
-    }
-    @include uikit-media(lg) {
-      width: 25%;
-    }
-    padding-top: uikit-space(1.5);
-    @include uikit-media(sm){
-      padding-bottom: uikit-space(1.5);
-      padding-left: uikit-space(1);
-      padding-right: uikit-space(1);
-      background: $bgcolour-left;
-    }
-  }
-  .group-right {
-    @include uikit-media(xs) {
-      width: 100%;
-    }
-    @include uikit-media(sm) {
-      width: 66.66666%;
-    }
-    @include uikit-media(lg) {
-      width: 75%;
-    }
-    padding-bottom: uikit-space(1.5);
-    @include uikit-media(sm){
-      padding-top: uikit-space(1.5);
-      padding-left: uikit-space(2);
-    }
-  }
+@mixin hotline-bar($bgcolour: $colour-light-dark, $bgcolour-left: $colour-Tertiary-2-hover, $font-colour: white) {
+  @extend %colour-Tertiary-2-background;
 
   // font colour
   color: $font-colour;
-  h2,
-  i {
+  h2 {
     color: $font-colour;
   }
-  a {
+  .au-cta-link,
+  .au-callout {
     color: $font-colour;
-    border-bottom: 1px solid $font-colour;
-    &:hover {
+    a {
       color: $font-colour;
-      background: none;
-      border-bottom: none;
+      &:hover {
+        color: $font-colour;
+        background: none;
+      }
     }
+    &:after {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='white' d='M128 64l-64 64-16-16 64-64'/%3E%3Cpath fill='white' d='M128 64l-16 16-64-64L64 0'/%3E%3C/svg%3E");
+    }
+  }
+  .au-callout {
+    background: none;
+    border-left: .25rem solid #fff;
+    .field-label {
+      font-size: 1.5rem;
+    }
+    margin-bottom: 0;
+  }
+  .au-cta-link {
+    padding-left: 0;
   }
 
   // display mode
   .view-mode-hotline_bar {
     h2 {
-      @extend .uikit-display-4;
+      @include AU-fontgrid(lg, heading);
       color: $font-colour;
     }
-
   }
 }

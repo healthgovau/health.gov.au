@@ -280,7 +280,9 @@ function health_adminimal_field_widget_form_alter(&$element, &$form_state, $cont
     $element['#type'] = 'checkboxes';
     $element['#options'] = [$element['#on_value'] => $element['#title']];
     $element['#default_value'] = [$element['#default_value']];
-    $element['#title'] = $form_state['field'][$element['#field_name']][LANGUAGE_NONE]['instance']['label'];
+    if (isset($form_state['field'][$element['#field_name']])) {
+      $element['#title'] = $form_state['field'][$element['#field_name']][LANGUAGE_NONE]['instance']['label'];
+    }
   }
 }
 

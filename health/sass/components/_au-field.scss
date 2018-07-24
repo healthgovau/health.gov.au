@@ -1,0 +1,56 @@
+// Fields
+.field {
+
+  .field + & {
+    @include AU-space(margin-top, 1.5unit);
+  }
+  .metadata--inline + & {
+    @include AU-space(margin-top, .5unit);
+  }
+
+  @include AU-clearfix();
+
+  .field__label, .field-label {
+    font-weight: bold;
+  }
+
+  &--inline, &-label-inline {
+    .field-label, .field__label {
+      float: left;
+    }
+  }
+
+  &--inline--aligned {
+    .field-label, .field__label {
+      width: 11rem;
+    }
+  }
+}
+
+// Metadata, such as dates and types, used mainly in listings.
+.metadata {
+
+  &--inline {
+
+    @include AU-space(margin-top, .5unit);
+
+    .field {
+      // Override the default margin top on fields.
+      margin-top: 0;
+    }
+
+    > div, > span {
+      color: $colour-minorText;
+      display: inline-block;
+      border-left: 1px solid $colour-minorText;
+      @include AU-space(margin-left, .5unit);
+      @include AU-space(padding-left, .5unit);
+    }
+
+    > :first-child {
+      border-left: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+// Content type template 
+// ======================
+
+// Default/full content
+node-type-landing-page {
+  @extend %dm-full-content;
+  @extend %page-help-only;
+}
+
+// Display modes
+.node-landing-page {}

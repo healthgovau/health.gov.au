@@ -7,8 +7,8 @@
 // Style guide: forms.base.textarea
 
 textarea {
-  @extend %text-form-element !optional;
-  @extend .uikit-text-input--textarea;
+  @extend .au-text-input;
+  border-radius: 0;
   // Remove the default vertical scrollbar in IE.
   overflow: auto;
   width: 100%;
@@ -18,7 +18,7 @@ textarea {
 .field-type-text-with-summary,
 .field-type-text {
   label {
-    @extend .uikit-control-input;
-    @extend .uikit-text-input__label;
+    @extend .au-control-input;
+    //@extend .au-text-input__label;
   }
 }

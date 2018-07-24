@@ -1,0 +1,16 @@
+// Header
+//
+// Header.
+
+.au-header {
+  &.au-header--light {
+    background-color: white;
+  }
+}
+
+a.au-header__logo {
+  &:hover,
+  &:focus {
+    background: $colour-light-dark;
+  }
+}

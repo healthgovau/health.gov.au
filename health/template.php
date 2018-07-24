@@ -214,6 +214,19 @@ function health_theme() {
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
   ];
 
+  $theme['health_file_download_link'] = [
+    'variables' => [
+      'title' => '',
+      'mime' => '',
+      'size' => '',
+      'pages' => '',
+      'icon' => '',
+      'uri' => ''
+    ],
+    'template' => 'health_file_download_link',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
   return $theme;
 }
 
@@ -275,10 +288,17 @@ function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
     // Add placeholder.
     $form['search_api_views_fulltext']['#attributes']['placeholder'] = t('Enter your search term');
 
+    // Add classes.
+    $form['search_api_views_fulltext']['#attributes']['class'][] = 'au-search__input au-text-input';
+    $form['search_api_views_fulltext']['#prefix'] = '<div class="au-search__input-wrapper">';
+    $form['search_api_views_fulltext']['#suffix'] = '</div>';
+    $form['submit']['#attributes']['class'][] = 'au-search__submit au-btn';
+    $form['#attributes']['class'] = 'au-search col-sm-9';
+
     // Append selected filters.
     $query_string = drupal_get_query_parameters();
 
-    $links = '';
+    $links = [];
 
     $form['#suffix'] = '';
 
@@ -286,9 +306,9 @@ function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
     if (isset($query_string['search_api_views_fulltext'])) {
       $query_string_modified = $query_string;
       unset($query_string_modified['search_api_views_fulltext']);
-      $links .= theme('selected_filter', [
+
+      $links[] = theme('selected_filter', [
           'url' => url('/' . current_path(), ['query' => $query_string_modified]),
-          'classes' => 'facet-remove-link',
           'text' => t('@text', ['@text' => $query_string['search_api_views_fulltext']]),
         ]
       );
@@ -312,9 +332,8 @@ function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
           $url .= '&f[' . $key_1 . ']=' . $item;
         }
 
-        $links .= theme('selected_filter', [
+        $links[] = theme('selected_filter', [
             'url' => '/' . current_path() . '?' . $url,
-            'classes' => 'facet-remove-link',
             'text' => $filter_name,
           ]
         );
@@ -334,7 +353,7 @@ function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
       );
 
       $form['#suffix'] .= theme('selected_filters_wrapper', [
-        'selected_filters' => $links,
+        'selected_filters' => theme_item_list(['items' => $links, 'type' => 'ul', 'attributes'=>['class' => 'au-tags'], 'title'=>'']),
         'clear_all' => $clear_all,
       ]);
     }
@@ -366,16 +385,31 @@ function health_form_alter(&$form, &$form_state, $form_id) {
     drupal_add_http_header('Cache-Control', 'no-cache, no-store');
     drupal_page_is_cacheable(FALSE);
   }
+
 }
 
 /**
  * Implements hook_form_FORM_ID_alter().
  */
 function health_form_search_api_page_search_form_alter(&$form, &$form_state) {
-  // Add wrapper to apply the uikit search form style.
-  $form['#prefix'] = '<div class="block block-search-api-page contextual-links-region last even" id="search-api-page-search-form">';
-  $form['#suffix'] = '</div>';
-  $form['keys_1']['#attributes']['placeholder'] = t('Enter your search term');
+
+  if (key_exists('keys_1', $form)) {
+    $form['keys_1']['#attributes']['placeholder'] = t('Enter your search terms');
+    $form['keys_1']['#attributes']['class'][] = 'au-search__input au-text-input';
+    $form['keys_1']['#prefix'] = '<div class="au-search__input-wrapper">';
+    $form['keys_1']['#suffix'] = '</div>';
+    $form['keys_1']['#attributes']['size'] = 30;
+    $form['submit_1']['#attributes']['class'][] = 'au-search__submit au-btn';
+  } else if (key_exists('form', $form)) {
+    $form['form']['keys_1']['#attributes']['placeholder'] = t('Enter your search terms');
+    $form['form']['keys_1']['#attributes']['class'][] = 'au-search__input au-text-input';
+    $form['form']['keys_1']['#prefix'] = '<div class="au-search__input-wrapper">';
+    $form['form']['keys_1']['#suffix'] = '</div>';
+    $form['form']['submit_1']['#attributes']['class'][] = 'au-search__submit au-btn';
+  }
+
+  $form['#attributes']['class'] = 'au-search au-search--mobile-hide';
+
 }
 
 /**
@@ -690,9 +724,6 @@ function health_file_entity_download_link($variables) {
         }
       }
 
-      // Construct the link.
-      $variables['text'] = '<div class="file__link">Download <span class="file__link-title">' . $title . ' as</span> ' . health_get_friendly_mime($file->filemime) . '</div>';
-
       // Add metatdata (file size, image size, no of pages)
 
       // Round to 1 decimal for MB and whole number for KB in terms of the file size format.
@@ -706,17 +737,13 @@ function health_file_entity_download_link($variables) {
         }
       }
 
-      $variables['text'].= '<span class="file__meta"> - ' . $formatted_filesize;
       if (isset($no_of_pages)) {
-        $variables['text'].= ', ' . $no_of_pages . ' page';
         if ($no_of_pages > 1) {
-          $variables['text'].= 's';
+          $no_of_pages .= ' pages';
+        } else {
+          $no_of_pages .= ' page';
         }
       }
-      if (isset($size)) {
-        $variables['text'].= ', ' . $size;
-      }
-      $variables['text'].= '</span>';
 
       // Get the icon.
       $icon_directory = $variables['icon_directory'];
@@ -728,14 +755,20 @@ function health_file_entity_download_link($variables) {
       // Set options as per anchor format described at
       // http://microformats.org/wiki/file-format-examples
       $uri['options']['attributes']['type'] = $file->filemime . '; length=' . $file->filesize;
-      $uri['options']['html'] = TRUE;
 
       // Add filename attribute for analytics.
       $uri['options']['attributes']['data-filename'] = $title;
       $uri['options']['attributes']['data-filetype'] = $file->filemime;
 
       // Output the link.
-      $output = '<span class="file"> ' . $icon . ' ' . l($variables['text'], $uri['path'], $uri['options']) . '</span>';
+      $output = theme('health_file_download_link', [
+        'title' => $title,
+        'mime' => health_get_friendly_mime($file->filemime),
+        'size' => $formatted_filesize,
+        'pages' => $no_of_pages,
+        'icon' => $icon,
+        'uri' => $uri
+      ]);
 
       return $output;
     }
@@ -743,6 +776,15 @@ function health_file_entity_download_link($variables) {
 
   return theme_file_entity_download_link($variables);
 
+}
+
+function health_file_icon($variables) {
+  $file = $variables['file'];
+  $alt = $variables['alt'];
+  $icon_directory = $variables['icon_directory'];
+  $mime = check_plain($file->filemime);
+  $icon_url = file_icon_url($file, $icon_directory);
+  return '<img class="au-file__icon" alt="' . check_plain($alt) . '" title="' . $mime . '" src="' . $icon_url . '" />';
 }
 
 /**
@@ -1103,6 +1145,197 @@ function health_status_messages($variables) {
       $output .= reset($messages);
     }
     $output .= "</div>\n";
+  }
+  return $output;
+}
+
+function health_pager($variables) {
+  $tags = $variables['tags'];
+  $element = $variables['element'];
+  $parameters = $variables['parameters'];
+  $quantity = $variables['quantity'];
+  global $pager_page_array, $pager_total;
+
+  // Calculate various markers within this pager piece:
+  // Middle is used to "center" pages around the current page.
+  $pager_middle = ceil($quantity / 2);
+
+  // current is the page we are currently paged to
+  $pager_current = $pager_page_array[$element] + 1;
+
+  // first is the first page listed by this pager piece (re quantity)
+  $pager_first = $pager_current - $pager_middle + 1;
+
+  // last is the last page listed by this pager piece (re quantity)
+  $pager_last = $pager_current + $quantity - $pager_middle;
+
+  // max is the maximum page number
+  $pager_max = $pager_total[$element];
+
+  // End of marker calculations.
+  // Prepare for generation loop.
+  $i = $pager_first;
+  if ($pager_last > $pager_max) {
+
+    // Adjust "center" if at end of query.
+    $i = $i + ($pager_max - $pager_last);
+    $pager_last = $pager_max;
+  }
+  if ($i <= 0) {
+
+    // Adjust "center" if at start of query.
+    $pager_last = $pager_last + (1 - $i);
+    $i = 1;
+  }
+
+  // End of generation loop preparation.
+  $li_first = theme('pager_first', array(
+    'text' => isset($tags[0]) ? $tags[0] : t('« first'),
+    'element' => $element,
+    'parameters' => $parameters,
+  ));
+  $li_previous = theme('pager_previous', array(
+    'text' => isset($tags[1]) ? $tags[1] : t('‹ previous'),
+    'element' => $element,
+    'interval' => 1,
+    'parameters' => $parameters,
+  ));
+  $li_next = theme('pager_next', array(
+    'text' => isset($tags[3]) ? $tags[3] : t('next ›'),
+    'element' => $element,
+    'interval' => 1,
+    'parameters' => $parameters,
+  ));
+  $li_last = theme('pager_last', array(
+    'text' => isset($tags[4]) ? $tags[4] : t('last »'),
+    'element' => $element,
+    'parameters' => $parameters,
+  ));
+  if ($pager_total[$element] > 1) {
+    if ($li_first) {
+      $items[] = array(
+        'class' => array(
+          'au-pager__item',
+          'au-pager__item--first',
+        ),
+        'data' => $li_first,
+      );
+    }
+    if ($li_previous) {
+      $items[] = array(
+        'class' => array(
+          'au-pager__item',
+          'au-pager__item--previous',
+        ),
+        'data' => $li_previous,
+      );
+    }
+
+    // When there is more than one page, create the pager list.
+    if ($i != $pager_max) {
+      if ($i > 1) {
+        $items[] = array(
+          'class' => array(
+            'au-pager__item',
+            'au-pager__item--ellipsis',
+          ),
+          'data' => '…',
+        );
+      }
+
+      // Now generate the actual pager piece.
+      for (; $i <= $pager_last && $i <= $pager_max; $i++) {
+        if ($i < $pager_current) {
+          $items[] = array(
+            'class' => array(
+              'au-pager__item',
+            ),
+            'data' => theme('pager_previous', array(
+              'text' => $i,
+              'element' => $element,
+              'interval' => $pager_current - $i,
+              'parameters' => $parameters,
+            )),
+          );
+        }
+        if ($i == $pager_current) {
+          $items[] = array(
+            'class' => array(
+              'au-pager__item',
+              'au-pager__item--active',
+            ),
+            'data' => $i,
+          );
+        }
+        if ($i > $pager_current) {
+          $items[] = array(
+            'class' => array(
+              'au-pager__item',
+            ),
+            'data' => theme('pager_next', array(
+              'text' => $i,
+              'element' => $element,
+              'interval' => $i - $pager_current,
+              'parameters' => $parameters,
+            )),
+          );
+        }
+      }
+      if ($i < $pager_max) {
+        $items[] = array(
+          'class' => array(
+            'au-pager__item',
+            'au-pager__item--ellipsis',
+          ),
+          'data' => '…',
+        );
+      }
+    }
+
+    // End generation.
+    if ($li_next) {
+      $items[] = array(
+        'class' => array(
+          'au-pager__item',
+          'au-pager__item--next',
+        ),
+        'data' => $li_next,
+      );
+    }
+    if ($li_last) {
+      $items[] = array(
+        'class' => array(
+          'au-pager__item',
+          'au-pager__item--last',
+        ),
+        'data' => $li_last,
+      );
+    }
+    return '<div class="au-pager"><h2 class="sr-only">' . t('Pages') . '</h2>' . theme('item_list', array(
+        'items' => $items,
+        'attributes' => array(
+          'class' => array(
+            'au-link-list',
+            'au-link-list--inline',
+          ),
+        ),
+      )) . '</div>';
+  }
+}
+
+function health_menu_local_tasks(&$variables) {
+  $output = '';
+  if (!empty($variables['primary'])) {
+    $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
+    $variables['primary']['#prefix'] .= '<ul class="au-tabs au-link-list au-link-list--inline primary">';
+    $variables['primary']['#suffix'] = '</ul>';
+    $output .= drupal_render($variables['primary']);
+  }
+  if (!empty($variables['secondary'])) {
+    $variables['secondary']['#prefix'] = '<h2 class="element-invisible">' . t('Secondary tabs') . '</h2>';
+    $variables['secondary']['#prefix'] .= '<ul class="au-tabs au-link-list au-link-list--inline secondary">';
+    $variables['secondary']['#suffix'] = '</ul>';
+    $output .= drupal_render($variables['secondary']);
   }
   return $output;
 }

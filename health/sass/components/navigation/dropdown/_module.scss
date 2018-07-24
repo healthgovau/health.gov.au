@@ -4,21 +4,21 @@
 //
 //-------------------------------------------------------------
 
-%uikit-dropdown {
+%health-dropdown {
   // Child nav styling
-  @extend %uikit-sitenav;
+  @extend %health-sitenav;
   ul {
-    @extend .uikit-link-list;
+    @extend .au-link-list;
     position: absolute;
     top: 0;
-    background: $uikit-colour-Background-5;
+    background: $AU-color-background;
     left: 0;
     padding: 0;
     z-index: 5;
     & > li {
       margin: 0;
       & > a {
-        padding: uikit-space(.5) uikit-space(1);
+        @include AU-space('margin-bottom', .5unit, 1unit);
         border-bottom: 0;
       }
     }

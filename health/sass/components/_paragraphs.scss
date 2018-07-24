@@ -1,0 +1,144 @@
+.paragraphs-item-para-links {
+  &.hide-title {
+    h2 {
+      display: none;
+    }
+  }
+}
+
+.paragraphs-item-para-contact {
+  text-align: center;
+  p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  // This creates .container and .row from band markup for BS grid
+  &.para-row {
+    padding-top: 0;
+    padding-bottom: 0;
+    @include hotline-bar();
+  }
+
+  // Layout
+  .group-left {
+    @include AU-space('padding-top', 1.5unit);
+    @include AU-media(sm){
+      @include AU-space('padding-bottom', 1.5unit);
+      @include AU-space('padding-left', 1unit);
+      @include AU-space('padding-right', 1unit);
+      background: $colour-Tertiary-2-hover;
+    }
+  }
+  .group-right {
+    @include AU-space('padding-bottom', 1.5unit);
+    @include AU-media(sm){
+      @include AU-space('padding-top', 1.5unit);
+      @include AU-space('padding-left', 2unit);
+    }
+  }
+
+  p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include AU-media(sm) {
+    text-align: left;
+    p {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .field-name-field-related-contact {
+    padding-left: 12px;
+    padding-right: 12px;
+
+    .paragraphs-item-para-telephone {
+      padding: 0;
+      .field-name-field-contact-telephone {
+        @include AU-fontgrid(xl, heading);
+        font-weight: 700;
+      }
+      i {
+        color: #fff;
+      }
+    }
+  }
+}
+
+// Statistics
+.paragraphs-item-para-statistics {
+  .view-mode-full {
+    h2 {
+      @include health-fontgrid('xl', 'default', 'light');
+      @include AU-space('padding-bottom', .75unit);
+    }
+  }
+  .field-name-field-summary {
+    p {
+      @include AU-space('margin-top', .5unit);
+      @include AU-space('margin-bottom', .5unit);
+    }
+  }
+}
+
+// Image
+.paragraphs-item-para-content-image {
+  .field-name-field-image {
+    line-height: 0;
+  }
+  @include AU-space('margin-bottom', 1unit);
+}
+
+// Paragraph row.
+.entity-paragraphs-item {
+  &.para-row {
+    .more-link {
+      float: right;
+    }
+  }
+}
+
+// Documents para.
+.paragraphs-items-field-publication-files,
+.field-name-field-publication-nmm-id {
+  > h2 {
+    @include AU-fontgrid( sm );
+    @include AU-space('margin-bottom', 1unit);
+    font-weight: normal;
+  }
+  .paragraphs-item-documents {
+    h3 {
+      @include AU-fontgrid( sm );
+      @include AU-space('margin-bottom', .5unit);
+      font-weight: bold;
+    }
+  }
+}
+
+// Vertical static text para.
+.paragraphs-item-para-static-vertical-text {
+  .col-text {
+    background: white;
+    @include AU-space('padding', 1.75unit);
+    // Need to do this more specifically to override col padding left and right.
+    @include AU-space('padding-left', 1.75unit);
+    @include AU-space('padding-right', 1.75unit);
+    // No gap between left and right cols.
+    margin-left: -$AU-grid-12-gutter-width/2;
+  }
+  h2 {
+    @include health-fontgrid('xl', 'default', 'light');
+  }
+  p {
+    @include health-fontgrid('md', 'default', 'light');
+  }
+}
+
+// Horizontal static text para.
+.paragraphs-item-para-static-horizontal-text {
+  .col-text {
+    background: white;
+    @include AU-space('padding', 2unit);
+  }
+}

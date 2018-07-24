@@ -1,0 +1,55 @@
+ul.social__links, // Getting specific with it nah nah nah nah na na na!
+.social__links
+{
+  padding: 0;
+  @include AU-space('margin', 1unit 0 0 0);
+  @include AU-media(sm){
+    margin-top: 0;
+  }
+
+  overflow: hidden;
+
+  .social__links-item {
+
+    float: none;
+    display: block;
+    @include AU-space('margin', 0 1unit 0.5unit 0);
+    list-style-type: none;
+
+    @include AU-media(sm){
+      float: left;
+      display: inline;
+      margin-bottom: 0;
+    }
+    // Font Awesome implementation
+    a {
+      @extend %baseicon;
+      margin-left: 2.6em !important;
+      &.youtube:before {
+        content: "\f16a";
+      }
+      &.twitter:before {
+        content: "\f099";
+      }
+      &.facebook:before {
+        content: "\f09a";
+      }
+      &.email:before {
+        content: "\f003";
+      }
+      &.linkedin:before {
+        content: "\f0e1";
+      }
+      &.instagram:before {
+        content: "\f16d";
+      }
+      display: inline;
+      margin-right: 0;
+
+      // Hide external link for social media links.
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

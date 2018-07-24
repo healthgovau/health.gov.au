@@ -2,70 +2,14 @@
 .node-type-publication {
     @extend %dm-full-content;
 	@extend %page-help-only;
-    @extend %page-title-no-supp;
 }
 
 // Display modes
 .node-publication {
-    background: transparent;
-
-    &.view-mode-full {
-
-      // Image
-      .field-name-field-image-featured {
-        @extend %image--full;
-        .go-to-download-link {
-          a {
-            @extend %link;
-          }
-          line-height: 2;
-          margin-top: 10px;
-
-        }
-      }
-
-      // Document download
-      .paragraphs-item-documents {
-        padding-bottom: uikit-space(1) !important;
-        @extend %document-link;
-      }
-
-      .paragraphs-items-field-publication-files,
-      .field-name-field-publication-nmm-id {
-        > h2 {
-          @extend .uikit-display-3;
-          margin-bottom: uikit-space(1);
-        }
-      }
-
-    }
-
-	// Major list
-	&.view-mode-listing_vertical {
-		@extend %dm-list-vertical;
-		.group-left {
-			display: block;
-		}
-	}
-    &.view-mode-listing_vertical_small {
-		@extend %dm-list-vertical--small;
-    }
 
     // Feature
 	&.view-mode-feature {
 		@extend %dm-feature-2-col;
-    }	
-	// Inline style
-	&.view-mode-inline {
-		@extend %dm-inline-2-col;
-	}
-
-    &.view-mode-inline_large {
-        @extend %dm-inline-large;
     }
 
-    // Search
-    &.view-mode-search_result {
-        @extend %dm-search-index;
-    }
 }

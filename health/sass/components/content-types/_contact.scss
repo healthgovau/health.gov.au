@@ -3,100 +3,36 @@
 
 // Default/full content
 .node-type-contact {
-  @extend %dm-full-content;
+    @extend %dm-full-content;
 	@extend %page-help-and-currency;
 }
 
 // Display modes
 .node-contact {
 
-	// List vertical
-	&.view-mode-listing_vertical {
-    @extend %dm-list-vertical;
-    .group-left {
-      @extend .col-xs-2;
-    }
-    .group-right {
-      @extend .col-xs-10;
-    }
-    // Labels
-    .field-label {
-      @extend %visually-hidden;
-    }
-
-    // Telephone and email paragraphs 
-    .inside-para-container,
-    .field-name-field-summary {
-      padding-bottom: uikit-space(.5);
-    }
-
-	}
-	// List vertical small
-	&.view-mode-listing_vertical_small {
-		@extend %dm-list-vertical--small-noimage;
-    }
-    
-    // List horizontal
-    &.view-mode-listing_horizontal {
-		@extend %dm-list-horizontal;
-    }
-
-	// Feature
-	&.view-mode-feature {
-		@extend %dm-list-horizontal;
-    }
-
-	// Inline style
-	&.view-mode-inline {
-    @extend %dm-inline-2-col;
-    // layout override
-    display: flex;
-    .group-left {
-      @extend .col-xs-2;
-      @extend .col-sm-2;
-      @extend .col-md-2;
-      @extend .col-lg-2;
-      background: $colour-light;
-      text-align: center;
-      padding-top: uikit-space(1);
-      padding-bottom: uikit-space(1);
-      
-    }
-    .group-right {
-      @extend .col-xs-10;
-      @extend .col-sm-10;
-      @extend .col-md-10;
-      @extend .col-lg-10;
-      padding: uikit-space(1) uikit-space(.5) uikit-space(.5) uikit-space(1.5) !important;
-    }
-    // Styling
-    border: 1px solid #ccc;
-    background: none;
-
-    padding: 0;
-    @include uikit-media(sm) {
-      padding: 0;
-    }
-
-    // Labels
-    .field-label {
-      @extend %visually-hidden;
-    }
-
-    // Telephone and email paragraphs 
-    .inside-para-container {
-      padding-bottom: uikit-space(.5);
-    }
-  }
-
   // Inline style
-  // &.view-mode-inline_large {
-  //   @extend %dm-inline-large;
-  // }
-    
-  // Search
-  &.view-mode-search_result {
-      @extend %dm-search-index;
+  &.view-mode-inline_large {
+    .field-name-title {
+      font-weight: bold;
+    }
+    .group-name {
+      .field {
+        float: left;
+        margin-right: 4px;
+      }
+      @include AU-clearfix;
+    }
+    p {
+      margin-bottom: 0;
+    }
+
+    @include AU-space('margin-bottom', 1unit);
+    @include AU-media(sm){
+      @include AU-space('margin-bottom', 2unit);
+    }
+    @include AU-media(md){
+      @include AU-space('margin-bottom', 3unit);
+    }
   }
 
   // Contact type subsets for differential styling
@@ -104,10 +40,10 @@
     img {
       border: 0; // Clear for company logos, crests, etc
       max-width: 100%;
-      @include uikit-media(md){
+      @include AU-media(md){
         max-width: 80%
       }
-    } 
+    }
   }
 
   // Apply circle style to default image and sleected ones regardless of upload
@@ -117,7 +53,7 @@
     .field-name-field-image-featured {
       img {
         @include circlefy;
-      } 
+      }
     }
   }
 
@@ -125,7 +61,7 @@
   .field-name-field-image-featured.default {
     img {
       @include circlefy;
-    } 
+    }
   }
-  
+
 }

@@ -1,0 +1,51 @@
+//
+// Drupal selectors.
+//
+.table-drag,
+body.drag {
+  @extend %au-table-drag__wrapper;
+}
+
+tr.drag {
+  @extend %au-table-drag__item;
+}
+
+tr.drag-previous {
+  @extend %au-table-drag__item-previous;
+}
+
+.tabledrag-handle {
+  @extend %au-table-drag__handle;
+
+  .handle {
+    @extend %au-table-drag__handle-icon;
+  }
+}
+
+.tabledrag-handle-hover .handle {
+  @extend %au-table-drag__handle-icon--is-hover;
+}
+
+.tabledrag-toggle-weight-wrapper {
+  @extend %au-table-drag__toggle-weight-wrapper;
+}
+
+.tabledrag-toggle-weight {
+  @extend %au-table-drag__toggle-weight;
+}
+
+.indentation {
+  @extend %au-table-drag__indentation;
+}
+
+.tree-child {
+  @extend %au-table-drag__tree-child;
+}
+
+.tree-child-last {
+  @extend %au-table-drag__tree-child-last;
+}
+
+.tree-child-horizontal {
+  @extend %au-table-drag__tree-child-horizontal;
+}

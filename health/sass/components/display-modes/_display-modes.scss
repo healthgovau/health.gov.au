@@ -1,0 +1,16 @@
+// Define defaults for display modes
+// These classes are not used directly
+// Instead they are extended and overidden as needed by content types
+
+// Display modes
+// ==============
+// Full content
+// Feature
+// Inline
+// List horizontal
+// List vertical
+// List vertical small
+// Search
+
+@import 'components/display-modes/full-content';
+@import 'components/display-modes/feature';

@@ -13,7 +13,6 @@ CONST RESOURCES_TYPE = [
 ];
 CONST THEME_PATH_TOKEN_GENERIC = '[theme-path]';
 CONST PUBLICATION_TYPE_INFOGRAPHIC = 2176;
-CONST GOOGLE_FONT_API = '//fonts.googleapis.com/css?family=Open+Sans:400,700';
 
 /**
  * Override or insert variables into the block templates.
@@ -66,7 +65,6 @@ function health_preprocess_block(&$variables, $hook) {
     case 'comment':
     case 'forum':
     case 'shortcut':
-    case 'statistics':
       $variables['attributes_array']['role'] = 'navigation';
       break;
     case 'search':
@@ -105,6 +103,13 @@ function health_preprocess_block(&$variables, $hook) {
   // Add a class to the block if it is a block menu with the title as a link.
   if ($variables['elements']['#block']->module == 'menu_block' && $variables['elements']['#config']['title_link']) {
     $variables['classes_array'][] = 'block-menu-block--title-link';
+  }
+
+  // Add grid class to blocks in content_top region.
+  if ($variables['block']->region == 'content_top') {
+    if ($plugin = context_get_plugin('reaction', 'block')) {
+      $variables['classes_array'] = _health_grid_class(count($plugin->block_list('content_top')), $variables['classes_array'], 'col-xs-4');
+    }
   }
 }
 
@@ -149,9 +154,68 @@ function health_preprocess_entity(&$variables) {
       $variables['classes_array'][] = strtolower(str_replace(' ', '-', $title));
     }
 
+    // Add band background colour.
+    if (property_exists($para_item, 'field_band_background_colour')) {
+      if (!empty($para_item->field_band_background_colour)) {
+        $colour = taxonomy_term_load($para_item->field_band_background_colour[LANGUAGE_NONE][0]['tid']);
+        $variables['classes_array'][] = $colour->description;
+      }
+    }
+
+    // Links.
+    if ($para_item->bundle == 'para_links') {
+      // Hide title if hide title field is checked.
+      $checked = $para_item->field_hide_title;
+      if (isset($checked[LANGUAGE_NONE]) && $checked[LANGUAGE_NONE][0]['value'] == 1) {
+        // Hide the para title.
+        $variables['classes_array'][] = 'hide-title';
+      }
+      // Pass band style to link paragraph.
+      $band_style = $para_item->field_band_style[LANGUAGE_NONE][0]['value'];
+      foreach ($variables['content']['field_link_paragraph'] as $key => $link_entity) {
+        if (is_integer($key)) {
+          $link_entity_id = $para_item->field_link_paragraph[LANGUAGE_NONE][$key]['value'];
+          $variables['content']['field_link_paragraph'][$key]['entity']['paragraphs_item'][$link_entity_id]['#entity']->card_style = $band_style;
+        }
+      }
+    }
+
+    // Link.
+    if ($para_item->bundle == 'para_link') {
+      $variables['card_style'] = $para_item->card_style;
+    }
+
+    // Contact
+    if ($para_item->bundle == 'para_contact') {
+      // Add more link to referenced node.
+      $nid = $para_item->field_related_contact[LANGUAGE_NONE][0]['target_id'];
+      if (isset($para_item->field_link_internal[LANGUAGE_NONE][0])) {
+        $variables['content']['field_related_contact'][0]['node'][$nid]['#node']->link = $para_item->field_link_internal[LANGUAGE_NONE][0];
+      }
+      // Pass selected display field name to node.
+      $variables['content']['field_related_contact'][0]['node'][$nid]['#node']->selected_field = $para_item->field_display_field[LANGUAGE_NONE][0]['value'];
+    }
+
+    // Feature content.
+    if ($para_item->bundle == 'para_feature_content') {
+      if (isset($para_item->field_grid[LANGUAGE_NONE])) {
+        $grid = $para_item->field_grid[LANGUAGE_NONE][0]['value'];
+        $nid = $para_item->field_feature_content[LANGUAGE_NONE][0]['target_id'];
+        // Pass grid to node.
+        $grid_map =[
+          'col-sm-6' => 'col-xs-12 col-sm-6',
+          'col-sm-5' => 'col-xs-12 col-sm-7',
+          'col-sm-4' => 'col-xs-12 col-sm-8',
+        ];
+        $variables['content']['field_feature_content'][0]['node'][$nid]['#node']->left_grid = 'col-xs-12 ' . $grid;
+        $variables['content']['field_feature_content'][0]['node'][$nid]['#node']->right_grid = $grid_map[$grid];
+      }
+    }
+
     // Statistic.
-    if ($para_item->bundle == 'para_statistic') {
-      // Add no-trend variant if trend info hasn't been added.
+    if ($para_item->bundle == 'para_statistics') {// Add no-trend variant if trend info hasn't been added.
+      // Find out number of statistics node.
+      $variables = _health_total_children($variables, 'field_statistics');
       if (empty($variables['elements']['#entity']->field_statistic_trend) && empty($variables['elements']['#entity']->field_statistic_trend_timeframe)) {
         $variables['classes_array'][] = 'no-trend';
       }
@@ -195,12 +259,18 @@ function health_preprocess_entity(&$variables) {
               $view->set_arguments([$nid]);
             }
             break;
+          case "latest_news_events_public_program":
+            if ($nid = _health_get_featured_item('featured_news_events')) {
+              $view->set_arguments([NULL, $nid]);
+            }
+            break;
         }
       }
       if ($view_name == 'latest_rsources') {
         switch($view_mode) {
           case "resources_for_public_in_hp":
           case "latest_resources_public":
+          case "latest_resources_public_program":
             if ($nid = _health_get_featured_item('featured_resource')) {
               $view->set_arguments([NULL, $nid]);
             }
@@ -249,6 +319,10 @@ function health_preprocess_entity(&$variables) {
       $view->execute();
 
       if ($view->total_rows > 0) {
+        // Add grid if there is no manual grid col set.
+        if ($view->style_plugin->options['row_class'] == '') {
+          $view->style_plugin->options['row_class'] = implode(' ', _health_grid_class(count($view->result), []));
+        }
         // Render the view.
         $variables['para_rendered_view'] = $view->preview();
         // If there are no more records to show, hide the more link.
@@ -258,8 +332,6 @@ function health_preprocess_entity(&$variables) {
         // Add some classes to help identify it.
         $variables['classes_array'][] = 'paragraphs-view-' . $view->name;
         $variables['classes_array'][] = 'paragraphs-view-display-' . $view->current_display;
-        // Add css count.
-        $variables['classes_array'][] = 'listing__count--' . count($view->result);
       }
     }
 
@@ -286,6 +358,10 @@ function health_preprocess_entity(&$variables) {
       // Add total block number in current para to class.
       $block_num = count($para_item->field_para_block_id[LANGUAGE_NONE]);
       $variables['classes_array'][] = 'block__count--' . $block_num;
+      foreach ($variables['paragraphs_item']->field_para_block_id[LANGUAGE_NONE] as $key => $block) {
+        $block['value'] .= '-num'. $block_num;
+        $variables['paragraphs_item']->field_para_block_id[LANGUAGE_NONE][$key] = $block;
+      }
 
       // Add class to identify specific block.
       foreach($para_item->field_para_block_id[LANGUAGE_NONE] as $bid) {
@@ -296,7 +372,8 @@ function health_preprocess_entity(&$variables) {
     // Recommendations
     if ($para_item->bundle == 'recommendation') {
       // Add a class to identify what grade it is.
-      $variables['classes_array'][] = 'recommendation-grade-tid-' . $para_item->field_recommendation_grade[LANGUAGE_NONE][0]['tid'];
+      $term = taxonomy_term_load($para_item->field_recommendation_grade[LANGUAGE_NONE][0]['tid']);
+      $variables['classes_array'][] = 'recommendation--grade-' . _health_prepare_filename($term->name);
     }
 
     // Summary lists
@@ -360,6 +437,10 @@ function health_preprocess_entity(&$variables) {
     // Add template suggestions for bean types.
     $variables['theme_hook_suggestions'][] = 'block__bean__' . $bean->type;
 
+    // Add grid class accordingly.
+    $count = isset($variables['elements']['num']) ? $variables['elements']['num'] : 1;
+    $variables['classes_array'] = _health_grid_class($count, $variables['classes_array'], '');
+
     if ($bean->type == 'image_and_text') {
       // Compose block wrapper link url.
       if ($bean->field_link_internal) {
@@ -374,13 +455,6 @@ function health_preprocess_entity(&$variables) {
           if ($current_url == drupal_get_normal_path($block_link)) {
             $variables['classes_array'][] = 'active';
           }
-        }
-      }
-
-      // Add colour value to class for solid card.
-      if ($bean->view_mode == 'solid_full_card') {
-        if (isset($bean->field_bean_colour[LANGUAGE_NONE])) {
-          $variables['classes_array'][] = 'colour-' . $bean->field_bean_colour[LANGUAGE_NONE][0]['value'];
         }
       }
     }
@@ -655,21 +729,6 @@ function health_preprocess_field(&$variables) {
     }
   }
 
-  // For resources with featured image and document download link, add anchor
-  // link under the featured image field.
-  if ($variables['element']['#bundle'] == 'publication') {
-    // Add JS.
-    $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.imageAnchor.min.js';
-
-    // Add link wrapper and link to the image field.
-    if ($variables['element']['#field_name'] == 'field_image_featured' &&
-      $variables['element']['#view_mode'] == 'full' &&
-      isset($variables['element']['#object']->field_publication_files[LANGUAGE_NONE][0])) {
-      $variables['items'][0]['#prefix'] = '<div class="link-wrapper"><a href="#" class="link-wrapper">';
-      $variables['items'][0]['#suffix'] = '</a></div><div class="go-to-download-link rs_preserve">Go to <a href="#" class="link-wrapper" role="button">downloads</a></div>';
-    }
-  }
-
   // Render publication orderable nmm contact details.
   if ($variables['element']['#field_name'] == 'field_publication_nmm_id') {
     $render_array = [
@@ -750,6 +809,14 @@ function health_preprocess_field(&$variables) {
       ]);
     }
     $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.footnotes.min.js';
+  }
+
+  // Related related conditions or diseases.
+  if ($variables['element']['#field_name'] == 'field_related_conditions_disease') {
+    // Add dynamic col class to item div according to the total number of items.
+    $classes = [];
+    $classes = _health_grid_class(count($variables['items']), $classes);
+    $variables['ds-config']['fi-cl'] = implode(' ', $classes);
   }
 }
 
@@ -913,6 +980,34 @@ function health_preprocess_node(&$variables) {
   if ($variables['type'] == 'contact') {
     $type = taxonomy_term_load($variables['field_contact_type'][LANGUAGE_NONE][0]['tid'])->name;
     $variables['classes_array'][] = strtolower(str_replace(' ', '-', $type));
+
+    // Only render selected field for hotline bar view mode.
+    if ($variables['view_mode'] == 'hotline_bar') {
+      foreach ($variables as $key => $item) {
+        if (substr($key, 0, 6) == 'field_') {
+          if ($key != $variables['node']->selected_field) {
+            unset($variables['content'][$key]);
+          }
+        }
+      }
+    }
+  }
+
+  // Add grid class to statistics card.
+  if ($node->type == 'statistic') {
+    if (isset($variables['content']['num'])) {
+      $variables['classes_array'] = _health_grid_class($variables['content']['num'], $variables['classes_array']);
+    }
+  }
+
+  // Hide summary if there is a featured image for horizontal listing display
+  // with initiative, program, campaign content type.
+  if (in_array($node->type, ['initiative', 'program', 'campaign'])) {
+    if ($variables['view_mode'] == 'listing_horizontal') {
+      if (isset($node->field_image_featured[LANGUAGE_NONE][0])) {
+        unset($variables['content']['field_summary']);
+      }
+    }
   }
 
   // Display suite preprocess hooks.
@@ -1004,12 +1099,6 @@ function health_preprocess_node(&$variables) {
  * Implements THEME_preprocess_page().
  */
 function health_preprocess_page(&$variables) {
-  // Add google font api.
-  $variables['page']['content']['#attached']['css'][] = [
-    'data' => GOOGLE_FONT_API,
-    'type' => 'external',
-  ];
-
   // Vuejs is added in html.tpl.php as its the only way to exclude it from IE8.
   // LazyLoad is added in html.tpl.php as its the only way to exclude it from IE8.
 
@@ -1083,6 +1172,19 @@ function health_preprocess_page(&$variables) {
       'type' => 'file',
     ];
     $variables['readspeaker'] = drupal_render($render_readspeaker);
+  }
+
+  // Add full width indicator.
+  if (isset($variables['node'])) {
+    if (theme_get_setting('full_content_types')[$variables['node']->type] !== 0 ) {
+      $variables['full_width'] = TRUE;
+    }
+    else {
+      $variables['full_width'] = FALSE;
+    }
+  }
+  else {
+    $variables['full_width'] = FALSE;
   }
 
   // Add parameters to JS.

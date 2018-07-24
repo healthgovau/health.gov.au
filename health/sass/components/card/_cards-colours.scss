@@ -1,0 +1,96 @@
+// Styles for coloured cards.
+
+@mixin AU-card-colours {
+  li, article {
+    .au-cta-link {
+      border-top-width: 3px;
+      border-top-style: solid;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+    // Top borders for cards.
+    &:nth-of-type(5n+1) {
+      .au-cta-link {
+        border-top-color: $colour-Primary;
+        &:hover {
+          background-color: $colour-light-darker;
+        }
+      }
+      .au-card--solid {
+        background: $colour-Primary;
+        color: white;
+        &:hover {
+          background-color: $colour-Primary-hover;
+          color: white;
+        }
+      }
+    }
+
+    &:nth-of-type(5n+2) {
+      .au-cta-link {
+        border-top-color: $colour-Secondary;
+        &:hover {
+          background-color: $colour-light-darker;
+        }
+      }
+      .au-card--solid {
+        background: $colour-Secondary;
+        color: white;
+        &:hover {
+          background-color: $colour-Secondary-hover;
+          color: white;
+        }
+      }
+    }
+
+    &:nth-of-type(5n+3) {
+      .au-cta-link {
+        border-top-color: $colour-Tertiary;
+        &:hover {
+          background-color: $colour-light-darker;
+        }
+      }
+      .au-card--solid {
+        background: $colour-Tertiary;
+        color: white;
+        &:hover {
+          background-color: $colour-Tertiary-hover;
+          color: white;
+        }
+      }
+    }
+
+    &:nth-of-type(5n+4) {
+      .au-cta-link {
+        border-top-color: $colour-Tertiary-2;
+        &:hover {
+          background-color: $colour-light-darker;
+        }
+      }
+      .au-card--solid {
+        background: $colour-Tertiary-2;
+        color: white;
+        &:hover {
+          background-color: $colour-Tertiary-2-hover;
+          color: white;
+        }
+      }
+    }
+
+    &:nth-of-type(5n+5) {
+      .au-cta-link {
+        border-top-color: $colour-dark;
+        &:hover {
+          background-color: $colour-light-darker;
+        }
+      }
+      .au-card--solid {
+        background: $colour-dark;
+        color: white;
+        &:hover {
+          background-color: $colour-dark-hover;
+          color: white;
+        }
+      }
+    }
+  }
+}

@@ -31,12 +31,12 @@
       $('.region-content-bottom .pane-title', context).matchHeight();
 
       // Match the categories height
-      $('.view-categories .views-row .uikit-card', context).matchHeight();
-      $('.view-categories .views-row .uikit-card h3', context).matchHeight();
+      $('.view-categories .views-row .au-card', context).matchHeight();
+      $('.view-categories .views-row .au-card h3', context).matchHeight();
 
       // Home page highlighted
-      $('.region-highlighted .uikit-card .bean-title', context).matchHeight({byRow: false});
-      $('.region-highlighted .uikit-card', context).matchHeight();
+      $('.region-highlighted .au-card .bean-title', context).matchHeight({byRow: false});
+      $('.region-highlighted .au-card', context).matchHeight();
 
       // Listing page selector cards.
       $('.selector-card', context).matchHeight();
@@ -60,8 +60,8 @@
       // About us boxes
       $('#block-bean-homepage-healthcare-system .group-left, #block-bean-homepage-healthcare-system .group-right', context).matchHeight();
 
-      // Homepage - In our portfolio
-      $('#block-bean-ageing-and-aged-care .bean-image-and-text, #block-bean-homepage-portfolio-sport .bean-image-and-text', context).matchHeight();
+      // Vertical static text para cols
+      $('.paragraphs-item-para-static-vertical-text .col-match-height', context).matchHeight();
 
       // Immunisation more on immunisation band
       $('.paragraphs-item-para-block.block-id__more-services-card .bean-image-and-text a', context).matchHeight();
@@ -71,6 +71,12 @@
 
       // Bean block - solid colour card.
       $('.view-mode-solid_full_card .bean-block-content a', context).matchHeight();
+
+      // au-card.
+      $('.au-card-list--matchheight .au-card', context).matchHeight();
+
+      // Featured contact.
+      $('.view-mode-hotline_bar .hotline', context).matchHeight();
     }
   };
 
@@ -101,12 +107,13 @@
     attach: function (context, settings) {
       var total = $('.view-header span', context).text();
       if (total === '1') {
-        $('.view-header span', context).after(' result');
+        $('.view__top span', context).after(' result');
       }
       else {
-        $('.view-header span', context).after(' results');
+        $('.view__top span', context).after(' results');
       }
     }
   };
 
 })(jQuery, Drupal, this, this.document);
+

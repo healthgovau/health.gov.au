@@ -23,17 +23,22 @@
 //
 // Style guide: forms.form-item--radio
 
-%uikit-form-item {
-  margin-bottom: uikit-space(1);
+%au-form-item {
+  @include AU-space('margin-bottom', 1unit);
+
+  display: block;
+  div, label {
+    display: block;
+  }
 
   // The part of the label that indicates a required field.
   &__required {
-    color: red;
+    color: $AU-color-error;
   }
 
   // The descriptive help text (separate from the label).
   &__description {
-    @extend .uikit-text-input__hint;
+    //@extend .au-text-input__hint;
   }
 
   &--inline {
@@ -42,6 +47,10 @@
     div,
     label {
       display: inline;
+    }
+
+    label {
+      @include AU-space('margin-right', .5unit);
     }
 
     // There's always an exception.
@@ -65,7 +74,7 @@
     input,
     textarea,
     select {
-      @extend .uikit-text-input--invalid;
+      //@extend .au-text-input--invalid;
     }
   }
 }

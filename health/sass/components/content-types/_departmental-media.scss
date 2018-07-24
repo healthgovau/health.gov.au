@@ -4,7 +4,6 @@
 // Default/full content
 .node-type-departmental-media {
   @extend %dm-full-content;
-  @extend %page-title-no-supp;
   @extend %page-help-only;
 }
 
@@ -19,31 +18,11 @@
       }
     }
     .field-name-field-image-featured {
-      margin-bottom: uikit-space(1);
+      @include AU-space('margin-bottom', 1unit);
     }
     .field-name-field-related-health-topics {
       .field-label {
         width: auto;
-      }
-    }
-  }
-
-  // Major list
-  &.view-mode-listing_vertical {
-    @extend %dm-list-vertical;
-  }
-
-  // List vertical small
-  &.view-mode-listing_vertical_small {
-    @extend %dm-list-vertical--small;
-    @include cardify-small();
-    img {
-      border: 0 !important;
-    }
-    @include uikit-media(md) {
-      .group-details {
-        position: absolute;
-        bottom: 10px;
       }
     }
   }
@@ -61,13 +40,4 @@
 
   }
 
-  // Inline style
-  &.view-mode-inline {
-    @extend %dm-inline-2-col;
-  }
-
-  // Search
-  &.view-mode-search_result {
-    @extend %dm-search-index;
-  }
 }

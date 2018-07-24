@@ -32,10 +32,11 @@
   // Generating table of contents.
   Drupal.behaviors.toc = {
     attach: function (context, settings) {
-      $('.uikit-inpage-nav-links__heading', context).text(Drupal.settings.toc.title);
+      $('.au-inpage-nav-links__heading', context).text(Drupal.settings.toc.title);
       $('.region-content', context).anchorific({
-        navigation: '.toc',
+        navigation: '.au-inpage-nav-links',
         headers: 'h2',
+        anchorText: false
       });
     }
   };
@@ -44,7 +45,7 @@
   Drupal.behaviors.tocSmoothScroll = {
     attach: function (context) {
       // Only map <a href="#..."> links
-      $('.toc a[href*="#"]', context).click(Drupal.tocScrollToOnClick);
+      $('.au-inpage-nav-links a[href*="#"]', context).click(Drupal.tocScrollToOnClick);
     }
   };
 

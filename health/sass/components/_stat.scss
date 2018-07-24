@@ -1,0 +1,144 @@
+// Statistics
+//
+// Display a quick stat as a way to engage users.
+//
+// .stat--secondary - Secondary colour
+// .stat--tertiary - Tertiary colour
+// .stat--dark - Dark colour
+// .stat--no-trend - Don't display trend information
+//
+// Markup: stat.twig
+//
+// Style guide: Components.stats
+
+.stat {
+  text-align: center;
+  margin-bottom: 12px;
+  max-width: 27em;
+}
+
+// Card wrapper.
+.stat__card {
+  overflow: hidden;
+  width: 100%;
+  color: white;
+  background-color: $colour-Primary-darker;
+  @include cardify($colour-Primary-darker);
+  @include AU-media('md') {
+    .stat__text {
+      border-bottom: 8px solid $colour-Primary;
+    }
+    border-bottom: 0;
+  }
+  border-bottom: 8px solid $colour-Primary;
+
+}
+
+.stat--secondary {
+  .stat__card {
+    background-color: $colour-Secondary-darker;
+    @include AU-media('md') {
+      .stat__text {
+        border-color: $colour-Secondary;
+      }
+    }
+    border-color: $colour-Secondary;
+  }
+}
+
+.stat--tertiary {
+  .stat__card {
+    background-color: $colour-Tertiary-darker;
+    @include AU-media('md') {
+      .stat__text {
+        border-color: $colour-Tertiary;
+      }
+    }
+    border-color: $colour-Tertiary;
+  }
+}
+
+.stat--dark {
+  .stat__card {
+    background-color: $colour-darker;
+    @include AU-media('md') {
+      .stat__text {
+        border-color: $colour-dark;
+      }
+    }
+    border-color: $colour-dark;
+  }
+}
+
+// Statistic value.
+.stat__value {
+  @include AU-space('padding', .5unit 0);
+  @include AU-media('md') {
+    @include AU-space('padding', 1unit 0);
+  }
+}
+
+.stat__value-value {
+  font-size: 3rem;
+  @include AU-media('sm') {
+    font-size: 4rem;
+  }
+  line-height: 1.3;
+  display: inline;
+  margin: 0;
+  color: white;
+}
+
+.stat__value-suffix,
+.stat__value-prefix {
+  @include health-fontgrid('xl', 'default', 'light');
+}
+
+// Statistic text.
+.stat__text {
+  @include health-fontgrid('md', 'default', 'light');
+  @include AU-space('padding', 0 1unit .25unit 1unit);
+  @include AU-media('md') {
+    @include AU-space('padding-bottom', 1.75unit);
+  }
+}
+
+// The trend.
+.stat__trend {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.stat__trend-value {
+  padding: 0;
+  margin: 0;
+  display: inline;
+}
+
+.stat__trend-icon {
+  margin-right: 5px;
+  color: white;
+  &:before {
+    @include AU-space('margin-top', -1unit);
+  }
+}
+
+// Variation with no trend.
+.stat--no-trend {
+  .stat__value {
+    border-bottom: 0;
+  }
+  .stat__trend-icon {
+    display: none;
+  }
+}
+
+// UIKit overrides.
+.au-body {
+  i.stat__trend-value--positive, i.stat__trend-value--negative {
+    font-style: normal;
+  }
+  p.stat__trend, p.stat__value, p.stat__text {
+    margin-top: 0;
+  }
+}

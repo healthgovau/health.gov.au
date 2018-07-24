@@ -1,0 +1,78 @@
+// Page alerts
+//
+// Status messages to notify the user.
+
+.messages {
+  @extend .au-page-alerts;
+  &.error {
+    @extend .au-page-alerts--error;
+  }
+  &.warning {
+    @extend .au-page-alerts--warning;
+  }
+  &.status {
+    @extend .au-page-alerts--success;
+  }
+}
+
+// Topic landing page.
+.page-topics,
+.page-initiatives-and-programs {
+  .messages.info {
+    margin: 0;
+    @include AU-media(sm) {
+      margin-top: 16em;
+    }
+  }
+}
+
+// Global health alert.
+#health-alert-ajax-container {
+  background: $colour-Tertiary-darker;
+  color: white;
+  [class*="fa-"]:before {
+    position: relative;
+  }
+
+  .alert-close-button {
+    button {
+      background: transparent;
+    }
+    float: right;
+    padding: 0;
+  }
+
+  .health-alert-content-wrapper {
+    padding: 1em;
+
+    .health-alert-logo {
+      @extend .col-sm-3;
+      padding-top: 5px;
+    }
+    .health-alert-content {
+      @extend .col-sm-9;
+      li {
+        list-style-type: none;
+        .alert-title {
+          @extend .col-sm-9;
+          a {
+            color: white;
+            border-bottom: solid 1px white;
+            &:hover {
+              background: none;
+              border-bottom: none;
+            }
+          }
+        }
+        .alert-date {
+          @extend .col-sm-3;
+          text-align: left;
+          @include AU-media(sm) {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+
+}

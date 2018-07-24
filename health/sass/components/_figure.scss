@@ -1,0 +1,40 @@
+// Figure
+//
+// A figure image with a long description and notes.
+//
+// Markup: figure.twig
+//
+// Style guide: Components.figure
+
+.figure {
+  .figure__title {
+    font-weight: bold;
+    @include AU-space('padding-bottom', .75unit);
+  }
+
+  .figure__wrapper {
+    border: $health-borderize--very-thin;
+    @include AU-space('margin-bottom', 1unit);
+
+    figure {
+      margin: 0;
+      @extend %image--link;
+
+      img {
+        @include AU-space('padding', .5unit);
+      }
+
+      figcaption {
+        @extend %minor-text;
+        border-bottom: $health-borderize--very-thin;
+        border-top: $health-borderize--very-thin;
+        @include AU-space('padding', .5unit 1unit);
+      }
+    }
+
+    .figure__notes {
+      @extend %minor-text;
+      @include AU-space('padding', 1unit);
+    }
+  }
+}

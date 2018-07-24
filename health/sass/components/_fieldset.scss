@@ -1,0 +1,24 @@
+//	==========================
+//
+//	Per-instance module customisation
+// 
+//	==========================
+//	This file extends theme classes. For example:
+//	
+//	Redeclare variables:
+//	$var1 = xxx;
+//	
+//	Declare custom classes
+//  .custom {
+//		@extend %themeclass;	
+//		// Custom styles
+//		style1 = xxx;
+//	}
+
+fieldset {
+  .fieldset-legend {
+    @include AU-space('margin', .25unit);
+    @include AU-fontgrid('md');
+  }
+}
+

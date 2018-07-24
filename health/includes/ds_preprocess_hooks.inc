@@ -27,6 +27,10 @@ function health_preprocess_ds_content_type(&$variables) {
   }
   $field_variables['items'] = [['#markup' => $name]];
 
+  if ($field_variables['settings']['content_type']['label'] == 'inline') {
+    $field_variables['classes'] .= ' field--inline--aligned';
+  }
+
   return theme_field($field_variables);
 }
 
@@ -143,12 +147,15 @@ function health_preprocess_ds_para_rendered_blocks($variable) {
   $para_item = $variable['paragraphs_item'];
   $output = '';
   if (isset($para_item->field_para_block_id[LANGUAGE_NONE])) {
+    $output = '<div class="row">';
     foreach ($para_item->field_para_block_id[LANGUAGE_NONE] as $block_delta) {
-      $block = block_load('bean', $block_delta['value']);
-      $block_render = _block_render_blocks(array($block));
-      $block_renderable_array = _block_get_renderable_array($block_render);
-      $output .= drupal_render($block_renderable_array);
+      $count = explode('-num', $block_delta['value'])[1];
+      $block_delta['value'] = explode('-num', $block_delta['value'])[0];
+      $block = module_invoke('bean', 'block_view', $block_delta['value']);
+      $block['content']['bean'][$block_delta['value']]['num'] = $count;
+      $output .= drupal_render($block['content']);
     }
+    $output.= '</div>';
   }
   return $output;
 }
@@ -295,13 +302,16 @@ function health_preprocess_ds_associated_release(&$variables) {
   if (!empty($view->result)) {
     $link = l($view->result[0]->node_title, 'node/' . $view->result[0]->nid);
     $field_variables['items'] = [['#markup'=> $link]];
+    if ($field_variables['settings']['associated_release']['label'] == 'inline') {
+      $field_variables['classes'] .= ' field--inline--aligned';
+    }
     return theme_field($field_variables);
   }
   return '';
 }
 
 /**
- * DS - Content type.
+ * DS - Book navigation - Previous and next
  *
  * @param $variables
  *
@@ -348,9 +358,9 @@ function health_preprocess_ds_recommendation_tags(&$variables) {
 function health_preprocess_ds_survey_link_disabled(&$variables) {
   if ($variables['field_status'][0]['value'] == 'Upcoming') {
     $friendly = _health_friendly_interval_date($variables['field_date_start'][LANGUAGE_NONE][0]['value']);
-    return "<button class='button' disabled='disabled'>Survey will open in {$friendly['text']}</button>";
+    return "<button class='au-btn' disabled='disabled'>Survey will open {$friendly['text']}</button>";
   } else if ($variables['field_status'][0]['value'] == 'Closed') {
-    return "<button class='button' disabled='disabled'>Survey is closed</button>";
+    return "<button class='au-btn' disabled='disabled'>Survey is closed</button>";
   }
 }
 
@@ -368,6 +378,9 @@ function health_preprocess_ds_start_end_date_friendly(&$variables) {
   if ($start['ago'] == FALSE) {
     $field_variables['label'] = 'Opens in';
     $field_variables['items'] = [['#markup' => $start['text']]];
+    if ($field_variables['settings']['start_end_date_friendly']['label'] == 'inline') {
+      $field_variables['classes'] .= ' field--inline--aligned';
+    }
     return theme_field($field_variables);
   }
 
@@ -375,6 +388,9 @@ function health_preprocess_ds_start_end_date_friendly(&$variables) {
   if ($end['ago'] == FALSE) {
     $field_variables['label'] = 'Time remaining';
     $field_variables['items'] = [['#markup' => $end['text']]];
+    if ($field_variables['settings']['start_end_date_friendly']['label'] == 'inline') {
+      $field_variables['classes'] .= ' field--inline--aligned';
+    }
     return theme_field($field_variables);
   }
 }

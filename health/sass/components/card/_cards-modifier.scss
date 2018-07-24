@@ -1,0 +1,88 @@
+// A basic mixin to supply the cards for resources and news items.
+@mixin cards-modifier($height: 32unit) {
+  .au-card-list {
+    & ul {
+      max-width: 100%;
+    }
+    @include AU-card-cta-link($AU-color-foreground-text);
+    * {
+      font-weight: normal;
+    }
+    > li, article {
+      @include AU-space( margin, 0 auto 1.25unit auto );
+      @include AU-media( sm ) {
+        @include AU-space( height, $height );
+        @include AU-space( min-height, $height );
+      }
+      @include AU-media( lg ) {
+        @include AU-space( margin-bottom, 2.25unit );
+      }
+    }
+  }
+  .au-card {
+    @include AU-space( padding, 2unit );
+    box-sizing: border-box;
+    &.au-cta-link {
+      @include AU-space( margin, 0 );
+      &:after {
+        @include AU-space( margin-top, -1unit );
+      }
+    }
+    .au-card__image {
+      position: relative;
+      height: 100%;
+      img {
+        height: auto;
+        @include AU-space( margin-top, 0unit );
+      }
+    }
+    .au-card--author_image {
+      position: absolute;
+      @include AU-space (right, 1unit );
+      @include AU-space (bottom, -2.4unit );
+      height: auto;
+      img {
+        @include AU-space( width, 6.25unit );
+        @include AU-space( height, 6.25unit );
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid $AU-color-foreground-border;
+        background-color: $AU-color-background-alt-shade-suggestion;
+        box-sizing: border-box;
+        height: auto;
+      }
+    }
+    .au-card__fullwidth {
+      @include AU-space( margin, -2unit -2unit 3unit -2unit );
+      height: auto;
+    }
+    .au-card__title {
+      @include AU-fontgrid( lg );
+      a {
+        color: $AU-color-foreground-action;
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    footer {
+      @include AU-space( margin-top, auto);
+      @include AU-space( padding, 0 );
+      .au-card--author_name,
+      .au-card--content_type {
+        @include AU-fontgrid( xs );
+        font-weight: bold;
+        a {
+          color: $AU-color-foreground-text;
+          font-weight: bold;
+        }
+      }
+      .au-card--date {
+        @include AU-fontgrid( xs );
+        @include AU-space( margin-bottom, 1unit );
+        color: $AU-color-foreground-muted-suggestion;
+      }
+    }
+  }
+}

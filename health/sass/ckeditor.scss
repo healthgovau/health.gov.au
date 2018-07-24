@@ -1,7 +1,7 @@
+@import 'vendors/uikit';
+
 @import 'themes/health/colors';
 @import 'themes/health/variables';
-
-@import 'vendors/uikit';
 
 @import 'abstracts/abstracts';
 
@@ -14,6 +14,6 @@
 
 .cke_editable {
   padding: 20px;
-  @extend .uikit-body;
-  @extend .uikit-grid;
+  @extend .au-body;
+  @extend .au-grid;
 }

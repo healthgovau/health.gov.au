@@ -5,68 +5,15 @@
 // Default/full content
 .node-type-news-article {
   @extend %dm-full-content;
-  @extend %page-title-no-supp;
   @extend %page-help-only;
 }
 
 // Display modes
 .node-news-article {
 
-    // Full
-    &.view-mode-full {
-      .field-name-field-date-published,
-      .field-name-ds-content-type,
-      .field-name-field-audience {
-        @extend %spaced-inline-label;
-      }
-      .field-name-field-image-featured {
-        margin-bottom: uikit-space(1);
-      }
-      .field-name-field-related-health-topics {
-        margin-top: 0;
-      }
-    }
-
-	// Major list
-	&.view-mode-listing_vertical {
-		@extend %dm-list-vertical;
-	}
-
-    // List vertical small
-    &.view-mode-listing_vertical_small {
-      @extend %dm-list-vertical--small;
-      @include cardify-small();
-      img {
-        border: 0 !important;
-      }
-      @include uikit-media(md) {
-        .group-details {
-          position: absolute;
-          bottom: 10px;
-        }
-      }
-    }
-
 	// Feature
 	&.view-mode-feature {
-		@extend %dm-feature;
-		.field-name-field-image-featured {
-			@extend %image--full;
-		}
-		.group-right {
-			padding-top: 0;
-		}
-      @include cardify();
-
-	}
-	
-	// Inline style
-	&.view-mode-inline {
-		@extend %dm-inline-2-col;
+      @extend %dm-feature;
 	}
 
-    // Search
-    &.view-mode-search_result {
-      @extend %dm-search-index;
-    }
 }

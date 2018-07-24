@@ -1,17 +1,5 @@
 // Feature
 %dm-feature {
-    overflow: hidden;
-    // Layout
-    .group-left {
-        width: 100%;
-        padding-bottom: 0;
-        @include uikit-clearfix();
-    }
-    .group-right {
-        width: 100%;
-        @include uikit-clearfix();
-        padding-top: uikit-space( .5);
-    }
     // Date and tag
     @extend %date-and-tag;
     
@@ -47,8 +35,8 @@
   // Layout
   .group-left {
     @extend .col-md-6;
-    padding-bottom: uikit-space(0.75);
-    @include uikit-media(xs) {
+    @include AU-space('padding-bottom', .75unit);
+    @include AU-media(xs) {
       padding-bottom: 0;
     }
   }
@@ -65,14 +53,14 @@
     }
     img {
       border: $health-borderize--thin;
-      @include uikit-media(md) {
+      @include AU-media(md) {
         &:hover, &:focus, &:active {
           opacity: 0.75;
         }
       }
     }
     a {
-      @include uikit-media(md) {
+      @include AU-media(md) {
         background-color: black;
         display: block;
       }

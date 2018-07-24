@@ -1,0 +1,93 @@
+// Reset the line height on images as this causes gaps at the bottom of some images.
+.au-body {
+  .media div,
+  .au-responsive-media-img div,
+  img {
+    line-height: 0;
+  }
+}
+
+// Add a border to the image.
+.image--border {
+  border: $health-borderize;
+  div {
+    line-height: 0;
+  }
+}
+
+// Image caption
+.field-name-field-image-caption {
+    margin-bottom: 2em;
+}
+
+%image--full {
+    @include AU-space('margin-bottom', 1unit);
+    @include AU-media(sm) {
+      margin-bottom: 0;
+    }
+    width: 100%;
+    img {
+        border: $health-borderize;
+        width: 100%;
+    }
+  div {
+    line-height: 0;
+  }
+}
+
+// Lazy loaded images.
+.image-wrapper {
+  width: 100%;
+  height: 0;
+  position: relative;
+
+  &.image-loading {
+    background-color: transparent;
+  }
+
+  .image {
+    width: 100%;
+    position: absolute;
+
+    img {
+      // Hide initially, until loaded.
+      visibility: hidden;
+      &.loaded {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+// An image inside a link.
+%image--link {
+  a {
+    border-bottom: 0;
+    line-height: 0;
+    @include AU-media(sm) {
+      background-color: black;
+      display: block;
+    }
+    &:focus {
+      border: 2px solid $colour-Secondary-hover;
+    }
+
+    img {
+      @include AU-media(sm) {
+        &:hover, &:focus, &:active {
+          opacity: 0.75;
+        }
+      }
+
+    }
+  }
+
+}
+
+// Make the background colour white for images that are loading that have a link around them.
+// Normal this background is black and it looks ugly.
+a .image-wrapper {
+  &.image-loading {
+    background-color: white;
+  }
+}

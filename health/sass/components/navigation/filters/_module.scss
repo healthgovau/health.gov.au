@@ -2,17 +2,7 @@
 %filter {
     margin-bottom: 0;
 }
-%filter__title-container {
-    padding-top: uikit-space(.5);
-    padding-bottom: uikit-space(.5);
-}
 %filter__title-text {
-}
-%filter__body {
-    &[tabindex="0"]:focus,
-    &:target {
-        outline: none;
-    }
 }
 %filter__term {
 

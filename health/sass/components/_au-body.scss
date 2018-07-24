@@ -1,0 +1,13 @@
+.au-body {
+
+  // Minor text.
+  .text--minor, %minor-text {
+    color: $colour-minorText;
+  }
+
+  // Small text.
+  .text--small {
+    font-size: 13px;
+  }
+
+}

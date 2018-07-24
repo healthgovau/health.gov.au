@@ -1,8 +1,0 @@
-.skip-link {
-  @extend .uikit-skip-link;
-}
-
-.skip-link__link {
-  @extend .uikit-skip-link__link;
-  @extend %link_focus;
-}

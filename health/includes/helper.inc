@@ -207,10 +207,12 @@ function _health_label_display($variables, $field) {
         break;
       case 'inline':
         $field_variables['label_hidden'] = FALSE;
-        $field_variables['classes'] .= ' field-label-inline';
+        $field_variables['classes'] .= ' field--inline';
         break;
     }
   }
+
+  $field_variables['settings'] = $field_settings;
   return $field_variables;
 }
 
@@ -373,6 +375,70 @@ function _health_prepare_filename($name) {
     return base64_encode($name);
   }
   return $clean;
+}
+
+/**
+ * Helper function to add total number of node in the para to node render array.
+ *
+ * @param $para
+ *   Preprocess variable.
+ * @param $node_field
+ *   Node reference field machine name.
+ *
+ * @return array
+ *   Preprocess variable.
+ */
+function _health_total_children($para, $node_field) {
+  $count = count($para[$node_field]);
+  // Pass total number to each node entity.
+  foreach ($para['content'][$node_field] as $key => $item) {
+    if (is_array($item) && isset($item['node'])) {
+      foreach ($item['node'] as $node_id => $node) {
+        if (is_array($node)) {
+          $node['num'] = $count;
+          $para['content'][$node_field][$key]['node'][$node_id] = $node;
+        }
+      }
+    }
+  }
+
+  return $para;
+}
+
+/**
+ * Add grid class according to the total number of items in a row.
+ *
+ * @param $total_number
+ * @param $classes_array
+ * @param $xs_grid
+ *
+ * @return array
+ */
+function _health_grid_class($total_number, $classes_array, $xs_grid = 'col-xs-12') {
+  $classes_array[] = $xs_grid;
+  switch ($total_number) {
+    case 1:
+      break;
+    case 2:
+      $classes_array[] = 'col-md-6';
+      break;
+    case 3:
+      $classes_array[] = 'col-md-4';
+      break;
+    case 4:
+      $classes_array[] = 'col-md-6';
+      break;
+    case 5:
+      $classes_array[] = 'col-md-5ths';
+      break;
+    case 6:
+      $classes_array[] = 'col-md-4';
+      break;
+    default:
+      $classes_array[] = 'col-md-3';
+  }
+
+  return $classes_array;
 }
 
 /**

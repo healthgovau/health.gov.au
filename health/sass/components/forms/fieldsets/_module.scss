@@ -7,10 +7,10 @@
 //
 // Style guide: forms.base.fieldset
 
-%uikit-fieldset {
+%au-fieldset {
   // Change the border, margin, and padding in all browsers (opinionated).
-  padding: uikit-space(1);
-  border: $uikit-borderize;
+  @include AU-space('padding', 1unit);
+  border: $health-borderize--thin;
   margin: 0 2px;
-  margin-bottom: uikit-space(1);
+  @include AU-space('margin-bottom', 1unit);
 }

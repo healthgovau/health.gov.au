@@ -7,84 +7,74 @@
 //
 // Style guide: component
 
+//@import 'layout/layout';
+
 // Typography
+@import 'au-body';
 @import 'typography/blockquote/module';
-@import 'typography/blockquote/extends';
-@import 'typography/headings/extends';
+@import 'typography/headings/module';
 @import 'typography/fields/module';
 
-// Component styles
-@import 'tile/module';
-@import 'card/module';
-
 // Block styles
-@import 'block-types/image-text';
-@import 'block-types/callout';
-@import 'block-types/extends';
+@import 'block-types/bean-image-text';
 
 // Component types
-@import 'accordion/extends';
-@import 'alert/module';
-@import 'alert/extends';
-@import 'backtotop/module';
-@import 'call-to-action/extends';
-@import 'table/module';
-@import 'table/extends';
-@import 'responsive-media/module';
-@import 'table-drag/module';
-@import 'table-drag/extends';
-@import 'page-alerts/extends';
-@import 'breadcrumbs/extends';
-@import 'video/module';
-@import 'images/module';
-@import 'stat/module';
-@import 'environment/module';
-@import 'taskbar/module';
-@import 'fieldset/module';
-@import 'body/extends';
-@import 'grid/extends';
-@import 'header/extends';
-@import 'title-section/module';
-@import 'title-section/extends';
-@import 'footer/module';
-@import 'footer/extends';
-@import 'readspeaker/extends';
-@import 'socialmedia/extends';
-@import 'link/module';
-@import 'link/extends';
-@import 'description-list/module';
+@import 'au-callout';
+@import 'au-grid';
+@import 'au-accordion';
+@import 'au-listing';
+@import 'au-field';
+@import 'au-cta-link';
+@import 'au-video';
+@import 'au-tags';
+@import 'alert';
+@import 'backtotop';
+@import 'card/card';
+@import 'table';
+@import 'responsive-media';
+@import 'table-drag/table-drag';
+@import 'table-drag/health-table-drag';
+@import 'page-alerts';
+@import 'images';
+@import 'stat';
+@import 'taskbar';
+@import 'fieldset';
+@import 'au-header';
+@import 'title-section';
+@import 'au-footer';
+@import 'readspeaker';
+@import 'socialmedia';
+@import 'link';
+@import 'description-list';
+
 
 // Books
 //
 // Components for long documents, HTML versions of publications and books.
 //
 // Style guide: Components.books
-@import 'recommendation/module';
-@import 'footnotes/module';
+@import 'recommendation';
+@import 'footnotes';
 @import 'references/module';
-@import 'tooltip/module';
-@import 'table-of-contents/module';
-@import 'figure/module';
+@import 'tooltip';
+@import 'table-of-contents';
+@import 'figure';
 
 // Display modes
-@import 'display-modes/module';
+@import 'display-modes/display-modes';
 
 // Content types
 @import 'content-types/module';
 
 // Views, bands and layouts
-@import 'views/module';
-@import 'bands/module';
-@import 'bands/extends';
+@import 'au-band';
 
 // Views, bands and layouts
-@import 'paragraphs/extends';
+@import 'paragraphs';
 
 // Drupal
-@import 'drupal-contextual-links/module';
-@import 'drupal-contextual-links/extends';
-@import 'drupal-workbench/module';
-@import 'drupal-workbench/extends';
+@import 'au-contextual-links';
+@import 'au-workbench';
 
 // Forms
 //
@@ -94,9 +84,9 @@
 // Weight: 3
 //
 // Style guide: forms
+@import 'au-search';
 @import 'forms/autocomplete/module';
 @import 'forms/autocomplete/extends';
-@import 'forms/better-exposed-filter/module';
 @import 'forms/button/module';
 @import 'forms/button/extends';
 @import 'forms/collapsible-fieldset/module';
@@ -116,14 +106,11 @@
 @import 'forms/progress-throbber/extends';
 @import 'forms/resizable-textarea/module';
 @import 'forms/resizable-textarea/extends';
-@import 'forms/search/module';
-@import 'forms/search/extends';
 @import 'forms/select/extends';
 @import 'forms/textarea/extends';
 
 // Icons
-@import 'icons/module';
-@import 'icons/extends';
+@import 'icons';
 
 // Navigation
 //
@@ -133,35 +120,27 @@
 // Weight: 2
 //
 // Style guide: navigation
+@import 'au-tabs';
+@import 'au-file';
+@import 'au-pager';
 @import 'navigation/book/module';
 @import 'navigation/breadcrumb/module';
-@import 'navigation/breadcrumb/extends';
-@import 'navigation/direction-link/extends';
 @import 'navigation/dropdown/module';
 @import 'navigation/dropdown/extends';
-@import 'navigation/inpage-nav/extends';
-@import 'navigation/localnav/module';
-@import 'navigation/localnav/extends';
+@import 'au-local-navigation';
 @import 'navigation/menu/extends';
-@import 'navigation/more-link/extends';
-@import 'navigation/pager/module';
-@import 'navigation/pager/extends';
 @import 'navigation/sitenav/module';
 @import 'navigation/sitenav/extends';
-@import 'navigation/skip-link/extends';
-@import 'navigation/tabs/module';
-@import 'navigation/tabs/extends';
 @import 'navigation/tags/extends';
 @import 'navigation/filters/module';
 @import 'navigation/filters/extends';
 @import 'navigation/external/module';
-@import 'navigation/document/module';
 @import 'navigation/faceted-block/module';
 @import 'navigation/faceted-block/extends';
 @import 'navigation/selector/module';
 
-// Search page
-@import 'search/extends';
-
 // Inline styles
-@import 'lists/module';
+@import 'lists';
+
+// Health bespoke styles.
+@import '_health';

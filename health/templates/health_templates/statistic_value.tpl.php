@@ -1,11 +1,11 @@
 <?php if ($prefix) : ?>
-<span class="statistic-value-prefix"><?php print $prefix?></span>
+<span class="stat__value-prefix"><?php print $prefix?></span>
 <?php endif; ?>
 
 <?php if ($value) : ?>
-<span class="statistic-value"><?php print $value?></span>
+<span class="stat__value-value"><?php print $value?></span>
 <?php endif; ?>
 
 <?php if ($suffix) : ?>
-<span class="statistic-value-suffix"><?php print $suffix?></span>
+<span class="stat__value-suffix"><?php print $suffix?></span>
 <?php endif; ?>

@@ -5,27 +5,27 @@
 .autocomplete,
 .form-autocomplete {
   input {
-    @extend %uikit-autocomplete;
+    @extend %au-autocomplete;
 
     &.throbbing {
-      @extend %uikit-autocomplete--is-throbbing;
+      @extend %au-autocomplete--is-throbbing;
     }
   }
 }
 
 // sass-lint:disable no-ids
 #autocomplete {
-  @extend %uikit-autocomplete__list-wrapper;
+  @extend %au-autocomplete__list-wrapper;
 
   ul {
-    @extend %uikit-autocomplete__list;
+    @extend %au-autocomplete__list;
   }
 
   li {
-    @extend %uikit-autocomplete__list-item;
+    @extend %au-autocomplete__list-item;
   }
 
   .selected {
-    @extend %uikit-autocomplete__list-item--is-selected;
+    @extend %au-autocomplete__list-item--is-selected;
   }
 }

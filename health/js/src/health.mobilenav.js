@@ -46,11 +46,11 @@
       // Clicking outside the active site nav should close the nav.
       $('.nav-overlay', context).click(function () {
         // Deactivate nav if it is currently active.
-        if ($('.mobile-toggle.mobile-toggle--main-menu', context).hasClass('health-accordion--open')) {
+        if ($('.mobile-toggle.mobile-toggle--main-menu', context).hasClass('au-accordion--open')) {
           $('.mobile-toggle.mobile-toggle--main-menu', context).trigger('click');
         }
         // Deactivate search if it is currently active.
-        if ($('.mobile-toggle.mobile-toggle--search', context).hasClass('health-accordion--open')) {
+        if ($('.mobile-toggle.mobile-toggle--search', context).hasClass('au-accordion--open')) {
           $('.mobile-toggle.mobile-toggle--search', context).trigger('click');
         }
       });
@@ -68,7 +68,11 @@
       // We are outputting 2 search forms, one for desktop and one for mobile.
       // It uses the same ID, which causes an accessibility issue.
       // So update the ID of the mobile one so it is different.
-      $('.region-navigation #search-api-page-search-form').attr('id', 'search-api-page-search-form-mobile');
+      //$('.region-navigation #search-api-page-search-form').attr('id', 'search-api-page-search-form-mobile');
+
+      // Show the desktop search bar.
+      $('.region-header #block-search-api-page-default-search').removeClass('au-accordion--closed');
+      $('.region-navigation #search-api-page-search-form-default-search--2').removeClass('au-search--mobile-hide').addClass('col-xs-12');
 
       /**
        * Enable the overlay.
@@ -86,7 +90,7 @@
        *
        */
       Drupal.health.mobileNav.disableOverlay = function(transition) {
-        if (!$('.mobile-toggle--search', context).hasClass('health-accordion--open') && !$('.mobile-toggle--main-menu', context).hasClass('health-accordion--open')) {
+        if (!$('.mobile-toggle--search', context).hasClass('au-accordion--open') && !$('.mobile-toggle--main-menu', context).hasClass('au-accordion--open')) {
           if (transition === true) {
             $('.nav-overlay', context).removeClass('transition');
           } else {
@@ -117,7 +121,7 @@
        *   The name of the other tab, eg search, main-menu
        */
       Drupal.health.mobileNav.handleNavTabbing = function(otherTab) {
-        if ($('.mobile-toggle.mobile-toggle--' + otherTab, context).hasClass('health-accordion--open')) {
+        if ($('.mobile-toggle.mobile-toggle--' + otherTab, context).hasClass('au-accordion--open')) {
           $('.mobile-toggle.mobile-toggle--' + otherTab, context)
             .trigger('click');
         }

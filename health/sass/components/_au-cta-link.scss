@@ -1,0 +1,9 @@
+// Health variations on UIKit call to action link.
+.au-body {
+  .au-cta-link {
+    // Right align the link.
+    &--right {
+      text-align: right;
+    }
+  }
+}

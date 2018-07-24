@@ -10,38 +10,4 @@
 // Display modes
 .node-campaign {	
 
-	// List vertical
-	&.view-mode-listing_vertical {
-		@extend %dm-list-vertical;
-		.group-left {
-			@extend .col-xs-4;
-		}
-		.group-right {
-			@extend .col-xs-8;
-		}
-	}
-	// List vertical small
-	&.view-mode-listing_vertical_small {
-		@extend %dm-list-vertical--small-noimage;
-    }
-    
-    // List horizontal
-    &.view-mode-listing_horizontal {
-		@extend %dm-list-horizontal;
-    }
-
-	// Feature
-	&.view-mode-feature {
-		@extend %dm-list-horizontal;
-    }
-
-	// Inline style
-	&.view-mode-inline {
-		@extend %dm-inline;
-    }
-    
-    // Search
-    &.view-mode-search_result {
-        @extend %dm-search-index;
-    }
 }

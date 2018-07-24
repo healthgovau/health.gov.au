@@ -2,7 +2,6 @@
 .node-type-publication-collection {
   @extend %dm-full-content;
   @extend %page-help-only;
-  @extend %page-title-no-supp;
 }
 
 // Display modes
@@ -25,17 +24,5 @@
       font-weight: bold;
     }
 
-  }
-
-  // Major list
-  &.view-mode-listing_vertical {
-    @extend %dm-list-vertical;
-    .group-left {
-      display: block;
-    }
-  }
-  // Inline style
-  &.view-mode-inline {
-    @extend %dm-inline-2-col;
   }
 }

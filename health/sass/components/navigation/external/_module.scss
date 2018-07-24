@@ -7,7 +7,7 @@
 }
 
 %ext-link {
-    color: $aqua;
-    font-size: 14px;
     word-break: break-all;
+  color: $colour-Secondary-darker;
+  @include health-fontgrid('xs', 'default', 'light');
 }      

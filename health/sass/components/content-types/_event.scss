@@ -11,19 +11,6 @@
 // Display modes
 .node-event {
 
-	// Major list
-	&.view-mode-listing_vertical {
-		@extend %dm-list-vertical;
-		.group-left {
-			display: block;
-		}
-	}
-	// List vertical small
-	&.view-mode-listing_vertical_small {
-		@extend %dm-list-vertical--small;
-		@include cardify();
-	}
-
 	// Feature
 	&.view-mode-feature {
 		@extend %dm-feature;
@@ -35,13 +22,5 @@
 		}
         @include cardify();
     }	
-	// Inline style
-	&.view-mode-inline {
-		@extend %dm-inline;
-	}
 
-	// Search
-	&.view-mode-search_result {
-		@extend %dm-search-index;
-	}
 }

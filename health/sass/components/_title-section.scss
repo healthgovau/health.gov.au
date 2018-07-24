@@ -1,0 +1,185 @@
+// Section header + breadcrumbs
+.page-title {
+  h1 {
+    @extend .au-header-heading;
+    @include AU-clearfix;
+    display: block;
+    clear: both;
+    color: $AU-color-foreground-text;
+    background: none;
+
+  }
+  &.header.header--light {
+    @extend %colour-Light-background;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    color: $AU-color-foreground-text;
+    @include AU-space('margin-bottom', 1.5unit);
+    @include AU-media(sm){
+      @include AU-space('margin-bottom', 2unit);
+    }
+  }
+}
+
+.page-title__core {
+  padding: 12px;
+  @include AU-media(sm){
+    @include AU-space('padding', 1unit 0 1unit 0);
+  }
+
+  max-width: 56em;
+
+  // In case no section-supp.
+  &.full {
+    @extend .col-sm-12;
+    max-width: 100%;
+  }
+
+  // Section header link
+  .section-header {
+
+    width: 50%;
+    float: left;
+    &.full {
+      width: 100%;
+      float: none;
+    }
+
+    @include AU-media(sm) { // Hide on desktop
+      display: none;
+    }
+
+    @include AU-fontgrid('md');
+    //font-weight: 700;
+    font-size: 16px;
+    @include AU-space('margin-bottom', .65unit);
+
+    .back-icon {
+      float: left;
+    }
+    a {
+      margin-left: 20px;
+      margin-right: 90px;
+      float: left;
+    }
+
+    @include AU-clearfix;
+  }
+
+  // Summary
+  .summary {
+    @extend .au-header__subline;
+    @include AU-space('margin-bottom', .5unit);
+    @include AU-space('margin-top', .5unit);
+  }
+
+}
+
+.page-title__supp {
+  display: block; // default unless over-ridden
+  @include AU-media( sm ) {
+    display: table;
+  }
+  .region-title-supp {
+    padding-top: 0;
+    padding-bottom: 0;
+    @include AU-media(sm){
+      display: table-cell;
+      vertical-align: middle;
+      @include AU-space('padding-top', 1unit);
+      @include AU-space('padding-bottom', 1unit);
+    }
+  }
+
+  // Program logo - CHECK
+  .field-name-field-image-featured {
+    display: none; // Hide for mobile
+    @include AU-media(sm) {
+      display: block;
+      @include AU-space('padding', 2unit 0 0 0);
+      text-align: center;
+      img {
+        max-width: 75%;
+      }
+    }
+  }
+}
+
+// HP/GP switcher --------------------------------------------
+
+// Breadcrumb version
+.region-title-core {
+  display: block;
+  float: right;
+  width: 50%;
+  text-align: right;
+  @include AU-media(sm){
+    display: none;
+  }
+
+  // Text summary
+  .bean-block-content {
+    display: none;
+  }
+
+  .bean-call-to-action__title {
+    margin-bottom: 0;
+  }
+
+  // Margin for an icon on the right of text takes up too much space.
+  // Reduce it.
+  .fa-angle-right {
+    margin-left: 0.6em;
+    &:before {
+      margin-left: -0.2em;
+    }
+  }
+}
+
+// Right-pane larger version
+.region-title-supp {
+  .block-bean-call-to-action {
+    display: none;
+    @include AU-space('padding',  0 0 1unit 0);
+    border-left: none;
+
+    // Extend onto title
+    a {
+      @include AU-fontgrid('md');
+      //@extend .health-cta-link;
+      font-weight: normal;
+    }
+
+    .bean-block-content {
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    // Icon
+    .forward-icon {
+      display: none;
+    }
+
+    @include AU-media(sm){
+      display: block;
+      @include AU-space('padding', .25unit 0 .5unit 1unit);
+      border-left: 3px solid #DDD;
+
+    }
+  }
+}
+
+// Topic page visibility
+// Show on topic home page for mobiles
+.node-type-health-topic,
+.node-type-health-topic-hp {
+  .region-title-supp {
+    .block-bean-call-to-action {
+      display: block;
+    }
+  }
+}
+
+// End HP/GP switcher --------------------------------------------

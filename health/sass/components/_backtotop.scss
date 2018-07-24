@@ -1,0 +1,34 @@
+.goTop {
+  background-color: transparent;
+  position: fixed;
+  display: block;
+  right: 50px;
+  bottom: 15px;
+  border: none;
+  opacity: 0;
+  z-index: -1;
+  padding: 0px;
+  &:hover {
+    opacity: 1;
+    background-color: transparent;
+  }
+  a {
+    position: relative;
+    background: $colour-Secondary;
+    color: white;
+    padding: 0.2em;
+    border: 2px solid white;
+    margin: 0;
+    text-decoration: none;
+    @include AU-fontgrid( md );
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.isVisible {
+  opacity: .8;
+  z-index: 9999;
+  transition: all .4s ease-in;
+}

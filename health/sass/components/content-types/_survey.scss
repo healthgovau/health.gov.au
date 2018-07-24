@@ -23,7 +23,7 @@
     }
 
     .field-name-field-image-featured {
-      padding-bottom: uikit-space(1);
+      @include AU-space('padding-bottom', 1unit);
     }
   }
 
@@ -59,13 +59,4 @@
     margin-bottom: uikit-space(1);
   }
 
-  // Inline style
-  &.view-mode-inline {
-    @extend %dm-inline;
-  }
-
-  // Search
-  &.view-mode-search_result {
-    @extend %dm-search-index;
-  }
 }

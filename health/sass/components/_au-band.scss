@@ -1,0 +1,65 @@
+// Remove this once all bands have been converted.
+%band {
+  @extend .au-band;
+}
+
+// Bands.
+.au-body {
+  .au-band {
+    @include AU-clearfix;
+    @include AU-space('padding-top', 1.25unit);
+    @include AU-space('padding-bottom', 1.25unit);
+    @include AU-media(md) {
+      @include AU-space('padding-top', 2.5unit);
+      @include AU-space('padding-bottom', 2.5unit);
+    }
+
+    // Variation with less padding at the top and bottom.
+    &--short {
+      @include AU-space('padding-top', 1unit);
+      @include AU-space('padding-bottom', 1unit);
+      @include AU-media(md) {
+        @include AU-space('padding-top', 1unit);
+        @include AU-space('padding-bottom', 1unit);
+      }
+    }
+
+    // Title.
+    .au-band__title {
+      @include health-fontgrid('xl', 'default', 'light');
+      @include AU-space('padding-bottom', .75unit);
+    }
+
+    // Summary.
+    .au-band__summary {
+      @include health-fontgrid('lg', 'default', 'light');
+      @include AU-space('padding-bottom', .75unit);
+    }
+
+    // Background colours.
+    &--neutral-1 {
+      @extend %colour-Light-background;
+    }
+
+    &--neutral-2 {
+      @extend %colour-Light-background-reverse;
+    }
+
+    &--primary {
+      @extend %colour-Primary-background;
+      color: $AU-colordark-foreground-text;
+      a {
+        color: $AU-colordark-foreground-text;
+      }
+    }
+
+    &--secondary {
+      @extend %colour-Secondary-background;
+      color: $AU-colordark-foreground-text;
+      a {
+        color: $AU-colordark-foreground-text;
+      }
+    }
+  }
+
+}

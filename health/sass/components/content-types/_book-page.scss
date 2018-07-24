@@ -13,41 +13,13 @@
   // Full
   &.view-mode-full {
     .field-name-field-page-number {
-      @extend h1;
+      @include health-fontgrid('xxl');
       float: left;
-      margin: 0 uikit-space(.5) 0 0;
+      @include AU-space('margin', 0 .5unit 0 0);
     }
     h1 {
-      margin-bottom: uikit-space(1);
+      @include AU-space('margin-bottom', 1unit);
     }
   }
 
-  // List vertical
-  &.view-mode-listing_vertical {
-    @extend %dm-list-vertical;
-  }
-  // List vertical small
-  &.view-mode-listing_vertical_small {
-    @extend %dm-list-vertical--small-noimage;
-  }
-
-  // List horizontal
-  &.view-mode-listing_horizontal {
-    @extend %dm-list-horizontal;
-  }
-
-  // Feature
-  &.view-mode-feature {
-    @extend %dm-list-horizontal;
-  }
-
-  // Inline style
-  &.view-mode-inline {
-    @extend %dm-inline;
-  }
-
-  // Search
-  &.view-mode-search_result {
-    @extend %dm-search-index;
-  }
 }

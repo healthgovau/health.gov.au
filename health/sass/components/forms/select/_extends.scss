@@ -10,15 +10,8 @@
 //
 // Style guide: forms.base.select
 .form-select--wrapper {
-  // Add your styles.
-  @extend .uikit-select;
-
   select {
-    @extend .uikit-select__element;
-  }
-
-  label {
-    @extend .uikit-control-input;
-    @extend .uikit-text-input__label;
+    @extend .au-select;
+    border-radius: 0;
   }
 }

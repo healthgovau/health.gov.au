@@ -1,6 +1,6 @@
-.footer {
+.health-footer {
   padding: 0;
-  padding-top: uikit-space( 1 );
+  @include AU-space('padding-top', 1unit);
 
   .menu {
     padding: 0.4em 0 1em 0;
@@ -8,15 +8,15 @@
       margin-bottom: 0;
     }
 
-    @include uikit-media( sm ) {
+    @include AU-media( sm ) {
       padding: 0.4em 0;
     }
   }
   &__navigation {
     .block {
       @extend .col-md-3;
-      margin-bottom: uikit-space(1);
-      @include uikit-media(md) {
+      @include AU-space('margin-bottom', 1unit);
+      @include AU-media(md) {
         margin-bottom: 0;
       }
     }
@@ -36,16 +36,13 @@
   }
   h3.block__title {
     margin-bottom: 0;
-    @extend .uikit-display-2;
+    @include AU-fontgrid('md');
     font-weight: 700;
   }
   ul > li {
     margin-left: 0;
   }
-  .footer__navigation {
 
-  }
-  
   .field-name-field-link-to {
     // As UX request.
     margin-top: 2.8em;
