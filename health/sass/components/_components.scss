@@ -15,12 +15,8 @@
 @import 'typography/headings/module';
 @import 'typography/fields/module';
 
-// Component styles
-@import 'card/module';
-
 // Block styles
-@import 'block-types/image-text';
-@import 'block-types/extends';
+@import 'block-types/bean-image-text';
 
 // Component types
 @import 'au-callout';
@@ -31,16 +27,17 @@
 @import 'au-cta-link';
 @import 'au-video';
 @import 'au-tags';
-@import 'alert/module';
+@import 'alert';
 @import 'backtotop';
+@import 'card/card';
 @import 'table';
-@import 'responsive-media/module';
-@import 'table-drag/module';
-@import 'table-drag/extends';
+@import 'responsive-media';
+@import 'table-drag/table-drag';
+@import 'table-drag/health-table-drag';
 @import 'page-alerts';
 @import 'images';
 @import 'stat';
-@import 'taskbar/module';
+@import 'taskbar';
 @import 'fieldset';
 @import 'au-header';
 @import 'title-section';
@@ -63,7 +60,7 @@
 @import 'figure';
 
 // Display modes
-@import 'display-modes/module';
+@import 'display-modes/display-modes';
 
 // Content types
 @import 'content-types/module';

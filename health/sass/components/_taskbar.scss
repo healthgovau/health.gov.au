@@ -130,6 +130,35 @@
   }
 }
 
+// Using taskbar with a view.
+.taskbar,
+.taskbar--tiled--2,
+.taskbar--tiled--3,
+.taskbar--tiled--4,
+.taskbar--tiled--5,
+.taskbar--tiled--6
+{
 
-@import '_print.scss';
-@import "_extends.scss";
+  &.view ul > .views-row {
+    &:hover {
+      cursor: pointer;
+    }
+    margin: 0;
+    .node {
+      @extend %taskbar__item;
+    }
+
+    .field-name-field-image {
+      @extend %taskbar__img;
+    }
+
+    .field-name-title a {
+      @extend %taskbar__title;
+    }
+
+    .field-name-body p {
+      @extend %taskbar__desc;
+    }
+
+  }
+}

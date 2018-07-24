@@ -26,3 +26,34 @@
     }
   }
 }
+
+// Health blocks.
+// Handbook band in immunisation topic page for HP.
+#block-bean-handbook-featured-block-in-immun {
+  .field-name-field-image {
+    margin-bottom: 0;
+  }
+
+  .group-left {
+    float: right;
+  }
+}
+
+#block-bean-campaign-external-link-block {
+  @include AU-space('margin-bottom', 1unit);
+}
+
+.node-type-landing-page {
+  .field-name-field-image {
+    @include block-text-image-svg('large');
+  }
+}
+
+// More on topic
+.node-type-health-topic,
+.node-type-health-topic-hp {
+  .field-name-field-image {
+    @include block-text-image-svg('large');
+  }
+}
+

@@ -1,5 +1,5 @@
-// Alerts region
-%au-alertbar {
+// Health alerts region
+.region-alerts {
   background-color: $AU-color-error;
   border-top: 6px solid $AU-color-error;
   position: fixed;
@@ -15,8 +15,12 @@
   }
 }
 
-// Block in the footer
-%au-alert {
+// When close button is clicked hide the close button.
+.health-alert-inactive .region-alerts {
+  bottom: -100%;
+}
+
+#block-views-health-alerts-block-1 {
   max-width: none;
   @include AU-space('margin', .5unit 0);
   @include AU-space('padding-right', 3unit);
@@ -56,5 +60,3 @@
     margin-bottom: 0;
   }
 }
-
-@import '_extends';
