@@ -16,7 +16,7 @@
     color: white;
     &:hover {
       background: none;
-      border-bottom: none;
+      text-decoration: none;
     }
     &[rel~='external']:after {
       color: white
