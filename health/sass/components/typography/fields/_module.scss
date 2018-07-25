@@ -208,10 +208,21 @@ p.summary, .field-name-field-summary {
   }
 }
 
+// Put a consistent space between the label and the value when displayed inline.
+%spaced-inline-label {
+  .field-label {
+    width: 11em;
+  }
+}
+
 // Override the line height from UIKit on image fields.
 .field-name-field-image,
 .field-name-field-image-featured {
   div {
     line-height: 0;
   }
+}
+
+%minor-text {
+  font-size: 13px;
 }

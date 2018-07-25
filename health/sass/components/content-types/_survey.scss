@@ -4,7 +4,6 @@
 // Default/full content
 .node-type-survey {
   @extend %dm-full-content;
-  @extend %page-title-no-supp;
   @extend %page-help-and-currency;
 }
 
@@ -27,20 +26,6 @@
     }
   }
 
-  // List vertical
-  &.view-mode-listing_vertical {
-    @extend %dm-list-vertical;
-  }
-  // List vertical small
-  &.view-mode-listing_vertical_small {
-    @extend %dm-list-vertical--small-noimage;
-  }
-
-  // List horizontal
-  &.view-mode-listing_horizontal {
-    @extend %dm-list-horizontal;
-  }
-
   // Feature.
   &.view-mode-feature {
     @extend %dm-feature;
@@ -56,7 +41,7 @@
     @include cardify();
     border: $health-borderize--thin;
     width: 50%;
-    margin-bottom: uikit-space(1);
+    @include AU-space('margin-bottom', 1unit);
   }
 
 }
