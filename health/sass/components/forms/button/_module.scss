@@ -27,10 +27,10 @@
   &[rel~='external']:after {
     color: white;
   }
-  background-color: $colour-Secondary;
+  //background-color: $colour-Secondary;
   &:hover:not(:disabled), &:focus:not(:disabled) {
-    background-color: $colour-Secondary-hover;
-    color: white;
+    //background-color: $colour-Secondary-hover;
+    //color: white;
   }
 }
 
