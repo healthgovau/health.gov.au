@@ -72,6 +72,7 @@ $colour-light-darker: #cdcdcd;
   }
 }
 
+// Refactor as node-sass will compile vendors prefixes
 %colour-Primary-background {
   background-color: $colour-Primary-darker;
   background: -webkit-linear-gradient(left, $colour-Primary-darker, $colour-Primary);
@@ -156,3 +157,6 @@ $alpha-background: #c22f73;
 $alpha-text: #FFF;
 $beta-background: #d34600;
 $beta-text: #FFF;
+
+// For reference
+// $AU-color-foreground-text
