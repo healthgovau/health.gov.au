@@ -23,7 +23,7 @@
       border-left: 6px solid transparent;
 
       &.active-trail {
-        border-left: 6px solid $colour-Secondary;
+        border-left: 6px solid $AU-colordark-background-shade;
         a {
           font-weight: bold;
         }
@@ -95,7 +95,7 @@
           &:hover,
           &:focus,
           &:active {
-            border-bottom: 6px solid $colour-Secondary;
+            border-bottom: 6px solid $AU-colordark-background-shade;
             background-color: transparent;
             transition: none;
             color: $AU-color-foreground-text;
@@ -105,7 +105,7 @@
         &.active-trail {
           border-left: 0;
           a {
-            border-bottom: 6px solid $colour-Secondary;
+            border-bottom: 6px solid $AU-colordark-background-shade;
             background-color: transparent;
             transition: none;
             color: $AU-color-foreground-text;
