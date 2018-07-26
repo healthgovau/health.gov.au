@@ -27,7 +27,7 @@
     font-weight: normal;
   }
   .au-card__title {
-    @include AU-fontgrid( sm );
+    @include AU-fontgrid( md );
     @include AU-space( margin-bottom, 1unit );
     text-decoration: underline;
     text-decoration-color: currentColor;

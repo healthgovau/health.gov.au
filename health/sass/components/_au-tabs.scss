@@ -18,10 +18,9 @@
 
     li {
       margin: 0;
+      @include AU-space('margin-right', .5unit);
       padding: 0;
       transition: none;
-
-
 
       &:first-of-type {
         a {
@@ -31,11 +30,9 @@
 
       a {
         @include AU-space('padding', .75unit 1unit);
-
-        margin-left: -5px;
         display: inline-block;
         background-color: $colour-lighter;
-
+        text-decoration: none;
         &:hover, &:active {
           background-color: $colour-light-darker;
         }
@@ -45,7 +42,7 @@
       &.active {
         a {
           font-weight: bold;
-          background-color: $colour-Secondary;
+          background-color: $AU-color-foreground-action;
           color: white;
         }
       }

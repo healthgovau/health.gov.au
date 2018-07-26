@@ -5,6 +5,8 @@
 //-------------------------------------------------------------
 
 .block-workbench {
+  @include AU-space('margin-top', 1unit);
+  @include AU-space('margin-bottom', 2unit);
   .workbench-info-block {
 
     border: 0;

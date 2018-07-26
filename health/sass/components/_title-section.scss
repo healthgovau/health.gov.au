@@ -69,10 +69,10 @@
 
   // Summary
   .summary {
-    @extend .au-header__subline;
-    @include health-fontgrid('md', 'default', 'light');
-    @include AU-space('margin-bottom', .5unit);
-    @include AU-space('margin-top', .5unit);
+    //@extend .au-header__subline;
+    @include health-fontgrid('lg', 'default', 'light');
+    @include AU-space('margin-bottom', 1.5unit);
+    @include AU-space('margin-top', 1.5unit);
     color: $AU-color-foreground-text;
   }
 

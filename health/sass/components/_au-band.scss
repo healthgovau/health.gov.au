@@ -26,13 +26,13 @@
 
     // Title.
     .au-band__title {
-      @include health-fontgrid('xl', 'default', 'light');
+      @include health-fontgrid('xl');
       @include AU-space('padding-bottom', .75unit);
     }
 
     // Summary.
     .au-band__summary {
-      @include health-fontgrid('lg', 'default', 'light');
+      @include health-fontgrid('md', 'default', 'light');
       @include AU-space('padding-bottom', .75unit);
     }
 

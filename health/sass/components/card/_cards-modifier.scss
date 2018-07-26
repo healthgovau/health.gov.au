@@ -57,7 +57,7 @@
       height: auto;
     }
     .au-card__title {
-      @include AU-fontgrid( lg );
+      @include AU-fontgrid( md );
       a {
         color: $AU-color-foreground-action;
         text-decoration: underline;

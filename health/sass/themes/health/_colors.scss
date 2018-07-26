@@ -6,6 +6,37 @@
 //
 // Style guide: sass.colors
 
+// AU vars for reference
+// $AU-media-xs: 576px !default; // media query breakpoints
+// $AU-media-sm: 768px !default;
+// $AU-media-md: 992px !default;
+// $AU-media-lg: 1200px !default;
+
+// $AU-fontsize-map: (
+// 	xs:   14,
+// 	sm:   16,
+// 	md:   20,
+// 	lg:   24,
+// 	xl:   32,
+// 	xxl:  40,
+// 	xxxl: 48
+// ) !default;
+
+// $AU-color-foreground-text:   #313131 !default;
+// $AU-color-foreground-action: #00698f !default;
+// $AU-color-foreground-focus:  #9263DE !default;
+// $AU-color-background:        #ffffff !default;
+
+// $AU-colordark-foreground-text:   #ffffff !default;
+// $AU-colordark-foreground-action: #61daff !default;
+// $AU-colordark-foreground-focus:  #C390F9 !default;
+// $AU-colordark-background:        #135E70 !default;
+
+// $AU-color-error:   #ff635c !default;
+// $AU-color-success: #0cac78 !default;
+// $AU-color-warning: #f69900 !default;
+// $AU-color-info:    #00bfe9 !default;
+
 // Health.
 $colour-Shadow: rgba(0,0,0,0.1);
 $colour-card: #fff;
@@ -157,6 +188,3 @@ $alpha-background: #c22f73;
 $alpha-text: #FFF;
 $beta-background: #d34600;
 $beta-text: #FFF;
-
-// For reference
-// $AU-color-foreground-text
