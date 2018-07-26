@@ -8,6 +8,8 @@
   .field-name-field-image-featured {
     img {
       max-width: 100%;
+      @include AU-space(margin-top, 1unit);
+      @include AU-space(margin-bottom, 3unit);
     }
     a {
       border: none;

@@ -93,6 +93,7 @@
       &.active {
         background: $colour-light;
         border-left-color: $colour-Secondary;
+        color: $AU-color-foreground-text;
         &:hover {
           background: white;
         }
