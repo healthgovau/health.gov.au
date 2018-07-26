@@ -1,10 +1,13 @@
 // Fields
 .field {
 
+  // Generic field after field
   .field + & {
     @include AU-space(margin-top, 1.5unit);
   }
-  .metadata--inline + & {
+  // Specific field sequences (e..g for vs)
+  .metadata--inline + &,
+  .field-name-title + &  {
     @include AU-space(margin-top, .5unit);
   }
 

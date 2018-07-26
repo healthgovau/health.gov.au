@@ -4,7 +4,7 @@ ul.social__links, // Getting specific with it nah nah nah nah na na na!
   padding: 0;
   @include AU-space('margin', 1unit 0 0 0);
   @include AU-media(sm){
-    margin-top: 0;
+    @include AU-space('margin-top', .2unit);
   }
 
   overflow: hidden;
@@ -51,5 +51,12 @@ ul.social__links, // Getting specific with it nah nah nah nah na na na!
         display: none;
       }
     }
+  }
+}
+
+// Title
+#block-bean-share-this {
+  .block__title {
+    @include health-fontgrid('md');
   }
 }
