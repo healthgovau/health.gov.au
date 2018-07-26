@@ -189,7 +189,7 @@ a.au-card {
         flex-direction: column;
         &.au-card--vertical {
           flex-direction: initial;
-          border-top-width: 3px;
+          border-top-width: 6px;
           border-top-style: solid;
           transition: background-color 0.3s ease-in-out,color 0.3s ease-in-out;
         }

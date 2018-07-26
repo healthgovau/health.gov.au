@@ -38,6 +38,8 @@
   .item-list ul {
     @extend %list--remove;
     padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
