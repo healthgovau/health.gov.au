@@ -61,7 +61,7 @@
 // listing back.
 .listing-back {
   text-align: center;
-  .au-direction-link {
+  [class*="au-direction-link"] {
     @include AU-fontgrid('md');
   }
 }

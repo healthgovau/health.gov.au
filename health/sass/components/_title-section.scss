@@ -25,7 +25,7 @@
 .page-title__core {
   padding: 12px;
   @include AU-media(sm){
-    @include AU-space('padding', 1unit 0 1.5unit 0);
+    @include AU-space('padding', 1unit 0 2unit 0);
   }
 
   max-width: 56em;
