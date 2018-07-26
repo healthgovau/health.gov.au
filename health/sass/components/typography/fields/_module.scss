@@ -80,13 +80,15 @@
 
 // Ext link
 .field-name-field-link-external {
-    @include AU-space('padding-bottom', 1.5unit);
+    @include AU-space(margin-top, 1.5unit);
     .field-label {
-        @include AU-fontgrid('lg');
-        font-weight: normal;
+      @include health-fontgrid( 'lg', 'default', 'heavy' );
     }
     .field-items {
-        @extend %ext-link-wrapper;
+        @extend .au-callout;
+        @include AU-space(margin-top, 1unit);
+        border-left-color: $colour-Tertiary-2;
+        font-weight: bold;
     }
 }
 
@@ -247,4 +249,12 @@ p.summary, .field-name-field-summary {
 
 .page-accessibility-link {
   @include AU-space(padding-bottom, 2unit);
+}
+
+.field-name-publication-go-to-downloads {
+  @include AU-space(padding-top, 1unit);
+}
+
+.field-name-field-resource-file-summary {
+  @include AU-space(margin-bottom, 1.5unit);
 }

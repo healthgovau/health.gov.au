@@ -12,6 +12,10 @@
 
     &--secondary {
       border-left-color: $colour-Secondary;
+      @include AU-space(margin-top, .5unit);
+    }
+    &--tertiary {
+      border-left-color: $colour-Tertiary-2;
     }
   }
 }

@@ -1,13 +1,5 @@
-// ext link
-%ext-link-wrapper {
-    @include link-pullout;
-    a {
-        font-weight: bold;
-    }
-}
-
 %ext-link {
     word-break: break-all;
-  color: $colour-Secondary-darker;
-  @include health-fontgrid('xs', 'default', 'light');
-}      
+    color: $colour-Secondary-darker;
+    @include health-fontgrid('xs', 'default', 'light');
+}

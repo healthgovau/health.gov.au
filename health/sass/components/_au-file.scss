@@ -13,9 +13,11 @@
     }
     &__link {
       text-decoration: none;
+      color: $AU-color-foreground-text;
       &--visible {
         font-weight: bold;
         text-decoration: underline;
+        color: $AU-color-foreground-action;
         &:hover {
           text-decoration: none;
         }

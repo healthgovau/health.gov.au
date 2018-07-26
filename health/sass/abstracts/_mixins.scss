@@ -75,12 +75,6 @@
   }
 }
 
-@mixin link-pullout($border-width: 6px, $border-color: $colour-Secondary-darker, $pad: 20px){
-  border-left: $border-width solid $border-color;
-  padding-left: $pad;
-  @include AU-space('padding-top', .5unit);
-}
-
 @mixin shadowfy($colour: $colour-Shadow){
   box-shadow: 0px 3px 10px $colour;
 }

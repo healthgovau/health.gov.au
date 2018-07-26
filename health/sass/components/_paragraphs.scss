@@ -103,15 +103,13 @@
 .paragraphs-items-field-publication-files,
 .field-name-field-publication-nmm-id {
   > h2 {
-    @include AU-fontgrid( sm );
+    @include health-fontgrid( 'lg', 'default', 'heavy' );
     @include AU-space('margin-bottom', 1unit);
-    font-weight: normal;
   }
   .paragraphs-item-documents {
     h3 {
-      @include AU-fontgrid( sm );
+      @include health-fontgrid( 'md', 'default', 'light' );
       @include AU-space('margin-bottom', .5unit);
-      font-weight: bold;
     }
   }
 }

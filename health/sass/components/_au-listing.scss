@@ -62,6 +62,6 @@
 .listing-back {
   text-align: center;
   [class*="au-direction-link"] {
-    @include AU-fontgrid('md');
+    @include health-fontgrid('md','default','heavy');
   }
 }
