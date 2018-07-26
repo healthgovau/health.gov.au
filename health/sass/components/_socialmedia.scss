@@ -1,26 +1,21 @@
 ul.social__links, // Getting specific with it nah nah nah nah na na na!
-.social__links
-{
+.social__links {
   padding: 0;
-  @include AU-space('margin', 1unit 0 0 0);
+  @include AU-space(margin, 1unit 0 0 0);
   @include AU-media(sm){
-    @include AU-space('margin-top', .2unit);
+    @include AU-space(margin, .2unit 0 0 11unit);
   }
-
   overflow: hidden;
 
   .social__links-item {
-
-    float: none;
-    display: block;
-    @include AU-space('margin', 0 1unit 0.5unit 0);
+    // float: none;
+    // display: block;
+    // @include AU-space('margin', 0 1unit 0.5unit 0);
     list-style-type: none;
+    float: left;
+    display: inline;
+    @include AU-space('margin', 0 1unit 0 0);
 
-    @include AU-media(sm){
-      float: left;
-      display: inline;
-      margin-bottom: 0;
-    }
     // Font Awesome implementation
     a {
       @extend %baseicon;
@@ -54,9 +49,16 @@ ul.social__links, // Getting specific with it nah nah nah nah na na na!
   }
 }
 
-// Title
+// Share this layout
 #block-bean-share-this {
   .block__title {
     @include health-fontgrid('md');
+    float: none;
+    @include AU-space(width, auto);
+    @include AU-media(sm){
+      float: left;
+      @include AU-space(width, 11unit);
+    }
   }
+
 }

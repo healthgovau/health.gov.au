@@ -1,6 +1,5 @@
 .health-footer {
-  padding: 0;
-  @include AU-space('padding-top', 1unit);
+  @include AU-space('padding', 3unit 0);
 
   .menu {
     padding: 0.4em 0 1em 0;
