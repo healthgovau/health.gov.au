@@ -76,3 +76,19 @@
     }
   }
 }
+
+// In-page/view search
+.page-content {
+  .au-search {
+    &__input {
+      border-color: $colour-dark;
+    }
+    &__submit {
+      background-color: $colour-dark;
+      &:hover:not(:disabled),
+      &:focus:not(:disabled) {
+        background-color: $colour-dark-hover;
+      }
+    }
+  }
+}

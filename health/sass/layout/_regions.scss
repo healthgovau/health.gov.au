@@ -8,7 +8,8 @@
 
 .region-navigation {
   background: white;
-  box-shadow: 0 -6px $colour-light-dark inset;
+  box-shadow: 0 -8px $colour-light-dark inset;
+  @include AU-space(margin-top, 1unit);
   .item-list ul {
     @extend %list--remove;
   }

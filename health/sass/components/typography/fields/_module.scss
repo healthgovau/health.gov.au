@@ -155,8 +155,16 @@ p.summary, .field-name-field-summary {
     }
     .field-name-field-date-updated,
     .field-name-field-date-published {
+
         &.field-label-inline {
           @extend %bottom-border;
+          .field-label {
+            float: left;
+            @include AU-space(width, 11unit);
+          }
+          .field-items {
+            @include AU-space(margin-left, 11unit);
+          }
         }
     }
 }
@@ -183,13 +191,13 @@ p.summary, .field-name-field-summary {
 
 %bottom-border {
   border-top: $health-borderize--very-thin;
-  @include AU-space('padding-top', 1unit);
+  @include AU-space('padding-top', 2unit);
   @include AU-space('margin-top', 1unit);
   @include AU-media(sm){
     @include AU-space('margin-top', 2unit);
   }
   @include AU-media(md){
-    @include AU-space('margin-top', 3unit);
+    @include AU-space('margin-top', 4unit);
   }
 }
 
@@ -225,4 +233,14 @@ p.summary, .field-name-field-summary {
 
 %minor-text {
   font-size: 13px;
+}
+
+.field-name-field-related-health-topics {
+  .field-label {
+    float: left;
+    @include AU-space(width, 11unit);
+  }
+  .au-tags.au-tags--inline {
+    @include AU-space(margin-left, 11unit);
+  }
 }
