@@ -131,6 +131,12 @@
   p {
     @include health-fontgrid('md', 'default', 'light');
   }
+  .field-name-field-image-featured {
+    img {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
 }
 
 // Horizontal static text para.
@@ -138,5 +144,15 @@
   .col-text {
     background: white;
     @include AU-space('padding', 2unit);
+  }
+}
+
+// All .paragraphs-item-para-static-*
+[class*="paragraphs-item-para-static-"]{
+  .field-name-field-image-featured {
+    img {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
 }
