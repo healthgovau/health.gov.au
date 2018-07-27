@@ -6,14 +6,21 @@
       border-top-width: 6px;
       border-top-style: solid;
       transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      &:hover,
+      &:focus {
+        background-color: $colour-lighter;
+      }
+    }
+
+    .au-card--solid {
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
     // Top borders for cards.
     &:nth-of-type(5n+1) {
       .au-cta-link {
         border-top-color: $colour-Primary;
-        &:hover {
-          background-color: $colour-light-darker;
-        }
       }
       .au-card--solid {
         background: $colour-Primary;
@@ -28,9 +35,6 @@
     &:nth-of-type(5n+2) {
       .au-cta-link {
         border-top-color: $colour-Secondary;
-        &:hover {
-          background-color: $colour-light-darker;
-        }
       }
       .au-card--solid {
         background: $colour-Secondary;
@@ -45,9 +49,6 @@
     &:nth-of-type(5n+3) {
       .au-cta-link {
         border-top-color: $colour-Tertiary;
-        &:hover {
-          background-color: $colour-light-darker;
-        }
       }
       .au-card--solid {
         background: $colour-Tertiary;
@@ -62,9 +63,6 @@
     &:nth-of-type(5n+4) {
       .au-cta-link {
         border-top-color: $colour-Tertiary-2;
-        &:hover {
-          background-color: $colour-light-darker;
-        }
       }
       .au-card--solid {
         background: $colour-Tertiary-2;
@@ -79,9 +77,6 @@
     &:nth-of-type(5n+5) {
       .au-cta-link {
         border-top-color: $colour-dark;
-        &:hover {
-          background-color: $colour-light-darker;
-        }
       }
       .au-card--solid {
         background: $colour-dark;

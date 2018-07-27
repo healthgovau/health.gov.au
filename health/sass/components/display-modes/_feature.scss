@@ -24,7 +24,7 @@
       }
     }
     .field-name-title h2 {
-        @extend %list-item-title--medium;
+      @include AU-fontgrid( lg );
     }
 }
 
@@ -74,7 +74,7 @@
   .field-name-title {
     h2,
     h3 {
-      @extend %list-item-title--medium;
+      @include AU-fontgrid( lg );
     }
   }
 }

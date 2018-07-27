@@ -1,5 +1,5 @@
 // A basic mixin to supply the cards for resources and news items.
-@mixin cards-modifier($height: 32unit) {
+@mixin cards-modifier($height: 30unit) {
   .au-card-list {
     & ul {
       max-width: 100%;
@@ -53,16 +53,19 @@
       }
     }
     .au-card__fullwidth {
-      @include AU-space( margin, -2unit -2unit 3unit -2unit );
+      @include AU-space( margin, -2unit -2unit 2unit -2unit );
       height: auto;
     }
     .au-card__title {
       @include AU-fontgrid( md );
+      font-weight: bold;
       a {
         color: $AU-color-foreground-action;
         text-decoration: underline;
+        font-weight: bold;
         &:hover {
           text-decoration: none;
+          color: $AU-color-foreground-text;
         }
       }
     }
