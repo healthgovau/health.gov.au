@@ -2,27 +2,34 @@
   background-color: transparent;
   position: fixed;
   display: block;
-  right: 50px;
-  bottom: 15px;
-  border: none;
+  right: 0;
+  bottom: 0;
   opacity: 0;
   z-index: -1;
-  padding: 0px;
-  &:hover {
-    opacity: 1;
-    background-color: transparent;
-  }
-  a {
-    position: relative;
-    background: $AU-color-foreground-action;
-    color: white;
-    padding: 0.2em;
-    border: 2px solid white;
-    margin: 0;
-    text-decoration: none;
+  padding: 0;
+
+  .au-btn {
     @include AU-fontgrid( md );
     &:hover {
       color: white;
+          opacity: 1;
+    }
+    &:after {
+      content: ' ';
+      position: absolute;
+      top: 50%;
+      @include AU-space( margin-top, -0.5unit ); // Pull it up half of it's height
+      @include AU-space( right, 1unit );
+      @include AU-space( width, 1unit );
+      @include AU-space( height, 1unit );
+      background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+          '<path fill="#{ $AU-color-foreground-action }" d="M64 0l64 64-16 16-64-64"/>' +
+          '<path fill="#{ $AU-color-foreground-action }" d="M64 0l16 16-64 64L0 64"/>' +
+        '</svg>');
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 101;
+      transition: transform 0.25s ease-in;
     }
   }
 }

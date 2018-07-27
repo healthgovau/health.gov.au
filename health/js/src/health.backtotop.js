@@ -8,7 +8,7 @@
       if (typeof Vue !== 'undefined') {
         var url = '/' + settings.health.theme_path + '/images/icons/gototop.png';
         Vue.component('backtotop', {
-          template: '<button title="back to top" class="goTop" v-if="isVisible" @click="backToTop"> <a class="au-direction-link au-direction-link--up" href="#">Top</a> </button>',
+          template: '<button title="back to top" class="goTop" v-if="isVisible" @click="backToTop"> <a class="au-btn au-btn--secondary" href="#">Back to top</a> </button>',
           data: function () {
             return {
               isVisible: false,
