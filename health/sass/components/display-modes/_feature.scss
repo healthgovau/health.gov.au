@@ -24,7 +24,7 @@
       }
     }
     .field-name-title h2 {
-      @include AU-fontgrid( lg );
+      @include AU-fontgrid( lg , 'heading');
     }
 }
 
@@ -74,7 +74,7 @@
   .field-name-title {
     h2,
     h3 {
-      @include AU-fontgrid( lg );
+      @include AU-fontgrid( lg , 'heading');
     }
   }
 }

@@ -194,8 +194,16 @@ a.au-card {
           flex-direction: initial;
           border-top-width: 6px;
           border-top-style: solid;
+          border-top-color: $colour-Tertiary-2;
           transition: background-color 0.3s ease-in-out,color 0.3s ease-in-out;
+          padding-left: 0;
+          padding-right: 0;
         }
+      }
+      h2,
+      h3 { 
+        @include AU-fontgrid( md , heading);
+        @include AU-space( margin-bottom, 1unit );
       }
     }
 
