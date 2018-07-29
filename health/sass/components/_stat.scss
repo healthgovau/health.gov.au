@@ -21,54 +21,53 @@
 .stat__card {
   overflow: hidden;
   width: 100%;
-  color: white;
-  background-color: $colour-Primary-darker;
-  @include cardify($colour-Primary-darker);
-  @include AU-media('md') {
-    .stat__text {
-      border-bottom: 8px solid $colour-Primary;
-    }
-    border-bottom: 0;
-  }
-  border-bottom: 8px solid $colour-Primary;
+  background-color: $colour-light;
+  //@include cardify($colour-Primary-darker);
+  // @include AU-media('md') {
+  //   .stat__text {
+  //     border-bottom: 8px solid $colour-Primary;
+  //   }
+  //   border-bottom: 0;
+  // }
+  //border-bottom: 8px solid $colour-Primary;
   @include AU-space(margin-top, 1.5unit);
 }
 
-.stat--secondary {
-  .stat__card {
-    background-color: $colour-Secondary-darker;
-    @include AU-media('md') {
-      .stat__text {
-        border-color: $colour-Secondary;
-      }
-    }
-    border-color: $colour-Secondary;
-  }
-}
+// .stat--secondary {
+//   .stat__card {
+//     background-color: $colour-Secondary-darker;
+//     @include AU-media('md') {
+//       .stat__text {
+//         border-color: $colour-Secondary;
+//       }
+//     }
+//     border-color: $colour-Secondary;
+//   }
+// }
 
-.stat--tertiary {
-  .stat__card {
-    background-color: $colour-Tertiary-darker;
-    @include AU-media('md') {
-      .stat__text {
-        border-color: $colour-Tertiary;
-      }
-    }
-    border-color: $colour-Tertiary;
-  }
-}
+// .stat--tertiary {
+//   .stat__card {
+//     background-color: $colour-Tertiary-darker;
+//     @include AU-media('md') {
+//       .stat__text {
+//         border-color: $colour-Tertiary;
+//       }
+//     }
+//     border-color: $colour-Tertiary;
+//   }
+// }
 
-.stat--dark {
-  .stat__card {
-    background-color: $colour-darker;
-    @include AU-media('md') {
-      .stat__text {
-        border-color: $colour-dark;
-      }
-    }
-    border-color: $colour-dark;
-  }
-}
+// .stat--dark {
+//   .stat__card {
+//     background-color: $colour-darker;
+//     @include AU-media('md') {
+//       .stat__text {
+//         border-color: $colour-dark;
+//       }
+//     }
+//     border-color: $colour-dark;
+//   }
+// }
 
 // Statistic value.
 .stat__value {
@@ -86,7 +85,7 @@
   line-height: 1.3;
   display: inline;
   margin: 0;
-  color: white;
+  // color: white;
 }
 
 .stat__value-suffix,
