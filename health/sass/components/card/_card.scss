@@ -202,7 +202,7 @@ a.au-card {
       }
       h2,
       h3 { 
-        @include AU-fontgrid( md , heading);
+        @include health-fontgrid( md , heading);
         @include AU-space( margin-bottom, 1unit );
       }
     }

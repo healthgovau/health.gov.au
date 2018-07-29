@@ -126,7 +126,10 @@
     margin-left: -$AU-grid-12-gutter-width/2;
   }
   h2 {
-    @include health-fontgrid('xl', 'default', 'light');
+    @include health-fontgrid('xl', 'heading');
+  }
+  h3 {
+    @include health-fontgrid('lg', 'heading');
   }
   p {
     @include health-fontgrid('md', 'default', 'light');
@@ -144,6 +147,19 @@
   .col-text {
     background: white;
     @include AU-space('padding', 2unit);
+    p {
+      @include health-fontgrid('md', 'default', 'light');
+    }
+  }
+}
+
+// Static content band
+.paragraphs-item-band-static-content {
+  h2 {
+    @include health-fontgrid('xl', 'heading');
+  }
+  h3 {
+    @include health-fontgrid('lg', 'heading');
   }
 }
 
