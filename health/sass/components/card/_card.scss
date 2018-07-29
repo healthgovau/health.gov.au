@@ -4,6 +4,7 @@
 
 .au-card {
   @include AU-space( padding, 1.5unit );
+  @include AU-space( margin-top, 1.5unit );
   @include AU-media( md ) {
     @include AU-space( padding, 2unit );
   }
@@ -18,6 +19,11 @@
     height: auto;
   }
 
+  // Override cta-link margin if on card
+  &.au-cta-link {
+    @include AU-space( margin-top, 1.5unit );
+  }
+
   // Typographic spacing
   * + hr,
   * + p,
@@ -27,17 +33,14 @@
     font-weight: normal;
   }
   .au-card__title {
-    @include AU-fontgrid( md );
-    @include AU-space( margin-bottom, 1unit );
+    @include AU-fontgrid( md , heading);
+    //@include AU-space( margin-bottom, 1unit );
     text-decoration: underline;
     text-decoration-color: currentColor;
     transition: text-decoration-color 0.3s ease-in-out;
     font-weight: bold;
     @include AU-media( sm ) {
-      @include AU-space( margin-bottom, 1.5unit );
-    }
-    @include AU-media( md ) {
-      @include AU-space( margin-bottom, 1.5unit );
+      @include AU-space( margin-bottom, 1unit );
     }
   }
 
@@ -119,9 +122,9 @@
     }
   }
 
-  &.au-card--solid {
-    @include AU-space( margin, 1unit 0);
-  }
+  // &.au-card--solid {
+  //   @include AU-space( margin, 1unit 0);
+  // }
 }
 
 // When the box is a link
