@@ -20,6 +20,20 @@
     // Top borders for cards.
     &:nth-of-type(5n+1) {
       .au-cta-link {
+        border-top-color: $colour-Secondary;
+      }
+      .au-card--solid {
+        background: $colour-Secondary-dark;
+        color: white;
+        &:hover {
+          background-color: $colour-Secondary-hover;
+          color: white;
+        }
+      }
+    }
+
+    &:nth-of-type(5n+2) {
+      .au-cta-link {
         border-top-color: $colour-Primary;
       }
       .au-card--solid {
@@ -32,19 +46,6 @@
       }
     }
 
-    &:nth-of-type(5n+2) {
-      .au-cta-link {
-        border-top-color: $colour-Secondary;
-      }
-      .au-card--solid {
-        background: $colour-Secondary-dark;
-        color: white;
-        &:hover {
-          background-color: $colour-Secondary-hover;
-          color: white;
-        }
-      }
-    }
 
     &:nth-of-type(5n+3) {
       .au-cta-link {

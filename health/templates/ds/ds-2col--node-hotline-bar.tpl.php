@@ -12,14 +12,12 @@
   <?php print render($title_suffix['contextual_links']); ?>
   <?php endif; ?>
 
-  <<?php print $left_wrapper ?> class="group-left col-xs-12 col-sm-4 col-lg-3 hotline<?php print $left_classes; ?>">
+  <<?php print $left_wrapper ?> class="group-left col-xs-12 col-sm-4 hotline<?php print $left_classes; ?>">
     <?php print $left; ?>
   </<?php print $left_wrapper ?>>
 
-  <<?php print $right_wrapper ?> class="group-right col-xs-12 col-sm-8 col-lg-9 hotline<?php print $right_classes; ?>">
-    <div class="au-callout">
-      <?php print $right; ?>
-    </div>
+  <<?php print $right_wrapper ?> class="group-right col-xs-12 col-sm-8 hotline<?php print $right_classes; ?>">
+    <?php print $right; ?>
     <?php if (isset($node->link['title'])): ?>
         <div class="more-link au-cta-link col-xs-12">
           <?php print l($node->link['title'], $node->link['url']); ?>
