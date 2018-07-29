@@ -148,7 +148,8 @@
 }
 
 // All .paragraphs-item-para-static-*
-[class*="paragraphs-item-para-static-"]{
+[class*="paragraphs-item-para-static-"],
+[class*="paragraphs-item-para-feature-"]{
   .field-name-field-image-featured {
     img {
       margin-top: 0;
