@@ -37,7 +37,7 @@
         border-top-color: $colour-Secondary;
       }
       .au-card--solid {
-        background: $colour-Secondary;
+        background: $colour-Secondary-dark;
         color: white;
         &:hover {
           background-color: $colour-Secondary-hover;
@@ -48,13 +48,13 @@
 
     &:nth-of-type(5n+3) {
       .au-cta-link {
-        border-top-color: $colour-Tertiary;
+        border-top-color: $colour-Tertiary-2;
       }
       .au-card--solid {
-        background: $colour-Tertiary;
+        background: $colour-Tertiary-2-darker;
         color: white;
         &:hover {
-          background-color: $colour-Tertiary-hover;
+          background-color: $colour-Tertiary-2-hover;
           color: white;
         }
       }
@@ -62,13 +62,13 @@
 
     &:nth-of-type(5n+4) {
       .au-cta-link {
-        border-top-color: $colour-Tertiary-2;
+        border-top-color: $colour-Tertiary;
       }
       .au-card--solid {
-        background: $colour-Tertiary-2;
+        background: $colour-Tertiary-darker;
         color: white;
         &:hover {
-          background-color: $colour-Tertiary-2-hover;
+          background-color: $colour-Tertiary-hover;
           color: white;
         }
       }
@@ -79,7 +79,7 @@
         border-top-color: $colour-dark;
       }
       .au-card--solid {
-        background: $colour-dark;
+        background: $colour-darkest;
         color: white;
         &:hover {
           background-color: $colour-dark-hover;

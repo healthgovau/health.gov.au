@@ -34,7 +34,7 @@
   }
   .au-card__title {
     @include AU-fontgrid( md , heading);
-    //@include AU-space( margin-bottom, 1unit );
+    @include AU-space( margin-bottom, 1unit );
     text-decoration: underline;
     text-decoration-color: currentColor;
     transition: text-decoration-color 0.3s ease-in-out;
@@ -54,12 +54,12 @@
   .au-card__text {
     @include AU-space( margin-bottom, 1unit );
     @include AU-fontgrid( sm );
-    @include AU-media( sm ) {
-      @include AU-space( margin-bottom, 2unit );
-    }
-    @include AU-media( md ) {
-      @include AU-space( margin-bottom, 2.5unit );
-    }
+    // @include AU-media( sm ) {
+    //   @include AU-space( margin-bottom, 2unit );
+    // }
+    // @include AU-media( md ) {
+    //   @include AU-space( margin-bottom, 2.5unit );
+    // }
   }
 
   hr {
