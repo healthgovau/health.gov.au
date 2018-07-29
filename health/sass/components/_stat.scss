@@ -31,7 +31,7 @@
     border-bottom: 0;
   }
   border-bottom: 8px solid $colour-Primary;
-
+  @include AU-space(margin-top, 1.5unit);
 }
 
 .stat--secondary {

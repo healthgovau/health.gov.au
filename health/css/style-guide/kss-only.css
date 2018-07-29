@@ -2964,9 +2964,9 @@ textarea.au-text-input {
     content: "Text: #313131"; }
 
 .palette__color--link {
-  background-color: #00698f; }
+  background-color: #0072A3; }
   .palette__color--link:after {
-    content: "Link: #00698f"; }
+    content: "Link: #0072A3"; }
 
 .palette__color--error {
   background-color: #ff635c; }
@@ -3007,7 +3007,7 @@ textarea.au-text-input {
   background-color: gray; }
 
 .contrast-box--link {
-  background-color: #00698f; }
+  background-color: #0072A3; }
 
 .colorbox__colour-Secondary {
   background-color: #008998; }
@@ -3030,9 +3030,9 @@ textarea.au-text-input {
     content: "#313131"; }
 
 .colorbox__colour-Link {
-  background-color: #00698f; }
+  background-color: #0072A3; }
   .colorbox__colour-Link > span:after {
-    content: "#00698f"; }
+    content: "#0072A3"; }
 
 .colorbox__colour-Error {
   background-color: #ff635c; }

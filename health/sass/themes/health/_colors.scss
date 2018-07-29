@@ -38,6 +38,7 @@
 // $AU-color-info:    #00bfe9 !default;
 
 // Health.
+$AU-color-foreground-action: #0072A3; // override of default link colour WCAG 2.0 compliant on backgrounds up to $colour-light (#ECECEC)
 $colour-Shadow: rgba(0,0,0,0.1);
 $colour-card: #fff;
 $colour-Error-light: #ffe7ea;
@@ -73,7 +74,7 @@ $colour-darkest: #58585b;
 $colour-dark-hover: #404041;
 
 $colour-light-dark: #e5e5e5;
-$colour-light: #ecedee;
+$colour-light: #ececec;
 $colour-lighter: #f1f1f2;
 $colour-lightest: #f9f9f9;
 $colour-light-darker: #cdcdcd;
