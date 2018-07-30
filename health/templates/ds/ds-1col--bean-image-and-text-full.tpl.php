@@ -27,7 +27,7 @@
  * @see template_process()
  */
 ?>
-<article class="col-xs-12 <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<article class="col-xs-6 <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
     <a class="au-card au-card--shadow au-cta-link" href="<?php print $wrapper_link_url; ?>">
         <?php if (isset($content['field_image'])): ?>
