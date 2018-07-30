@@ -52,7 +52,7 @@
         border-top-color: $colour-Tertiary-2;
       }
       .au-card--solid {
-        background: $colour-Tertiary-2-darker;
+        background: $colour-Tertiary-2;
         color: white;
         &:hover {
           background-color: $colour-Tertiary-2-hover;
@@ -80,7 +80,7 @@
         border-top-color: $colour-dark;
       }
       .au-card--solid {
-        background: $colour-darkest;
+        background: $colour-dark;
         color: white;
         &:hover {
           background-color: $colour-dark-hover;
