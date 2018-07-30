@@ -106,7 +106,7 @@ $colour-light-darker: #cdcdcd;
 
 // Refactor as node-sass will compile vendors prefixes
 %colour-Primary-background {
-  background-color: $colour-Primary-darker;
+  background-color: $colour-Primary;
   background: -webkit-linear-gradient(left, $colour-Primary-darker, $colour-Primary);
   background: -o-linear-gradient(right, $colour-Primary-darker, $colour-Primary);
   background: -moz-linear-gradient(right, $colour-Primary-darker, $colour-Primary);
@@ -154,11 +154,11 @@ $colour-light-darker: #cdcdcd;
 }
 
 %colour-Tertiary-2-background {
-  background-color: $colour-Tertiary-2-dark;
-  background: -webkit-linear-gradient(left, $colour-Tertiary-2-dark, $colour-Tertiary-2);
-  background: -o-linear-gradient(right, $colour-Tertiary-2-dark, $colour-Tertiary-2);
-  background: -moz-linear-gradient(right, $colour-Tertiary-2-dark, $colour-Tertiary-2);
-  background: linear-gradient(to right, $colour-Tertiary-2-dark, $colour-Tertiary-2);
+  background-color: $colour-Tertiary-2;
+  background: -webkit-linear-gradient(right, $colour-Tertiary-2-dark, $colour-Tertiary-2);
+  background: -o-linear-gradient(left, $colour-Tertiary-2-dark, $colour-Tertiary-2);
+  background: -moz-linear-gradient(left, $colour-Tertiary-2-dark, $colour-Tertiary-2);
+  background: linear-gradient(to left, $colour-Tertiary-2-dark, $colour-Tertiary-2);
 }
 
 %colour-Dark-background {

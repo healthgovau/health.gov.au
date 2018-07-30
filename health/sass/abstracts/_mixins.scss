@@ -211,7 +211,7 @@
   
 }
 
-@mixin hotline-bar($bgcolour: $colour-light-dark, $bgcolour-left: $colour-Tertiary-2-hover, $font-colour: white) {
+@mixin hotline-bar($bgcolour: $colour-Tertiary-2, $bgcolour-left: $colour-Tertiary-2-dark, $font-colour: white) {
   @extend %colour-Tertiary-2-background;
 
   // font colour

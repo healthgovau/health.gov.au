@@ -26,7 +26,7 @@
       @include AU-space('padding-bottom', 1.5unit);
       @include AU-space('padding-left', 1unit);
       @include AU-space('padding-right', 1unit);
-      background: $colour-Tertiary-2-hover;
+      background: $colour-Tertiary-2-dark;
     }
   }
   .group-right {
@@ -126,7 +126,7 @@
     margin-left: -$AU-grid-12-gutter-width/2;
   }
   h2 {
-    @include health-fontgrid('xl', 'heading');
+    @include health-fontgrid('xl', 'heading', 'light');
   }
   h3 {
     @include health-fontgrid('lg', 'heading');
@@ -156,7 +156,7 @@
 // Static content band
 .paragraphs-item-band-static-content {
   h2 {
-    @include health-fontgrid('xl', 'heading');
+    @include health-fontgrid('xl', 'heading', 'light');
   }
   h3 {
     @include health-fontgrid('lg', 'heading');
