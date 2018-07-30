@@ -147,9 +147,8 @@
       background: $bg-hover-colour;
       border-top-color: $border-hover-colour;
       .field-name-field-link-internal {
-        //color: #fff;
         .field-item {
-          border-bottom: none;
+          text-decoration: none;
         }
       }
     }
