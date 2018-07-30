@@ -2,26 +2,38 @@
   background-color: transparent;
   position: fixed;
   display: block;
-  right: 0;
-  bottom: 0;
+  right: -3px;
+  bottom: 10px;
   opacity: 0;
   z-index: -1;
   padding: 0;
 
-  .au-btn {
-    @include AU-fontgrid( md );
-    &:hover {
-      color: white;
-          opacity: 1;
+  @include AU-media(md) {
+    bottom: 20px;
+  }
+
+  .au-btn.au-btn--secondary {
+    @include AU-fontgrid( sm );
+    line-height: 1.2;
+    @include AU-space( width, 5unit );
+    @include AU-space( padding, 1.5unit 0 .5unit);
+    @include AU-media(md) {
+      @include AU-space( width, 6unit );
+      @include AU-space( padding, 1.75unit 1unit 1unit);
     }
+    background: #FFF;
     &:after {
       content: ' ';
       position: absolute;
-      top: 50%;
-      @include AU-space( margin-top, -0.5unit ); // Pull it up half of it's height
-      @include AU-space( right, 1unit );
+      top: 0;
+      @include AU-space( margin-top, .75unit ); 
+      @include AU-space( right, 2unit );
       @include AU-space( width, 1unit );
       @include AU-space( height, 1unit );
+      @include AU-media(md) {
+        @include AU-space( margin-top, 1unit ); 
+        @include AU-space( right, 2.4unit );
+      }
       background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
           '<path fill="#{ $AU-color-foreground-action }" d="M64 0l64 64-16 16-64-64"/>' +
           '<path fill="#{ $AU-color-foreground-action }" d="M64 0l16 16-64 64L0 64"/>' +
@@ -31,11 +43,24 @@
       z-index: 101;
       transition: transform 0.25s ease-in;
     }
+    &:hover,
+    &:hover:not(:disabled) {
+      background-color: #FFF;
+      &:after {
+        background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+        '<path fill="#{ $AU-color-foreground-text }" d="M64 0l64 64-16 16-64-64"/>' +
+        '<path fill="#{ $AU-color-foreground-text }" d="M64 0l16 16-64 64L0 64"/>' +
+      '</svg>');
+      }
+    }
+    span {
+      display: block;
+    }
   }
 }
 
 .isVisible {
-  opacity: .8;
+  opacity: 1;
   z-index: 9999;
   transition: all .4s ease-in;
 }

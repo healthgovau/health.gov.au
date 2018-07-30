@@ -8,7 +8,7 @@
       if (typeof Vue !== 'undefined') {
         var url = '/' + settings.health.theme_path + '/images/icons/gototop.png';
         Vue.component('backtotop', {
-          template: '<button title="back to top" class="goTop" v-if="isVisible" @click="backToTop"> <a class="au-btn au-btn--secondary" href="#">Back to top</a> </button>',
+          template: '<button title="back to top" class="goTop" v-if="isVisible" @click="backToTop"> <a class="au-btn au-btn--secondary" href="#">Back <span>to top</span></a> </button>',
           data: function () {
             return {
               isVisible: false,
@@ -19,7 +19,7 @@
             initToTopButton: function () {
               $(document).bind('scroll', function () {
                 var backToTopButton = $('.goTop');
-                if ($(document).scrollTop() > 250) {
+                if ($(document).scrollTop() > 1000) {
                   backToTopButton.addClass('isVisible');
                   this.isVisible = true;
                 } else {
