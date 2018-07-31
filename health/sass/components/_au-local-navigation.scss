@@ -25,6 +25,7 @@
 
       a {
         position: relative;
+        color: $colour-minorText;
         @include AU-space('padding', .75unit 12px);
         @include AU-media(sm) {
           @include AU-space('padding', .75unit 1.25unit);
@@ -83,6 +84,7 @@
       @include AU-media(sm) {
         &:hover {
           border-left-color: $colour-Secondary;
+          background: $colour-light;
         }
       }
 
@@ -94,13 +96,6 @@
         background: $colour-light;
         border-left-color: $colour-Secondary;
         color: $AU-color-foreground-text;
-        &:hover {
-          background: white;
-        }
-        &:focus {
-          color: white;
-          background: $colour-Secondary;
-        }
       }
 
       &.menu--unpublished {
