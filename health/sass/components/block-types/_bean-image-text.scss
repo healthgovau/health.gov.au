@@ -35,6 +35,9 @@
       .field-name-field-link-internal {
         .field-item {
           @extend a[rel~='external'];
+          &::after {
+            @include AU-space('padding-top', 2unit);
+          }
         }
       }
     }
