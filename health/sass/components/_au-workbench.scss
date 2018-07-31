@@ -28,3 +28,10 @@
     @include AU-space('margin-bottom', 2unit);
   }
 }
+
+// CLear min-height for empty tabs section
+.au-grid #tabs {
+  .col-xs-12 {
+    min-height: 0;
+  }
+}

@@ -131,6 +131,11 @@
   display: block;
   border-bottom: $health-borderize--very-thin;
 
+  // Override accordion colour
+  &.au-accordion .au-accordion__title {
+    background-color: transparent;
+  }
+
   // Toggles
   .mobile-toggle__close,
   .mobile-toggle__open {

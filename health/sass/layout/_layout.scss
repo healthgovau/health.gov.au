@@ -8,15 +8,17 @@ body {
 
   // Everything gets full width by default.
   .page {
-    @include AU-space('margin-bottom', 2 unit);
+    @include AU-space('margin-bottom', 2unit);
     .sidebar-right {
       // Right sidebar is in the markup first, but we want it to display on the right.
       float: none;
       padding: 0; // Remove the gutters on mobile.
+      @include AU-space(margin-top, -2unit);
       @include AU-media(sm) {
         // Need a better way.
         float: right!important;
         padding: 0 ($AU-grid-12-gutter-width / 2); // Put them back on tablet+ to work with the grid.
+        margin-top: 0;
       }
     }
   }
