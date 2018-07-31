@@ -28,37 +28,33 @@
 
 .rsbtn_colorskin {
   position: relative;
-  font-size: 13px;
-  line-height: 1.3em;
   display: inline-block;
-  padding: 10px;
+  @include AU-space('padding', .5unit 1unit);
   @include AU-space('margin', 0 0 .5unit 0);
   @include AU-media(sm) {
     @include AU-space('margin', 0 0 0 1unit);
   }
   background: white;
-  border: 1px solid $colour-Secondary;
+  border-radius: 4px;
+  border: 3px solid $AU-color-foreground-action;
   &:hover {
-    background-color: $colour-light-dark;
+    border-color: $AU-color-foreground-text;
+    text-decoration: underline;
   }
   &:active, &:focus {
     background-color: $colour-light-darker;
   }
 
   i {
-    font-size: 12px;
+    font-size: inherit;
   }
 
   a {
-    color: $colour-Secondary;
-    &:active, &:focus {
-      color: $colour-Secondary-hover;
-    }
+    color: $AU-color-foreground-action;
   }
 
   a, span {
     position: relative;
-    text-decoration: none;
   }
 
   span {
@@ -76,7 +72,7 @@
       margin-left: -1.2em;
     }
     &.rsbutton {
-      background-color: $colour-Secondary;
+      background-color: $AU-color-foreground-action;
       width: 18px;
       height: 18px;
 
@@ -95,7 +91,7 @@
       transition: background-color .2s ease;
 
       &:hover, &:focus {
-        background-color: $colour-Secondary-hover;
+        background-color: $AU-color-foreground-action;
       }
     }
 
@@ -109,7 +105,7 @@
   }
 
   .rsbtn_box {
-    margin: 1px;
+    margin: 3px 1px 1px;
   }
 
   .rsbtn_play {
@@ -155,7 +151,7 @@
   }
 
   .rsbtn_progress_container {
-    border: 1px solid $colour-Secondary;
+    border: 1px solid $AU-color-foreground-action;
     width: 50px;
     height: 10px;
     margin-top: 3px;
@@ -170,7 +166,7 @@
 
   .rsbtn_progress_handle.rsimg {
     position: absolute;
-    background-color: $colour-Secondary;
+    background-color: $AU-color-foreground-action;
     top: -3px;
     left: -3px;
     width: 6px;
@@ -196,7 +192,7 @@
     top: 100%;
     width: 16px;
     height: 40px;
-    border: 1px solid $colour-Secondary;
+    border: 1px solid $AU-color-foreground-action;
     background: #fff;
   }
 
@@ -213,7 +209,7 @@
     left: -3px;
     width: 12px;
     height: 6px;
-    background: $colour-Secondary;
+    background: $AU-color-foreground-action;
   }
 
   .rsbtn_dl {
@@ -272,7 +268,7 @@
   a {
     &.rsbtn_abouthelp {
       background: url(../js/libraries/readspeaker/ReadSpeakerColorSkin.png) no-repeat scroll -20px -128px transparent;
-      background-color: $colour-Secondary;
+      background-color: $AU-color-foreground-action;
       border-radius: 7px;
       transition: background-color 0.2s ease 0s;
       height: 14px;
