@@ -6,9 +6,6 @@
 
 .block-workbench {
   .workbench-info-block {
-    @include AU-space('margin-top', 1unit);
-    @include AU-space('margin-bottom', 2unit);
-
     border: 0;
     color: $AU-color-foreground-text;
     background: none;
@@ -25,5 +22,9 @@
         position: static;
       }
     }
+  }
+  .au-page-alerts {
+    @include AU-space('margin-top', 1unit);
+    @include AU-space('margin-bottom', 2unit);
   }
 }
