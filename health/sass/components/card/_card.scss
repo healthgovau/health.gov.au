@@ -178,6 +178,12 @@ a.au-card {
     @supports( display: flex ) {
       display: flex;
       flex-wrap: wrap;
+      
+      // Override display:table if using flex as .row applies it
+      &::before,
+      &::after {
+        display: none;
+      }
     }
 
     li, article {
