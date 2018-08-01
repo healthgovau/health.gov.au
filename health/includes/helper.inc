@@ -435,7 +435,7 @@ function _health_grid_class($total_number, $classes_array, $xs_grid = 'col-xs-12
       $classes_array[] = 'col-md-4';
       break;
     default:
-      $classes_array[] = 'col-md-3';
+      $classes_array[] = 'col-md-12';
   }
 
   return $classes_array;
