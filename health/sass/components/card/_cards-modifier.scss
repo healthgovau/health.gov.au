@@ -1,5 +1,5 @@
 // A basic mixin to supply the cards for resources and news items.
-@mixin cards-modifier($height: 30unit) {
+@mixin cards-modifier($height: 26unit) {
   .au-card-list {
     @include AU-space(margin-bottom, 1unit);
     & ul {
@@ -83,9 +83,17 @@
         }
       }
       .au-card--date {
-        @include AU-fontgrid( xs );
         @include AU-space( margin-bottom, 1unit );
-        color: $AU-color-foreground-muted-suggestion;
+        color: $colour-minorText;
+        float: left;
+      }
+      // not from DTA spec
+      .field-name-ds-content-type {
+        border-left: 1px solid $colour-minorText;
+        @include AU-space(margin-left,.5unit);
+        @include AU-space(padding-left,.5unit);
+        margin-top: 0;
+        display: inline-block;
       }
     }
   }
