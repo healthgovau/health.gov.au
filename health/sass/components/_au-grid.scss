@@ -2,10 +2,16 @@
 
   // On non-full width pages, stop nested containers from pushing out wide.
   // This allows us to nest containers in other elements and for them to still work.
-  .not-full-width .container {
-    width: auto;
-    clear: both;
-
+  .not-full-width {
+    // Top margin for content area
+    @include AU-space(margin-top, 1unit);
+    @include AU-media(sm ) {
+      @include AU-space(margin-top, 3unit);
+    }
+    .container {
+      width: auto;
+      clear: both;
+    }
   }
 
   // On full width pages, stop nested containers from pushing out wide.
