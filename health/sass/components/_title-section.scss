@@ -160,8 +160,8 @@
 
     @include AU-media(sm){
       display: block;
-      @include AU-space('padding', .25unit 0 .5unit 1unit);
-      border-left: 3px solid #DDD;
+      @include AU-space('padding', .25unit 0 .5unit 1.5unit);
+      border-left: 4px solid #DDD;
 
     }
   }

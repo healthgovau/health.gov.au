@@ -13,7 +13,7 @@
 
     padding: 0;
     border-bottom: $health-borderize--thin;
-    @include AU-space('margin-top', 2unit);
+    @include AU-space('margin-bottom', 1unit);
     width: 100%;
 
     li {
@@ -52,6 +52,16 @@
   @media print {
     .au-tabs {
       display: none;
+    }
+  }
+
+  // Amend gap for full-width pages that don't have a top margin
+  .full-width {
+    ul.au-tabs {
+      @include AU-space(margin-top, 1unit);
+      @include AU-media(sm ) {
+        @include AU-space(margin-top, 3unit);
+      }
     }
   }
 
