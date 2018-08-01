@@ -127,10 +127,10 @@ endif;
     }
 
     if ($sidebar_first || $sidebar_second) {
-      $main_col_classes = 'col-md-8';
+      $main_col_classes = 'col-sm-8';
     } else {
       if (!$full_width) {
-        $main_col_classes = 'col-md-12';
+        $main_col_classes = 'col-sm-12';
       } else {
         $main_col_classes = '';
       }
@@ -146,13 +146,13 @@ endif;
 
         <?php if ($sidebar_first || $sidebar_second): ?>
           <?php if ($sidebar_first): ?>
-            <aside class="sidebar sidebar-left rs_skip col-md-4" role="complementary">
+            <aside class="sidebar sidebar-left rs_skip col-sm-4" role="complementary">
               <?php print $sidebar_first; ?>
             </aside>
           <?php endif; ?>
 
           <?php if ($sidebar_second): ?>
-            <aside class="sidebar sidebar-right rs_skip col-md-4" role="complementary">
+            <aside class="sidebar sidebar-right rs_skip col-sm-4" role="complementary">
               <?php print $sidebar_second; ?>
             </aside>
           <?php endif; ?>
