@@ -34,7 +34,7 @@
       <?php print render($content['field_image']); ?>
       <div class="field field-name-field-link-internal field-type-link-field field-label-hidden">
         <div class="field-items">
-          <div class="field-item au-card__title even">
+          <div class="field-item even">
             <?php print render($content['field_link_internal']['#items'][0]['title']); ?>
           </div>
         </div>
