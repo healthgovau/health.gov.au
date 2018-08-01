@@ -173,3 +173,9 @@
     }
   }
 }
+
+.paragraphs-item-two-columns {
+  .group-header {
+    @include AU-space(margin-bottom, 2unit);
+  }
+}
