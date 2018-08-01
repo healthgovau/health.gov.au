@@ -129,7 +129,7 @@ function _health_find_facet_filter_name($param) {
  * @return array
  */
 function _health_get_render_elements_for_public_topic_page($variables) {
-  $title = 'Health professionals';
+  $title = $variables['bean']->field_pbundle_title[LANGUAGE_NONE][0]['value'];
   $text = $variables['bean']->field_bean_body[LANGUAGE_NONE][0]['value'];
 
   // Get the current path and work back to the topic element.
@@ -153,7 +153,7 @@ function _health_get_render_elements_for_public_topic_page($variables) {
  * @return array
  */
 function _health_get_render_elements_for_hp_topic_page($variables) {
-  $title = 'General public';
+  $title = $variables['bean']->field_title[LANGUAGE_NONE][0]['value'];
   $text = $variables['bean']->field_bean_text[LANGUAGE_NONE][0]['value'];
 
   // Get the current path and work back to the topic element.
