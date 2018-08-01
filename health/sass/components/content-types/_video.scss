@@ -9,7 +9,8 @@
 
 .node-video {
   // Full content
-  &.view-mode-full {
+  &.view-mode-full,
+  &.view-mode-listing_horizontal {
     .field-name-field-image-featured {
       img {
         @include AU-space('margin', 0);
