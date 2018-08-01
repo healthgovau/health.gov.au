@@ -8,5 +8,15 @@
 }
 
 .node-video {
-
+  // Full content
+  &.view-mode-full {
+    .field-name-field-image-featured {
+      img {
+        @include AU-space('margin', 0);
+      }
+    }
+    .field-name-field-resource-transcript {
+      @include AU-space('margin', 0);
+    }
+  }
 }

@@ -13,6 +13,7 @@
 
 table {
   @include AU-space('margin-bottom', 1unit);
+  @include AU-space('margin-top', 1unit);
   border-collapse: collapse;
   border: $health-borderize--thin;
 
