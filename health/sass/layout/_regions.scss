@@ -28,6 +28,11 @@
 .region-content-top {
   @include AU-clearfix;
   @include AU-space('padding-top', .5unit);
+
+  // View selector.
+  .block-bean {
+    @include AU-space('padding', 0unit);
+  }
   padding-bottom: 0;
   @include AU-media(sm){
     padding-top: 0;
