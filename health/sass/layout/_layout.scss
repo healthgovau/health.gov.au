@@ -13,7 +13,6 @@ body {
       // Right sidebar is in the markup first, but we want it to display on the right.
       float: none;
       padding: 0; // Remove the gutters on mobile.
-      @include AU-space(margin-top, -2unit);
       @include AU-media(sm) {
         // Need a better way.
         float: right!important;

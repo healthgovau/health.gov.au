@@ -15,10 +15,6 @@
     padding-bottom: 0;
     margin-bottom: 0;
     color: $AU-color-foreground-text;
-    @include AU-space('margin-bottom', 1.5unit);
-    @include AU-media(sm){
-      @include AU-space('margin-bottom', 2unit);
-    }
   }
 }
 
@@ -132,7 +128,7 @@
   // Margin for an icon on the right of text takes up too much space.
   // Reduce it.
   .fa-angle-right {
-    margin-left: 0.6em;
+    margin-left: 1.6em;
     &:before {
       margin-left: -0.2em;
     }
@@ -147,10 +143,8 @@
     border-left: none;
 
     // Extend onto title
-    a {
-      @include AU-fontgrid('md');
-      //@extend .health-cta-link;
-      font-weight: normal;
+    .block-bean-call-to-action_title {
+      @extend .au-cta-link;
     }
 
     .bean-block-content {
