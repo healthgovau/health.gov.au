@@ -41,17 +41,4 @@
     }
     @include cardify();
   }
-
-  // Listing vertical
-  &.view-mode-listing_vertical {
-    .group-left {
-      display: none;
-    }
-    @include AU-media( sm ) {
-      .group-left {
-        display: block;
-      }
-    }
-  }
-
 }

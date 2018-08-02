@@ -228,9 +228,10 @@
   &.rspopup {
     position: absolute;
     background: #fff;
-    border: 1px solid #555;
+    border: 1px solid $AU-color-foreground-action;
     box-shadow: 0 0 5px #777;
     display: none;
+    font-family: $AU-font;
   }
 
   .rsbtn_powered {

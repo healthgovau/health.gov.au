@@ -6,6 +6,9 @@
     &--grid-row {
       @include AU-space('margin-left', $AU-grid-12-gutter-width/2);
       @include AU-space('margin-right', $AU-grid-12-gutter-width/2);
+      // Review
+      margin-left: 0;
+      margin-right: 0;
       @include AU-space('padding-left', 24px - $AU-grid-12-gutter-width/2);
       @include AU-space('padding-right', 24px - $AU-grid-12-gutter-width/2);
     }

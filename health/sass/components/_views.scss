@@ -24,3 +24,8 @@
         }
     }
 }
+
+// Generic embedded view
+.view-generic-view {
+    @include AU-space(margin-top, 2unit);
+}
