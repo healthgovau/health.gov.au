@@ -38,11 +38,6 @@ html [type='button'],
   font-size: 14px;
 }
 
-.button--large, a.button--large,
-.bean-large-button .field-name-field-link-to a {
-  @extend %health-btn--large;
-}
-
 .button--tertiary {
   @extend .au-btn--tertiary;
   border-color: $colour-Secondary;
