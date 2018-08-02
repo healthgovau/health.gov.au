@@ -8,28 +8,35 @@
 //
 // Style guide: base.headings
 
+// Apply responsive to AU-fontgrid classes
 .page {
-  h1 {
+  h1,
+  .au-display-xxl {
     @include health-fontgrid('xxl','heading');
   }
 
-  h2 {
+  h2,
+  .au-display-xl {
     @include health-fontgrid('xl', 'heading');
   }
 
-  h3 {
+  h3,
+  .au-display-lg {
     @include health-fontgrid('lg', 'heading');
   }
 
-  h4 {
+  h4,
+  .au-display-md {
     @include health-fontgrid('md', 'heading');
   }
 
-  h5 {
+  h5,
+  .au-display-sm {
     @include health-fontgrid('sm', 'heading');
   }
 
-  h6 {
+  h6,
+  .au-display-xs {
     @include health-fontgrid('xs', 'heading');
   }
 }
