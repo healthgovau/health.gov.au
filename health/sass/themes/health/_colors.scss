@@ -39,35 +39,37 @@
 
 // Health.
 $AU-color-foreground-action: #006FB0; // override of default link colour WCAG 2.0 compliant on backgrounds up to $colour-light (#ECECEC)
+$AU-colordark-foreground-action: #FFF;
+$AU-colordark-foreground-text: #FFF;
 $colour-Shadow: rgba(0,0,0,0.1);
 $colour-card: #fff;
 $colour-Error-light: #ffe7ea;
 $colour-foreground-text--dark: #000000;
 
-$colour-Primary-light: #22447b;
+$colour-Primary-light: #3F5D88;
 $colour-Primary: #153a6e; // core
 $colour-Primary-dark: #213363;
 $colour-Primary-darker: #1b2a57;
 $colour-Primary-hover: #000b33;
 
-$colour-Secondary-light: #0091a0;
+$colour-Secondary-light: #2E9EAA;
 $colour-Secondary: #008998; // core
 $colour-Secondary-dark: #007b89;
 $colour-Secondary-darker: #006e7a;
 $colour-Secondary-hover: #006570; // #005861
 
-$colour-Tertiary-light: #ee303b;
+$colour-Tertiary-light: #E4545E;
 $colour-Tertiary: #df2f3b; // core
 $colour-Tertiary-dark: #d42b38;
 $colour-Tertiary-darker: #c42832;
 $colour-Tertiary-hover: #a31f26;
 
-$colour-Tertiary-2-light: #28a9e0; // lightest
+$colour-Tertiary-2-light: #2E90CA; // lightest
 $colour-Tertiary-2: #0078BF; // core
 $colour-Tertiary-2-dark: #00639d;
 $colour-Tertiary-2-hover: #014c77;
 
-$colour-dark: #6d6e70; // core
+$colour-dark: #87888A; // core
 $colour-darker: #626366;
 $colour-darkest: #58585b;
 $colour-dark-hover: #404041;
@@ -106,7 +108,7 @@ $colour-light-darker: #cdcdcd;
 
 // Refactor as node-sass will compile vendors prefixes
 %colour-Primary-background {
-  background-color: $colour-Primary;
+  background-color: $colour-Primary-darker;
   background: -webkit-linear-gradient(left, $colour-Primary-darker, $colour-Primary);
   background: -o-linear-gradient(right, $colour-Primary-darker, $colour-Primary);
   background: -moz-linear-gradient(right, $colour-Primary-darker, $colour-Primary);
@@ -154,11 +156,11 @@ $colour-light-darker: #cdcdcd;
 }
 
 %colour-Tertiary-2-background {
-  background-color: $colour-Tertiary-2;
-  background: -webkit-linear-gradient(right, $colour-Tertiary-2-dark, $colour-Tertiary-2);
-  background: -o-linear-gradient(left, $colour-Tertiary-2-dark, $colour-Tertiary-2);
-  background: -moz-linear-gradient(left, $colour-Tertiary-2-dark, $colour-Tertiary-2);
-  background: linear-gradient(to left, $colour-Tertiary-2-dark, $colour-Tertiary-2);
+  background-color: $colour-Tertiary-2-dark;
+  background: -webkit-linear-gradient(left, $colour-Tertiary-2-dark, $colour-Tertiary-2);
+  background: -o-linear-gradient(right, $colour-Tertiary-2-dark, $colour-Tertiary-2);
+  background: -moz-linear-gradient(right, $colour-Tertiary-2-dark, $colour-Tertiary-2);
+  background: linear-gradient(to right, $colour-Tertiary-2-dark, $colour-Tertiary-2);
 }
 
 %colour-Dark-background {
@@ -181,7 +183,7 @@ $colour-light-darker: #cdcdcd;
 }
 
 // Typography
-$colour-minorText: #626262;
+$colour-minorText: #6e6e6e;
 $aqua: #18788d;
 
 // Service delivery
