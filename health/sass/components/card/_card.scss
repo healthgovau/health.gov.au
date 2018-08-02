@@ -39,9 +39,6 @@
     text-decoration-color: currentColor;
     transition: text-decoration-color 0.3s ease-in-out;
     font-weight: bold;
-    @include AU-media( sm ) {
-      @include AU-space( margin-bottom, 1unit );
-    }
   }
 
   &.au-cta-link:hover,
@@ -205,11 +202,6 @@ a.au-card {
           padding-left: 0;
           padding-right: 0;
         }
-      }
-      h2,
-      h3 { 
-        @include health-fontgrid( md , heading);
-        @include AU-space( margin-bottom, 1unit );
       }
     }
 

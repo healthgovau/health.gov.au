@@ -12,4 +12,8 @@
 		@extend %dm-feature-2-col;
     }
 
+  &.view-mode-listing_vertical_small {
+    @extend %dm-list-vertical-small;
+  }
+
 }

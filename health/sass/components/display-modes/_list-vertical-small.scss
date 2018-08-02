@@ -1,0 +1,9 @@
+// Vertical small
+// Used for landing page lists of resources
+%dm-list-vertical-small {
+    border-top-width: 6px;
+    border-top-style: solid;
+    border-top-color: $colour-Tertiary-2;
+    @include AU-space(padding-top, 2unit);
+    @include AU-space(margin-top, 1.5unit);
+}

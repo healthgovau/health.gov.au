@@ -20,4 +20,7 @@
       @include AU-space('margin', 0);
     }
   }
+  &.view-mode-listing_vertical_small {
+    @extend %dm-list-vertical-small;
+  }
 }
