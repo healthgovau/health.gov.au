@@ -23,4 +23,13 @@
   &.view-mode-listing_vertical_small {
     @extend %dm-list-vertical-small;
   }
+
+  &.view-mode-full {
+    .group-left {
+      @include AU-space(padding-bottom, 2rem);
+    }
+    .group-footer {
+      @include AU-space(padding-top, 2rem);
+    }
+  }
 }
