@@ -98,7 +98,7 @@ endif;
                       <div class="title-alt"><?php print $title_alt; ?></div>
                     <?php endif; ?>
 
-                    <?php if (isset($summary)): ?>
+                    <?php if ($summary): ?>
                         <p class="summary"><?php print $summary; ?></p>
                     <?php endif; ?>
 
