@@ -93,7 +93,6 @@
           border-bottom: 0;
 
           &:hover,
-          &:focus,
           &:active {
             border-bottom: 8px solid $colour-Secondary;
             background-color: transparent;
@@ -135,7 +134,7 @@
   margin: 0;
 
   &:hover,
-  &:focus {
+  &:active {
     color: $AU-color-foreground-text;
     background: transparent;
     outline-offset: -1px;

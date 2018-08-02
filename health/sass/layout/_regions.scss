@@ -28,16 +28,27 @@
 .region-content-top {
   @include AU-clearfix;
   @include AU-space('padding-top', .5unit);
-
-  // View selector.
-  .block-bean {
-    @include AU-space('padding', 0unit);
-  }
   padding-bottom: 0;
   @include AU-media(sm){
     padding-top: 0;
     @include AU-space('padding-bottom', 1.5unit);
   }
+
+  // View selector
+  .au-card-list {
+    @include AU-space(margin-top, 1unit);
+    @include AU-media(sm){
+      @include AU-space(margin-top, 2unit);
+    }
+    .au-card {
+      margin-top: 0;
+    }
+  }
+
+  .block-bean {
+    @include AU-space('padding', 0unit);
+  }
+  
 }
 
 .region-sidebar-first {

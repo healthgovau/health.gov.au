@@ -65,7 +65,7 @@
       }
     }
     .bean-block-content {
-      @include block-card($border-colour-top: $colour-Secondary, $border-hover-colour: $colour-Secondary-hover, $bg-hover-colour: #fff);
+      @include block-card($border-colour-top: $colour-light-dark, $border-hover-colour: $colour-Secondary, $bg-hover-colour: #fff);
       a {
         border-left: 1px solid $colour-light-dark;
         border-right: 1px solid $colour-light-dark;
@@ -77,7 +77,7 @@
     .bean-block-content {
       a {
         background: #fff;
-        border-top-color: $colour-Tertiary-2;
+        border-top-color: $colour-Secondary;
       }
     }
   }
