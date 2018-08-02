@@ -17,5 +17,11 @@
     &--tertiary {
       border-left-color: $colour-Tertiary-2;
     }
+
+    // Used for inline styles
+    &.view-mode-inline {
+      border-left-color: $colour-Secondary;
+      @include AU-space(margin-top, 1unit);
+    }
   }
 }
