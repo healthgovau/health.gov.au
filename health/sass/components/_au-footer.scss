@@ -27,15 +27,11 @@
     color: white;
   }
   color: white;
-  .bean-large-button .field-name-field-link-to a {
+  .field-name-field-link-to a {
+    @extend .au-btn.au-btn--dark.au-btn--secondary;
     background-color: transparent;
-    color: white;
-    border: 1px solid white;
-    // By UX request.
-    border-radius: 0px;
-    &:hover,
-    &:focus {
-      background-color: $colour-Primary-hover;
+    &:hover:not(:disabled), &:focus:not(:disabled) {
+      background-color: transparent;
     }
   }
 

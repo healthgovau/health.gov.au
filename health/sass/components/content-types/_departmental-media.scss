@@ -25,6 +25,9 @@
         width: auto;
       }
     }
+    .field-name-field-body {
+      @include AU-space(margin-top,3unit); 
+    }
   }
 
   // Feature

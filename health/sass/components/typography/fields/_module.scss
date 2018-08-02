@@ -157,7 +157,8 @@ p.summary, .field-name-field-summary {
       margin-bottom: 0;
     }
     .field-name-field-date-updated,
-    .field-name-field-date-published {
+    .field-name-field-date-published,
+    .field-name-field-audience {
 
         &.field-label-inline {
           @extend %bottom-border;

@@ -14,23 +14,23 @@
   }
 
   h2 {
-    @include health-fontgrid('xl');
+    @include health-fontgrid('xl', 'heading');
   }
 
   h3 {
-    @include health-fontgrid('lg');
+    @include health-fontgrid('lg', 'heading');
   }
 
   h4 {
-    @include health-fontgrid('md');
+    @include health-fontgrid('md', 'heading');
   }
 
   h5 {
-    @include health-fontgrid('sm');
+    @include health-fontgrid('sm', 'heading');
   }
 
   h6 {
-    @include health-fontgrid('xs');
+    @include health-fontgrid('xs', 'heading');
   }
 }
 
