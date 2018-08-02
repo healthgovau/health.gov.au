@@ -1,0 +1,26 @@
+// Applies styles to views where necessary
+
+// These mixins apply flex to view components to give nicer wrapping if supported
+@mixin flex-parent(){
+    @supports( display: flex ) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@mixin flex-child(){
+    @supports( display: flex ) {
+        flex-direction: column;
+        display: flex;
+    }
+}
+
+// Resources listing view
+.paragraphs-view-latest_rsources {
+    .view__content {
+        @include flex-parent;
+        .views-row {
+            @include flex-child;
+        }
+    }
+}
