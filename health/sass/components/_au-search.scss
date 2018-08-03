@@ -1,12 +1,15 @@
 .au-grid {
-  .au-search {
-    @include AU-clearfix;
-    position: relative;
-
+  
+  .au-header .au-search {
     @include AU-media(sm) {
       float: right;
     }
+  }
 
+  .au-search {
+    @include AU-clearfix;
+    position: relative;
+    
     // Hide mobile search initially.
     &--mobile-hide {
       display: none;
@@ -61,7 +64,6 @@
 .au-grid {
   .page-content {
     .au-search {
-      float: none;
       &__input {
         border-color: $colour-dark;
         width: 15em;
