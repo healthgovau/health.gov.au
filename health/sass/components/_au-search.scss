@@ -79,7 +79,8 @@
     }
     .search-api-page-results {
       .search-performance {
-        @include health-fontgrid( sm );
+        @include health-fontgrid( md );
+        @include AU-space( margin-bottom, 1.5unit );
       }
     }
   }
