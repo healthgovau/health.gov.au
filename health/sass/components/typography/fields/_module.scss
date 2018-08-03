@@ -256,10 +256,10 @@ p.summary, .field-name-field-summary {
 }
 
 .page-accessibility-link {
-  @include AU-space(padding-bottom, 2unit);
+  @include AU-space(padding-bottom, 1unit);
 }
 
-.field-name-publication-go-to-download {
+.field-name-publications-go-to-download {
   @include AU-space(padding-top, 1unit);
 }
 

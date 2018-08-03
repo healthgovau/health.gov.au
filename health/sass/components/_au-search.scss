@@ -58,20 +58,28 @@
 }
 
 // In-page/view search
-.page-content {
-  .au-search {
-    &__input {
-      border-color: $colour-dark;
-      width: 15em;
-      @include AU-media(sm) {
-        width: 22em;
+.au-grid {
+  .page-content {
+    .au-search {
+      float: none;
+      &__input {
+        border-color: $colour-dark;
+        width: 15em;
+        @include AU-media(sm) {
+          width: 22em;
+        }
+      }
+      &__submit {
+        background-color: $colour-dark;
+        &:hover:not(:disabled),
+        &:focus:not(:disabled) {
+          background-color: $colour-dark-hover;
+        }
       }
     }
-    &__submit {
-      background-color: $colour-dark;
-      &:hover:not(:disabled),
-      &:focus:not(:disabled) {
-        background-color: $colour-dark-hover;
+    .search-api-page-results {
+      .search-performance {
+        @include health-fontgrid( sm );
       }
     }
   }

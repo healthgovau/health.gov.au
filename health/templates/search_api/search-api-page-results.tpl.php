@@ -36,9 +36,11 @@
 
 ?>
 <div class="search au-listing <?php print $classes;?>">
+  <?php if ($result_count): ?>
+    <?php print render($search_performance); ?>
+  <?php endif; ?>
   <?php print render($spellcheck); ?>
   <?php if ($result_count): ?>
-    <h2><?php print t('Search results');?></h2>
     <?php print render($search_results); ?>
     <?php print render($pager); ?>
   <?php else : ?>
