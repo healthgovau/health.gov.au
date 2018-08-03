@@ -33,7 +33,7 @@
     font-weight: normal;
   }
   .au-card__title {
-    @include AU-fontgrid( md , heading);
+    @include health-fontgrid( md , heading);
     @include AU-space( margin-bottom, 1unit );
     text-decoration: underline;
     text-decoration-color: currentColor;
