@@ -77,5 +77,10 @@
         }
       }
     }
+    .search-api-page-results {
+      .search-performance {
+        @include health-fontgrid( sm );
+      }
+    }
   }
 }
