@@ -293,7 +293,7 @@ function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
     $form['search_api_views_fulltext']['#prefix'] = '<div class="au-search__input-wrapper">';
     $form['search_api_views_fulltext']['#suffix'] = '</div>';
     $form['submit']['#attributes']['class'][] = 'au-search__submit au-btn';
-    $form['#attributes']['class'] = 'au-search col-sm-9';
+    $form['#attributes']['class'] = 'au-search col-md-9 col-xs-12';
 
     // Append selected filters.
     $query_string = drupal_get_query_parameters();
