@@ -8,7 +8,6 @@ body {
 
   // Everything gets full width by default.
   .page {
-    @include AU-space('margin-bottom', 2unit);
     .sidebar-right {
       // Right sidebar is in the markup first, but we want it to display on the right.
       float: none;
