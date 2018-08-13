@@ -6,8 +6,8 @@
 
 .book-navigation {
   max-width: $AU-maxwidth;
-  @include AU-space('margin', 1unit);
   border-top: 1px solid $AU-color-foreground-border;
+  @include AU-space('margin-top', 2unit);
 }
 
 .book-navigation__link-wrapper {

@@ -769,7 +769,7 @@ function health_preprocess_field(&$variables) {
               $footnotes_list[] = ['data' => theme('health_footnote', [
                 'id' => $match2,
                 'text' => str_replace($matches2[0][$delta2], '', $match)
-              ]), 'class' => ['text--minor']];
+              ]), 'class' => ['text--minor', 'au-footnotes__footnote']];
             }
           } else { // No reference token found, just use the whole string.
             $footnotes_list[] = ['data' => $match, 'class' => ['text--minor']];
@@ -778,6 +778,7 @@ function health_preprocess_field(&$variables) {
         $variables['items'][0]['#markup'] = theme('item_list',[
           'items' => $footnotes_list,
           'type' => 'ul',
+          'attributes' => ['class' => ['au-footnotes', 'list--text', 'au-link-list']]
         ]);
       }
     }

@@ -37,7 +37,7 @@
     <div class="row">
       <div class="book-navigation__link-wrapper col-xs-6">
         <?php if ($prev_url): ?>
-        <a class="uikit-direction-link uikit-direction-link--left" href="<?php print $prev_url; ?>">
+        <a class="au-direction-link au-direction-link--left" href="<?php print $prev_url; ?>">
           Previous
         </a>
         <span class="book-navigation__link-title"><?php print $prev_title; ?></span>
@@ -46,7 +46,7 @@
 
       <div class="book-navigation__link-wrapper book-navigation__link-wrapper--right col-xs-6">
         <?php if ($next_url): ?>
-        <a class="uikit-direction-link uikit-direction-link--right" href="<?php print $next_url; ?>">
+        <a class="au-direction-link au-direction-link--right" href="<?php print $next_url; ?>">
           Next
         </a>
         <span class="book-navigation__link-title"><?php print $next_title; ?></span>

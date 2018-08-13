@@ -1,0 +1,23 @@
+/*
+ * List of references
+ */
+.au-references {
+  > li {
+    transition: background-color 1s;
+
+    &.highlight {
+      background-color: #ffffc6;
+    }
+  }
+}
+
+/*
+ * Links to the reference
+ */
+.au-references__links {
+  .au-references__link {
+    border-bottom: 1px dotted #CCC;
+    cursor: help;
+  }
+}
+

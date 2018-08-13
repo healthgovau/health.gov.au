@@ -8,7 +8,7 @@
   Drupal.behaviors.footnotes = {
     attach: function (context, settings) {
       // Find all the footnote and reference links.
-      $('.reference__link, .footnote__link')
+      $('.au-references__link, .au-footnotes__link')
         .each(function() {
           // Add a title attribute to each link based on the full footnote/reference.
           // This is used for tippy js.

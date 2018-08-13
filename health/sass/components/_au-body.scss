@@ -5,9 +5,9 @@
     color: $colour-minorText;
   }
 
-  // Small text.
-  .text--small {
-    font-size: 13px;
+  abbr {
+    border-bottom: 1px dotted #CCC;
+    text-decoration: none;
   }
 
 }
