@@ -148,7 +148,7 @@
               }
               summary = createSummary(value, initialText);
             } else if (inputSelector.indexOf('textarea') !== -1) {
-              summary = createSummary($($(this).find(inputSelector).val()).find('h2,h3,h4,h5,h6,p').first().text(), initialText);
+              summary = createSummary($('<div>' + $(this).find(inputSelector).val() + '</div>').find('h2,h3,h4,h5,h6,p').first().text(), initialText);
             } else {
               summary = createSummary($(this).find(inputSelector).val(), initialText);
             }
@@ -164,7 +164,7 @@
               var id = $(this).attr('id');
               if (evt.editor.name == id) {
                 evt.editor.on('blur', function (evt2) {
-                  var summary = createSummary($(evt2.editor.getData()).find('h2,h3,h4,h5,h6,p').first().text(), initialText);
+                  var summary = createSummary($('<div>' + evt2.editor.getData() + '</div>').find('h2,h3,h4,h5,h6,p').first().text(), initialText);
                   $('#' + id).parents('fieldset').first().find('legend a').first().html(summary);
                 });
               }
