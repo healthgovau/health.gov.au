@@ -281,7 +281,7 @@
   };
 
   // Add required label to nmm ID field for orderable publication.
-  Drupal.behaviors.adminimal_orderable_publication = {
+  Drupal.behaviors.health_adminimal_orderable_publication = {
     attach: function (context, settings) {
       $('.field-name-field-publication-orderable input', context).on('click', function() {
         if ($(this).is(':checked')) {
@@ -293,6 +293,31 @@
           $('.form-item-field-publication-nmm-id-und-0-value .form-required', context).remove();
         }
       });
+    }
+  };
+
+  Drupal.behaviors.health_adminimal_dates = {
+    attach: function (context) {
+
+      // Checkbox.
+      var $enabled = $('.field-name-field-enable-manual-date-editing input', context);
+      // Dates to enable/disable.
+      var dates = ['.field-name-field-date-updated', '.field-name-field-date-published'];
+
+      // Set the enabled/disabled state on load.
+      if ($enabled.is( ":checked" ) === false) {
+        for(var i=0; i<dates.length; i++) {
+          $(dates[i], context).hide();
+        }
+      }
+
+      // When the checkbox changes, toggle enabled/disabled.
+      $enabled.on('change', function() {
+        for(var i=0; i<dates.length; i++) {
+          $(dates[i], context).toggle();
+        }
+      });
+
     }
   };
 

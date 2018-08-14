@@ -386,6 +386,25 @@ function health_form_alter(&$form, &$form_state, $form_id) {
     drupal_page_is_cacheable(FALSE);
   }
 
+  // Workbench moderation form.
+  if ($form_id == 'workbench_moderation_moderate_form') {
+    $form['#submit'][] = '_health_date_submitter';
+  }
+
+}
+
+/**
+ * Submit handler for date updated and date published.
+ *
+ * Uses health_adminimal functions.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function _health_date_submitter($form, &$form_state) {
+  require(drupal_get_path('theme', 'health_adminimal') . '/template.php');
+  _health_adminimal_date_published_submitter($form, $form_state);
+  _health_adminimal_date_updated_submitter($form, $form_state);
 }
 
 /**

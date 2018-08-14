@@ -34,11 +34,5 @@ function health_adminimal_form_system_theme_settings_alter(&$form, &$form_state)
     '#description' => t('If a content freeze is active, the URL of the other environment that the authors will need to use'),
     '#default_value' => theme_get_setting('dual_author_environment'),
   );
-
-  $form['health_adminimal']['manually_edit_dates'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Enable manual editing of dates'),
-    '#description' => t('If there is a need to manually back date dates (eg for migrations etc), enable this, update the dates, then disable.'),
-    '#default_value' => theme_get_setting('manually_edit_dates'),
-  );
+  
 }
