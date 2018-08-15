@@ -8,9 +8,6 @@
 .au-body {
 
   // Views block -- card style modifier.
-  .paragraphs-view-news_and_events {
-    @include cards-modifier();
-  }
   .paragraphs-view-latest_rsources {
     @include cards-modifier();
   }
