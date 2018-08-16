@@ -3,15 +3,29 @@
 // The main navigation element on the site
 //
 //--------------------------------------------------------------
-@import 'print';
 
-%health-sitenav {
+.au-main-nav {
+
+  background: white;
+  box-shadow: 0 -8px $colour-light-dark inset;
+  @include AU-space(margin-top, 1unit);
+  padding: 0;
+  position: absolute;
+  width: 100%;
+
+  margin-top: -8px; // Keyline fix for mobile.
+
+  // Hide on mobile initially.
+  display: none;
+  &.active {
+    display: block;
+  }
 
   // Mobile first
   ul {
-    @extend .au-link-list;
-    padding: 0 0 20px 0 !important;
-    border-bottom: 8px solid #e5e5e5;
+    list-style: none;
+    padding: 0 0 8px 0 !important;
+    margin: 0;
     li {
       margin: 0;
       border-bottom: $health-borderize--very-thin;
@@ -30,7 +44,7 @@
       }
 
       a {
-        @include AU-space(padding, 1unit); // check
+        @include AU-space(padding, .75unit 1unit);
         display: block;
         border: 0;
         text-decoration: none;
@@ -41,16 +55,10 @@
     }
   }
 
-  padding: 0;
-
-  position: absolute;
-  background: white;
-  width: 100%;
-
   // Tablet upwards.
   @include AU-media(sm) {
 
-    display: inline-block;
+    display: block;
     padding: 0;
     margin-top: 0;
     font-weight: 700;
@@ -59,6 +67,16 @@
     border-bottom: 0;
     background: transparent;
     height: auto;
+
+    margin-bottom: -6px;
+
+    // Hide menu links appended after Resources.
+    .sf-item-6,
+    .sf-item-7,
+    .sf-item-8,
+    .sf-item-9 {
+      display: none;
+    }
 
     ul {
       border-bottom: 0;
@@ -90,7 +108,8 @@
         a {
           display: block;
           @include AU-space(padding, 1unit 0);
-          border-bottom: 0;
+
+          border-bottom: 8px solid transparent;
 
           &:hover,
           &:active {
@@ -118,35 +137,76 @@
 }
 
 // Mobile menu toggle
-%health-sitenav__mobile-toggle {
-  // Only display on mobile
-  @include AU-media(sm) {
-    display: none;
-  }
+.au-body {
+  .au-main-nav__mobile-toggle {
+    // Only display on mobile
+    @include AU-media(sm) {
+      display: none;
+    }
 
-  padding: 12px;
-  font-size: 18px;
-  font-weight: 700;
-  display: block;
-  border-bottom: 0;
-  background-color: white;
-  color: black;
-  margin: 0;
+    border-radius: 0;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    display: block;
+    border-bottom: 0;
+    background-color: white;
+    color: black !important;
+    margin: 0 0 8px 0;
+    position: relative;
+    z-index: 500;
 
-  &:hover,
-  &:active {
-    color: $AU-color-foreground-text;
-    background: transparent;
-    outline-offset: -1px;
-  }
+    &:hover,
+    &:active {
+      background-color: white;
+      color: $colour-foreground-text--dark;
+      outline-offset: -1px;
+    }
 
-  &:after {
-    background: none;
+    &:after {
+      background: none;
+    }
+
+    // Main menu.
+    &--main-menu {
+      text-align: left;
+      .mobile-toggle__label {
+        @extend %baseicon;
+        margin-left: 28px;
+        &:before {
+          font-size: 22px;
+          content: "\f0c9";
+          margin-left: -1.2em;
+        }
+      }
+    }
+
+    // Search.
+    &--search {
+      text-align: right;
+      .mobile-toggle__label {
+        @extend %baseicon;
+        &:before {
+          font-size: 22px;
+          content: "\f002";
+          margin-left: -1.2em;
+        }
+      }
+    }
+
+    // When expanded.
+    &.active {
+      .mobile-toggle__label {
+        &:before {
+          content: "\f00d";
+        }
+      }
+    }
   }
 }
 
 // Overlay.
-%health-sitenav-overlay {
+.au-main-nav__overlay {
   position: fixed;
   top: -9999px;
   left: -9999px;
@@ -155,11 +215,8 @@
   width: 100%;
   height: 150%;
   z-index: 499;
-  @include transition(background 0.4s linear);
   &.active {
     background: black;
-  }
-  &.transition {
     top:0;
     left: 0;
   }
@@ -168,4 +225,17 @@
   @include AU-media(sm) {
     display: none;
   }
+}
+
+// Elements that should be above the overlay.
+.au-main-nav__above-overlay {
+  position: relative;
+  z-index: 500;
+}
+
+// Keyline across nav items.
+.au-main-nav__wrapper {
+  position: relative;
+  z-index: 500;
+  box-shadow: 0 -8px #e5e5e5 inset;
 }

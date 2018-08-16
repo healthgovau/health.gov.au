@@ -8,7 +8,7 @@
  */
 ?>
 <div
-  class="<?php print $classes; ?> au-accordion__body au-accordion--closed"<?php print $attributes; ?>
+  class="au-main-nav <?php print $classes; ?>"<?php print $attributes; ?>
   id="<?php print $block_html_id; ?>">
   <?php print $content; ?>
 </div>

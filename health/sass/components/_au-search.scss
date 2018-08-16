@@ -7,69 +7,101 @@
   }
 
   .au-search {
-    @include AU-clearfix;
-    position: relative;
-    
-    // Hide mobile search initially.
-    &--mobile-hide {
-      display: none;
+
+    display: none;
+
+    // Global search for desktop
+    &--global-desktop {
       @include AU-media(sm) {
         display: block;
       }
     }
 
-    // Don't override the display if there are accordion classes.
-    .au-accordion--open &,
-    .au-accordion--closed & {
-      display: inherit;
-    }
+    // Global search for mobile.
+    &--global-mobile {
+      background-color: white;
+      margin-top: -8px;
+      padding-top: 1rem;
+      position: absolute;
+      width: 100%;
 
-    label {
-      @include AU-sronly();
-    }
-
-    // @todo Get this into a class.
-    .views-exposed-widget {
-      float: left;
-    }
-
-    &__input {
-      border-color: $AU-color-foreground-text;
-      width: 15em;
-      @include AU-media( sm ) {
-        width: 20em;
+      // Mobile show hide.
+      &.active {
+        display: block;
+        @include AU-media(sm) {
+          display: none;
+        }
       }
-      &-wrapper {
+    }
+
+    // Listing search
+    &--listing {
+      display: block;
+      width: auto;
+    }
+
+
+    // The search form.
+    &__form {
+
+      @include AU-clearfix;
+      position: relative;
+
+      label {
+        @include AU-sronly();
+      }
+
+      // @todo Get this into a class.
+      .views-exposed-widget {
         float: left;
       }
-    }
 
-    &__submit {
-      background-color: $AU-color-foreground-text;
-      width: 46px;
-      height: 46px;
-      text-indent: 999px;
-      border-radius: 0;
-      background-image: AU-svguri('<svg viewBox="-5 -5 32 32" fill="#{ $AU-color-background }" xmlns="http://www.w3.org/2000/svg">
+      &__input {
+        border-color: $AU-color-foreground-text;
+        @include AU-media(sm) {
+          width: 20em;
+        }
+        &-wrapper {
+          width: 100%;
+          padding-right: 45px;
+        }
+      }
+
+      &__submit {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: $AU-color-foreground-text;
+        width: 46px;
+        height: 46px;
+        text-indent: 999px;
+        border-radius: 0;
+        background-image: AU-svguri('<svg viewBox="-5 -5 32 32" fill="#{ $AU-color-background }" xmlns="http://www.w3.org/2000/svg">
     <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
-      &:hover:not(:disabled),
-      &:focus:not(:disabled) {
-        background-color: $colour-foreground-text--dark;
+        &:hover:not(:disabled),
+        &:focus:not(:disabled) {
+          background-color: $colour-foreground-text--dark;
+        }
       }
     }
+  }
+
+
+
+}
+
+form[class*='col-'].au-search__form {
+  .au-search__form__submit {
+    right: 12px;
   }
 }
 
 // In-page/view search
 .au-grid {
   .page-content {
-    .au-search {
+    .au-search__form {
       &__input {
         border-color: $colour-dark;
-        width: 15em;
-        @include AU-media(sm) {
-          width: 22em;
-        }
       }
       &__submit {
         background-color: $colour-dark;

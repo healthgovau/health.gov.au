@@ -68,6 +68,7 @@ function health_preprocess_block(&$variables, $hook) {
       $variables['attributes_array']['role'] = 'navigation';
       break;
     case 'search':
+    case 'search_api_page':
       $variables['attributes_array']['role'] = 'search';
       break;
     case 'help':
@@ -110,6 +111,16 @@ function health_preprocess_block(&$variables, $hook) {
     if ($plugin = context_get_plugin('reaction', 'block')) {
       $variables['classes_array'] = _health_grid_class(count($plugin->block_list('content_top')), $variables['classes_array'], 'col-xs-4');
     }
+  }
+
+  // Search forms.
+  if ($variables['block']->module == 'search_api_page') {
+    if ($variables['block']->context == 'global-mobile') {
+      $variables['classes_array'][] = 'au-search--global-mobile';
+    } else {
+      $variables['classes_array'][] = 'au-search--global-desktop';
+    }
+
   }
 }
 

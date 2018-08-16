@@ -8,21 +8,21 @@
  */
 ?>
 <?php if ($content): ?>
-  <nav id="nav" role="navigation" class="<?php print $classes; ?>">
+  <nav id="nav" role="navigation" class="au-main-nav__wrapper <?php print $classes; ?>">
     <div class="container">
-      <div class="row au-accordion au-accordion--skip-auto">
+      <div class="row">
 
         <button
-          class="mobile-toggle mobile-toggle--main-menu col-xs-6 js-au-accordion"
+          class="au-main-nav__mobile-toggle au-main-nav__mobile-toggle--main-menu col-xs-6"
           aria-controls="block-superfish-1" role="tab">
-          <span class="mobile-toggle__label">Open menu</span>
+          <span class="mobile-toggle__label">Menu</span>
         </button>
 
         <button
-          class="mobile-toggle mobile-toggle--search col-xs-6 js-au-accordion"
+          class="au-main-nav__mobile-toggle au-main-nav__mobile-toggle--search col-xs-6"
           aria-controls="block-search-api-page-default-search--2"
           role="tab">
-          <span class="mobile-toggle__label">Open search</span>
+          <span class="mobile-toggle__label">Search</span>
         </button>
       </div>
       <div class="row">

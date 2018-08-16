@@ -19,17 +19,17 @@ $content_class = 'main-content';
 endif;
 ?>
 
-<div class="nav-overlay"></div>
+<div class="au-main-nav__overlay"></div>
 
 <div class="page au-body">
-  <div class="header-top">
+  <div class="header-top au-main-nav__above-overlay">
     <div class="container">
       <div class="row">
         <?php print render($page['header-top']); ?>
       </div>
     </div>
   </div>
-  <header class="au-header au-header--light" role="banner">
+  <header class="au-header au-header--light au-main-nav__above-overlay" role="banner">
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
