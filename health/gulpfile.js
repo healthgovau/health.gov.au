@@ -4,8 +4,6 @@ var gulpLoadPlugins    = require('gulp-load-plugins');
 var bs                 = require('browser-sync');
 var kss                = require('kss');
 var path               = require('path');
-var gcmq               = require('gulp-group-css-media-queries');
-var gemq               = require('gulp-extract-media-queries');
 var cleanCSS           = require('gulp-clean-css');
 var runSequence        = require('run-sequence');
 var del                = require('del');
@@ -119,7 +117,6 @@ gulp.task('styles:prod', function(callback) {
   runSequence(
     'clean:css',
     'styles:generate:prod',
-    'css:break-at-media',
     'css:compress',
     callback);
 });
@@ -150,16 +147,6 @@ gulp.task('js:prod', function(callback) {
 gulp.task('css:compress', function(){
   return gulp.src(options.theme.css + '/*.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(gulp.dest(options.theme.css));
-});
-
-/**
- * Break a css into separate files for each break point.
- */
-gulp.task('css:break-at-media', function() {
-  return gulp.src(options.theme.css + '/styles.css')
-    .pipe(gcmq())
-    .pipe(gemq())
     .pipe(gulp.dest(options.theme.css));
 });
 

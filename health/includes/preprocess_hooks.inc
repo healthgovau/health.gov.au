@@ -1207,7 +1207,7 @@ function health_preprocess_page(&$variables) {
     'type' => 'setting',
   ];
 
-  // Add our css for each media breakpoints
+  // Add our css.
   $variables['page']['content']['#attached']['css'][] = [
     'data' => drupal_get_path('theme', 'health') . '/css/styles.css',
     'media' => 'all',
@@ -1215,61 +1215,6 @@ function health_preprocess_page(&$variables) {
     'preprocess' => TRUE,
     'group' => CSS_THEME,
     'every_page' => TRUE
-  ];
-
-  $variables['page']['content']['#attached']['css'][] = [
-    'data' => drupal_get_path('theme', 'health') . '/css/min-width-576px.css',
-    'media' => 'screen and (min-width: 576px)',
-    'type' => 'file',
-    'group' => CSS_THEME,
-    'every_page' => TRUE,
-    'weight' => 50,
-    'browsers' => array('IE' => 'gt IE 8'),
-  ];
-  $variables['page']['content']['#attached']['css'][] = [
-    'data' => drupal_get_path('theme', 'health') . '/css/min-width-768px.css',
-    'media' => 'screen and (min-width: 768px)',
-    'type' => 'file',
-    'group' => CSS_THEME,
-    'every_page' => TRUE,
-    'weight' => 60,
-    'browsers' => array('IE' => 'gt IE 8'),
-  ];
-  $variables['page']['content']['#attached']['css'][] = [
-    'data' => drupal_get_path('theme', 'health') . '/css/min-width-768px-and-min-width-992px.css',
-    'media' => 'screen and (min-width: 768px) and (min-width:992px)',
-    'type' => 'file',
-    'group' => CSS_THEME,
-    'every_page' => TRUE,
-    'weight' => 70,
-    'browsers' => array('IE' => 'gt IE 8'),
-  ];
-  $variables['page']['content']['#attached']['css'][] = [
-    'data' => drupal_get_path('theme', 'health') . '/css/min-width-992px.css',
-    'media' => 'screen and (min-width: 922px)',
-    'type' => 'file',
-    'group' => CSS_THEME,
-    'every_page' => TRUE,
-    'weight' => 80,
-    'browsers' => array('IE' => 'gt IE 8'),
-  ];
-  $variables['page']['content']['#attached']['css'][] = [
-    'data' => drupal_get_path('theme', 'health') . '/css/min-width-768px-and-min-width-1200px.css',
-    'media' => 'screen and (min-width: 768px) and (min-width:1200px)',
-    'type' => 'file',
-    'group' => CSS_THEME,
-    'every_page' => TRUE,
-    'weight' => 90,
-    'browsers' => array('IE' => 'gt IE 8'),
-  ];
-  $variables['page']['content']['#attached']['css'][] = [
-    'data' => drupal_get_path('theme', 'health') . '/css/min-width-1200px.css',
-    'media' => 'screen and (min-width: 1200px)',
-    'type' => 'file',
-    'group' => CSS_THEME,
-    'every_page' => TRUE,
-    'weight' => 100,
-    'browsers' => array('IE' => 'gt IE 8'),
   ];
 
   $variables['page']['content']['#attached']['css'][] = [
