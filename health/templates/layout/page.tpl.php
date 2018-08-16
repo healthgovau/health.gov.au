@@ -37,9 +37,10 @@ endif;
             <a href="<?php print $front_page; ?>"
              title="<?php print t('Home'); ?>" rel="home"
              class="au-header__logo">
-              <img data-src="/<?php print path_to_theme(); ?>/images/DoHCrest.png"
+              <img src="/<?php print path_to_theme(); ?>/images/DoHCrest.png"
                 alt="<?php print t('Australia government Department of Health'); ?>"
-                class="au-header__logo-image au-responsive-media-img"/>
+                class="au-header__logo-image au-responsive-media-img"
+                width="858" height="208" />
             </a>
           <?php endif; ?>
           <?php if ($site_name || $site_slogan): ?>
