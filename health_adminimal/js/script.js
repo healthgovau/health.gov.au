@@ -54,6 +54,7 @@
       legendSummary('.paragraphs-item-type-para-content-text', 'Text', 'textarea');
       legendSummary('.paragraphs-item-type-para-content-image', 'Image', '.media-item');
       legendSummary('.paragraphs-item-type-para-content-external-link', 'External link', 'input');
+      legendSummary('.paragraphs-item-type-content-callout', 'Callout', 'textarea');
 
       // Bands.
       legendSummary('.paragraphs-item-type-para-view', 'Band - Listing', '.field-name-field-title input');

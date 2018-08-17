@@ -429,9 +429,16 @@ function health_preprocess_entity(&$variables) {
       $variables['content']['field_summary_list_type'][0]['#markup'] = $output;
     }
 
+
+    // Tables.
     if ($para_item->bundle == 'content_table') {
       // Add a class to identify what grade it is.
       $variables['content']['field_title']['#prefix'] = '<a name="' . _health_prepare_filename($variables['content']['field_title'][0]['#markup']) . '"></a>';
+    }
+
+    // Call out.
+    if ($para_item->bundle == 'content_callout') {
+      $variables['classes_array'][] = 'au-callout';
     }
   }
 
