@@ -48,18 +48,18 @@
 @import 'description-list';
 @import 'feedback';
 
-
 // Books
 //
 // Components for long documents, HTML versions of publications and books.
 //
 // Style guide: Components.books
-@import 'recommendation';
 @import 'au-footnotes';
 @import 'au-references';
+@import 'au-figure';
+
+@import 'recommendation';
 @import 'tooltip';
 @import 'table-of-contents';
-@import 'figure';
 
 // Display modes
 @import 'display-modes/display-modes';
