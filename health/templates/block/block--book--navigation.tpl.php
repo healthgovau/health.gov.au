@@ -27,7 +27,7 @@ if (user_is_logged_in()) {
     <span>In this section</span>
   </a>
 </div>
-<div class="<?php print $classes; ?> au-accordion au-accordion--closed au-accordion__body"<?php print $attributes; ?> id="<?php print $block_html_id; ?>">
+<div class="<?php print $classes; ?> au-accordion au-accordion__body"<?php print $attributes; ?> id="<?php print $block_html_id; ?>">
 
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>

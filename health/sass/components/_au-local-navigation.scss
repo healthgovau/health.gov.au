@@ -155,7 +155,7 @@
 // Hide the menu on mobile initially.
 // This is a hack because we cannot fully controls Drupals layout for menus.
 // Really this should be part of .au-local-navigation.
-#block-menu-block-2 {
+#block-menu-block-2, #block-book-navigation {
   display: none;
   @include AU-media(sm) {
     display: block;
