@@ -1243,17 +1243,28 @@ function health_preprocess_page(&$variables) {
     'weight' => 999 // Load first.
   ];
 
-  // Always add summary. If it is not needed, it will be removed.
+  // Node.
   if (isset($variables['node'])) {
-    $summary = field_get_items('node', $variables['node'], 'field_summary');
+
+    // Get the node.
+    $node = $variables['node'];
+
+    // If we are viewing the draft, load that version instead.
+    if (arg(2) == 'draft') {
+      $node = node_load($variables['node']->nid, $variables['node']->workbench_moderation['current']->vid);
+    }
+
+    // Save summary into template variables for use in page.tpl.
+    $summary = field_get_items('node', $node, 'field_summary');
     if ($summary && isset($summary[0]['value'])) {
       $variables['summary'] = $summary[0]['value'];
     }
-  } else {
-    // Check if this is a views page.
-    if ($view = views_get_page_view()) {
-      $variables['summary'] = $view->display_handler->get_option('display_description');
-    }
+
+  }
+
+  // Views.
+  if ($view = views_get_page_view()) {
+    $variables['summary'] = $view->display_handler->get_option('display_description');
   }
 
   // Pages under a topic or grand-parents pages should use the parents' title
