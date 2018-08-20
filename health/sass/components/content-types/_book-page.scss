@@ -10,16 +10,4 @@
 // Display modes
 .node-book-page {
 
-  // Full
-  &.view-mode-full {
-    .field-name-field-page-number {
-      @include health-fontgrid('xxl');
-      float: left;
-      @include AU-space('margin', 1.25unit 1.25unit 0 0);
-    }
-    h1 {
-      @include AU-space('margin-bottom', 3unit);
-    }
-  }
-
 }

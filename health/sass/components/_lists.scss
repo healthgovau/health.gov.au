@@ -18,31 +18,33 @@ ul {
 
 // Large list styles
 %list--large {
-    list-style-type: none;
-    counter-reset: standard-counter;
-    padding: 20px 0;
-    >li {
-        vertical-align: top;
-        position: relative;
-        @include AU-space('margin', 0 0 1unit);
-        padding: 15px 15px 15px 50px;
-        background: $colour-lighter;
-        &::before {
-            content: counter(standard-counter, decimal);
-            counter-increment: standard-counter;
-            float: left;
-            text-align: center;
-            font-weight: 700;
-            position: absolute;
-            left: 14px;
-            top: 9px;
-            padding-top: 0;
-            font-size: 24px;
-        }
-        a {
-            font-weight: bold;
-        }
+  list-style-type: none;
+  counter-reset: standard-counter;
+  padding: 20px 0 0 0;
+  margin: 0;
+
+  >li {
+    vertical-align: top;
+    position: relative;
+    @include AU-space('margin', 0 0 1unit);
+    padding: 15px 15px 15px 50px;
+    background: $colour-lighter;
+    &::before {
+      content: counter(standard-counter, decimal);
+      counter-increment: standard-counter;
+      float: left;
+      text-align: center;
+      font-weight: 700;
+      position: absolute;
+      left: 14px;
+      top: 9px;
+      padding-top: 0;
+      font-size: 24px;
     }
+    a {
+      font-weight: bold;
+    }
+  }
 }
 
   // Apply default to <ol>
@@ -52,16 +54,16 @@ ol.list--large {
 
 // Variant for <ul>
 ul.list--large {
-    @extend %list--large;
-    counter-reset: none;
-    >li {
-        padding-left: 50px;
-        &::before {
-          top: 0;
-          content: '■';
-          counter-increment: none;
-        }
+  @extend %list--large;
+  counter-reset: none;
+  > li {
+    padding-left: 50px;
+    &::before {
+      top: 0;
+      content: '■';
+      counter-increment: none;
     }
+  }
 }
 
 // Plain list

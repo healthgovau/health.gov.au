@@ -10,4 +10,13 @@
     text-decoration: none;
   }
 
+  &--numbered-heading {
+    &__number, p#{&}__number {
+      float: left;
+      @include AU-space(margin-right, 1.25unit);
+    }
+    &__heading {
+      display: inline;
+    }
+  }
 }
