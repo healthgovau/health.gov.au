@@ -334,7 +334,7 @@ function health_preprocess_ds_recommendation_tags(&$variables) {
   // Grade
   $items = [[
     'data' => $variables['content']['field_recommendation_grade'][0]['#markup'],
-    'class' => ['recommendation__grade']
+    'class' => ['au-recommendation__grade']
   ]];
   // Number
   if (!empty($variables['content']['field_recommendation_number'])) {

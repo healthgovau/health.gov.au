@@ -12,27 +12,27 @@
 //
 // Style guide: components.recommendation
 
-.recommendation {
-  &.recommendation--grade-practice-point {
+.au-recommendation {
+  &--grade-practice-point {
     border-left-color: #d9c100;
-    .recommendation__grade {
+    .au-recommendation__grade {
       background-color: #fff4c8;
     }
   }
 
-  &.recommendation--grade-grade-a,
-  &.recommendation--grade-grade-b,
-  &.recommendation--grade-grade-c,
-  &.recommendation--grade-grade-d {
+  &--grade-grade-a,
+  &--grade-grade-b,
+  &--grade-grade-c,
+  &--grade-grade-d {
     border-left-color: #8852ce;
-    .recommendation__grade {
+    .au-recommendation__grade {
       background-color: #e0c8ff;
     }
   }
 
-  &.recommendation--grade-consensus-based {
+  &--grade-consensus-based {
     border-left-color: #5f904d;
-    .recommendation__grade {
+    .au-recommendation__grade {
       background-color: #e7fddf;
     }
   }

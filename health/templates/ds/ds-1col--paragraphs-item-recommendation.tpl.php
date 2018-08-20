@@ -6,7 +6,7 @@
  */
 ?>
 <<?php print $ds_content_wrapper; print $layout_attributes; ?>
-  class="recommendation au-callout ds-1col <?php print $classes;?>"
+  class="au-recommendation au-callout ds-1col <?php print $classes;?>"
   aria-label="Callout recommendation">
 
   <?php if (isset($title_suffix['contextual_links'])): ?>

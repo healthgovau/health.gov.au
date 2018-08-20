@@ -384,7 +384,7 @@ function health_preprocess_entity(&$variables) {
     if ($para_item->bundle == 'recommendation') {
       // Add a class to identify what grade it is.
       $term = taxonomy_term_load($para_item->field_recommendation_grade[LANGUAGE_NONE][0]['tid']);
-      $variables['classes_array'][] = 'recommendation--grade-' . _health_prepare_filename($term->name);
+      $variables['classes_array'][] = 'au-recommendation--grade-' . _health_prepare_filename($term->name);
     }
 
     // Summary lists
