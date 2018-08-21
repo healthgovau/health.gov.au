@@ -796,7 +796,7 @@ function health_preprocess_field(&$variables) {
         $variables['items'][0]['#markup'] = theme('item_list',[
           'items' => $footnotes_list,
           'type' => 'ul',
-          'attributes' => ['class' => ['au-footnotes', 'list--text', 'au-link-list']]
+          'attributes' => ['class' => ['au-footnotes', 'list--remove']]
         ]);
       }
     }
@@ -825,6 +825,7 @@ function health_preprocess_field(&$variables) {
       $variables['items'][0]['#markup'] = theme('item_list',[
         'items' => $references,
         'type' => 'ul',
+        'attributes' => ['class' => 'list--remove']
       ]);
     }
     $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.footnotes.min.js';

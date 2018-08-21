@@ -33,10 +33,10 @@
   <div class="au-figure__wrapper">
     <figure>
       <?php print render($content['field_figure']);?>
-      <figcaption>
+      <figcaption class="text--minor">
         <p><?php print render($content['field_image_long_description'][0]);?></p>
       </figcaption>
     </figure>
-    <div class="au-figure__notes"><?php print render($content['field_table_source'][0])?></div>
+    <div class="au-figure__notes text--minor"><?php print render($content['field_table_source'][0])?></div>
   </div>
 </div>

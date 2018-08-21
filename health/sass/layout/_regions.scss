@@ -6,16 +6,6 @@
   background: #fff;
 }
 
-// Listing pages
-.view-filters,
-.view-content {
-  @include AU-clearfix;
-  width: 100%;
-  .item-list ul {
-    @extend %list--remove;
-  }
-}
-
 .region-content-top {
   @include AU-clearfix;
   @include AU-space('padding-top', .5unit);
@@ -40,15 +30,6 @@
     @include AU-space('padding', 0unit);
   }
   
-}
-
-.region-sidebar-first {
-  .item-list ul {
-    @extend %list--remove;
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
 }
 
 .region-sidebar-second {
