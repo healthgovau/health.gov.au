@@ -79,23 +79,11 @@
 //   }
 // }
 
-// Ext link
-.field-name-field-link-external {
-    @include AU-space(margin-top, 1.5unit);
-    .field-label {
-      @include health-fontgrid( 'lg', 'default', 'heavy' );
-    }
-    .field-items {
-        @extend .au-callout;
-        @include AU-space(margin-top, 1unit);
-        border-left-color: $colour-Tertiary-2;
-        font-weight: bold;
-    }
-}
-
-// External link
+// External link url
 .external-link-url {
-    @extend %ext-link;
+  word-break: break-all;
+  color: $colour-Secondary-darker;
+  @include health-fontgrid('xs', 'default', 'light');
 }
 
 // Email telephone field

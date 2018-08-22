@@ -129,12 +129,10 @@ endif;
 
     if ($sidebar_first || $sidebar_second) {
       $main_col_classes = 'col-sm-8';
+    } else if (!$full_width) {
+      $main_col_classes = 'col-sm-12';
     } else {
-      if (!$full_width) {
-        $main_col_classes = 'col-sm-12';
-      } else {
-        $main_col_classes = '';
-      }
+      $main_col_classes = '';
     }
 
     ?>

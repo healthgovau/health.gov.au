@@ -9,7 +9,6 @@
     // Colours.
     &--secondary {
       border-left-color: $colour-Secondary;
-      @include AU-space(margin-top, .5unit);
     }
     &--tertiary {
       border-left-color: $colour-Tertiary-2;
@@ -33,7 +32,7 @@
         }
       }
       // Looks like callout (via @extend)
-      .field-name-field-link-external .field-items {
+      .field-name-field-link-external {
         max-width: 66.6666666667%; // based on content pane at col-sm-8
       }
     }

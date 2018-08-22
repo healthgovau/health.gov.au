@@ -5,7 +5,7 @@
  * Display Suite 1 column template.
  */
 ?>
-<div class="row para-row au-body <?php print $classes; ?>">
+<div class="row para-row <?php print $classes; ?>">
   <<?php print $ds_content_wrapper; print $layout_attributes; ?> class="container ds-1col clearfix">
     <?php if (isset($title_suffix['contextual_links'])): ?>
       <?php print render($title_suffix['contextual_links']); ?>
