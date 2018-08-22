@@ -331,23 +331,32 @@
   // Field character limit counter.
   Drupal.behaviors.health_adminimal_character_limit = {
     attach: function (context, settings) {
-
-      // Title.
-      $('.page-node-edit .form-item-title').append('<div class="description character-limit">0 characters</div>');
-      $('.page-node-edit .form-item-title input').keyup(function() {
-        var length = parseInt($(this).val().length);
-        if (length > 70) {
-          $(this).parent().find('.character-limit')
-            .addClass('over')
-            .html('Title is over 70 characters, consider shortening.');
-        } else {
-          $(this).parent().find('.character-limit')
-            .removeClass('over')
-            .html(length + ' characters');
-        }
-      }).trigger('keyup');
-
+      characterLimit('.page-node-edit .form-item-title', 'input', 70);
+      characterLimit('.page-node-edit .field-name-field-summary', 'textarea', 200);
     }
   };
+
+  /**
+   * Add a character limit counter.
+   *
+   * @param selector
+   * @param type
+   * @param limit
+   */
+  function characterLimit(selector, type, limit) {
+    $(selector).append('<div class="description character-limit"></div>');
+    $(selector + ' ' + type).keyup(function() {
+      var length = parseInt($(this).val().length);
+      if (length > limit) {
+        $(this).parents(selector).find('.character-limit')
+          .addClass('over')
+          .html('Over ' + limit + ' characters, consider shortening.');
+      } else {
+        $(this).parents(selector).find('.character-limit')
+          .removeClass('over')
+          .html(length + ' characters');
+      }
+    }).trigger('keyup');
+  }
 
 })(jQuery, Drupal);
