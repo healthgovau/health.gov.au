@@ -244,7 +244,7 @@
       function lockTextFormat(format, fields) {
         for(var i=0;i<fields.length;i++) {
           $(fields[i]).val(format);
-          $(fields[i]).hide();
+          $(fields[i]).parent().hide();
         }
       }
 
@@ -277,6 +277,12 @@
         '.paragraphs-item-type-content-figure .field-name-field-table-source .filter-list',
         '.paragraphs-item-type-references .field-name-field-book-references .filter-list',
         '.paragraphs-item-type-footnotes .field-name-field-book-footnotes .filter-list'
+      ]);
+
+      // Simple rich text
+      lockTextFormat('simple_rich_text', [
+        '.node-video-form .field-name-field-description .filter-list',
+        '.node-publication-form .field-name-field-description .filter-list'
       ]);
     }
   };
