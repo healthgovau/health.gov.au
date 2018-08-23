@@ -61,6 +61,7 @@
 
 // An image inside a link.
 .image--link {
+  display: inline-block;
   a {
     border-bottom: 0;
     line-height: 0;
@@ -73,6 +74,7 @@
     }
 
     img {
+      margin-top: 0; // Override uikit * + img margin.
       @include AU-media(sm) {
         &:hover, &:focus, &:active {
           opacity: 0.75;

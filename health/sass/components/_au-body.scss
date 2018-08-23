@@ -21,8 +21,14 @@
     }
   }
 
+  // Introduction text.
   .au-introduction {
     @include health-fontgrid( lg , default, light);
     color: $colour-minorText;
+  }
+
+  // The standard margin top used for uikit.
+  .standard-gap {
+    @include AU-space(margin-top, 1.5unit);
   }
 }
