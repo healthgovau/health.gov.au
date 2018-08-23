@@ -1261,6 +1261,11 @@ function health_preprocess_page(&$variables) {
       $variables['summary'] = $summary[0]['value'];
     }
 
+    // Add page number to title for book pages.
+    if ($node->field_page_number) {
+      $variables['title'] = $node->field_page_number[LANGUAGE_NONE][0]['value'] . ' ' . $node->title;
+    }
+
   }
 
   // Views.
