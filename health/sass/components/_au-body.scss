@@ -31,4 +31,9 @@
   .standard-gap {
     @include AU-space(margin-top, 1.5unit);
   }
+
+  // Prevent the contextual links wrapper from creating a margin above the following element.
+  .contextual-links-wrapper + * {
+    margin-top: 0;
+  }
 }
