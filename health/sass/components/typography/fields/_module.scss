@@ -223,12 +223,6 @@ p.summary, .field-name-field-summary {
   }
 }
 
-.field-name-field-image-featured {
-  img {
-    @include AU-space(margin, 1unit 0 3unit);
-  }
-}
-
 %minor-text {
   font-size: 13px;
 }
