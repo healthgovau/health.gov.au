@@ -18,6 +18,15 @@
     // Used for inline styles
     &.view-mode-inline {
       width: 100%;
+      
+      // On mobile, add a gap above the columns now that they are on top of each other.
+      // @todo Should this be applied to all columns when they stack?
+      div[class*=col-] + div[class*=col-] {
+        margin-top: 12px;
+        @include AU-media(sm) {
+          margin-top: 0;
+        }
+      }
     }
   }
 }
