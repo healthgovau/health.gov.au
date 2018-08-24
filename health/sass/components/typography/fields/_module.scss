@@ -252,5 +252,6 @@ p.summary, .field-name-field-summary {
 }
 
 .field-name-field-resource-file-summary {
+  @include AU-space(margin-top, 1.5unit);
   @include AU-space(margin-bottom, 1.5unit);
 }

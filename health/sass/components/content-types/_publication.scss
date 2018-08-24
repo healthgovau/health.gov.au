@@ -1,13 +1,29 @@
 // Default/full content
 .node-type-publication {
-    @extend %dm-full-content;
-	@extend %page-help-only;
+  @extend %dm-full-content;
+  @extend %page-help-only;
+  
+  // for 3-column variant apply spacing
+  .group-centre,
+  .group-right {
+    @include AU-space(padding-top, 2unit);
+  }
+  
+  @include AU-media(sm){
+    .group-centre {
+      @include AU-space(padding-left, 2unit);
+    }
+    .group-centre,
+    .group-right {
+      padding-top: 0;
+    }
+  }
 }
 
 // Display modes
 .node-publication {
 
-    // Feature
+  // Feature
 	&.view-mode-feature {
 		@extend %dm-feature-2-col;
     }
