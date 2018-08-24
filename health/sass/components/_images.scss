@@ -10,6 +10,7 @@
 // Add a border to the image.
 .image--border {
   border: $health-borderize;
+  display: inline-block;
   div {
     line-height: 0;
   }
