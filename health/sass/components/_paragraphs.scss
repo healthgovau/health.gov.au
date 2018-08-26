@@ -181,3 +181,20 @@
     @include AU-space(margin-bottom, 2unit);
   }
 }
+
+// Top/left/right layout
+.paragraphs-item-multiple-columns {
+  border: $health-borderize--tertiary-very-thin;
+  @include AU-space(margin-top, 1unit);
+  .row {
+    div {
+      @include AU-space(padding, 1unit);
+      &:nth-child(1){
+        background: lighten($colour-Tertiary-2-light, 45%);
+        &.multiple-columns__title { // Only for top row
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
