@@ -21,7 +21,6 @@
 // Component types
 @import 'au-callout';
 @import 'au-grid';
-@import 'au-accordion';
 @import 'au-listing';
 @import 'au-field';
 @import 'au-cta-link';
@@ -47,6 +46,8 @@
 @import 'link';
 @import 'description-list';
 @import 'feedback';
+
+@import '_health-accordion.scss';
 
 // Books
 //
@@ -126,7 +127,7 @@
 @import 'au-file';
 @import 'au-pager';
 @import 'au-main-nav';
-@import 'au-local-navigation';
+@import 'au-side-nav';
 
 @import 'navigation/book/module';
 @import 'navigation/breadcrumb/module';
@@ -135,7 +136,6 @@
 @import 'navigation/filters/module';
 @import 'navigation/filters/extends';
 @import 'navigation/faceted-block/module';
-@import 'navigation/faceted-block/extends';
 @import 'navigation/selector/module';
 
 // Inline styles

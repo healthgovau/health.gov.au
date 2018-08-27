@@ -20,4 +20,9 @@
       display: inline;
     }
   }
+
+  // Create class for screen reader only.
+  .au-sronly {
+    @include AU-sronly();
+  }
 }

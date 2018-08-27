@@ -896,6 +896,29 @@ function health_webform_element($variables) {
   return $output;
 }
 
+
+/**
+ * Implements theme_menu_tree().
+ *
+ * @param $variables
+ *
+ * @return string
+ */
+function health_menu_tree($variables) {
+  return '<ul class="au-link-list">' . $variables['tree'] . '</ul>';
+}
+
+/**
+ * Implements theme_menu_tree().
+ *
+ * @param $variables
+ *
+ * @return string
+ */
+function health_menu_tree__menu_sub_menu($variables) {
+  return '<ul class="au-link-list au-link-list--inline">' . $variables['tree'] . '</ul>';
+}
+
 /**
  * Implements theme_menu_link().
  * Add default audience filter to specific paths.
@@ -914,7 +937,7 @@ function health_menu_link(array $variables) {
   if (key_exists(2, $user->roles)) {
     if ($node = _health_load_node_from_node_path($variables['element']['#href'])) {
       if ($node->status == 0) {
-        $variables['element']['#localized_options']['attributes']['class'][] = 'menu--unpublished';
+        $variables['element']['#localized_options']['attributes']['class'][] = 'au-side-nav--unpublished';
       }
     }
   }
@@ -924,6 +947,12 @@ function health_menu_link(array $variables) {
     if (property_exists($node, 'field_page_number') && $node->field_page_number) {
       $variables['element']['#title'] = $node->field_page_number[LANGUAGE_NONE][0]['value'] . ' ' . $variables['element']['#title'];
     }
+  }
+
+  // Add active class to the active list item if it doesn't have it.
+  // This is needed for book navigation side nav to work with the @gov.au/side-nav module.
+  if ($variables['element']['#href'] == $_GET['q'] && !in_array('active', $variables['element']['#attributes']['class'])) {
+    $variables['element']['#attributes']['class'][] = 'active';
   }
 
   return theme_menu_link($variables);

@@ -9,29 +9,11 @@
 
 // Sub menu above search
 #block-menu-menu-sub-menu {
-  @include AU-clearfix;
-  .block__title {
-    @include AU-sronly;
-  }
-  .menu {
-    @extend .au-link-list;
-    @extend .au-link-list--inline;
+  ul {
     float: right;
-    background: transparent;
-    padding-top: 0;
-    li:first-of-type{
-      margin-left: 0;
-    }
   }
   display: none;
   @include AU-media(sm) {
     display: block;
-  }
-}
-
-// Footer navigation.
-footer {
-  .menu {
-    @extend .au-link-list;
   }
 }

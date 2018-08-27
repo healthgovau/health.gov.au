@@ -21,6 +21,8 @@
     @include AU-media(sm){
       @include AU-space(margin-top, 2unit);
     }
+    padding-left: 12px;
+    padding-right: 12px;
     .au-card {
       margin-top: 0;
     }
@@ -33,21 +35,13 @@
 }
 
 .region-sidebar-second {
-  @include AU-clearfix;
-  @extend %colour-Light-background;
-  @include AU-media(sm) {
-    background: white;
-  }
-  #block-menu-block-2 {
-    clear: both;
-    @include AU-clearfix;
-    background: white;
-    border-bottom: $health-borderize--thin;
+  .au-side-nav {
+    @extend %colour-Light-background;
     @include AU-media(sm) {
-      border-bottom: 0;
+      background: white;
     }
   }
+
 }
 
 @import '_print.scss';
-

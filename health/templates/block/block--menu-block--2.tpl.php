@@ -7,13 +7,25 @@
  * @see https://drupal.org/node/1728246
  */
 ?>
-
-<div class="au-local-navigation__mobile-toggle au-accordion">
-  <a href="#" class="au-accordion__title au-accordion--closed" aria-controls="block-menu-block-2">
-    <span>In this section</span>
+<aside class="au-side-nav au-accordion">
+  <a
+    href="#nav-default" class="au-side-nav__toggle au-accordion__title au-accordion--closed"
+    aria-controls="nav-default"
+    aria-expanded="false"
+    aria-selected="false"
+    role="tab"
+    onclick="return AU.accordion.Toggle( this )"
+  >
+    In this section
   </a>
-</div>
-
-<div class="<?php print $classes; ?> au-accordion au-accordion__body"<?php print $attributes; ?> id="<?php print $block_html_id; ?>">
-  <?php print $content; ?>
-</div>
+  <div id="nav-default" class="au-side-nav__content au-accordion--closed au-accordion__body">
+    <?php print render($title_prefix); ?>
+    <?php if ($title): ?>
+      <h2 class="au-sidenav__title">
+        <?php print $title; ?>
+      </h2>
+    <?php endif; ?>
+    <?php print render($title_suffix); ?>
+    <?php print $content; ?>
+  </div>
+</aside>
