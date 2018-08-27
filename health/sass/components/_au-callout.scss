@@ -5,6 +5,8 @@
     &.row {
       margin-left: 0;
       margin-right: 0;
+      padding-left: 12px;
+      padding-right: 12px;
     }
     // Colours.
     &--secondary {
@@ -12,11 +14,19 @@
     }
     &--tertiary {
       border-left-color: $colour-Tertiary-2;
-    } // Used for inline styles
+    }
+    // Used for inline styles
     &.view-mode-inline {
-      border-left-color: $colour-Secondary;
-      @include AU-space(margin-top, 1unit);
       width: 100%;
+      
+      // On mobile, add a gap above the columns now that they are on top of each other.
+      // @todo Should this be applied to all columns when they stack?
+      div[class*=col-] + div[class*=col-] {
+        margin-top: 12px;
+        @include AU-media(sm) {
+          margin-top: 0;
+        }
+      }
     }
   }
 }

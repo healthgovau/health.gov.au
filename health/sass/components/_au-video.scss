@@ -13,6 +13,7 @@
 
   &__preview {
     position: relative;
+    line-height: 0;
 
     &__link {
       display: inline-block;
@@ -62,7 +63,7 @@
       }
 
       &--small {
-        @include AU-space('padding', .15unit);
+        @include AU-space('padding', .15unit .15unit .3unit .15unit);
         font-size: 0.85em;
         right: 3px;
         bottom: 3px;
