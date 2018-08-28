@@ -1167,29 +1167,23 @@ function health_preprocess_page(&$variables) {
   ];
   $variables['backtotop'] = drupal_render($render_backtotop);
   
-  // Add readspeaker JS to all pages except listing, homepage, topic and hp topic.
+  // Add readspeaker JS to all pages except content types listed in 'exclude'.
   $variables['readspeaker'] = '';
-  $exclude = [
-    'health_topic',
-    'health_topic_hp',
-    'listing',
-    'landing_page',
-    'program'
+  $exclude = [];
+  
+  $render_readspeaker = [
+    '#theme' => 'readspeaker',
   ];
-  if (isset($variables['node']) && !in_array($variables['node']->type, $exclude)) {
-    $render_readspeaker = [
-      '#theme' => 'readspeaker',
-    ];
-    $render_readspeaker['#attached']['js'][] = [
-      'data' => READSPEAKER_URL,
-      'type' => 'external',
-    ];
-    $render_readspeaker['#attached']['js'][] = [
-      'data' => path_to_theme() . '/js/libraries/readspeaker/ReadSpeakerColorSkin.js',
-      'type' => 'file',
-    ];
-    $variables['readspeaker'] = drupal_render($render_readspeaker);
-  }
+  $render_readspeaker['#attached']['js'][] = [
+    'data' => READSPEAKER_URL,
+    'type' => 'external',
+  ];
+  $render_readspeaker['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/libraries/readspeaker/ReadSpeakerColorSkin.js',
+    'type' => 'file',
+  ];
+  $variables['readspeaker'] = drupal_render($render_readspeaker);
+  
 
   // Add full width indicator.
   if (isset($variables['node'])) {

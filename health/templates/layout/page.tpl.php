@@ -98,6 +98,8 @@ endif;
                     <?php if (isset($summary) && $summary): ?>
                         <p class="summary"><?php print $summary; ?></p>
                     <?php endif; ?>
+                    
+                    <?php print $readspeaker; ?>
 
                   </div>
 
@@ -177,8 +179,6 @@ endif;
               <?php print $messages; ?>
             </div>
             <?php endif; ?>
-
-          <?php print $readspeaker; ?>
 
           <?php print render($page['content']); ?>
           <?php print $feed_icons; ?>
