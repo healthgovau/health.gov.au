@@ -176,16 +176,10 @@ function health_preprocess_entity(&$variables) {
 
     // Links.
     if ($para_item->bundle == 'para_links') {
-      // Hide title if hide title field is checked.
-      $checked = $para_item->field_hide_title;
-      if (isset($checked[LANGUAGE_NONE]) && $checked[LANGUAGE_NONE][0]['value'] == 1) {
-        // Hide the para title.
-        $variables['classes_array'][] = 'hide-title';
-      }
       // Pass band style to link paragraph.
       $band_style = $para_item->field_band_style[LANGUAGE_NONE][0]['value'];
       foreach ($variables['content']['field_link_paragraph'] as $key => $link_entity) {
-        if (is_integer($key)) {
+        if (is_int($key)) {
           $link_entity_id = $para_item->field_link_paragraph[LANGUAGE_NONE][$key]['value'];
           $variables['content']['field_link_paragraph'][$key]['entity']['paragraphs_item'][$link_entity_id]['#entity']->card_style = $band_style;
         }
