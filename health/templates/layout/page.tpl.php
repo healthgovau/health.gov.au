@@ -75,7 +75,7 @@ endif;
       <div class="au-sub-header au-sub-header--light">
         <div class="container">
           <div class="row">
-            <div class="col-sm-8">
+            <div class="<?php print (count($page['title_supp']) > 0 || isset($header_image)) ? "col-sm-8" : "col-sm-9" ?>">
 
               <?php print $breadcrumb; ?>
 
