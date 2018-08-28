@@ -1267,12 +1267,12 @@ function health_preprocess_page(&$variables) {
     $variables['summary'] = $view->display_handler->get_option('display_description');
   }
 
-  // Pages under a topic or grand-parents pages should use the parents' title
-  // in the title section and no summary.
+  // Set section title and summary visibility.
+  $variables['section_title'] = null;
   $active_trail = menu_get_active_trail();
   if (!empty($active_trail)) {
 
-    // Topics
+    // Topics.
     if ($active_trail[1]['href'] == 'health-topics') {
       if (isset($variables['node'])) {
         if (count($active_trail) > 3) {
@@ -1299,7 +1299,7 @@ function health_preprocess_page(&$variables) {
       }
     }
 
-    // Conditions and diseases
+    // Conditions and diseases.
     // Title doesn't appear in the active trail, so set one manually.
     if ($active_trail[1]['href'] == 'conditions-and-diseases') {
       if (count($active_trail) > 2) {
@@ -1309,19 +1309,26 @@ function health_preprocess_page(&$variables) {
 
     // Resources
     if ($active_trail[1]['href'] == 'resources') {
+
       if (isset($variables['node'])) {
         $variables['summary'] = NULL;
       }
-      if (count($active_trail) > 3) {
-        // See if this is a long document.
-        if (isset($active_trail[2]['module']) && $active_trail[2]['module'] == 'book') {
-          $variables['section_title'] = theme('health_section_link', ['title' => $active_trail[2]['title'], 'path' => $active_trail[2]['href']]);
-        } else {
-          // If not, go to resources listing.
+
+      // Books.
+      if (isset($active_trail[2]['module']) && $active_trail[2]['module'] == 'book') {
+        if (count($active_trail) > 3) {
+          $variables['section_title'] = theme('health_section_link', ['title' => $active_trail[2]['title'], 'path' => $active_trail[2]['href'], 'subtitle' => $active_trail[2]['title']]);
+        }
+        else {
           $variables['section_title'] = theme('health_section_link', ['title' => 'Resources', 'path' => 'resources/']);
         }
-      } else {
-        $variables['section_title'] = NULL;
+      }
+      // Other resources.
+      else if (count($active_trail) > 3) {
+        $variables['section_title'] = theme('health_section_link', ['title' => 'Resources', 'path' => 'resources/']);
+      }
+      else {
+        $variables['section_title'] = null;
       }
     }
 
@@ -1404,7 +1411,7 @@ function health_preprocess_page(&$variables) {
 
   // Books.
   if (isset($variables['node'])) {
-    if ($variables['node']->type == 'book_page') {
+    if ($variables['node']->type == 'book_page' && property_exists($variables['node'], 'book')) {
       $book = node_load($variables['node']->book['bid']);
       $variables['title_alt'] = l($book->title, 'node/' . $book->nid);
     }

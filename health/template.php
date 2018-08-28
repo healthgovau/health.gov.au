@@ -105,7 +105,8 @@ function health_theme() {
   $theme['health_section_link'] = [
     'variables' => [
       'title' => NULL,
-      'path' => NULL
+      'path' => NULL,
+      'subtitle' => NULL,
     ],
     'template' => 'section_link',
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',

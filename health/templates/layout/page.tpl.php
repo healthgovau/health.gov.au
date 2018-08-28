@@ -81,12 +81,7 @@ endif;
 
               <?php print render($page['title_core']); ?>
 
-              <?php if (isset($section_title)): ?>
-                <div
-                  class="au-sub-header__section-title clearfix rs_skip">
-                  <?php print $section_title; ?>
-                </div>
-              <?php endif; ?>
+              <?php print $section_title; ?>
 
               <?php if ($title): ?>
                 <?php print render($title_prefix); ?>
