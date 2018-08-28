@@ -153,9 +153,10 @@ function health_preprocess_entity(&$variables) {
 
     // Add the number of child paragraph items in the listing as a css class.
     // This assumes there is only one child paragraph listing in a paragraph.
-    foreach($variables['content'] as $field => $data) {
+    foreach ($variables['content'] as $field => $data) {
       if ($data['#field_type'] == 'paragraphs' || $data['#field_type'] == 'entityreference') {
         $variables['classes_array'][] = 'listing__count--' . count($data['#items']);
+
       }
     }
 
@@ -196,7 +197,7 @@ function health_preprocess_entity(&$variables) {
       $variables['card_style'] = $para_item->card_style;
     }
 
-    // Contact
+    // Contact.
     if ($para_item->bundle == 'para_contact') {
       // Add more link to referenced node.
       $nid = $para_item->field_related_contact[LANGUAGE_NONE][0]['target_id'];
@@ -213,23 +214,26 @@ function health_preprocess_entity(&$variables) {
         $grid = $para_item->field_grid[LANGUAGE_NONE][0]['value'];
         $nid = $para_item->field_feature_content[LANGUAGE_NONE][0]['target_id'];
         // Pass grid to node.
-        $grid_map =[
-          'col-sm-6' => 'col-xs-12 col-sm-6',
-          'col-sm-5' => 'col-xs-12 col-sm-7',
-          'col-sm-4' => 'col-xs-12 col-sm-8',
+        $grid_map = [
+          'col-sm-6' => 'col-sm-6',
+          'col-sm-5' => 'col-sm-7',
+          'col-sm-4' => 'col-sm-8',
         ];
         $variables['content']['field_feature_content'][0]['node'][$nid]['#node']->left_grid = 'col-xs-12 ' . $grid;
         $variables['content']['field_feature_content'][0]['node'][$nid]['#node']->right_grid = $grid_map[$grid];
       }
     }
 
-    // Statistic.
-    if ($para_item->bundle == 'para_statistics') {// Add no-trend variant if trend info hasn't been added.
-      // Find out number of statistics node.
+    // Statistics - Band.
+    if ($para_item->bundle == 'para_statistics') {
+      // Apply col classes to children.
       $variables = _health_total_children($variables, 'field_statistics');
-      if (empty($variables['elements']['#entity']->field_statistic_trend) && empty($variables['elements']['#entity']->field_statistic_trend_timeframe)) {
-        $variables['classes_array'][] = 'no-trend';
-      }
+    }
+
+    // Statistics - Inline reference.
+    if ($para_item->bundle == 'reference_statistic') {
+      // Apply col classes to children.
+      $variables = _health_total_children($variables, 'field_reference_statistic');
     }
 
     // Taxonomy term.
@@ -1013,10 +1017,17 @@ function health_preprocess_node(&$variables) {
     }
   }
 
-  // Add grid class to statistics card.
+  // Statistic.
   if ($node->type == 'statistic') {
+
+    // Add grid class to statistics card.
     if (isset($variables['content']['num'])) {
       $variables['classes_array'] = _health_grid_class($variables['content']['num'], $variables['classes_array']);
+    }
+
+    // Add no-trend variant if trend info hasn't been added.
+    if (empty($node->field_statistic_trend_text)) {
+      $variables['classes_array'][] = 'stat--no-trend';
     }
   }
 
@@ -1052,7 +1063,7 @@ function health_preprocess_node(&$variables) {
     }
   }
 
-  // Books
+  // Books.
   $book_types = ['book_page'];
   if (in_array($node->type, $book_types)) {
 
@@ -1096,15 +1107,7 @@ function health_preprocess_node(&$variables) {
     drupal_add_js('https://unpkg.com/tippy.js@2.5.2/dist/tippy.all.min.js', 'external');
   }
 
-  // Statistic.
-  if ($node->type == 'statistic') {
-    // Add no-trend variant if trend info hasn't been added.
-    if (empty($node->field_statistic_trend_text)) {
-      $variables['classes_array'][] = 'stat--no-trend';
-    }
-  }
-
-  // Survey
+  // Survey.
   if ($node->type == 'survey') {
     if ($node->field_status[LANGUAGE_NONE][0]['value'] == 'Upcoming' || $node->field_status[LANGUAGE_NONE][0]['value'] == 'Closed') {
       $variables['content']['field_link_external']['#access'] = FALSE;
@@ -1262,7 +1265,7 @@ function health_preprocess_page(&$variables) {
     }
 
     // Add page number to title for book pages.
-    if (property_exists($node, 'field_page_number') && $node->field_page_number[LANGUAGE_NONE]) {
+    if (property_exists($node, 'field_page_number') && key_exists(LANGUAGE_NONE, $node->field_page_number)) {
       $variables['title'] = $node->field_page_number[LANGUAGE_NONE][0]['value'] . ' ' . $node->title;
     }
 
