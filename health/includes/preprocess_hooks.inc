@@ -59,9 +59,9 @@ function health_preprocess_block(&$variables, $hook) {
       }
       break;
     case 'menu':
+    case 'book':
     case 'menu_block':
     case 'blog':
-    case 'book':
     case 'comment':
     case 'forum':
     case 'shortcut':
@@ -120,7 +120,6 @@ function health_preprocess_block(&$variables, $hook) {
     } else {
       $variables['classes_array'][] = 'au-search--global-desktop';
     }
-
   }
 }
 
@@ -1154,6 +1153,10 @@ function health_preprocess_page(&$variables) {
   ];
   $variables['page']['content']['#attached']['js'][] = [
     'data' => path_to_theme() . '/js/dist/health.anchors.min.js',
+    'type' => 'file',
+  ];
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/dist/health.nojs.min.js',
     'type' => 'file',
   ];
 

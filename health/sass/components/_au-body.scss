@@ -13,6 +13,11 @@
     text-decoration: none;
   }
 
+  // Create class for screen reader only.
+  .au-sronly {
+    @include AU-sronly();
+  }
+
   // Introduction text.
   .au-introduction {
     @include health-fontgrid( lg , default, light);

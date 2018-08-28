@@ -1,0 +1,34 @@
+// CLONE OF AU-ACCORDION
+// FOR USE WITH OUR JQUERY VERSION OF AU-ACCORDION (HEALTH-ACCORDION JS)
+// UNTIL AU-ACCORDION IS FIXED
+// https://github.com/govau/uikit/issues/357
+
+.health-accordion {
+  @extend .au-accordion;
+
+  .health-accordion__body {
+    @extend .au-accordion__body;
+  }
+
+  .health-accordion__body-wrapper {
+    @extend .au-accordion__body-wrapper;
+  }
+
+  .health-accordion__title {
+    @extend .au-accordion__title;
+  }
+
+  .health-accordion--closed {
+    @extend .au-accordion--closed;
+  }
+
+  .health-accordion--open {
+    @extend .au-accordion--open;
+  }
+
+}
+
+// UIKit uses height 0 for closed, which messes up our jQuery toggle height animation.
+.js .health-accordion .health-accordion__body.health-accordion--closed {
+  height: auto;
+}

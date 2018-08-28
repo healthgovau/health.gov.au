@@ -18,13 +18,4 @@
  * @see template_preprocess_menu_block_wrapper()
  */
 ?>
-
-<?php
-if ($config['menu_name'] == 'main-menu' && $config['delta'] == '2') {
-  $classes .= ' au-local-navigation';
-}
-?>
-
-<div class="<?php print $classes; ?>">
-  <?php print render($content); ?>
-</div>
+<?php print render($content); ?>

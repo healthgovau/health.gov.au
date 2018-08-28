@@ -18,14 +18,14 @@
 
       var $target = $('#' + settings.this.attr('aria-controls'));
 
-      settings.this.toggleClass("au-accordion--open").toggleClass("au-accordion--closed");
+      settings.this.toggleClass("health-accordion--open").toggleClass("health-accordion--closed");
 
-      if (settings.this.hasClass("au-accordion--open")) {
+      if (settings.this.hasClass("health-accordion--open")) {
         if (settings.beforeOpen) {
           settings.beforeOpen();
         }
         setAriaRoles(settings.this[0], $target[0], false);
-      } else if (!settings.this.hasClass("au-accordion--open")) {
+      } else if (!settings.this.hasClass("health-accordion--open")) {
         if (settings.beforeClose) {
           settings.beforeClose();
         }
@@ -37,11 +37,11 @@
       },
         settings.speed,
         function () {
-          $target.toggleClass("au-accordion--open").toggleClass("au-accordion--closed");
+          $target.toggleClass("health-accordion--open").toggleClass("health-accordion--closed");
 
-          if (settings.afterOpen && settings.this.hasClass("au-accordion--open")) {
+          if (settings.afterOpen && settings.this.hasClass("health-accordion--open")) {
             settings.afterOpen();
-          } else if (settings.afterClose && !settings.this.hasClass("au-accordion--open")) {
+          } else if (settings.afterClose && !settings.this.hasClass("health-accordion--open")) {
             settings.afterClose();
           }
         }
@@ -74,6 +74,6 @@
   };
 
   // Setup any accordions that have the health_accordion class.
-  $('.au-accordion:not(.au-accordion--skip-auto) .au-accordion__title').each(function() { $(this).healthAccordion(); });
+  $('.health-accordion:not(.health-accordion--skip-auto) .health-accordion__title').each(function() { $(this).healthAccordion(); });
 
 })(jQuery);
