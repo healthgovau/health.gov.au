@@ -243,6 +243,9 @@ p.summary, .field-name-field-summary {
 
 .field-name-publications-go-to-download {
   @include AU-space(padding-top, 1unit);
+  @include AU-media(sm){
+    display: none;
+  }
 }
 
 .field-name-field-resource-file-summary {

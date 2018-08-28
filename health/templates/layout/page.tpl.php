@@ -98,6 +98,8 @@ endif;
                 <p class="au-introduction au-introduction--dark"><?php print $summary; ?></p>
               <?php endif; ?>
 
+              <?php print $readspeaker; ?>
+
             </div>
 
             <?php if (count($page['title_supp']) > 0 || isset($header_image)): ?>
@@ -176,8 +178,6 @@ endif;
               <?php print $messages; ?>
             </div>
             <?php endif; ?>
-
-          <?php print $readspeaker; ?>
 
           <?php print render($page['content']); ?>
           <?php print $feed_icons; ?>
