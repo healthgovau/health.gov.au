@@ -29,7 +29,7 @@ endif;
       </div>
     </div>
   </div>
-  <header class="au-header au-header--light au-main-nav__above-overlay" role="banner">
+  <header class="au-header au-header--light au-main-nav__above-overlay clearfix" role="banner">
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
@@ -71,44 +71,43 @@ endif;
   <?php print render($page['highlighted']); ?>
 
   <div class="page-content" id="page-content">
-    <?php if(!drupal_is_front_page()): ?>
-      <div class="page-title header header--light">
-          <div class="container">
-              <div class="row">
-                  <div class="page-title__core col <?php print isset($section_title) ? ' section-title' : '';
-                  print count($page['title_supp']) > 0 || isset($header_image) ? ' col-sm-8': ' col-xs-12'; ?>">
-                    <?php print $breadcrumb; ?>
+    <?php if (!drupal_is_front_page()): ?>
+      <div class="au-sub-header au-sub-header--light">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8">
 
-                    <?php print render($page['title_core']); ?>
+              <?php print $breadcrumb; ?>
 
-                    <?php if (isset($section_title)): ?>
-                        <div class="section-header rs_skip <?php print count($page['title_supp']) > 0 ? '' : 'full'; ?>">
-                          <?php print $section_title; ?>
-                        </div>
-                    <?php endif; ?>
+              <?php print render($page['title_core']); ?>
 
-                    <?php if ($title): ?>
-                      <?php print render($title_prefix); ?>
-                        <h1 class="au-header-heading">
-                          <?php print $title; ?>
-                        </h1>
-                      <?php print render($title_suffix); ?>
-                    <?php endif; ?>
+              <?php if (isset($section_title)): ?>
+                <div
+                  class="au-sub-header__section-title clearfix rs_skip">
+                  <?php print $section_title; ?>
+                </div>
+              <?php endif; ?>
 
-                    <?php if (isset($summary) && $summary): ?>
-                        <p class="summary"><?php print $summary; ?></p>
-                    <?php endif; ?>
+              <?php if ($title): ?>
+                <?php print render($title_prefix); ?>
+                <h1><?php print $title; ?></h1>
+                <?php print render($title_suffix); ?>
+              <?php endif; ?>
 
-                  </div>
+              <?php if (isset($summary) && $summary): ?>
+                <p class="au-introduction au-introduction--dark"><?php print $summary; ?></p>
+              <?php endif; ?>
 
-                <?php if (count($page['title_supp']) > 0 || isset($header_image)): ?>
-                    <div class="page-title__supp col col-sm-4 <?php print isset($section_title) ? 'section-title' : '' ?>">
-                      <?php print render($page['title_supp']); ?>
-                      <?php print isset($header_image) ? $header_image : ''; ?>
-                    </div>
-                <?php endif; ?>
+            </div>
+
+            <?php if (count($page['title_supp']) > 0 || isset($header_image)): ?>
+              <div class="au-sub-header__supp col-sm-4">
+                <?php print render($page['title_supp']); ?>
+                <?php print isset($header_image) ? $header_image : ''; ?>
               </div>
+            <?php endif; ?>
           </div>
+        </div>
       </div>
     <?php endif; ?>
 

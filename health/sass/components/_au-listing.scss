@@ -65,3 +65,19 @@
     @include health-fontgrid('md','default','heavy');
   }
 }
+
+// Lists and auto-generated content
+%list-item-title {
+  @include health-fontgrid('sm', 'heading');
+  @include AU-space('margin-bottom', .25unit);
+}
+
+%list-item-title--medium {
+  @include health-fontgrid('md', 'heading');
+  @include AU-space('margin-bottom', .5unit);
+}
+
+%list-item-title--large {
+  @include health-fontgrid('lg', 'heading');
+  @include AU-space('margin-bottom', .5unit);
+}

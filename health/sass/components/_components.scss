@@ -10,10 +10,13 @@
 //@import 'layout/layout';
 
 // Typography
+@import 'au-headings';
+
 @import 'typography/blockquote/module';
-@import 'typography/headings/module';
 @import 'typography/fields/module';
+
 @import 'au-body';
+
 
 // Block styles
 @import 'block-types/bean-image-text';
@@ -40,7 +43,7 @@
 @import 'taskbar';
 @import 'fieldset';
 @import 'au-header';
-@import 'title-section';
+@import 'au-sub-header';
 @import 'au-footer';
 @import 'readspeaker';
 @import 'socialmedia';

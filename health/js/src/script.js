@@ -42,7 +42,7 @@
       $('.selector-card', context).matchHeight();
 
       // Title section match height.
-      $('.page-title .col', context).matchHeight();
+      $('.au-sub-header > .container > .row > div', context).matchHeight();
 
       // Lifestage on topic page
       $('.page-node-1021 .field-name-field-related-term', context).matchHeight();

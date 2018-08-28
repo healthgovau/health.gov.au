@@ -1,30 +1,26 @@
 .au-body {
 
   // Minor text.
-  .text--minor, %minor-text {
+  .text--minor,
+  %minor-text {
     color: $colour-minorText;
     font-size: 0.8em;
   }
 
+  // Abbreviations.
   abbr {
     border-bottom: 1px dotted #CCC;
     text-decoration: none;
-  }
-
-  &--numbered-heading {
-    &__number, p#{&}__number {
-      float: left;
-      @include AU-space(margin-right, 1.25unit);
-    }
-    &__heading {
-      display: inline;
-    }
   }
 
   // Introduction text.
   .au-introduction {
     @include health-fontgrid( lg , default, light);
     color: $colour-minorText;
+
+    &--dark {
+      color: $AU-color-foreground-text;
+    }
   }
 
   // The standard margin top used for uikit.
@@ -37,4 +33,5 @@
   .contextual-links-wrapper + * {
     margin-top: 0;
   }
+
 }

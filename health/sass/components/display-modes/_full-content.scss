@@ -5,16 +5,4 @@
       @include AU-space('padding-top', 1unit);
     }
   }
-  .field-name-field-image-featured {
-    img {
-      max-width: 100%;
-      // @include AU-space(margin-top, 1unit);
-      // @include AU-space(margin-bottom, 3unit);
-      // Fix as it applies in every view mode!
-    }
-    a {
-      border: none;
-    }
-  }
-
 }
