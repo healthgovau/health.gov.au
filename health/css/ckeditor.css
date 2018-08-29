@@ -6223,8 +6223,7 @@ tr.drag-previous {
   line-height: 0; }
 
 .image--border {
-  border: 3px solid #ccc;
-  display: inline-block; }
+  border: 3px solid #ccc; }
   .image--border div {
     line-height: 0; }
 
@@ -6258,22 +6257,20 @@ tr.drag-previous {
       .image-wrapper .image img.loaded {
         visibility: visible; }
 
-.image--link {
-  display: inline-block; }
-  .image--link a {
-    border-bottom: 0;
-    line-height: 0; }
+.image--link a {
+  border-bottom: 0;
+  line-height: 0; }
+  @media (min-width: 768px) {
+    .image--link a {
+      background-color: black;
+      display: block; } }
+  .image--link a:focus {
+    border: 2px solid #006570; }
+  .image--link a img {
+    margin-top: 0; }
     @media (min-width: 768px) {
-      .image--link a {
-        background-color: black;
-        display: block; } }
-    .image--link a:focus {
-      border: 2px solid #006570; }
-    .image--link a img {
-      margin-top: 0; }
-      @media (min-width: 768px) {
-        .image--link a img:hover, .image--link a img:focus, .image--link a img:active {
-          opacity: 0.75; } }
+      .image--link a img:hover, .image--link a img:focus, .image--link a img:active {
+        opacity: 0.75; } }
 
 a .image-wrapper.image-loading {
   background-color: white; }

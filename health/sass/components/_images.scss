@@ -10,7 +10,7 @@
 // Add a border to the image.
 .image--border {
   border: $health-borderize;
-  display: inline-block;
+  //display: inline-block;
   div {
     line-height: 0;
   }
@@ -62,7 +62,7 @@
 
 // An image inside a link.
 .image--link {
-  display: inline-block;
+  //display: inline-block;
   a {
     border-bottom: 0;
     line-height: 0;
