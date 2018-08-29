@@ -80,3 +80,9 @@
     display: table;
   }
 }
+
+// Book title
+.au-sub-header__sub-title {
+  @include health-fontgrid('sm', 'heading');
+  @include AU-space(margin-top, 1.5unit);
+}
