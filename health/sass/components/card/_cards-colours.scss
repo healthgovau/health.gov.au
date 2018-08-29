@@ -77,10 +77,10 @@
 
     &:nth-of-type(5n+5) {
       .au-cta-link {
-        border-top-color: $colour-dark;
+        border-top-color: $colour-darker;
       }
       .au-card--solid {
-        background: $colour-dark;
+        background: $colour-darker;
         color: white;
         &:hover {
           background-color: $colour-dark-hover;
