@@ -71,14 +71,14 @@
       display: block;
     }
     &:focus {
-      border: 2px solid $colour-Secondary-hover;
+      border: 3px solid $colour-Secondary-hover;
     }
 
     img {
       margin-top: 0; // Override uikit * + img margin.
       @include AU-media(sm) {
         &:hover, &:focus, &:active {
-          opacity: 0.75;
+          opacity: 0.9;
         }
       }
 

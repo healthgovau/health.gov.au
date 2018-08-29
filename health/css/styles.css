@@ -6977,7 +6977,8 @@ p.summary, .field-name-field-summary {
       filter: alpha(opacity=100);
       cursor: pointer; }
   .au-video__preview__length {
-    padding: 0.25em 1em 0.25em 1em;
+    padding: 12px;
+    padding: 0.75rem;
     background-color: #000;
     color: #fff;
     opacity: 0.75;
@@ -6997,8 +6998,8 @@ p.summary, .field-name-field-summary {
       height: 1em;
       width: 1em; }
     .au-video__preview__length--small {
-      padding: 2px 2px 5px 2px;
-      padding: 0.15rem 0.15rem 0.3rem 0.15rem;
+      padding: 8px;
+      padding: 0.5rem;
       font-size: 0.85em;
       right: 3px;
       bottom: 3px; }
@@ -7610,12 +7611,12 @@ tr.drag-previous {
       background-color: black;
       display: block; } }
   .image--link a:focus {
-    border: 2px solid #006570; }
+    border: 3px solid #006570; }
   .image--link a img {
     margin-top: 0; }
     @media (min-width: 768px) {
       .image--link a img:hover, .image--link a img:focus, .image--link a img:active {
-        opacity: 0.75; } }
+        opacity: 0.9; } }
 
 a .image-wrapper.image-loading {
   background-color: white; }
@@ -9011,6 +9012,10 @@ ul.toc {
   .node-type-publication .group-centre,
   .node-type-publication .group-right {
     padding-top: 0; } }
+
+.node-publication.view-mode-inline_large img {
+  margin-bottom: 16px;
+  margin-bottom: 1rem; }
 
 .node-publication-collection {
   background: transparent; }

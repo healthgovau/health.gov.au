@@ -32,4 +32,11 @@
     @extend %dm-list-vertical-small;
   }
 
+  // Embedded inline with 'view text version' link
+  &.view-mode-inline_large {
+    img {
+      @include AU-space(margin-bottom, 1unit);
+    }
+  }
+
 }
