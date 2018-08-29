@@ -79,7 +79,7 @@
       $('.view-mode-hotline_bar .hotline', context).matchHeight();
 
       // Inline statistics
-      $('.paragraphs-item-reference-statistic .node-statistic').matchHeight();
+      $('.paragraphs-item-reference-statistic .stat__card').matchHeight();
     }
   };
 
