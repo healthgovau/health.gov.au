@@ -1310,14 +1310,11 @@ function health_preprocess_page(&$variables) {
     // Resources
     if ($active_trail[1]['href'] == 'resources') {
 
-      if (isset($variables['node'])) {
-        $variables['summary'] = NULL;
-      }
-
       // Books.
       if (isset($active_trail[2]['module']) && $active_trail[2]['module'] == 'book') {
         if (count($active_trail) > 3) {
           $variables['section_title'] = theme('health_section_link', ['title' => $active_trail[2]['title'], 'path' => $active_trail[2]['href'], 'subtitle' => $active_trail[2]['title']]);
+          $variables['summary'] = NULL;
         }
         else {
           $variables['section_title'] = theme('health_section_link', ['title' => 'Resources', 'path' => 'resources/']);
@@ -1326,9 +1323,13 @@ function health_preprocess_page(&$variables) {
       // Other resources.
       else if (count($active_trail) > 3) {
         $variables['section_title'] = theme('health_section_link', ['title' => 'Resources', 'path' => 'resources/']);
+        $variables['summary'] = NULL;
       }
       else {
         $variables['section_title'] = null;
+        if (isset($variables['node'])) {
+          $variables['summary'] = NULL;
+        }
       }
     }
 
