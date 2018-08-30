@@ -16,11 +16,11 @@
     display: block;
     text-decoration: none;
     color: $AU-color-foreground-text;
-    &:hover {
-      background: $AU-color-background-alt-suggestion;
+    &:hover,
+    &:focus {
+      background: $AU-color-background-shade;
     }
-    @include AU-space(padding-top, 1unit);
-    @include AU-space(padding-bottom, 1unit);
+    @include AU-space(padding, 1unit);
   }
 
   &--right {
