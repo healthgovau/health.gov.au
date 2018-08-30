@@ -44,20 +44,21 @@
  * @ingroup themeable
  */
 ?>
-<div class="<?php print $classes; ?> au-accordion"<?php print $attributes; ?> id="transcript-accordion-<?php print $element['#object']->nid; ?>">
-    <a href="<?php print '#accordion-' . $element['#object']->nid?>"
-       class="au-accordion__title au-accordion--closed"
-       aria-controls="<?php print 'accordion-' . $element['#object']->nid; ?>"
-       aria-expanded="false"
-       aria-selected="false"
-       role="tab">
-       Read transcript</a>
+<section class="au-accordion">
+  <a href="<?php print '#accordion-' . $element['#object']->nid?>"
+     class="au-accordion__title js-au-accordion au-accordion--closed"
+     aria-controls="<?php print '#accordion-' . $element['#object']->nid?>"
+     aria-expanded="true"
+     aria-selected="true"
+     role="tab" onclick="return AU.accordion.Toggle( this )">
+    Read transcript
+  </a>
 
-    <div class="au-accordion__body au-accordion--closed" id="<?php print 'accordion-' . $element['#object']->nid; ?>" aria-hidden="true">
-        <div class="au-accordion__body-wrapper">
-          <?php foreach ($items as $delta => $item): ?>
-              <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
-          <?php endforeach; ?>
-        </div>
+  <div class="au-accordion__body au-accordion--closed" id="<?php print '#accordion-' . $element['#object']->nid?>">
+    <div class="au-accordion__body-wrapper">
+      <?php foreach ($items as $delta => $item): ?>
+        <?php print render($item); ?>
+      <?php endforeach; ?>
     </div>
-</div>
+  </div>
+</section>
