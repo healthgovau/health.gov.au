@@ -5,22 +5,27 @@
 //-------------------------------------------------------------
 
 .book-navigation {
-  //max-width: $AU-maxwidth;
   border-top: 1px solid $AU-color-foreground-border;
-  @include AU-space('margin-top', 2unit);
-}
+  @include AU-space(padding-top, 1.5unit);
 
-.book-navigation__link-wrapper {
-  @include AU-space('padding', 1unit 0);
-}
+  .au-display-lg {
+    margin-top: 0;
+  }
 
-.book-navigation__link-title {
-  display: block;
-  @include AU-space('margin-top', .25unit);
-}
+  a {
+    display: block;
+    text-decoration: none;
+    color: $AU-color-foreground-text;
+    &:hover {
+      background: $AU-color-background-alt-suggestion;
+    }
+    @include AU-space(padding-top, 1unit);
+    @include AU-space(padding-bottom, 1unit);
+  }
 
-.book-navigation__link-wrapper--right {
-  text-align: right;
+  &--right {
+    text-align: right;
+  }
 }
 
 //--------------------------------------------------------------

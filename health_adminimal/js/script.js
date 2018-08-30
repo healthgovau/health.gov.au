@@ -306,22 +306,52 @@
   Drupal.behaviors.health_adminimal_dates = {
     attach: function (context) {
 
+      var enabled = false;
+
+      // Check to see if we are logged in as a site builder.
+      var approved_roles = ["administrator", "Site builder", "Site editor"];
+      var roles = Drupal.settings.health_adminimal.user.roles;
+      for (var i=0; i<roles.length; i++) {
+        for (var j=0; j<approved_roles.length; j++) {
+          if (roles[i] === approved_roles[j]) {
+            enabled = true;
+          }
+        }
+      }
+
       // Checkbox.
-      var $enabled = $('.field-name-field-enable-manual-date-editing input', context);
+      var $checkbox = $('.field-name-field-enable-manual-date-editing', context);
+
+      // If we are not an admin, hide the checkbox.
+      if (!enabled) {
+        $checkbox.hide();
+      }
+
       // Dates to enable/disable.
       var dates = ['.field-name-field-date-updated', '.field-name-field-date-published'];
 
       // Set the enabled/disabled state on load.
-      if ($enabled.is( ":checked" ) === false) {
+      if (!enabled || $checkbox.find('input').is( ":checked" ) === false) {
         for(var i=0; i<dates.length; i++) {
-          $(dates[i], context).hide();
+          $(dates[i] + ' .form-item', context).addClass('form-disabled');
+          $(dates[i] + ' input', context).attr('disabled', function(_, attr){ return !attr});
         }
       }
 
       // When the checkbox changes, toggle enabled/disabled.
-      $enabled.on('change', function() {
+      $checkbox.find('input').on('change', function() {
         for(var i=0; i<dates.length; i++) {
-          $(dates[i], context).toggle();
+          $(dates[i] + ' input', context).attr('disabled', function(_, attr){ return !attr});
+          $(dates[i] + ' .form-item', context).toggleClass('form-disabled');
+        }
+      });
+
+
+      // We get an error if the fields are disabled when submitting,
+      // so just before we submit, re-enable the fields.
+      $('#page-node-form').submit(function() {
+        for(var i=0; i<dates.length; i++) {
+          $(dates[i] + ' input', context).removeAttr('disabled');
         }
       });
 

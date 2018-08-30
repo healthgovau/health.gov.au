@@ -80,6 +80,9 @@
 
       // Inline statistics
       $('.paragraphs-item-reference-statistic .stat__card').matchHeight();
+
+      // Home page - Resources
+      $('.paragraphs-view-latest_rsources .views-row').matchHeight();
     }
   };
 

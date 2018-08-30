@@ -157,6 +157,15 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
   if (isset($form['field_content_owner'])) {
     $form['field_content_owner']['und']['#options'] = _health_adminimal_optgroup('content_owner');
   }
+
+  // Add the current user role into Drupal.settings.
+  global $user;
+  drupal_add_js(array(
+    'health_adminimal' => array(
+      'user' => ['roles' => $user->roles],
+    ),
+  ), 'setting');
+
 }
 
 /**
