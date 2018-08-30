@@ -22,6 +22,10 @@
   // Override cta-link margin if on card
   &.au-cta-link {
     @include AU-space( margin-top, 1.5unit );
+
+    .au-card__text {
+      @include AU-space( margin-bottom, 1unit );
+    }
   }
 
   // Typographic spacing
@@ -49,7 +53,6 @@
   }
 
   .au-card__text {
-    @include AU-space( margin-bottom, 1unit );
     @include AU-fontgrid( sm );
   }
 
