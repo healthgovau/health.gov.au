@@ -1,13 +1,42 @@
 .au-body {
 
   // Minor text.
-  .text--minor, %minor-text {
+  .text--minor,
+  %minor-text {
     color: $colour-minorText;
+    font-size: 0.8em;
   }
 
+  // Abbreviations.
   abbr {
     border-bottom: 1px dotted #CCC;
     text-decoration: none;
+  }
+
+  // Create class for screen reader only.
+  .au-sronly {
+    @include AU-sronly();
+  }
+
+  // Introduction text.
+  .au-introduction {
+    @include health-fontgrid( lg , default, light);
+    color: $colour-minorText;
+
+    &--dark {
+      color: $AU-color-foreground-text;
+    }
+  }
+
+  // The standard margin top used for uikit.
+  %standard-gap,
+  .standard-gap {
+    @include AU-space(margin-top, 1.5unit);
+  }
+
+  // Prevent the contextual links wrapper from creating a margin above the following element.
+  .contextual-links-wrapper + * {
+    margin-top: 0;
   }
 
 }

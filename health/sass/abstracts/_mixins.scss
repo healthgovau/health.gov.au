@@ -138,10 +138,6 @@
       }
     }
 
-    .field-name-field-bean-text {
-      //color: $colour-Secondary;
-    }
-
     &:hover,
     &:focus {
       background: $bg-hover-colour;
@@ -163,7 +159,6 @@
     &[rel~='external'] {
       .field-name-field-link-internal {
         .field-item:after {
-          @extend %ext-link;
           // Move into corner as breaks mobile layout
           position: absolute;
           @include AU-space('top', .75unit);

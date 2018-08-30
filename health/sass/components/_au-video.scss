@@ -13,6 +13,7 @@
 
   &__preview {
     position: relative;
+    line-height: 0;
 
     &__link {
       display: inline-block;
@@ -41,7 +42,7 @@
     }
 
     &__length {
-      padding: 0.25em 1em 0.25em 1em;
+      @include AU-space('padding', .75unit);
       background-color: #000;
       color: #fff;
       @include opacity(0.75);
@@ -62,7 +63,7 @@
       }
 
       &--small {
-        @include AU-space('padding', .15unit);
+        @include AU-space('padding', .5unit);
         font-size: 0.85em;
         right: 3px;
         bottom: 3px;

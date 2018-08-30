@@ -59,15 +59,16 @@ function health_preprocess_block(&$variables, $hook) {
       }
       break;
     case 'menu':
+    case 'book':
     case 'menu_block':
     case 'blog':
-    case 'book':
     case 'comment':
     case 'forum':
     case 'shortcut':
       $variables['attributes_array']['role'] = 'navigation';
       break;
     case 'search':
+    case 'search_api_page':
       $variables['attributes_array']['role'] = 'search';
       break;
     case 'help':
@@ -111,6 +112,15 @@ function health_preprocess_block(&$variables, $hook) {
       $variables['classes_array'] = _health_grid_class(count($plugin->block_list('content_top')), $variables['classes_array'], 'col-xs-4');
     }
   }
+
+  // Search forms.
+  if ($variables['block']->module == 'search_api_page') {
+    if ($variables['block']->context == 'global__mobile') {
+      $variables['classes_array'][] = 'au-search--global-mobile';
+    } else {
+      $variables['classes_array'][] = 'au-search--global-desktop';
+    }
+  }
 }
 
 /**
@@ -142,9 +152,10 @@ function health_preprocess_entity(&$variables) {
 
     // Add the number of child paragraph items in the listing as a css class.
     // This assumes there is only one child paragraph listing in a paragraph.
-    foreach($variables['content'] as $field => $data) {
+    foreach ($variables['content'] as $field => $data) {
       if ($data['#field_type'] == 'paragraphs' || $data['#field_type'] == 'entityreference') {
         $variables['classes_array'][] = 'listing__count--' . count($data['#items']);
+
       }
     }
 
@@ -164,16 +175,10 @@ function health_preprocess_entity(&$variables) {
 
     // Links.
     if ($para_item->bundle == 'para_links') {
-      // Hide title if hide title field is checked.
-      $checked = $para_item->field_hide_title;
-      if (isset($checked[LANGUAGE_NONE]) && $checked[LANGUAGE_NONE][0]['value'] == 1) {
-        // Hide the para title.
-        $variables['classes_array'][] = 'hide-title';
-      }
       // Pass band style to link paragraph.
       $band_style = $para_item->field_band_style[LANGUAGE_NONE][0]['value'];
       foreach ($variables['content']['field_link_paragraph'] as $key => $link_entity) {
-        if (is_integer($key)) {
+        if (is_int($key)) {
           $link_entity_id = $para_item->field_link_paragraph[LANGUAGE_NONE][$key]['value'];
           $variables['content']['field_link_paragraph'][$key]['entity']['paragraphs_item'][$link_entity_id]['#entity']->card_style = $band_style;
         }
@@ -185,7 +190,7 @@ function health_preprocess_entity(&$variables) {
       $variables['card_style'] = $para_item->card_style;
     }
 
-    // Contact
+    // Contact.
     if ($para_item->bundle == 'para_contact') {
       // Add more link to referenced node.
       $nid = $para_item->field_related_contact[LANGUAGE_NONE][0]['target_id'];
@@ -202,23 +207,26 @@ function health_preprocess_entity(&$variables) {
         $grid = $para_item->field_grid[LANGUAGE_NONE][0]['value'];
         $nid = $para_item->field_feature_content[LANGUAGE_NONE][0]['target_id'];
         // Pass grid to node.
-        $grid_map =[
-          'col-sm-6' => 'col-xs-12 col-sm-6',
-          'col-sm-5' => 'col-xs-12 col-sm-7',
-          'col-sm-4' => 'col-xs-12 col-sm-8',
+        $grid_map = [
+          'col-sm-6' => 'col-sm-6',
+          'col-sm-5' => 'col-sm-7',
+          'col-sm-4' => 'col-sm-8',
         ];
         $variables['content']['field_feature_content'][0]['node'][$nid]['#node']->left_grid = 'col-xs-12 ' . $grid;
         $variables['content']['field_feature_content'][0]['node'][$nid]['#node']->right_grid = $grid_map[$grid];
       }
     }
 
-    // Statistic.
-    if ($para_item->bundle == 'para_statistics') {// Add no-trend variant if trend info hasn't been added.
-      // Find out number of statistics node.
+    // Statistics - Band.
+    if ($para_item->bundle == 'para_statistics') {
+      // Apply col classes to children.
       $variables = _health_total_children($variables, 'field_statistics');
-      if (empty($variables['elements']['#entity']->field_statistic_trend) && empty($variables['elements']['#entity']->field_statistic_trend_timeframe)) {
-        $variables['classes_array'][] = 'no-trend';
-      }
+    }
+
+    // Statistics - Inline reference.
+    if ($para_item->bundle == 'reference_statistic') {
+      // Apply col classes to children.
+      $variables = _health_total_children($variables, 'field_reference_statistic');
     }
 
     // Taxonomy term.
@@ -373,7 +381,7 @@ function health_preprocess_entity(&$variables) {
     if ($para_item->bundle == 'recommendation') {
       // Add a class to identify what grade it is.
       $term = taxonomy_term_load($para_item->field_recommendation_grade[LANGUAGE_NONE][0]['tid']);
-      $variables['classes_array'][] = 'recommendation--grade-' . _health_prepare_filename($term->name);
+      $variables['classes_array'][] = 'au-recommendation--grade-' . _health_prepare_filename($term->name);
     }
 
     // Summary lists
@@ -418,9 +426,16 @@ function health_preprocess_entity(&$variables) {
       $variables['content']['field_summary_list_type'][0]['#markup'] = $output;
     }
 
+
+    // Tables.
     if ($para_item->bundle == 'content_table') {
       // Add a class to identify what grade it is.
       $variables['content']['field_title']['#prefix'] = '<a name="' . _health_prepare_filename($variables['content']['field_title'][0]['#markup']) . '"></a>';
+    }
+
+    // Call out.
+    if ($para_item->bundle == 'content_callout') {
+      $variables['classes_array'][] = 'au-callout';
     }
   }
 
@@ -778,7 +793,7 @@ function health_preprocess_field(&$variables) {
         $variables['items'][0]['#markup'] = theme('item_list',[
           'items' => $footnotes_list,
           'type' => 'ul',
-          'attributes' => ['class' => ['au-footnotes', 'list--text', 'au-link-list']]
+          'attributes' => ['class' => ['au-footnotes', 'list--remove']]
         ]);
       }
     }
@@ -807,6 +822,7 @@ function health_preprocess_field(&$variables) {
       $variables['items'][0]['#markup'] = theme('item_list',[
         'items' => $references,
         'type' => 'ul',
+        'attributes' => ['class' => 'list--remove']
       ]);
     }
     $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.footnotes.min.js';
@@ -994,10 +1010,17 @@ function health_preprocess_node(&$variables) {
     }
   }
 
-  // Add grid class to statistics card.
+  // Statistic.
   if ($node->type == 'statistic') {
+
+    // Add grid class to statistics card.
     if (isset($variables['content']['num'])) {
       $variables['classes_array'] = _health_grid_class($variables['content']['num'], $variables['classes_array']);
+    }
+
+    // Add no-trend variant if trend info hasn't been added.
+    if (empty($node->field_statistic_trend_text)) {
+      $variables['classes_array'][] = 'stat--no-trend';
     }
   }
 
@@ -1033,7 +1056,7 @@ function health_preprocess_node(&$variables) {
     }
   }
 
-  // Books
+  // Books.
   $book_types = ['book_page'];
   if (in_array($node->type, $book_types)) {
 
@@ -1077,15 +1100,7 @@ function health_preprocess_node(&$variables) {
     drupal_add_js('https://unpkg.com/tippy.js@2.5.2/dist/tippy.all.min.js', 'external');
   }
 
-  // Statistic.
-  if ($node->type == 'statistic') {
-    // Add no-trend variant if trend info hasn't been added.
-    if (empty($node->field_statistic_trend_text)) {
-      $variables['classes_array'][] = 'stat--no-trend';
-    }
-  }
-
-  // Survey
+  // Survey.
   if ($node->type == 'survey') {
     if ($node->field_status[LANGUAGE_NONE][0]['value'] == 'Upcoming' || $node->field_status[LANGUAGE_NONE][0]['value'] == 'Closed') {
       $variables['content']['field_link_external']['#access'] = FALSE;
@@ -1140,6 +1155,10 @@ function health_preprocess_page(&$variables) {
     'data' => path_to_theme() . '/js/dist/health.anchors.min.js',
     'type' => 'file',
   ];
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/dist/health.nojs.min.js',
+    'type' => 'file',
+  ];
 
   // Add backtotop JS.
   $render_backtotop = [
@@ -1151,29 +1170,23 @@ function health_preprocess_page(&$variables) {
   ];
   $variables['backtotop'] = drupal_render($render_backtotop);
   
-  // Add readspeaker JS to all pages except listing, homepage, topic and hp topic.
+  // Add readspeaker JS to all pages except content types listed in 'exclude'.
   $variables['readspeaker'] = '';
-  $exclude = [
-    'health_topic',
-    'health_topic_hp',
-    'listing',
-    'landing_page',
-    'program'
+  $exclude = [];
+  
+  $render_readspeaker = [
+    '#theme' => 'readspeaker',
   ];
-  if (isset($variables['node']) && !in_array($variables['node']->type, $exclude)) {
-    $render_readspeaker = [
-      '#theme' => 'readspeaker',
-    ];
-    $render_readspeaker['#attached']['js'][] = [
-      'data' => READSPEAKER_URL,
-      'type' => 'external',
-    ];
-    $render_readspeaker['#attached']['js'][] = [
-      'data' => path_to_theme() . '/js/libraries/readspeaker/ReadSpeakerColorSkin.js',
-      'type' => 'file',
-    ];
-    $variables['readspeaker'] = drupal_render($render_readspeaker);
-  }
+  $render_readspeaker['#attached']['js'][] = [
+    'data' => READSPEAKER_URL,
+    'type' => 'external',
+  ];
+  $render_readspeaker['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/libraries/readspeaker/ReadSpeakerColorSkin.js',
+    'type' => 'file',
+  ];
+  $variables['readspeaker'] = drupal_render($render_readspeaker);
+  
 
   // Add full width indicator.
   if (isset($variables['node'])) {
@@ -1207,7 +1220,7 @@ function health_preprocess_page(&$variables) {
     'type' => 'setting',
   ];
 
-  // Add our css for each media breakpoints
+  // Add our css.
   $variables['page']['content']['#attached']['css'][] = [
     'data' => drupal_get_path('theme', 'health') . '/css/styles.css',
     'media' => 'all',
@@ -1218,61 +1231,6 @@ function health_preprocess_page(&$variables) {
   ];
 
   $variables['page']['content']['#attached']['css'][] = [
-    'data' => drupal_get_path('theme', 'health') . '/css/min-width-576px.css',
-    'media' => 'screen and (min-width: 576px)',
-    'type' => 'file',
-    'group' => CSS_THEME,
-    'every_page' => TRUE,
-    'weight' => 50,
-    'browsers' => array('IE' => 'gt IE 8'),
-  ];
-  $variables['page']['content']['#attached']['css'][] = [
-    'data' => drupal_get_path('theme', 'health') . '/css/min-width-768px.css',
-    'media' => 'screen and (min-width: 768px)',
-    'type' => 'file',
-    'group' => CSS_THEME,
-    'every_page' => TRUE,
-    'weight' => 60,
-    'browsers' => array('IE' => 'gt IE 8'),
-  ];
-  $variables['page']['content']['#attached']['css'][] = [
-    'data' => drupal_get_path('theme', 'health') . '/css/min-width-768px-and-min-width-992px.css',
-    'media' => 'screen and (min-width: 768px) and (min-width:992px)',
-    'type' => 'file',
-    'group' => CSS_THEME,
-    'every_page' => TRUE,
-    'weight' => 70,
-    'browsers' => array('IE' => 'gt IE 8'),
-  ];
-  $variables['page']['content']['#attached']['css'][] = [
-    'data' => drupal_get_path('theme', 'health') . '/css/min-width-992px.css',
-    'media' => 'screen and (min-width: 922px)',
-    'type' => 'file',
-    'group' => CSS_THEME,
-    'every_page' => TRUE,
-    'weight' => 80,
-    'browsers' => array('IE' => 'gt IE 8'),
-  ];
-  $variables['page']['content']['#attached']['css'][] = [
-    'data' => drupal_get_path('theme', 'health') . '/css/min-width-768px-and-min-width-1200px.css',
-    'media' => 'screen and (min-width: 768px) and (min-width:1200px)',
-    'type' => 'file',
-    'group' => CSS_THEME,
-    'every_page' => TRUE,
-    'weight' => 90,
-    'browsers' => array('IE' => 'gt IE 8'),
-  ];
-  $variables['page']['content']['#attached']['css'][] = [
-    'data' => drupal_get_path('theme', 'health') . '/css/min-width-1200px.css',
-    'media' => 'screen and (min-width: 1200px)',
-    'type' => 'file',
-    'group' => CSS_THEME,
-    'every_page' => TRUE,
-    'weight' => 100,
-    'browsers' => array('IE' => 'gt IE 8'),
-  ];
-
-  $variables['page']['content']['#attached']['css'][] = [
     'data' => drupal_get_path('theme', 'health') . '/css/ie8.css',
     'type' => 'file',
     'browsers' => array('IE' => 'IE 8', '!IE' => FALSE),
@@ -1280,25 +1238,41 @@ function health_preprocess_page(&$variables) {
     'weight' => 999 // Load first.
   ];
 
-  // Always add summary. If it is not needed, it will be removed.
+  // Node.
   if (isset($variables['node'])) {
-    $summary = field_get_items('node', $variables['node'], 'field_summary');
+
+    // Get the node.
+    $node = $variables['node'];
+
+    // If we are viewing the draft, load that version instead.
+    if (arg(2) == 'draft') {
+      $node = node_load($variables['node']->nid, $variables['node']->workbench_moderation['current']->vid);
+    }
+
+    // Save summary into template variables for use in page.tpl.
+    $summary = field_get_items('node', $node, 'field_summary');
     if ($summary && isset($summary[0]['value'])) {
       $variables['summary'] = $summary[0]['value'];
     }
-  } else {
-    // Check if this is a views page.
-    if ($view = views_get_page_view()) {
-      $variables['summary'] = $view->display_handler->get_option('display_description');
+
+    // Add page number to title for book pages.
+    if (property_exists($node, 'field_page_number') && key_exists(LANGUAGE_NONE, $node->field_page_number)) {
+      $variables['title'] = $node->field_page_number[LANGUAGE_NONE][0]['value'] . ' ' . $node->title;
     }
+
   }
 
-  // Pages under a topic or grand-parents pages should use the parents' title
-  // in the title section and no summary.
+  // Views.
+  if ($view = views_get_page_view()) {
+    $variables['summary'] = $view->display_handler->get_option('display_description');
+  }
+
+  // Set section title and summary visibility.
+  $variables['section_title'] = null;
   $active_trail = menu_get_active_trail();
   if (!empty($active_trail)) {
 
-    // Topics
+    // Topics.
     if ($active_trail[1]['href'] == 'health-topics') {
       if (isset($variables['node'])) {
         if (count($active_trail) > 3) {
@@ -1325,7 +1299,7 @@ function health_preprocess_page(&$variables) {
       }
     }
 
-    // Conditions and diseases
+    // Conditions and diseases.
     // Title doesn't appear in the active trail, so set one manually.
     if ($active_trail[1]['href'] == 'conditions-and-diseases') {
       if (count($active_trail) > 2) {
@@ -1335,19 +1309,27 @@ function health_preprocess_page(&$variables) {
 
     // Resources
     if ($active_trail[1]['href'] == 'resources') {
-      if (isset($variables['node'])) {
-        $variables['summary'] = NULL;
-      }
-      if (count($active_trail) > 3) {
-        // See if this is a long document.
-        if (isset($active_trail[2]['module']) && $active_trail[2]['module'] == 'book') {
-          $variables['section_title'] = theme('health_section_link', ['title' => $active_trail[2]['title'], 'path' => $active_trail[2]['href']]);
-        } else {
-          // If not, go to resources listing.
+
+      // Books.
+      if (isset($active_trail[2]['module']) && $active_trail[2]['module'] == 'book') {
+        if (count($active_trail) > 3) {
+          $variables['section_title'] = theme('health_section_link', ['title' => $active_trail[2]['title'], 'path' => $active_trail[2]['href'], 'subtitle' => $active_trail[2]['title']]);
+          $variables['summary'] = NULL;
+        }
+        else {
           $variables['section_title'] = theme('health_section_link', ['title' => 'Resources', 'path' => 'resources/']);
         }
-      } else {
-        $variables['section_title'] = NULL;
+      }
+      // Other resources.
+      else if (count($active_trail) > 3) {
+        $variables['section_title'] = theme('health_section_link', ['title' => 'Resources', 'path' => 'resources/']);
+        //$variables['summary'] = NULL;
+      }
+      else {
+        $variables['section_title'] = null;
+        if (isset($variables['node'])) {
+          $variables['summary'] = NULL;
+        }
       }
     }
 
@@ -1430,7 +1412,7 @@ function health_preprocess_page(&$variables) {
 
   // Books.
   if (isset($variables['node'])) {
-    if ($variables['node']->type == 'book_page') {
+    if ($variables['node']->type == 'book_page' && property_exists($variables['node'], 'book')) {
       $book = node_load($variables['node']->book['bid']);
       $variables['title_alt'] = l($book->title, 'node/' . $book->nid);
     }

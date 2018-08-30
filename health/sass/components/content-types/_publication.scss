@@ -1,19 +1,35 @@
 // Default/full content
 .node-type-publication {
-    @extend %dm-full-content;
-	@extend %page-help-only;
+  @extend %dm-full-content;
+  @extend %page-help-only;
 }
 
 // Display modes
 .node-publication {
 
-    // Feature
+  // Feature
 	&.view-mode-feature {
 		@extend %dm-feature-2-col;
     }
 
   &.view-mode-listing_vertical_small {
     @extend %dm-list-vertical-small;
+  }
+
+  // Embedded inline with 'view text version' link
+  &.view-mode-inline_large {
+    img {
+      @include AU-space(margin-bottom, 1unit);
+      display: block;
+    }
+  }
+
+  &.view-mode-full {
+    .group-left {
+      img {
+        border: $health-borderize;
+      }
+    }
   }
 
 }

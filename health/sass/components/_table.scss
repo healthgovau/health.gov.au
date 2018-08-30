@@ -15,7 +15,12 @@ table {
   @include AU-space('margin-bottom', 1unit);
   @include AU-space('margin-top', 1unit);
   border-collapse: collapse;
-  border: $health-borderize--thin;
+  border: $health-borderize--very-thin;
+
+  caption {
+    @include AU-space(margin-bottom, 1unit);
+    text-align: left;
+  }
 
   tr:nth-child(even) {
     background-color: $AU-color-background;
@@ -30,19 +35,22 @@ table {
   td,
   th {
     @include AU-media('md') {
-      @include AU-space('padding', .4unit);
+      @include AU-space('padding', .5unit);
       font-size: initial;
     }
 
-    border-bottom: $health-borderize--thin;
+    border-bottom: $health-borderize--very-thin;
     @include AU-space('padding', .25unit);
     text-align: left;
     vertical-align: top;
+  }
 
+  th {
+    background-color: $colour-lightest;
   }
 
   thead {
-    border-bottom: 2px solid $AU-color-foreground-border;
+    border-bottom: $health-borderize--very-thin;
   }
 
   min-width: 43em;

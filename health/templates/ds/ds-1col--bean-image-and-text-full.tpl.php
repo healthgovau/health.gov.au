@@ -31,7 +31,7 @@
 
     <a class="au-card au-card--shadow au-cta-link" href="<?php print $wrapper_link_url; ?>">
         <?php if (isset($content['field_image'])): ?>
-          <div class="au-card__image au-card__fullwidth">
+          <div class="au-card__image">
             <?php print render($content['field_image']); ?>
           </div>
         <?php endif; ?>

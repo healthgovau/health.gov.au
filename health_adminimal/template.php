@@ -110,10 +110,7 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
 
   // Handle updates to dates for all nodes.
   if (key_exists('#node', $form)) {
-    if (!theme_get_setting('manually_edit_dates')) {
-      $form['field_date_published']['#disabled'] = 'disabled';
-      $form['field_date_updated']['#disabled'] = 'disabled';
-    }
+
     $form['#submit'][] = '_health_adminimal_date_updated_submitter';
     $form['#submit'][] = '_health_adminimal_date_published_submitter';
   }
@@ -160,6 +157,15 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
   if (isset($form['field_content_owner'])) {
     $form['field_content_owner']['und']['#options'] = _health_adminimal_optgroup('content_owner');
   }
+
+  // Add the current user role into Drupal.settings.
+  global $user;
+  drupal_add_js(array(
+    'health_adminimal' => array(
+      'user' => ['roles' => $user->roles],
+    ),
+  ), 'setting');
+
 }
 
 /**
@@ -488,30 +494,29 @@ function _health_adminimal_telephone_validator($element, &$form_state) {
  * @param $form_state
  */
 function _health_adminimal_date_published_submitter($form, &$form_state) {
-  // If date editing is enabled, don't automatically update.
-  if (theme_get_setting('manually_edit_dates')) {
-    return;
-  }
 
   // Standard node edit form.
   if (key_exists('nid', $form_state['values'])) {
 
-    // Check if date published is empty - this should only happen on nodes that existed before date published field was added.
-    if (empty($form_state['values']['field_date_published'][LANGUAGE_NONE][0])) {
-      // If it has already been published, fill in the date.
-      if ($first_published = _health_adminimal_find_first_publish_date($form_state['values']['nid'])) {
-        $date = format_date(strtotime($first_published), 'custom', 'Y-m-d H:i:s');
-        $form_state['values']['field_date_published'][LANGUAGE_NONE][0]['value'] = $date;
-      }
-    }
-
     // If this is being published from an unpublished state.
     if (key_exists('workbench_moderation_state_new', $form_state['values'])) { // If this is using workbench moderation
       if ($form_state['values']['workbench_moderation_state_new'] == 'published' && $form_state['values']['status'] == 0) {
-        // Check if this has already been published, if not, then set date published to today.
-        if (_health_adminimal_find_first_publish_date($form_state['values']['nid']) == FALSE) {
-          $date = format_date(time(), 'custom', 'Y-m-d') . ' 00:00:00';
-          $form_state['values']['field_date_published'][LANGUAGE_NONE][0]['value'] = $date;
+
+        // If manual date editing for this node is enabled, don't update.
+        if ($form_state['values']['field_enable_manual_date_editing'][LANGUAGE_NONE][0]['value'] == 0) {
+          // Check if this has already been published, if not, then set date published to today.
+          if (_health_adminimal_find_first_publish_date($form_state['values']['nid']) == FALSE) {
+            $date = format_date(time(), 'custom', 'Y-m-d') . ' 00:00:00';
+            $form_state['values']['field_date_published'][LANGUAGE_NONE][0]['value'] = $date;
+          }
+        }
+      }
+
+      // If we are publishing this node.
+      if ($form_state['values']['workbench_moderation_state_new'] == 'published') {
+        // Reset manual date editing.
+        if ($form_state['values']['field_enable_manual_date_editing'][LANGUAGE_NONE][0]['value'] == 1) {
+          $form_state['values']['field_enable_manual_date_editing'][LANGUAGE_NONE][0]['value'] = 0;
         }
       }
     }
@@ -522,14 +527,22 @@ function _health_adminimal_date_published_submitter($form, &$form_state) {
 
     // If this is the being published from an unpublished state.
     if ($form_state['values']['state'] == 'published' && $form_state['values']['node']->status == 0) {
-      $node = node_load($form_state['values']['node']->nid);
-      // Set the date published to when it was first published.
-      if ($first_published = _health_adminimal_find_first_publish_date($node->nid)) {
-        $date = format_date(strtotime($first_published), 'custom', 'Y-m-d H:i:s');
-        $node->field_date_published[LANGUAGE_NONE][0]['value'] = $date;
-        node_save($node);
+      $node = node_load($form_state['values']['node']->nid, $form_state['values']['node']->vid);
+      // If manual date editing is off.
+      if (empty($node->field_enable_manual_date_editing)) {
+        // Check if this has already been published, if not, then set date published to today.
+        if (_health_adminimal_find_first_publish_date($node->nid) == FALSE) {
+          $date = format_date(time(), 'custom', 'Y-m-d') . ' 00:00:00';
+          $node->field_date_published[LANGUAGE_NONE][0]['value'] = $date;
+          node_save($node);
+        }
       }
 
+      // Reset manual date editing.
+      $node = node_load($form_state['values']['node']->nid, $form_state['values']['node']->vid);
+      $node->field_enable_manual_date_editing = [];
+      $node->revision = true; // We have to do this to disable the checkbox, otherwise it just ignores it.
+      node_save($node);
     }
   }
 }
@@ -541,11 +554,9 @@ function _health_adminimal_date_published_submitter($form, &$form_state) {
  * @param $form_state
  */
 function _health_adminimal_date_updated_submitter($form, &$form_state) {
-  // If date editing is enabled, don't automatically update.
-  if (theme_get_setting('manually_edit_dates')) {
-    return;
+  if (!isset($form_state['values']['field_enable_manual_date_editing']) || $form_state['values']['field_enable_manual_date_editing'][LANGUAGE_NONE][0]['value'] == null) {
+    $form_state['values']['field_date_updated'][LANGUAGE_NONE][0]['value'] = format_date(time(), 'custom', 'Y-m-d H:i:s');
   }
-  $form_state['values']['field_date_updated'][LANGUAGE_NONE][0]['value'] = format_date(time(), 'custom', 'Y-m-d H:i:s');
 }
 
 /**

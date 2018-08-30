@@ -26,9 +26,9 @@
  * @see template_process()
  */
 ?>
-<dt class="col-sm-3" id="<?php print _health_prepare_filename($field_glossary_term[0]['value']); ?>">
+<dt id="<?php print _health_prepare_filename($field_glossary_term[0]['value']); ?>">
   <?php print $field_glossary_term[0]['value']; ?>
 </dt>
-<dd class="col-sm-9">
+<dd>
 <?php print $field_glossary_definition[0]['value']; ?>
 </dd>

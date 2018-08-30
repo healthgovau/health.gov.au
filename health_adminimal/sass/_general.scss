@@ -92,9 +92,24 @@ body.adminimal-skin-material {
   // Tables
   table {
     tbody {
-      // Fixing issues with styles being applied to links inside a table (paragraph)
+      // Fixing issues with styles being applied to links inside a table.
       td fieldset legend a {
-        padding: 0px !important;
+        padding: 0 !important;
+      }
+
+      td {
+        vertical-align: top;
+      }
+
+      // Separator between fields.
+      tr.draggable {
+        border-bottom: 1px solid #E0E0E0;
+      }
+    }
+
+    &.field-ui-overview {
+      td a {
+        padding: 0 !important;
       }
     }
 

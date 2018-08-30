@@ -19,17 +19,17 @@ $content_class = 'main-content';
 endif;
 ?>
 
-<div class="nav-overlay"></div>
+<div class="au-main-nav__overlay"></div>
 
 <div class="page au-body">
-  <div class="header-top">
+  <div class="header-top au-main-nav__above-overlay">
     <div class="container">
       <div class="row">
         <?php print render($page['header-top']); ?>
       </div>
     </div>
   </div>
-  <header class="au-header au-header--light" role="banner">
+  <header class="au-header au-header--light au-main-nav__above-overlay clearfix" role="banner">
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
@@ -37,9 +37,10 @@ endif;
             <a href="<?php print $front_page; ?>"
              title="<?php print t('Home'); ?>" rel="home"
              class="au-header__logo">
-              <img data-src="/<?php print path_to_theme(); ?>/images/DoHCrest.png"
+              <img src="/<?php print path_to_theme(); ?>/images/DoHCrest.png"
                 alt="<?php print t('Australia government Department of Health'); ?>"
-                class="au-header__logo-image au-responsive-media-img"/>
+                class="au-header__logo-image au-responsive-media-img"
+                width="858" height="208" />
             </a>
           <?php endif; ?>
           <?php if ($site_name || $site_slogan): ?>
@@ -70,48 +71,40 @@ endif;
   <?php print render($page['highlighted']); ?>
 
   <div class="page-content" id="page-content">
-    <?php if(!drupal_is_front_page()): ?>
-      <div class="page-title header header--light">
-          <div class="container">
-              <div class="row">
-                  <div class="page-title__core col <?php print isset($section_title) ? ' section-title' : '';
-                  print count($page['title_supp']) > 0 || isset($header_image) ? ' col-sm-8': ' col-xs-12'; ?>">
-                    <?php print $breadcrumb; ?>
+    <?php if (!drupal_is_front_page()): ?>
+      <div class="au-sub-header au-sub-header--light">
+        <div class="container">
+          <div class="row">
+            <div class="<?php print (count($page['title_supp']) > 0 || isset($header_image)) ? "col-sm-8" : "col-sm-9" ?>">
 
-                    <?php print render($page['title_core']); ?>
+              <?php print $breadcrumb; ?>
 
-                    <?php if (isset($section_title)): ?>
-                        <div class="section-header rs_skip <?php print count($page['title_supp']) > 0 ? '' : 'full'; ?>">
-                          <?php print $section_title; ?>
-                        </div>
-                    <?php endif; ?>
+              <?php print render($page['title_core']); ?>
 
-                    <?php if ($title && !isset($title_alt)): ?>
-                      <?php print render($title_prefix); ?>
-                        <h1 class="au-header-heading">
-                          <?php print $title; ?>
-                        </h1>
-                      <?php print render($title_suffix); ?>
-                    <?php endif; ?>
+              <?php print $section_title; ?>
 
-                    <?php if (isset($title_alt)): ?>
-                      <div class="title-alt"><?php print $title_alt; ?></div>
-                    <?php endif; ?>
+              <?php if ($title): ?>
+                <?php print render($title_prefix); ?>
+                <h1><?php print $title; ?></h1>
+                <?php print render($title_suffix); ?>
+              <?php endif; ?>
 
-                    <?php if (isset($summary) && $summary): ?>
-                        <p class="summary"><?php print $summary; ?></p>
-                    <?php endif; ?>
+              <?php if (isset($summary) && $summary): ?>
+                <p class="au-introduction au-introduction--dark"><?php print $summary; ?></p>
+              <?php endif; ?>
 
-                  </div>
+              <?php print $readspeaker; ?>
 
-                <?php if (count($page['title_supp']) > 0 || isset($header_image)): ?>
-                    <div class="page-title__supp col col-sm-4 <?php print isset($section_title) ? 'section-title' : '' ?>">
-                      <?php print render($page['title_supp']); ?>
-                      <?php print isset($header_image) ? $header_image : ''; ?>
-                    </div>
-                <?php endif; ?>
+            </div>
+
+            <?php if (count($page['title_supp']) > 0 || isset($header_image)): ?>
+              <div class="au-sub-header__supp col-sm-4">
+                <?php print render($page['title_supp']); ?>
+                <?php print isset($header_image) ? $header_image : ''; ?>
               </div>
+            <?php endif; ?>
           </div>
+        </div>
       </div>
     <?php endif; ?>
 
@@ -128,12 +121,10 @@ endif;
 
     if ($sidebar_first || $sidebar_second) {
       $main_col_classes = 'col-sm-8';
+    } else if (!$full_width) {
+      $main_col_classes = 'col-sm-12';
     } else {
-      if (!$full_width) {
-        $main_col_classes = 'col-sm-12';
-      } else {
-        $main_col_classes = '';
-      }
+      $main_col_classes = '';
     }
 
     ?>
@@ -182,8 +173,6 @@ endif;
               <?php print $messages; ?>
             </div>
             <?php endif; ?>
-
-          <?php print $readspeaker; ?>
 
           <?php print render($page['content']); ?>
           <?php print $feed_icons; ?>

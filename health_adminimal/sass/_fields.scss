@@ -12,7 +12,7 @@ body.adminimal-skin-material {
         &::placeholder {
           color: #cecece;
         }
-        margin: 0 0 20px 0;
+        margin-bottom: 8px;
         width: 100%;
       }
     }
@@ -39,5 +39,14 @@ body.adminimal-skin-material {
 
   .form-item div.description {
     white-space: normal;
+  }
+
+  // Character counter.
+  .character-limit {
+    &.over {
+      color: red;
+      font-weight: bold;
+    }
+    margin-bottom: 20px !important;
   }
 }

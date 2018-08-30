@@ -1,0 +1,20 @@
+.au-side-nav {
+  li, ul {
+    position: relative;
+  }
+  &--unpublished {
+    &:after {
+      content: 'Unpublished';
+      font-weight: normal;
+      font-size: 0.7em;
+      position: absolute;
+      top: -1px;
+      right: 0;
+      color: $AU-color-warning;
+      border: 1px solid $AU-color-warning;
+      padding: 0 2px;
+      background: white;
+    }
+  }
+}
+

@@ -1,13 +1,3 @@
-// Headings
-//
-// All HTML headings, `<h1>` through `<h6>`, are available. `%h1` through `%h6`
-// classes are also available, for when you want to match the font styling of a
-// heading but still want your text to be headinged inline.
-//
-// Markup: headings-h.twig
-//
-// Style guide: base.headings
-
 /**
  * Health-fontgrid Mixin for setting font-size and line-height that snaps to the grid, and also includes mobile :)
  *
@@ -61,20 +51,79 @@
   @return 'md';
 }
 
-// Lists and auto-generated content
-%list-item-title {
-  @include health-fontgrid('sm', 'heading');
-  @include AU-space('margin-bottom', .25unit);
+
+.au-body {
+
+  // Apply responsive to AU-fontgrid classes
+  h1,
+  .au-display-xxl {
+    @include health-fontgrid('xxl', 'heading');
+  }
+
+  h2,
+  .au-display-xl {
+    @include health-fontgrid('xl', 'heading');
+  }
+
+  h3,
+  .au-display-lg {
+    @include health-fontgrid('lg', 'heading');
+  }
+
+  h4,
+  .au-display-md {
+    @include health-fontgrid('md', 'heading');
+  }
+
+  h5,
+  .au-display-sm {
+    @include health-fontgrid('sm', 'heading');
+  }
+
+  h6,
+  .au-display-xs {
+    @include health-fontgrid('xs', 'heading');
+  }
+
+  // Light variation of headings.
+  .au-display--light {
+    font-weight: normal;
+  }
+
+  // Number next to a heading.
+  &--numbered-heading {
+    &__number, p#{&}__number {
+      float: left;
+      @include AU-space(margin-right, 1.25unit);
+    }
+    &__heading {
+      display: inline;
+    }
+  }
 }
 
-%list-item-title--medium {
-  @include health-fontgrid('md', 'heading');
-  @include AU-space('margin-bottom', .5unit);
-}
+// Anchor helpers.
+// When hover on a heading, show the ID of the heading.
+// Logged in users only, in content only.
+body.logged-in {
+  .region-content {
+    h2, h3, h4, h5, h6 {
+      position: relative;
+      .anchor-helper {
+        display: none;
+        font-size: 14px;
+        position: absolute;
+        top: -17px;
+        left: 0;
+        color: grey;
+        font-weight: normal;
+      }
 
-%list-item-title--large {
-  @include health-fontgrid('lg', 'heading');
-  @include AU-space('margin-bottom', .5unit);
+      &:hover {
+        .anchor-helper {
+          display: block;
+        }
+      }
+    }
+  }
 }
-
-@import "_extends.scss";

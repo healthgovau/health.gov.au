@@ -22,6 +22,10 @@
   // Override cta-link margin if on card
   &.au-cta-link {
     @include AU-space( margin-top, 1.5unit );
+
+    .au-card__text {
+      @include AU-space( margin-bottom, 1unit );
+    }
   }
 
   // Typographic spacing
@@ -49,14 +53,7 @@
   }
 
   .au-card__text {
-    @include AU-space( margin-bottom, 1unit );
     @include AU-fontgrid( sm );
-    // @include AU-media( sm ) {
-    //   @include AU-space( margin-bottom, 2unit );
-    // }
-    // @include AU-media( md ) {
-    //   @include AU-space( margin-bottom, 2.5unit );
-    // }
   }
 
   hr {
@@ -79,25 +76,8 @@
     overflow:hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     background: $AU-color-background;
-
     .lt-ie9 & {
       border: solid 1px $AU-colordark-foreground-border-suggestion;
-    }
-
-    .au-card__fullwidth,
-    .au-card__bg {
-      @include AU-space( margin-left, -1unit );
-      @include AU-space( margin-right, -1unit );
-      height: auto;
-
-      &:first-child {
-        @include AU-space( margin-top, -1unit );
-        min-height: 0%;
-      }
-
-      &:last-child {
-        @include AU-space( margin-bottom, -1unit );
-      }
     }
   }
 
@@ -110,6 +90,11 @@
     }
   }
 
+  .au-card__fullwidth {
+    @include AU-space( margin, -2unit -2unit 2unit -2unit );
+    height: auto;
+  }
+
   .au-card__bg {
     @include AU-space( padding, 1unit );
     background-color: $AU-colordark-background-shade-suggestion;
@@ -119,9 +104,6 @@
     }
   }
 
-  // &.au-card--solid {
-  //   @include AU-space( margin, 1unit 0);
-  // }
 }
 
 // When the box is a link
@@ -170,6 +152,8 @@ a.au-card {
     }
   }
 
+  /*
+  Flex is not supported on IE.
   &.au-card-list--matchheight {
     display: table;
     @supports( display: flex ) {
@@ -208,7 +192,7 @@ a.au-card {
     .au-card__stretch {
       flex: 1 0 auto;
     }
-  }
+  }*/
 }
 
 @mixin cardify($bg: $colour-card) {
@@ -245,3 +229,4 @@ a.au-card {
     }
   }
 }
+

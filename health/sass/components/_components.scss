@@ -10,10 +10,13 @@
 //@import 'layout/layout';
 
 // Typography
-@import 'au-body';
+@import 'au-headings';
+
 @import 'typography/blockquote/module';
-@import 'typography/headings/module';
 @import 'typography/fields/module';
+
+@import 'au-body';
+
 
 // Block styles
 @import 'block-types/bean-image-text';
@@ -21,7 +24,6 @@
 // Component types
 @import 'au-callout';
 @import 'au-grid';
-@import 'au-accordion';
 @import 'au-listing';
 @import 'au-field';
 @import 'au-cta-link';
@@ -40,7 +42,7 @@
 @import 'taskbar';
 @import 'fieldset';
 @import 'au-header';
-@import 'title-section';
+@import 'au-sub-header';
 @import 'au-footer';
 @import 'readspeaker';
 @import 'socialmedia';
@@ -48,18 +50,20 @@
 @import 'description-list';
 @import 'feedback';
 
+@import '_health-accordion.scss';
 
 // Books
 //
 // Components for long documents, HTML versions of publications and books.
 //
 // Style guide: Components.books
-@import 'recommendation';
 @import 'au-footnotes';
 @import 'au-references';
+@import 'au-figure';
+@import 'au-recommendation';
+
 @import 'tooltip';
 @import 'table-of-contents';
-@import 'figure';
 
 // Display modes
 @import 'display-modes/display-modes';
@@ -125,20 +129,16 @@
 @import 'au-tabs';
 @import 'au-file';
 @import 'au-pager';
+@import 'au-main-nav';
+@import 'au-side-nav';
+
 @import 'navigation/book/module';
 @import 'navigation/breadcrumb/module';
-@import 'navigation/dropdown/module';
-@import 'navigation/dropdown/extends';
-@import 'au-local-navigation';
 @import 'navigation/menu/extends';
-@import 'navigation/sitenav/module';
-@import 'navigation/sitenav/extends';
 @import 'navigation/tags/extends';
 @import 'navigation/filters/module';
 @import 'navigation/filters/extends';
-@import 'navigation/external/module';
 @import 'navigation/faceted-block/module';
-@import 'navigation/faceted-block/extends';
 @import 'navigation/selector/module';
 
 // Inline styles

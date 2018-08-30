@@ -53,10 +53,6 @@
         height: auto;
       }
     }
-    .au-card__fullwidth {
-      @include AU-space( margin, -2unit -2unit 2unit -2unit );
-      height: auto;
-    }
     .au-card__title {
       @include AU-fontgrid( md );
       font-weight: bold;

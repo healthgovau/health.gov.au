@@ -24,7 +24,6 @@
  * @see template_process()
  */
 ?>
-
-<dl class="row <?php print $classes; ?>"<?php print $attributes; ?>>
+<dl class="clearfix <?php print $classes; ?>"<?php print $attributes; ?>>
   <?php print $content; ?>
 </dl>

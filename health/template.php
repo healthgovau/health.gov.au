@@ -105,7 +105,8 @@ function health_theme() {
   $theme['health_section_link'] = [
     'variables' => [
       'title' => NULL,
-      'path' => NULL
+      'path' => NULL,
+      'subtitle' => NULL,
     ],
     'template' => 'section_link',
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
@@ -289,11 +290,11 @@ function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
     $form['search_api_views_fulltext']['#attributes']['placeholder'] = t('Enter your search term');
 
     // Add classes.
-    $form['search_api_views_fulltext']['#attributes']['class'][] = 'au-search__input au-text-input';
-    $form['search_api_views_fulltext']['#prefix'] = '<div class="au-search__input-wrapper">';
+    $form['search_api_views_fulltext']['#attributes']['class'][] = 'au-search__form__input au-text-input';
+    $form['search_api_views_fulltext']['#prefix'] = '<div class="au-search__form__input-wrapper">';
     $form['search_api_views_fulltext']['#suffix'] = '</div>';
-    $form['submit']['#attributes']['class'][] = 'au-search__submit au-btn';
-    $form['#attributes']['class'] = 'au-search col-md-9 col-xs-12';
+    $form['submit']['#attributes']['class'][] = 'au-search__form__submit au-btn';
+    $form['#attributes']['class'] = 'au-search au-search--listing au-search__form col-md-9 col-xs-12';
 
     // Append selected filters.
     $query_string = drupal_get_query_parameters();
@@ -386,6 +387,25 @@ function health_form_alter(&$form, &$form_state, $form_id) {
     drupal_page_is_cacheable(FALSE);
   }
 
+  // Workbench moderation form.
+  if ($form_id == 'workbench_moderation_moderate_form') {
+    $form['#submit'][] = '_health_date_submitter';
+  }
+
+}
+
+/**
+ * Submit handler for date updated and date published.
+ *
+ * Uses health_adminimal functions.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function _health_date_submitter($form, &$form_state) {
+  require(drupal_get_path('theme', 'health_adminimal') . '/template.php');
+  _health_adminimal_date_published_submitter($form, $form_state);
+  _health_adminimal_date_updated_submitter($form, $form_state);
 }
 
 /**
@@ -395,21 +415,20 @@ function health_form_search_api_page_search_form_alter(&$form, &$form_state) {
 
   if (key_exists('keys_1', $form)) {
     $form['keys_1']['#attributes']['placeholder'] = t('Enter your search terms');
-    $form['keys_1']['#attributes']['class'][] = 'au-search__input au-text-input';
-    $form['keys_1']['#prefix'] = '<div class="au-search__input-wrapper">';
+    $form['keys_1']['#attributes']['class'][] = 'au-search__form__input au-text-input';
+    $form['keys_1']['#prefix'] = '<div class="au-search__form__input-wrapper">';
     $form['keys_1']['#suffix'] = '</div>';
     $form['keys_1']['#attributes']['size'] = 30;
-    $form['submit_1']['#attributes']['class'][] = 'au-search__submit au-btn';
+    $form['submit_1']['#attributes']['class'][] = 'au-search__form__submit au-btn';
   } else if (key_exists('form', $form)) {
     $form['form']['keys_1']['#attributes']['placeholder'] = t('Enter your search terms');
-    $form['form']['keys_1']['#attributes']['class'][] = 'au-search__input au-text-input';
-    $form['form']['keys_1']['#prefix'] = '<div class="au-search__input-wrapper">';
+    $form['form']['keys_1']['#attributes']['class'][] = 'au-search__form__input au-text-input';
+    $form['form']['keys_1']['#prefix'] = '<div class="au-search__form__input-wrapper">';
     $form['form']['keys_1']['#suffix'] = '</div>';
-    $form['form']['submit_1']['#attributes']['class'][] = 'au-search__submit au-btn';
+    $form['form']['submit_1']['#attributes']['class'][] = 'au-search__form__submit au-btn';
   }
 
-  $form['#attributes']['class'] = 'au-search au-search--mobile-hide';
-
+  $form['#attributes']['class'] = 'au-search__form';
 }
 
 /**
@@ -878,6 +897,29 @@ function health_webform_element($variables) {
   return $output;
 }
 
+
+/**
+ * Implements theme_menu_tree().
+ *
+ * @param $variables
+ *
+ * @return string
+ */
+function health_menu_tree($variables) {
+  return '<ul class="au-link-list">' . $variables['tree'] . '</ul>';
+}
+
+/**
+ * Implements theme_menu_tree().
+ *
+ * @param $variables
+ *
+ * @return string
+ */
+function health_menu_tree__menu_sub_menu($variables) {
+  return '<ul class="au-link-list au-link-list--inline">' . $variables['tree'] . '</ul>';
+}
+
 /**
  * Implements theme_menu_link().
  * Add default audience filter to specific paths.
@@ -896,7 +938,7 @@ function health_menu_link(array $variables) {
   if (key_exists(2, $user->roles)) {
     if ($node = _health_load_node_from_node_path($variables['element']['#href'])) {
       if ($node->status == 0) {
-        $variables['element']['#localized_options']['attributes']['class'][] = 'menu--unpublished';
+        $variables['element']['#localized_options']['attributes']['class'][] = 'au-side-nav--unpublished';
       }
     }
   }
@@ -906,6 +948,12 @@ function health_menu_link(array $variables) {
     if (property_exists($node, 'field_page_number') && $node->field_page_number) {
       $variables['element']['#title'] = $node->field_page_number[LANGUAGE_NONE][0]['value'] . ' ' . $variables['element']['#title'];
     }
+  }
+
+  // Add active class to the active list item if it doesn't have it.
+  // This is needed for book navigation side nav to work with the @gov.au/side-nav module.
+  if ($variables['element']['#href'] == $_GET['q'] && !in_array('active', $variables['element']['#attributes']['class'])) {
+    $variables['element']['#attributes']['class'][] = 'active';
   }
 
   return theme_menu_link($variables);
@@ -1336,6 +1384,67 @@ function health_menu_local_tasks(&$variables) {
     $variables['secondary']['#prefix'] .= '<ul class="au-tabs au-link-list au-link-list--inline secondary">';
     $variables['secondary']['#suffix'] = '</ul>';
     $output .= drupal_render($variables['secondary']);
+  }
+  return $output;
+}
+
+function health_item_list($variables) {
+  $items = $variables['items'];
+  $title = $variables['title'];
+  $type = $variables['type'];
+  $attributes = $variables['attributes'];
+
+  // Only output the list container and title, if there are any list items.
+  // Check to see whether the block title exists before adding a header.
+  // Empty headers are not semantic and present accessibility challenges.
+  $output = '';
+  if (isset($title) && $title !== '') {
+    $output .= '<h3>' . $title . '</h3>';
+  }
+  if (!empty($items)) {
+    $output .= "<{$type}" . drupal_attributes($attributes) . '>';
+    $num_items = count($items);
+    $i = 0;
+    foreach ($items as $item) {
+      $attributes = array();
+      $children = array();
+      $data = '';
+      $i++;
+      if (is_array($item)) {
+        foreach ($item as $key => $value) {
+          if ($key == 'data') {
+            $data = $value;
+          }
+          elseif ($key == 'children') {
+            $children = $value;
+          }
+          else {
+            $attributes[$key] = $value;
+          }
+        }
+      }
+      else {
+        $data = $item;
+      }
+      if (count($children) > 0) {
+
+        // Render nested list.
+        $data .= theme_item_list(array(
+          'items' => $children,
+          'title' => NULL,
+          'type' => $type,
+          'attributes' => $attributes,
+        ));
+      }
+      if ($i == 1) {
+        $attributes['class'][] = 'first';
+      }
+      if ($i == $num_items) {
+        $attributes['class'][] = 'last';
+      }
+      $output .= '<li' . drupal_attributes($attributes) . '>' . $data . "</li>\n";
+    }
+    $output .= "</{$type}>";
   }
   return $output;
 }

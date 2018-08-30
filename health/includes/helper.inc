@@ -378,7 +378,7 @@ function _health_prepare_filename($name) {
 }
 
 /**
- * Helper function to add total number of node in the para to node render array.
+ * Add the total number of nodes in a paragraph to each node.
  *
  * @param $para
  *   Preprocess variable.
@@ -417,25 +417,25 @@ function _health_total_children($para, $node_field) {
 function _health_grid_class($total_number, $classes_array, $xs_grid = 'col-xs-12') {
   $classes_array[] = $xs_grid;
   switch ($total_number) {
-    case 1:
-      break;
     case 2:
-      $classes_array[] = 'col-md-6';
+      $classes_array[] = 'col-sm-6';
       break;
     case 3:
-      $classes_array[] = 'col-md-4';
+      $classes_array[] = 'col-sm-4';
       break;
     case 4:
-      $classes_array[] = 'col-md-6';
+      $classes_array[] = 'col-sm-6';
       break;
     case 5:
       $classes_array[] = 'col-md-5ths';
       break;
     case 6:
-      $classes_array[] = 'col-md-4';
+      $classes_array[] = 'col-sm-4';
       break;
-    default:
-      $classes_array[] = 'col-md-12';
+    case 7:
+    case 8:
+      $classes_array[] = 'col-sm-6';
+      break;
   }
 
   return $classes_array;

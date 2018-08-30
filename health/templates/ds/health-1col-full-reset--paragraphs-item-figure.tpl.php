@@ -26,17 +26,17 @@
  * @see template_process()
  */
 ?>
-<div class="figure">
-  <p class="figure__title <?php print $classes; ?>"<?php print $attributes; ?>>
+<div class="au-figure">
+  <p class="au-figure__title <?php print $classes; ?>"<?php print $attributes; ?>>
     <?php print render($content['field_title'][0]); ?>
   </p>
-  <div class="figure__wrapper">
+  <div class="au-figure__wrapper">
     <figure>
       <?php print render($content['field_figure']);?>
-      <figcaption>
+      <figcaption class="text--minor">
         <p><?php print render($content['field_image_long_description'][0]);?></p>
       </figcaption>
     </figure>
-    <div class="figure__notes"><?php print render($content['field_table_source'][0])?></div>
+    <div class="au-figure__notes text--minor"><?php print render($content['field_table_source'][0])?></div>
   </div>
 </div>

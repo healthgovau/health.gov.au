@@ -1,0 +1,88 @@
+// Sub header variation. This includes our title and HP switcher.
+.au-sub-header {
+  @include AU-space('padding', 12px 0);
+  @include AU-media(sm){
+    @include AU-space('padding', 1.5unit 0 2unit 0);
+  }
+
+  &--light {
+    @extend %colour-Light-background;
+  }
+
+  // Title.
+  h1 {
+    margin-top: 0;
+  }
+
+  .au-introduction {
+    @include AU-space(margin-top, 1unit);
+  }
+
+  &__section-title {
+    @include AU-space(margin-bottom, .65unit);
+    @include AU-media(sm) { // Hide on desktop
+      display: none;
+    }
+  }
+
+
+  &__supp {
+    display: none;
+    @include AU-media(sm) {
+      display: table;
+    }
+
+    @include AU-space('padding-top', 1.5unit);
+    @include AU-media(sm) {
+      padding-top: 0;
+    }
+
+    .region-title-supp {
+      @include AU-media(sm) {
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+
+    // Program logo - CHECK
+    .field-name-field-image-featured {
+      display: none; // Hide for mobile
+      @include AU-media(sm) {
+        display: block;
+        @include AU-space('padding', 2unit 0 0 0);
+        text-align: center;
+        img {
+          max-width: 75%;
+        }
+      }
+    }
+  }
+
+}
+
+// Health professional switcher.
+.region-title-supp {
+  .block-bean-call-to-action {
+    border-left: none;
+    padding-left: 0;
+    @include AU-media(sm) {
+      border-left: 4px solid #DDD;
+      @include AU-space(padding-left, 1.5unit);
+    }
+  }
+}
+
+// Topic page visibility
+// Show on topic home page for mobiles.
+.node-type-health-topic,
+.node-type-health-topic-hp {
+  .au-sub-header__supp {
+    display: table;
+  }
+}
+
+// Book title
+.au-sub-header__sub-title {
+  @include health-fontgrid('sm', 'heading');
+  @include AU-space(margin-top, 1.5unit);
+}

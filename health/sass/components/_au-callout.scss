@@ -1,26 +1,32 @@
 .au-body {
   .au-callout {
-    // Variation to use au-callout on the row level of the grid.
-    // eg container > row > au-callout--grid-row > col-sm-3 | col-sm-9
-    &--grid-row {
-      @include AU-space('margin-left', $AU-grid-12-gutter-width/2);
-      @include AU-space('margin-right', $AU-grid-12-gutter-width/2); // Review
+    // If the callout is on a row, reset the margin so the keyline lines up.
+    // eg .container > .row .au-callout > .col-sm-3 | .col-sm-9
+    &.row {
       margin-left: 0;
       margin-right: 0;
-      @include AU-space('padding-left', 24px - $AU-grid-12-gutter-width/2);
-      @include AU-space('padding-right', 24px - $AU-grid-12-gutter-width/2);
+      padding-left: 12px;
+      padding-right: 12px;
     }
+    // Colours.
     &--secondary {
       border-left-color: $colour-Secondary;
-      @include AU-space(margin-top, .5unit);
     }
     &--tertiary {
       border-left-color: $colour-Tertiary-2;
-    } // Used for inline styles
+    }
+    // Used for inline styles
     &.view-mode-inline {
-      border-left-color: $colour-Secondary;
-      @include AU-space(margin-top, 1unit);
       width: 100%;
+      
+      // On mobile, add a gap above the columns now that they are on top of each other.
+      // @todo Should this be applied to all columns when they stack?
+      div[class*=col-] + div[class*=col-] {
+        margin-top: 12px;
+        @include AU-media(sm) {
+          margin-top: 0;
+        }
+      }
     }
   }
 }
@@ -36,7 +42,7 @@
         }
       }
       // Looks like callout (via @extend)
-      .field-name-field-link-external .field-items {
+      .field-name-field-link-external {
         max-width: 66.6666666667%; // based on content pane at col-sm-8
       }
     }

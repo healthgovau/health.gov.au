@@ -1,11 +1,3 @@
-.paragraphs-item-para-links {
-  &.hide-title {
-    h2 {
-      display: none;
-    }
-  }
-}
-
 .paragraphs-item-para-contact {
   text-align: center;
   p {
@@ -87,7 +79,6 @@
   .field-name-field-image {
     line-height: 0;
   }
-  @include AU-space('margin-bottom', 1unit);
 }
 
 // Paragraph row.
@@ -99,18 +90,21 @@
   }
 }
 
-// Documents para.
+// Documents para - for review after v2.0.0 frontend changes
 .paragraphs-items-field-publication-files,
 .field-name-field-publication-nmm-id {
   > h2 {
     @include health-fontgrid( 'lg', 'default', 'heavy' );
     @include AU-space('margin-bottom', 1unit);
   }
-  .paragraphs-item-documents {
-    h3 {
-      @include health-fontgrid( 'md', 'default', 'light' );
-      @include AU-space('margin-bottom', .5unit);
-    }
+}
+
+// Document download
+.paragraphs-item-documents {
+  h3 {
+    @include health-fontgrid( 'lg', 'heading', 'light' );
+    @include AU-space('margin-top', 1.5unit);
+    @include AU-space('margin-bottom', .5unit);
   }
 }
 
@@ -177,5 +171,22 @@
 .paragraphs-item-two-columns {
   .group-header {
     @include AU-space(margin-bottom, 2unit);
+  }
+}
+
+// Top/left/right layout
+.paragraphs-item-multiple-columns {
+  border: $health-borderize--tertiary-very-thin;
+  @include AU-space(margin-top, 1unit);
+  .row {
+    div {
+      @include AU-space(padding, 1unit);
+      &:nth-child(1){
+        background: lighten($colour-Tertiary-2-light, 45%);
+        &.multiple-columns__title { // Only for top row
+          font-weight: bold;
+        }
+      }
+    }
   }
 }

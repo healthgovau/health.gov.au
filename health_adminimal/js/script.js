@@ -54,6 +54,7 @@
       legendSummary('.paragraphs-item-type-para-content-text', 'Text', 'textarea');
       legendSummary('.paragraphs-item-type-para-content-image', 'Image', '.media-item');
       legendSummary('.paragraphs-item-type-para-content-external-link', 'External link', 'input');
+      legendSummary('.paragraphs-item-type-content-callout', 'Callout', 'textarea');
 
       // Bands.
       legendSummary('.paragraphs-item-type-para-view', 'Band - Listing', '.field-name-field-title input');
@@ -148,7 +149,7 @@
               }
               summary = createSummary(value, initialText);
             } else if (inputSelector.indexOf('textarea') !== -1) {
-              summary = createSummary($($(this).find(inputSelector).val()).find('h2,h3,h4,h5,h6,p').first().text(), initialText);
+              summary = createSummary($('<div>' + $(this).find(inputSelector).val() + '</div>').find('h2,h3,h4,h5,h6,p').first().text(), initialText);
             } else {
               summary = createSummary($(this).find(inputSelector).val(), initialText);
             }
@@ -164,7 +165,7 @@
               var id = $(this).attr('id');
               if (evt.editor.name == id) {
                 evt.editor.on('blur', function (evt2) {
-                  var summary = createSummary($(evt2.editor.getData()).find('h2,h3,h4,h5,h6,p').first().text(), initialText);
+                  var summary = createSummary($('<div>' + evt2.editor.getData() + '</div>').find('h2,h3,h4,h5,h6,p').first().text(), initialText);
                   $('#' + id).parents('fieldset').first().find('legend a').first().html(summary);
                 });
               }
@@ -243,7 +244,7 @@
       function lockTextFormat(format, fields) {
         for(var i=0;i<fields.length;i++) {
           $(fields[i]).val(format);
-          $(fields[i]).hide();
+          $(fields[i]).parent().hide();
         }
       }
 
@@ -277,11 +278,17 @@
         '.paragraphs-item-type-references .field-name-field-book-references .filter-list',
         '.paragraphs-item-type-footnotes .field-name-field-book-footnotes .filter-list'
       ]);
+
+      // Simple rich text
+      lockTextFormat('simple_rich_text', [
+        '.node-video-form .field-name-field-description .filter-list',
+        '.node-publication-form .field-name-field-description .filter-list'
+      ]);
     }
   };
 
   // Add required label to nmm ID field for orderable publication.
-  Drupal.behaviors.adminimal_orderable_publication = {
+  Drupal.behaviors.health_adminimal_orderable_publication = {
     attach: function (context, settings) {
       $('.field-name-field-publication-orderable input', context).on('click', function() {
         if ($(this).is(':checked')) {
@@ -295,5 +302,91 @@
       });
     }
   };
+
+  Drupal.behaviors.health_adminimal_dates = {
+    attach: function (context) {
+
+      var enabled = false;
+
+      // Check to see if we are logged in as a site builder.
+      var approved_roles = ["administrator", "Site builder", "Site editor"];
+      var roles = Drupal.settings.health_adminimal.user.roles;
+      for (var i=0; i<roles.length; i++) {
+        for (var j=0; j<approved_roles.length; j++) {
+          if (roles[i] === approved_roles[j]) {
+            enabled = true;
+          }
+        }
+      }
+
+      // Checkbox.
+      var $checkbox = $('.field-name-field-enable-manual-date-editing', context);
+
+      // If we are not an admin, hide the checkbox.
+      if (!enabled) {
+        $checkbox.hide();
+      }
+
+      // Dates to enable/disable.
+      var dates = ['.field-name-field-date-updated', '.field-name-field-date-published'];
+
+      // Set the enabled/disabled state on load.
+      if (!enabled || $checkbox.find('input').is( ":checked" ) === false) {
+        for(var i=0; i<dates.length; i++) {
+          $(dates[i] + ' .form-item', context).addClass('form-disabled');
+          $(dates[i] + ' input', context).attr('disabled', function(_, attr){ return !attr});
+        }
+      }
+
+      // When the checkbox changes, toggle enabled/disabled.
+      $checkbox.find('input').on('change', function() {
+        for(var i=0; i<dates.length; i++) {
+          $(dates[i] + ' input', context).attr('disabled', function(_, attr){ return !attr});
+          $(dates[i] + ' .form-item', context).toggleClass('form-disabled');
+        }
+      });
+
+
+      // We get an error if the fields are disabled when submitting,
+      // so just before we submit, re-enable the fields.
+      $('.node-form').submit(function() {
+        for(var i=0; i<dates.length; i++) {
+          $(dates[i] + ' input', context).removeAttr('disabled');
+        }
+      });
+
+    }
+  };
+
+  // Field character limit counter.
+  Drupal.behaviors.health_adminimal_character_limit = {
+    attach: function (context, settings) {
+      characterLimit('.page-node-edit .form-item-title', 'input', 70);
+      characterLimit('.page-node-edit .field-name-field-summary', 'textarea', 200);
+    }
+  };
+
+  /**
+   * Add a character limit counter.
+   *
+   * @param selector
+   * @param type
+   * @param limit
+   */
+  function characterLimit(selector, type, limit) {
+    $(selector).append('<div class="description character-limit"></div>');
+    $(selector + ' ' + type).keyup(function() {
+      var length = parseInt($(this).val().length);
+      if (length > limit) {
+        $(this).parents(selector).find('.character-limit')
+          .addClass('over')
+          .html('Over ' + limit + ' characters, consider shortening.');
+      } else {
+        $(this).parents(selector).find('.character-limit')
+          .removeClass('over')
+          .html(length + ' characters');
+      }
+    }).trigger('keyup');
+  }
 
 })(jQuery, Drupal);

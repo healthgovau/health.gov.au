@@ -182,7 +182,7 @@
 /**
  * AU-border-radius styles
  */
-/*! @gov.au/accordion v3.0.5 */
+/*! @gov.au/accordion v5.0.2 */
 @media print {
   .au-accordion {
     border-color: #000 !important;
@@ -740,7 +740,7 @@
   .au-body.au-body--dark.au-body--alt, .au-body--dark.au-body--alt.kss-modifier__example {
     background: #0d414d; }
 
-/*! @gov.au/link-list v2.1.1 */
+/*! @gov.au/link-list v3.0.2 */
 /**
  * Block of links.
  */
@@ -763,7 +763,7 @@
     .au-link-list.au-link-list--inline > li {
       display: inline-block; }
 
-/*! @gov.au/breadcrumbs v2.1.1 */
+/*! @gov.au/breadcrumbs v3.0.2 */
 @media print {
   .au-breadcrumbs > .au-link-list > li:after {
     content: ">" !important;
@@ -2293,7 +2293,7 @@ a.au-header__brand {
   margin-top: 24px;
   margin-top: 1.5rem; }
 
-/*! @gov.au/inpage-nav v2.0.5 */
+/*! @gov.au/inpage-nav v3.0.2 */
 .au-inpage-nav-links {
   font-size: 16px;
   font-size: 1rem;
@@ -2347,7 +2347,7 @@ a.au-header__brand {
   right: 0;
   font-weight: normal; }
 
-/*! @gov.au/keyword-list v2.1.1 */
+/*! @gov.au/keyword-list v3.0.2 */
 .au-keyword-list {
   font-size: 24px;
   font-size: 1.5rem;
@@ -2644,6 +2644,191 @@ html > body .au-select, x:-moz-any-link, x:default {
   html body .au-select {
     padding-right: 36px;
     padding-right: 2.25rem; } }
+
+/*! @gov.au/side-nav v2.0.5 */
+/**
+ * AU-side-nav-indent - Mixin for creating indent based off depth
+ *
+ * @param  {number} $depth         - How deep the menu goes
+ * @param  {number} $indent-size   - Size of the indent in units
+ *
+ * @return {number}          - The indented menu items
+ */
+@media print {
+  .au-side-nav {
+    background: transparent !important; }
+    .au-side-nav a {
+      color: #000 !important;
+      text-decoration: underline !important; }
+      .au-side-nav a:hover {
+        background: transparent !important; }
+    .au-side-nav .au-accordion__title {
+      display: none; }
+  .au-side-nav__content ul ul ul a:before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23000' d='M2 10h12v1H2zM2 5h1v5H2z'/%3E%3C/svg%3E") !important; }
+  .au-side-nav__content > ul > li {
+    border-color: #000 !important; } }
+
+.au-side-nav {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background-color: #ebebeb;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 0; }
+  .au-side-nav a {
+    padding: 16px;
+    padding: 1rem;
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1.4285714286;
+    color: #626262;
+    display: block;
+    text-decoration: none; }
+    .au-side-nav a:hover {
+      text-decoration: underline;
+      -webkit-text-decoration-skip: ink;
+              text-decoration-skip: ink;
+      background-color: #e0e0e0; }
+    .au-side-nav a:focus {
+      outline: 3px solid #9263DE;
+      outline-offset: 2px; }
+    .au-side-nav a::-moz-focus-inner {
+      border: 0; }
+  .au-side-nav .au-link-list {
+    padding: 0;
+    margin: 0; }
+    .au-side-nav .au-link-list li {
+      margin: 0; }
+  .au-side-nav .au-accordion__body {
+    overflow: visible; }
+  .au-side-nav .au-accordion__title {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #00698f;
+    font-weight: normal;
+    text-decoration: underline;
+    -webkit-text-decoration-skip: ink;
+            text-decoration-skip: ink;
+    background-color: inherit; }
+    .au-side-nav .au-accordion__title:hover {
+      text-decoration: none; }
+    .au-side-nav .au-accordion__title:focus {
+      outline-offset: -3px; }
+    .no-js .au-side-nav .au-accordion__title {
+      display: none; }
+  .au-side-nav .au-accordion__body-wrapper {
+    border: 0;
+    padding: 0; }
+  @media (min-width: 768px) {
+    .au-side-nav {
+      background: transparent;
+      border-radius: 0;
+      overflow: visible; }
+      .au-side-nav .au-accordion__body.au-accordion--closed {
+        display: block;
+        height: auto; }
+      .au-side-nav a:hover {
+        background-color: whitesmoke; }
+      .au-side-nav .au-accordion__title {
+        display: none; } }
+
+.au-side-nav__content {
+  margin: 0 16px;
+  margin: 0 1rem; }
+  .au-side-nav__content ul ul a {
+    padding-left: 32px;
+    padding-left: 2rem; }
+  .au-side-nav__content ul ul ul a {
+    padding-left: 60px;
+    padding-left: 3.75rem; }
+  .au-side-nav__content ul ul ul ul a {
+    padding-left: 80px;
+    padding-left: 5rem; }
+  .au-side-nav__content .active > a {
+    font-weight: bold;
+    color: #313131; }
+  .au-side-nav__content ul ul ul a:before {
+    content: " ";
+    width: 16px;
+    width: 1rem;
+    height: 16px;
+    height: 1rem;
+    background-size: 16px;
+    background-size: 1rem;
+    margin-left: -24px;
+    margin-left: -1.5rem;
+    display: block;
+    float: left;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='gray' d='M2 10h12v1H2zM2 5h1v5H2z'/%3E%3C/svg%3E"); }
+  .au-side-nav__content > ul > li {
+    border-bottom: 1px solid gray; }
+    .au-side-nav__content > ul > li:last-of-type {
+      border: none; }
+  @media (min-width: 768px) {
+    .au-side-nav__content {
+      margin: 0; } }
+
+.au-sidenav__title {
+  margin: 0; }
+  .au-sidenav__title a {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #313131;
+    border-bottom: 2px solid gray; }
+
+.au-side-nav.au-side-nav--alt {
+  background: #ffffff; }
+  .au-side-nav.au-side-nav--alt a:hover {
+    background: whitesmoke; }
+  @media (min-width: 768px) {
+    .au-side-nav.au-side-nav--alt {
+      background: transparent; }
+      .au-side-nav.au-side-nav--alt a:hover {
+        background-color: #e0e0e0; } }
+
+.au-side-nav.au-side-nav--dark {
+  background: #0d414d; }
+  .au-side-nav.au-side-nav--dark .au-accordion__title {
+    color: #61daff;
+    background-color: inherit; }
+  .au-side-nav.au-side-nav--dark a {
+    color: #bdd2d7; }
+    .au-side-nav.au-side-nav--dark a:hover {
+      background: #0a323c; }
+    .au-side-nav.au-side-nav--dark a:focus {
+      outline: 3px solid #C390F9; }
+    .au-side-nav.au-side-nav--dark a::-moz-focus-inner {
+      border: 0; }
+  .au-side-nav.au-side-nav--dark .au-side-nav__content .active a {
+    color: #ffffff; }
+  .au-side-nav.au-side-nav--dark .au-side-nav__content ul ul ul a:before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%2395b7bf' d='M2 10h12v1H2zM2 5h1v5H2z'/%3E%3C/svg%3E"); }
+  .au-side-nav.au-side-nav--dark .au-side-nav__content > ul > li {
+    border-color: #95b7bf; }
+  .au-side-nav.au-side-nav--dark .au-sidenav__title a {
+    border-color: #95b7bf;
+    color: #ffffff; }
+  @media (min-width: 768px) {
+    .au-side-nav.au-side-nav--dark {
+      background: transparent; }
+      .au-side-nav.au-side-nav--dark a:hover {
+        background-color: #104f5f; } }
+
+.au-side-nav.au-side-nav--dark.au-side-nav--alt {
+  background: #135E70; }
+  .au-side-nav.au-side-nav--dark.au-side-nav--alt a:hover {
+    background: #104f5f; }
+  @media (min-width: 768px) {
+    .au-side-nav.au-side-nav--dark.au-side-nav--alt {
+      background: transparent; }
+      .au-side-nav.au-side-nav--dark.au-side-nav--alt a:hover {
+        background-color: #0a323c; } }
 
 /*! @gov.au/skip-link v2.0.8 */
 @media print {

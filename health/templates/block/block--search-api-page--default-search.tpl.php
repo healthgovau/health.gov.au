@@ -8,9 +8,7 @@
  */
 ?>
 <div
-  class="<?php print $classes; ?> au-accordion__body au-accordion--closed"<?php print $attributes; ?>
+  class="au-search <?php print $classes; ?> "<?php print $attributes; ?>
   id="<?php print $block_html_id; ?>">
-  <div class="search-wrapper">
-    <?php print $content; ?>
-  </div>
+  <?php print $content; ?>
 </div>

@@ -6,25 +6,6 @@
   background: #fff;
 }
 
-.region-navigation {
-  background: white;
-  box-shadow: 0 -8px $colour-light-dark inset;
-  @include AU-space(margin-top, 1unit);
-  .item-list ul {
-    @extend %list--remove;
-  }
-}
-
-// Listing pages
-.view-filters,
-.view-content {
-  @include AU-clearfix;
-  width: 100%;
-  .item-list ul {
-    @extend %list--remove;
-  }
-}
-
 .region-content-top {
   @include AU-clearfix;
   @include AU-space('padding-top', .5unit);
@@ -40,6 +21,8 @@
     @include AU-media(sm){
       @include AU-space(margin-top, 2unit);
     }
+    padding-left: 12px;
+    padding-right: 12px;
     .au-card {
       margin-top: 0;
     }
@@ -51,31 +34,14 @@
   
 }
 
-.region-sidebar-first {
-  .item-list ul {
-    @extend %list--remove;
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-
 .region-sidebar-second {
-  @include AU-clearfix;
-  @extend %colour-Light-background;
-  @include AU-media(sm) {
-    background: white;
-  }
-  #block-menu-block-2 {
-    clear: both;
-    @include AU-clearfix;
-    background: white;
-    border-bottom: $health-borderize--thin;
+  .au-side-nav {
+    @extend %colour-Light-background;
     @include AU-media(sm) {
-      border-bottom: 0;
+      background: white;
     }
   }
+
 }
 
 @import '_print.scss';
-
