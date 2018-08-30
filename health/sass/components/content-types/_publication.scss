@@ -2,22 +2,6 @@
 .node-type-publication {
   @extend %dm-full-content;
   @extend %page-help-only;
-  
-  // for 3-column variant apply spacing
-  .group-centre,
-  .group-right {
-    @include AU-space(padding-top, 2unit);
-  }
-  
-  @include AU-media(sm){
-    .group-centre {
-      @include AU-space(padding-left, 2unit);
-    }
-    .group-centre,
-    .group-right {
-      padding-top: 0;
-    }
-  }
 }
 
 // Display modes
@@ -37,6 +21,14 @@
     img {
       @include AU-space(margin-bottom, 1unit);
       display: block;
+    }
+  }
+
+  &.view-mode-full {
+    .group-left {
+      img {
+        border: $health-borderize;
+      }
     }
   }
 
