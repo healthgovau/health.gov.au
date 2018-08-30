@@ -241,13 +241,6 @@ p.summary, .field-name-field-summary {
   @include AU-space(padding-bottom, 1unit);
 }
 
-.field-name-publications-go-to-download {
-  @include AU-space(padding-top, 1unit);
-  @include AU-media(sm){
-    display: none;
-  }
-}
-
 .field-name-field-resource-file-summary {
   @include AU-space(margin-top, 1.5unit);
   @include AU-space(margin-bottom, 1.5unit);
