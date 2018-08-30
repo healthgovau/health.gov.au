@@ -36,6 +36,7 @@
   &.view-mode-inline_large {
     img {
       @include AU-space(margin-bottom, 1unit);
+      display: block;
     }
   }
 

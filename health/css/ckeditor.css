@@ -7670,7 +7670,8 @@ ul.toc {
 
 .node-publication.view-mode-inline_large img {
   margin-bottom: 16px;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  display: block; }
 
 .node-publication-collection {
   background: transparent; }
