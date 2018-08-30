@@ -149,6 +149,8 @@ a.au-card {
     }
   }
 
+  /*
+  Flex is not supported on IE.
   &.au-card-list--matchheight {
     display: table;
     @supports( display: flex ) {
@@ -187,7 +189,7 @@ a.au-card {
     .au-card__stretch {
       flex: 1 0 auto;
     }
-  }
+  }*/
 }
 
 @mixin cardify($bg: $colour-card) {
