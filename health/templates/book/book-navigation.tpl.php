@@ -33,25 +33,21 @@
  */
 ?>
 <?php if ($has_links): ?>
-  <div id="book-navigation-<?php print $book_id; ?>" class="book-navigation" role="navigation" aria-label="Book">
+  <div id="book-navigation-<?php print $book_id; ?>" class="book-navigation standard-gap" role="navigation" aria-label="Book">
     <div class="row">
-      <div class="book-navigation__link-wrapper col-xs-6">
         <?php if ($prev_url): ?>
-        <a class="au-direction-link au-direction-link--left" href="<?php print $prev_url; ?>">
-          Previous
-        </a>
-        <span class="book-navigation__link-title"><?php print $prev_title; ?></span>
+          <a class="col-xs-6" href="<?php print $prev_url; ?>">
+            <span class="au-direction-link au-direction-link--left">Previous</span>
+            <span class="au-display-lg au-display--light book-navigation__title"><?php print $prev_title; ?></span>
+          </a>
         <?php endif; ?>
-      </div>
 
-      <div class="book-navigation__link-wrapper book-navigation__link-wrapper--right col-xs-6">
         <?php if ($next_url): ?>
-        <a class="au-direction-link au-direction-link--right" href="<?php print $next_url; ?>">
-          Next
-        </a>
-        <span class="book-navigation__link-title"><?php print $next_title; ?></span>
+          <a class="col-xs-6 book-navigation--right" href="<?php print $next_url; ?>">
+            <span class="au-direction-link au-direction-link--right">Next</span>
+            <span class="au-display-lg au-display--light book-navigation__title"><?php print $next_title; ?></span>
+          </a>
         <?php endif; ?>
-      </div>
     </div>
   </div>
 <?php endif; ?>
