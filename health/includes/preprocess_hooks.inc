@@ -1323,7 +1323,7 @@ function health_preprocess_page(&$variables) {
       // Other resources.
       else if (count($active_trail) > 3) {
         $variables['section_title'] = theme('health_section_link', ['title' => 'Resources', 'path' => 'resources/']);
-        $variables['summary'] = NULL;
+        //$variables['summary'] = NULL;
       }
       else {
         $variables['section_title'] = null;
