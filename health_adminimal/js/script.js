@@ -349,7 +349,7 @@
 
       // We get an error if the fields are disabled when submitting,
       // so just before we submit, re-enable the fields.
-      $('#page-node-form').submit(function() {
+      $('.node-form').submit(function() {
         for(var i=0; i<dates.length; i++) {
           $(dates[i] + ' input', context).removeAttr('disabled');
         }
