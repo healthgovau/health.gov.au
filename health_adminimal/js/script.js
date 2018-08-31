@@ -374,8 +374,8 @@
    * @param limit
    */
   function characterLimit(selector, type, limit) {
-    $(selector).append('<div class="description character-limit"></div>');
-    $(selector + ' ' + type).keyup(function() {
+    $(selector).once('character-limit').append('<div class="description character-limit"></div>');
+    $(selector + ' ' + type).once('character-limit').keyup(function() {
       var length = parseInt($(this).val().length);
       if (length > limit) {
         $(this).parents(selector).find('.character-limit')
