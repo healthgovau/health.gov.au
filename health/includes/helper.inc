@@ -61,7 +61,6 @@ function _health_add_maxlength(array &$form, array $element_names) {
       $form[$key][$form['#node']->language][0]['value']['#attributes']['maxlength'] = $length;
       $form[$key]['#element_validate'][] = 'amr_validate_maxlength';
     }
-    // Vue js connector.
     $js .= 'Drupal.health.fieldCounter("#' . $key_id . '", ' . $length . ');';
   }
 

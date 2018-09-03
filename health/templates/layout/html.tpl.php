@@ -53,7 +53,6 @@
   <![endif]-->
 
   <!--[if gt IE 8]><!-->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.6.0/lazyload.min.js"></script>
   <!--<![endif]-->
 

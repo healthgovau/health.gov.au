@@ -1115,7 +1115,6 @@ function health_preprocess_node(&$variables) {
  * Implements THEME_preprocess_page().
  */
 function health_preprocess_page(&$variables) {
-  // Vuejs is added in html.tpl.php as its the only way to exclude it from IE8.
   // LazyLoad is added in html.tpl.php as its the only way to exclude it from IE8.
 
   // Add our javascript.
