@@ -35,42 +35,41 @@ function health_get_friendly_mime($mimetype) {
  *
  * @param array $form
  *   From array.
- *
  * @param array $element_names
  *   Form elements with ID names.
  */
-function _health_add_maxlength(&$form, $element_names) {
+function _health_add_maxlength(array &$form, array $element_names) {
 
   $js = '';
 
   foreach ($element_names as $key => $length) {
-    $key_id =  $key.'_count_wrapper';
+    $key_id = $key . '_count_wrapper';
 
-    $prefix = '<div id="'.$key_id.'" class="form-element-with-counter">';
-    $suffix = '<p class="form-element-length-counter">{{' . $length . ' - message.length}} characters remaining</p></div>';
+    $prefix = '<div id="' . $key_id . '" class="form-element-with-counter">';
+    $suffix = '<p class="form-element-length-counter">' . $length . ' characters remaining</p></div>';
 
     // Webform.
-    if (key_exists('submitted', $form)) {
+    if (array_key_exists('submitted', $form)) {
       $form['submitted'][$key]['#prefix'] = $prefix;
       $form['submitted'][$key]['#suffix'] = $suffix;
-      $form['submitted'][$key]['#attributes']['v-model'] = 'message';
       $form['submitted'][$key]['#attributes']['maxlength'] = $length;
-    } else { // Node form.
+    }
+    // Node form.
+    else {
       $form[$key]['#prefix'] = $prefix;
       $form[$key]['#suffix'] = $suffix;
-      $form[$key][$form['#node']->language][0]['value']['#attributes']['v-model'] = 'message';
       $form[$key][$form['#node']->language][0]['value']['#attributes']['maxlength'] = $length;
       $form[$key]['#element_validate'][] = 'amr_validate_maxlength';
     }
     // Vue js connector.
-    $js .= "Drupal.health.fieldCounter('#" . $key_id . "');";
+    $js .= 'Drupal.health.fieldCounter("#' . $key_id . '", ' . $length . ');';
   }
 
   // Attach the field counter js.
-  $form['#attached']['js'][] = drupal_get_path('theme', 'health') .'/js/dist/health.fieldcounter.min.js';
+  $form['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.fieldcounter.min.js';
 
   // Add in the fields that we want to have this functionality.
-  $form['#attached']['js']['(function ($) {$(document).ready(function(){'.$js.'});})(jQuery);'] = [
+  $form['#attached']['js']['(function ($) {$(document).ready(function(){' . $js . '});})(jQuery);'] = [
     'type' => 'inline',
     'scope' => 'footer',
     'weight' => 0,
