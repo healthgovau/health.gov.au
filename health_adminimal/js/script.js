@@ -73,7 +73,6 @@
       legendSummary('.paragraphs-item-type-para-conditions-and-diseases', 'Band - Conditions and diseases', 'input[type="text"]');
       legendSummary('.paragraphs-item-type-band-static-content', 'Band - Static', 'textarea');
 
-
       // Publications
       legendSummary('.paragraphs-item-type-documents', 'Part', '.field-name-field-resource-file-title input');
       legendSummary('.paragraphs-item-type-document', 'File', '.media-item');
@@ -282,7 +281,11 @@
       // Simple rich text
       lockTextFormat('simple_rich_text', [
         '.node-video-form .field-name-field-description .filter-list',
-        '.node-publication-form .field-name-field-description .filter-list'
+        '.node-video-form .field-name-field-resource-transcript .filter-list',
+        '.node-publication-form .field-name-field-description .filter-list',
+        '.node-app_or_tool-form .field-name-field-description .filter-list',
+        '.node-audio-form .field-name-field-description .filter-list',
+        '.node-audio-form .field-name-field-resource-transcript .filter-list'
       ]);
     }
   };
@@ -361,8 +364,12 @@
   // Field character limit counter.
   Drupal.behaviors.health_adminimal_character_limit = {
     attach: function (context, settings) {
+      // Edit content.
       characterLimit('.page-node-edit .form-item-title', 'input', 70);
       characterLimit('.page-node-edit .field-name-field-summary', 'textarea', 200);
+      // Add content.
+      characterLimit('.page-node-add .form-item-title', 'input', 70);
+      characterLimit('.page-node-add .field-name-field-summary', 'textarea', 200);
     }
   };
 
@@ -374,8 +381,8 @@
    * @param limit
    */
   function characterLimit(selector, type, limit) {
-    $(selector).append('<div class="description character-limit"></div>');
-    $(selector + ' ' + type).keyup(function() {
+    $(selector).once('character-limit').append('<div class="description character-limit"></div>');
+    $(selector + ' ' + type).once('character-limit').keyup(function() {
       var length = parseInt($(this).val().length);
       if (length > limit) {
         $(this).parents(selector).find('.character-limit')
