@@ -49,6 +49,7 @@
   <?php print $page; ?>
 
   <!--[if IE 8]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="/<?php print path_to_theme(); ?>/js/dist/script-ie8.min.js"></script>
   <![endif]-->
 
