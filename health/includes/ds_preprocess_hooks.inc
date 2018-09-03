@@ -394,3 +394,14 @@ function health_preprocess_ds_start_end_date_friendly(&$variables) {
     return theme_field($field_variables);
   }
 }
+
+/**
+ * DS - Close button for alerts.
+ *
+ * @param $variables
+ *
+ * @return string
+ */
+function health_preprocess_ds_alert_close_button(&$variables) {
+  return '<i class="fa fa-times" data-nid="' . $variables['nid'] . '" title="Hide alert"></i>';
+}

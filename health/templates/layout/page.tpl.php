@@ -66,8 +66,6 @@ endif;
 
   <?php print render($page['navigation']); ?>
 
-  <?php print $health_alert_bar; ?>
-
   <?php print render($page['highlighted']); ?>
 
   <div class="page-content" id="page-content">

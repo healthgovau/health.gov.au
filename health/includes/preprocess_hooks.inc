@@ -1159,6 +1159,10 @@ function health_preprocess_page(&$variables) {
     'data' => path_to_theme() . '/js/dist/health.nojs.min.js',
     'type' => 'file',
   ];
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/dist/health.alerts.min.js',
+    'type' => 'file',
+  ];
 
   // Add backtotop JS.
   $render_backtotop = [
@@ -1399,16 +1403,6 @@ function health_preprocess_page(&$variables) {
       }
     }
   }
-
-  // Add global health alert block to the top.
-  $render_health_alert_bar = [
-    '#theme' => 'health_alert_bar',
-  ];
-  $render_health_alert_bar['#attached']['js'][] = [
-    'data' => path_to_theme() . '/js/dist/health.ajaxAlert.min.js',
-    'type' => 'file',
-  ];
-  $variables['health_alert_bar'] = drupal_render($render_health_alert_bar);
 
   // Books.
   if (isset($variables['node'])) {
