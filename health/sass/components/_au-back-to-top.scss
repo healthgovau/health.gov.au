@@ -1,4 +1,4 @@
-.goTop {
+.au-back-to-top {
   background-color: transparent;
   position: fixed;
   display: block;
@@ -57,10 +57,11 @@
       display: block;
     }
   }
+
+  &.isVisible {
+    opacity: 1;
+    z-index: 9999;
+    transition: all .4s ease-in;
+  }
 }
 
-.isVisible {
-  opacity: 1;
-  z-index: 9999;
-  transition: all .4s ease-in;
-}

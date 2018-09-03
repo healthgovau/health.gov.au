@@ -2,49 +2,25 @@
 
   'use strict';
 
-  // To understand behaviors, see https://drupal.org/node/756722#behaviors
   Drupal.behaviors.backtotop = {
     attach: function (context, settings) {
-      if (typeof Vue !== 'undefined') {
-        var url = '/' + settings.health.theme_path + '/images/icons/gototop.png';
-        Vue.component('backtotop', {
-          template: '<button title="back to top" class="goTop" v-if="isVisible" @click="backToTop"> <a class="au-btn au-btn--secondary" href="#">Back <span>to top</span></a> </button>',
-          data: function () {
-            return {
-              isVisible: false,
-              imageLink: url
-            };
-          },
-          methods: {
-            initToTopButton: function () {
-              $(document).bind('scroll', function () {
-                var backToTopButton = $('.goTop');
-                if ($(document).scrollTop() > 1000) {
-                  backToTopButton.addClass('isVisible');
-                  this.isVisible = true;
-                } else {
-                  backToTopButton.removeClass('isVisible');
-                  this.isVisible = false;
-                }
-              }.bind(this));
-            },
-            backToTop: function () {
-              $('html,body', context).stop().animate({
-                scrollTop: 0
-              }, 'slow', 'swing');
-            }
-          },
-          mounted: function () {
-            this.$nextTick(function () {
-              this.initToTopButton();
-            });
-          }
-        });
 
-        new Vue({
-          el: '#backtotop',
-        });
-      }
+      var $backToTop = $('.au-back-to-top');
+
+      $(document).bind('scroll', function () {
+        if ($(document).scrollTop() > 1000) {
+          $backToTop.addClass('isVisible');
+        } else {
+          $backToTop.removeClass('isVisible');
+        }
+      });
+
+      $backToTop.click(function() {
+        $('html,body', context).stop().animate({
+          scrollTop: 0
+        }, 'slow', 'swing');
+      });
+
     }
   };
 })(jQuery, Drupal, this, this.document);
