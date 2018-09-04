@@ -106,13 +106,6 @@ function health_preprocess_block(&$variables, $hook) {
     $variables['classes_array'][] = 'block-menu-block--title-link';
   }
 
-  // Add grid class to blocks in content_top region.
-  if ($variables['block']->region == 'content_top') {
-    if ($plugin = context_get_plugin('reaction', 'block')) {
-      $variables['classes_array'] = _health_grid_class(count($plugin->block_list('content_top')), $variables['classes_array'], 'col-xs-4');
-    }
-  }
-
   // Search forms.
   if ($variables['block']->module == 'search_api_page') {
     if ($variables['block']->context == 'global__mobile') {
