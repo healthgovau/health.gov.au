@@ -5,7 +5,7 @@
   Drupal.behaviors.health_alerts = {
     attach: function (context, settings) {
 
-      var $alerts = $('.au-health-alerts .node-health-alert', context);
+      var $alerts = $('.au-page-alerts', context);
 
       // Get the stored cookies indicating which alerts have been previously hidden.
       var cookies = getCookie('health.alerts');
@@ -13,7 +13,7 @@
       if (cookies === null) {
         cookies = [];
       }
-      // The cookie will be a text string separated by commas, turn into an array.
+      // The cookie will be a text string separated by commas. Turn that into an array.
       else {
         cookies = cookies.split(',');
       }
@@ -21,34 +21,45 @@
       // Go through each alert.
       $alerts.each(function() {
 
-        var $close_button = $(this).find('i');
-        var nid = $close_button.attr('data-nid');
+        // Flag to indicate if we should show the alert or not.
+        var keepHidden = false;
+
         var $alert = $(this);
 
-        for (var i=0; i<cookies.length; i++) {
-          if (cookies[i] === nid) {
-            // Hide the alert.
-            $alert.hide();
+        // Find the close button.
+        // If the alert doesn't have one, we assume it is a normal message that can't be dismissed.
+        var $close_button = $alert.find('.au-page-alerts__close');
+        if ($close_button.length) {
+          var nid = $close_button.attr('data-nid');
+
+          for (var i = 0; i < cookies.length; i++) {
+            if (cookies[i] === nid) {
+              // Hide the alert.
+              keepHidden = true;
+            }
           }
+
+          // Close button handler.
+          $close_button.click(function (e) {
+            e.preventDefault();
+
+            // Hide the alert.
+            $alert.addClass('au-page-alerts--hidden');
+
+            // Save this node id in the cookies so we don't show it again.
+            if (cookies.indexOf(nid) === -1) {
+              cookies.push(nid);
+              setCookie('health.alerts', cookies, 100);
+            }
+          });
         }
 
-        // Close button handler.
-        $close_button.click(function(e) {
-          e.preventDefault();
-
-          // Hide the alert.
-          $alert.hide();
-
-          // Save this node id in the cookies so we don't show it again.
-          if (cookies.indexOf(nid) === -1) {
-            cookies.push(nid);
-            setCookie('health.alerts', cookies, 100);
-          }
-        });
+        // Show the alert if needed.
+        if (!keepHidden) {
+          $alert.removeClass('au-page-alerts--hidden');
+        }
       });
 
-      // Now that we have hidden all the alerts the user has seen, display all remaining alerts.
-      $('.au-health-alerts', context).removeClass('au-health-alerts--hidden');
     }
   }
 

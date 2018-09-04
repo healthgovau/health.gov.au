@@ -26,7 +26,7 @@ if (theme_get_setting('health_rebuild_registry') && !defined('MAINTENANCE_MODE')
 
 
 /**
- * Implements HOOK_theme().
+ * Implements hook_theme().
  */
 function health_theme() {
   $theme['document_accessibility_link'] = [
@@ -116,7 +116,7 @@ function health_theme() {
     'variables' => [
       'prefix' => NULL,
       'value' => NULL,
-      'suffix' => NULL
+      'suffix' => NULL,
     ],
     'template' => 'statistic_value',
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
@@ -125,7 +125,7 @@ function health_theme() {
   $theme['statistic_trend_icon'] = [
     'variables' => [
       'direction' => NULL,
-      'indication' => NULL
+      'indication' => NULL,
     ],
     'template' => 'statistic_trend_icon',
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
@@ -134,7 +134,7 @@ function health_theme() {
   $theme['health_breadcrumb'] = [
     'variables' => [
       'title' => NULL,
-      'breadcrumb' => array()
+      'breadcrumb' => array(),
     ],
     'template' => 'health_breadcrumb',
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
@@ -155,7 +155,7 @@ function health_theme() {
   $theme['health_summary_list_group'] = [
     'variables' => [
       'items' => [],
-      'node' => NULL
+      'node' => NULL,
     ],
     'template' => 'health_summary_list_group',
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
@@ -164,7 +164,7 @@ function health_theme() {
   $theme['health_footnote'] = [
     'variables' => [
       'id' => '',
-      'text' => ''
+      'text' => '',
     ],
     'template' => 'health_footnote',
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
@@ -181,7 +181,7 @@ function health_theme() {
   $theme['health_reference'] = [
     'variables' => [
       'id' => '',
-      'text' => ''
+      'text' => '',
     ],
     'template' => 'health_reference',
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
@@ -199,7 +199,7 @@ function health_theme() {
     'variables' => [
       'term' => '',
       'definition' => '',
-      'url' => ''
+      'url' => '',
     ],
     'template' => 'health_abbreviation',
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
@@ -209,7 +209,7 @@ function health_theme() {
     'variables' => [
       'term' => '',
       'definition' => '',
-      'url' => ''
+      'url' => '',
     ],
     'template' => 'health_definition',
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
@@ -222,9 +222,17 @@ function health_theme() {
       'size' => '',
       'pages' => '',
       'icon' => '',
-      'uri' => ''
+      'uri' => '',
     ],
     'template' => 'health_file_download_link',
+    'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
+  ];
+
+  $theme['health_alert_close_button'] = [
+    'variables' => [
+      'nid' => NULL,
+    ],
+    'template' => 'health_alert_close_button',
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
   ];
 
@@ -245,7 +253,7 @@ function health_breadcrumb($variables) {
 }
 
 /**
- * Implement hook_html_head_alter().
+ * Implements hook_html_head_alter().
  */
 function health_html_head_alter(&$head) {
   // Simplify the meta tag for character encoding.
