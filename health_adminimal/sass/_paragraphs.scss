@@ -167,7 +167,7 @@ body.adminimal-skin-material {
       }
     }
 
-    .form-wrapper {
+    .form-wrapper:last-of-type {
       margin-bottom: 5px;
     }
 
@@ -176,7 +176,6 @@ body.adminimal-skin-material {
     .paragraphs-item-type-content-callout .field-name-field-body,
     .field-name-field-reference-video,
     .field-name-field-reference-publication,
-    .field-name-field-image,
     .field-name-field-reference-service,
     .field-name-field-reference-programs-and-ini,
     .field-name-field-reference-statistic,
