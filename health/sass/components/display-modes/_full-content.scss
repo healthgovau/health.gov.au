@@ -1,8 +1,0 @@
-%dm-full-content {
-  .group-footer {
-    padding-top: 0;
-    @include AU-media(sm) {
-      @include AU-space('padding-top', 1unit);
-    }
-  }
-}

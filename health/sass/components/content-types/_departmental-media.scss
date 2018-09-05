@@ -3,7 +3,6 @@
 
 // Default/full content
 .node-type-departmental-media {
-  @extend %dm-full-content;
   @extend %page-help-only;
 }
 
@@ -28,17 +27,5 @@
     .field-name-field-body {
       @include AU-space(margin-top,3unit); 
     }
-  }
-
-  // Feature
-  &.view-mode-feature {
-    @extend %dm-feature;
-    .field-name-field-image-featured {
-      @extend %image--full;
-    }
-    .group-right {
-      padding-top: 0;
-    }
-    @include cardify();
   }
 }

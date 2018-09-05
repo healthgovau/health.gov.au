@@ -3,7 +3,6 @@
 
 // Default/full content
 .node-type-book-page {
-  @extend %dm-full-content;
   @extend %page-help-and-currency;
 }
 

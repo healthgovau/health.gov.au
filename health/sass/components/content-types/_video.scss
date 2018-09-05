@@ -3,7 +3,6 @@
 
 // Default/full content
 .node-type-video {
-  @extend %dm-full-content;
   @extend %page-help-and-currency;
 }
 
@@ -33,3 +32,4 @@
     }
   }
 }
+

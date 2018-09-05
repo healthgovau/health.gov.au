@@ -2,7 +2,6 @@
 
 // Default/full content for all nodes
 .page-node {
-  @extend %dm-full-content;
   @extend %page-help-and-currency;
 }
 
