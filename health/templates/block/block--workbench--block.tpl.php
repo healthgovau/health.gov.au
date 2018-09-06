@@ -7,7 +7,7 @@
  * @see https://drupal.org/node/1728246
  */
 ?>
-<div class="row">
+<div class="row standard-gap">
   <div class="container <?php print $classes; ?>"<?php print $attributes; ?> id="<?php print $block_html_id; ?>">
     <div class="row">
       <div class="col-xs-12">

@@ -1186,7 +1186,10 @@ function health_status_messages($variables) {
     'warning' => t('Warning message'),
   );
   foreach (drupal_get_messages($display) as $type => $messages) {
-    $output .= "<div role=\"alert\" class=\"messages {$type}\">\n";
+    if ($type == 'status') {
+      $type = 'success';
+    }
+    $output .= "<div role=\"alert\" class=\"au-page-alerts au-page-alerts--{$type}\">\n";
     if (!empty($status_heading[$type])) {
       $output .= '<h2 class="element-invisible">' . $status_heading[$type] . "</h2>\n";
     }

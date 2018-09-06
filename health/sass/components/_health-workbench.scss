@@ -17,14 +17,10 @@
       font-size: 22px;
     }
     .fa {
-      @include AU-space('margin-left', 2unit);
+      @include AU-space('margin-left', 4unit);
       &:before {
         position: static;
       }
     }
-  }
-  .au-page-alerts {
-    @include AU-space('margin-top', 1unit);
-    @include AU-space('margin-bottom', 2unit);
   }
 }
