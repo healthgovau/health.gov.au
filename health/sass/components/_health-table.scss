@@ -15,7 +15,7 @@ table {
 
   // Spacing above.
   * + &,
-  .health-table__responsive & {
+  * + .health-table__responsive & {
     @include AU-space('margin-top', 1.5unit);
   }
 
