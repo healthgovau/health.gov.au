@@ -23,10 +23,8 @@ table {
   border: $health-borderize--very-thin;
 
   caption {
-    @include AU-space(margin-bottom, 1unit);
     text-align: left;
-    @extend .au-display-sm;
-    display: table-caption;
+    @include AU-space(margin-bottom, 1unit);
   }
 
   tr:nth-child(even) {
