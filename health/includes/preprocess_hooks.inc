@@ -422,8 +422,28 @@ function health_preprocess_entity(&$variables) {
 
     // Tables.
     if ($para_item->bundle == 'content_table') {
-      // Add a class to identify what grade it is.
-      $variables['content']['field_title']['#prefix'] = '<a name="' . _health_prepare_filename($variables['content']['field_title'][0]['#markup']) . '"></a>';
+      $title = $variables['content']['field_title'][0]['#markup'];
+      $table = $variables['content']['field_body'][0]['#markup'];
+
+      // Create an anchor so it can be deep linked to.
+      $variables['content']['field_title']['#prefix'] = '<a name="' . _health_prepare_filename($title) . '"></a>';
+
+      // Move the title into the table caption.
+      $table = preg_replace('/(<table.*?>)(.*)/s', '$1<caption>' . $title . '</caption>$2', $table);
+
+      // Add the footer into tfoot.
+      if (array_key_exists('field_table_source', $variables['content'])) {
+        $footer = $variables['content']['field_table_source'][0]['#markup'];
+        $table = preg_replace('/(.*)<\/table>/s', '$1<tfoot><tr><td class="text--minor">' . $footer . '</td></tr></tfoot></table>', $table);
+        drupal_add_js(path_to_theme() . '/js/dist/health.tables.min.js', array(
+          'type' => 'file',
+          'scope' => 'footer',
+          'weight' => 100,
+        ));
+      }
+
+      // Set the updated table into content.
+      $variables['content']['field_body'][0]['#markup'] = $table;
     }
 
     // Call out.
@@ -690,7 +710,7 @@ function health_preprocess_field(&$variables) {
         // Add rs_preserve class to any H2's
         $markup = preg_replace("/<h2>(.+?)<\/h2>/", '<h2 class="rs_preserve">$1</h2>', $markup);
         // Add a div around tables so they can be made responsive.
-        $markup = str_replace('<table', '<div class="responsive-table-wrapper"><table', $markup);
+        $markup = str_replace('<table', '<div class="health-table__responsive"><table', $markup);
         $markup = str_replace('</table>', '</table></div>', $markup);
 
         // Footnotes.

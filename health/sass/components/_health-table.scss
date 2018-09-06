@@ -12,14 +12,21 @@
 @import '../abstracts/mixins';
 
 table {
-  @include AU-space('margin-bottom', 1unit);
-  @include AU-space('margin-top', 1unit);
+
+  // Spacing above.
+  * + &,
+  .health-table__responsive & {
+    @include AU-space('margin-top', 1.5unit);
+  }
+
   border-collapse: collapse;
   border: $health-borderize--very-thin;
 
   caption {
     @include AU-space(margin-bottom, 1unit);
     text-align: left;
+    @extend .au-display-sm;
+    display: table-caption;
   }
 
   tr:nth-child(even) {
@@ -54,25 +61,14 @@ table {
   }
 
   min-width: 43em;
-  @include AU-media( md ) {
-    min-width: auto;
+  @include AU-media(sm) {
+    min-width: inherit;
   }
 }
 
-.responsive-table-wrapper {
+.health-table__responsive {
   overflow: scroll;
   @include AU-media( md ) {
     overflow: auto;
-  }
-}
-
-.paragraphs-item-content-table {
-  .field-name-field-title {
-    font-weight: bold;
-    @include AU-space('padding-bottom', .75unit);
-  }
-  .field-name-field-table-source {
-    @extend %minor-text;
-    @include AU-space('margin-bottom', 1unit);
   }
 }
