@@ -176,7 +176,7 @@
         &:before {
           font-size: 22px;
           content: "\f0c9";
-          margin-left: -1.2em;
+          margin-left: -1.2em !important;
         }
       }
     }
@@ -189,7 +189,7 @@
         &:before {
           font-size: 22px;
           content: "\f002";
-          margin-left: -1.2em;
+          margin-left: -1.2em !important;
         }
       }
     }
@@ -238,4 +238,15 @@
   position: relative;
   z-index: 500;
   box-shadow: 0 -8px #e5e5e5 inset;
+}
+
+// Sub menu above search
+#block-menu-menu-sub-menu {
+  ul {
+    float: right;
+  }
+  display: none;
+  @include AU-media(sm) {
+    display: block;
+  }
 }

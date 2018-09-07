@@ -1,3 +1,4 @@
+
 // Components
 //
 // Design components are reusable designs that can be applied using just the CSS
@@ -6,10 +7,6 @@
 // Weight: 1
 //
 // Style guide: component
-
-//@import 'layout/layout';
-
-
 
 
 // @govau components
@@ -23,20 +20,11 @@
 // Block styles
 @import 'bean-image-text';
 
-@import 'feedback';
-
 // Content types
 @import 'content-types/module';
 
 // Views, bands and layouts
-
-@import 'views';
-
-// Views, bands and layouts
 @import 'paragraphs';
-
-// Drupal
-
 
 // Forms
 //
@@ -47,27 +35,13 @@
 //
 // Style guide: forms
 
-@import 'forms/autocomplete/module';
-@import 'forms/autocomplete/extends';
 @import 'forms/button/module';
 @import 'forms/button/extends';
-@import 'forms/collapsible-fieldset/module';
-@import 'forms/collapsible-fieldset/extends';
-@import 'forms/fieldsets/module';
-@import 'forms/fieldsets/extends';
 @import 'forms/form-item/module';
 @import 'forms/form-item/extends';
 @import 'forms/control-input/module'; // After form item
 @import 'forms/control-input/extends';
-@import 'forms/form-table/module';
-@import 'forms/form-table/extends';
 @import 'forms/input/extends';
-@import 'forms/progress-bar/module';
-@import 'forms/progress-bar/extends';
-@import 'forms/progress-throbber/module';
-@import 'forms/progress-throbber/extends';
-@import 'forms/resizable-textarea/module';
-@import 'forms/resizable-textarea/extends';
 @import 'forms/select/extends';
 @import 'forms/textarea/extends';
 
@@ -84,7 +58,6 @@
 // Style guide: navigation
 
 @import 'navigation/book/module';
-@import 'navigation/menu/extends';
 @import 'navigation/faceted-block/module';
 @import 'navigation/selector/module';
 
