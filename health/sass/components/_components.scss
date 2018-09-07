@@ -9,74 +9,34 @@
 
 //@import 'layout/layout';
 
-// Typography
-@import 'au-headings';
 
-@import 'typography/blockquote/module';
-@import 'typography/fields/module';
 
-@import 'au-body';
 
+// @govau components
+@import '@govau/components';
+
+@import 'card/card';
+
+// @health components
+@import '@health/components';
 
 // Block styles
-@import 'block-types/bean-image-text';
+@import 'bean-image-text';
 
-// Component types
-@import 'au-callout';
-@import 'au-grid';
-@import 'au-listing';
-@import 'au-field';
-@import 'au-cta-link';
-@import 'au-video';
-@import 'au-tags';
-@import 'au-page-alerts';
-@import 'au-back-to-top';
-@import 'card/card';
-@import 'health-table';
-@import 'responsive-media';
-@import 'table-drag/table-drag';
-@import 'table-drag/health-table-drag';
-@import 'images';
-@import 'stat';
-@import 'taskbar';
-@import 'fieldset';
-@import 'au-header';
-@import 'au-sub-header';
-@import 'au-footer';
-@import 'readspeaker';
-@import 'socialmedia';
-@import 'link';
-@import 'description-list';
 @import 'feedback';
-
-@import '_health-accordion.scss';
-
-// Books
-//
-// Components for long documents, HTML versions of publications and books.
-//
-// Style guide: Components.books
-@import 'au-footnotes';
-@import 'au-references';
-@import 'health-figure';
-@import 'au-recommendation';
-
-@import 'tooltip';
-@import 'table-of-contents';
 
 // Content types
 @import 'content-types/module';
 
 // Views, bands and layouts
-@import 'au-band';
+
 @import 'views';
 
 // Views, bands and layouts
 @import 'paragraphs';
 
 // Drupal
-@import 'au-contextual-links';
-@import 'health-workbench';
+
 
 // Forms
 //
@@ -86,7 +46,7 @@
 // Weight: 3
 //
 // Style guide: forms
-@import 'au-search';
+
 @import 'forms/autocomplete/module';
 @import 'forms/autocomplete/extends';
 @import 'forms/button/module';
@@ -122,23 +82,11 @@
 // Weight: 2
 //
 // Style guide: navigation
-@import 'health-tabs';
-@import 'au-file';
-@import 'au-pager';
-@import 'au-main-nav';
-@import 'au-side-nav';
 
 @import 'navigation/book/module';
-@import 'navigation/breadcrumb/module';
 @import 'navigation/menu/extends';
-@import 'navigation/tags/extends';
-@import 'navigation/filters/module';
-@import 'navigation/filters/extends';
 @import 'navigation/faceted-block/module';
 @import 'navigation/selector/module';
 
-// Inline styles
-@import 'lists';
-
 // Health bespoke styles.
-@import '_health';
+

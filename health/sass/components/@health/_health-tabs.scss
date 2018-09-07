@@ -9,7 +9,8 @@
 // Style guide: navigation.tabs
 
 .au-body {
-  ul.au-tabs {
+
+  ul.health-tabs {
 
     padding: 0;
     border-bottom: $health-borderize--thin;
@@ -51,15 +52,13 @@
 
   }
 
-  // Not full width already has a gap at the top.
-  .not-full-width ul.au-tabs {
+  .not-full-width ul.health-tabs {
     margin-top: 0;
   }
 
   @media print {
-    .au-tabs {
+    .health-tabs {
       display: none;
     }
   }
-
 }

@@ -214,4 +214,4 @@ endif;
   <?php print $backtotop; ?>
 </div>
 
-<button title="back to top" class="au-back-to-top"> <a class="au-btn au-btn--secondary" href="#">Back <span>to top</span></a> </button>
+<button title="back to top" class="health-back-to-top"> <a class="au-btn au-btn--secondary" href="#">Back <span>to top</span></a> </button>

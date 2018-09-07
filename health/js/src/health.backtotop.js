@@ -5,7 +5,7 @@
   Drupal.behaviors.backtotop = {
     attach: function (context, settings) {
 
-      var $backToTop = $('.au-back-to-top');
+      var $backToTop = $('.health-back-to-top');
 
       $(document).bind('scroll', function () {
         if ($(document).scrollTop() > 1000) {
