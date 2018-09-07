@@ -77,6 +77,13 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
     $form['field_status']['#disabled'] = 'disabled';
     array_unshift($form['actions']['submit']['#submit'], '_health_adminimal_set_status');
   }
+
+  // FOI requests.
+  if ($form_id == 'foi_request_node_form') {
+    $form['field_publication_type']['#disabled'] = 'disabled';
+    $form['field_audience']['#disabled'] = 'disabled';
+    $form['field_related_health_topics']['#disabled'] = 'disabled';
+  }
 }
 
 /**
