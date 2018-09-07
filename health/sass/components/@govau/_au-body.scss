@@ -40,7 +40,7 @@
   }
 
   // Override external link icon with font awesome.
-  .page a[rel~='external'] {
+  a[rel~='external'] {
     &:after, &:hover:after {
       background-image: none;
       content: "\f08e";
