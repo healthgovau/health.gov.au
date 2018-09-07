@@ -23,11 +23,7 @@ endif;
 
 <div class="page au-body">
   <div class="header-top au-main-nav__above-overlay">
-    <div class="container">
-      <div class="row">
-        <?php print render($page['header-top']); ?>
-      </div>
-    </div>
+    <?php print render($page['header-top']); ?>
   </div>
   <header class="au-header au-header--light au-main-nav__above-overlay clearfix" role="banner">
     <div class="container">
