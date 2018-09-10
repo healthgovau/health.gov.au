@@ -91,6 +91,20 @@
     }
   }
 
+  // Hide fields when printing.
+  .print--hide {
+    @media print {
+      display: none;
+    }
+  }
+
+  // For survey only - Uncomment when implmenting
+  // #owInviteSnippet {
+  //   font-family: $AU-font-system;
+  //   a[rel~='external'] svg {
+  //     margin-left: 5px;
+  //   }
+  // }
 
 
 }

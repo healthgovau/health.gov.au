@@ -13,9 +13,9 @@
     * + & {
       @include AU-space(margin-top, 1.5unit);
     }
-
     border-bottom: $health-borderize--very-thin;
-    @include AU-space('margin-bottom', 2unit);
+    margin-bottom: 0;
+
     dt {
       font-weight: bold;
       @include AU-space('margin-bottom', 1unit);
@@ -27,8 +27,8 @@
         float: left;
         width: 25%;
       }
-
     }
+
     dd {
       margin-left: 0;
 
@@ -43,5 +43,6 @@
         width: 75%;
       }
     }
+
   }
 }
