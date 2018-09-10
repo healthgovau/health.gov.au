@@ -366,10 +366,10 @@
     attach: function (context, settings) {
       // Edit content.
       characterLimit('.page-node-edit .form-item-title', 'input', 70);
-      characterLimit('.page-node-edit .field-name-field-summary', 'textarea', 200);
+      characterLimit('.page-node-edit .field-name-field-summary', 'textarea', 300);
       // Add content.
       characterLimit('.page-node-add .form-item-title', 'input', 70);
-      characterLimit('.page-node-add .field-name-field-summary', 'textarea', 200);
+      characterLimit('.page-node-add .field-name-field-summary', 'textarea', 300);
     }
   };
 
