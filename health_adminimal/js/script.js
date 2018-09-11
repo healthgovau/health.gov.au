@@ -293,16 +293,19 @@
   // Add required label to nmm ID field for orderable publication.
   Drupal.behaviors.health_adminimal_orderable_publication = {
     attach: function (context, settings) {
-      $('.field-name-field-publication-orderable input', context).on('click', function() {
-        if ($(this).is(':checked')) {
-          if (!$('.form-item-field-publication-nmm-id-und-0-value .form-required', context).length) {
-            $('.form-item-field-publication-nmm-id-und-0-value label', context).append('<span class="form-required" title="This field is required.">*</span>');
+      var $orderable = $('.field-name-field-publication-orderable input', context);
+      if ($orderable.length > 0) {
+        $orderable.click(function () {
+          if ($(this).is(':checked')) {
+            if (!$('.form-item-field-publication-nmm-id-und-0-value .form-required', context).length) {
+              $('.form-item-field-publication-nmm-id-und-0-value label', context).append('<span class="form-required" title="This field is required.">*</span>');
+            }
           }
-        }
-        else {
-          $('.form-item-field-publication-nmm-id-und-0-value .form-required', context).remove();
-        }
-      });
+          else {
+            $('.form-item-field-publication-nmm-id-und-0-value .form-required', context).remove();
+          }
+        });
+      }
     }
   };
 
