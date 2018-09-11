@@ -9,6 +9,9 @@
       // Do a fake resize to get the toolbar top padding to fix itself.
       $(window).trigger('resize');
 
+      // Front page feedback band.
+      $('.media-browser-library-list .label-wrapper', context).matchHeight();
+
       // Collapse and expand buttons for field components paragraph blocks  .
       // Create buttons.
       var collapse = '<a href="#" class="collapse-all-link">Collapse all</a> | ';
@@ -293,16 +296,19 @@
   // Add required label to nmm ID field for orderable publication.
   Drupal.behaviors.health_adminimal_orderable_publication = {
     attach: function (context, settings) {
-      $('.field-name-field-publication-orderable input', context).on('click', function() {
-        if ($(this).is(':checked')) {
-          if (!$('.form-item-field-publication-nmm-id-und-0-value .form-required', context).length) {
-            $('.form-item-field-publication-nmm-id-und-0-value label', context).append('<span class="form-required" title="This field is required.">*</span>');
+      var $orderable = ('.field-name-field-publication-orderable input', context);
+      if ($orderable.length > 0) {
+        $orderable.on('click', function () {
+          if ($(this).is(':checked')) {
+            if (!$('.form-item-field-publication-nmm-id-und-0-value .form-required', context).length) {
+              $('.form-item-field-publication-nmm-id-und-0-value label', context).append('<span class="form-required" title="This field is required.">*</span>');
+            }
           }
-        }
-        else {
-          $('.form-item-field-publication-nmm-id-und-0-value .form-required', context).remove();
-        }
-      });
+          else {
+            $('.form-item-field-publication-nmm-id-und-0-value .form-required', context).remove();
+          }
+        });
+      }
     }
   };
 
@@ -325,38 +331,46 @@
       // Checkbox.
       var $checkbox = $('.field-name-field-enable-manual-date-editing', context);
 
-      // If we are not an admin, hide the checkbox.
-      if (!enabled) {
-        $checkbox.hide();
+      if ($checkbox.length > 0) {
+
+        // If we are not an admin, hide the checkbox.
+        if (!enabled) {
+          $checkbox.hide();
+        }
+
+        // Dates to enable/disable.
+        var dates = ['.field-name-field-date-updated', '.field-name-field-date-published'];
+
+        // Set the enabled/disabled state on load.
+        if (!enabled || $checkbox.find('input').is(":checked") === false) {
+          for (var i = 0; i < dates.length; i++) {
+            $(dates[i] + ' .form-item', context).addClass('form-disabled');
+            $(dates[i] + ' input', context).attr('disabled', function (_, attr) {
+              return !attr
+            });
+          }
+        }
+
+        // When the checkbox changes, toggle enabled/disabled.
+        $checkbox.find('input').on('change', function () {
+          for (var i = 0; i < dates.length; i++) {
+            $(dates[i] + ' input', context).attr('disabled', function (_, attr) {
+              return !attr
+            });
+            $(dates[i] + ' .form-item', context).toggleClass('form-disabled');
+          }
+        });
+
+
+        // We get an error if the fields are disabled when submitting,
+        // so just before we submit, re-enable the fields.
+        $('.node-form').submit(function () {
+          for (var i = 0; i < dates.length; i++) {
+            $(dates[i] + ' input', context).removeAttr('disabled');
+          }
+        });
+
       }
-
-      // Dates to enable/disable.
-      var dates = ['.field-name-field-date-updated', '.field-name-field-date-published'];
-
-      // Set the enabled/disabled state on load.
-      if (!enabled || $checkbox.find('input').is( ":checked" ) === false) {
-        for(var i=0; i<dates.length; i++) {
-          $(dates[i] + ' .form-item', context).addClass('form-disabled');
-          $(dates[i] + ' input', context).attr('disabled', function(_, attr){ return !attr});
-        }
-      }
-
-      // When the checkbox changes, toggle enabled/disabled.
-      $checkbox.find('input').on('change', function() {
-        for(var i=0; i<dates.length; i++) {
-          $(dates[i] + ' input', context).attr('disabled', function(_, attr){ return !attr});
-          $(dates[i] + ' .form-item', context).toggleClass('form-disabled');
-        }
-      });
-
-
-      // We get an error if the fields are disabled when submitting,
-      // so just before we submit, re-enable the fields.
-      $('.node-form').submit(function() {
-        for(var i=0; i<dates.length; i++) {
-          $(dates[i] + ' input', context).removeAttr('disabled');
-        }
-      });
 
     }
   };
