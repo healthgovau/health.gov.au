@@ -42,7 +42,7 @@
 
             // Find the latest version of this file.
             $.ajax({
-              url: "http://health.local/admin/content/files/version/" + parent.newRevision.type + '/' + parent.newRevision.filename,
+              url: window.location.origin + "/admin/content/files/version/" + parent.newRevision.type + '/' + parent.newRevision.filename,
               type: 'GET',
               success: function (data) {
                 var version = $('.field-content', data).text();
