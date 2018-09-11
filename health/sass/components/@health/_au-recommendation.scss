@@ -23,7 +23,10 @@
   &--grade-grade-a,
   &--grade-grade-b,
   &--grade-grade-c,
-  &--grade-grade-d {
+  &--grade-grade-d,
+  &--grade-evidence-based,
+  &--grade-qualified-evidence-based
+  {
     border-left-color: #8852ce;
     .au-recommendation__grade {
       background-color: #e0c8ff;
