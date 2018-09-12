@@ -106,6 +106,7 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
   }
   if (in_array($form['#form_id'], $edit_media_forms)) {
     $form['actions']['submit']['#submit'][] = '_health_adminimal_file_rename_submitter';
+    $form['#attached']['js'][] = drupal_get_path('theme', 'health_adminimal') . '/js/file-revision-populate.js';
   }
 
   // Add logic of if a news or event node is marked as featured, it should be validated with value in featured image field.
@@ -228,32 +229,31 @@ function _health_adminimal_optgroup_children($term) {
 }
 
 /**
- * Submit handler to rename the file to what the user has entered for the file title.
+ * Submit handler to rename the file.
  *
- * @param $form
- * @param $form_state
+ * @param array $form
+ *   The form.
+ * @param array $form_state
+ *   The form state.
  */
 function _health_adminimal_file_rename_submitter($form, &$form_state) {
 
   $new_name = _health_adminimal_prepare_filename($form_state['values']['filename']);
-  $old_name = _health_adminimal_prepare_filename($form['filename']['#default_value']);
+  $new_name .= '_v' . $form_state['values']['field_file_version'][LANGUAGE_NONE][0]['value'];
 
-  // First check if the filename actually needs renaming.
-  if ($new_name != $old_name || !empty($form_state['values']['replace_upload'])) {
-    // Get the file.
-    $file = $form_state['file'];
-    // Get the file extension.
-    $path_info = pathinfo($file->uri);
-    $new_name .= '.' . $path_info['extension'];
-    // Generate the filename, this checks if the file already exists and adds to it.
-    $new_name = file_create_filename($new_name, file_uri_scheme($file->uri) . '://');
-    // Rename the file (move it).
-    file_move($file, $new_name);
-    // Moving sets the actual file name as the title, so revert that back to what it should be.
-    $file = file_load($file->fid);
-    $file->filename = $form_state['values']['filename'];
-    file_save($file);
-  }
+  // Get the file.
+  $file = $form_state['file'];
+  // Get the file extension.
+  $path_info = pathinfo($file->uri);
+  $new_name .= '.' . $path_info['extension'];
+  // Generate the filename, this checks if the file already exists and adds to it.
+  $new_name = file_create_filename($new_name, file_uri_scheme($file->uri) . '://');
+  // Rename the file (move it).
+  file_move($file, $new_name);
+  // Moving sets the actual file name as the title, so revert that back to what it should be.
+  $file = file_load($file->fid);
+  $file->filename = $form_state['values']['filename'];
+  file_save($file);
 }
 
 function _health_adminimal_prepare_filename($name) {

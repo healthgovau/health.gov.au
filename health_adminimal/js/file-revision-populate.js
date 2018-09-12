@@ -4,24 +4,23 @@
     attach: function (context) {
 
       // If we are on the add new file form.
-      var $form = $('#file-entity-add-upload');
-
-      if ($form.length) {
+      var $addForm = $('#file-entity-add-upload');
+      if ($addForm.length) {
 
         if (typeof parent.newRevision != 'undefined') {
 
           // First step, remove the option to select from library.
-          if ($form.find('#edit-upload-upload').length) {
+          if ($addForm.find('#edit-upload-upload').length) {
             $('#branding').hide();
           }
 
           // Second step, name, version and file.
-          if ($form.find('#edit-filename').length) {
+          if ($addForm.find('#edit-filename').length) {
 
             // Disable the save button until ajax is done.
-            $form.find('#edit-submit').hide();
+            $addForm.find('#edit-submit').hide();
 
-            // If so, populate the fields.
+            // Populate the fields.
 
             // Title.
             $('#edit-filename').val(parent.newRevision.filename)
@@ -34,7 +33,7 @@
 
             // Version
             $('#edit-field-file-version-und-0-value')
-              .attr('disabled', 'disabled') // Disable
+              .attr('disabled', 'disabled')
               .hide()
               .parents('.form-item')
               .addClass('form-disabled')
@@ -55,7 +54,7 @@
                   .show()
                   .parents('.form-item')
                   .find('.ajax-progress').remove();
-                $form.find('#edit-submit').show();
+                $addForm.find('#edit-submit').show();
               },
               error: function (data) {
                 $('#edit-field-file-version-und-0-value')
@@ -63,12 +62,12 @@
                   .show()
                   .parents('.form-item')
                   .find('.ajax-progress').remove();
-                $form.find('#edit-submit').show();
+                $addForm.find('#edit-submit').show();
               }
             });
 
             // Submit click handler.
-            $form.find('#edit-submit').click(function () {
+            $addForm.find('#edit-submit').click(function () {
               // Remove disabled as drupal freaks out!
               $('.form-item').removeClass('form-disabled').find('input').attr('disabled', '');
               // Reset the variables so this doesn't trigger again.
@@ -77,6 +76,16 @@
           }
         }
       }
+
+      // If we are on the edit form.
+      var $editForm = $('#file-entity-edit');
+      if ($editForm.length) {
+        // Hide fields we don't want authors to edit.
+        $editForm.find('.form-item-files-replace-upload').hide();
+        $editForm.find('.form-item-filename').hide();
+        $editForm.find('.field-name-field-file-version').hide();
+      }
+
     }
   };
 
