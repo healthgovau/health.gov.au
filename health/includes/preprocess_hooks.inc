@@ -383,11 +383,7 @@ function health_preprocess_entity(&$variables) {
       $node = menu_get_object('node');
       switch ($para_item->field_summary_list_type[LANGUAGE_NONE][0]['value']) {
         case 'Recommendations':
-          $recommendations = _health_book_tree_traverse($node->book['bid'], '_health_book_find_recommendations');
-          foreach($recommendations as $nid => $group) {
-            $entities = entity_view('paragraphs_item', $group['recommendations'], 'listing_vertical', NULL, TRUE);
-            $output .= theme('health_summary_list_group', ['node' => $group['node'], 'items' => render($entities)]);
-          }
+          $output = _health_book_find_recommendations($node->book['bid']);
           break;
 
         case 'Tables':
