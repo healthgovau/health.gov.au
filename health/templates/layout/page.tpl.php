@@ -188,7 +188,23 @@ endif;
   <footer class="au-footer health-footer <?php print $classes; ?>" role="contentinfo">
     <div class="container">
       <div class="au-footer__navigation health-footer__navigation row">
-      <?php print render($page['footer_top']); ?>
+        <?php print render($page['footer_top']); ?>
+        <div class="col-sm-3">
+          <h3>Help us improve</h3>
+          <p>We are always looking for ways to improve our website.</p>
+          <?php print l(t('Provide feedback'), 'node/21',
+            [
+              'attributes' => [
+                'class' => [
+                  'au-btn',
+                  'au-btn--secondary',
+                  'au-btn--dark',
+                  'standard-gap',
+                ],
+              ],
+            ]
+          ); ?>
+        </div>
       </div>
       <div class="au-footer__end health-footer__end row">
       <?php print render($page['footer_bottom']); ?>
