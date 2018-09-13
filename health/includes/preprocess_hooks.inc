@@ -180,7 +180,10 @@ function health_preprocess_entity(&$variables) {
 
     // Link.
     if ($para_item->bundle == 'para_link') {
-      $variables['card_style'] = $para_item->card_style;
+      $variables['card_style'] = '';
+      if (property_exists($para_item, 'card_style')) {
+        $variables['card_style'] = $para_item->card_style;
+      }
     }
 
     // Contact.
