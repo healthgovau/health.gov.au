@@ -1,21 +1,25 @@
 <?php
 
 /**
+ * @file
  * This file contains the display suite preprocess hooks.
+ *
  * They are called from health_preprocess_node.
  */
 
-CONST HP_LINK_TOKEN = '[topic-hp-link]';
-CONST GP_LINK_TOKEN = '[topic-gp-link]';
+const HP_LINK_TOKEN = '[topic-hp-link]';
+const GP_LINK_TOKEN = '[topic-gp-link]';
 
 /**
  * DS - Content type.
  *
- * @param $variables
+ * @param array $variables
+ *   Variables from preprocess.
  *
  * @return string
+ *   HTML output.
  */
-function health_preprocess_ds_content_type(&$variables) {
+function health_preprocess_ds_content_type(array &$variables) {
   $field_variables = _health_label_display($variables, 'content_type');
 
   // Get the list of content type names.
@@ -35,13 +39,15 @@ function health_preprocess_ds_content_type(&$variables) {
 }
 
 /**
- * Implements DS preprocess field -- table of content.
+ * DS - Table of contents.
  *
- * @param $variables
- * 
+ * @param array $variables
+ *   Variables from preprocess.
+ *
  * @return string
+ *   HTML output.
  */
-function health_preprocess_ds_table_of_content(&$variables) {
+function health_preprocess_ds_table_of_content(array &$variables) {
   if ((isset($variables['field_generate_on_this_page'][LANGUAGE_NONE]) && $variables['field_generate_on_this_page'][LANGUAGE_NONE][0]['value'] == 1) ||
   (isset($variables['field_generate_in_collection'][LANGUAGE_NONE]) && $variables['field_generate_in_collection'][LANGUAGE_NONE][0]['value'] == 1)) {
     // This node is flagged to display table of content.
@@ -82,16 +88,19 @@ function health_preprocess_ds_table_of_content(&$variables) {
 
     return drupal_render($render_array);
   }
+  return '';
 }
 
 /**
- * Implements DS preprocess field -- term link.
+ * DS - Term link.
  *
- * @param $variables
+ * @param array $variables
+ *   Variables from preprocess.
  *
  * @return string
+ *   HTML output.
  */
-function health_preprocess_ds_term_link(&$variables) {
+function health_preprocess_ds_term_link(array &$variables) {
   $para_item = $variables['paragraphs_item'];
   if ($para_item->bundle == 'para_taxonomy') {
     // Override term link field content with link field and term label.
@@ -114,18 +123,21 @@ function health_preprocess_ds_term_link(&$variables) {
       return drupal_render($render);
     }
   }
+  return '';
 }
 
 /**
- * Implements DS preprocess field -- document accessibility form link.
+ * DS - Document accessibility form link.
  *
- * @param $variables
+ * @param array $variables
+ *   Variables from preprocess.
  *
  * @return string
+ *   HTML output.
  */
-function health_preprocess_ds_document_accessibility_form_link($variables) {
+function health_preprocess_ds_document_accessibility_form_link(array $variables) {
   // Find current page url.
-  Global $base_url;
+  global $base_url;
   $current_url = drupal_encode_path($base_url . '/' . drupal_get_path_alias(current_path()));
 
   $render_array = [
@@ -137,14 +149,16 @@ function health_preprocess_ds_document_accessibility_form_link($variables) {
 }
 
 /**
- * Implements DS preprocess field -- para_blocks.
+ * DS - para_blocks.
  *
- * @param $variable
+ * @param array $variables
+ *   Variables from preprocess.
  *
- * @return String
+ * @return string
+ *   HTML output.
  */
-function health_preprocess_ds_para_rendered_blocks($variable) {
-  $para_item = $variable['paragraphs_item'];
+function health_preprocess_ds_para_rendered_blocks(array $variables) {
+  $para_item = $variables['paragraphs_item'];
   $output = '';
   if (isset($para_item->field_para_block_id[LANGUAGE_NONE])) {
     $output = '<div class="row">';
@@ -155,37 +169,42 @@ function health_preprocess_ds_para_rendered_blocks($variable) {
       $block['content']['bean'][$block_delta['value']]['num'] = $count;
       $output .= drupal_render($block['content']);
     }
-    $output.= '</div>';
+    $output .= '</div>';
   }
   return $output;
 }
 
 /**
- * Display suite preprocessor - download image link.
+ * DS - Download image link.
  *
- * @param $variables
+ * @param array $variables
+ *   Variables from preprocess.
  *
  * @return string
+ *   HTML output.
  */
-function health_preprocess_ds_download_image_link(&$variables) {
-  return l("View text version and larger image of '" . $variables['title'] . "' graphic", 'node/' . $variables['nid'], ['html' => true]);
+function health_preprocess_ds_download_image_link(array &$variables) {
+  $link_title = t("View text version and larger image of '@title' graphic", [$variables['title']]);
+  return l($link_title, 'node/' . $variables['nid'], ['html' => TRUE]);
 }
 
 /**
- * Display suite preprocessor - public hp switcher.
+ * DS - Public HP switcher.
  *
- * @param $variables
+ * @param array $variables
+ *   Variables from preprocess.
  *
  * @return string
+ *   HTML output.
  */
-function health_preprocess_ds_public_hp_switcher(&$variables) {
+function health_preprocess_ds_public_hp_switcher(array &$variables) {
   if (arg(0) == 'node' && is_numeric(arg(1))) {
     // Check what is the current page for.
     $attached_node = node_load(arg(1));
     if ($attached_node->type == 'health_topic') {
       $render_elements = _health_get_render_elements_for_public_topic_page($variables);
     }
-    else if ($attached_node->type == 'health_topic_hp') {
+    elseif ($attached_node->type == 'health_topic_hp') {
       $render_elements = _health_get_render_elements_for_hp_topic_page($variables);
     }
     else {
@@ -218,13 +237,15 @@ function health_preprocess_ds_public_hp_switcher(&$variables) {
 }
 
 /**
- * Display suite preprocessor - media query.
+ * DS - Media query.
  *
- * @param $variables
+ * @param array $variables
+ *   Variables from preprocess.
  *
  * @return string
+ *   HTML output.
  */
-function health_preprocess_ds_media_enquiry(&$variables) {
+function health_preprocess_ds_media_enquiry(array &$variables) {
   $render_array = [
     '#theme' => 'media_enquiry',
   ];
@@ -232,13 +253,15 @@ function health_preprocess_ds_media_enquiry(&$variables) {
 }
 
 /**
- * Display suite preprocessor -- publication collection
+ * DS - Publication collection.
  *
- * @param $variables
+ * @param array $variables
+ *   Variables from preprocess.
  *
  * @return string
+ *   HTML output.
  */
-function health_preprocess_ds_related_publication_collections(&$variables) {
+function health_preprocess_ds_related_publication_collections(array &$variables) {
   // Find paragraph collections the current publication belong to.
   if ($variables['type'] == 'publication') {
     $query = new EntityFieldQuery();
@@ -282,16 +305,19 @@ function health_preprocess_ds_related_publication_collections(&$variables) {
       return drupal_render($render_array);
     }
   }
+  return '';
 }
 
 /**
- * Display suite preprocessor -- associated release
+ * DS - Associated release.
  *
- * @param $variables
+ * @param array $variables
+ *   Variables from preprocess.
  *
  * @return string
+ *   HTML output.
  */
-function health_preprocess_ds_associated_release(&$variables) {
+function health_preprocess_ds_associated_release(array &$variables) {
   $field_variables = _health_label_display($variables, 'associated_release');
 
   // Load the view to get the associated release.
@@ -301,7 +327,7 @@ function health_preprocess_ds_associated_release(&$variables) {
   $view->execute();
   if (!empty($view->result)) {
     $link = l($view->result[0]->node_title, 'node/' . $view->result[0]->nid);
-    $field_variables['items'] = [['#markup'=> $link]];
+    $field_variables['items'] = [['#markup' => $link]];
     if ($field_variables['settings']['associated_release']['label'] == 'inline') {
       $field_variables['classes'] .= ' field--inline--aligned';
     }
@@ -311,68 +337,84 @@ function health_preprocess_ds_associated_release(&$variables) {
 }
 
 /**
- * DS - Book navigation - Previous and next
+ * DS - Book navigation - Previous and next.
  *
- * @param $variables
+ * @param array $variables
+ *   Variables from preprocess.
  *
  * @return string
+ *   HTML output.
  */
-function health_preprocess_ds_book_navigation_prev_next(&$variables) {
+function health_preprocess_ds_book_navigation_prev_next(array &$variables) {
   if (isset($variables['content']['book_navigation'])) {
     return render($variables['content']['book_navigation']);
   }
+  return '';
 }
 
 /**
  * DS - Recommendation tags.
  *
- * @param $variables
+ * @param array $variables
+ *   Variables from preprocess.
  *
  * @return string
+ *   HTML output.
  */
-function health_preprocess_ds_recommendation_tags(&$variables) {
-  // Grade
-  $items = [[
-    'data' => $variables['content']['field_recommendation_grade'][0]['#markup'],
-    'class' => ['au-recommendation__grade']
-  ]];
-  // Number
+function health_preprocess_ds_recommendation_tags(array &$variables) {
+  // Grade.
+  $items = [
+    [
+      'data' => $variables['content']['field_recommendation_grade'][0]['#markup'],
+      'class' => ['au-recommendation__grade'],
+    ],
+  ];
+
+  // Number.
   if (!empty($variables['content']['field_recommendation_number'])) {
     $items[] = ['data' => $variables['content']['field_recommendation_number'][0]['#markup']];
   }
+
   // Put them both in a tags list.
-  return theme('item_list',[
+  return theme('item_list', [
     'items' => $items,
     'attributes' => ['class' => ['au-tags']],
-    'type' => 'ul'
+    'type' => 'ul',
   ]);
 }
 
 /**
  * DS - Survey link (disabled)
  *
- * @param $variables
+ * @param array $variables
+ *   Variables from preprocess.
  *
  * @return string
+ *   HTML output.
  */
-function health_preprocess_ds_survey_link_disabled(&$variables) {
+function health_preprocess_ds_survey_link_disabled(array &$variables) {
   if ($variables['field_status'][0]['value'] == 'Upcoming') {
     $friendly = _health_friendly_interval_date($variables['field_date_start'][LANGUAGE_NONE][0]['value']);
     return "<button class='au-btn' disabled='disabled'>Survey will open {$friendly['text']}</button>";
-  } else if ($variables['field_status'][0]['value'] == 'Closed') {
+  }
+  elseif ($variables['field_status'][0]['value'] == 'Closed') {
     return "<button class='au-btn' disabled='disabled'>Survey is closed</button>";
   }
+  return '';
 }
 
 /**
- * DS - Start end date friendly
+ * DS - Start end date friendly.
+ *
  * Only works if this node has start and end dates.
  *
- * @param $variables
+ * @param array $variables
+ *   Variables from preprocess.
  *
  * @return string
+ *   HTML output.
  */
-function health_preprocess_ds_start_end_date_friendly(&$variables) {
+function health_preprocess_ds_start_end_date_friendly(array &$variables) {
   $field_variables = _health_label_display($variables, 'start_end_date_friendly');
   $start = _health_friendly_interval_date($variables['field_date_start'][LANGUAGE_NONE][0]['value']);
   if ($start['ago'] == FALSE) {
@@ -393,15 +435,18 @@ function health_preprocess_ds_start_end_date_friendly(&$variables) {
     }
     return theme_field($field_variables);
   }
+  return '';
 }
 
 /**
  * DS - Close button for alerts.
  *
- * @param $variables
+ * @param array $variables
+ *   Variables from preprocess.
  *
  * @return string
+ *   HTML output.
  */
-function health_preprocess_ds_alert_close_button(&$variables) {
+function health_preprocess_ds_alert_close_button(array &$variables) {
   return theme('health_alert_close_button', ['nid' => $variables['nid']]);
 }

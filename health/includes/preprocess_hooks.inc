@@ -1,18 +1,24 @@
 <?php
+
+/**
+ * @file
+ * Preprocess hooks.
+ */
+
 // Include inc files.
 include_once drupal_get_path('theme', 'health') . '/includes/helper.inc';
 
-CONST READSPEAKER_URL = 'https://sf1-as.readspeaker.com/script/5802/ReadSpeaker.js?pids=embhl';
-CONST GOOGLE_MAP_API = '//maps.googleapis.com/maps/api/staticmap';
-CONST RESOURCES_TYPE = [
+const READSPEAKER_URL = 'https://sf1-as.readspeaker.com/script/5802/ReadSpeaker.js?pids=embhl';
+const GOOGLE_MAP_API = '//maps.googleapis.com/maps/api/staticmap';
+const RESOURCES_TYPE = [
   'image',
   'publication',
   'video',
   'audio',
   'app_or_tool',
 ];
-CONST THEME_PATH_TOKEN_GENERIC = '[theme-path]';
-CONST PUBLICATION_TYPE_INFOGRAPHIC = 2176;
+const THEME_PATH_TOKEN_GENERIC = '[theme-path]';
+const PUBLICATION_TYPE_INFOGRAPHIC = 2176;
 
 /**
  * Override or insert variables into the block templates.
@@ -22,7 +28,7 @@ CONST PUBLICATION_TYPE_INFOGRAPHIC = 2176;
  * @param string $hook
  *   The name of the template being rendered ("block" in this case.)
  */
-function health_preprocess_block(&$variables, $hook) {
+function health_preprocess_block(array &$variables, $hook) {
 
   // Use a template with no wrapper for the page's main content.
   if ($variables['block_html_id'] == 'block-system-main') {
@@ -48,16 +54,19 @@ function health_preprocess_block(&$variables, $hook) {
         case 'main':
           // Note: the "main" role goes in the page.tpl, not here.
           break;
+
         case 'help':
         case 'powered-by':
           $variables['attributes_array']['role'] = 'complementary';
           break;
+
         default:
           // Any other "system" block is a menu block.
           $variables['attributes_array']['role'] = 'navigation';
           break;
       }
       break;
+
     case 'menu':
     case 'book':
     case 'menu_block':
@@ -67,10 +76,12 @@ function health_preprocess_block(&$variables, $hook) {
     case 'shortcut':
       $variables['attributes_array']['role'] = 'navigation';
       break;
+
     case 'search':
     case 'search_api_page':
       $variables['attributes_array']['role'] = 'search';
       break;
+
     case 'help':
     case 'aggregator':
     case 'locale':
@@ -78,21 +89,25 @@ function health_preprocess_block(&$variables, $hook) {
     case 'profile':
       $variables['attributes_array']['role'] = 'complementary';
       break;
+
     case 'node':
       switch ($variables['block']->delta) {
         case 'syndicate':
           $variables['attributes_array']['role'] = 'complementary';
           break;
+
         case 'recent':
           $variables['attributes_array']['role'] = 'navigation';
           break;
       }
       break;
+
     case 'user':
       switch ($variables['block']->delta) {
         case 'login':
           $variables['attributes_array']['role'] = 'form';
           break;
+
         case 'new':
         case 'online':
           $variables['attributes_array']['role'] = 'complementary';
@@ -110,7 +125,8 @@ function health_preprocess_block(&$variables, $hook) {
   if ($variables['block']->module == 'search_api_page') {
     if ($variables['block']->context == 'global__mobile') {
       $variables['classes_array'][] = 'au-search--global-mobile';
-    } else {
+    }
+    else {
       $variables['classes_array'][] = 'au-search--global-desktop';
     }
   }
@@ -119,14 +135,14 @@ function health_preprocess_block(&$variables, $hook) {
 /**
  * Override or insert variables for the breadcrumb theme function.
  *
- * @param $variables
+ * @param array $variables
  *   An array of variables to pass to the theme function.
- * @param $hook
+ * @param string $hook
  *   The name of the theme hook being called ("breadcrumb" in this case).
  *
  * @see govcms_parkes_breadcrumb()
  */
-function health_preprocess_breadcrumb(&$variables, $hook) {
+function health_preprocess_breadcrumb(array &$variables, $hook) {
   // Provide a navigational heading to give context for breadcrumb links to
   // screen-reader users.
   if (empty($variables['title'])) {
@@ -135,9 +151,12 @@ function health_preprocess_breadcrumb(&$variables, $hook) {
 }
 
 /**
- * Implements THEME_preprocess_entity().
+ * Override or insert variables into entity templates.
+ *
+ * @param array $variables
+ *   Preprocess variables.
  */
-function health_preprocess_entity(&$variables) {
+function health_preprocess_entity(array &$variables) {
   // Paragraphs.
   if ($variables['elements']['#entity_type'] == 'paragraphs_item') {
 
@@ -248,21 +267,25 @@ function health_preprocess_entity(&$variables) {
 
       // Remove featured items from listings.
       if ($view_name == 'news_and_events') {
-        switch($view_mode) {
+        switch ($view_mode) {
           case "latest_news_events_public":
             if ($nid = _health_get_featured_item('featured_news_events')) {
               $view->set_arguments([NULL, $nid]);
             }
+            break;
+
           case "latest_news_events_hp":
             if ($nid = _health_get_featured_item('featured_news_events_hp')) {
               $view->set_arguments([NULL, $nid]);
             }
             break;
+
           case "latest_news_events_global":
             if ($nid = _health_get_featured_item('featured_news_events')) {
               $view->set_arguments([$nid]);
             }
             break;
+
           case "latest_news_events_public_program":
             if ($nid = _health_get_featured_item('featured_news_events')) {
               $view->set_arguments([NULL, $nid]);
@@ -271,7 +294,7 @@ function health_preprocess_entity(&$variables) {
         }
       }
       if ($view_name == 'latest_rsources') {
-        switch($view_mode) {
+        switch ($view_mode) {
           case "resources_for_public_in_hp":
           case "latest_resources_public":
           case "latest_resources_public_program":
@@ -279,11 +302,13 @@ function health_preprocess_entity(&$variables) {
               $view->set_arguments([NULL, $nid]);
             }
             break;
+
           case "global_public":
             if ($nid = _health_get_featured_item('featured_resource')) {
               $view->set_arguments([$nid]);
             }
             break;
+
           case "latest_resources_hp":
             if ($nid = _health_get_featured_item('featured_resource_hp')) {
               $view->set_arguments([NULL, $nid]);
@@ -317,7 +342,12 @@ function health_preprocess_entity(&$variables) {
           $related_initiative = $para_item->field_related_initiatives[LANGUAGE_NONE][0]['target_id'];
         }
 
-        $view->set_arguments([$content_type, $related_topics, $audience, $related_initiative]);
+        $view->set_arguments([
+          $content_type,
+          $related_topics,
+          $audience,
+          $related_initiative,
+        ]);
       }
 
       $view->execute();
@@ -363,12 +393,12 @@ function health_preprocess_entity(&$variables) {
       $block_num = count($para_item->field_para_block_id[LANGUAGE_NONE]);
       $variables['classes_array'][] = 'block__count--' . $block_num;
       foreach ($variables['paragraphs_item']->field_para_block_id[LANGUAGE_NONE] as $key => $block) {
-        $block['value'] .= '-num'. $block_num;
+        $block['value'] .= '-num' . $block_num;
         $variables['paragraphs_item']->field_para_block_id[LANGUAGE_NONE][$key] = $block;
       }
 
       // Add class to identify specific block.
-      foreach($para_item->field_para_block_id[LANGUAGE_NONE] as $bid) {
+      foreach ($para_item->field_para_block_id[LANGUAGE_NONE] as $bid) {
         $variables['classes_array'][] = 'block-id__' . $bid['value'];
       }
     }
@@ -1205,6 +1235,7 @@ function health_preprocess_page(&$variables) {
   
 
   // Add full width indicator.
+  $variables['full_width'] = FALSE;
   if (isset($variables['node'])) {
     if (theme_get_setting('full_content_types')[$variables['node']->type] !== 0 ) {
       $variables['full_width'] = TRUE;
@@ -1212,9 +1243,6 @@ function health_preprocess_page(&$variables) {
     else {
       $variables['full_width'] = FALSE;
     }
-  }
-  else {
-    $variables['full_width'] = FALSE;
   }
 
   // Add parameters to JS.
