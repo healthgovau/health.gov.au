@@ -58,6 +58,15 @@ function health_preprocess_ds_table_of_content(&$variables) {
       'type' => 'file',
     ];
 
+    // Add full width indicator.
+    $render_array['#full_width'] = FALSE;
+    if (theme_get_setting('full_content_types')[$variables['type']] !== 0) {
+      $render_array['#full_width'] = TRUE;
+    }
+    else {
+      $render_array['#full_width'] = FALSE;
+    }
+
     // Pass title text.
     if ($variables['field_generate_on_this_page'][LANGUAGE_NONE][0]['value'] == 1) {
       $render_array['#attached']['js'][] = [
