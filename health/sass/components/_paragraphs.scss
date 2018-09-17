@@ -147,16 +147,6 @@
   }
 }
 
-// Static content band
-.paragraphs-item-band-static-content {
-  h2 {
-    @include health-fontgrid('xl', 'heading', 'light');
-  }
-  h3 {
-    @include health-fontgrid('lg', 'heading');
-  }
-}
-
 // All .paragraphs-item-para-static-*
 [class*="paragraphs-item-para-static-"],
 [class*="paragraphs-item-para-feature-"]{

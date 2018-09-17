@@ -38,7 +38,9 @@ function health_theme() {
   ];
 
   $theme['toc'] = [
-    'variables' => [],
+    'variables' => [
+      'full_width' => NULL,
+    ],
     'template' => 'toc',
     'path' => drupal_get_path('theme', 'health') . '/templates/health_templates',
   ];
