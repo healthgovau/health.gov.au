@@ -47,4 +47,3 @@
  */
 ?>
 <?php print render($items); ?>
-

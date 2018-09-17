@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Contains the theme's functions to manipulate Drupal's default markup.
@@ -23,7 +24,6 @@ if (theme_get_setting('health_rebuild_registry') && !defined('MAINTENANCE_MODE')
   // Turn on template debugging.
   $GLOBALS['conf']['theme_debug'] = TRUE;
 }
-
 
 /**
  * Implements hook_theme().
@@ -258,7 +258,9 @@ function health_breadcrumb($variables) {
 function health_html_head_alter(&$head) {
   // Simplify the meta tag for character encoding.
   if (isset($head['system_meta_content_type']['#attributes']['content'])) {
-    $head['system_meta_content_type']['#attributes'] = array('charset' => str_replace('text/html; charset=', '', $head['system_meta_content_type']['#attributes']['content']));
+    $head['system_meta_content_type']['#attributes'] = [
+      'charset' => str_replace('text/html; charset=', '', $head['system_meta_content_type']['#attributes']['content']),
+    ];
   }
 }
 
@@ -267,9 +269,6 @@ function health_html_head_alter(&$head) {
  *
  * Look for the last block in the region. This is impossible to determine from
  * within a preprocess_block function.
- *
- * @param $page
- *   Nested array of renderable elements that make up the page.
  */
 function health_page_alter(&$page) {
   // Look in each visible region for blocks.
@@ -317,10 +316,9 @@ function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
       unset($query_string_modified['search_api_views_fulltext']);
 
       $links[] = theme('selected_filter', [
-          'url' => url('/' . current_path(), ['query' => $query_string_modified]),
-          'text' => t('@text', ['@text' => $query_string['search_api_views_fulltext']]),
-        ]
-      );
+        'url' => url('/' . current_path(), ['query' => $query_string_modified]),
+        'text' => t('@text', ['@text' => $query_string['search_api_views_fulltext']]),
+      ]);
     }
 
     // Add form label.
@@ -342,10 +340,9 @@ function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
         }
 
         $links[] = theme('selected_filter', [
-            'url' => '/' . current_path() . '?' . $url,
-            'text' => $filter_name,
-          ]
-        );
+          'url' => '/' . current_path() . '?' . $url,
+          'text' => $filter_name,
+        ]);
       }
     }
 
@@ -362,7 +359,12 @@ function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
       );
 
       $form['#suffix'] .= theme('selected_filters_wrapper', [
-        'selected_filters' => theme_item_list(['items' => $links, 'type' => 'ul', 'attributes'=>['class' => 'au-tags'], 'title'=>'']),
+        'selected_filters' => theme_item_list([
+          'items' => $links,
+          'type' => 'ul',
+          'attributes' => ['class' => 'au-tags'],
+          'title' => '',
+        ]),
         'clear_all' => $clear_all,
       ]);
     }
@@ -370,9 +372,8 @@ function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
-* Implements hook_form_alter().
-* @param $form
-*/
+ * Implements hook_form_alter().
+ */
 function health_form_alter(&$form, &$form_state, $form_id) {
 
   // Alter user feedback webform.
@@ -407,11 +408,13 @@ function health_form_alter(&$form, &$form_state, $form_id) {
  *
  * Uses health_adminimal functions.
  *
- * @param $form
- * @param $form_state
+ * @param array $form
+ *   The form.
+ * @param array $form_state
+ *   The form state.
  */
-function _health_date_submitter($form, &$form_state) {
-  require(drupal_get_path('theme', 'health_adminimal') . '/template.php');
+function _health_date_submitter(array $form, array &$form_state) {
+  require drupal_get_path('theme', 'health_adminimal') . '/template.php';
   _health_adminimal_date_published_submitter($form, $form_state);
   _health_adminimal_date_updated_submitter($form, $form_state);
 }
@@ -421,14 +424,15 @@ function _health_date_submitter($form, &$form_state) {
  */
 function health_form_search_api_page_search_form_alter(&$form, &$form_state) {
 
-  if (key_exists('keys_1', $form)) {
+  if (array_key_exists('keys_1', $form)) {
     $form['keys_1']['#attributes']['placeholder'] = t('Enter your search terms');
     $form['keys_1']['#attributes']['class'][] = 'au-search__form__input au-text-input';
     $form['keys_1']['#prefix'] = '<div class="au-search__form__input-wrapper">';
     $form['keys_1']['#suffix'] = '</div>';
     $form['keys_1']['#attributes']['size'] = 30;
     $form['submit_1']['#attributes']['class'][] = 'au-search__form__submit au-btn';
-  } else if (key_exists('form', $form)) {
+  }
+  elseif (array_key_exists('form', $form)) {
     $form['form']['keys_1']['#attributes']['placeholder'] = t('Enter your search terms');
     $form['form']['keys_1']['#attributes']['class'][] = 'au-search__form__input au-text-input';
     $form['form']['keys_1']['#prefix'] = '<div class="au-search__form__input-wrapper">';
@@ -456,7 +460,7 @@ function health_form_element_label($variables) {
 
   // If the element is required, a required marker is appended to the label.
   $required = !empty($element['#required']) ? theme('form_required_marker', array('element' => $element)) : '';
-  $title = key_exists('#title', $element) ? filter_xss_admin($element['#title']) : '';
+  $title = array_key_exists('#title', $element) ? filter_xss_admin($element['#title']) : '';
 
   $attributes = array();
   // Show label only to screen readers to avoid disruption in visual flows.
@@ -484,7 +488,8 @@ function health_form_element_label($variables) {
     $output .= '<span class="input__text">';
     $output .= $title;
     $output .= '</span>';
-  } else {
+  }
+  else {
     // The leading whitespace helps visually separate fields from inline labels.
     $output = $title;
   }
@@ -608,7 +613,8 @@ function health_form_element(&$variables) {
 /**
  * Implements THEME_select()
  *
- * Wraps a div around the select element so we can use the :after attribute to consistently style the element.
+ * Wraps a div around the select element so we can use the :after attribute to
+ * consistently style the element.
  */
 function health_select($variables) {
   $element = $variables['element'];
@@ -621,27 +627,27 @@ function health_select($variables) {
 /**
  * Implements hook_js_alter().
  *
- * Perform necessary alterations to the JavaScript before it is presented on the page.
- *
- * @param array $javascript
- *   An array of all JavaScript being presented on the page.
+ * Perform necessary alterations to the JavaScript before it is presented on
+ * the page.
  */
 function health_js_alter(&$javascript) {
   // Replace jQuery version on non admin pages.
   $replace_jquery = TRUE;
 
-  // Array of additional admin paths
+  // Array of additional admin paths.
   $extra_admin_paths = array(
     'node/*/edit',
     'node/add/*',
     'media/browser*',
-    'media/ajax*'
+    'media/ajax*',
   );
 
-  // Do not apply to admin pages that may require lower version of jQuery provided by Drupal core
+  // Do not apply to admin pages that may require lower version of jQuery
+  // provided by Drupal core.
   if (path_is_admin(current_path())) {
     $replace_jquery = FALSE;
-  } else {
+  }
+  else {
     foreach ($extra_admin_paths as $extra_admin_path) {
       if (drupal_match_path(current_path(), $extra_admin_path)) {
         $replace_jquery = FALSE;
@@ -655,7 +661,7 @@ function health_js_alter(&$javascript) {
   }
 
   // Move all JS to the footer, to improve page load.
-  foreach($javascript as $key => $js) {
+  foreach ($javascript as $key => $js) {
     $javascript[$key]['scope'] = 'footer';
   }
 
@@ -690,10 +696,10 @@ function health_css_alter(&$css) {
   unset($css['profiles/govcms/modules/contrib/facetapi/facetapi.css']);
 
   // Make sure some css is not rendered on IE8.
-  if (key_exists('profiles/govcms/modules/contrib/ds/layouts/ds_2col/ds_2col.css', $css)) {
+  if (array_key_exists('profiles/govcms/modules/contrib/ds/layouts/ds_2col/ds_2col.css', $css)) {
     $css['profiles/govcms/modules/contrib/ds/layouts/ds_2col/ds_2col.css']['browsers'] = array('IE' => 'gt IE 8');
   }
-  if (key_exists('profiles/govcms/modules/contrib/ds/layouts/ds_2col_stacked/ds_2col_stacked.css', $css)) {
+  if (array_key_exists('profiles/govcms/modules/contrib/ds/layouts/ds_2col_stacked/ds_2col_stacked.css', $css)) {
     $css['profiles/govcms/modules/contrib/ds/layouts/ds_2col_stacked/ds_2col_stacked.css']['browsers'] = array('IE' => 'gt IE 8');
   }
 }
@@ -702,10 +708,6 @@ function health_css_alter(&$css) {
  * Implements hook_file_entity_download_link().
  *
  * Output differently for Image content type.
- *
- * @param $variables
- *
- * @return string
  */
 function health_file_entity_download_link($variables) {
 
@@ -713,10 +715,12 @@ function health_file_entity_download_link($variables) {
   if (is_numeric($nid)) {
     $node = node_load($nid);
 
-    // If this is not an image or publication content type, do the normal formatting.
+    // If this is not an image or publication content type, do the normal
+    // formatting.
     if ($node->type != 'image' && $node->type != 'publication') {
       return theme_file_entity_download_link($variables);
-    } else {
+    }
+    else {
 
       // Grab the file.
       $file = $variables['file'];
@@ -737,7 +741,8 @@ function health_file_entity_download_link($variables) {
               if (!empty($entities)) {
                 $para_document = array_pop($entities);
                 if ($para_document->field_file[LANGUAGE_NONE][0]['fid'] == $file->fid) {
-                  if (count($docs) > 1) { // Multiple document parts.
+                  // Multiple document parts.
+                  if (count($docs) > 1) {
                     $title .= ': ' . $para_documents->field_resource_file_title[LANGUAGE_NONE][0]['value'];
                   }
                   // Get page count.
@@ -751,9 +756,9 @@ function health_file_entity_download_link($variables) {
         }
       }
 
-      // Add metatdata (file size, image size, no of pages)
-
-      // Round to 1 decimal for MB and whole number for KB in terms of the file size format.
+      // Add metatdata (file size, image size, no of pages).
+      // Round to 1 decimal for MB and whole number for KB in terms of the
+      // file size format.
       $file_size = explode(' ', format_size($file->filesize));
       if (isset($file_size[1])) {
         if ($file_size[1] == 'MB') {
@@ -767,7 +772,8 @@ function health_file_entity_download_link($variables) {
       if (isset($no_of_pages)) {
         if ($no_of_pages > 1) {
           $no_of_pages .= ' pages';
-        } else {
+        }
+        else {
           $no_of_pages .= ' page';
         }
       }
@@ -794,7 +800,7 @@ function health_file_entity_download_link($variables) {
         'size' => $formatted_filesize,
         'pages' => $no_of_pages,
         'icon' => $icon,
-        'uri' => $uri
+        'uri' => $uri,
       ]);
 
       return $output;
@@ -805,6 +811,9 @@ function health_file_entity_download_link($variables) {
 
 }
 
+/**
+ * Implements theme_file_icon().
+ */
 function health_file_icon($variables) {
   $file = $variables['file'];
   $alt = $variables['alt'];
@@ -816,10 +825,6 @@ function health_file_icon($variables) {
 
 /**
  * Implements theme_webform_element().
- *
- * @param $variables
- *
- * @return string
  */
 function health_webform_element($variables) {
   // Ensure defaults.
@@ -834,7 +839,13 @@ function health_webform_element($variables) {
     $type = 'display';
   }
   else {
-    $type = (isset($element['#type']) && !in_array($element['#type'], array('markup', 'textfield', 'webform_email', 'webform_number'))) ? $element['#type'] : $element['#webform_component']['type'];
+    $types = ['markup', 'textfield', 'webform_email', 'webform_number'];
+    if (isset($element['#type']) && !in_array($element['#type'], $types)) {
+      $type = $element['#type'];
+    }
+    else {
+      $type = $element['#webform_component']['type'];
+    }
   }
 
   // Convert the parents array into a string, excluding the "submitted" wrapper.
@@ -908,10 +919,6 @@ function health_webform_element($variables) {
 
 /**
  * Implements theme_menu_tree().
- *
- * @param $variables
- *
- * @return string
  */
 function health_menu_tree($variables) {
   return '<ul class="au-link-list">' . $variables['tree'] . '</ul>';
@@ -919,10 +926,6 @@ function health_menu_tree($variables) {
 
 /**
  * Implements theme_menu_tree().
- *
- * @param $variables
- *
- * @return string
  */
 function health_menu_tree__menu_sub_menu($variables) {
   return '<ul class="au-link-list au-link-list--inline">' . $variables['tree'] . '</ul>';
@@ -930,12 +933,10 @@ function health_menu_tree__menu_sub_menu($variables) {
 
 /**
  * Implements theme_menu_link().
+ *
  * Add default audience filter to specific paths.
+ *
  * @todo Is loading all the menu nodes here a performance issue?
- *
- * @param array $variables
- *
- * @return string
  */
 function health_menu_link(array $variables) {
   if ($query = _health_default_audience_menu($variables['element']['#href'])) {
@@ -943,7 +944,7 @@ function health_menu_link(array $variables) {
   }
   // Mark unpublished pages, only if logged in.
   global $user;
-  if (key_exists(2, $user->roles)) {
+  if (array_key_exists(2, $user->roles)) {
     if ($node = _health_load_node_from_node_path($variables['element']['#href'])) {
       if ($node->status == 0) {
         $variables['element']['#localized_options']['attributes']['class'][] = 'au-side-nav--unpublished';
@@ -959,7 +960,8 @@ function health_menu_link(array $variables) {
   }
 
   // Add active class to the active list item if it doesn't have it.
-  // This is needed for book navigation side nav to work with the @gov.au/side-nav module.
+  // This is needed for book navigation side nav to work with
+  // the @gov.au/side-nav module.
   if ($variables['element']['#href'] == $_GET['q'] && !in_array('active', $variables['element']['#attributes']['class'])) {
     $variables['element']['#attributes']['class'][] = 'active';
   }
@@ -969,11 +971,8 @@ function health_menu_link(array $variables) {
 
 /**
  * Implements theme_superfish_menu_item_link().
+ *
  * Add default audience filter to specific paths.
- *
- * @param $variables
- *
- * @return string
  */
 function health_superfish_menu_item_link($variables) {
   if ($query = _health_default_audience_menu($variables['menu_item']['link']['href'])) {
@@ -984,11 +983,8 @@ function health_superfish_menu_item_link($variables) {
 
 /**
  * Implements theme_crumbs_breadcrumb_link().
+ *
  * Add default audience filter to specific paths.
- *
- * @param array $item
- *
- * @return string
  */
 function health_crumbs_breadcrumb_link(array $item) {
 
@@ -1023,11 +1019,7 @@ function health_block_view_alter(&$data, $block) {
 }
 
 /**
- * Implements theme_image();
- * 
- * @param $variables
- *
- * @return bool|string
+ * Implements theme_image().
  */
 function health_image($variables) {
   // If this is an SVG, output the full SVG, not an IMG.
@@ -1045,7 +1037,7 @@ function health_image($variables) {
   }
 
   // Output an empty alt tag if an alt value hasn't been specified.
-  if (!key_exists('alt', $attributes)) {
+  if (!array_key_exists('alt', $attributes)) {
     $attributes['alt'] = '';
   }
 
@@ -1053,8 +1045,9 @@ function health_image($variables) {
   $attributes['data-src'] = $attributes['src'];
   unset($attributes['src']);
 
-  // Provide a default padding space for images, so that they take up the correct
-  // space on the screen to prevent reflow and improve lazy loading.
+  // Provide a default padding space for images, so that they take up the
+  // correct amount of space on the screen to prevent reflow and
+  // improve lazy loading.
   $path = $variables['path'];
   $public = file_create_url("public://");
   $path = str_replace($public, 'public://', $path);
@@ -1075,7 +1068,8 @@ function health_image($variables) {
     // Output the image.
     return '<div class="image-wrapper image-loading rs_preserve rs_skip" style="padding-bottom: ' . $ratio . '%">
       <div class="image"><img' . drupal_attributes($attributes) . ' /></div></div>';
-  } else {
+  }
+  else {
     // If we cannot find the image size, we just output a normal image with no
     // fancy lazy loading and reserved space.
     return '<img' . drupal_attributes($attributes) . ' />';
@@ -1092,6 +1086,9 @@ function health_image($variables) {
  *   - src: Either the path of the image file (relative to base_path()) or a
  *     full URL.
  *   - dimensions: The width and height of the image (if known).
+ *
+ * @return string
+ *   Output.
  *
  * @ingroup themeable
  */
@@ -1115,12 +1112,9 @@ function health_picture_source(array $variables) {
 
 /**
  * Implements hook_entity_view_mode_alter().
- *
- * @param $view_mode
- * @param $context
  */
 function health_entity_view_mode_alter(&$view_mode, $context) {
-  // Change display mode from 'inline' to 'inline_full' for infographics
+  // Change display mode from 'inline' to 'inline_full' for infographics.
   if ($context['entity_type'] == 'node' && $context['entity']->type == 'publication' && $view_mode == 'inline') {
     $publication_type = field_get_items('node', $context['entity'], 'field_publication_type');
     if ($publication_type[0]['tid'] == PUBLICATION_TYPE_INFOGRAPHIC) {
@@ -1130,22 +1124,11 @@ function health_entity_view_mode_alter(&$view_mode, $context) {
 }
 
 /**
- * Alter metatags before being cached.
- *
- * This hook is invoked prior to the meta tags for a given page are cached.
- *
- * @param array $output
- *   All of the meta tags to be output for this page in their raw format. This
- *   is a heavily nested array.
- * @param string $instance
- *   An identifier for the current page's page type, typically a combination
- *   of the entity name and bundle name, e.g. "node:story".
- * @param array $options
- *   All of the options used to generate the meta tags.
+ * Implements hook_metatag_metatags_view_alter().
  */
 function health_metatag_metatags_view_alter(&$output, $instance, $options) {
   // Replace [theme-path] token in metatag output.
-  foreach($output as &$metatag) {
+  foreach ($output as &$metatag) {
     if (isset($metatag['#attached']['drupal_add_html_head'])) {
       $value = &$metatag['#attached']['drupal_add_html_head'][0][0]['#value'];
       $value = str_replace(urlencode(THEME_PATH_TOKEN_GENERIC), path_to_theme(), $value);
@@ -1157,8 +1140,6 @@ function health_metatag_metatags_view_alter(&$output, $instance, $options) {
  * Implements hook_node_access_alter().
  *
  * Stolen from https://www.drupal.org/project/menu_view_unpublished.
- *
- * @param \QueryAlterableInterface $query
  */
 function health_query_node_access_alter(QueryAlterableInterface $query) {
   $c = &$query->conditions();
@@ -1208,6 +1189,9 @@ function health_status_messages($variables) {
   return $output;
 }
 
+/**
+ * Implements theme_pager().
+ */
 function health_pager($variables) {
   $tags = $variables['tags'];
   $element = $variables['element'];
@@ -1219,16 +1203,16 @@ function health_pager($variables) {
   // Middle is used to "center" pages around the current page.
   $pager_middle = ceil($quantity / 2);
 
-  // current is the page we are currently paged to
+  // Current is the page we are currently paged to.
   $pager_current = $pager_page_array[$element] + 1;
 
-  // first is the first page listed by this pager piece (re quantity)
+  // First is the first page listed by this pager piece (re quantity).
   $pager_first = $pager_current - $pager_middle + 1;
 
-  // last is the last page listed by this pager piece (re quantity)
+  // Last is the last page listed by this pager piece (re quantity).
   $pager_last = $pager_current + $quantity - $pager_middle;
 
-  // max is the maximum page number
+  // Max is the maximum page number.
   $pager_max = $pager_total[$element];
 
   // End of marker calculations.
@@ -1371,14 +1355,14 @@ function health_pager($variables) {
       );
     }
     return '<div class="au-pager"><h2 class="sr-only">' . t('Pages') . '</h2>' . theme('item_list', array(
-        'items' => $items,
-        'attributes' => array(
-          'class' => array(
-            'au-link-list',
-            'au-link-list--inline',
-          ),
+      'items' => $items,
+      'attributes' => array(
+        'class' => array(
+          'au-link-list',
+          'au-link-list--inline',
         ),
-      )) . '</div>';
+      ),
+    )) . '</div>';
   }
 }
 
@@ -1399,6 +1383,9 @@ function health_menu_local_tasks(&$variables) {
   return $output;
 }
 
+/**
+ * Implements theme_item_list().
+ */
 function health_item_list($variables) {
   $items = $variables['items'];
   $title = $variables['title'];

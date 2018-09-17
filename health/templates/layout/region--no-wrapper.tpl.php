@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Returns the HTML for a region with bare minimum HTML.
