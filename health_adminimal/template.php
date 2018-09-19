@@ -592,7 +592,7 @@ function _health_adminimal_date_published_submitter($form, &$form_state) {
  * @param $form_state
  */
 function _health_adminimal_date_updated_submitter($form, &$form_state) {
-  if ($form['values']['field_enable_manual_date_editing'][LANGUAGE_NONE]['0']['value'] != 1) {
+  if ($form_state['values']['field_enable_manual_date_editing'][LANGUAGE_NONE]['0']['value'] != 1) {
     $form_state['values']['field_date_updated'][LANGUAGE_NONE][0]['value'] = format_date(time(), 'custom', 'Y-m-d H:i:s');
   }
 }
