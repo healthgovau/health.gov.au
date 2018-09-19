@@ -391,7 +391,7 @@ function health_form_alter(&$form, &$form_state, $form_id) {
 
   // Workbench moderation form.
   if ($form_id == 'workbench_moderation_moderate_form') {
-    $form['#submit'][] = '_health_date_submitter';
+    array_unshift($form['#submit'], '_health_date_submitter');
   }
 
 }
@@ -407,7 +407,6 @@ function health_form_alter(&$form, &$form_state, $form_id) {
 function _health_date_submitter($form, &$form_state) {
   require(drupal_get_path('theme', 'health_adminimal') . '/template.php');
   _health_adminimal_date_published_submitter($form, $form_state);
-  _health_adminimal_date_updated_submitter($form, $form_state);
 }
 
 /**
