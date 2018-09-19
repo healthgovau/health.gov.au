@@ -459,3 +459,16 @@ function health_preprocess_ds_start_end_date_friendly(array &$variables) {
 function health_preprocess_ds_alert_close_button(array &$variables) {
   return theme('health_alert_close_button', ['nid' => $variables['nid']]);
 }
+
+/**
+ * DS - Close button for alerts.
+ *
+ * @param array $variables
+ *   Variables from preprocess.
+ *
+ * @return string
+ *   HTML output.
+ */
+function health_preprocess_ds_separator(array &$variables) {
+  return theme('health_separator');
+}

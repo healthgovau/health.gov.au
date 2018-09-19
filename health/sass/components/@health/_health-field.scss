@@ -58,6 +58,18 @@
   }
 }
 
+.health-separator {
+  border-top: $health-borderize--very-thin;
+  @include AU-space('padding-top', 2unit);
+  @include AU-space('margin-top', 1unit);
+  @include AU-media(sm){
+    @include AU-space('margin-top', 2unit);
+  }
+  @include AU-media(md){
+    @include AU-space('margin-top', 4unit);
+  }
+}
+
 //// STUFF WE NEED TO UPDATE ////
 
 // Date
@@ -209,7 +221,6 @@ p.summary, .field-name-field-summary {
   .field-name-field-audience {
 
     &.field-label-inline {
-      @extend %bottom-border;
       .field-label {
         float: left;
         @include AU-space(width, 11unit);
@@ -217,13 +228,6 @@ p.summary, .field-name-field-summary {
       .field-items {
         @include AU-space(margin-left, 11unit);
       }
-    }
-  }
-}
-%page-help-only {
-  .page {
-    .field-name-field-related-health-topics {
-      @extend %bottom-border;
     }
   }
 }
@@ -241,21 +245,8 @@ p.summary, .field-name-field-summary {
   }
 }
 
-%bottom-border {
-  border-top: $health-borderize--very-thin;
-  @include AU-space('padding-top', 2unit);
-  @include AU-space('margin-top', 1unit);
-  @include AU-media(sm){
-    @include AU-space('margin-top', 2unit);
-  }
-  @include AU-media(md){
-    @include AU-space('margin-top', 4unit);
-  }
-}
-
 %media-enquiry {
   .media-enquiry{
-    @extend %bottom-border;
     @include AU-space('margin-bottom', .5unit);
     color: $colour-minorText;
   }
