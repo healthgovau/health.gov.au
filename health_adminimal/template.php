@@ -103,11 +103,6 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
     $form['#validate'][] = 'health_adminimal_feature_validator';
   }
 
-  // Update date published if the user is changing moderation states.
-  if ($form_id == 'workbench_moderation_moderate_form') {
-    array_unshift($form['#submit'], '_health_adminimal_date_published_submitter');
-  }
-
   // Target audience group - disable for some content types.
   if (key_exists('#bundle', $form)) {
     $disabled = [
@@ -159,12 +154,18 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
     ),
   ), 'setting');
 
+  // Moderation form.
+  if ($form_id == 'workbench_moderation_moderate_form') {
+    // Update publish date if the user is transitioning to the published state.
+    array_unshift($form['#submit'], '_health_adminimal_date_published_submitter');
+  }
+
   // Editing a node.
   if (array_key_exists('#node_edit_form', $form)) {
 
     // Handle updates to dates for all nodes.
-    $form['#submit'][] = '_health_adminimal_date_updated_submitter';
     array_unshift($form['#submit'], '_health_adminimal_date_published_submitter');
+    $form['#submit'][] = '_health_adminimal_date_updated_submitter';
 
     // A new draft has been created via the moderation form (ie unpublish link)
     // and the user is now editing that draft.
@@ -516,8 +517,6 @@ function _health_adminimal_telephone_validator($element, &$form_state) {
  */
 function _health_adminimal_date_published_submitter($form, &$form_state) {
 
-
-
   // Workbench moderation form.
   if (array_key_exists('node', $form_state['values'])) {
 
@@ -586,11 +585,14 @@ function _health_adminimal_date_published_submitter($form, &$form_state) {
 /**
  * Set the last updated date to today every time a node is saved.
  *
+ * field_date_updated and field_enable_manual_date_editing must exist in
+ * $form['values'].
+ *
  * @param $form
  * @param $form_state
  */
 function _health_adminimal_date_updated_submitter($form, &$form_state) {
-  if (!isset($form_state['values']['field_enable_manual_date_editing']) || $form_state['values']['field_enable_manual_date_editing'][LANGUAGE_NONE][0]['value'] == null) {
+  if ($form['values']['field_enable_manual_date_editing'][LANGUAGE_NONE]['0']['value'] != 1) {
     $form_state['values']['field_date_updated'][LANGUAGE_NONE][0]['value'] = format_date(time(), 'custom', 'Y-m-d H:i:s');
   }
 }
