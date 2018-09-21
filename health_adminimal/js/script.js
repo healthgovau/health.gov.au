@@ -399,4 +399,13 @@
     }).trigger('keyup');
   }
 
+  // Prevent authors from being able to edit files.
+  // Files are not version controlled and have no workflow, so to safeguard accidentally editing live versions when
+  // creating a new draft of content, we are removing the edit ability all together.
+  Drupal.behaviors.health_adminimal_image_editing = {
+    attach: function (context, settings) {
+      $('.field-widget-media-generic .button.edit, .form-item-files-replace-upload').hide();
+    }
+  };
+
 })(jQuery, Drupal);
