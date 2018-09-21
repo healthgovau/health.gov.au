@@ -23,8 +23,6 @@
   background-color: #000000 !important;
 }
 
-//mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
-
 // Make ckeditor dialog buttons consistent
 .cke_dialog_footer_buttons a.cke_dialog_ui_button {
   &.cke_dialog_ui_button_ok span {
@@ -36,11 +34,6 @@
       color: white;
     }
   }
-}
-
-#media-tab-media_default--media_browser_1 {
-  background: #e0e0e0 !important;
-  height: 100%;
 }
 
 // File upload preview.
@@ -93,25 +86,36 @@
         margin-top: 8px;
       }
     }
+
+    .label-wrapper {
+      display: none;
+    }
   }
 
   // Images
   &.media-type__image {
-
+    background: white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
     overflow: hidden;
-    box-shadow: none;
 
     .media-thumbnail__image {
-      /*display: table-cell;
+      display: inline-block;
       position: relative;
-      width: 100px;
-      height: 100px;
-      vertical-align: middle;
-      img {
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
-        margin: auto;
-      }*/
     }
+    .label-wrapper {
+      display: none;
+      background: none;
+      position: relative;
+      box-shadow: none;
+      label {
+        margin: 0;
+        padding: 0 5px;
+        font-size: 12px;
+        font-weight: normal;
+        line-height: 1.2em;
+      }
+    }
+
   }
 }
 
@@ -123,72 +127,40 @@
   }
 
   // Files
-  .media-type__document, .media-type__image {
+  .media-type__document {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
-    max-width: 162px;
+    max-width: 152px;
     overflow: hidden;
     border: 1px solid #CCCCCC;
-    background: white;
     .media-thumbnail__image {
-      background: #e4e4e4;
+      display: inline-block;
+      background: #EEEEEE;
       position: relative;
       width: 150px;
       height: 150px;
-      border: 1px solid lightgrey;
-      margin: 5px;
       .file {
         svg {
           height: 120px;
           width: 120px;
           margin: 15px;
-          color: #b9b9b9;
+          color: lightgrey;
         }
         a {
           display: none;
         }
       }
-      img {
-      }
     }
     .label-wrapper {
-      position: inherit;
       display: block;
       box-shadow: none;
-      height: 58px;
-      background: transparent;
+      opacity: 0.8;
       label {
         margin: 0;
-        padding: 0 8px;
+        padding: 8px;
         font-size: 12px;
         font-weight: normal;
         line-height: 1.2em;
       }
     }
-
-    .media-version {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      line-height: 1.4;
-      background: #e0e0e0;
-      color: #636363;
-      font-weight: bold;
-      padding: 0px 2px;
-      font-size: 10px;
-    }
   }
 }
-
-// Force popup media browser to display full screen.
-.ui-dialog.media-wrapper {
-  top: 0 !important;
-  width: 100% !important;
-  max-width: 1800px;
-  height: 100% !important;
-  position: fixed !important;
-  .ui-dialog-content {
-    width: 100% !important;
-    height: 95% !important;
-  }
-}
-

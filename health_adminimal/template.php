@@ -100,9 +100,6 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
       $form['filename']['#default_value'] = '';
       $form['#submit'][] = '_health_adminimal_file_rename_submitter';
     }
-
-    // Add javascript for new revisions.
-    $form['#attached']['js'][] = drupal_get_path('theme', 'health_adminimal') . '/js/file-revision-populate.js';
   }
   if (in_array($form['#form_id'], $edit_media_forms)) {
     $form['actions']['submit']['#submit'][] = '_health_adminimal_file_rename_submitter';
@@ -321,11 +318,6 @@ function health_adminimal_field_widget_form_alter(&$element, &$form_state, $cont
     if (isset($form_state['field'][$element['#field_name']])) {
       $element['#title'] = $form_state['field'][$element['#field_name']][LANGUAGE_NONE]['instance']['label'];
     }
-  }
-
-  // Add new revision image javascript to image fields.
-  if (isset($element[0]['#type']) && $element[0]['#type'] == 'media') {
-    drupal_add_js(drupal_get_path('theme', 'health_adminimal') . '/js/file-revision.js');
   }
 }
 
@@ -735,12 +727,10 @@ function health_adminimal_css_alter(&$css) {
 }
 
 /**
- * Implements theme_media_thumbnail().
- *
  * Adds a wrapper around a preview of a media file.
  */
 function health_adminimal_media_thumbnail($variables) {
-  $label = '<div class="label-wrapper">';
+  $label = '';
   $element = $variables['element'];
 
   // Wrappers to go around the thumbnail.
@@ -770,14 +760,8 @@ function health_adminimal_media_thumbnail($variables) {
 
   // Element should be a field renderable array. This should be improved.
   if (!empty($element['#show_names']) && $element['#name']) {
-    $label .= '<label class="media-filename">' . $element['#name'] . '</label>';
+    $label = '<div class="label-wrapper"><label class="media-filename">' . $element['#name'] . '</label></div>';
   }
-
-  if (property_exists($element['#file'], 'field_file_version') && !empty($element['#file']->field_file_version)) {
-    $label .= '<div class="media-version">v' . $element['#file']->field_file_version[LANGUAGE_NONE][0]['value'] . '</div>';
-  }
-
-  $label .= '</div>';
 
   $output = $prefix;
   if (!empty($element['#add_link'])) {
@@ -824,8 +808,4 @@ function health_adminimal_query_node_access_alter(QueryAlterableInterface $query
   ) {
     unset($c[0]);
   }
-}
-
-function health_adminimal_media_browser_plugins_alter(&$plugin_output) {
-  //dpm($plugin_output);
 }
