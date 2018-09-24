@@ -195,6 +195,27 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
     }
   }
 
+  // Media manager.
+  $media_manager = FALSE;
+  if (isset($form['field_related_image'])) {
+    $media_manager = TRUE;
+  }
+
+  if (isset($form['field_components'])) {
+    foreach ($form['field_components'][LANGUAGE_NONE] as $component) {
+      if (isset($component['field_related_image'])) {
+        $media_manager = TRUE;
+      }
+    }
+  }
+
+  if ($media_manager) {
+    $form['#attached']['js'][] = [
+      'data' => path_to_theme() . '/js/media-manager/selector.js',
+      'type' => 'file',
+    ];
+  }
+
 }
 
 /**
