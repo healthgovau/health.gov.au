@@ -25,9 +25,10 @@
   }
 
   //// Abbreviations ////
-  abbr {
+  abbr, .definition {
     border-bottom: 1px dotted #CCC;
     text-decoration: none;
+    cursor: help;
   }
 
   // Create class for screen reader only.
