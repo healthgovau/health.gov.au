@@ -3,8 +3,6 @@
 
 // Default/full content
 .node-type-<content-type> {
-    @extend %dm-full-content;
-	@extend %page-help-only; // or
 	@extend %page-help-and-currency;
 }
 

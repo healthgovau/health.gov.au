@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Returns the HTML for a block.
@@ -15,7 +16,7 @@ if (user_is_logged_in()) {
   ?>
   <div id="tabs" class="rs_skip">
     <h2 class="element-invisible">Primary tabs</h2>
-    <ul class="au-tabs au-link-list au-link-list--inline primary">
+    <ul class="health-tabs au-link-list au-link-list--inline primary">
       <li><?php print $link ?></li>
     </ul>
   </div>

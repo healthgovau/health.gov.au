@@ -2,13 +2,11 @@
 
 // Default/full content for all nodes
 .page-node {
-  @extend %dm-full-content;
   @extend %page-help-and-currency;
 }
 
 // Home page
 .page-node-landing-page {
-	@extend %page-help-only;
 }
 
 // Specific content types

@@ -1,18 +1,24 @@
 <?php
+
+/**
+ * @file
+ * Preprocess hooks.
+ */
+
 // Include inc files.
 include_once drupal_get_path('theme', 'health') . '/includes/helper.inc';
 
-CONST READSPEAKER_URL = 'https://sf1-as.readspeaker.com/script/5802/ReadSpeaker.js?pids=embhl';
-CONST GOOGLE_MAP_API = '//maps.googleapis.com/maps/api/staticmap';
-CONST RESOURCES_TYPE = [
+const READSPEAKER_URL = 'https://sf1-as.readspeaker.com/script/5802/ReadSpeaker.js?pids=embhl';
+const GOOGLE_MAP_API = '//maps.googleapis.com/maps/api/staticmap';
+const RESOURCES_TYPE = [
   'image',
   'publication',
   'video',
   'audio',
   'app_or_tool',
 ];
-CONST THEME_PATH_TOKEN_GENERIC = '[theme-path]';
-CONST PUBLICATION_TYPE_INFOGRAPHIC = 2176;
+const THEME_PATH_TOKEN_GENERIC = '[theme-path]';
+const PUBLICATION_TYPE_INFOGRAPHIC = 2176;
 
 /**
  * Override or insert variables into the block templates.
@@ -22,7 +28,7 @@ CONST PUBLICATION_TYPE_INFOGRAPHIC = 2176;
  * @param string $hook
  *   The name of the template being rendered ("block" in this case.)
  */
-function health_preprocess_block(&$variables, $hook) {
+function health_preprocess_block(array &$variables, $hook) {
 
   // Use a template with no wrapper for the page's main content.
   if ($variables['block_html_id'] == 'block-system-main') {
@@ -48,16 +54,19 @@ function health_preprocess_block(&$variables, $hook) {
         case 'main':
           // Note: the "main" role goes in the page.tpl, not here.
           break;
+
         case 'help':
         case 'powered-by':
           $variables['attributes_array']['role'] = 'complementary';
           break;
+
         default:
           // Any other "system" block is a menu block.
           $variables['attributes_array']['role'] = 'navigation';
           break;
       }
       break;
+
     case 'menu':
     case 'book':
     case 'menu_block':
@@ -67,10 +76,12 @@ function health_preprocess_block(&$variables, $hook) {
     case 'shortcut':
       $variables['attributes_array']['role'] = 'navigation';
       break;
+
     case 'search':
     case 'search_api_page':
       $variables['attributes_array']['role'] = 'search';
       break;
+
     case 'help':
     case 'aggregator':
     case 'locale':
@@ -78,21 +89,25 @@ function health_preprocess_block(&$variables, $hook) {
     case 'profile':
       $variables['attributes_array']['role'] = 'complementary';
       break;
+
     case 'node':
       switch ($variables['block']->delta) {
         case 'syndicate':
           $variables['attributes_array']['role'] = 'complementary';
           break;
+
         case 'recent':
           $variables['attributes_array']['role'] = 'navigation';
           break;
       }
       break;
+
     case 'user':
       switch ($variables['block']->delta) {
         case 'login':
           $variables['attributes_array']['role'] = 'form';
           break;
+
         case 'new':
         case 'online':
           $variables['attributes_array']['role'] = 'complementary';
@@ -106,18 +121,12 @@ function health_preprocess_block(&$variables, $hook) {
     $variables['classes_array'][] = 'block-menu-block--title-link';
   }
 
-  // Add grid class to blocks in content_top region.
-  if ($variables['block']->region == 'content_top') {
-    if ($plugin = context_get_plugin('reaction', 'block')) {
-      $variables['classes_array'] = _health_grid_class(count($plugin->block_list('content_top')), $variables['classes_array'], 'col-xs-4');
-    }
-  }
-
   // Search forms.
   if ($variables['block']->module == 'search_api_page') {
     if ($variables['block']->context == 'global__mobile') {
       $variables['classes_array'][] = 'au-search--global-mobile';
-    } else {
+    }
+    else {
       $variables['classes_array'][] = 'au-search--global-desktop';
     }
   }
@@ -126,14 +135,14 @@ function health_preprocess_block(&$variables, $hook) {
 /**
  * Override or insert variables for the breadcrumb theme function.
  *
- * @param $variables
+ * @param array $variables
  *   An array of variables to pass to the theme function.
- * @param $hook
+ * @param string $hook
  *   The name of the theme hook being called ("breadcrumb" in this case).
  *
  * @see govcms_parkes_breadcrumb()
  */
-function health_preprocess_breadcrumb(&$variables, $hook) {
+function health_preprocess_breadcrumb(array &$variables, $hook) {
   // Provide a navigational heading to give context for breadcrumb links to
   // screen-reader users.
   if (empty($variables['title'])) {
@@ -142,9 +151,12 @@ function health_preprocess_breadcrumb(&$variables, $hook) {
 }
 
 /**
- * Implements THEME_preprocess_entity().
+ * Override or insert variables into entity templates.
+ *
+ * @param array $variables
+ *   Preprocess variables.
  */
-function health_preprocess_entity(&$variables) {
+function health_preprocess_entity(array &$variables) {
   // Paragraphs.
   if ($variables['elements']['#entity_type'] == 'paragraphs_item') {
 
@@ -187,7 +199,10 @@ function health_preprocess_entity(&$variables) {
 
     // Link.
     if ($para_item->bundle == 'para_link') {
-      $variables['card_style'] = $para_item->card_style;
+      $variables['card_style'] = '';
+      if (property_exists($para_item, 'card_style')) {
+        $variables['card_style'] = $para_item->card_style;
+      }
     }
 
     // Contact.
@@ -252,21 +267,25 @@ function health_preprocess_entity(&$variables) {
 
       // Remove featured items from listings.
       if ($view_name == 'news_and_events') {
-        switch($view_mode) {
+        switch ($view_mode) {
           case "latest_news_events_public":
             if ($nid = _health_get_featured_item('featured_news_events')) {
               $view->set_arguments([NULL, $nid]);
             }
+            break;
+
           case "latest_news_events_hp":
             if ($nid = _health_get_featured_item('featured_news_events_hp')) {
               $view->set_arguments([NULL, $nid]);
             }
             break;
+
           case "latest_news_events_global":
             if ($nid = _health_get_featured_item('featured_news_events')) {
               $view->set_arguments([$nid]);
             }
             break;
+
           case "latest_news_events_public_program":
             if ($nid = _health_get_featured_item('featured_news_events')) {
               $view->set_arguments([NULL, $nid]);
@@ -275,7 +294,7 @@ function health_preprocess_entity(&$variables) {
         }
       }
       if ($view_name == 'latest_rsources') {
-        switch($view_mode) {
+        switch ($view_mode) {
           case "resources_for_public_in_hp":
           case "latest_resources_public":
           case "latest_resources_public_program":
@@ -283,11 +302,13 @@ function health_preprocess_entity(&$variables) {
               $view->set_arguments([NULL, $nid]);
             }
             break;
+
           case "global_public":
             if ($nid = _health_get_featured_item('featured_resource')) {
               $view->set_arguments([$nid]);
             }
             break;
+
           case "latest_resources_hp":
             if ($nid = _health_get_featured_item('featured_resource_hp')) {
               $view->set_arguments([NULL, $nid]);
@@ -321,7 +342,12 @@ function health_preprocess_entity(&$variables) {
           $related_initiative = $para_item->field_related_initiatives[LANGUAGE_NONE][0]['target_id'];
         }
 
-        $view->set_arguments([$content_type, $related_topics, $audience, $related_initiative]);
+        $view->set_arguments([
+          $content_type,
+          $related_topics,
+          $audience,
+          $related_initiative,
+        ]);
       }
 
       $view->execute();
@@ -367,41 +393,37 @@ function health_preprocess_entity(&$variables) {
       $block_num = count($para_item->field_para_block_id[LANGUAGE_NONE]);
       $variables['classes_array'][] = 'block__count--' . $block_num;
       foreach ($variables['paragraphs_item']->field_para_block_id[LANGUAGE_NONE] as $key => $block) {
-        $block['value'] .= '-num'. $block_num;
+        $block['value'] .= '-num' . $block_num;
         $variables['paragraphs_item']->field_para_block_id[LANGUAGE_NONE][$key] = $block;
       }
 
       // Add class to identify specific block.
-      foreach($para_item->field_para_block_id[LANGUAGE_NONE] as $bid) {
+      foreach ($para_item->field_para_block_id[LANGUAGE_NONE] as $bid) {
         $variables['classes_array'][] = 'block-id__' . $bid['value'];
       }
     }
 
-    // Recommendations
+    // Recommendations.
     if ($para_item->bundle == 'recommendation') {
       // Add a class to identify what grade it is.
       $term = taxonomy_term_load($para_item->field_recommendation_grade[LANGUAGE_NONE][0]['tid']);
       $variables['classes_array'][] = 'au-recommendation--grade-' . _health_prepare_filename($term->name);
     }
 
-    // Summary lists
+    // Summary lists.
     if ($para_item->bundle == 'summary_list') {
       $output = '';
       $node = menu_get_object('node');
       switch ($para_item->field_summary_list_type[LANGUAGE_NONE][0]['value']) {
         case 'Recommendations':
-          $recommendations = _health_book_tree_traverse($node->book['bid'], '_health_book_find_recommendations');
-          foreach($recommendations as $nid => $group) {
-            $entities = entity_view('paragraphs_item', $group['recommendations'], 'listing_vertical', NULL, TRUE);
-            $output .= theme('health_summary_list_group', ['node' => $group['node'], 'items' => render($entities)]);
-          }
+          $output = _health_book_find_recommendations($node->book['bid']);
           break;
 
         case 'Tables':
           $tables = _health_book_tree_traverse($node->book['bid'], '_health_book_find_tables');
           $items = [];
-          foreach($tables as $nid => $group) {
-            foreach($group['tables'] as $table) {
+          foreach ($tables as $nid => $group) {
+            foreach ($group['tables'] as $table) {
               $items[] = l($table->field_title[LANGUAGE_NONE][0]['value'], 'node/' . $group['node']->nid, ['fragment' => _health_prepare_filename($table->field_title[LANGUAGE_NONE][0]['value'])]);
             }
           }
@@ -429,8 +451,29 @@ function health_preprocess_entity(&$variables) {
 
     // Tables.
     if ($para_item->bundle == 'content_table') {
-      // Add a class to identify what grade it is.
-      $variables['content']['field_title']['#prefix'] = '<a name="' . _health_prepare_filename($variables['content']['field_title'][0]['#markup']) . '"></a>';
+      $title = $variables['content']['field_title'][0]['#markup'];
+      $caption = $variables['content']['field_summary'][0]['#markup'];
+      $table = $variables['content']['field_body'][0]['#markup'];
+
+      // Create an anchor so it can be deep linked to.
+      $variables['content']['field_title']['#prefix'] = '<a name="' . _health_prepare_filename($title) . '"></a>';
+
+      // Move the title and caption into the table caption.
+      $table = preg_replace('/(<table.*?>)(.*)/s', '$1<caption><p class="au-display-sm">' . $title . '</p><span class="au-sronly">' . $caption . '</span></caption>$2', $table);
+
+      // Add the footer into tfoot.
+      if (array_key_exists('field_table_source', $variables['content'])) {
+        $footer = $variables['content']['field_table_source'][0]['#markup'];
+        $table = preg_replace('/(.*)<\/table>/s', '$1<tfoot><tr><td class="text--minor">' . $footer . '</td></tr></tfoot></table>', $table);
+        drupal_add_js(path_to_theme() . '/js/dist/health.tables.min.js', array(
+          'type' => 'file',
+          'scope' => 'footer',
+          'weight' => 100,
+        ));
+      }
+
+      // Set the updated table into content.
+      $variables['content']['field_body'][0]['#markup'] = $table;
     }
 
     // Call out.
@@ -462,7 +505,8 @@ function health_preprocess_entity(&$variables) {
         $variables['wrapper_link_url'] = url($bean->field_link_internal[LANGUAGE_NONE][0]['url'], $bean->field_link_internal[LANGUAGE_NONE][0]);
       }
 
-      // Add 'active' to classes array if it is the current page of the image and text block link.
+      // Add 'active' to classes array if it is the current page of the image
+      // and text block link.
       if ($bean->view_mode == 'view_selector') {
         $current_url = '/' . current_path();
         if (isset($bean->field_link_internal[LANGUAGE_NONE][0])) {
@@ -483,7 +527,7 @@ function health_preprocess_entity(&$variables) {
       'page-accessibility-link',
     ];
     if (in_array($bean->delta, $token_blocks)) {
-      Global $base_url;
+      global $base_url;
       $current_url = drupal_encode_path($base_url . '/' . drupal_get_path_alias(current_path()));
       $current_title = drupal_get_title();
       $variables['field_bean_body'][0]['value'] = str_replace('[current-page:title]', $current_title, $variables['field_bean_body'][0]['value']);
@@ -493,7 +537,7 @@ function health_preprocess_entity(&$variables) {
 
     // Add hook for preprocess field in bean.
     if (isset($bean->preprocess_fields)) {
-      foreach($bean->preprocess_fields as $field) {
+      foreach ($bean->preprocess_fields as $field) {
         $preprocess = 'health_preprocess_ds_' . $field;
         if (function_exists($preprocess)) {
           $variables[$field] = $preprocess($variables);
@@ -504,7 +548,7 @@ function health_preprocess_entity(&$variables) {
 
   // Display suite preprocess hooks.
   if (isset($variables['paragraphs_item']->preprocess_fields)) {
-    foreach($variables['paragraphs_item']->preprocess_fields as $field) {
+    foreach ($variables['paragraphs_item']->preprocess_fields as $field) {
       $preprocess = 'health_preprocess_ds_' . $field;
       if (function_exists($preprocess)) {
         $variables[$field] = $preprocess($variables);
@@ -568,15 +612,19 @@ function health_preprocess_field(&$variables) {
         case 'no':
           $variables['items'][0]['#markup'] = '<span></span>';
           break;
+
         case 'up-positive';
           $variables['items'][0]['#markup'] = theme('statistic_trend_icon', ['direction' => 'up', 'indication' => 'positive']);
           break;
+
         case 'down-positive';
           $variables['items'][0]['#markup'] = theme('statistic_trend_icon', ['direction' => 'down', 'indication' => 'positive']);
           break;
+
         case 'up-negative';
           $variables['items'][0]['#markup'] = theme('statistic_trend_icon', ['direction' => 'up', 'indication' => 'negative']);
           break;
+
         case 'down-negative';
           $variables['items'][0]['#markup'] = theme('statistic_trend_icon', ['direction' => 'down', 'indication' => 'negative']);
           break;
@@ -598,7 +646,7 @@ function health_preprocess_field(&$variables) {
         $src = GOOGLE_MAP_API . '?center=' . $lat . ',' . $long . '&zoom=13&size=300x300&maptype=roadmap&key=' . $google_api;
         $src .= '&markers=color:blue%7Clabel:S%7C' . $lat . ',' . $long;
         $address = $variables['items'][0]['#address'];
-        $variables['location_map'] ='<img src="' . $src . '" alt="' . $address['thoroughfare'] . ' ' . $address['locality'] .'" />';
+        $variables['location_map'] = '<img src="' . $src . '" alt="' . $address['thoroughfare'] . ' ' . $address['locality'] . '" />';
       }
     }
   }
@@ -620,7 +668,7 @@ function health_preprocess_field(&$variables) {
       // Apply logic only to resources content types.
       if (isset($variables['element']['#items'][0])) {
         $last_updated = strtotime($variables['element']['#items'][0]['value']);
-        // publication content type.
+        // Publication content type.
         if ($variables['element']['#bundle'] == 'publication') {
           $node = $variables['element']['#object'];
           if (isset($node->field_publication_date[LANGUAGE_NONE][0])) {
@@ -643,7 +691,7 @@ function health_preprocess_field(&$variables) {
   // Feature image.
   if ($variables['element']['#field_name'] == 'field_image_featured') {
     // News.
-    if (property_exists($variables['element']['#object'],'type') && $variables['element']['#object']->type == 'news_article') {
+    if (property_exists($variables['element']['#object'], 'type') && $variables['element']['#object']->type == 'news_article') {
       // If it is full display and the image is the default, don't show it.
       if ($variables['element']['#view_mode'] == 'full') {
         if ($variables['element'][0]['#item']['fid'] == 956) {
@@ -652,8 +700,8 @@ function health_preprocess_field(&$variables) {
       }
     }
 
-    // Contact
-    if (property_exists($variables['element']['#object'],'type') && $variables['element']['#object']->type == 'contact') {
+    // Contact.
+    if (property_exists($variables['element']['#object'], 'type') && $variables['element']['#object']->type == 'contact') {
       if ($variables['element']['#items'][0]['filename'] == 'Contact placeholder - group' && $variables['element']['#items'][0]['fid'] == 6186) {
         // Add default to class if image value is default.
         $variables['classes_array'][] = 'default';
@@ -673,10 +721,11 @@ function health_preprocess_field(&$variables) {
   $fields = [
     'field_summary',
   ];
-  foreach($fields as $field) {
+  foreach ($fields as $field) {
     if ($variables['element']['#field_name'] == $field) {
-      if (isset($variables['element']['#items'][0]) && key_exists('format', $variables['element']['#items'][0])) {
-        if ($variables['element']['#items'][0]['format'] == NULL) { // Plain text
+      if (isset($variables['element']['#items'][0]) && array_key_exists('format', $variables['element']['#items'][0])) {
+        // Plain text.
+        if ($variables['element']['#items'][0]['format'] == NULL) {
           $variables['items'][0]['#markup'] = '<p>' . $variables['items'][0]['#markup'] . '</p>';
         }
       }
@@ -684,33 +733,34 @@ function health_preprocess_field(&$variables) {
   }
 
   // Markup changes to content.
-  // We would use text format filters for this, but we don't have access via GovCMS.
-  // We also cannot do this via JS because Readspeaker uses the original HTML and will ignore changes made via JS.
+  // We would use text format filters but we don't have access in GovCMS.
+  // We also cannot do this via JS because Readspeaker uses the original HTML
+  // and will ignore changes made via JS.
   $fields = [
     'field_body',
   ];
-  foreach($fields as $field) {
+  foreach ($fields as $field) {
     if ($variables['element']['#field_name'] == $field) {
       if (isset($variables['element']['#items'][0])) {
         $markup = $variables['items'][0]['#markup'];
 
-        // Add rs_preserve class to any H2's
+        // Add rs_preserve class to any H2's.
         $markup = preg_replace("/<h2>(.+?)<\/h2>/", '<h2 class="rs_preserve">$1</h2>', $markup);
         // Add a div around tables so they can be made responsive.
-        $markup = str_replace('<table', '<div class="responsive-table-wrapper"><table', $markup);
+        $markup = str_replace('<table', '<div class="health-table__responsive"><table', $markup);
         $markup = str_replace('</table>', '</table></div>', $markup);
 
         // Footnotes.
         $markup = _health_book_footnote_links($markup);
-        // References
+        // References.
         $markup = _health_book_reference_links($markup);
 
-        // Set glossary terms
+        // Set glossary terms.
         $glossary = &drupal_static('book_glossary_terms');
         if (!empty($glossary)) {
           foreach ($glossary as $glossary_item) {
             $term_regex = str_replace('/', '\/', preg_quote(check_plain($glossary_item['term'])));
-            $markup = preg_replace("/([\s\(\)<>\[\]%])(" . $term_regex . ")([\s\(\)<>\.\[\]%])/m",'$1<span class="definition--candidate">$2</span>$3', $markup);
+            $markup = preg_replace("/([\s\(\)<>\[\]%])(" . $term_regex . ")([\s\(\)<>\.\[\]%])/m", '$1<span class="definition--candidate">$2</span>$3', $markup);
           }
         }
 
@@ -719,15 +769,16 @@ function health_preprocess_field(&$variables) {
     }
   }
 
-  // Table/figure footnote and references
+  // Table/figure footnote and references.
   if ($variables['element']['#field_name'] == 'field_table_source') {
     $variables['items'][0]['#markup'] = _health_book_footnote_links($variables['items'][0]['#markup']);
     $variables['items'][0]['#markup'] = _health_book_reference_links($variables['items'][0]['#markup']);
   }
 
-  // Publication date
+  // Publication date.
   if ($variables['element']['#field_name'] == 'field_publication_date') {
-    // Change the display of the date depending on the selected format for this node.
+    // Change the display of the date depending on the selected
+    // format for this node.
     if ($field = field_get_items('node', $variables['element']['#object'], 'field_publication_date_display')) {
       $field_instance = field_info_instance('node', $variables['element']['#field_name'], $variables['element']['#bundle']);
       $display_settings = $field_instance['display'][$variables['element']['#view_mode']];
@@ -735,6 +786,7 @@ function health_preprocess_field(&$variables) {
         case 'month_year':
           $display_settings['settings']['format_type'] = 'govcms_month_year';
           break;
+
         case 'year':
           $display_settings['settings']['format_type'] = 'search_api_facetapi_YEAR';
           break;
@@ -764,65 +816,75 @@ function health_preprocess_field(&$variables) {
 
     // Make sure email addresses are being spam-spanned.
     if ($variables['items']) {
-      $variables['items'][0]['#markup'] = _spamspan_filter_process($variables['items'][0]['#markup'], null);
+      $variables['items'][0]['#markup'] = _spamspan_filter_process($variables['items'][0]['#markup'], NULL);
     }
   }
 
-  // Footnotes
+  // Footnotes.
   $footnotes = ['field_book_footnotes'];
   if (in_array($variables['element']['#field_name'], $footnotes)) {
-    foreach($variables['items'] as &$item) {
+    foreach ($variables['items'] as &$item) {
       $markup = $item['#markup'];
 
-      // Split up the footnotes by p tags
+      // Split up the footnotes by p tags.
       if (preg_match_all("/<p\b[^>]*>(.+?)<\/p>/", $markup, $matches) > 0) {
         $footnotes_list = [];
         foreach ($matches[1] as $delta => $match) {
           // Pull out the reference token and apply markup replacement.
           if (preg_match_all("/[\s(&nbsp;)]*\[\[(\d+?)\]\][\s(&nbsp;)]*/", $match, $matches2) > 0) {
             foreach ($matches2[1] as $delta2 => $match2) {
-              $footnotes_list[] = ['data' => theme('health_footnote', [
-                'id' => $match2,
-                'text' => str_replace($matches2[0][$delta2], '', $match)
-              ]), 'class' => ['text--minor', 'au-footnotes__footnote']];
+              $footnotes_list[] = [
+                'data' => theme('health_footnote', [
+                  'id' => $match2,
+                  'text' => str_replace($matches2[0][$delta2], '', $match),
+                ]),
+                'class' => ['text--minor', 'au-footnotes__footnote'],
+              ];
             }
-          } else { // No reference token found, just use the whole string.
+          }
+          // No reference token found, just use the whole string.
+          else {
             $footnotes_list[] = ['data' => $match, 'class' => ['text--minor']];
           }
         }
-        $variables['items'][0]['#markup'] = theme('item_list',[
+        $variables['items'][0]['#markup'] = theme('item_list', [
           'items' => $footnotes_list,
           'type' => 'ul',
-          'attributes' => ['class' => ['au-footnotes', 'list--remove']]
+          'attributes' => ['class' => ['au-footnotes', 'list--remove']],
         ]);
       }
     }
     $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.footnotes.min.js';
   }
 
-  // References
+  // References.
   if ($variables['element']['#field_name'] == 'field_book_references') {
     $markup = _health_replace_nbsp($variables['items'][0]['#markup']);
-    // Split up the references by p tags
+    // Split up the references by p tags.
     if (preg_match_all("/<p\b[^>]*>(.+?)<\/p>/", $markup, $matches) > 0) {
       $references = [];
       foreach ($matches[1] as $delta => $match) {
         // Pull out the reference token and apply markup replacement.
         if (preg_match_all("/\s*\{\{(.+?)\}\}\s*/", $match, $matches2) > 0) {
           foreach ($matches2[1] as $delta2 => $match2) {
-            $references[] = ['data' => theme('health_reference', [
-              'id' => $match2,
-              'text' => str_replace($matches2[0][$delta2], '', $match)
-            ]), 'class' => ['text--minor']];
+            $references[] = [
+              'data' => theme('health_reference', [
+                'id' => $match2,
+                'text' => str_replace($matches2[0][$delta2], '', $match),
+              ]),
+              'class' => ['text--minor'],
+            ];
           }
-        } else { // No reference token found, just use the whole string.
+        }
+        // No reference token found, just use the whole string.
+        else {
           $references[] = ['data' => $match, 'class' => ['text--minor']];
         }
       }
-      $variables['items'][0]['#markup'] = theme('item_list',[
+      $variables['items'][0]['#markup'] = theme('item_list', [
         'items' => $references,
         'type' => 'ul',
-        'attributes' => ['class' => 'list--remove']
+        'attributes' => ['class' => 'list--remove'],
       ]);
     }
     $variables['items'][0]['#attached']['js'][] = drupal_get_path('theme', 'health') . '/js/dist/health.footnotes.min.js';
@@ -840,14 +902,14 @@ function health_preprocess_field(&$variables) {
 /**
  * Override or insert variables into the html template.
  *
- * @param $variables
+ * @param array $variables
  *   An array of variables to pass to the theme template.
- * @param $hook
+ * @param string $hook
  *   The name of the template being rendered. This is usually "html", but can
  *   also be "maintenance_page" since health_preprocess_maintenance_page() calls
  *   this function to have consistent variables.
  */
-function health_preprocess_html(&$variables, $hook) {
+function health_preprocess_html(array &$variables, $hook) {
   // Add google tag manager.
   $render_gtm = [
     '#theme' => 'google_tag_manager',
@@ -863,12 +925,12 @@ function health_preprocess_html(&$variables, $hook) {
   $variables['path_to_health'] = drupal_get_path('theme', 'health');
   // Get settings for HTML5 and responsive support. array_filter() removes
   // items from the array that have been disabled.
-  $meta = array_filter((array)theme_get_setting('health_meta'));
+  $meta = array_filter((array) theme_get_setting('health_meta'));
 
   // Add html5 shim for lt IE 9.
   if (in_array('html5', $meta)) {
     $variables['page']['content']['#attached']['js'][] = [
-      'data' =>  'https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js',
+      'data' => 'https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js',
       'type' => 'external',
     ];
   }
@@ -907,7 +969,7 @@ function health_preprocess_html(&$variables, $hook) {
       // Remove xlmns: and ending quote and fix prefix formatting.
       $prefixes[] = str_replace('="', ': ', substr($namespace, 6, -1));
     }
-    $variables['rdf_namespaces'] = ' prefix="'.implode(' ', $prefixes).'"';
+    $variables['rdf_namespaces'] = ' prefix="' . implode(' ', $prefixes) . '"';
   }
 
   // Classes for body element. Allows advanced theming based on context
@@ -943,12 +1005,13 @@ function health_preprocess_html(&$variables, $hook) {
 
 /**
  * Implements THEME_preprocess_node().
+ *
  * Override or insert variables into the node templates.
  *
  * @param array $variables
  *   Variables to pass to the theme template.
  */
-function health_preprocess_node(&$variables) {
+function health_preprocess_node(array &$variables) {
 
   $node = $variables['node'];
 
@@ -987,10 +1050,10 @@ function health_preprocess_node(&$variables) {
 
   // Add node view_mode as a theme hook suggestion.
   if ($variables['view_mode']) {
-    $variables['theme_hook_suggestions'][] = 'node__'. $variables['view_mode'];
+    $variables['theme_hook_suggestions'][] = 'node__' . $variables['view_mode'];
   }
 
-  // Add the type as a name to the node e.g. "News article" or "Event"
+  // Add the type as a name to the node e.g. "News article" or "Event".
   $variables['type_name'] = node_type_get_name($variables['node']);
 
   // Add contact type to class for contact content type.
@@ -1036,12 +1099,12 @@ function health_preprocess_node(&$variables) {
 
   // Display suite preprocess hooks.
   if (isset($variables['preprocess_fields'])) {
-    foreach($variables['preprocess_fields'] as $field) {
+    foreach ($variables['preprocess_fields'] as $field) {
       $preprocess = 'health_preprocess_ds_' . $field;
       if (function_exists($preprocess)) {
         $variables['content'][$field] = array(
           '#markup' => $preprocess($variables),
-          '#weight' => _health_get_ds_field_weight($variables, $field)
+          '#weight' => _health_get_ds_field_weight($variables, $field),
         );
       }
     }
@@ -1051,7 +1114,7 @@ function health_preprocess_node(&$variables) {
   global $user;
   // Deny access to anonymous users for Help pages.
   if ($node->type == 'help') {
-    if (key_exists(1, $user->roles)) {
+    if (array_key_exists(1, $user->roles)) {
       drupal_access_denied();
     }
   }
@@ -1085,18 +1148,24 @@ function health_preprocess_node(&$variables) {
       $glossary = _health_book_tree_traverse($node->book['bid'], '_health_book_find_glossary');
       // Add all the glossary terms to javascript so it can be used on the page.
       if (!empty($glossary)) {
-        drupal_add_js(['health' => [
-          'definitions' => [
-            'terms' => $glossary,
-            'templates' => ['abbr' => theme('health_abbr'), 'glossary' => theme('health_glossary')]
+        drupal_add_js([
+          'health' => [
+            'definitions' => [
+              'terms' => $glossary,
+              'templates' => ['abbr' => theme('health_abbr'), 'glossary' => theme('health_glossary')],
+            ],
           ],
-        ]], 'setting');
+        ], 'setting');
         drupal_add_js(path_to_theme() . '/js/dist/health.definitions.min.js', 'file');
       }
     }
 
     // Add tippy library to all book pages.
-    drupal_add_js(path_to_theme() . '/js/dist/health.tooltips.min.js', array('type' => 'file', 'scope' => 'footer', 'weight' => 100 ));
+    drupal_add_js(path_to_theme() . '/js/dist/health.tooltips.min.js', [
+      'type' => 'file',
+      'scope' => 'footer',
+      'weight' => 100,
+    ]);
     drupal_add_js('https://unpkg.com/tippy.js@2.5.2/dist/tippy.all.min.js', 'external');
   }
 
@@ -1104,7 +1173,8 @@ function health_preprocess_node(&$variables) {
   if ($node->type == 'survey') {
     if ($node->field_status[LANGUAGE_NONE][0]['value'] == 'Upcoming' || $node->field_status[LANGUAGE_NONE][0]['value'] == 'Closed') {
       $variables['content']['field_link_external']['#access'] = FALSE;
-    } else {
+    }
+    else {
       $variables['content']['field_link_external'][0]['#element']['attributes']['class'] = 'button';
       $variables['content']['survey_link_closed_']['#access'] = FALSE;
     }
@@ -1115,9 +1185,7 @@ function health_preprocess_node(&$variables) {
  * Implements THEME_preprocess_page().
  */
 function health_preprocess_page(&$variables) {
-  // Vuejs is added in html.tpl.php as its the only way to exclude it from IE8.
-  // LazyLoad is added in html.tpl.php as its the only way to exclude it from IE8.
-
+  // LazyLoad is added via html.tpl.php. This means we can exclude it from IE8.
   // Add our javascript.
   $variables['page']['content']['#attached']['js'][] = [
     'data' => 'https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js',
@@ -1136,7 +1204,7 @@ function health_preprocess_page(&$variables) {
     'type' => 'file',
   ];
   $variables['page']['content']['#attached']['js'][] = [
-    'data' => path_to_theme() . '/pancake/js/pancake.js', // Already minified.
+    'data' => path_to_theme() . '/pancake/js/pancake.js',
     'type' => 'file',
   ];
   $variables['page']['content']['#attached']['js'][] = [
@@ -1159,6 +1227,10 @@ function health_preprocess_page(&$variables) {
     'data' => path_to_theme() . '/js/dist/health.nojs.min.js',
     'type' => 'file',
   ];
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => path_to_theme() . '/js/dist/health.alerts.min.js',
+    'type' => 'file',
+  ];
 
   // Add backtotop JS.
   $render_backtotop = [
@@ -1169,11 +1241,9 @@ function health_preprocess_page(&$variables) {
     'type' => 'file',
   ];
   $variables['backtotop'] = drupal_render($render_backtotop);
-  
+
   // Add readspeaker JS to all pages except content types listed in 'exclude'.
   $variables['readspeaker'] = '';
-  $exclude = [];
-  
   $render_readspeaker = [
     '#theme' => 'readspeaker',
   ];
@@ -1186,19 +1256,17 @@ function health_preprocess_page(&$variables) {
     'type' => 'file',
   ];
   $variables['readspeaker'] = drupal_render($render_readspeaker);
-  
+
 
   // Add full width indicator.
+  $variables['full_width'] = FALSE;
   if (isset($variables['node'])) {
-    if (theme_get_setting('full_content_types')[$variables['node']->type] !== 0 ) {
+    if (theme_get_setting('full_content_types')[$variables['node']->type] !== 0) {
       $variables['full_width'] = TRUE;
     }
     else {
       $variables['full_width'] = FALSE;
     }
-  }
-  else {
-    $variables['full_width'] = FALSE;
   }
 
   // Add parameters to JS.
@@ -1211,11 +1279,11 @@ function health_preprocess_page(&$variables) {
           current_path(),
           [
             'absolute' => TRUE,
-            'query' => drupal_get_query_parameters()
+            'query' => drupal_get_query_parameters(),
           ]
         ),
         'base_url' => $base_url,
-      ]
+      ],
     ],
     'type' => 'setting',
   ];
@@ -1227,7 +1295,7 @@ function health_preprocess_page(&$variables) {
     'type' => 'file',
     'preprocess' => TRUE,
     'group' => CSS_THEME,
-    'every_page' => TRUE
+    'every_page' => TRUE,
   ];
 
   $variables['page']['content']['#attached']['css'][] = [
@@ -1235,7 +1303,7 @@ function health_preprocess_page(&$variables) {
     'type' => 'file',
     'browsers' => array('IE' => 'IE 8', '!IE' => FALSE),
     'group' => CSS_THEME,
-    'weight' => 999 // Load first.
+    'weight' => 999,
   ];
 
   // Node.
@@ -1256,7 +1324,7 @@ function health_preprocess_page(&$variables) {
     }
 
     // Add page number to title for book pages.
-    if (property_exists($node, 'field_page_number') && key_exists(LANGUAGE_NONE, $node->field_page_number)) {
+    if (property_exists($node, 'field_page_number') && array_key_exists(LANGUAGE_NONE, $node->field_page_number)) {
       $variables['title'] = $node->field_page_number[LANGUAGE_NONE][0]['value'] . ' ' . $node->title;
     }
 
@@ -1268,7 +1336,7 @@ function health_preprocess_page(&$variables) {
   }
 
   // Set section title and summary visibility.
-  $variables['section_title'] = null;
+  $variables['section_title'] = NULL;
   $active_trail = menu_get_active_trail();
   if (!empty($active_trail)) {
 
@@ -1278,10 +1346,10 @@ function health_preprocess_page(&$variables) {
         if (count($active_trail) > 3) {
           if ($variables['node']->type != 'health_topic_hp') {
 
-            if (key_exists('link_path', $active_trail['3'])) {
+            if (array_key_exists('link_path', $active_trail['3'])) {
               $health_topic_hp = node_load(str_replace('node/', '', $active_trail[3]['link_path']));
             }
-            if (key_exists('link_path', $active_trail['2'])) {
+            if (array_key_exists('link_path', $active_trail['2'])) {
               $health_topic = node_load(str_replace('node/', '', $active_trail[2]['link_path']));
             }
 
@@ -1290,7 +1358,8 @@ function health_preprocess_page(&$variables) {
               $variables['section_title'] = theme('health_section_link', ['title' => $health_topic_hp->title, 'path' => 'node/' . $health_topic_hp->nid]);
               $variables['summary'] = NULL;
               // Check if we are under the general section of the topic.
-            } else if (isset($health_topic) && $health_topic) {
+            }
+            elseif (isset($health_topic) && $health_topic) {
               $variables['section_title'] = theme('health_section_link', ['title' => $health_topic->title, 'path' => 'node/' . $health_topic->nid]);
               $variables['summary'] = NULL;
             }
@@ -1307,13 +1376,17 @@ function health_preprocess_page(&$variables) {
       }
     }
 
-    // Resources
+    // Resources.
     if ($active_trail[1]['href'] == 'resources') {
 
       // Books.
       if (isset($active_trail[2]['module']) && $active_trail[2]['module'] == 'book') {
         if (count($active_trail) > 3) {
-          $variables['section_title'] = theme('health_section_link', ['title' => $active_trail[2]['title'], 'path' => $active_trail[2]['href'], 'subtitle' => $active_trail[2]['title']]);
+          $variables['section_title'] = theme('health_section_link', [
+            'title' => $active_trail[2]['title'],
+            'path' => $active_trail[2]['href'],
+            'subtitle' => $active_trail[2]['title'],
+          ]);
           $variables['summary'] = NULL;
         }
         else {
@@ -1321,12 +1394,11 @@ function health_preprocess_page(&$variables) {
         }
       }
       // Other resources.
-      else if (count($active_trail) > 3) {
+      elseif (count($active_trail) > 3) {
         $variables['section_title'] = theme('health_section_link', ['title' => 'Resources', 'path' => 'resources/']);
-        //$variables['summary'] = NULL;
       }
       else {
-        $variables['section_title'] = null;
+        $variables['section_title'] = NULL;
         if (isset($variables['node'])) {
           $variables['summary'] = NULL;
         }
@@ -1341,12 +1413,12 @@ function health_preprocess_page(&$variables) {
       }
     }
 
-    // Initiatives and programs
+    // Initiatives and programs.
     if ($active_trail[1]['href'] == 'initiatives-and-programs') {
       if (count($active_trail) > 3) {
         $variables['section_title'] = theme('health_section_link', [
           'title' => $active_trail[2]['link_title'],
-          'path' => $active_trail[2]['link_path']
+          'path' => $active_trail[2]['link_path'],
         ]);
         $variables['summary'] = FALSE;
       }
@@ -1361,19 +1433,19 @@ function health_preprocess_page(&$variables) {
       }
     }
 
-    // Committees and groups
+    // Committees and groups.
     if ($active_trail[1]['href'] == 'committees-and-groups') {
       if (count($active_trail) > 2) {
         $variables['section_title'] = theme('health_section_link', ['title' => 'Committees and groups', 'path' => 'committees-and-groups']);
       }
     }
 
-    // About us
+    // About us.
     if ($active_trail[1]['href'] == 'node/1' || $active_trail[1]['href'] == 'node/1946') {
       if (count($active_trail) > 2) {
         $variables['section_title'] = theme('health_section_link', [
           'title' => $active_trail[1]['title'],
-          'path' => $active_trail[1]['href']
+          'path' => $active_trail[1]['href'],
         ]);
       }
       if (count($active_trail) > 3) {
@@ -1392,23 +1464,16 @@ function health_preprocess_page(&$variables) {
   // Add the Initiatives and programs logo so it can be rendered in the header.
   if (isset($variables['node'])) {
     if ($variables['node']->type == 'program') {
-      $logo = field_view_field('node', $variables['node'], 'field_image_featured', array('label'=> 'hidden', 'settings' => array('image_style' => 'title_section_image')));
+      $logo = field_view_field('node', $variables['node'], 'field_image_featured', [
+        'label' => 'hidden',
+        'settings' => array('image_style' => 'title_section_image'),
+      ]);
       if (!empty($logo)) {
         $variables['header_image'] = render($logo);
         $variables['node']->field_image_featured = [];
       }
     }
   }
-
-  // Add global health alert block to the top.
-  $render_health_alert_bar = [
-    '#theme' => 'health_alert_bar',
-  ];
-  $render_health_alert_bar['#attached']['js'][] = [
-    'data' => path_to_theme() . '/js/dist/health.ajaxAlert.min.js',
-    'type' => 'file',
-  ];
-  $variables['health_alert_bar'] = drupal_render($render_health_alert_bar);
 
   // Books.
   if (isset($variables['node'])) {
@@ -1427,9 +1492,9 @@ function health_preprocess_page(&$variables) {
  * @param string $hook
  *   The name of the template being rendered ("region" in this case.)
  */
-function health_preprocess_region(&$variables, $hook) {
+function health_preprocess_region(array &$variables, $hook) {
 
-  // Regions with no-wrapper
+  // Regions with no-wrapper.
   $nowrappers = [
     'page_top',
     'header',
@@ -1441,11 +1506,11 @@ function health_preprocess_region(&$variables, $hook) {
     'footer_bottom',
     'page_bottom',
     'title_supp',
-    'content_bottom'
+    'content_bottom',
   ];
 
-  // Use the region--no-wrapper template for these regions
-  foreach($nowrappers as $nowrap) {
+  // Use the region--no-wrapper template for these regions.
+  foreach ($nowrappers as $nowrap) {
     if ($variables['region'] == $nowrap) {
       array_unshift($variables['theme_hook_suggestions'], 'region__no_wrapper');
     }
@@ -1458,7 +1523,7 @@ function health_preprocess_region(&$variables, $hook) {
  * @param array $variables
  *   Variables to pass to the theme template.
  */
-function health_preprocess_views_view_list(&$variables) {
+function health_preprocess_views_view_list(array &$variables) {
   // Add a custom class to the views row based on the URL.
   if ($variables['view']->name == 'categories') {
     foreach ($variables['view']->result as $key => $result) {
@@ -1466,7 +1531,7 @@ function health_preprocess_views_view_list(&$variables) {
         '/',
         $result->field_field_link_to[0]['raw']['url']
       );
-      $variables['classes_array'][$key] .= ' health-icon--'.end($custom_class);
+      $variables['classes_array'][$key] .= ' health-icon--' . end($custom_class);
     }
   }
 }

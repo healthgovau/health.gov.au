@@ -46,12 +46,6 @@
  * @ingroup themeable
  */
 ?>
-<!--
-This file is not used by Drupal core, which uses theme functions instead.
-See http://api.drupal.org/api/function/theme_field/7 for details.
-After copying this file to your theme's folder and customizing it, remove this
-HTML comment.
--->
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
     <h2>Order this resource</h2>
   <?php if (!$label_hidden): ?>

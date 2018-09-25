@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Returns HTML for a region.

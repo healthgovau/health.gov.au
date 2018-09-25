@@ -4,36 +4,6 @@
 //
 //------------------------------------------------------------
 
-body {
-
-  // Everything gets full width by default.
-  .page {
-    .sidebar-right {
-      // Right sidebar is in the markup first, but we want it to display on the right.
-      float: none;
-      padding: 0; // Remove the gutters on mobile.
-      @include AU-space('margin-top', -1unit);
-      @include AU-media(sm) {
-        // Need a better way.
-        float: right!important;
-        padding: 0 ($AU-grid-12-gutter-width / 2); // Put them back on tablet+ to work with the grid.
-        margin-top: 0;
-      }
-    }
-  }
-
-}
-
-// Global styling
-// .uikit-body .view ul > .views-row,
-// .node > .field,
-// .panel-pane {
-//   margin-bottom: uikit-space(1);
-//   &:last-of-type {
-//     margin-bottom: 0;
-//   }
-// }
-
 .au-body .view-popular ul > .views-row {
   margin-bottom: 0;
 }

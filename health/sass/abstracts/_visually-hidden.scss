@@ -18,8 +18,3 @@
 .element-invisible {
   @extend %visually-hidden;
 }
-
-// Vuejs hide element before binding.
-[v-cloak] {
-  display: none;
-}

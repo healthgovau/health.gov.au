@@ -1,0 +1,298 @@
+// Fields
+.field {
+
+  // Generic field after field
+  .field + & {
+    @include AU-space(margin-top, 1.5unit);
+  }
+  // Specific field sequences (e..g for vs)
+  .metadata--inline + &,
+  .field-name-title + &  {
+    @include AU-space(margin-top, .5unit);
+  }
+
+  @include AU-clearfix();
+
+  .field__label, .field-label {
+    font-weight: bold;
+  }
+
+  &--inline, &-label-inline {
+    .field-label, .field__label {
+      float: left;
+    }
+  }
+
+  &--inline--aligned {
+    .field-label, .field__label {
+      width: 11rem;
+    }
+  }
+}
+
+// Metadata, such as dates and types, used mainly in listings.
+.metadata {
+
+  &--inline {
+
+    @include AU-space(margin-top, .5unit);
+
+    .field {
+      // Override the default margin top on fields.
+      margin-top: 0;
+    }
+
+    > div, > span {
+      color: $colour-minorText;
+      display: inline-block;
+      border-left: 1px solid $colour-minorText;
+      @include AU-space(margin-left, .5unit);
+      @include AU-space(padding-left, .5unit);
+    }
+
+    > :first-child {
+      border-left: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.health-separator {
+  border-top: $health-borderize--very-thin;
+  @include AU-space('padding-top', 2unit);
+  @include AU-space('margin-top', 1unit);
+  @include AU-media(sm){
+    @include AU-space('margin-top', 2unit);
+  }
+  @include AU-media(md){
+    @include AU-space('margin-top', 4unit);
+  }
+}
+
+//// STUFF WE NEED TO UPDATE ////
+
+// Date
+// @todo Remove this and use .metadata and .metadata--inline instead
+%meta-date {
+  color: $colour-minorText;
+  font-size: 87.5%;
+  @include AU-space('margin-bottom', .5unit);
+  @include AU-space('margin-top', 0.5unit);
+}
+
+// Wrapper for date and tag
+// @todo Remove this and use .metadata and .metadata--inline instead
+%date-and-tag {
+
+  .field-type-datetime,
+  .field-name-field-status,
+  .field-name-field-time-required,
+  .field-name-ds-content-type,
+  .field-name-field-publication-type,
+  .field-name-field-video-type,
+  .field-name-field-media-type {
+    @extend %meta-date;
+    float: left;
+    .tags__item {
+      font-weight: normal;
+    }
+    @include AU-space('padding-right', .5unit);
+  }
+
+  .field-name-ds-content-type,
+  .field-name-field-time-required,
+  .field-name-field-publication-type,
+  .field-name-field-video-type,
+  .field-name-field-media-type {
+    @include AU-space('padding-left', .5unit);
+    border-left: 1px solid $colour-minorText;
+  }
+}
+
+// @todo Remove this and use .metadata and .metadata--inline instead
+%date-and-tag--small {
+
+  .field-type-datetime,
+  .field-name-field-status,
+  .field-name-field-time-required,
+  .field-name-ds-content-type,
+  .field-name-field-publication-type,
+  .field-name-field-video-type,
+  .field-name-field-media-type {
+    @extend %meta-date;
+    font-size: 12px;
+    @include AU-media(md) {
+      font-size: 14px;
+    }
+    float: left;
+    margin-bottom: 0;
+    @include AU-space('padding-right', .5unit);
+  }
+
+  .field-name-ds-content-type,
+  .field-name-field-time-required,
+  .field-name-field-publication-type,
+  .field-name-field-video-type,
+  .field-name-field-media-type {
+    @include AU-space('padding-left', .5unit);
+    border-left: 1px solid $colour-minorText;
+  }
+}
+
+// Styling by field name
+
+// Addresses
+// .field-name-field-contact-postal-address,
+// .field-name-field-contact-street-address {
+//   .field-items {
+//     border-left: $health-borderize--fat;
+//     padding-left: uikit-space(1.5);
+//   }
+// }
+
+// External link url
+.external-link-url {
+  word-break: break-all;
+  color: $colour-Secondary-darker;
+  @include health-fontgrid('xs', 'default', 'light');
+}
+
+// Email telephone field
+.field-name-field-contact-email,
+.field-name-field-contact-telephone {
+  i:before {
+    position: relative;
+    font-size: 1em;
+  }
+}
+
+// Paragraph styling
+// Email
+.paragraphs-item-para-email {
+  .field-items{
+    padding-bottom: 0;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+// Telephone
+.paragraphs-items-field-para-telephone {
+  .field-items{
+    padding-bottom: 0;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+// Document accessibility
+.document-accessibility-form {
+  @include AU-space('padding', 1.5unit 0);
+  color: $colour-minorText;
+  a {
+    color: $colour-minorText;
+  }
+  font-size: 0.9em;
+}
+
+// Summary
+p.summary, .field-name-field-summary {
+  @include AU-clearfix;
+  clear: both;
+}
+
+// Resource title.
+.resource-title, p.resource-title {
+  @include AU-fontgrid('md');
+  @include AU-space('margin-bottom', .5unit);
+}
+
+// Page currency
+// Standard content types - last updated and 'what's wrong' at bottom
+%page-help-and-currency {
+  .page-layout {
+    margin-bottom: 0;
+  }
+  .field-name-field-date-updated,
+  .field-name-field-date-published,
+  .field-name-field-audience {
+
+    &.field-label-inline {
+      .field-label {
+        float: left;
+        @include AU-space(width, 11unit);
+      }
+      .field-items {
+        @include AU-space(margin-left, 11unit);
+      }
+    }
+  }
+}
+
+%page-help-only--no-border {
+  .page {
+    .field-name-field-date-updated,
+    .field-name-field-date-published {
+      &.field-label-inline, &.field-label-above {
+        border: 0;
+        padding-top: 0;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+%media-enquiry {
+  .media-enquiry{
+    @include AU-space('margin-bottom', .5unit);
+    color: $colour-minorText;
+  }
+
+  .field-name-field-related-contact {
+    @include AU-space('margin-bottom', 1.5unit);
+    > .field-items > .field-item {
+      @include AU-space('margin-bottom', .5unit);
+    }
+  }
+}
+
+// Put a consistent space between the label and the value when displayed inline.
+%spaced-inline-label {
+  .field-label {
+    width: 11em;
+  }
+}
+
+// Override the line height from UIKit on image fields.
+.field-name-field-image,
+.field-name-field-image-featured {
+  div {
+    line-height: 0;
+  }
+}
+
+%minor-text {
+  font-size: 13px;
+}
+
+.field-name-field-related-health-topics {
+  .field-label {
+    float: left;
+    @include AU-space(width, 11unit);
+  }
+  .au-tags.au-tags--inline {
+    @include AU-space(margin-left, 11unit);
+  }
+}
+
+.page-accessibility-link {
+  @include AU-space(padding-bottom, 1unit);
+}
+
+.field-name-field-resource-file-summary {
+  @include AU-space(margin-top, 1.5unit);
+  @include AU-space(margin-bottom, 1.5unit);
+}

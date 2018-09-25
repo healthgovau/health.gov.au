@@ -37,9 +37,28 @@
 
       if (active) {
         $link.remove();
-        label.find('span').text($li.text());
+
+        var text = $li.text();
+
+        // If this checkbox doesn't have a number next to it in brackets, add the number of current results.
+        if (/\(\d+\)/gm.exec($li.text()) === null) {
+          var count = $('.view__summary__count');
+          if (count.length > 0) {
+            text += ' (' + $('.view__summary__count').text() + ')';
+          }
+        }
+
+        label.find('span').text(text);
+
       } else {
+        
         $link.find('.element-invisible').remove();
+
+        // If this checkbox doesn't have a number next to it in brackets, add (0).
+        if (/\(\d+\)/gm.exec($link.text()) === null) {
+          $link.text($link.text() + ' (0)');
+        }
+
         label.find('span ').text($link.text());
         $link.remove();
       }
@@ -55,3 +74,4 @@
   }
 
 })(jQuery, Drupal, this, this.document);
+

@@ -1,0 +1,26 @@
+//--------------------------------------------------------------
+// Workbench
+// Styling for the workbench section
+//
+//-------------------------------------------------------------
+
+.block-workbench {
+  .workbench-info-block {
+    border: 0;
+    color: $AU-color-foreground-text;
+    background: none;
+    font-size: inherit;
+
+    em:first-of-type {
+      font-weight: bold;
+      font-style: normal;
+      font-size: 22px;
+    }
+    .fa {
+      @include AU-space('margin-left', 4unit);
+      &:before {
+        position: static;
+      }
+    }
+  }
+}

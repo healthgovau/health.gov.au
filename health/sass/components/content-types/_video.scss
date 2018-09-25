@@ -3,7 +3,6 @@
 
 // Default/full content
 .node-type-video {
-  @extend %dm-full-content;
   @extend %page-help-and-currency;
 }
 
@@ -20,8 +19,13 @@
       @include AU-space('margin', 0);
     }
   }
+
   &.view-mode-listing_vertical_small {
-    @extend %dm-list-vertical-small;
+    border-top-width: 6px;
+    border-top-style: solid;
+    border-top-color: $colour-Tertiary-2;
+    @include AU-space(padding-top, 2unit);
+    @include AU-space(margin-top, 1.5unit);
   }
 
   &.view-mode-full {
@@ -33,3 +37,4 @@
     }
   }
 }
+

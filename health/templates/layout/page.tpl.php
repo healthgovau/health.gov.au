@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Returns the HTML for a single Drupal page.
@@ -9,8 +10,8 @@
 ?>
 
 <?php
-// Variables
-$sidebar_first  = render($page['sidebar_first']);
+// Variables.
+$sidebar_first = render($page['sidebar_first']);
 $sidebar_second = render($page['sidebar_second']);
 
 $content_class = 'main-content-full';
@@ -23,11 +24,7 @@ endif;
 
 <div class="page au-body">
   <div class="header-top au-main-nav__above-overlay">
-    <div class="container">
-      <div class="row">
-        <?php print render($page['header-top']); ?>
-      </div>
-    </div>
+    <?php print render($page['header-top']); ?>
   </div>
   <header class="au-header au-header--light au-main-nav__above-overlay clearfix" role="banner">
     <div class="container">
@@ -65,8 +62,6 @@ endif;
   <?php print render($page['alerts']); ?>
 
   <?php print render($page['navigation']); ?>
-
-  <?php print $health_alert_bar; ?>
 
   <?php print render($page['highlighted']); ?>
 
@@ -113,17 +108,20 @@ endif;
     <?php
     if ($full_width) {
       $outer_container_class = "container-fluid full-width";
-      $layout_row = false;
-    } else {
+      $layout_row = FALSE;
+    }
+    else {
       $outer_container_class = "container not-full-width";
-      $layout_row = true;
+      $layout_row = TRUE;
     }
 
     if ($sidebar_first || $sidebar_second) {
       $main_col_classes = 'col-sm-8';
-    } else if (!$full_width) {
+    }
+    elseif (!$full_width) {
       $main_col_classes = 'col-sm-12';
-    } else {
+    }
+    else {
       $main_col_classes = '';
     }
 
@@ -133,7 +131,7 @@ endif;
 
       <?php if ($layout_row): ?>
       <div class="row">
-      <?php endif ;?>
+      <?php endif;?>
 
         <?php if ($sidebar_first || $sidebar_second): ?>
           <?php if ($sidebar_first): ?>
@@ -180,7 +178,7 @@ endif;
 
       <?php if ($layout_row): ?>
       </div>
-      <?php endif ;?>
+      <?php endif;?>
 
     </div>
   </div>
@@ -189,29 +187,46 @@ endif;
 
   <?php print render($page['featured']); ?>
 
-  </div>
+</div>
 
-  <footer class="au-footer health-footer <?php print $classes; ?>" role="contentinfo">
-    <div class="container">
-      <div class="au-footer__navigation health-footer__navigation row">
+<footer class="au-footer health-footer <?php print $classes; ?>" role="contentinfo">
+  <div class="container">
+    <div class="au-footer__navigation health-footer__navigation row">
       <?php print render($page['footer_top']); ?>
-      </div>
-      <div class="au-footer__end health-footer__end row">
-      <?php print render($page['footer_bottom']); ?>
-        <div class="au-footer__logo health-footer__logo">
-          <div class="image-wrapper image-loading rs_preserve rs_skip" style="padding-bottom: 73%">
-            <div class="image">
-              <img typeof="foaf:Image" width="201" height="147"
-                   alt="Commonwealth Coat of Arms crest logo"
-                   data-src="/<?php print path_to_theme(); ?>/images/GovCrest.png">
-            </div>
-          </div>
-        </div>
-        <p class="au-footer__attribution health-footer__attribution">
-          <small>© Commonwealth of Australia</small>
-        </p>
+      <div class="col-sm-3">
+        <h3>Help us improve</h3>
+        <p>We are always looking for ways to improve our website.</p>
+        <?php print l(t('Provide feedback'), 'node/21',
+          [
+            'attributes' => [
+              'class' => [
+                'au-btn',
+                'au-btn--secondary',
+                'au-btn--dark',
+                'standard-gap',
+              ],
+            ],
+          ]
+        ); ?>
       </div>
     </div>
-  </footer>
-  <?php print $backtotop; ?>
-</div>
+    <div class="au-footer__end health-footer__end row">
+    <?php print render($page['footer_bottom']); ?>
+      <div class="au-footer__logo health-footer__logo">
+        <div class="image-wrapper image-loading rs_preserve rs_skip" style="padding-bottom: 73%">
+          <div class="image">
+            <img typeof="foaf:Image" width="201" height="147"
+                 alt="Commonwealth Coat of Arms crest logo"
+                 data-src="/<?php print path_to_theme(); ?>/images/GovCrest.png">
+          </div>
+        </div>
+      </div>
+      <p class="au-footer__attribution health-footer__attribution">
+        <small>© Commonwealth of Australia</small>
+      </p>
+    </div>
+  </div>
+</footer>
+<?php print $backtotop; ?>
+
+<button title="back to top" class="health-back-to-top"> <a class="au-btn au-btn--secondary" href="#">Back <span>to top</span></a> </button>

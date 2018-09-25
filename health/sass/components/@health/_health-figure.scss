@@ -1,0 +1,31 @@
+// Figure
+//
+// A figure image with a long description and notes.
+//
+// Markup: figure.twig
+//
+// Style guide: Components.figure
+
+.health-figure {
+  &--border {
+    border: $health-borderize--thin;
+    padding: 1rem;
+  }
+}
+figure {
+  margin: 0;
+  img {
+    margin: 0;
+  }
+
+  &.au-accordion {
+    border: 0;
+    .au-accordion__title {
+      font-weight: normal;
+      font-size: inherit;
+    }
+    .au-accordion__body {
+    }
+  }
+
+}

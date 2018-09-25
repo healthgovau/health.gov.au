@@ -4,16 +4,9 @@
 
 // Default/full content
 .node-type-news-article {
-  @extend %dm-full-content;
-  @extend %page-help-only;
 }
 
 // Display modes
 .node-news-article {
-
-	// Feature
-	&.view-mode-feature {
-      @extend %dm-feature;
-	}
 
 }

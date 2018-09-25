@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Returns the HTML for the basic html structure of a single Drupal page.
@@ -49,11 +50,11 @@
   <?php print $page; ?>
 
   <!--[if IE 8]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="/<?php print path_to_theme(); ?>/js/dist/script-ie8.min.js"></script>
   <![endif]-->
 
   <!--[if gt IE 8]><!-->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.6.0/lazyload.min.js"></script>
   <!--<![endif]-->
 

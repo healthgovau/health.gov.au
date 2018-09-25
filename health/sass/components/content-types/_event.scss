@@ -4,23 +4,10 @@
 
 // Default/full content
 .node-type-event {
-    @extend %dm-full-content;
-	@extend %page-help-only;
 }
 
 // Display modes
 .node-event {
 
-	// Feature
-	&.view-mode-feature {
-		@extend %dm-feature;
-		.field-name-field-image-featured {
-			@extend %image--full;
-		}
-		.group-right {
-			padding-top: 0;
-		}
-        @include cardify();
-    }	
 
 }

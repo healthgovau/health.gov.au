@@ -290,19 +290,22 @@
     }
   };
 
+
   // Add required label to nmm ID field for orderable publication.
   Drupal.behaviors.health_adminimal_orderable_publication = {
     attach: function (context, settings) {
-      $('.field-name-field-publication-orderable input', context).on('click', function() {
-        if ($(this).is(':checked')) {
-          if (!$('.form-item-field-publication-nmm-id-und-0-value .form-required', context).length) {
-            $('.form-item-field-publication-nmm-id-und-0-value label', context).append('<span class="form-required" title="This field is required.">*</span>');
+      var $orderable = $('.field-name-field-publication-orderable input', context);
+      if ($orderable.length > 0) {
+        $orderable.click(function () {
+          if ($(this).is(':checked')) {
+            if (!$('.form-item-field-publication-nmm-id-und-0-value .form-required', context).length) {
+              $('.form-item-field-publication-nmm-id-und-0-value label', context).append('<span class="form-required" title="This field is required.">*</span>');
+            }
+          } else {
+            $('.form-item-field-publication-nmm-id-und-0-value .form-required', context).remove();
           }
-        }
-        else {
-          $('.form-item-field-publication-nmm-id-und-0-value .form-required', context).remove();
-        }
-      });
+        });
+      }
     }
   };
 
@@ -366,10 +369,10 @@
     attach: function (context, settings) {
       // Edit content.
       characterLimit('.page-node-edit .form-item-title', 'input', 70);
-      characterLimit('.page-node-edit .field-name-field-summary', 'textarea', 200);
+      characterLimit('.page-node-edit .field-name-field-summary', 'textarea', 300);
       // Add content.
       characterLimit('.page-node-add .form-item-title', 'input', 70);
-      characterLimit('.page-node-add .field-name-field-summary', 'textarea', 200);
+      characterLimit('.page-node-add .field-name-field-summary', 'textarea', 300);
     }
   };
 
@@ -395,5 +398,14 @@
       }
     }).trigger('keyup');
   }
+
+  // Prevent authors from being able to edit files.
+  // Files are not version controlled and have no workflow, so to safeguard accidentally editing live versions when
+  // creating a new draft of content, we are removing the edit ability all together.
+  Drupal.behaviors.health_adminimal_image_editing = {
+    attach: function (context, settings) {
+      $('.field-widget-media-generic .button.edit, .form-item-files-replace-upload').hide();
+    }
+  };
 
 })(jQuery, Drupal);

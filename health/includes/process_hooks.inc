@@ -7,19 +7,19 @@
 /**
  * Override or insert variables into the html templates.
  *
- * @param $variables
+ * @param array $variables
  *   An array of variables to pass to the theme template.
- * @param $hook
+ * @param string $hook
  *   The name of the template being rendered ("html" in this case.)
  */
-function health_process_html(&$variables, $hook) {
+function health_process_html(array &$variables, $hook) {
   // Flatten out html_attributes.
   $variables['html_attributes'] = drupal_attributes($variables['html_attributes_array']);
 }
 
 
 /**
- * Override or insert variables in the html_tag theme function.
+ * Implements template_process_html_tag.
  */
 function health_process_html_tag(&$variables) {
   $tag = &$variables['element'];
@@ -43,16 +43,27 @@ function health_process_html_tag(&$variables) {
 /**
  * Override or insert variables into the maintenance page template.
  *
- * @param $variables
+ * @param array $variables
  *   An array of variables to pass to the theme template.
- * @param $hook
+ * @param string $hook
  *   The name of the template being rendered ("maintenance_page" in this case.)
  */
-function health_process_maintenance_page(&$variables, $hook) {
+function health_process_maintenance_page(array &$variables, $hook) {
   health_process_html($variables, $hook);
   // Ensure default regions get a variable. Theme authors often forget to remove
   // a deleted region's variable in maintenance-page.tpl.
-  foreach (array('header', 'navigation', 'highlighted', 'help', 'content', 'sidebar_first', 'sidebar_second', 'footer', 'bottom') as $region) {
+  $regions = [
+    'header',
+    'navigation',
+    'highlighted',
+    'help',
+    'content',
+    'sidebar_first',
+    'sidebar_second',
+    'footer',
+    'bottom',
+  ];
+  foreach ($regions as $region) {
     if (!isset($variables[$region])) {
       $variables[$region] = '';
     }
@@ -62,13 +73,12 @@ function health_process_maintenance_page(&$variables, $hook) {
 /**
  * Override or insert variables into the block templates.
  *
- * @param $variables
+ * @param array $variables
  *   An array of variables to pass to the theme template.
- * @param $hook
+ * @param string $hook
  *   The name of the template being rendered ("block" in this case.)
  */
-function health_process_block(&$variables, $hook) {
+function health_process_block(array &$variables, $hook) {
   // Drupal 7 should use a $title variable instead of $block->subject.
   $variables['title'] = isset($variables['block']->subject) ? $variables['block']->subject : '';
 }
-

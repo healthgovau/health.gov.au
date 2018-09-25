@@ -4,7 +4,6 @@
 
 // Default/full content
 .node-type-health-alert {
-  @extend %dm-full-content;
   @extend %page-help-only--no-border;
   @extend %media-enquiry;
 }
@@ -26,9 +25,4 @@
       }
     }
 
-	// Feature
-	&.view-mode-feature {
-		@extend %dm-feature;
-	}
-	
 }

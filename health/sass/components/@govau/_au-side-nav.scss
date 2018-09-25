@@ -1,0 +1,35 @@
+.au-side-nav {
+
+  // Make our version flush with the sub-header above.
+  @include AU-space('margin-top', -1unit);
+
+  // Add our colours.
+  @extend %colour-Light-background;
+  @include AU-media(sm) {
+    background: white;
+  }
+
+  a {
+    background: transparent !important;
+  }
+
+  li, ul {
+    position: relative;
+  }
+
+  // Add an unpublished flag for admins.
+  &--unpublished {
+    &:after {
+      content: 'Unpublished';
+      font-weight: normal;
+      font-size: 0.7em;
+      position: absolute;
+      top: -1px;
+      right: 0;
+      color: $AU-color-warning;
+      border: 1px solid $AU-color-warning;
+      padding: 0 2px;
+      background: white;
+    }
+  }
+}

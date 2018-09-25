@@ -3,7 +3,6 @@
 
 // Default/full content
 .node-type-survey {
-  @extend %dm-full-content;
   @extend %page-help-and-currency;
 }
 
@@ -28,7 +27,6 @@
 
   // Feature.
   &.view-mode-feature {
-    @extend %dm-feature;
     .field-name-field-image-featured {
       @extend %image--full;
     }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Default theme implementation for beans.
@@ -27,7 +28,7 @@
  * @see template_process()
  */
 ?>
-<div class="messages info <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<div class="au-page-alerts au-page-alerts--info <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <div class="bean-block-content"<?php print $content_attributes; ?>>
     <?php

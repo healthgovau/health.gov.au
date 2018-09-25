@@ -1,3 +1,4 @@
+
 // Components
 //
 // Design components are reusable designs that can be applied using just the CSS
@@ -7,80 +8,23 @@
 //
 // Style guide: component
 
-//@import 'layout/layout';
 
-// Typography
-@import 'au-headings';
+// @govau components
+@import '@govau/components';
 
-@import 'typography/blockquote/module';
-@import 'typography/fields/module';
+@import 'card/card';
 
-@import 'au-body';
-
+// @health components
+@import '@health/components';
 
 // Block styles
-@import 'block-types/bean-image-text';
-
-// Component types
-@import 'au-callout';
-@import 'au-grid';
-@import 'au-listing';
-@import 'au-field';
-@import 'au-cta-link';
-@import 'au-video';
-@import 'au-tags';
-@import 'alert';
-@import 'backtotop';
-@import 'card/card';
-@import 'table';
-@import 'responsive-media';
-@import 'table-drag/table-drag';
-@import 'table-drag/health-table-drag';
-@import 'page-alerts';
-@import 'images';
-@import 'stat';
-@import 'taskbar';
-@import 'fieldset';
-@import 'au-header';
-@import 'au-sub-header';
-@import 'au-footer';
-@import 'readspeaker';
-@import 'socialmedia';
-@import 'link';
-@import 'description-list';
-@import 'feedback';
-
-@import '_health-accordion.scss';
-
-// Books
-//
-// Components for long documents, HTML versions of publications and books.
-//
-// Style guide: Components.books
-@import 'au-footnotes';
-@import 'au-references';
-@import 'au-figure';
-@import 'au-recommendation';
-
-@import 'tooltip';
-@import 'table-of-contents';
-
-// Display modes
-@import 'display-modes/display-modes';
+@import 'bean-image-text';
 
 // Content types
 @import 'content-types/module';
 
 // Views, bands and layouts
-@import 'au-band';
-@import 'views';
-
-// Views, bands and layouts
 @import 'paragraphs';
-
-// Drupal
-@import 'au-contextual-links';
-@import 'au-workbench';
 
 // Forms
 //
@@ -90,28 +34,14 @@
 // Weight: 3
 //
 // Style guide: forms
-@import 'au-search';
-@import 'forms/autocomplete/module';
-@import 'forms/autocomplete/extends';
+
 @import 'forms/button/module';
 @import 'forms/button/extends';
-@import 'forms/collapsible-fieldset/module';
-@import 'forms/collapsible-fieldset/extends';
-@import 'forms/fieldsets/module';
-@import 'forms/fieldsets/extends';
 @import 'forms/form-item/module';
 @import 'forms/form-item/extends';
 @import 'forms/control-input/module'; // After form item
 @import 'forms/control-input/extends';
-@import 'forms/form-table/module';
-@import 'forms/form-table/extends';
 @import 'forms/input/extends';
-@import 'forms/progress-bar/module';
-@import 'forms/progress-bar/extends';
-@import 'forms/progress-throbber/module';
-@import 'forms/progress-throbber/extends';
-@import 'forms/resizable-textarea/module';
-@import 'forms/resizable-textarea/extends';
 @import 'forms/select/extends';
 @import 'forms/textarea/extends';
 
@@ -126,23 +56,10 @@
 // Weight: 2
 //
 // Style guide: navigation
-@import 'au-tabs';
-@import 'au-file';
-@import 'au-pager';
-@import 'au-main-nav';
-@import 'au-side-nav';
 
 @import 'navigation/book/module';
-@import 'navigation/breadcrumb/module';
-@import 'navigation/menu/extends';
-@import 'navigation/tags/extends';
-@import 'navigation/filters/module';
-@import 'navigation/filters/extends';
 @import 'navigation/faceted-block/module';
 @import 'navigation/selector/module';
 
-// Inline styles
-@import 'lists';
-
 // Health bespoke styles.
-@import '_health';
+

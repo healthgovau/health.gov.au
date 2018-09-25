@@ -1,1 +1,1 @@
-<span title="{definition}" aria-describedby="def-{id}" aria-label="Definition" class="definition">{term}</span><span style="display:none;" id="def-{id}">{definition}</span></dfn>
+<span title="{definition}" aria-describedby="def-{id}-{counter}" aria-label="Definition" class="definition">{term}</span><span style="display:none;" id="def-{id}-{counter}">{definition}</span></dfn>
