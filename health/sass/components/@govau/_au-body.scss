@@ -48,7 +48,7 @@
   }
 
   // Override external link icon with font awesome.
-  a[rel~='external'] {
+  a[rel~='external'], &.au-body--dark a[rel~='external']{
     &:after, &:hover:after {
       background-image: none;
       content: "\f08e";
