@@ -8,7 +8,8 @@
 
         var $data = $mediaItem.find('.form-autocomplete');
 
-        var $browse = $('<a href="" class="button">Browse</a>');
+        // Browse button.
+        var $browse = $('<a href="" class="button">Search</a>');
         $browse.click(function(e) {
           e.preventDefault();
 
@@ -32,16 +33,30 @@
             $('#' + $iframe.attr('data-field')).val(e.detail.id);
             $iframe.dialog('close');
             $iframe.remove();
+            $data.trigger('change');
           }, {capture: false, once: true});
 
         });
-
         $(this).once('media-library-browse').append($browse);
 
         // Edit button.
-        var nid = $data.val().substring($data.val().indexOf('(')+1);
-        nid = nid.replace(')', '');
-        $(this).once('media-library-edit').append('<a href="/node/' + nid + '/edit" target="_blank" class="button">Edit</a>');
+        var $edit = $('<a href="#" target="_blank" class="button">Edit</a>');
+        $edit.click(function(e) {
+          var nid = $data.val().substring($data.val().indexOf('(')+1);
+          nid = nid.replace(')', '');
+          $edit.attr('href', '/node/' + nid + '/edit');
+        });
+        $(this).once('media-library-edit').append($edit);
+
+        // Hide the edit button when there are no values in the field.
+        $data.change(function() {
+          if ($(this).val() === '') {
+            $edit.hide();
+          } else {
+            $edit.show();
+          }
+        });
+        $data.trigger('change');
       });
     }
   };

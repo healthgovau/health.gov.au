@@ -1001,6 +1001,132 @@ function health_preprocess_html(array &$variables, $hook) {
       }
     }
   }
+
+  // Image revision data migration.
+
+  // Create new media image content types based on file managed images.
+  if (drupal_get_path_alias() == 'image-revision/data-migration/create/media/image') {
+    // If user is dylan :).
+    global $user;
+    if ($user->mail == 'no_reply@govcms.gov.au') {
+
+      // Get all image files.
+      /*$fids = [];
+      $sql = "SELECT fid from file_managed WHERE type IN ('image')";
+      $results = db_query($sql)->fetchAll();
+      foreach ($results as $result) {
+        $fids[] = $result->fid;
+      }
+
+      // Load files.
+      $files = file_load_multiple($fids);
+      foreach ($files as $file) {
+
+        // Create new Media - Image.
+        $node = new stdClass();
+        $node->title = $file->filename;
+        $node->type = "media_image";
+        node_object_prepare($node);
+        $node->language = LANGUAGE_NONE;
+        $node->uid = $user->uid;
+        $node->status = 1;
+        $node->promote = 0;
+        $node->comment = 0;
+
+        $node->field_image[$node->language][0] = [
+          'fid' => $file->fid,
+          'title' => $file->filename,
+        ];
+        if (isset($file->field_file_image_alt_text[LANGUAGE_NONE])) {
+          $node->field_image[$node->language][0]['alt'] = $file->field_file_image_alt_text[LANGUAGE_NONE][0]['value'];
+        }
+
+        $node = node_submit($node);
+        node_save($node);
+      }*/
+
+      // Get all the media - images for matching up later.
+      $media = [];
+      $nids = [];
+      $sql = "SELECT nid from node WHERE type = 'media_image'";
+      $results = db_query($sql)->fetchAll();
+      foreach ($results as $result) {
+        $nids[] = $result->nid;
+      }
+      // Load nodes.
+      $nodes = node_load_multiple($nids);
+      foreach ($nodes as $node) {
+        $media[$node->field_image[LANGUAGE_NONE][0]['fid']] = $node->nid;
+      }
+
+
+      // Find all the NODES that use images.
+      /*$nids = [];
+      $sql = "SELECT nid from node WHERE type IN ('publication', 'news_article', 'departmental_media', 'contact', 'initiative', 'program', 'publication_collection', 'video')";
+      //$sql = "SELECT nid from node WHERE type IN ('news_article')";
+      $results = db_query($sql)->fetchAll();
+      foreach ($results as $result) {
+        $nids[] = $result->nid;
+      }
+      // Load nodes.
+      $nodes = node_load_multiple($nids);
+      foreach ($nodes as $node) {
+        $fid = NULL;
+        // Get the FID that it was referencing before.
+        if (!empty($node->field_image_featured)) {
+          $fid = $node->field_image_featured[LANGUAGE_NONE][0]['fid'];
+        }
+
+        if (isset($fid)) {
+
+          // Get the NID of the new media image.
+          $nid = $media[$fid];
+
+          // Update node.
+          $node->field_related_image[LANGUAGE_NONE][0]['target_id'] = $nid;
+          $node->revision = TRUE;
+          $node->log = 'Migrating image';
+          node_save($node);
+        }
+      }*/
+
+      // Find all the paragraphs that use images.
+      $pids = [];
+      $sql = "SELECT item_id from paragraphs_item WHERE bundle IN ('para_content_image')";
+      //$sql = "SELECT nid from node WHERE type IN ('news_article')";
+      $results = db_query($sql)->fetchAll();
+      foreach ($results as $result) {
+        $pids[] = $result->item_id;
+      }
+      // Load paragraphs.
+      $paras = paragraphs_item_load_multiple($pids);
+      foreach ($paras as $para) {
+        $fid = NULL;
+        // Get the FID that it was referencing before.
+        if (!empty($para->field_image)) {
+          $fid = $para->field_image[LANGUAGE_NONE][0]['fid'];
+        }
+
+        if (isset($fid)) {
+
+          // Get the NID of the new media image.
+          if (array_key_exists($fid, $media)) {
+            $nid = $media[$fid];
+
+            // Update para.
+            $para->field_related_image[LANGUAGE_NONE][0]['target_id'] = $nid;
+            $para->revision = TRUE;
+
+            $para->save();
+            break;
+
+          }
+        }
+      }
+
+
+    }
+  }
 }
 
 /**
