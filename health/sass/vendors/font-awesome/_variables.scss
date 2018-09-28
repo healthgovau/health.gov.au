@@ -13,7 +13,11 @@ $fa-li-width:         (30em / 14) !default;
 
 // Icons we use
 
-
+$fa-var-linkedin-square: "\f08c";
+$fa-var-youtube-square: "\f166";
+$fa-var-instagram: "\f16d";
+$fa-var-twitter-square: "\f081";
+$fa-var-facebook-square: "\f082";
 $fa-var-search: "\f002";
 $fa-var-envelope-o: "\f003";
 $fa-var-volume-up: "\f028";
@@ -32,6 +36,9 @@ $fa-var-angle-down: "\f107";
 $fa-var-angle-left: "\f104";
 $fa-var-angle-right: "\f105";
 $fa-var-angle-up: "\f106";
+$fa-var-at: "\f1fa";
+$fa-var-globe: "\f0ac";
+$fa-var-fax: "\f1ac";
 
 // Icons we don't use
 /*
@@ -75,7 +82,7 @@ $fa-var-arrows-v: "\f07d";
 $fa-var-asl-interpreting: "\f2a3";
 $fa-var-assistive-listening-systems: "\f2a2";
 $fa-var-asterisk: "\f069";
-$fa-var-at: "\f1fa";
+
 $fa-var-audio-description: "\f29e";
 $fa-var-automobile: "\f1b9";
 $fa-var-backward: "\f04a";
@@ -271,10 +278,9 @@ $fa-var-eyedropper: "\f1fb";
 $fa-var-fa: "\f2b4";
 $fa-var-facebook-f: "\f09a";
 $fa-var-facebook-official: "\f230";
-$fa-var-facebook-square: "\f082";
+
 $fa-var-fast-backward: "\f049";
 $fa-var-fast-forward: "\f050";
-$fa-var-fax: "\f1ac";
 $fa-var-feed: "\f09e";
 $fa-var-female: "\f182";
 $fa-var-fighter-jet: "\f0fb";
@@ -345,7 +351,7 @@ $fa-var-gittip: "\f184";
 $fa-var-glass: "\f000";
 $fa-var-glide: "\f2a5";
 $fa-var-glide-g: "\f2a6";
-$fa-var-globe: "\f0ac";
+
 $fa-var-google: "\f1a0";
 $fa-var-google-plus: "\f0d5";
 $fa-var-google-plus-circle: "\f2b3";
@@ -407,7 +413,7 @@ $fa-var-industry: "\f275";
 $fa-var-info: "\f129";
 $fa-var-info-circle: "\f05a";
 $fa-var-inr: "\f156";
-$fa-var-instagram: "\f16d";
+
 $fa-var-institution: "\f19c";
 $fa-var-internet-explorer: "\f26b";
 $fa-var-intersex: "\f224";
@@ -437,7 +443,7 @@ $fa-var-lightbulb-o: "\f0eb";
 $fa-var-line-chart: "\f201";
 $fa-var-link: "\f0c1";
 $fa-var-linkedin: "\f0e1";
-$fa-var-linkedin-square: "\f08c";
+
 $fa-var-linode: "\f2b8";
 $fa-var-linux: "\f17c";
 $fa-var-list: "\f03a";
@@ -735,7 +741,7 @@ $fa-var-turkish-lira: "\f195";
 $fa-var-tv: "\f26c";
 $fa-var-twitch: "\f1e8";
 
-$fa-var-twitter-square: "\f081";
+
 $fa-var-umbrella: "\f0e9";
 $fa-var-underline: "\f0cd";
 $fa-var-undo: "\f0e2";
@@ -807,5 +813,5 @@ $fa-var-yen: "\f157";
 $fa-var-yoast: "\f2b1";
 $fa-var-youtube: "\f167";
 $fa-var-youtube-play: "\f16a";
-$fa-var-youtube-square: "\f166";
+
 */

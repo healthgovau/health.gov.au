@@ -1061,7 +1061,7 @@ function health_preprocess_node(array &$variables) {
 
   // Add contact type to class for contact content type.
   if ($variables['type'] == 'contact') {
-    $type = taxonomy_term_load($variables['field_contact_type'][LANGUAGE_NONE][0]['tid'])->name;
+    $type = taxonomy_term_load($variables['field_contact_type'][0]['tid'])->name;
     $variables['classes_array'][] = strtolower(str_replace(' ', '-', $type));
 
     // Only render selected field for hotline bar view mode.

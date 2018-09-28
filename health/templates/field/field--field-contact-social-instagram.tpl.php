@@ -4,10 +4,8 @@
  * @file field.tpl.php
  * Default template implementation to display the value of a field.
  *
- * This file is not used by Drupal core, which uses theme functions instead for
- * performance reasons. The markup is the same, though, so if you want to use
- * template files rather than functions to extend field theming, copy this to
- * your custom theme. See theme_field() for a discussion of performance.
+ * This file is not used and is here as a starting point for customization only.
+ * @see theme_field()
  *
  * Available variables:
  * - $items: An array of field values. Use render() to output them.
@@ -46,13 +44,6 @@
  * @ingroup themeable
  */
 ?>
-<div class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php if (!$label_hidden): ?>
-    <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</div>
-  <?php endif; ?>
-  <div class="field-items"<?php print $content_attributes; ?>>
-    <?php foreach ($items as $delta => $item): ?>
-      <div class="field-item"<?php print $item_attributes[$delta]; ?>><i class="fa fa-envelope-o fa-inline fa-small" aria-hidden="true"></i><?php print render($item); ?></div>
-    <?php endforeach; ?>
-  </div>
-</div>
+<?php foreach ($items as $item) : ?>
+<a href="<?php print $item['#element']['url']?>" class="js-ignoreext"><i class="fa fa-instagram fa-very-large fa-inline"></i><span class="sr-only">Instagram</span></a>
+<?php endforeach; ?>

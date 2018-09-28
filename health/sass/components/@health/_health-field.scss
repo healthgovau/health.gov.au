@@ -2,7 +2,9 @@
 .field {
 
   // Generic field after field
-  .field + & {
+  .field + &,
+  .paragraphs-items + &,
+  & + .paragraphs-items {
     @include AU-space(margin-top, 1.5unit);
   }
   // Specific field sequences (e..g for vs)
@@ -15,6 +17,9 @@
 
   .field__label, .field-label {
     font-weight: bold;
+    &--light {
+      font-weight: normal;
+    }
   }
 
   &--inline, &-label-inline {
@@ -26,6 +31,9 @@
   &--inline--aligned {
     .field-label, .field__label {
       width: 11rem;
+    }
+    .field__item {
+      display: inline-block;
     }
   }
 }
@@ -156,15 +164,6 @@
   word-break: break-all;
   color: $colour-Secondary-darker;
   @include health-fontgrid('xs', 'default', 'light');
-}
-
-// Email telephone field
-.field-name-field-contact-email,
-.field-name-field-contact-telephone {
-  i:before {
-    position: relative;
-    font-size: 1em;
-  }
 }
 
 // Paragraph styling
