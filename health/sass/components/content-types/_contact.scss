@@ -34,15 +34,4 @@
     }
   }
 
-  // Contact type subsets for differential styling
-  .field-name-field-image-featured {
-    img {
-      border: 0; // Clear for company logos, crests, etc
-      max-width: 100%;
-      @include AU-media(md){
-        max-width: 80%
-      }
-    }
-  }
-
 }

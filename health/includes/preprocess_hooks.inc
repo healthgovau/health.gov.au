@@ -676,11 +676,37 @@ function health_preprocess_field(&$variables) {
 
     // Contact.
     if (property_exists($variables['element']['#object'], 'type') && $variables['element']['#object']->type == 'contact') {
-      if ($variables['element']['#items'][0]['filename'] == 'Contact placeholder - group' && $variables['element']['#items'][0]['fid'] == 6186) {
-        // Add default to class if image value is default.
-        $variables['classes_array'][] = 'default';
-      }
 
+      // Add classes and swap out defaults.
+      switch ($variables['element']['#object']->field_contact_type[LANGUAGE_NONE][0]['tid']) {
+        // Committees and groups.
+        case 2211:
+          $variables['items'][0]['#item'] = get_object_vars(file_load(6206));
+          $variables['classes_array'][] = 'image--circle';
+          break;
+        // Department of Health.
+        case 2206:
+        // State or territory local office.
+        case 2446:
+        // Service.
+        case 2261:
+          $variables['items'][0]['#item'] = get_object_vars(file_load(6166));
+          $variables['classes_array'][] = 'image--circle';
+          break;
+        // Minister.
+        case 311:
+          // Use supplied image.
+          $variables['classes_array'][] = 'image--circle';
+          break;
+        // Organisation.
+        case 2251:
+          // Use supplied image.
+          break;
+        // Portfolio agency.
+        case 316:
+          // Use supplied image.
+          break;
+      }
     }
   }
 
@@ -1029,18 +1055,6 @@ function health_preprocess_node(array &$variables) {
 
   // Add the type as a name to the node e.g. "News article" or "Event".
   $variables['type_name'] = node_type_get_name($variables['node']);
-
-  // Add contact type to class for contact content type.
-  if ($variables['type'] == 'contact') {
-    if (array_key_exists(LANGUAGE_NONE, $variables['field_contact_type'])) {
-      $type = taxonomy_term_load($variables['field_contact_type'][LANGUAGE_NONE][0]['tid'])->name;
-    } else {
-      $type = taxonomy_term_load($variables['field_contact_type'][0]['tid'])->name;
-    }
-    if ($type) {
-      $variables['classes_array'][] = strtolower(str_replace(' ', '-', $type));
-    }
-  }
 
   // Statistic.
   if ($node->type == 'statistic') {
