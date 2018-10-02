@@ -483,12 +483,15 @@ function health_preprocess_ds_separator(array &$variables) {
  *   HTML output.
  */
 function health_preprocess_ds_google_maps_static(array &$variables) {
-  if (isset($variables['field_location_latitude']) && isset($variables['field_location_longitude'])) {
-    $lat = $variables['field_location_latitude'][0]['value'];
-    $long = $variables['field_location_longitude'][0]['value'];
-    $src = GOOGLE_MAP_API . '?center=' . $lat . ',' . $long . '&zoom=13&size=400x400&maptype=roadmap&key=' . theme_get_setting('google_maps_api');
-    $src .= '&markers=color:red%7C' . $lat . ',' . $long;
-    return '<img src="' . $src . '" />';
+  $gmaps_api = theme_get_setting('google_maps_api');
+  if ($gmaps_api) {
+    if (isset($variables['field_location_latitude']) && isset($variables['field_location_longitude'])) {
+      $lat = $variables['field_location_latitude'][0]['value'];
+      $long = $variables['field_location_longitude'][0]['value'];
+      $src = GOOGLE_MAP_API . '?center=' . $lat . ',' . $long . '&zoom=13&size=400x400&maptype=roadmap&key=' . $gmaps_api;
+      $src .= '&markers=color:red%7C' . $lat . ',' . $long;
+      return '<img src="' . $src . '" />';
+    }
   }
   return '';
 }
@@ -503,24 +506,36 @@ function health_preprocess_ds_google_maps_static(array &$variables) {
  *   HTML output.
  */
 function health_preprocess_ds_google_maps_interactive(array &$variables) {
-  if (isset($variables['field_location_latitude']) && isset($variables['field_location_longitude'])) {
+  $gmaps_api = theme_get_setting('google_maps_api');
+  if ($gmaps_api) {
 
-    $lat = $variables['field_location_latitude'][0]['value'];
-    $long = $variables['field_location_longitude'][0]['value'];
+    if (isset($variables['field_location_latitude']) && isset($variables['field_location_longitude'])) {
 
-    drupal_add_js('https://maps.googleapis.com/maps/api/js?key=' . theme_get_setting('google_maps_api') . '&callback=initGoogleMaps',
-      ['type' => 'external', 'defer' => 'defer', 'async' => 'async']
-    );
+      $lat = $variables['field_location_latitude'][0]['value'];
+      $long = $variables['field_location_longitude'][0]['value'];
 
-    drupal_add_js(array(
-      'health' => array(
-        'maps' => ['google' => [['long' => floatval($long), 'lat' => floatval($lat), 'id' => 'google-map-' . $variables['id']]]],
-      ),
-    ), 'setting');
+      drupal_add_js('https://maps.googleapis.com/maps/api/js?key=' . $gmaps_api . '&callback=initGoogleMaps',
+        ['type' => 'external', 'defer' => 'defer', 'async' => 'async']
+      );
 
-    drupal_add_js(path_to_theme() . '/js/dist/health.maps.min.js', 'file');
+      drupal_add_js([
+        'health' => [
+          'maps' => [
+            'google' => [
+              [
+                'long' => floatval($long),
+                'lat' => floatval($lat),
+                'id' => 'google-map-' . $variables['id']
+              ]
+            ]
+          ],
+        ],
+      ], 'setting');
 
-    return '<div id="google-map-'.$variables['id'].'" class="health-maps health-maps--google"></div>';
+      drupal_add_js(path_to_theme() . '/js/dist/health.maps.min.js', 'file');
+
+      return '<div id="google-map-' . $variables['id'] . '" class="health-maps health-maps--google"></div>';
+    }
   }
   return '';
 }
