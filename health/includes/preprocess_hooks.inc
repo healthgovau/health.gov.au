@@ -1032,18 +1032,13 @@ function health_preprocess_node(array &$variables) {
 
   // Add contact type to class for contact content type.
   if ($variables['type'] == 'contact') {
-    $type = taxonomy_term_load($variables['field_contact_type'][0]['tid'])->name;
-    $variables['classes_array'][] = strtolower(str_replace(' ', '-', $type));
-
-    // Only render selected field for hotline bar view mode.
-    if ($variables['view_mode'] == 'hotline_bar') {
-      foreach ($variables as $key => $item) {
-        if (substr($key, 0, 6) == 'field_') {
-          if ($key != $variables['node']->selected_field) {
-            unset($variables['content'][$key]);
-          }
-        }
-      }
+    if (array_key_exists(LANGUAGE_NONE, $variables['field_contact_type'])) {
+      $type = taxonomy_term_load($variables['field_contact_type'][LANGUAGE_NONE][0]['tid'])->name;
+    } else {
+      $type = taxonomy_term_load($variables['field_contact_type'][0]['tid'])->name;
+    }
+    if ($type) {
+      $variables['classes_array'][] = strtolower(str_replace(' ', '-', $type));
     }
   }
 
