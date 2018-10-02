@@ -83,6 +83,12 @@
       legendSummary('.paragraphs-item-type-glossary-term', 'Term', 'input');
       legendSummary('.paragraphs-item-type-figure', 'Figure', '.field-name-field-title input');
 
+      // Contacts
+      legendSummary('.paragraphs-item-type-para-email', 'Email', '.field-name-field-contact-email input');
+      legendSummary('.paragraphs-item-type-para-telephone', 'Phone', '.field-name-field-contact-telephone input');
+      legendSummary('.paragraphs-item-type-fax', 'Fax', '.field-name-field-contact-fax-number input');
+      legendSummary('.paragraphs-item-type-address', 'Address', '.street-block input');
+
       // If collapsed already has saved states in it, restore those states.
       if (collapsed.length > 0) {
         $('.field-name-field-components > div > div > div > .field-multiple-table > tbody > tr').each(function (index) {
