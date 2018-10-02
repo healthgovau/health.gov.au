@@ -45,22 +45,4 @@
     }
   }
 
-  // Apply circle style to default image and sleected ones regardless of upload
-  &.department-of-health,
-  &.minister,
-  &.committee-or-group {
-    .field-name-field-image-featured {
-      img {
-        @include circlefy;
-      }
-    }
-  }
-
-  // If default image is used apply circle regardless
-  .field-name-field-image-featured.default {
-    img {
-      @include circlefy;
-    }
-  }
-
 }
