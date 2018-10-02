@@ -635,25 +635,6 @@ function health_preprocess_field(&$variables) {
     }
   }
 
-  // Create variable for street address field.
-  if ($variables['element']['#field_name'] == 'field_contact_street_address') {
-    $variables['location_map'] = '';
-    // Only show the map in event node view.
-    if (arg(0) == 'node' && is_numeric(arg(1))) {
-      $node = node_load(arg(1));
-      if ($node->type == 'event') {
-        $node = $variables['element']['#object'];
-        $google_api = theme_get_setting('ga_api');
-        $lat = isset($node->field_address_latitude[LANGUAGE_NONE]) ? $node->field_address_latitude[LANGUAGE_NONE][0]['value'] : '0';
-        $long = isset($node->field_address_longitude[LANGUAGE_NONE]) ? $node->field_address_longitude[LANGUAGE_NONE][0]['value'] : 0;
-        $src = GOOGLE_MAP_API . '?center=' . $lat . ',' . $long . '&zoom=13&size=300x300&maptype=roadmap&key=' . $google_api;
-        $src .= '&markers=color:blue%7Clabel:S%7C' . $lat . ',' . $long;
-        $address = $variables['items'][0]['#address'];
-        $variables['location_map'] = '<img src="' . $src . '" alt="' . $address['thoroughfare'] . ' ' . $address['locality'] . '" />';
-      }
-    }
-  }
-
   // Hide last updated field if it is not later than date published.
   if ($variables['element']['#field_name'] == 'field_date_updated' && $variables['element']['#view_mode'] == 'full') {
     $node_type = $variables['element']['#object']->type;

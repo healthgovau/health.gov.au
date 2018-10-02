@@ -472,3 +472,24 @@ function health_preprocess_ds_alert_close_button(array &$variables) {
 function health_preprocess_ds_separator(array &$variables) {
   return theme('health_separator');
 }
+
+/**
+ * DS - Static google map using long and latitude.
+ *
+ * @param array $variables
+ *   Variables from preprocess.
+ *
+ * @return string
+ *   HTML output.
+ */
+function health_preprocess_ds_google_maps_static(array &$variables) {
+  if (isset($variables['field_location_latitude']) && isset($variables['field_location_longitude'])) {
+    $lat = $variables['field_location_latitude'][0]['value'];
+    $long = $variables['field_location_longitude'][0]['value'];
+    $google_api = theme_get_setting('google_maps_api');
+    $src = GOOGLE_MAP_API . '?center=' . $lat . ',' . $long . '&zoom=13&size=400x400&maptype=roadmap&key=' . $google_api;
+    $src .= '&markers=color:red%7C' . $lat . ',' . $long;
+    return '<img src="' . $src . '" />';
+  }
+  return '';
+}
