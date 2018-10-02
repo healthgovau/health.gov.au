@@ -486,10 +486,43 @@ function health_preprocess_ds_google_maps_static(array &$variables) {
   if (isset($variables['field_location_latitude']) && isset($variables['field_location_longitude'])) {
     $lat = $variables['field_location_latitude'][0]['value'];
     $long = $variables['field_location_longitude'][0]['value'];
-    $google_api = theme_get_setting('google_maps_api');
-    $src = GOOGLE_MAP_API . '?center=' . $lat . ',' . $long . '&zoom=13&size=400x400&maptype=roadmap&key=' . $google_api;
+    $src = GOOGLE_MAP_API . '?center=' . $lat . ',' . $long . '&zoom=13&size=400x400&maptype=roadmap&key=' . theme_get_setting('google_maps_api');
     $src .= '&markers=color:red%7C' . $lat . ',' . $long;
     return '<img src="' . $src . '" />';
   }
   return '';
 }
+
+/**
+ * DS - Static google map using long and latitude.
+ *
+ * @param array $variables
+ *   Variables from preprocess.
+ *
+ * @return string
+ *   HTML output.
+ */
+function health_preprocess_ds_google_maps_interactive(array &$variables) {
+  if (isset($variables['field_location_latitude']) && isset($variables['field_location_longitude'])) {
+
+    $lat = $variables['field_location_latitude'][0]['value'];
+    $long = $variables['field_location_longitude'][0]['value'];
+
+    drupal_add_js('https://maps.googleapis.com/maps/api/js?key=' . theme_get_setting('google_maps_api') . '&callback=initGoogleMaps',
+      ['type' => 'external', 'defer' => 'defer', 'async' => 'async']
+    );
+
+    drupal_add_js(array(
+      'health' => array(
+        'maps' => ['google' => [['long' => floatval($long), 'lat' => floatval($lat), 'id' => 'google-map-' . $variables['id']]]],
+      ),
+    ), 'setting');
+
+    drupal_add_js(path_to_theme() . '/js/dist/health.maps.min.js', 'file');
+
+    return '<div id="google-map-'.$variables['id'].'" class="health-maps health-maps--google"></div>';
+  }
+  return '';
+}
+
+
