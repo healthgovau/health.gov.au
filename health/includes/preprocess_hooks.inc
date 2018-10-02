@@ -654,16 +654,6 @@ function health_preprocess_field(&$variables) {
     }
   }
 
-  // Add title and organisation to postal address field.
-  if ($variables['element']['#field_name'] == 'field_contact_postal_address') {
-    $variables['title'] = $variables['element']['#object']->title;
-    $variables['organisation'] = '';
-
-    if (isset($variables['element']['#object']->field_contact_organisation[LANGUAGE_NONE])) {
-      $variables['organisation'] = $variables['element']['#object']->field_contact_organisation[LANGUAGE_NONE][0]['value'];
-    }
-  }
-
   // Hide last updated field if it is not later than date published.
   if ($variables['element']['#field_name'] == 'field_date_updated' && $variables['element']['#view_mode'] == 'full') {
     $node_type = $variables['element']['#object']->type;
