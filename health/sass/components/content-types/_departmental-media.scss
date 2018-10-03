@@ -8,23 +8,4 @@
 // Display modes
 .node-departmental-media {
 
-  // Full
-  &.view-mode-full {
-    .field-label--inline--aligned {
-      .field__label {
-        width: 11em;
-      }
-    }
-    .field-name-field-image-featured {
-      @include AU-space('margin-bottom', 1unit);
-    }
-    .field-name-field-related-health-topics {
-      .field-label {
-        width: auto;
-      }
-    }
-    .field-name-field-body {
-      @include AU-space(margin-top,3unit); 
-    }
-  }
 }
