@@ -296,7 +296,6 @@
 
       // Contacts.
       // Disable / enable the image field based on what subtype is selected.
-      $('.field-name-field-image-featured').hide();
       $('.field-name-field-contact-type select').change(function() {
         var $image = $('.field-name-field-image-featured');
         switch($(this).val()) {
@@ -310,7 +309,7 @@
             $image.show();
             break;
         }
-      });
+      }).trigger('change');
     }
   };
 
