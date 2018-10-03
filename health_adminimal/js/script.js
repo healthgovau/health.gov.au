@@ -293,6 +293,24 @@
         '.node-audio-form .field-name-field-description .filter-list',
         '.node-audio-form .field-name-field-resource-transcript .filter-list'
       ]);
+
+      // Contacts.
+      // Disable / enable the image field based on what subtype is selected.
+      $('.field-name-field-image-featured').hide();
+      $('.field-name-field-contact-type select').change(function() {
+        var $image = $('.field-name-field-image-featured');
+        switch($(this).val()) {
+          case '2211': // Committee or group.
+          case '2206': // Department of Health.
+          case '2246': // Department of Health State or Territory office.
+          case '2261': // Service.
+            $image.hide();
+            break;
+          default:
+            $image.show();
+            break;
+        }
+      });
     }
   };
 
