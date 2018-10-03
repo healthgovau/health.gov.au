@@ -207,13 +207,12 @@ function health_preprocess_entity(array &$variables) {
 
     // Contact.
     if ($para_item->bundle == 'para_contact') {
-      // Add more link to referenced node.
+      // Pass the more link to related contact.
       $nid = $para_item->field_related_contact[LANGUAGE_NONE][0]['target_id'];
       if (isset($para_item->field_link_internal[LANGUAGE_NONE][0])) {
-        $variables['content']['field_related_contact'][0]['node'][$nid]['#node']->link = $para_item->field_link_internal[LANGUAGE_NONE][0];
+        $link = field_view_field('paragraphs_item', $para_item, 'field_link_internal', 'full');
+        $variables['content']['field_related_contact'][0]['node'][$nid]['field_summary']['#suffix'] = render($link);
       }
-      // Pass selected display field name to node.
-      $variables['content']['field_related_contact'][0]['node'][$nid]['#node']->selected_field = $para_item->field_display_field[LANGUAGE_NONE][0]['value'];
     }
 
     // Feature content.
