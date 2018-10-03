@@ -25,7 +25,7 @@
 
 %baseicon {
   position: relative;
-  margin-left: 1.6em; //2em;
+  margin-left: 2.4em;
   &:before {
     font-family: FontAwesome;
     font-style: normal;
@@ -57,12 +57,13 @@ h1, h2, h3, h4, h5, h6, p {
 .fa {
   // Size variants
   &-small {
+    margin-left: 1.6em;
     &:before {
       font-size: 1em;
     }
   }
 
-  &-very-large {
+  &-large {
     &:before {
       font-size: 3em;
       margin-left: -.55em;

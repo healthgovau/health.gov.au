@@ -56,8 +56,18 @@
         $item_without_spaces = str_replace(' ', '', $item['#markup']);
         if (substr($item_without_spaces, 0, 1) == '0') {
           $item_without_spaces = substr($item_without_spaces, 1, strlen($item_without_spaces) - 1);
-        } ?>
-      <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><i class="fa fa-phone fa-inline fa-small" aria-hidden="true"></i><?php print l(render($item), 'tel:' . render($item_without_spaces)); ?></div>
+        }
+        $fa_class = '';
+        $link_class = 'au-display-lg au-display--inline';
+        // Hotline bar.
+        if ($element['#view_mode'] != 'hotline_bar') {
+          $fa_class = 'fa-small';
+          $link_class = '';
+        }
+      ?>
+      <div class="field-item "<?php print $item_attributes[$delta]; ?>>
+        <i class="fa fa-phone fa-inline <?php print $fa_class ?>" aria-hidden="true"></i><?php print l(render($item), 'tel:' . render($item_without_spaces), ['attributes' => ['class' => $link_class]]); ?>
+      </div>
     <?php endforeach; ?>
   </div>
 </div>
