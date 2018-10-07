@@ -534,7 +534,7 @@ function health_preprocess_ds_google_maps_interactive(array &$variables) {
 
       drupal_add_js(path_to_theme() . '/js/dist/health.maps.min.js', 'file');
 
-      return '<div id="google-map-' . $variables['id'] . '" class="health-maps health-maps--google"></div>';
+      return '<div id="google-map-' . $variables['id'] . '" class="field health-maps health-maps--google"></div>';
     }
   }
   return '';

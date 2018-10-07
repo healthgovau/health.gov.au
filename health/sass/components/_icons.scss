@@ -63,10 +63,10 @@ h1, h2, h3, h4, h5, h6, p {
     }
   }
 
-  &-large {
+  &-very-large {
     &:before {
       font-size: 3em;
-      margin-left: -.55em;
+      margin-left: -.8em;
     }
   }
 

@@ -12,7 +12,7 @@
 
   @include AU-clearfix();
 
-  .field__label, .field-label {
+  .field__label, .field-label, &.field__label {
     font-weight: bold;
     &--light {
       font-weight: normal;
@@ -163,27 +163,6 @@
   word-break: break-all;
   color: $colour-Secondary-darker;
   @include health-fontgrid('xs', 'default', 'light');
-}
-
-// Paragraph styling
-// Email
-.paragraphs-item-para-email {
-  .field-items{
-    padding-bottom: 0;
-  }
-  p {
-    margin-bottom: 0;
-  }
-}
-
-// Telephone
-.paragraphs-items-field-para-telephone {
-  .field-items{
-    padding-bottom: 0;
-  }
-  p {
-    margin-bottom: 0;
-  }
 }
 
 // Document accessibility
