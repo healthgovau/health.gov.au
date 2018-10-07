@@ -45,5 +45,5 @@
  */
 ?>
 <?php foreach ($items as $item) : ?>
-<a href="<?php print $item['#element']['url']?>" class="js-ignoreext"><i class="fa fa-instagram fa-very-large fa-inline"></i><span class="sr-only">Instagram</span></a>
+<a href="<?php print $item['#element']['url']?>" class="js-ignoreext"><i class="fa fa-instagram fa-very-large fa-inline"></i><span class="sr-only">Instagram page for <?php print $element['#object']->title?></span></a>
 <?php endforeach; ?>
