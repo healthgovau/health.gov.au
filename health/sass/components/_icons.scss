@@ -25,19 +25,20 @@
 
 %baseicon {
   position: relative;
-  margin-left: 1.6em; //2em;
+  margin-left: 2.2em;
+  display: inline;
   &:before {
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
     text-decoration: none;
     color: inherit;
-    font-size: 1.5em;
     position: absolute;
     line-height: 1;
     left: 0;
-    margin-left: -1.6em;
+    margin-left: -1.4em;
     display: inline-block;
+    font-size: 1.5em;
   }
 }
 

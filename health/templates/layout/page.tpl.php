@@ -88,8 +88,6 @@ endif;
                 <p class="au-introduction au-introduction--dark"><?php print $summary; ?></p>
               <?php endif; ?>
 
-              <?php print $readspeaker; ?>
-
             </div>
 
             <?php if (count($page['title_supp']) > 0 || isset($header_image)): ?>
@@ -98,6 +96,21 @@ endif;
                 <?php print isset($header_image) ? $header_image : ''; ?>
               </div>
             <?php endif; ?>
+          </div>
+        </div>
+      </div>
+
+      <div class="health-toolbar">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="health-toolbar__item">
+                <?php print $readspeaker; ?>
+              </div>
+              <div class="health-toolbar__item">
+                <a href="#" id="health-print"><i class="fa fa-print fa-inline"></i><span>Print</span></a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -6,27 +6,13 @@
   .rsbtn {
     margin-bottom: 0;
   }
-  @include AU-space('margin', 1unit 0 0 0);
+  line-height: 0;
 }
 
 .rsbtn_colorskin {
+  line-height: 1.5;
   position: relative;
   display: inline-block;
-  @include AU-space('padding', .5unit 1unit);
-  background: white;
-  border-radius: 4px;
-  border: 1px solid $AU-color-foreground-action;
-  &:hover {
-    border-color: $AU-color-foreground-text;
-    text-decoration: underline;
-  }
-  &:active, &:focus {
-    background-color: $colour-light-darker;
-  }
-
-  i {
-    font-size: inherit;
-  }
 
   a {
     color: $AU-color-foreground-action;
@@ -45,10 +31,10 @@
   }
 
   .rspart {
-    float: left;
+
     margin-left: 2px;
     [class*="fa-"]:before {
-      margin-left: -1.2em;
+      //margin-left: -1.2em;
     }
     &.rsbutton {
       background-color: $AU-color-foreground-action;
