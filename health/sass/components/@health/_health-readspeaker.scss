@@ -45,7 +45,7 @@
     float: left;
     margin-left: 2px;
     [class*="fa-"]:before {
-      margin-top: -4px;
+      margin-top: -2px;
     }
     &.rsbutton {
       background-color: $AU-color-foreground-action;

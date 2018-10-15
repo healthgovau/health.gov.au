@@ -25,7 +25,7 @@ img.jssocials-share-logo {
   display: inline-block;
   text-align: center;
   text-decoration: none;
-  line-height: 1; }
+  line-height: inherit; }
   .jssocials-share-link.jssocials-share-link-count {
     padding-top: .2em; }
     .jssocials-share-link.jssocials-share-link-count .jssocials-share-count {
