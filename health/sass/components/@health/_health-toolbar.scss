@@ -5,8 +5,14 @@
 
   border-bottom: $health-borderize--very-thin;
 
-  &__item {
-    float: left;
-    @include AU-space(margin-right, 3unit);
+  .au-link-list {
+    > li {
+      @include AU-space(margin-right, 3unit);
+    }
   }
+
+  @media print {
+    display: none;
+  }
+
 }

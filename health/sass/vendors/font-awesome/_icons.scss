@@ -22,6 +22,8 @@
 .#{$fa-css-prefix}-angle-up:before { content: $fa-var-angle-up; }
 .#{$fa-css-prefix}-angle-down:before { content: $fa-var-angle-down; }
 .#{$fa-css-prefix}-print:before { content: $fa-var-print; }
+.#{$fa-css-prefix}-share-alt:before { content: $fa-var-share-alt; }
+.#{$fa-css-prefix}-at:before { content: $fa-var-at; }
 
 // Icons we don't
 /*
@@ -516,7 +518,6 @@
 .#{$fa-css-prefix}-header:before { content: $fa-var-header; }
 .#{$fa-css-prefix}-paragraph:before { content: $fa-var-paragraph; }
 .#{$fa-css-prefix}-sliders:before { content: $fa-var-sliders; }
-.#{$fa-css-prefix}-share-alt:before { content: $fa-var-share-alt; }
 .#{$fa-css-prefix}-share-alt-square:before { content: $fa-var-share-alt-square; }
 .#{$fa-css-prefix}-bomb:before { content: $fa-var-bomb; }
 .#{$fa-css-prefix}-soccer-ball-o:before,
@@ -542,7 +543,6 @@
 .#{$fa-css-prefix}-bell-slash-o:before { content: $fa-var-bell-slash-o; }
 .#{$fa-css-prefix}-trash:before { content: $fa-var-trash; }
 .#{$fa-css-prefix}-copyright:before { content: $fa-var-copyright; }
-.#{$fa-css-prefix}-at:before { content: $fa-var-at; }
 .#{$fa-css-prefix}-eyedropper:before { content: $fa-var-eyedropper; }
 .#{$fa-css-prefix}-paint-brush:before { content: $fa-var-paint-brush; }
 .#{$fa-css-prefix}-birthday-cake:before { content: $fa-var-birthday-cake; }

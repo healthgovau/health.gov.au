@@ -121,12 +121,22 @@
     }
   };
 
-  // Use singular when there is only 1 result in the view list.
   Drupal.behaviors.healthPrint = {
     attach: function (context, settings) {
       $('#health-print').click(function (e) {
         e.preventDefault();
         window.print();
+      });
+    }
+  };
+
+  Drupal.behaviors.healthPrint = {
+    attach: function (context, settings) {
+      $("#health-share-menu").jsSocials({
+        showCount: true,
+        showLabel: true,
+        shareIn: "popup",
+        shares: ["twitter", "facebook", "email"]
       });
     }
   };

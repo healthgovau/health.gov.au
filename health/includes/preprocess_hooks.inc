@@ -1163,13 +1163,7 @@ function health_preprocess_node(array &$variables) {
       }
     }
 
-    // Add tippy library to all book pages.
-    drupal_add_js(path_to_theme() . '/js/dist/health.tooltips.min.js', [
-      'type' => 'file',
-      'scope' => 'footer',
-      'weight' => 100,
-    ]);
-    drupal_add_js('https://unpkg.com/tippy.js@2.5.2/dist/tippy.all.min.js', 'external');
+
   }
 
   // Survey.
@@ -1182,6 +1176,7 @@ function health_preprocess_node(array &$variables) {
       $variables['content']['survey_link_closed_']['#access'] = FALSE;
     }
   }
+
 }
 
 /**
@@ -1192,6 +1187,10 @@ function health_preprocess_page(&$variables) {
   // Add our javascript.
   $variables['page']['content']['#attached']['js'][] = [
     'data' => 'https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js',
+    'type' => 'external',
+  ];
+  $variables['page']['content']['#attached']['js'][] = [
+    'data' => 'https://unpkg.com/tippy.js@2.5.2/dist/tippy.all.min.js',
     'type' => 'external',
   ];
   $variables['page']['content']['#attached']['js'][] = [
@@ -1234,6 +1233,7 @@ function health_preprocess_page(&$variables) {
     'data' => path_to_theme() . '/js/dist/health.alerts.min.js',
     'type' => 'file',
   ];
+
 
   // Add backtotop JS.
   $render_backtotop = [

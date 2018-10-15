@@ -103,14 +103,20 @@ endif;
       <div class="health-toolbar">
         <div class="container">
           <div class="row">
-            <div class="col-xs-12">
-              <div class="health-toolbar__item">
+            <ul class="col-xs-12 au-link-list au-link-list--inline">
+              <li>
                 <?php print $readspeaker; ?>
-              </div>
-              <div class="health-toolbar__item">
+              </li>
+              <li>
                 <a href="#" id="health-print"><i class="fa fa-print fa-inline"></i><span>Print</span></a>
-              </div>
-            </div>
+              </li>
+              <li>
+                <a href="#health-share-menu" id="health-toolbar__share" >
+                  <i class="fa fa-share-alt fa-inline"></i><span>Share</span>
+                </a>
+                <div id="health-share-menu"></div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
