@@ -10,9 +10,20 @@
 }
 
 .rsbtn_colorskin {
-  line-height: 1.5;
   position: relative;
   display: inline-block;
+  background: white;
+  &:hover {
+    border-color: $AU-color-foreground-text;
+    text-decoration: underline;
+  }
+  &:active, &:focus {
+    background-color: $colour-light-darker;
+  }
+
+  i {
+    font-size: inherit;
+  }
 
   a {
     color: $AU-color-foreground-action;
@@ -31,10 +42,10 @@
   }
 
   .rspart {
-
+    float: left;
     margin-left: 2px;
     [class*="fa-"]:before {
-      //margin-left: -1.2em;
+      margin-top: -4px;
     }
     &.rsbutton {
       background-color: $AU-color-foreground-action;
@@ -83,6 +94,7 @@
     }
     .rsbtn_text {
       span {
+        text-decoration: underline;
         display: inline;
       }
     }
