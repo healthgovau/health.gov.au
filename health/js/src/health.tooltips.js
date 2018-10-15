@@ -22,7 +22,8 @@
           allowTitleHTML: true,
           interactive: true,
           animateFill: false,
-          html: document.getElementById("health-share-menu")
+          html: document.getElementById("health-share-menu"),
+          trigger: 'click'
         });
       }
     }

@@ -130,7 +130,7 @@
     }
   };
 
-  Drupal.behaviors.healthPrint = {
+  Drupal.behaviors.healthShare = {
     attach: function (context, settings) {
       $("#health-share-menu").jsSocials({
         showCount: true,
@@ -138,6 +138,10 @@
         shareIn: "popup",
         shares: ["twitter", "facebook", "email"]
       });
+
+      $("#health-toolbar__share").click(function(e) {
+        e.preventDefault();
+      })
     }
   };
 
