@@ -810,14 +810,14 @@ function health_preprocess_field(&$variables) {
   // Email address.
   if ($variables['element']['#field_name'] == 'field_contact_email') {
     // If we are on a media page, add in the news id and title.
-    if ($variables['element']['#bundle'] == 'para_email') {
-      $nid = ($node = menu_get_object()) ? $node->nid : NULL;
-      $subject = 'Media enquiry - News item ID ' . $nid;
-      $body = 'URL - ' . urlencode($GLOBALS['base_url'] . base_path() . drupal_get_path_alias());
+    $node = menu_get_object();
+    if ($node && $node->type == 'departmental_media') {
+      $subject = 'Media enquiry - News item ID' . $node->nid;
+      $body = 'URL - ' . str_replace('+', '%20', urlencode($GLOBALS['base_url'] . base_path() . drupal_get_path_alias()));
       $variables['items'][0]['#markup'] = l($variables['items'][0]['#markup'], 'mailto:' . $variables['items'][0]['#markup'] . '?subject=' . $subject . '&body=' . $body);
     }
 
-    // Make sure email addresses are being spam-spanned.
+    // Apply spamspan.
     if ($variables['items']) {
       $variables['items'][0]['#markup'] = _spamspan_filter_process($variables['items'][0]['#markup'], NULL);
     }
