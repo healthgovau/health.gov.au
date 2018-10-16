@@ -26,25 +26,6 @@
 // Views, bands and layouts
 @import 'paragraphs';
 
-// Forms
-//
-// Form components are specialized design components that are applied to forms
-// or form elements.
-//
-// Weight: 3
-//
-// Style guide: forms
-
-@import 'forms/button/module';
-@import 'forms/button/extends';
-@import 'forms/form-item/module';
-@import 'forms/form-item/extends';
-@import 'forms/control-input/module'; // After form item
-@import 'forms/control-input/extends';
-@import 'forms/input/extends';
-@import 'forms/select/extends';
-@import 'forms/textarea/extends';
-
 // Icons
 @import 'icons';
 
@@ -60,6 +41,3 @@
 @import 'navigation/book/module';
 @import 'navigation/faceted-block/module';
 @import 'navigation/selector/module';
-
-// Health bespoke styles.
-

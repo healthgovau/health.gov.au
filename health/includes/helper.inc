@@ -49,7 +49,7 @@ function _health_add_maxlength(array &$form, array $element_names) {
     $key_id = $key . '_count_wrapper';
 
     $prefix = '<div id="' . $key_id . '" class="form-element-with-counter">';
-    $suffix = '<p class="form-element-length-counter">' . $length . ' characters remaining</p></div>';
+    $suffix = '<p class="form-element-length-counter text--minor">' . $length . ' characters remaining</p></div>';
 
     // Webform.
     if (array_key_exists('submitted', $form)) {
