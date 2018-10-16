@@ -685,7 +685,9 @@ function health_preprocess_field(&$variables) {
           break;
         // Department of Health.
         case 2206:
-        // State or territory local office.
+        // Department of Health State or Territory Office.
+        case 2246:
+        // Local health state or territory office
         case 2446:
         // Service.
         case 2261:
@@ -694,16 +696,17 @@ function health_preprocess_field(&$variables) {
           break;
         // Minister.
         case 311:
-          // Use supplied image.
           $variables['classes_array'][] = 'image--circle';
           break;
         // Organisation.
         case 2251:
-          // Use supplied image.
-          break;
-        // Portfolio agency.
+        // Department of Health Portfolio Agency.
         case 316:
-          // Use supplied image.
+          if (array_key_exists('is_default', $variables['items'][0]['#item']) && $variables['items'][0]['#item']['is_default'] == TRUE) {
+            $variables['classes_array'][] = 'image--circle';
+          } else {
+            $variables['classes_array'][] = 'image--border';
+          }
           break;
       }
     }
