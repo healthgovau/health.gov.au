@@ -1,5 +1,4 @@
-.jssocials-shares {
-  margin: 0.2em 0; }
+.jssocials-shares {}
 
 .jssocials-shares * {
   box-sizing: border-box; }
@@ -7,7 +6,7 @@
 .jssocials-share {
   display: inline-block;
   vertical-align: top;
-  margin: 0.3em 0.6em 0.3em 0; }
+  margin-right: 0.6em; }
 
 .jssocials-share:last-child {
   margin-right: 0; }
