@@ -45,5 +45,5 @@
  */
 ?>
 <?php foreach ($items as $item) : ?>
-<a href="<?php print $item['#element']['url']?>" class="js-ignoreext"><i class="fa fa-twitter-square fa-very-large fa-inline"></i><span class="sr-only">Twitter feed for <?php print $element['#object']->title?></span></a>
+<a href="<?php print $item['#element']['url']?>" class="js-ignoreext"><i class="fa fa-twitter-square fa-very-large fa-inline fa-dark"></i><span class="sr-only">Twitter feed for <?php print $element['#object']->title?></span></a>
 <?php endforeach; ?>
