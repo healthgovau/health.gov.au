@@ -1184,11 +1184,6 @@ function health_preprocess_node(array &$variables) {
  */
 function health_preprocess_page(&$variables) {
   // LazyLoad is added via html.tpl.php. This means we can exclude it from IE8.
-  // Add our javascript.
-  $variables['page']['content']['#attached']['js'][] = [
-    'data' => 'https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js',
-    'type' => 'external',
-  ];
   $variables['page']['content']['#attached']['js'][] = [
     'data' => path_to_theme() . '/js/dist/health.extlink.min.js',
     'type' => 'file',

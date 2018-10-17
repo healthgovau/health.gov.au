@@ -32,13 +32,15 @@
   // Generating table of contents.
   Drupal.behaviors.toc = {
     attach: function (context, settings) {
-      $('.au-inpage-nav-links__heading', context).text(Drupal.settings.toc.title);
-      $('.region-content', context).anchorific({
-        navigation: '.au-inpage-nav-links',
-        headers: 'h2',
-        anchorText: false,
-        spy: false
-      });
+      if (Drupal.settings.toc) {
+        $('.au-inpage-nav-links__heading', context).text(Drupal.settings.toc.title);
+        $('.region-content', context).anchorific({
+          navigation: '.au-inpage-nav-links',
+          headers: 'h2',
+          anchorText: false,
+          spy: false
+        });
+      }
     }
   };
 

@@ -66,6 +66,7 @@
   <script type="text/javascript" src="https://unpkg.com/tippy.js@2.5.2/dist/tippy.all.min.js"></script>
   <script type="text/javascript" src="/<?php print path_to_theme(); ?>/js/dist/health.tooltips.min.js"></script>
   <script type="text/javascript" src="/<?php print path_to_theme(); ?>/js/dist/health.accordion.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
   <!--<![endif]-->
 </body>
 </html>
