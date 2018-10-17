@@ -145,13 +145,16 @@ function _health_get_render_elements_for_public_topic_page(array $variables) {
   // Get the current path and work back to the topic element.
   $path = drupal_get_path_alias();
   $parts = explode('/', $path);
-  $url = '/health-topics/' . $parts[1] . '/health-professionals';
+  $url = 'health-topics/' . $parts[1] . '/health-professionals';
 
-  return [
-    'title' => $title,
-    'text' => $text,
-    'url' => $url,
-  ];
+  if (drupal_lookup_path('source', $url)) {
+    return [
+      'title' => $title,
+      'text' => $text,
+      'url' => '/' . $url,
+    ];
+  }
+  return FALSE;
 }
 
 /**
@@ -170,14 +173,16 @@ function _health_get_render_elements_for_hp_topic_page(array $variables) {
   // Get the current path and work back to the topic element.
   $path = drupal_get_path_alias();
   $parts = explode('/', $path);
-  $url = '/health-topics/' . $parts[1];
+  $url = 'health-topics/' . $parts[1];
 
-  return [
-    'title' => $title,
-    'text' => $text,
-    'url' => $url,
-    'font' => 'fa-medkit',
-  ];
+  if (drupal_lookup_path('source', $url)) {
+    return [
+      'title' => $title,
+      'text' => $text,
+      'url' => '/' . $url,
+    ];
+  }
+  return FALSE;
 }
 
 /**
