@@ -109,20 +109,16 @@ body.logged-in {
   .region-content {
     h2, h3, h4, h5, h6 {
       position: relative;
+      &:hover {
+        cursor: help;
+      }
       .anchor-helper {
-        display: none;
         font-size: 14px;
         position: absolute;
-        top: -17px;
+        top: -14px;
         left: 0;
         color: grey;
         font-weight: normal;
-      }
-
-      &:hover {
-        .anchor-helper {
-          display: block;
-        }
       }
     }
   }

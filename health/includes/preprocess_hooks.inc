@@ -1190,10 +1190,6 @@ function health_preprocess_page(&$variables) {
     'type' => 'external',
   ];
   $variables['page']['content']['#attached']['js'][] = [
-    'data' => 'https://unpkg.com/tippy.js@2.5.2/dist/tippy.all.min.js',
-    'type' => 'external',
-  ];
-  $variables['page']['content']['#attached']['js'][] = [
     'data' => path_to_theme() . '/js/dist/health.extlink.min.js',
     'type' => 'file',
   ];
@@ -1202,15 +1198,7 @@ function health_preprocess_page(&$variables) {
     'type' => 'file',
   ];
   $variables['page']['content']['#attached']['js'][] = [
-    'data' => path_to_theme() . '/js/dist/health.accordion.min.js',
-    'type' => 'file',
-  ];
-  $variables['page']['content']['#attached']['js'][] = [
     'data' => path_to_theme() . '/pancake/js/pancake.js',
-    'type' => 'file',
-  ];
-  $variables['page']['content']['#attached']['js'][] = [
-    'data' => path_to_theme() . '/js/dist/health.lazyload.min.js',
     'type' => 'file',
   ];
   $variables['page']['content']['#attached']['js'][] = [

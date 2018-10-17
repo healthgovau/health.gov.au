@@ -114,7 +114,22 @@ endif;
                 <a href="#health-share-menu" id="health-toolbar__share" >
                   <i class="fa fa-share-alt fa-inline"></i><span>Share</span>
                 </a>
-                <div id="health-share-menu"></div>
+                <div id="health-share-menu">
+                  <ul class="au-link-list">
+                    <li>
+                      <i class="fa fa-twitter"></i>
+                      <?php global $base_url;?>
+                      <a href="https://twitter.com/share?text=<?php print $title?>&amp;url=<?php print $base_url . '/' . drupal_get_path_alias()?>">Twitter</a>
+                    </li>
+                    <li>
+                      <i class="fa fa-facebook"></i>
+                      <a href="https://facebook.com/sharer.php?u=<?php print $base_url . '/' . drupal_get_path_alias()?>">Facebook</a>
+                    </li>
+                    <li>
+                      <i class="fa fa-envelope-o"></i>
+                      <a href="mailto:?subject=<?php print $title?>&amp;body=<?php print $base_url . '/' . drupal_get_path_alias()?>" title="Share via email">Email</a></li>
+                  </ul>
+                </div>
               </li>
             </ul>
           </div>
