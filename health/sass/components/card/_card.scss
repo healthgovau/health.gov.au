@@ -135,6 +135,13 @@
     }
   }
 
+  &--resource {
+    border-top-width: 6px;
+    border-top-style: solid;
+    border-top-color: $colour-Tertiary-2;
+    @include AU-space(padding, 2unit 0);
+  }
+
 }
 
 // When the box is a link
