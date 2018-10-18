@@ -44,7 +44,6 @@ $fa-var-arrows-v: "\f07d";
 $fa-var-asl-interpreting: "\f2a3";
 $fa-var-assistive-listening-systems: "\f2a2";
 $fa-var-asterisk: "\f069";
-$fa-var-at: "\f1fa";
 $fa-var-audio-description: "\f29e";
 $fa-var-automobile: "\f1b9";
 $fa-var-backward: "\f04a";
@@ -267,7 +266,6 @@ $fa-var-file-word-o: "\f1c2";
 $fa-var-file-zip-o: "\f1c6";
 $fa-var-files-o: "\f0c5";
 $fa-var-film: "\f008";
-$fa-var-filter: "\f0b0";
 $fa-var-fire: "\f06d";
 $fa-var-fire-extinguisher: "\f134";
 $fa-var-firefox: "\f269";
@@ -509,7 +507,6 @@ $fa-var-plus-square: "\f0fe";
 $fa-var-plus-square-o: "\f196";
 $fa-var-podcast: "\f2ce";
 $fa-var-power-off: "\f011";
-$fa-var-print: "\f02f";
 $fa-var-product-hunt: "\f288";
 $fa-var-puzzle-piece: "\f12e";
 $fa-var-qq: "\f1d6";
@@ -553,8 +550,7 @@ $fa-var-s15: "\f2cd";
 $fa-var-safari: "\f267";
 $fa-var-save: "\f0c7";
 $fa-var-scissors: "\f0c4";
-$fa-var-scribd: "\f28a";
-
+$fa-var-scribd: "\f28a";=
 $fa-var-search-minus: "\f010";
 $fa-var-search-plus: "\f00e";
 $fa-var-sellsy: "\f213";
@@ -562,7 +558,6 @@ $fa-var-send: "\f1d8";
 $fa-var-send-o: "\f1d9";
 $fa-var-server: "\f233";
 $fa-var-share: "\f064";
-$fa-var-share-alt: "\f1e0";
 $fa-var-share-alt-square: "\f1e1";
 $fa-var-share-square: "\f14d";
 $fa-var-share-square-o: "\f045";
@@ -851,6 +846,18 @@ $fa-var-youtube-square: "\f166";
 .fa-angle-down:before {
   content: ""; }
 
+.fa-print:before {
+  content: ""; }
+
+.fa-share-alt:before {
+  content: ""; }
+
+.fa-at:before {
+  content: ""; }
+
+.fa-filter:before {
+  content: ""; }
+
 /*
 .fa-times-circle-o:before { content: $fa-var-times-circle-o; }
 .fa-glass:before { content: $fa-var-glass; }
@@ -898,7 +905,6 @@ $fa-var-youtube-square: "\f166";
 .fa-tags:before { content: $fa-var-tags; }
 .fa-book:before { content: $fa-var-book; }
 .fa-bookmark:before { content: $fa-var-bookmark; }
-.fa-print:before { content: $fa-var-print; }
 .fa-camera:before { content: $fa-var-camera; }
 .fa-font:before { content: $fa-var-font; }
 .fa-bold:before { content: $fa-var-bold; }
@@ -1020,7 +1026,6 @@ $fa-var-youtube-square: "\f166";
 .fa-globe:before { content: $fa-var-globe; }
 .fa-wrench:before { content: $fa-var-wrench; }
 .fa-tasks:before { content: $fa-var-tasks; }
-.fa-filter:before { content: $fa-var-filter; }
 .fa-briefcase:before { content: $fa-var-briefcase; }
 .fa-arrows-alt:before { content: $fa-var-arrows-alt; }
 .fa-group:before,
@@ -1344,7 +1349,6 @@ $fa-var-youtube-square: "\f166";
 .fa-header:before { content: $fa-var-header; }
 .fa-paragraph:before { content: $fa-var-paragraph; }
 .fa-sliders:before { content: $fa-var-sliders; }
-.fa-share-alt:before { content: $fa-var-share-alt; }
 .fa-share-alt-square:before { content: $fa-var-share-alt-square; }
 .fa-bomb:before { content: $fa-var-bomb; }
 .fa-soccer-ball-o:before,
@@ -1370,7 +1374,6 @@ $fa-var-youtube-square: "\f166";
 .fa-bell-slash-o:before { content: $fa-var-bell-slash-o; }
 .fa-trash:before { content: $fa-var-trash; }
 .fa-copyright:before { content: $fa-var-copyright; }
-.fa-at:before { content: $fa-var-at; }
 .fa-eyedropper:before { content: $fa-var-eyedropper; }
 .fa-paint-brush:before { content: $fa-var-paint-brush; }
 .fa-birthday-cake:before { content: $fa-var-birthday-cake; }
