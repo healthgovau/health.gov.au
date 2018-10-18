@@ -46,16 +46,11 @@
         }
       });
 
-      $('.filter__mobile-title', context).click(function (e) {
+      // Filter toggles.
+      $('.health-filter__title', context).click(function (e) {
         $(this).toggleClass('expanded');
         $('.block-facetapi', context).toggleClass('facetshow');
       });
-
-      $('.filter-topics-by-letter__mobile-title', context).click(function (e) {
-        $(this).toggleClass('expanded');
-        $('.filter-topics-by-letter', context).toggleClass('facetshow');
-      });
-
 
       $('.region-navigation #search-api-page-search-form-default-search--2').addClass('col-xs-12');
       

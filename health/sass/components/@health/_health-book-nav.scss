@@ -1,10 +1,9 @@
 //--------------------------------------------------------------
 // Book navigation
 // Next, Previous, Up
-//
 //-------------------------------------------------------------
 
-.book-navigation {
+.health-book-nav {
   border-top: 1px solid $AU-color-foreground-border;
   @include AU-space(padding-top, 1.5unit);
 
@@ -26,15 +25,10 @@
   &--right {
     text-align: right;
   }
-}
 
-//--------------------------------------------------------------
-// Print styles
-//
-//-------------------------------------------------------------
 
-@media print {
-  .book-navigation {
+  @media print {
     display: none;
   }
+
 }
