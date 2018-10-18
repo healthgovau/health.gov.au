@@ -8,10 +8,10 @@
 //
 // Style guide: component
 
-
 // @govau components
 @import '@govau/components';
 
+// Card.
 @import 'card/card';
 
 // @health components
@@ -20,24 +20,13 @@
 // Block styles
 @import 'bean-image-text';
 
-// Content types
-@import 'content-types/module';
-
-// Views, bands and layouts
+// Paragraphs.
 @import 'paragraphs';
 
 // Icons
 @import 'icons';
 
 // Navigation
-//
-// Navigation components are specialized design components that are used for
-// page navigation.
-//
-// Weight: 2
-//
-// Style guide: navigation
-
 @import 'navigation/book/module';
 @import 'navigation/faceted-block/module';
 @import 'navigation/selector/module';
