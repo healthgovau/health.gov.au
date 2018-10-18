@@ -8,6 +8,8 @@
   .au-link-list {
     > li {
       @include AU-space(margin-right, 2unit);
+      float: left;
+      display: block;
     }
   }
 

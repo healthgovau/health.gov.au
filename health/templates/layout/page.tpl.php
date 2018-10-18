@@ -108,7 +108,7 @@ endif;
                 <?php print $readspeaker; ?>
               </li>
               <li>
-                <a href="#" id="health-print"><i class="fa fa-print fa-inline"></i><span>Print</span></a>
+                <a href="#" id="health-toolbar__print"><i class="fa fa-print fa-inline"></i><span>Print</span></a>
               </li>
               <li>
                 <a href="#health-share-menu" id="health-toolbar__share" >

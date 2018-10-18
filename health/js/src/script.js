@@ -125,7 +125,7 @@
 
   Drupal.behaviors.healthPrint = {
     attach: function (context, settings) {
-      $('#health-print').click(function (e) {
+      $('#health-toolbar__print').click(function (e) {
         e.preventDefault();
         window.print();
       });

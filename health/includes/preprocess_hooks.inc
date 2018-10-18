@@ -8,7 +8,7 @@
 // Include inc files.
 include_once drupal_get_path('theme', 'health') . '/includes/helper.inc';
 
-const READSPEAKER_URL = 'https://sf1-as.readspeaker.com/script/5802/ReadSpeaker.js?pids=embhl';
+const READSPEAKER_URL = '//f1-oc.readspeaker.com/script/5802/webReader/webReader.js?pids=wr&amp;skin=health&amp;notools=1';
 const GOOGLE_MAP_API = '//maps.googleapis.com/maps/api/staticmap';
 const RESOURCES_TYPE = [
   'image',
@@ -1238,8 +1238,8 @@ function health_preprocess_page(&$variables) {
     'type' => 'external',
   ];
   $render_readspeaker['#attached']['js'][] = [
-    'data' => path_to_theme() . '/js/libraries/readspeaker/ReadSpeakerColorSkin.js',
-    'type' => 'file',
+    'data' => 'window.rsConf = { ui: { disableDetachment: true, tools: { enlarge: false } }};',
+    'type' => 'inline',
   ];
   $variables['readspeaker'] = drupal_render($render_readspeaker);
 
