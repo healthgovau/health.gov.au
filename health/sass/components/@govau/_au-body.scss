@@ -40,6 +40,12 @@
   %standard-gap,
   .standard-gap {
     @include AU-space(margin-top, 1.5unit);
+    &--mobile-only {
+      @include AU-space(margin-top, 1.5unit);
+      @include AU-media(sm) {
+        margin-top: 0;
+      }
+    }
   }
 
   // Prevent the contextual links wrapper from creating a margin above the following element.

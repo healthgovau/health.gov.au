@@ -5,14 +5,6 @@
 //
 //
 
-.au-body {
-
-  // Views block -- card style modifier.
-  .paragraphs-view-latest_rsources {
-    @include cards-modifier();
-  }
-}
-
 // For all landing pages.
 .node-type-health-topic,
 .node-type-health-topic-hp,

@@ -450,187 +450,6 @@ function health_form_search_api_page_search_form_alter(&$form, &$form_state) {
 }
 
 /**
- * Implements THEME_form_element_lable().
- *
- * Alters the checkbox and radio buttons so the markup is usable for the uikit.
- */
-function health_form_element_label($variables) {
-  $element = $variables['element'];
-  // This is also used in the installer, pre-database setup.
-  $t = get_t();
-
-  // If title and required marker are both empty, output no label.
-  if ((!isset($element['#title']) || $element['#title'] === '') && empty($element['#required'])) {
-    return '';
-  }
-
-  // If the element is required, a required marker is appended to the label.
-  $required = !empty($element['#required']) ? theme('form_required_marker', array('element' => $element)) : '';
-  $title = array_key_exists('#title', $element) ? filter_xss_admin($element['#title']) : '';
-
-  $attributes = array();
-  // Show label only to screen readers to avoid disruption in visual flows.
-  if ($element['#title_display'] == 'invisible') {
-    $attributes['class'] = 'element-invisible';
-  }
-
-  if (!empty($element['#id'])) {
-    $attributes['for'] = $element['#id'];
-  }
-
-  $output = '';
-
-  // Find out what type of form element this is.
-  $type = !empty($element['#type']) ? $element['#type'] : FALSE;
-  $checkbox = $type && $type === 'checkbox';
-  $radio = $type && $type === 'radio';
-
-  // Construct the title.
-  $title = $t('!title !required', array('!title' => $title, '!required' => $required));
-
-  if ($checkbox || $radio) {
-    // Checkboxes and radios need a span around them to support UI kit styling.
-    $output .= $element['#children'];
-    $output .= '<span class="input__text">';
-    $output .= $title;
-    $output .= '</span>';
-  }
-  else {
-    // The leading whitespace helps visually separate fields from inline labels.
-    $output = $title;
-  }
-  return ' <label' . drupal_attributes($attributes) . '>' . $output . "</label>\n";
-}
-
-/**
- * Implements THEME_form_element().
- *
- * Alters the checkbox and radio buttons so the markup is usable for the uikit.
- */
-function health_form_element(&$variables) {
-  $element = &$variables['element'];
-  $name = !empty($element['#name']) ? $element['#name'] : FALSE;
-  $type = !empty($element['#type']) ? $element['#type'] : FALSE;
-  $checkbox = $type && $type === 'checkbox';
-  $radio = $type && $type === 'radio';
-
-  // Create an attributes array for the wrapping container.
-  if (empty($element['#wrapper_attributes'])) {
-    $element['#wrapper_attributes'] = array();
-  }
-  $wrapper_attributes = &$element['#wrapper_attributes'];
-
-  // This function is invoked as theme wrapper, but the rendered form element
-  // may not necessarily have been processed by form_builder().
-  $element += array(
-    '#title_display' => 'before',
-  );
-
-  // Add wrapper ID for 'item' type.
-  if ($type && $type === 'item' && !empty($element['#markup']) && !empty($element['#id'])) {
-    $wrapper_attributes['id'] = $element['#id'];
-  }
-
-  // Check for errors and set correct error class.
-  if ((isset($element['#parents']) && form_get_error($element) !== NULL) || (!empty($element['#required']))) {
-    $wrapper_attributes['class'][] = 'has-error';
-  }
-
-  // Add necessary classes to wrapper container.
-  $wrapper_attributes['class'][] = 'form-item';
-  if ($name) {
-    $wrapper_attributes['class'][] = 'form-item-' . drupal_html_class($name);
-  }
-  if ($type) {
-    $wrapper_attributes['class'][] = 'form-type-' . drupal_html_class($type);
-  }
-  if (!empty($element['#attributes']['disabled'])) {
-    $wrapper_attributes['class'][] = 'form-disabled';
-  }
-  if (!empty($element['#autocomplete_path']) && drupal_valid_path($element['#autocomplete_path'])) {
-    $wrapper_attributes['class'][] = 'form-autocomplete';
-  }
-
-  // Checkboxes and radios do no receive the 'form-group' class, instead they
-  // simply have their own classes.
-  if ($checkbox || $radio) {
-    $wrapper_attributes['class'][] = drupal_html_class($type);
-  }
-  elseif ($type && $type !== 'hidden') {
-    $wrapper_attributes['class'][] = 'form-group';
-  }
-
-  // Create a render array for the form element.
-  $build = array(
-    '#theme_wrappers' => array('container__form_element'),
-    '#attributes' => $wrapper_attributes,
-  );
-
-  // Render the label for the form element.
-  $build['label'] = array(
-    '#markup' => theme('form_element_label', $variables),
-    '#weight' => $element['#title_display'] === 'before' ? 0 : 2,
-  );
-
-  // Checkboxes and radios render the input element inside the label. If the
-  // element is neither of those, then the input element must be rendered here.
-  if (!$checkbox && !$radio) {
-    $prefix = isset($element['#field_prefix']) ? $element['#field_prefix'] : '';
-    $suffix = isset($element['#field_suffix']) ? $element['#field_suffix'] : '';
-    if ((!empty($prefix) || !empty($suffix)) && (!empty($element['#input_group']) || !empty($element['#input_group_button']))) {
-      if (!empty($element['#field_prefix'])) {
-        $prefix = '<span class="input-group-' . (!empty($element['#input_group_button']) ? 'btn' : 'addon') . '">' . $prefix . '</span>';
-      }
-      if (!empty($element['#field_suffix'])) {
-        $suffix = '<span class="input-group-' . (!empty($element['#input_group_button']) ? 'btn' : 'addon') . '">' . $suffix . '</span>';
-      }
-
-      // Add a wrapping container around the elements.
-      $input_group_attributes['class'][] = 'input-group';
-      $prefix = '<div' . drupal_attributes($input_group_attributes) . '>' . $prefix;
-      $suffix .= '</div>';
-    }
-
-    // Build the form element.
-    $build['element'] = array(
-      '#markup' => $element['#children'],
-      '#prefix' => !empty($prefix) ? $prefix : NULL,
-      '#suffix' => !empty($suffix) ? $suffix : NULL,
-      '#weight' => 1,
-    );
-  }
-
-  // Construct the element's description markup.
-  if (!empty($element['#description'])) {
-    $build['description'] = array(
-      '#type' => 'container',
-      '#attributes' => array(
-        'class' => array('help-block'),
-      ),
-      '#weight' => isset($element['#description_display']) && $element['#description_display'] === 'before' ? 0 : 20,
-      0 => array('#markup' => filter_xss_admin($element['#description'])),
-    );
-  }
-
-  // Render the form element build array.
-  return drupal_render($build);
-}
-
-/**
- * Implements THEME_select()
- *
- * Wraps a div around the select element so we can use the :after attribute to
- * consistently style the element.
- */
-function health_select($variables) {
-  $element = $variables['element'];
-  element_set_attributes($element, array('id', 'name', 'size'));
-  _form_set_class($element, array('form-select'));
-
-  return '<div class="form-select--wrapper"><select' . drupal_attributes($element['#attributes']) . '>' . form_select_options($element) . '</select></div>';
-}
-
-/**
  * Implements hook_js_alter().
  *
  * Perform necessary alterations to the JavaScript before it is presented on
@@ -1198,6 +1017,8 @@ function health_status_messages($variables) {
 
 /**
  * Implements theme_pager().
+ *
+ * Add au-pager classes.
  */
 function health_pager($variables) {
   $tags = $variables['tags'];
@@ -1392,6 +1213,8 @@ function health_menu_local_tasks(&$variables) {
 
 /**
  * Implements theme_item_list().
+ *
+ * Remove the div around item lists.
  */
 function health_item_list($variables) {
   $items = $variables['items'];
@@ -1452,4 +1275,110 @@ function health_item_list($variables) {
     $output .= "</{$type}>";
   }
   return $output;
+}
+
+/**
+ * Implements theme_textfield().
+ *
+ * Add Design system classes.
+ */
+function health_textfield($variables) {
+  _form_set_class($variables['element'], array('au-text-input'));
+  return theme_textfield($variables);
+}
+
+/**
+ * Implements theme_textarea().
+ *
+ * Add Design system classes.
+ */
+function health_textarea($variables) {
+  _form_set_class($variables['element'], array('au-text-input'));
+  return theme_textarea($variables);
+}
+
+/**
+ * Implements theme_select().
+ *
+ * Add Design system classes.
+ */
+function health_select($variables) {
+  _form_set_class($variables['element'], array('au-select'));
+  return theme_select($variables);
+}
+
+/**
+ * Implements theme_button().
+ *
+ * Add Design system classes.
+ */
+function health_button($variables) {
+  _form_set_class($variables['element'], array('au-btn', 'standard-gap'));
+  return theme_button($variables);
+}
+
+/**
+ * Implements theme_radio().
+ *
+ * Add Design system classes.
+ * Output markup in format for Design system.
+ */
+function health_radio($variables) {
+  $element = $variables['element'];
+  $element['#attributes']['type'] = 'radio';
+  element_set_attributes($element, array('id', 'name', '#return_value' => 'value'));
+  if (isset($element['#return_value']) && $element['#value'] !== FALSE && $element['#value'] == $element['#return_value']) {
+    $element['#attributes']['checked'] = 'checked';
+  }
+  _form_set_class($element, array('au-control-input__input'));
+  return '<label class="au-control-input"><input' . drupal_attributes($element['#attributes']) . ' /><span class="au-control-input__text">'.$element['#title'].'</span></label>';
+}
+
+/**
+ * Implements theme_checkbox().
+ *
+ * Add Design system classes.
+ * Output markup in format for Design system.
+ */
+function health_checkbox($variables) {
+  $element = $variables['element'];
+  $element['#attributes']['type'] = 'checkbox';
+  element_set_attributes($element, array(
+    'id',
+    'name',
+    '#return_value' => 'value',
+  ));
+
+  // Unchecked checkbox has #value of integer 0.
+  if (!empty($element['#checked'])) {
+    $element['#attributes']['checked'] = 'checked';
+  }
+  _form_set_class($element, array(
+    'form-checkbox',
+    'au-control-input__input'
+  ));
+
+  return '<label class="au-control-input"><input' . drupal_attributes($element['#attributes']) . ' /><span class="au-control-input__text">'.$element['#title'].'</span></label>';
+}
+
+/**
+ * Implements theme_form_element().
+ *
+ * Don't show the label for radio and checkboxes.
+ */
+function health_form_element($variables) {
+  if (in_array($variables['element']['#type'], ['radio', 'checkbox'])) {
+    $variables['element']['#title_display'] = 'attribute';
+  }
+  return theme_form_element($variables);
+}
+
+/**
+ * Implements theme_webform_email().
+ *
+ * Add Design system classes.
+ */
+function health_webform_email($variables) {
+  _form_set_class($variables['element'], array('au-text-input'));
+  return theme_webform_email($variables);
 }

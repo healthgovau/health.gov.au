@@ -24,6 +24,7 @@
 .#{$fa-css-prefix}-print:before { content: $fa-var-print; }
 .#{$fa-css-prefix}-share-alt:before { content: $fa-var-share-alt; }
 .#{$fa-css-prefix}-at:before { content: $fa-var-at; }
+.#{$fa-css-prefix}-filter:before { content: $fa-var-filter; }
 
 // Icons we don't
 /*
@@ -194,7 +195,6 @@
 .#{$fa-css-prefix}-globe:before { content: $fa-var-globe; }
 .#{$fa-css-prefix}-wrench:before { content: $fa-var-wrench; }
 .#{$fa-css-prefix}-tasks:before { content: $fa-var-tasks; }
-.#{$fa-css-prefix}-filter:before { content: $fa-var-filter; }
 .#{$fa-css-prefix}-briefcase:before { content: $fa-var-briefcase; }
 .#{$fa-css-prefix}-arrows-alt:before { content: $fa-var-arrows-alt; }
 .#{$fa-css-prefix}-group:before,
