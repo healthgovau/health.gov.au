@@ -189,9 +189,9 @@ endif;
 
 </div>
 
-<footer class="au-footer health-footer <?php print $classes; ?>" role="contentinfo">
+<footer class="au-footer au-footer--dark au-body au-body--dark" role="contentinfo">
   <div class="container">
-    <div class="au-footer__navigation health-footer__navigation row">
+    <div class="au-footer__navigation row">
       <?php print render($page['footer_top']); ?>
       <div class="col-sm-3">
         <h3>Help us improve</h3>
@@ -210,9 +210,9 @@ endif;
         ); ?>
       </div>
     </div>
-    <div class="au-footer__end health-footer__end row">
+    <div class="au-footer__end">
     <?php print render($page['footer_bottom']); ?>
-      <div class="au-footer__logo health-footer__logo">
+      <div class="au-footer__logo">
         <div class="image-wrapper image-loading rs_preserve rs_skip" style="padding-bottom: 73%">
           <div class="image">
             <img typeof="foaf:Image" width="201" height="147"
@@ -221,7 +221,7 @@ endif;
           </div>
         </div>
       </div>
-      <p class="au-footer__attribution health-footer__attribution">
+      <p class="au-footer__attribution">
         <small>© Commonwealth of Australia</small>
       </p>
     </div>
