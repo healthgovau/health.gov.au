@@ -72,6 +72,11 @@
     }
   }
 
+  &.au-card--light {
+    background: $AU-color-background;
+    overflow: hidden;
+  }
+
   &.au-card--centered {
     text-align: center;
     img,
