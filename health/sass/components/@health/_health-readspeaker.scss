@@ -44,7 +44,15 @@
 
     // When expanded.
     &.rsexpanded {
-      width: 375px !important;
+      width: 325px !important;
+
+      .rsbtn_left {
+        margin-left: 10px;
+        i {
+          display: none;
+        }
+      }
+
 
       .rsbtn_play {
         border: 1px solid $AU-color-foreground-action;
@@ -76,6 +84,15 @@
           &.rsplay {
             display: none;
           }
+        }
+      }
+    }
+
+    // Mobile
+    &.rs_mobile {
+      .rsbtn_play {
+        .rsbtn_left {
+          margin-left: 32px;
         }
       }
     }

@@ -1238,7 +1238,11 @@ function health_preprocess_page(&$variables) {
     'type' => 'external',
   ];
   $render_readspeaker['#attached']['js'][] = [
-    'data' => 'window.rsConf = { ui: { disableDetachment: true, tools: { enlarge: false } }};',
+    'data' => 'window.rsConf = { ui: { 
+      disableDetachment: true, 
+      mobileVertPos: "bottom=95",
+      tools: { enlarge: false } 
+    }};',
     'type' => 'inline',
   ];
   $variables['readspeaker'] = drupal_render($render_readspeaker);
