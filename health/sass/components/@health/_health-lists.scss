@@ -110,20 +110,3 @@ ul {
     @include AU-space(margin-top, .5unit);
   }
 }
-
-
-// Specific stuff to health.
-// @todo Use classes instead of hardcoding.
-.facetapi-facetapi-checkbox-links {
-  @extend .list--remove;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.view-filters,
-.view-content {
-  @include AU-clearfix;
-  width: 100%;
-  .item-list ul {
-    @extend .list--remove;
-  }
-}

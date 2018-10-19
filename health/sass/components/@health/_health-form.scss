@@ -1,12 +1,31 @@
-.au-body {
-  label {
-    font-weight: bold;
-  }
+.au-form {
 
-  .form-item {
+  &__item {
+
     @include AU-space('margin-top', 1.5unit);
-    .description {
+    label {
+      font-weight: bold;
+      .au-control-input__text {
+        font-weight: normal;
+      }
+    }
+
+    &-description {
       @include AU-space('margin-top', .5unit);
+    }
+
+    .au-text-input,
+    .au-select {
+      display: block;
+      @include AU-space('margin-top', .5unit);
+    }
+
+    .au-control-input {
+      @include AU-space(margin-top, .75unit);
+    }
+
+    .form-required {
+      color: $AU-color-error;
     }
   }
 
@@ -14,27 +33,14 @@
     @include AU-space('margin-top', .5unit);
   }
 
-  .au-text-input,
-  .au-select
-  {
-    display: block;
-    @include AU-space('margin-top', .5unit);
-  }
+}
 
-  .form-type-radio,
-  .form-type-checkbox
-  {
-    @include AU-space('margin-top', .5unit);
-    > label {
-      font-weight: normal;
-    }
-  }
+// Hack to make our filter list checkboxes not have a margin at the top because they don't have a label.
+.au-link-list li:first-of-type .au-control-input {
+  margin-top: 0;
+}
 
-  .form-required {
-    color: $AU-color-error;
-  }
-
-  button {
-    border: none;
-  }
+// No borders on buttons plz.
+button {
+  border: none;
 }
