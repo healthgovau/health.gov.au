@@ -59,11 +59,7 @@ endif;
     </div>
   </header>
 
-  <?php print render($page['alerts']); ?>
-
   <?php print render($page['navigation']); ?>
-
-  <?php print render($page['highlighted']); ?>
 
   <div class="page-content" id="page-content">
     <?php if (!drupal_is_front_page()): ?>
@@ -161,7 +157,6 @@ endif;
                     </div>
                 </div>
             <?php endif ?>
-          <?php print render($page['help']); ?>
           <?php if ($action_links): ?>
               <ul class="action-links rs_skip"><?php print render($action_links); ?></ul>
           <?php endif; ?>
@@ -211,7 +206,6 @@ endif;
       </div>
     </div>
     <div class="au-footer__end">
-    <?php print render($page['footer_bottom']); ?>
       <div class="au-footer__logo">
         <div class="image-wrapper image-loading rs_preserve rs_skip" style="padding-bottom: 73%">
           <div class="image">
