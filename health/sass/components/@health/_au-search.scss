@@ -40,6 +40,10 @@
       width: auto;
     }
 
+    // Remove the spacing applied by au-form.
+    .au-form__item, input {
+      margin-top: 0 !important;
+    }
 
     // The search form.
     &__form {
@@ -85,9 +89,6 @@
       }
     }
   }
-
-
-
 }
 
 form[class*='col-'].au-search__form {
