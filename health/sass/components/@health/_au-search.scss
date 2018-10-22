@@ -10,6 +10,11 @@
 
     display: none;
 
+    @media print {
+      display: none;
+    }
+
+
     // Global search for desktop
     &--global-desktop {
       @include AU-media(sm) {
@@ -38,6 +43,10 @@
     &--listing {
       display: block;
       width: auto;
+
+      @media print {
+        display: none;
+      }
     }
 
     // Remove the spacing applied by au-form.

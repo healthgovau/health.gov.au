@@ -22,6 +22,10 @@
 
     @include AU-space(margin-top, 1unit);
 
+    @media print {
+      background: transparent !important;
+    }
+
     &--inline {
       > * {
         display: inline-block;
@@ -40,6 +44,15 @@
       }
       bottom: -3px;
       margin-left: 0;
+      @media print {
+        display: none;
+      }
+    }
+
+    .clear-all {
+      @media print {
+        display: none;
+      }
     }
   }
 
