@@ -456,7 +456,7 @@ function health_preprocess_entity(array &$variables) {
       $table = $variables['content']['field_body'][0]['#markup'];
       $replacement = '$1<caption><p class="au-display-sm">' . $title . '</p>';
       if (array_key_exists('field_summary', $variables['content'])) {
-        $replacement .= '<span class="au-sronly">' . $variables['content']['field_summary'] . '</span>';
+        $replacement .= '<span class="au-sronly">' . $variables['content']['field_summary'][0]['#markup'] . '</span>';
       }
       $replacement .= '</caption>$2';
       $table = preg_replace('/(<table.*?>)(.*)/s', $replacement, $table);
