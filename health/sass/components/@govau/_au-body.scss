@@ -113,5 +113,10 @@
   //   }
   // }
 
+  @media print {
+    a[href]:after {
+      content: '' !important;
+    }
+  }
 
 }

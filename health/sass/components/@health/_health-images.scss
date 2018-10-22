@@ -44,6 +44,13 @@
 
   &.image-loading {
     background-color: transparent;
+
+    @media print {
+      border: 1px solid black;
+      &:before {
+        content: "This image hasn't loaded yet. Close the print dialog and try again.";
+      }
+    }
   }
 
   .image {
