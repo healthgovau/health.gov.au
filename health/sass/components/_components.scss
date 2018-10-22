@@ -8,58 +8,17 @@
 //
 // Style guide: component
 
-
 // @govau components
 @import '@govau/components';
 
+// Card.
 @import 'card/card';
 
 // @health components
 @import '@health/components';
 
-// Block styles
-@import 'bean-image-text';
-
-// Content types
-@import 'content-types/module';
-
-// Views, bands and layouts
+// Paragraphs.
 @import 'paragraphs';
-
-// Forms
-//
-// Form components are specialized design components that are applied to forms
-// or form elements.
-//
-// Weight: 3
-//
-// Style guide: forms
-
-@import 'forms/button/module';
-@import 'forms/button/extends';
-@import 'forms/form-item/module';
-@import 'forms/form-item/extends';
-@import 'forms/control-input/module'; // After form item
-@import 'forms/control-input/extends';
-@import 'forms/input/extends';
-@import 'forms/select/extends';
-@import 'forms/textarea/extends';
 
 // Icons
 @import 'icons';
-
-// Navigation
-//
-// Navigation components are specialized design components that are used for
-// page navigation.
-//
-// Weight: 2
-//
-// Style guide: navigation
-
-@import 'navigation/book/module';
-@import 'navigation/faceted-block/module';
-@import 'navigation/selector/module';
-
-// Health bespoke styles.
-

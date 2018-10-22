@@ -11,6 +11,10 @@
   @include AU-media(sm) {
     display: block;
   }
+
+  @media print {
+    display: block;
+  }
 }
 
 // Section header tweak mobile breadcrumbs

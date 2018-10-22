@@ -63,10 +63,14 @@
       }
 
       &--small {
-        @include AU-space('padding', .5unit);
-        font-size: 0.85em;
-        right: 3px;
-        bottom: 3px;
+        display: none;
+        @include AU-media(sm) {
+          display: inline-block;
+          @include AU-space('padding', .5unit);
+          font-size: 0.85em;
+          right: 3px;
+          bottom: 3px;
+        }
       }
     }
   }

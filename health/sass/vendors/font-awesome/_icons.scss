@@ -21,6 +21,7 @@
 .#{$fa-css-prefix}-angle-right:before { content: $fa-var-angle-right; }
 .#{$fa-css-prefix}-angle-up:before { content: $fa-var-angle-up; }
 .#{$fa-css-prefix}-angle-down:before { content: $fa-var-angle-down; }
+.#{$fa-css-prefix}-filter:before { content: $fa-var-filter; }
 
 // Icons we don't
 /*
@@ -192,7 +193,6 @@
 .#{$fa-css-prefix}-globe:before { content: $fa-var-globe; }
 .#{$fa-css-prefix}-wrench:before { content: $fa-var-wrench; }
 .#{$fa-css-prefix}-tasks:before { content: $fa-var-tasks; }
-.#{$fa-css-prefix}-filter:before { content: $fa-var-filter; }
 .#{$fa-css-prefix}-briefcase:before { content: $fa-var-briefcase; }
 .#{$fa-css-prefix}-arrows-alt:before { content: $fa-var-arrows-alt; }
 .#{$fa-css-prefix}-group:before,

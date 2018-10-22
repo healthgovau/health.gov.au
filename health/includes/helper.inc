@@ -49,7 +49,7 @@ function _health_add_maxlength(array &$form, array $element_names) {
     $key_id = $key . '_count_wrapper';
 
     $prefix = '<div id="' . $key_id . '" class="form-element-with-counter">';
-    $suffix = '<p class="form-element-length-counter">' . $length . ' characters remaining</p></div>';
+    $suffix = '<p class="form-element-length-counter text--minor">' . $length . ' characters remaining</p></div>';
 
     // Webform.
     if (array_key_exists('submitted', $form)) {
@@ -145,13 +145,16 @@ function _health_get_render_elements_for_public_topic_page(array $variables) {
   // Get the current path and work back to the topic element.
   $path = drupal_get_path_alias();
   $parts = explode('/', $path);
-  $url = '/health-topics/' . $parts[1] . '/health-professionals';
+  $url = 'health-topics/' . $parts[1] . '/health-professionals';
 
-  return [
-    'title' => $title,
-    'text' => $text,
-    'url' => $url,
-  ];
+  if (drupal_lookup_path('source', $url)) {
+    return [
+      'title' => $title,
+      'text' => $text,
+      'url' => '/' . $url,
+    ];
+  }
+  return FALSE;
 }
 
 /**
@@ -170,14 +173,16 @@ function _health_get_render_elements_for_hp_topic_page(array $variables) {
   // Get the current path and work back to the topic element.
   $path = drupal_get_path_alias();
   $parts = explode('/', $path);
-  $url = '/health-topics/' . $parts[1];
+  $url = 'health-topics/' . $parts[1];
 
-  return [
-    'title' => $title,
-    'text' => $text,
-    'url' => $url,
-    'font' => 'fa-medkit',
-  ];
+  if (drupal_lookup_path('source', $url)) {
+    return [
+      'title' => $title,
+      'text' => $text,
+      'url' => '/' . $url,
+    ];
+  }
+  return FALSE;
 }
 
 /**

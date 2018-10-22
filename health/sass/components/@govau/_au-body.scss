@@ -25,9 +25,10 @@
   }
 
   //// Abbreviations ////
-  abbr {
+  abbr, .definition {
     border-bottom: 1px dotted #CCC;
     text-decoration: none;
+    cursor: help;
   }
 
   // Create class for screen reader only.
@@ -39,6 +40,12 @@
   %standard-gap,
   .standard-gap {
     @include AU-space(margin-top, 1.5unit);
+    &--mobile-only {
+      @include AU-space(margin-top, 1.5unit);
+      @include AU-media(sm) {
+        margin-top: 0;
+      }
+    }
   }
 
   // Prevent the contextual links wrapper from creating a margin above the following element.
@@ -47,7 +54,7 @@
   }
 
   // Override external link icon with font awesome.
-  a[rel~='external'] {
+  a[rel~='external'], &.au-body--dark a[rel~='external']{
     &:after, &:hover:after {
       background-image: none;
       content: "\f08e";
@@ -106,5 +113,10 @@
   //   }
   // }
 
+  @media print {
+    a[href]:after {
+      content: '' !important;
+    }
+  }
 
 }

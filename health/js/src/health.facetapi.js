@@ -35,6 +35,9 @@
       label.prepend(checkbox);
       $li.prepend(label);
 
+      $li.addClass('au-form__item');
+      $link.parents('ul.facetapi-facetapi-checkbox-links').addClass('au-form').addClass('au-link-list');
+
       if (active) {
         $link.remove();
 

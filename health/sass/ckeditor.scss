@@ -14,4 +14,9 @@
   padding: 20px;
   @extend .au-body;
   @extend .au-grid;
+
+  // Prevent the ckeditor red line hover from pushing content down.
+  > span:first-of-type + * {
+    margin-top: 0 !important;
+  }
 }

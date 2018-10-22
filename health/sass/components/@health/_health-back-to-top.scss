@@ -12,6 +12,10 @@
     bottom: 20px;
   }
 
+  @media print {
+    display: none;
+  }
+
   .au-btn.au-btn--secondary {
     @include AU-fontgrid( sm );
     line-height: 1.2;
@@ -64,4 +68,3 @@
     transition: all .4s ease-in;
   }
 }
-

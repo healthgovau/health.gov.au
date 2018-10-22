@@ -451,15 +451,15 @@ function health_preprocess_entity(array &$variables) {
 
     // Tables.
     if ($para_item->bundle == 'content_table') {
+      // Move the title and summary into the table caption.
       $title = $variables['content']['field_title'][0]['#markup'];
-      $caption = $variables['content']['field_summary'][0]['#markup'];
       $table = $variables['content']['field_body'][0]['#markup'];
-
-      // Create an anchor so it can be deep linked to.
-      $variables['content']['field_title']['#prefix'] = '<a name="' . _health_prepare_filename($title) . '"></a>';
-
-      // Move the title and caption into the table caption.
-      $table = preg_replace('/(<table.*?>)(.*)/s', '$1<caption><p class="au-display-sm">' . $title . '</p><span class="au-sronly">' . $caption . '</span></caption>$2', $table);
+      $replacement = '$1<caption><p class="au-display-sm">' . $title . '</p>';
+      if (array_key_exists('field_summary', $variables['content'])) {
+        $replacement .= '<span class="au-sronly">' . $variables['content']['field_summary'][0]['#markup'] . '</span>';
+      }
+      $replacement .= '</caption>$2';
+      $table = preg_replace('/(<table.*?>)(.*)/s', $replacement, $table);
 
       // Add the footer into tfoot.
       if (array_key_exists('field_table_source', $variables['content'])) {
@@ -471,6 +471,9 @@ function health_preprocess_entity(array &$variables) {
           'weight' => 100,
         ));
       }
+
+      // Create an anchor so it can be deep linked to.
+      $variables['content']['field_body']['#prefix'] = '<a name="' . _health_prepare_filename($title) . '"></a>';
 
       // Set the updated table into content.
       $variables['content']['field_body'][0]['#markup'] = $table;
@@ -807,14 +810,14 @@ function health_preprocess_field(&$variables) {
   // Email address.
   if ($variables['element']['#field_name'] == 'field_contact_email') {
     // If we are on a media page, add in the news id and title.
-    if ($variables['element']['#bundle'] == 'para_email') {
-      $nid = ($node = menu_get_object()) ? $node->nid : NULL;
-      $subject = 'Media enquiry - News item ID ' . $nid;
-      $body = 'URL - ' . urlencode($GLOBALS['base_url'] . base_path() . drupal_get_path_alias());
+    $node = menu_get_object();
+    if ($node && $node->type == 'departmental_media') {
+      $subject = 'Media enquiry - News item ID' . $node->nid;
+      $body = 'URL - ' . str_replace('+', '%20', urlencode($GLOBALS['base_url'] . base_path() . drupal_get_path_alias()));
       $variables['items'][0]['#markup'] = l($variables['items'][0]['#markup'], 'mailto:' . $variables['items'][0]['#markup'] . '?subject=' . $subject . '&body=' . $body);
     }
 
-    // Make sure email addresses are being spam-spanned.
+    // Apply spamspan.
     if ($variables['items']) {
       $variables['items'][0]['#markup'] = _spamspan_filter_process($variables['items'][0]['#markup'], NULL);
     }

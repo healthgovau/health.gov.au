@@ -84,12 +84,13 @@ ul {
   &.list--large--checklist {
     @extend %list--large;
     > li {
-      padding-left: 50px;
+      padding-left: 55px;
+      background: $colour-lighter url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23313131' d='M0,0h32v32H0V0z'/%3E%3Cpath fill='%23fff' d='M2,2h28v28H2V2z'/%3E%3C/svg%3E") no-repeat 13px 13px/30px 30px;
       &::before {
-        top: 0;
-        counter-increment: none;
-        content: '◻';
-        font-size: 37px;
+        content: '';
+      }
+      strong {
+        @extend .au-display-md;
       }
     }
   }
@@ -107,22 +108,5 @@ ul {
   padding-left: 0;
   > li {
     @include AU-space(margin-top, .5unit);
-  }
-}
-
-
-// Specific stuff to health.
-// @todo Use classes instead of hardcoding.
-.facetapi-facetapi-checkbox-links {
-  @extend .list--remove;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.view-filters,
-.view-content {
-  @include AU-clearfix;
-  width: 100%;
-  .item-list ul {
-    @extend .list--remove;
   }
 }

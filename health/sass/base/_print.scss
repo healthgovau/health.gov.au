@@ -24,19 +24,7 @@
       background: #fff !important;
     }
   }
-  // Image.
-  .image-wrapper {
-    &.image-loading {
-      border: 1px solid black;
-      &:before {
-        content: "This image hasn't loaded yet. Close the print dialog and try again.";
-      }
-    }
-  }
-  // Footer.
-  .footer {
-    display: none;
-  }
+
   // Links.
   .page {
     a:after {
