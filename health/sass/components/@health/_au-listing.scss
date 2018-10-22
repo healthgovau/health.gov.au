@@ -20,6 +20,8 @@
   // Filters
   &__filters {
 
+    @include AU-space(margin-top, 1unit);
+
     &--inline {
       > * {
         display: inline-block;
