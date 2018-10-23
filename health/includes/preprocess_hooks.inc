@@ -664,30 +664,6 @@ function health_preprocess_field(&$variables) {
     }
   }
 
-  // Hide last updated field if it is not later than date published.
-  if ($variables['element']['#field_name'] == 'field_date_updated' && $variables['element']['#view_mode'] == 'full') {
-    $node_type = $variables['element']['#object']->type;
-    if (in_array($node_type, RESOURCES_TYPE)) {
-      // Apply logic only to resources content types.
-      if (isset($variables['element']['#items'][0])) {
-        $last_updated = strtotime($variables['element']['#items'][0]['value']);
-        // Publication content type.
-        if ($variables['element']['#bundle'] == 'publication') {
-          $node = $variables['element']['#object'];
-          if (isset($node->field_publication_date[LANGUAGE_NONE][0])) {
-            $publication_date = $node->field_publication_date[LANGUAGE_NONE][0]['value'];
-
-            if ($last_updated <= strtotime($publication_date)) {
-              // Do not render this field.
-              unset($variables['items']);
-              $variables['classes_array'][] = 'sr-only';
-            }
-          }
-        }
-      }
-    }
-  }
-
   // Token replacement (node) for all labels.
   $variables['label'] = token_replace($variables['label'], array('node' => $variables['element']['#object']));
 
@@ -1180,6 +1156,22 @@ function health_preprocess_node(array &$variables) {
     else {
       $variables['content']['field_link_external'][0]['#element']['attributes']['class'] = 'button';
       $variables['content']['survey_link_closed_']['#access'] = FALSE;
+    }
+  }
+
+  // Publications.
+  if ($node->type == 'publication') {
+    // Hide last updated field if earlier or the same as date published.
+    if ($variables['view_mode'] == 'full') {
+      $last_updated = $variables['content']['field_date_updated']['#items'][0]['value'];
+      // We just want the date, so strip off the time.
+      $parts = explode(' ', $last_updated);
+      $last_updated = strtotime($parts[0]);
+      $publication_date = strtotime($variables['content']['field_publication_date']['#items'][0]['value']);
+      if ($last_updated <= $publication_date) {
+        // Do not render date updated.
+        unset($variables['content']['field_date_updated']);
+      }
     }
   }
 }
