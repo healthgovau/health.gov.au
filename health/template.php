@@ -1460,7 +1460,7 @@ function health_webform_email($variables) {
  * Add Design system classes.
  */
 function health_form($variables) {
-  if (in_array('class', $variables['element']['#attributes'])) {
+  if (key_exists('class', $variables['element']['#attributes'])) {
     if (is_array($variables['element']['#attributes']['class'])) {
       $variables['element']['#attributes']['class'][] = 'au-form';
     }
