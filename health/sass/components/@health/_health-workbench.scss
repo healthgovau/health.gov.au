@@ -11,13 +11,19 @@
     background: none;
     font-size: inherit;
 
+    display: inline;
+    div, form, input, select {
+      display: inline;
+      margin-top: 0;
+    }
+
     em:first-of-type {
       font-weight: bold;
       font-style: normal;
       font-size: 22px;
     }
     .fa {
-      @include AU-space('margin-left', 4unit);
+      @include AU-space('margin-left', 3.5unit);
       &:before {
         position: static;
       }
