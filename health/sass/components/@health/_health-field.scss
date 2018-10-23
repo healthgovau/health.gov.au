@@ -2,7 +2,8 @@
 .field {
 
   // Generic field after field
-  .field + & {
+  .field + &,
+  h2 + & {
     @include AU-space(margin-top, 1.5unit);
   }
 

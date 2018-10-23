@@ -252,7 +252,7 @@ function health_preprocess_entity(array &$variables) {
     }
 
     // Views.
-    if ($para_item->bundle == 'para_view') {
+    if ($para_item->bundle == 'para_view' || $para_item->bundle == 'view') {
 
       // Get the view values.
       $view_name = $para_item->field_view_name[LANGUAGE_NONE][0]['value'];
@@ -353,7 +353,7 @@ function health_preprocess_entity(array &$variables) {
 
       if ($view->total_rows > 0) {
         // Add grid if there is no manual grid col set.
-        if ($view->style_plugin->options['row_class'] == '') {
+        if ($view->style_plugin->options['row_class'] == '' && $para_item->bundle == 'para_view') {
           $view->style_plugin->options['row_class'] = implode(' ', _health_grid_class(count($view->result), []));
         }
         // Render the view.
