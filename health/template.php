@@ -1287,6 +1287,16 @@ function health_textfield($variables) {
 }
 
 /**
+ * Implements theme_password().
+ *
+ * Add Design system classes.
+ */
+function health_password($variables) {
+  _form_set_class($variables['element'], array('au-text-input'));
+  return theme_password($variables);
+}
+
+/**
  * Implements theme_textarea().
  *
  * Add Design system classes.
@@ -1450,10 +1460,15 @@ function health_webform_email($variables) {
  * Add Design system classes.
  */
 function health_form($variables) {
-  if (is_array($variables['element']['#attributes']['class'])) {
-    $variables['element']['#attributes']['class'][] = 'au-form';
+  if (in_array('class', $variables['element']['#attributes'])) {
+    if (is_array($variables['element']['#attributes']['class'])) {
+      $variables['element']['#attributes']['class'][] = 'au-form';
+    }
+    else {
+      $variables['element']['#attributes']['class'] .= ' au-form';
+    }
   } else {
-    $variables['element']['#attributes']['class'] .= ' au-form';
+    $variables['element']['#attributes']['class'] = 'au-form';
   }
   return theme_form($variables);
 }
