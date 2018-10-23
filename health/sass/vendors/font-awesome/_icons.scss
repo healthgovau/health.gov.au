@@ -29,6 +29,7 @@
 .#{$fa-css-prefix}-instagram:before { content: $fa-var-instagram; }
 .#{$fa-css-prefix}-youtube-square:before { content: $fa-var-youtube-square; }
 .#{$fa-css-prefix}-linkedin-square:before { content: $fa-var-linkedin-square; }
+.#{$fa-css-prefix}-filter:before { content: $fa-var-filter; }
 
 // Icons we don't
 /*
@@ -199,7 +200,6 @@
 .#{$fa-css-prefix}-arrow-circle-down:before { content: $fa-var-arrow-circle-down; }
 .#{$fa-css-prefix}-wrench:before { content: $fa-var-wrench; }
 .#{$fa-css-prefix}-tasks:before { content: $fa-var-tasks; }
-.#{$fa-css-prefix}-filter:before { content: $fa-var-filter; }
 .#{$fa-css-prefix}-briefcase:before { content: $fa-var-briefcase; }
 .#{$fa-css-prefix}-arrows-alt:before { content: $fa-var-arrows-alt; }
 .#{$fa-css-prefix}-group:before,

@@ -67,6 +67,11 @@ function health_adminimal_form_node_form_alter(&$form, &$form_state, $form_id) {
     $form['field_related_contact']['#disabled'] = 'disabled';
   }
 
+  // Title - 100 character limit
+  if ($form['type']['#value'] !== 'departmental_media') {
+    $form['title']['#maxlength'] = 100;
+  }
+
   // Add character limit to 300 to summary field.
   if ($form['field_summary']) {
     $form['field_summary'][LANGUAGE_NONE][0]['value']['#attributes']['maxlength'] = 300;

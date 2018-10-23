@@ -3,39 +3,43 @@
 // We all know what a footer is.
 .au-footer {
 
-  // for IE 9.
-  background-color: $colour-Primary-darker;
-
-  @extend %colour-Primary-background;
+  &.au-body.au-body--dark.au-footer--dark {
+    @extend %colour-Primary-background;
+  }
 
   padding-left: 0;
   padding-right: 0;
   border: 0;
 
-  a {
-    color: white;
-    &:hover {
-      background: none;
-      color: white;
-      text-decoration: none;
-    }
-    &[rel~='external']:after {
-      color: white
-    }
-  }
-  h3.block__title {
-    color: white;
-  }
-  color: white;
-  .field-name-field-link-to a {
-    @extend .au-btn.au-btn--dark.au-btn--secondary;
-    background-color: transparent;
-    &:hover:not(:disabled), &:focus:not(:disabled) {
-      background-color: transparent;
+  &__navigation {
+    .block {
+      @extend .col-md-3;
+      @include AU-space('margin-bottom', 1 unit);
+      @include AU-media(md) {
+        margin-bottom: 0;
+      }
+
+      h3 {
+        @include AU-space(margin-top, 1.5unit);
+        @include AU-media(sm) {
+          margin-top: 0;
+        }
+      }
+
+      &:first-of-type {
+        h3 {
+          margin-top: 0;
+        }
+      }
     }
   }
 
-  .au-footer__end {
+  &__logo {
+    max-width: 157px;
+    padding-left: 12px;
+  }
+
+  &__end {
     padding-top: 1.6em;
     border-top: 1px solid #ccc;
     margin-top: 1.6em;
@@ -43,5 +47,8 @@
       color: white;
     }
   }
-}
 
+  @media print {
+    display: none;
+  }
+}

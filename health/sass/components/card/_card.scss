@@ -39,21 +39,12 @@
   .au-card__title {
     @include health-fontgrid( md , heading);
     @include AU-space( margin-bottom, 1unit );
-    text-decoration: underline;
-    text-decoration-color: currentColor;
-    transition: text-decoration-color 0.3s ease-in-out;
     font-weight: bold;
-  }
-
-  &.au-cta-link:hover,
-  &.au-card--solid:hover {
-    .au-card__title {
-      text-decoration-color: transparent;
-    }
   }
 
   .au-card__text {
     @include AU-fontgrid( sm );
+    text-decoration: none;
   }
 
   hr {
@@ -81,12 +72,18 @@
     }
   }
 
+  &.au-card--light {
+    background: $AU-color-background;
+    overflow: hidden;
+  }
+
   &.au-card--centered {
     text-align: center;
-
     img,
-    svg {
-      margin: 0 auto;
+    svg,
+    .au-card__image, p
+    {
+      margin: auto;
     }
   }
 
@@ -104,6 +101,63 @@
     }
   }
 
+  &.au-card--selector {
+    @include AU-space('padding', 0.5unit);
+    @include AU-media(md) {
+      @include AU-space('padding', 1unit);
+    }
+
+    @media print {
+      display: none;
+    }
+
+    border-left: 1px solid $colour-light-dark;
+    border-right: 1px solid $colour-light-dark;
+    border-bottom: 1px solid $colour-light-dark;
+    display: block;
+    overflow: hidden;
+    background: $colour-lightest;
+    border-top: 10px solid $colour-light-dark;
+
+    &:hover,
+    &:focus {
+      background: white;
+      border-top-color: $colour-Secondary;
+    }
+
+    .au-card__title {
+      @include AU-space(margin-top, .5unit);
+      @include AU-space(margin-bottom, .5unit);
+      @include health-fontgrid( sm , heading);
+      max-width: 100%;
+    }
+    .au-card__image {
+      max-width: 40px;
+    }
+
+    p {
+      max-width: 75%;
+    }
+
+    // Add external icon to field-link-internal if the link is external.
+    &[rel~='external'] {
+      &:after {
+        content: '' !important;
+        display: none !important;
+      }
+      .au-card__title {
+        @extend a[rel~='external'];
+      }
+    }
+  }
+
+  &.au-card--resource {
+    border-top-width: 6px;
+    border-top-style: solid;
+    border-top-color: $colour-Tertiary-2;
+    @include AU-space(padding, 2unit 0);
+  }
+
 }
 
 // When the box is a link
@@ -112,6 +166,16 @@ a.au-card {
 
   .au-body & {
     text-decoration: none;
+  }
+
+  .au-card__title {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    .au-card__title {
+      text-decoration: none;
+    }
   }
 
   &.au-card--shadow {
