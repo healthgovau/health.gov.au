@@ -266,7 +266,6 @@ $fa-var-file-word-o: "\f1c2";
 $fa-var-file-zip-o: "\f1c6";
 $fa-var-files-o: "\f0c5";
 $fa-var-film: "\f008";
-$fa-var-filter: "\f0b0";
 $fa-var-fire: "\f06d";
 $fa-var-fire-extinguisher: "\f134";
 $fa-var-firefox: "\f269";
@@ -874,6 +873,9 @@ $fa-var-youtube-play: "\f16a";
 .fa-linkedin-square:before {
   content: ""; }
 
+.fa-filter:before {
+  content: ""; }
+
 /*
 .fa-times-circle-o:before { content: $fa-var-times-circle-o; }
 .fa-glass:before { content: $fa-var-glass; }
@@ -1042,7 +1044,6 @@ $fa-var-youtube-play: "\f16a";
 .fa-arrow-circle-down:before { content: $fa-var-arrow-circle-down; }
 .fa-wrench:before { content: $fa-var-wrench; }
 .fa-tasks:before { content: $fa-var-tasks; }
-.fa-filter:before { content: $fa-var-filter; }
 .fa-briefcase:before { content: $fa-var-briefcase; }
 .fa-arrows-alt:before { content: $fa-var-arrows-alt; }
 .fa-group:before,
