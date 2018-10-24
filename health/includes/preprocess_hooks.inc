@@ -1182,6 +1182,46 @@ function health_preprocess_node(array &$variables) {
       $variables['content']['survey_link_closed_']['#access'] = FALSE;
     }
   }
+
+  // Migrate data for number of pages.
+  if ($node->title == 'Migrate Data for number of pages') {
+
+    $data = db_select('node', 'n')
+      ->fields('n', ['nid'])
+      ->condition('type', 'publication')
+      ->execute()
+      ->fetchAll();
+    foreach($data as $result) {
+      $node = node_load($result->nid);
+
+      // Go through every publication.
+      if ($node->field_publication_files) {
+        $docs = $node->field_publication_files[$node->language];
+        foreach ($docs as $doc) {
+          $entities = entity_load('paragraphs_item', [$doc['value']]);
+          if (!empty($entities)) {
+            $para_documents = array_pop($entities);
+            if ($para_documents->field_resource_document) {
+              foreach ($para_documents->field_resource_document[LANGUAGE_NONE] as $resource_document) {
+                $entities = entity_load('paragraphs_item', [$resource_document['value']]);
+                if (!empty($entities)) {
+                  $para_document = array_pop($entities);
+                  // Get the number of pages and the file id.
+                  $pages = $para_document->field_resource_file_pages[LANGUAGE_NONE][0]['value'];
+
+                  // Update the file with the number of pages.
+                  $fid = $para_document->field_file[LANGUAGE_NONE][0]['fid'];
+                  $file = file_load($fid);
+                  $file->field_resource_file_pages[LANGUAGE_NONE][0]['value'] = $pages;
+                  file_save($file);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 /**
