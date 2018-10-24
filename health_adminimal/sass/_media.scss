@@ -5,6 +5,7 @@ body.adminimal-skin-material {
       margin-right: 0px;
       display: block;
     }
+    white-space: normal;
   }
 }
 
@@ -85,7 +86,6 @@ body.adminimal-skin-material {
   }
   .media-thumbnail__image {
     float: left;
-    background: white;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
     border: 1px solid #CCCCCC;
     overflow: hidden;
