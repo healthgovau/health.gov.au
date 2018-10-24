@@ -1207,13 +1207,15 @@ function health_preprocess_node(array &$variables) {
                 if (!empty($entities)) {
                   $para_document = array_pop($entities);
                   // Get the number of pages and the file id.
-                  $pages = $para_document->field_resource_file_pages[LANGUAGE_NONE][0]['value'];
+                  if ($para_document->bundle == 'document') {
+                    $pages = $para_document->field_resource_file_pages[LANGUAGE_NONE][0]['value'];
 
-                  // Update the file with the number of pages.
-                  $fid = $para_document->field_file[LANGUAGE_NONE][0]['fid'];
-                  $file = file_load($fid);
-                  $file->field_resource_file_pages[LANGUAGE_NONE][0]['value'] = $pages;
-                  file_save($file);
+                    // Update the file with the number of pages.
+                    $fid = $para_document->field_file[LANGUAGE_NONE][0]['fid'];
+                    $file = file_load($fid);
+                    $file->field_resource_file_pages[LANGUAGE_NONE][0]['value'] = $pages;
+                    file_save($file);
+                  }
                 }
               }
             }
