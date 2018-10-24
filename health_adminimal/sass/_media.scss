@@ -1,11 +1,10 @@
-.media-widget {
-  // Fixing padding issues on fields with Media browser button.
-  .preview {
-    margin-right: 0px;
-  }
-  input.remove {
-    margin-left: 10px;
-    margin-right: 1em;
+body.adminimal-skin-material {
+  .media-widget {
+    // Fixing padding issues on fields with Media browser button.
+    .preview {
+      margin-right: 0px;
+      display: block;
+    }
   }
 }
 
@@ -59,64 +58,64 @@
 // Media browser preview
 .media-item {
 
+  background: none;
+  border: none;
+  box-shadow: none;
+
   padding: 0;
+
+  .media-thumbnail__metadata {
+    float: left;
+    margin-left: 10px;
+  }
 
   .media-thumbnail {
     line-height: 0;
   }
 
-  // Files
-  &.media-type__document {
-    padding: 0;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    .file {
-      a {
-        padding: 0;
-        font-size: 15px;
-        display: inline-block;
-        line-height: 1.2em;
-        color: black;
-        font-weight: 300;
-        margin: -8px 0 0 5px;
-      }
-      svg {
-        width: 14px;
-        margin-top: 8px;
-      }
-    }
-
-    .label-wrapper {
-      display: none;
-    }
+  // Preview
+  .media-thumbnail__title {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.5;
   }
-
-  // Images
-  &.media-type__image {
+  .media-thumbnail__description {
+    line-height: 1.5;
+    font-size: 15px;
+  }
+  .media-thumbnail__image {
+    float: left;
     background: white;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+    border: 1px solid #CCCCCC;
     overflow: hidden;
-
-    .media-thumbnail__image {
-      display: inline-block;
-      position: relative;
+    display: inline-block;
+    position: relative;
+  }
+  .label-wrapper {
+    display: none;
+    background: none;
+    position: relative;
+    box-shadow: none;
+    label {
+      margin: 0;
+      padding: 0 5px;
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 1.2em;
     }
-    .label-wrapper {
-      display: none;
-      background: none;
-      position: relative;
+  }
+
+  &.media-type__document {
+    .media-thumbnail__image {
       box-shadow: none;
-      label {
-        margin: 0;
-        padding: 0 5px;
-        font-size: 12px;
-        font-weight: normal;
-        line-height: 1.2em;
+      border: none;
+      svg {
+        width: 30px;
       }
     }
-
   }
+
 }
 
 
@@ -162,5 +161,12 @@
         line-height: 1.2em;
       }
     }
+  }
+}
+
+.form-type-media {
+  .image-clear {
+    font-size: 12px;
+    margin-left: 10px;
   }
 }

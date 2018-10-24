@@ -16,15 +16,15 @@
  */
 function health_get_friendly_mime($mimetype) {
   $descriptions = [
-    'application/pdf' => '<abbr title="Portable Document Format">PDF</abbr>',
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document' => '<abbr title="Microsoft Word document">Word</abbr>',
-    'application/msword' => '<abbr title="Microsoft Word document">Word</abbr>',
-    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' => '<abbr title="Microsoft Excel document">Excel</abbr>',
-    'application/vnd.openxmlformats-officedocument.presentationml.presentation' => '<abbr title="Microsoft PowerPoint document">PowerPoint</abbr>',
+    'application/pdf' => 'PDF',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document' => 'Word',
+    'application/msword' => 'Word',
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' => 'Excel',
+    'application/vnd.openxmlformats-officedocument.presentationml.presentation' => 'PowerPoint',
     'text/plain' => 'plain text',
-    'image/jpeg' => '<abbr title="Joint Photographic Experts Group">JPEG</abbr>',
-    'image/png' => '<abbr title="Portable Network Graphics">PNG</abbr>',
-    'image/gif' => '<abbr title="Graphics Interchange Format">GIF</abbr>',
+    'image/jpeg' => 'JPEG',
+    'image/png' => 'PNG',
+    'image/gif' => 'GIF',
   ];
   if (array_key_exists($mimetype, $descriptions)) {
     return $descriptions[$mimetype];

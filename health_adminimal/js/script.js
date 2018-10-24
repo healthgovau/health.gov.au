@@ -2,6 +2,7 @@
 
   // Store the collapsed state of the fieldsets, so they can be restored later.
   var collapsed = [];
+  var replace = false;
 
   Drupal.behaviors.health_adminimal = {
     attach: function(context) {
@@ -406,6 +407,50 @@
   Drupal.behaviors.health_adminimal_image_editing = {
     attach: function (context, settings) {
       $('.field-widget-media-generic .button.edit, .form-item-files-replace-upload').hide();
+    }
+  };
+
+  Drupal.behaviors.health_adminimal_single_use_media = {
+    attach: function (context, settings) {
+      $('.form-type-media').each(function() {
+
+        // Remove button.
+        var $remove = $(this).find('.remove');
+        $remove.hide();
+
+        // Replace button.
+        var $replace = $('<a href="#" class="button replace edit">Replace</a>');
+        $(this).find('.media-widget').once('replace').append($replace);
+
+        // Clear button.
+        if ($(this).find('input.upload').length === 0) {
+
+          var $clearLink = $('<a href="#" class="image-clear">Clear</a>');
+          $(this).find('label').once('clearLink').append($clearLink);
+          $('.image-clear').click(function (e) {
+            e.preventDefault();
+            $remove.trigger('mousedown');
+            $replace.hide();
+            $(this).hide();
+          });
+
+          $(this).find('.replace').show();
+        }
+
+        var $browse = $(this).find('.browse');
+        $browse.text('Upload');
+        if (replace === true) {
+          $browse.trigger('click');
+          replace = false;
+        }
+
+        $replace.click(function(e) {
+          e.preventDefault();
+          $remove.trigger('mousedown');
+          $replace.hide();
+          replace = true;
+        });
+      });
     }
   };
 
