@@ -570,10 +570,6 @@ function health_file_entity_download_link($variables) {
                   if (count($docs) > 1) {
                     $title .= ': ' . $para_documents->field_resource_file_title[LANGUAGE_NONE][0]['value'];
                   }
-                  // Get page count.
-                  if (isset($para_document->field_resource_file_pages)) {
-                    $no_of_pages = $para_document->field_resource_file_pages[LANGUAGE_NONE][0]['value'];
-                  }
                 }
               }
             }
@@ -593,6 +589,11 @@ function health_file_entity_download_link($variables) {
           $formatted_filesize = round($file_size[0], 0) . ' ' . $file_size[1];
         }
       }
+
+      if ($file->field_resource_file_pages) {
+        $no_of_pages = $file->field_resource_file_pages[LANGUAGE_NONE][0]['value'];
+      }
+
 
       if (isset($no_of_pages)) {
         if ($no_of_pages > 1) {
