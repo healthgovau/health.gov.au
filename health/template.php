@@ -641,12 +641,31 @@ function health_file_entity_download_link($variables) {
  * Implements theme_file_icon().
  */
 function health_file_icon($variables) {
-  $file = $variables['file'];
-  $alt = $variables['alt'];
-  $icon_directory = $variables['icon_directory'];
-  $mime = check_plain($file->filemime);
-  $icon_url = file_icon_url($file, $icon_directory);
-  return '<img class="au-file__icon" alt="' . check_plain($alt) . '" title="' . $mime . '" src="' . $icon_url . '" />';
+  switch(check_plain($variables['file']->filemime)) {
+    case 'application/pdf':
+      $class = 'file-pdf-o';
+      break;
+    case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+    case 'application/msword':
+    $class = 'file-word-o';
+      break;
+    case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
+      $class = 'file-excel-o';
+      break;
+    case 'application/vnd.openxmlformats-officedocument.presentationml.presentation':
+      $class = 'file-powerpoint-o';
+      break;
+    case 'image/png':
+    case 'image/jpg':
+    case 'image/gif':
+      $class = 'file-image-o';
+      break;
+    default:
+      $class = 'file-o';
+      break;
+  }
+
+  return '<i class="fa fa-' . $class . ' fa-small"></i>';
 }
 
 /**
