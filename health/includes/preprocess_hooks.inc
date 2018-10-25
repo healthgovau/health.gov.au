@@ -1513,6 +1513,13 @@ function health_preprocess_region(array &$variables, $hook) {
 }
 
 /**
+ * Implements theme_views_view_table().
+ */
+function health_preprocess_views_view_table(array &$variables) {
+  $variables['view']->header['area']->options['content'] = str_replace(THEME_PATH_TOKEN_GENERIC, '/' . path_to_theme(), $variables['view']->header['area']->options['content']);
+}
+
+/**
  * Override or insert variables into the views list preprocess.
  *
  * @param array $variables

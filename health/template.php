@@ -542,7 +542,8 @@ function health_file_entity_download_link($variables) {
 
     // If this is not an image or publication content type, do the normal
     // formatting.
-    if ($node->type != 'image' && $node->type != 'publication') {
+    $types = ['image', 'publication', 'foi_request'];
+    if (!in_array($node->type, $types)) {
       return theme_file_entity_download_link($variables);
     }
     else {
@@ -555,7 +556,7 @@ function health_file_entity_download_link($variables) {
       $title = $node->title;
 
       // Publications.
-      if ($node->type == 'publication') {
+      if ($node->type == 'publication' || $node->type == 'foi_request') {
         $docs = $node->field_publication_files[$node->language];
         foreach ($docs as $doc) {
           $entities = entity_load('paragraphs_item', [$doc['value']]);
