@@ -876,3 +876,21 @@ function health_adminimal_query_node_access_alter(QueryAlterableInterface $query
     unset($c[0]);
   }
 }
+
+function health_adminimal_preprocess_field(&$variables) {
+  if ($variables['element']['#field_name'] == 'field_image_featured') {
+    $variables['items'][0]['#theme'] = 'media_thumbnail';
+    $variables['items'][0]['#file'] = (object)$variables['items'][0]['#item'];
+    $variables['items'][0]['#file']->filename = $variables['element']['#object']->title;
+    if ($variables['element']['#object']->field_file_image_alt_text) {
+      $variables['items'][0]['#file']->alt = $variables['element']['#object']->field_file_image_alt_text[LANGUAGE_NONE][0]['value'];
+    }
+
+    // Add hashless(#) keys so it can be themed.
+    foreach($variables['element'][0] as $key => $value) {
+      $hashless = str_replace('#', '', $key);
+      $variables['element'][0][$hashless] = $value;
+    }
+    $variables['items'][0]['#children'] = theme($variables['element'][0]['theme'], $variables['element'][0]);
+  }
+}
