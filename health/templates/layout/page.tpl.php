@@ -100,7 +100,7 @@ endif;
         </div>
       </div>
 
-      <div class="health-toolbar rs_skip">
+      <div class="health-toolbar rs_skip rs_preserve">
         <div class="container">
           <div class="row">
             <ul class="col-xs-12 au-link-list au-link-list--inline">
