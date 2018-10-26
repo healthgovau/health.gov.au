@@ -358,6 +358,7 @@ function health_preprocess_entity(array &$variables) {
         }
         // Render the view.
         $variables['para_rendered_view'] = $view->preview();
+
         // If there are no more records to show, hide the more link.
         if ($view->total_rows <= count($view->result)) {
           $variables['content']['field_link_to']['#access'] = FALSE;
@@ -446,7 +447,6 @@ function health_preprocess_entity(array &$variables) {
       }
       $variables['content']['field_summary_list_type'][0]['#markup'] = $output;
     }
-
 
     // Tables.
     if ($para_item->bundle == 'content_table') {
@@ -680,35 +680,59 @@ function health_preprocess_field(&$variables) {
       switch ($variables['element']['#object']->field_contact_type[LANGUAGE_NONE][0]['tid']) {
         // Committees and groups.
         case 2211:
-          $variables['items'][0]['#item'] = get_object_vars(file_load(6206));
-          $variables['classes_array'][] = 'image--circle';
+          if ($variables['element']['#view_mode'] != 'full') {
+            $variables['items'][0]['#item'] = get_object_vars(file_load(6206));
+            $variables['classes_array'][] = 'image--circle';
+          } else {
+            $variables['classes_array'] = [];
+            $variables['items'][0]['#access'] = FALSE;
+          }
+
           break;
         // Department of Health.
         case 2206:
         // Department of Health State or Territory Office.
         case 2246:
-        // Local health state or territory office
-        case 2446:
         // Service.
         case 2261:
-          $variables['items'][0]['#item'] = get_object_vars(file_load(6166));
-          $variables['classes_array'][] = 'image--circle';
+          if ($variables['element']['#view_mode'] != 'full') {
+            $variables['items'][0]['#item'] = get_object_vars(file_load(6166));
+            $variables['classes_array'][] = 'image--circle';
+          } else {
+            $variables['classes_array'] = [];
+            $variables['items'][0]['#access'] = FALSE;
+          }
           break;
         // Minister.
         case 311:
-          $variables['classes_array'][] = 'image--circle';
+          if ($variables['element']['#view_mode'] != 'full') {
+            $variables['classes_array'][] = 'image--circle';
+          }
           break;
         // Organisation.
         case 2251:
         // Department of Health Portfolio Agency.
         case 316:
-          if (array_key_exists('is_default', $variables['items'][0]['#item']) && $variables['items'][0]['#item']['is_default'] == TRUE) {
-            $variables['classes_array'][] = 'image--circle';
+          if ($variables['element']['#view_mode'] != 'full') {
+            $variables['items'][0]['#item'] = get_object_vars(file_load(9346));
           } else {
-            $variables['classes_array'][] = 'image--border';
+            $variables['classes_array'] = [];
+            $variables['items'][0]['#access'] = FALSE;
+          }
+          break;
+        // Local health state or territory office
+        case 2446:
+          if (array_key_exists('is_default', $variables['items'][0]['#item']) && $variables['items'][0]['#item']['is_default'] == TRUE) {
+            if ($variables['element']['#view_mode'] != 'full') {
+              $variables['classes_array'][] = 'image--circle';
+            } else {
+              $variables['classes_array'] = [];
+              $variables['items'][0]['#access'] = FALSE;
+            }
           }
           break;
       }
+
     }
   }
 
@@ -1164,6 +1188,7 @@ function health_preprocess_node(array &$variables) {
       $variables['content']['survey_link_closed_']['#access'] = FALSE;
     }
   }
+
 }
 
 /**

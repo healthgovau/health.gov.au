@@ -291,7 +291,8 @@
         '.node-publication-form .field-name-field-description .filter-list',
         '.node-app_or_tool-form .field-name-field-description .filter-list',
         '.node-audio-form .field-name-field-description .filter-list',
-        '.node-audio-form .field-name-field-resource-transcript .filter-list'
+        '.node-audio-form .field-name-field-resource-transcript .filter-list',
+        '.node-contact-form .field-name-field-description .filter-list'
       ]);
 
       // Contacts.
