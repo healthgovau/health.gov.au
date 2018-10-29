@@ -11,5 +11,11 @@
   <h3><?php print $title; ?></h3>
 <?php endif; ?>
 <?php foreach ($rows as $id => $row): ?>
-  <?php print $row; ?>
+  <?php if (!empty($classes_array[$id])): ?>
+  <div<?php if ($classes_array[$id]) { print ' class="' . $classes_array[$id] .'"';  } ?>>
+  <?php endif; ?>
+    <?php print $row; ?>
+  <?php if (!empty($classes_array[$id])): ?>
+  </div>
+  <?php endif; ?>
 <?php endforeach; ?>
