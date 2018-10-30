@@ -207,13 +207,12 @@ function health_preprocess_entity(array &$variables) {
 
     // Contact.
     if ($para_item->bundle == 'para_contact') {
-      // Add more link to referenced node.
+      // Pass the more link to related contact.
       $nid = $para_item->field_related_contact[LANGUAGE_NONE][0]['target_id'];
       if (isset($para_item->field_link_internal[LANGUAGE_NONE][0])) {
-        $variables['content']['field_related_contact'][0]['node'][$nid]['#node']->link = $para_item->field_link_internal[LANGUAGE_NONE][0];
+        $link = field_view_field('paragraphs_item', $para_item, 'field_link_internal', 'full');
+        $variables['content']['field_related_contact'][0]['node'][$nid]['field_summary']['#suffix'] = render($link);
       }
-      // Pass selected display field name to node.
-      $variables['content']['field_related_contact'][0]['node'][$nid]['#node']->selected_field = $para_item->field_display_field[LANGUAGE_NONE][0]['value'];
     }
 
     // Feature content.
@@ -253,7 +252,7 @@ function health_preprocess_entity(array &$variables) {
     }
 
     // Views.
-    if ($para_item->bundle == 'para_view') {
+    if ($para_item->bundle == 'para_view' || $para_item->bundle == 'view') {
 
       // Get the view values.
       $view_name = $para_item->field_view_name[LANGUAGE_NONE][0]['value'];
@@ -354,11 +353,12 @@ function health_preprocess_entity(array &$variables) {
 
       if ($view->total_rows > 0) {
         // Add grid if there is no manual grid col set.
-        if ($view->style_plugin->options['row_class'] == '') {
+        if ($view->style_plugin->options['row_class'] == '' && $para_item->bundle == 'para_view') {
           $view->style_plugin->options['row_class'] = implode(' ', _health_grid_class(count($view->result), []));
         }
         // Render the view.
         $variables['para_rendered_view'] = $view->preview();
+
         // If there are no more records to show, hide the more link.
         if ($view->total_rows <= count($view->result)) {
           $variables['content']['field_link_to']['#access'] = FALSE;
@@ -447,7 +447,6 @@ function health_preprocess_entity(array &$variables) {
       }
       $variables['content']['field_summary_list_type'][0]['#markup'] = $output;
     }
-
 
     // Tables.
     if ($para_item->bundle == 'content_table') {
@@ -681,9 +680,62 @@ function health_preprocess_field(&$variables) {
 
     // Contact.
     if (property_exists($variables['element']['#object'], 'type') && $variables['element']['#object']->type == 'contact') {
-      if ($variables['element']['#items'][0]['filename'] == 'Contact placeholder - group' && $variables['element']['#items'][0]['fid'] == 6186) {
-        // Add default to class if image value is default.
-        $variables['classes_array'][] = 'default';
+
+      // Add classes and swap out defaults.
+      switch ($variables['element']['#object']->field_contact_type[LANGUAGE_NONE][0]['tid']) {
+        // Committees and groups.
+        case 2211:
+          if ($variables['element']['#view_mode'] != 'full') {
+            $variables['items'][0]['#item'] = get_object_vars(file_load(6206));
+            $variables['classes_array'][] = 'image--circle';
+          } else {
+            $variables['classes_array'] = [];
+            $variables['items'][0]['#access'] = FALSE;
+          }
+
+          break;
+        // Department of Health.
+        case 2206:
+        // Department of Health State or Territory Office.
+        case 2246:
+        // Service.
+        case 2261:
+          if ($variables['element']['#view_mode'] != 'full') {
+            $variables['items'][0]['#item'] = get_object_vars(file_load(6166));
+            $variables['classes_array'][] = 'image--circle';
+          } else {
+            $variables['classes_array'] = [];
+            $variables['items'][0]['#access'] = FALSE;
+          }
+          break;
+        // Minister.
+        case 311:
+          if ($variables['element']['#view_mode'] != 'full') {
+            $variables['classes_array'][] = 'image--circle';
+          }
+          break;
+        // Organisation.
+        case 2251:
+        // Department of Health Portfolio Agency.
+        case 316:
+          if ($variables['element']['#view_mode'] != 'full') {
+            $variables['items'][0]['#item'] = get_object_vars(file_load(9346));
+          } else {
+            $variables['classes_array'] = [];
+            $variables['items'][0]['#access'] = FALSE;
+          }
+          break;
+        // Local health state or territory office
+        case 2446:
+          if (array_key_exists('is_default', $variables['items'][0]['#item']) && $variables['items'][0]['#item']['is_default'] == TRUE) {
+            if ($variables['element']['#view_mode'] != 'full') {
+              $variables['classes_array'][] = 'image--circle';
+            } else {
+              $variables['classes_array'] = [];
+              $variables['items'][0]['#access'] = FALSE;
+            }
+          }
+          break;
       }
 
     }
@@ -1034,23 +1086,6 @@ function health_preprocess_node(array &$variables) {
 
   // Add the type as a name to the node e.g. "News article" or "Event".
   $variables['type_name'] = node_type_get_name($variables['node']);
-
-  // Add contact type to class for contact content type.
-  if ($variables['type'] == 'contact') {
-    $type = taxonomy_term_load($variables['field_contact_type'][LANGUAGE_NONE][0]['tid'])->name;
-    $variables['classes_array'][] = strtolower(str_replace(' ', '-', $type));
-
-    // Only render selected field for hotline bar view mode.
-    if ($variables['view_mode'] == 'hotline_bar') {
-      foreach ($variables as $key => $item) {
-        if (substr($key, 0, 6) == 'field_') {
-          if ($key != $variables['node']->selected_field) {
-            unset($variables['content'][$key]);
-          }
-        }
-      }
-    }
-  }
 
   // Statistic.
   if ($node->type == 'statistic') {

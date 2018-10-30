@@ -60,6 +60,14 @@
         color: $AU-colordark-foreground-text;
       }
     }
+
+    &--tertiary {
+      @extend %colour-Tertiary-2-background;
+      color: $AU-colordark-foreground-text;
+      a {
+        color: $AU-colordark-foreground-text;
+      }
+    }
   }
 
 }

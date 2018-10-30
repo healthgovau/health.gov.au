@@ -4,10 +4,8 @@
  * @file field.tpl.php
  * Default template implementation to display the value of a field.
  *
- * This file is not used by Drupal core, which uses theme functions instead for
- * performance reasons. The markup is the same, though, so if you want to use
- * template files rather than functions to extend field theming, copy this to
- * your custom theme. See theme_field() for a discussion of performance.
+ * This file is not used and is here as a starting point for customization only.
+ * @see theme_field()
  *
  * Available variables:
  * - $items: An array of field values. Use render() to output them.
@@ -46,30 +44,6 @@
  * @ingroup themeable
  */
 ?>
-
-<?php if ($element['#view_mode'] != 'hotline_bar') { $classes.= ' col-sm-9'; } ?>
-<div class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php if (!$label_hidden): ?>
-    <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</div>
-  <?php endif; ?>
-  <div class="field-items"<?php print $content_attributes; ?>>
-    <?php foreach ($items as $delta => $item): ?>
-      <?php
-        $item_without_spaces = str_replace(' ', '', $item['#markup']);
-        if (substr($item_without_spaces, 0, 1) == '0') {
-          $item_without_spaces = substr($item_without_spaces, 1, strlen($item_without_spaces) - 1);
-        }
-        $fa_class = '';
-        $link_class = 'au-display-lg au-display--inline';
-        // Hotline bar.
-        if ($element['#view_mode'] != 'hotline_bar') {
-          $fa_class = 'fa-small';
-          $link_class = '';
-        }
-      ?>
-      <div class="field-item "<?php print $item_attributes[$delta]; ?>>
-        <i class="fa fa-phone fa-inline <?php print $fa_class ?>" aria-hidden="true"></i><?php print l(render($item), 'tel:' . render($item_without_spaces), ['attributes' => ['class' => $link_class]]); ?>
-      </div>
-    <?php endforeach; ?>
-  </div>
-</div>
+<?php foreach ($items as $item) : ?>
+<a href="<?php print $item['#element']['url']?>" class="js-ignoreext"><i class="fa fa-youtube-square fa-very-large fa-inline fa-dark"></i><span class="sr-only">Youtube channel for <?php print $element['#object']->title?></span></a>
+<?php endforeach; ?>

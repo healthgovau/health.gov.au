@@ -19,6 +19,13 @@
   }
 }
 
+.image--circle {
+  img {
+    border-radius: 50%;
+    border: $health-borderize;
+  }
+}
+
 // Image caption
 .field-name-field-image-caption {
     margin-bottom: 2em;

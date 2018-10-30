@@ -44,19 +44,6 @@
  * @ingroup themeable
  */
 ?>
-<div class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php if (!$label_hidden): ?>
-    <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</div>
-  <?php endif; ?>
-  <div class="field-items"<?php print $content_attributes; ?>>
-      <?php if ($title): ?>
-        <div class="field-item even title" property="dc:title"><?php print $title ?></div>
-      <?php endif ?>
-      <?php if ($organisation): ?>
-        <div class="field-item even organisation"><?php print $organisation ?></div>
-      <?php endif ?>
-    <?php foreach ($items as $delta => $item): ?>
-      <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
-    <?php endforeach; ?>
-  </div>
-</div>
+<?php foreach ($items as $item) : ?>
+<a href="<?php print $item['#element']['url']?>" class="js-ignoreext"><i class="fa fa-linkedin-square fa-very-large fa-inline fa-dark"></i><span class="sr-only">LinkedIn profile for <?php print $element['#object']->title?></span></a>
+<?php endforeach; ?>

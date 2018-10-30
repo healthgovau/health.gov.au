@@ -8,8 +8,7 @@ function health_form_system_theme_settings_alter(&$form, $form_state, $form_id =
     return;
   }
 
-  // Create the form using Forms API
-
+  // Support.
   $form['support'] = array(
     '#type'          => 'fieldset',
     '#title'         => t('Accessibility and support settings'),
@@ -24,19 +23,26 @@ function health_form_system_theme_settings_alter(&$form, $form_state, $form_id =
                         ),
     '#description'   => t('IE 6-8 require a JavaScript polyfill solution to add basic support of HTML5. Mobile devices require a few meta tags for responsive designs.'),
   );
-  // List all content types.
+
+  // Layout
+  $form['layout'] = array(
+    '#type'          => 'fieldset',
+    '#title'         => t('Layout'),
+  );
   $content_types = node_type_get_types();
   $options = [];
   foreach ($content_types as $key => $content_type) {
     $options[$key] = $content_type->name;
   }
-  $form['support']['full_content_types'] = array(
+  $form['layout']['full_content_types'] = array(
     '#type' => 'checkboxes',
     '#options' => $options,
-    '#title' => t('Which content types are full width?'),
+    '#title' => t('Full width'),
     '#default_value' => theme_get_setting('full_content_types'),
     '#description' => t('Select which content type should use full width grid.'),
   );
+
+  // Theme development.
   $form['themedev'] = array(
     '#type'          => 'fieldset',
     '#title'         => t('Theme development settings'),
@@ -46,5 +52,16 @@ function health_form_system_theme_settings_alter(&$form, $form_state, $form_id =
     '#title'         => t('Rebuild theme registry and output template debugging on every page.'),
     '#default_value' => theme_get_setting('health_rebuild_registry'),
     '#description'   => t('During theme development, it can be very useful to continuously <a href="!link">rebuild the theme registry</a> and to output template debugging HTML comments. WARNING: this is a huge performance penalty and must be turned off on production websites.', array('!link' => 'https://drupal.org/node/173880#theme-registry')),
+  );
+
+  // Layout
+  $form['mapping'] = array(
+    '#type'          => 'fieldset',
+    '#title'         => t('Mapping'),
+  );
+  $form['mapping']['google_maps_api'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Google Maps API'),
+    '#default_value' => theme_get_setting('google_maps_api'),
   );
 }

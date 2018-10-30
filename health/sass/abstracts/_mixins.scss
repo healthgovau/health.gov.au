@@ -79,11 +79,6 @@
   box-shadow: 0px 3px 10px $colour;
 }
 
-@mixin circlefy(){
-  border-radius: 50%;
-  border: $health-borderize;
-}
-
 // UI-Kit link style
 %link {
 }
@@ -204,41 +199,4 @@
     }
   }
   
-}
-
-@mixin hotline-bar($bgcolour: $colour-Tertiary-2, $bgcolour-left: $colour-Tertiary-2-dark, $font-colour: white) {
-  @extend %colour-Tertiary-2-background;
-
-  // font colour
-  color: $font-colour;
-  h2 {
-    color: $font-colour;
-  }
-  a {
-    color: $font-colour;
-    &:hover {
-      color: $font-colour;
-      background: none;
-    }
-  }
-  .au-cta-link {
-    padding-left: 0;
-    &:after {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='white' d='M128 64l-64 64-16-16 64-64'/%3E%3Cpath fill='white' d='M128 64l-16 16-64-64L64 0'/%3E%3C/svg%3E");
-    }
-  }
-
-  .field-label {
-    @include AU-fontgrid(lg);
-  }
-
-  // display mode
-  .view-mode-hotline_bar {
-    h2 {
-      @include AU-fontgrid(xl, heading);
-      @include AU-space(padding-left, 1unit);
-      @include AU-space(padding-right, 1unit);
-      color: $font-colour;
-    }
-  }
 }

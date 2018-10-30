@@ -46,30 +46,13 @@
  * @ingroup themeable
  */
 ?>
-
-<?php if ($element['#view_mode'] != 'hotline_bar') { $classes.= ' col-sm-9'; } ?>
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <?php if (!$label_hidden): ?>
     <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</div>
   <?php endif; ?>
   <div class="field-items"<?php print $content_attributes; ?>>
     <?php foreach ($items as $delta => $item): ?>
-      <?php
-        $item_without_spaces = str_replace(' ', '', $item['#markup']);
-        if (substr($item_without_spaces, 0, 1) == '0') {
-          $item_without_spaces = substr($item_without_spaces, 1, strlen($item_without_spaces) - 1);
-        }
-        $fa_class = '';
-        $link_class = 'au-display-lg au-display--inline';
-        // Hotline bar.
-        if ($element['#view_mode'] != 'hotline_bar') {
-          $fa_class = 'fa-small';
-          $link_class = '';
-        }
-      ?>
-      <div class="field-item "<?php print $item_attributes[$delta]; ?>>
-        <i class="fa fa-phone fa-inline <?php print $fa_class ?>" aria-hidden="true"></i><?php print l(render($item), 'tel:' . render($item_without_spaces), ['attributes' => ['class' => $link_class]]); ?>
-      </div>
+      <div class="field-item"<?php print $item_attributes[$delta]; ?>><i class="fa fa-globe fa-inline fa-small" aria-hidden="true"></i><?php print render($item); ?></div>
     <?php endforeach; ?>
   </div>
 </div>

@@ -25,19 +25,19 @@
 
 %baseicon {
   position: relative;
-  margin-left: 1.6em; //2em;
+  margin-left: 1.85em;
   &:before {
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
     text-decoration: none;
     color: inherit;
-    font-size: 1.5em;
     position: absolute;
     line-height: 1;
     left: 0;
     margin-left: -1.6em;
     display: inline-block;
+    font-size: 1.5em;
   }
 }
 
@@ -45,16 +45,6 @@
 [class*="fa-"] {
   @extend %baseicon;
 }
-
-
-// Size variants
-.fa-large {
-  padding-left: 3.5em; // Revisit
-  &:before {
-    font-size: 2.5em;
-  }
-}
-
 // If applied to typography, size according to element
 h1, h2, h3, h4, h5, h6, p {
   &[class*="fa-"] {
@@ -64,18 +54,44 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
-// Colours
-.fa-dark {
-  &:before {
-    color: #000;
+.fa {
+  // Size variants
+  &-small {
+    margin-left: 1.6em;
+    &:before {
+      font-size: 1em;
+    }
+  }
+
+  &-very-large {
+    margin-left: 2.3em;
+    &:before {
+      font-size: 3em;
+      margin-left: -.8em;
+    }
+  }
+
+
+  // Colours
+  &-dark {
+    &:before {
+      color: #000;
+    }
+  }
+
+  &-light {
+    &:before {
+      color: #FFF;
+    }
+  }
+
+  &-inline {
+    &:before {
+      position: relative;
+    }
   }
 }
 
-.fa-light {
-  &:before {
-    color: #FFF;
-  }
-}
 
 .close-toggle {
   text-indent: -999px;
@@ -87,12 +103,4 @@ h1, h2, h3, h4, h5, h6, p {
     <path fill="#{ $AU-color-foreground-text }" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
     <path fill="none" d="M0 0h24v24H0z"/>
   </svg>');
-}
-
-.fa-phone {
-  margin-left: 1em;
-  margin-right: 0.25em;
-  &:before {
-    margin-left: -1em;
-  }
 }

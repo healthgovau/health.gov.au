@@ -108,6 +108,11 @@
     font-weight: normal;
   }
 
+  // Inline.
+  .au-display--inline {
+    display: inline;
+  }
+
   // Number next to a heading.
   &--numbered-heading {
     &__number, p#{&}__number {

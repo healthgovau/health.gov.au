@@ -2,19 +2,22 @@
 .field {
 
   // Generic field after field
-  .field + & {
+  .field + &,
+  h2 + & {
     @include AU-space(margin-top, 1.5unit);
   }
-  // Specific field sequences (e..g for vs)
-  .metadata--inline + &,
-  .field-name-title + &  {
+
+  .field + &.field-label-hidden {
     @include AU-space(margin-top, .5unit);
   }
 
   @include AU-clearfix();
 
-  .field__label, .field-label {
+  .field__label, .field-label, &.field__label {
     font-weight: bold;
+    &--light {
+      font-weight: normal;
+    }
   }
 }
 
@@ -23,11 +26,9 @@
 
   &--inline {
 
-    @include AU-space(margin-top, .5unit);
-
-    .field {
-      // Override the default margin top on fields.
-      margin-top: 0;
+    .field + &,
+    & + .field {
+      @include AU-space(margin-top, .5unit);
     }
 
     > div, > span {
@@ -65,36 +66,6 @@
   word-break: break-all;
   color: $colour-Secondary-darker;
   @include health-fontgrid('xs', 'default', 'light');
-}
-
-// Email telephone field
-.field-name-field-contact-email,
-.field-name-field-contact-telephone {
-  i:before {
-    position: relative;
-    font-size: 1em;
-  }
-}
-
-// Paragraph styling
-// Email
-.paragraphs-item-para-email {
-  .field-items{
-    padding-bottom: 0;
-  }
-  p {
-    margin-bottom: 0;
-  }
-}
-
-// Telephone
-.paragraphs-items-field-para-telephone {
-  .field-items{
-    padding-bottom: 0;
-  }
-  p {
-    margin-bottom: 0;
-  }
 }
 
 // Document accessibility

@@ -1,0 +1,37 @@
+// Content type template 
+// ======================
+
+// Default/full content
+.node-type-contact {
+	@extend %page-help-and-currency;
+}
+
+// Display modes
+.node-contact {
+
+  // Inline style
+  &.view-mode-inline_large {
+    .field-name-title {
+      font-weight: bold;
+    }
+    .group-name {
+      .field {
+        float: left;
+        margin-right: 4px;
+      }
+      @include AU-clearfix;
+    }
+    p {
+      margin-bottom: 0;
+    }
+
+    @include AU-space('margin-bottom', 1unit);
+    @include AU-media(sm){
+      @include AU-space('margin-bottom', 2unit);
+    }
+    @include AU-media(md){
+      @include AU-space('margin-bottom', 3unit);
+    }
+  }
+
+}
