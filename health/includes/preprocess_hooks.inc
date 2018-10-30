@@ -1153,8 +1153,6 @@ function health_preprocess_node(array &$variables) {
     }
   }
 
-<<<<<<< HEAD
-=======
   // Publications.
   if ($node->type == 'publication') {
     // Hide last updated field if earlier or the same as date published.
@@ -1170,7 +1168,6 @@ function health_preprocess_node(array &$variables) {
       }
     }
   }
->>>>>>> develop
 }
 
 /**
