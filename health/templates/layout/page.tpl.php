@@ -104,11 +104,11 @@ endif;
                 <?php print $readspeaker; ?>
               </li>
               <li class="rs_preserve">
-                <a href="#" id="health-toolbar__print"><i class="fa fa-print fa-inline"></i><span>Print</span></a>
+                <a href="#" id="health-toolbar__print"><i class="fa fa-print"></i><span>Print</span></a>
               </li>
               <li class="rs_preserve">
-                <a href="#" id="health-toolbar__share" >
-                  <i class="fa fa-share-alt fa-inline"></i><span>Share</span>
+                <a href="#" id="health-toolbar__share">
+                  <i class="fa fa-share-alt"></i><span>Share</span>
                 </a>
                 <div id="health-share-menu">
                   <ul class="au-link-list">

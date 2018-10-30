@@ -52,7 +52,7 @@
   <?php endif; ?>
   <div class="field-items"<?php print $content_attributes; ?>>
     <?php foreach ($items as $delta => $item): ?>
-      <div class="field-item"<?php print $item_attributes[$delta]; ?>><i class="fa fa-globe fa-inline fa-small" aria-hidden="true"></i><?php print render($item); ?></div>
+      <div class="field-item"<?php print $item_attributes[$delta]; ?>><i class="fa fa-globe fa-small" aria-hidden="true"></i><?php print render($item); ?></div>
     <?php endforeach; ?>
   </div>
 </div>

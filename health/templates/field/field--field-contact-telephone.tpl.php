@@ -68,7 +68,7 @@
         }
       ?>
       <div class="field-item "<?php print $item_attributes[$delta]; ?>>
-        <i class="fa fa-phone fa-inline <?php print $fa_class ?>" aria-hidden="true"></i><?php print l(render($item), 'tel:' . render($item_without_spaces), ['attributes' => ['class' => $link_class]]); ?>
+        <i class="fa fa-phone <?php print $fa_class ?>" aria-hidden="true"></i><?php print l(render($item), 'tel:' . render($item_without_spaces), ['attributes' => ['class' => $link_class]]); ?>
       </div>
     <?php endforeach; ?>
   </div>

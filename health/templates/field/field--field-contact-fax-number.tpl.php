@@ -57,7 +57,7 @@
         if (substr($item_without_spaces, 0, 1) == '0') {
           $item_without_spaces = substr($item_without_spaces, 1, strlen($item_without_spaces) - 1);
         } ?>
-      <div class="field-item"<?php print $item_attributes[$delta]; ?>><i class="fa fa-fax fa-inline fa-small" aria-hidden="true"></i><?php print l(render($item), 'tel:' . render($item_without_spaces)); ?></div>
+      <div class="field-item"<?php print $item_attributes[$delta]; ?>><i class="fa fa-fax fa-small" aria-hidden="true"></i><?php print l(render($item), 'tel:' . render($item_without_spaces)); ?></div>
     <?php endforeach; ?>
   </div>
 </div>

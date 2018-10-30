@@ -25,20 +25,22 @@
 
 %baseicon {
   position: relative;
-  margin-left: 2.2em;
-  display: inline;
+  margin-left: 0;
+  display: inline-block;
   &:before {
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
     text-decoration: none;
     color: inherit;
-    position: absolute;
+    position: relative;
     line-height: 1;
     left: 0;
-    margin-left: -1.4em;
+    top: 3px;
+    margin-right: .4em;
     display: inline-block;
     font-size: 1.5em;
+    width: 1em;
   }
 }
 
@@ -58,17 +60,16 @@ h1, h2, h3, h4, h5, h6, p {
 .fa {
   // Size variants
   &-small {
-    margin-left: 1.6em;
     &:before {
       font-size: 1em;
+      top: 1px;
     }
   }
 
   &-very-large {
-    margin-left: 2.3em;
     &:before {
       font-size: 3em;
-      margin-left: -.8em;
+      margin-right: 0;
     }
   }
 
@@ -86,11 +87,13 @@ h1, h2, h3, h4, h5, h6, p {
     }
   }
 
-  &-inline {
+  &-right {
     &:before {
-      position: relative;
+      margin-right: 0;
+      margin-left: .4em;
     }
   }
+
 }
 
 

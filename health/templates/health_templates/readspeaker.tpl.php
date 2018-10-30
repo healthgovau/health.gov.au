@@ -4,7 +4,7 @@
      href="//app-oc.readspeaker.com/cgi-bin/rsent?customerid=5802&amp;lang=en_au&amp;readid=page-content&amp;url=<?php print url(current_path(),['absolute' => TRUE,'query' => drupal_get_query_parameters()])?>">
     <span class="rsbtn_left rsimg rspart">
       <span class="rsbtn_text">
-        <i class="fa fa-volume-up fa-inline"></i>
+        <i class="fa fa-volume-up"></i>
         <span>Listen</span>
       </span>
     </span>

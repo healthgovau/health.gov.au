@@ -35,7 +35,7 @@
 
     // Fix the inline display of the icon.
     .fa {
-      display: inline;
+      /*display: inline;
       font-size: 0.8em;
       padding-left: 0.5em;
       &:before {
@@ -46,7 +46,7 @@
       margin-left: 0;
       @media print {
         display: none;
-      }
+      }*/
     }
 
     .clear-all {
