@@ -543,7 +543,8 @@ function health_file_entity_download_link($variables) {
 
     // If this is not an image or publication content type, do the normal
     // formatting.
-    if ($node->type != 'image' && $node->type != 'publication') {
+    $types = ['image', 'publication', 'foi_request'];
+    if (!in_array($node->type, $types)) {
       return theme_file_entity_download_link($variables);
     }
     else {
@@ -556,7 +557,7 @@ function health_file_entity_download_link($variables) {
       $title = $node->title;
 
       // Publications.
-      if ($node->type == 'publication') {
+      if ($node->type == 'publication' || $node->type == 'foi_request') {
         $docs = $node->field_publication_files[$node->language];
         foreach ($docs as $doc) {
           $entities = entity_load('paragraphs_item', [$doc['value']]);
@@ -680,7 +681,7 @@ function health_webform_element($variables) {
 
   $wrapper_attributes = isset($element['#wrapper_attributes']) ? $element['#wrapper_attributes'] : array('class' => array());
   $wrapper_classes = array(
-    'form-item',
+    'au-form__item',
     'webform-component',
     'webform-component-' . $type,
   );
@@ -711,7 +712,7 @@ function health_webform_element($variables) {
   // Always output description text between the label and field.
   $description = '';
   if (!empty($element['#description'])) {
-    $description = ' <div class="description">' . $element['#description'] . "</div>\n";
+    $description = ' <div class="au-form__item-description">' . $element['#description'] . "</div>\n";
   }
 
   switch ($element['#title_display']) {
@@ -1288,6 +1289,16 @@ function health_textfield($variables) {
 }
 
 /**
+ * Implements theme_password().
+ *
+ * Add Design system classes.
+ */
+function health_password($variables) {
+  _form_set_class($variables['element'], array('au-text-input'));
+  return theme_password($variables);
+}
+
+/**
  * Implements theme_textarea().
  *
  * Add Design system classes.
@@ -1331,7 +1342,7 @@ function health_radio($variables) {
     $element['#attributes']['checked'] = 'checked';
   }
   _form_set_class($element, array('au-control-input__input'));
-  return '<label class="au-control-input"><input' . drupal_attributes($element['#attributes']) . ' /><span class="au-control-input__text">'.$element['#title'].'</span></label>';
+  return '<label class="au-control-input au-control-input--block"><input' . drupal_attributes($element['#attributes']) . ' /><span class="au-control-input__text">'.$element['#title'].'</span></label>';
 }
 
 /**
@@ -1367,10 +1378,72 @@ function health_checkbox($variables) {
  * Don't show the label for radio and checkboxes.
  */
 function health_form_element($variables) {
-  if (in_array($variables['element']['#type'], ['radio', 'checkbox'])) {
-    $variables['element']['#title_display'] = 'attribute';
+
+  $element = &$variables['element'];
+
+  // This function is invoked as theme wrapper, but the rendered form element
+  // may not necessarily have been processed by form_builder().
+  $element += array(
+    '#title_display' => 'before',
+  );
+
+  // Add element #id for #type 'item'.
+  if (isset($element['#markup']) && !empty($element['#id'])) {
+    $attributes['id'] = $element['#id'];
   }
-  return theme_form_element($variables);
+  // Add element's #type and #name as class to aid with JS/CSS selectors.
+  if (in_array($element['#type'], ['radio', 'checkbox'])) {
+    $element['#title_display'] = 'attribute';
+  } else {
+    $attributes['class'] = array('au-form__item');
+  }
+
+
+  if (!empty($element['#type'])) {
+    $attributes['class'][] = 'au-form__item-type--' . strtr($element['#type'], '_', '-');
+  }
+  if (!empty($element['#name'])) {
+    $attributes['class'][] = 'au-form__item-' . strtr($element['#name'], array(' ' => '-', '_' => '-', '[' => '-', ']' => ''));
+  }
+  // Add a class for disabled elements to facilitate cross-browser styling.
+  if (!empty($element['#attributes']['disabled'])) {
+    $attributes['class'][] = 'form-disabled';
+  }
+  $output = '<div' . drupal_attributes($attributes) . '>' . "\n";
+
+  // If #title is not set, we don't display any label or required marker.
+  if (!isset($element['#title'])) {
+    $element['#title_display'] = 'none';
+  }
+  $prefix = isset($element['#field_prefix']) ? '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : '';
+  $suffix = isset($element['#field_suffix']) ? ' <span class="field-suffix">' . $element['#field_suffix'] . '</span>' : '';
+
+  switch ($element['#title_display']) {
+    case 'before':
+    case 'invisible':
+      $output .= ' ' . theme('form_element_label', $variables);
+      $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
+      break;
+
+    case 'after':
+      $output .= ' ' . $prefix . $element['#children'] . $suffix;
+      $output .= ' ' . theme('form_element_label', $variables) . "\n";
+      break;
+
+    case 'none':
+    case 'attribute':
+      // Output no label and no required marker, only the children.
+      $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
+      break;
+  }
+
+  if (!empty($element['#description'])) {
+    $output .= '<div class="au-form__description">' . $element['#description'] . "</div>\n";
+  }
+
+  $output .= "</div>\n";
+
+  return $output;
 }
 
 /**
@@ -1381,4 +1454,23 @@ function health_form_element($variables) {
 function health_webform_email($variables) {
   _form_set_class($variables['element'], array('au-text-input'));
   return theme_webform_email($variables);
+}
+
+/**
+ * Implements theme_form().
+ *
+ * Add Design system classes.
+ */
+function health_form($variables) {
+  if (key_exists('class', $variables['element']['#attributes'])) {
+    if (is_array($variables['element']['#attributes']['class'])) {
+      $variables['element']['#attributes']['class'][] = 'au-form';
+    }
+    else {
+      $variables['element']['#attributes']['class'] .= ' au-form';
+    }
+  } else {
+    $variables['element']['#attributes']['class'] = 'au-form';
+  }
+  return theme_form($variables);
 }

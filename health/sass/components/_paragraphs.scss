@@ -58,125 +58,22 @@
   }
 }
 
-// Statistics
-.paragraphs-item-para-statistics {
-  .view-mode-full {
-    h2 {
-      @include health-fontgrid('xl', 'default', 'light');
-      @include AU-space('padding-bottom', .75unit);
-    }
-  }
-  .field-name-field-summary {
-    p {
-      @include AU-space('margin-top', .5unit);
-      @include AU-space('margin-bottom', .5unit);
-    }
-  }
-}
-
-// Image
-.paragraphs-item-para-content-image {
-  .field-name-field-image {
-    line-height: 0;
-  }
-}
-
-// Paragraph row.
-.entity-paragraphs-item {
-  &.para-row {
-    .more-link {
-      float: right;
-    }
-  }
-}
-
-// Documents para - for review after v2.0.0 frontend changes
-.paragraphs-items-field-publication-files,
-.field-name-field-publication-nmm-id {
-  > h2 {
-    @include health-fontgrid( 'lg', 'default', 'heavy' );
-    @include AU-space('margin-bottom', 1unit);
-  }
-}
-
-// Document download
-.paragraphs-item-documents {
-  h3 {
-    @include health-fontgrid( 'lg', 'heading', 'light' );
-    @include AU-space('margin-top', 1.5unit);
-    @include AU-space('margin-bottom', .5unit);
-  }
-}
+// DO NOT ADD ANYTHING NEW TO THIS FILE
+// New styles should go in as a new component or a variation to an existing component
 
 // Vertical static text para.
+// @todo This should be a card variation.
 .paragraphs-item-para-static-vertical-text {
+  .col-sm-7 {
+    @include AU-media(sm) {
+      padding-right: 0;
+    }
+  }
   .col-text {
-    background: white;
-    @include AU-space('padding', 1.75unit);
-    // Need to do this more specifically to override col padding left and right.
-    @include AU-space('padding-left', 1.75unit);
-    @include AU-space('padding-right', 1.75unit);
-    // No gap between left and right cols.
-    margin-left: -$AU-grid-12-gutter-width/2;
-  }
-  h2 {
-    @include health-fontgrid('xl', 'heading', 'light');
-  }
-  h3 {
-    @include health-fontgrid('lg', 'heading');
-  }
-  p {
-    @include health-fontgrid('md', 'default', 'light');
-  }
-  .field-name-field-image-featured {
-    img {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  }
-}
-
-// Horizontal static text para.
-.paragraphs-item-para-static-horizontal-text {
-  .col-text {
-    background: white;
-    @include AU-space('padding', 2unit);
-    p {
-      @include health-fontgrid('md', 'default', 'light');
-    }
-  }
-}
-
-// All .paragraphs-item-para-static-*
-[class*="paragraphs-item-para-static-"],
-[class*="paragraphs-item-para-feature-"]{
-  .field-name-field-image-featured {
-    img {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  }
-}
-
-.paragraphs-item-two-columns {
-  .group-header {
-    @include AU-space(margin-bottom, 2unit);
-  }
-}
-
-// Top/left/right layout
-.paragraphs-item-multiple-columns {
-  border: $health-borderize--tertiary-very-thin;
-  @include AU-space(margin-top, 1unit);
-  .row {
-    div {
-      @include AU-space(padding, 1unit);
-      &:nth-child(1){
-        background: lighten($colour-Tertiary-2-light, 45%);
-        &.multiple-columns__title { // Only for top row
-          font-weight: bold;
-        }
-      }
+    @include AU-space(padding-top, 1.5unit);
+    @include AU-media(sm) {
+      background: white;
+      @include AU-space(padding, 2unit);
     }
   }
 }

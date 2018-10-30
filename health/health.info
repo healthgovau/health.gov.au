@@ -67,19 +67,15 @@ stylesheets[print][] = css/print.css
 
 regions[header-top]     = Header top
 regions[header]         = Header
-regions[alerts]         = Alerts
 regions[navigation]     = Navigation bar
 regions[title_core]     = Title core
 regions[title_supp]     = Title supplimentary
-regions[highlighted]    = Highlighted
-regions[help]           = Help
 regions[content_top]    = Content top
 regions[sidebar_first]  = First sidebar
 regions[content]        = Content
 regions[sidebar_second] = Second sidebar
 regions[content_bottom] = Content bottom
 regions[footer_top]     = Footer top
-regions[footer_bottom]  = Footer bottom
 
 ; The page_top and page_bottom regions are hidden, which means they will not
 ; show up on the blocks administration page. But they are required in order for

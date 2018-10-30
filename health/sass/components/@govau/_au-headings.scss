@@ -58,31 +58,49 @@
   h1,
   .au-display-xxl {
     @include health-fontgrid('xxl', 'heading');
+    &--text {
+      @include health-fontgrid('xxl', 'default', 'light');
+    }
   }
 
   h2,
   .au-display-xl {
     @include health-fontgrid('xl', 'heading');
+    &--text {
+      @include health-fontgrid('xl', 'default', 'light');
+    }
   }
 
   h3,
   .au-display-lg {
     @include health-fontgrid('lg', 'heading');
+    &--text {
+      @include health-fontgrid('lg', 'default', 'light');
+    }
   }
 
   h4,
   .au-display-md {
     @include health-fontgrid('md', 'heading');
+    &--text {
+      @include health-fontgrid('md', 'default', 'light');
+    }
   }
 
   h5,
   .au-display-sm {
     @include health-fontgrid('sm', 'heading');
+    &--text {
+      @include health-fontgrid('sm', 'default', 'light');
+    }
   }
 
   h6,
   .au-display-xs {
     @include health-fontgrid('xs', 'heading');
+    &--text {
+      @include health-fontgrid('xs', 'default', 'light');
+    }
   }
 
   // Light variation of headings.
@@ -100,6 +118,7 @@
       display: inline;
     }
   }
+
 }
 
 // Anchor helpers.

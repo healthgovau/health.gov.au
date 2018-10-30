@@ -69,4 +69,11 @@ table {
   @include AU-media( md ) {
     overflow: auto;
   }
+
+  @media print {
+    overflow: visible;
+    table {
+      min-width: inherit;
+    }
+  }
 }

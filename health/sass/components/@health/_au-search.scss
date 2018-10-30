@@ -8,7 +8,14 @@
 
   .au-search {
 
+    position: relative;
+
     display: none;
+
+    @media print {
+      display: none;
+    }
+
 
     // Global search for desktop
     &--global-desktop {
@@ -38,8 +45,16 @@
     &--listing {
       display: block;
       width: auto;
+
+      @media print {
+        display: none;
+      }
     }
 
+    // Remove the spacing applied by au-form.
+    .au-form__item, input {
+      margin-top: 0 !important;
+    }
 
     // The search form.
     &__form {
@@ -85,9 +100,6 @@
       }
     }
   }
-
-
-
 }
 
 form[class*='col-'].au-search__form {

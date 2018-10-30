@@ -456,7 +456,7 @@ function health_preprocess_entity(array &$variables) {
       $table = $variables['content']['field_body'][0]['#markup'];
       $replacement = '$1<caption><p class="au-display-sm">' . $title . '</p>';
       if (array_key_exists('field_summary', $variables['content'])) {
-        $replacement .= '<span class="au-sronly">' . $variables['content']['field_summary'] . '</span>';
+        $replacement .= '<span class="au-sronly">' . $variables['content']['field_summary'][0]['#markup'] . '</span>';
       }
       $replacement .= '</caption>$2';
       $table = preg_replace('/(<table.*?>)(.*)/s', $replacement, $table);
@@ -661,30 +661,6 @@ function health_preprocess_field(&$variables) {
 
     if (isset($variables['element']['#object']->field_contact_organisation[LANGUAGE_NONE])) {
       $variables['organisation'] = $variables['element']['#object']->field_contact_organisation[LANGUAGE_NONE][0]['value'];
-    }
-  }
-
-  // Hide last updated field if it is not later than date published.
-  if ($variables['element']['#field_name'] == 'field_date_updated' && $variables['element']['#view_mode'] == 'full') {
-    $node_type = $variables['element']['#object']->type;
-    if (in_array($node_type, RESOURCES_TYPE)) {
-      // Apply logic only to resources content types.
-      if (isset($variables['element']['#items'][0])) {
-        $last_updated = strtotime($variables['element']['#items'][0]['value']);
-        // Publication content type.
-        if ($variables['element']['#bundle'] == 'publication') {
-          $node = $variables['element']['#object'];
-          if (isset($node->field_publication_date[LANGUAGE_NONE][0])) {
-            $publication_date = $node->field_publication_date[LANGUAGE_NONE][0]['value'];
-
-            if ($last_updated <= strtotime($publication_date)) {
-              // Do not render this field.
-              unset($variables['items']);
-              $variables['classes_array'][] = 'sr-only';
-            }
-          }
-        }
-      }
     }
   }
 
@@ -1177,6 +1153,24 @@ function health_preprocess_node(array &$variables) {
     }
   }
 
+<<<<<<< HEAD
+=======
+  // Publications.
+  if ($node->type == 'publication') {
+    // Hide last updated field if earlier or the same as date published.
+    if ($variables['view_mode'] == 'full') {
+      $last_updated = $variables['content']['field_date_updated']['#items'][0]['value'];
+      // We just want the date, so strip off the time.
+      $parts = explode(' ', $last_updated);
+      $last_updated = strtotime($parts[0]);
+      $publication_date = strtotime($variables['content']['field_publication_date']['#items'][0]['value']);
+      if ($last_updated <= $publication_date) {
+        // Do not render date updated.
+        unset($variables['content']['field_date_updated']);
+      }
+    }
+  }
+>>>>>>> develop
 }
 
 /**
@@ -1505,6 +1499,13 @@ function health_preprocess_region(array &$variables, $hook) {
       array_unshift($variables['theme_hook_suggestions'], 'region__no_wrapper');
     }
   }
+}
+
+/**
+ * Implements theme_views_view_table().
+ */
+function health_preprocess_views_view_table(array &$variables) {
+  $variables['view']->header['area']->options['content'] = str_replace(THEME_PATH_TOKEN_GENERIC, '/' . path_to_theme(), $variables['view']->header['area']->options['content']);
 }
 
 /**

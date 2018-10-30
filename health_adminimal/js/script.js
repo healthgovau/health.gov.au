@@ -368,11 +368,11 @@
   Drupal.behaviors.health_adminimal_character_limit = {
     attach: function (context, settings) {
       // Edit content.
-      characterLimit('.page-node-edit .form-item-title', 'input', 70);
-      characterLimit('.page-node-edit .field-name-field-summary', 'textarea', 300);
+      characterLimit('.page-node-edit .form-item-title', 'input');
+      characterLimit('.page-node-edit .field-name-field-summary', 'textarea');
       // Add content.
-      characterLimit('.page-node-add .form-item-title', 'input', 70);
-      characterLimit('.page-node-add .field-name-field-summary', 'textarea', 300);
+      characterLimit('.page-node-add .form-item-title', 'input');
+      characterLimit('.page-node-add .field-name-field-summary', 'textarea');
     }
   };
 
@@ -381,21 +381,22 @@
    *
    * @param selector
    * @param type
-   * @param limit
+   * @param sortLimit
    */
-  function characterLimit(selector, type, limit) {
+  function characterLimit(selector, type) {
+    var hardLimit = parseInt($(selector + ' ' + type).attr('maxlength'));
     $(selector).once('character-limit').append('<div class="description character-limit"></div>');
     $(selector + ' ' + type).once('character-limit').keyup(function() {
       var length = parseInt($(this).val().length);
-      if (length > limit) {
+      if (length === hardLimit) {
         $(this).parents(selector).find('.character-limit')
-          .addClass('over')
-          .html('Over ' + limit + ' characters, consider shortening.');
+          .addClass('over');
       } else {
         $(this).parents(selector).find('.character-limit')
-          .removeClass('over')
-          .html(length + ' characters');
+          .removeClass('over');
       }
+      $(this).parents(selector).find('.character-limit')
+        .html(length + '/' + hardLimit + ' characters');
     }).trigger('keyup');
   }
 
