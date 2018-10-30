@@ -45,3 +45,8 @@
     @include block-text-image-svg('large');
   }
 }
+
+// Provide a little more padding to separate filters from results.
+.region-sidebar-first {
+  @include AU-space(padding-right, 1unit);
+}
