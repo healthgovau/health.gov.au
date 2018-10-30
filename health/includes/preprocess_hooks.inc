@@ -8,7 +8,7 @@
 // Include inc files.
 include_once drupal_get_path('theme', 'health') . '/includes/helper.inc';
 
-const READSPEAKER_URL = 'https://sf1-as.readspeaker.com/script/5802/ReadSpeaker.js?pids=embhl';
+const READSPEAKER_URL = '//f1-oc.readspeaker.com/script/5802/webReader/webReader.js?pids=wr&amp;skin=health&amp;notools=1';
 const GOOGLE_MAP_API = '//maps.googleapis.com/maps/api/staticmap';
 const RESOURCES_TYPE = [
   'image',
@@ -1174,13 +1174,7 @@ function health_preprocess_node(array &$variables) {
       }
     }
 
-    // Add tippy library to all book pages.
-    drupal_add_js(path_to_theme() . '/js/dist/health.tooltips.min.js', [
-      'type' => 'file',
-      'scope' => 'footer',
-      'weight' => 100,
-    ]);
-    drupal_add_js('https://unpkg.com/tippy.js@2.5.2/dist/tippy.all.min.js', 'external');
+
   }
 
   // Survey.
@@ -1216,11 +1210,6 @@ function health_preprocess_node(array &$variables) {
  */
 function health_preprocess_page(&$variables) {
   // LazyLoad is added via html.tpl.php. This means we can exclude it from IE8.
-  // Add our javascript.
-  $variables['page']['content']['#attached']['js'][] = [
-    'data' => 'https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js',
-    'type' => 'external',
-  ];
   $variables['page']['content']['#attached']['js'][] = [
     'data' => path_to_theme() . '/js/dist/health.extlink.min.js',
     'type' => 'file',
@@ -1230,15 +1219,7 @@ function health_preprocess_page(&$variables) {
     'type' => 'file',
   ];
   $variables['page']['content']['#attached']['js'][] = [
-    'data' => path_to_theme() . '/js/dist/health.accordion.min.js',
-    'type' => 'file',
-  ];
-  $variables['page']['content']['#attached']['js'][] = [
     'data' => path_to_theme() . '/pancake/js/pancake.js',
-    'type' => 'file',
-  ];
-  $variables['page']['content']['#attached']['js'][] = [
-    'data' => path_to_theme() . '/js/dist/health.lazyload.min.js',
     'type' => 'file',
   ];
   $variables['page']['content']['#attached']['js'][] = [
@@ -1262,6 +1243,7 @@ function health_preprocess_page(&$variables) {
     'type' => 'file',
   ];
 
+
   // Add backtotop JS.
   $render_backtotop = [
     '#theme' => 'backtotop',
@@ -1282,8 +1264,12 @@ function health_preprocess_page(&$variables) {
     'type' => 'external',
   ];
   $render_readspeaker['#attached']['js'][] = [
-    'data' => path_to_theme() . '/js/libraries/readspeaker/ReadSpeakerColorSkin.js',
-    'type' => 'file',
+    'data' => 'window.rsConf = { ui: { 
+      disableDetachment: true, 
+      mobileVertPos: "bottom=95",
+      tools: { enlarge: false } 
+    }};',
+    'type' => 'inline',
   ];
   $variables['readspeaker'] = drupal_render($render_readspeaker);
 

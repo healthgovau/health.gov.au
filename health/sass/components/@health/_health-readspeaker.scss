@@ -1,263 +1,98 @@
-#readspeaker {
-  // Mobile
-  a {
-    border-bottom: none;
-  }
-  .rsbtn {
-    margin-bottom: 0;
-  }
-  @include AU-space('margin', 1unit 0 0 0);
-}
+.rsbtn {
+  &.health {
+    padding-bottom: 0;
 
-.rsbtn_colorskin {
-  position: relative;
-  display: inline-block;
-  @include AU-space('padding', .5unit 1unit);
-  background: white;
-  border-radius: 4px;
-  border: 1px solid $AU-color-foreground-action;
-  &:hover {
-    border-color: $AU-color-foreground-text;
-    text-decoration: underline;
-  }
-  &:active, &:focus {
-    background-color: $colour-light-darker;
-  }
-
-  i {
-    font-size: inherit;
-  }
-
-  a {
-    color: $AU-color-foreground-action;
-  }
-
-  a, span {
-    position: relative;
-  }
-
-  span {
-    display: block;
-  }
-
-  .rsimg {
-    background: transparent url(../js/libraries/readspeaker/ReadSpeakerColorSkin.png) no-repeat scroll 0 0;
-  }
-
-  .rspart {
-    float: left;
-    margin-left: 2px;
-    [class*="fa-"]:before {
-      margin-left: -1.2em;
-    }
-    &.rsbutton {
-      background-color: $AU-color-foreground-action;
-      width: 18px;
-      height: 18px;
-
-      /*
-       * Add rounded corners to supported browsers
-       */
-      -moz-border-radius: 5px;
-      border-radius: 5px;
-
-      /**
-       * This is just to make the rollover effect a little smoother.
-       */
-      -moz-transition: background-color .2s ease;
-      -webkit-transition: background-color .2s ease;
-      -o-transition: background-color .2s ease;
-      transition: background-color .2s ease;
-
-      &:hover, &:focus {
-        background-color: $AU-color-foreground-action;
-      }
+    .rsbtn_tools {
+      z-index: 500;
     }
 
-    .rsbtn_btnlabel {
-      display: none;
-    }
-  }
-
-  .rsdefloat {
-    clear: both;
-  }
-
-  .rsbtn_box {
-    margin: 3px 1px 1px;
-  }
-
-  .rsbtn_play {
-    margin: 1px 0;
-  }
-
-  .rsbtn_left {
-    &.rspart {
-      background: none;
-    }
-    .rsbtn_text {
+    .rsbtn {
       span {
-        display: inline;
+        color: $AU-color-foreground-action;
+      }
+
+    }
+
+    .rsbtn_play {
+      border: none;
+      background: transparent;
+      margin-bottom: 0;
+      .rsbtn_left {
+        margin-left: 34px;
+        .rsbtn_text {
+          font-size: 16px;
+          color: $AU-color-foreground-action;
+          -webkit-font-smoothing: inherit;
+          -moz-osx-font-smoothing: inherit;
+          &:before {
+            display: none;
+            padding-left: 0;
+          }
+          span {
+            padding-left: 0;
+            color: $AU-color-foreground-action;
+            font-size: 16px;
+            font-family: $AU-font;
+            font-weight: normal;
+          }
+          .rsbtn_label {
+            line-height: 24px;
+          }
+        }
       }
     }
-  }
 
-  .rsbtn_exp.rsimg.rspart {
-    background: none;
-    float: left;
-    display: none;
-  }
+    // When expanded.
+    &.rsexpanded {
+      width: 355px !important;
 
-  &.rsexpanded {
-    //display: inline;
-    .rsbtn_exp.rsimg {
-      display: inline;
-    }
-  }
+      .rsbtn_left {
+        margin-left: 40px;
+      }
 
-  .rsbtn_pause {
-    background-position: -18px -18px;
-  }
 
-  &.rspaused, &.rsstopped {
-    .rsbtn_pause {
-      background-position: -18px 0px;
-    }
-  }
+      .rsbtn_play {
+        border: 1px solid #CCC;
+        border-right: none;
+      }
 
-  .rsbtn_stop {
-    background-position: -18px -36px;
-  }
-
-  .rsbtn_progress_container {
-    border: 1px solid $AU-color-foreground-action;
-    width: 50px;
-    height: 10px;
-    margin-top: 3px;
-    margin-left: 4px;
-    background-image: none;
-    /*
-     * Add rounded corners to supported browsers
-     */
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-  }
-
-  .rsbtn_progress_handle.rsimg {
-    position: absolute;
-    background-color: $AU-color-foreground-action;
-    top: -3px;
-    left: -3px;
-    width: 6px;
-    height: 16px;
-    background-image: none;
-  }
-
-  .rsbtn_progress_played {
-    position: absolute;
-    height: 100%;
-    background-color: #ccc;
-    background-image: none;
-  }
-
-  .rsbtn_volume {
-    margin-left: 4px;
-    background-position: -18px -54px;
-  }
-
-  .rsbtn_volume_container {
-    position: absolute;
-    display: none;
-    top: 100%;
-    width: 16px;
-    height: 40px;
-    border: 1px solid $AU-color-foreground-action;
-    background: #fff;
-  }
-
-  .rsbtn_volume_slider {
-    width: 6px;
-    height: 30px;
-    margin: 5px;
-    background: #ccc;
-  }
-
-  .rsbtn_volume_handle.rsimg {
-    position: absolute;
-    top: -3px;
-    left: -3px;
-    width: 12px;
-    height: 6px;
-    background: $AU-color-foreground-action;
-  }
-
-  .rsbtn_dl {
-    background-position: -18px -72px;
-  }
-
-  .rsbtn_settings {
-    background-position: -18px -90px;
-  }
-
-  .rsbtn_closer {
-    margin-left: 2px;
-    background-position: -18px -108px;
-  }
-
-  &.rspopup {
-    position: absolute;
-    background: #fff;
-    border: 1px solid $AU-color-foreground-action;
-    box-shadow: 0 0 5px #777;
-    display: none;
-    font-family: $AU-font;
-  }
-
-  .rsbtn_powered {
-    display: none;
-  }
-
-  &.rs_whitelogo {
-    .rsbtn_powered {
-      color: #fff;
-      .rsbtn_btnlabel a span {
-        &.rsbtn_label_read, &.rsbtn_label_speaker {
-          color: #fff;
+      // Right side tools.
+      .rsbtn_exp {
+        .rsbtn_exp_inner {
+          border: 1px solid #CCC;
+          border-left: none;
+          border-radius: 0;
+          background: transparent;
         }
-        &.rsbtn_label_icon.rsimg {
-          background-position: -285px -490px;
+      }
+    }
+
+    // When collapsed.
+    &:not(.rsexpanded) {
+      .rsbtn_play {
+        .rsbtn_left {
+          .rsbtn_text {
+            .rsbtn_label {
+              text-decoration: underline;
+            }
+          }
+        }
+        .rsbtn_right {
+          &.rsplay {
+            display: none;
+          }
+        }
+      }
+    }
+
+    // Mobile
+    &.rs_mobile {
+      .rsbtn_play {
+        .rsbtn_left {
+          margin-left: 32px;
         }
       }
     }
   }
 
-  &.rs_blacklogo {
-    .rsbtn_powered {
-      color: $colour-Secondary;
-      .rsbtn_btnlabel a span {
-        &.rsbtn_label_read, &.rsbtn_label_speaker {
-          color: $colour-Secondary;
-        }
-        &.rsbtn_label_icon.rsimg {
-          background-position: -433px -490px;
-        }
-      }
-    }
-  }
-
-  a {
-    &.rsbtn_abouthelp {
-      background: url(../js/libraries/readspeaker/ReadSpeakerColorSkin.png) no-repeat scroll -20px -128px transparent;
-      background-color: $AU-color-foreground-action;
-      border-radius: 7px;
-      transition: background-color 0.2s ease 0s;
-      height: 14px;
-      width: 14px;
-      float: left;
-      margin: 3px 1px 1px;
-      &:hover {
-        background-color: #ccc;
-      }
-    }
-  }
 }

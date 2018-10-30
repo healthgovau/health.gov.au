@@ -29,6 +29,9 @@
 .#{$fa-css-prefix}-instagram:before { content: $fa-var-instagram; }
 .#{$fa-css-prefix}-youtube-square:before { content: $fa-var-youtube-square; }
 .#{$fa-css-prefix}-linkedin-square:before { content: $fa-var-linkedin-square; }
+.#{$fa-css-prefix}-print:before { content: $fa-var-print; }
+.#{$fa-css-prefix}-share-alt:before { content: $fa-var-share-alt; }
+.#{$fa-css-prefix}-at:before { content: $fa-var-at; }
 .#{$fa-css-prefix}-filter:before { content: $fa-var-filter; }
 
 // Icons we don't
@@ -79,7 +82,6 @@
 .#{$fa-css-prefix}-tags:before { content: $fa-var-tags; }
 .#{$fa-css-prefix}-book:before { content: $fa-var-book; }
 .#{$fa-css-prefix}-bookmark:before { content: $fa-var-bookmark; }
-.#{$fa-css-prefix}-print:before { content: $fa-var-print; }
 .#{$fa-css-prefix}-camera:before { content: $fa-var-camera; }
 .#{$fa-css-prefix}-font:before { content: $fa-var-font; }
 .#{$fa-css-prefix}-bold:before { content: $fa-var-bold; }
@@ -522,7 +524,6 @@
 .#{$fa-css-prefix}-header:before { content: $fa-var-header; }
 .#{$fa-css-prefix}-paragraph:before { content: $fa-var-paragraph; }
 .#{$fa-css-prefix}-sliders:before { content: $fa-var-sliders; }
-.#{$fa-css-prefix}-share-alt:before { content: $fa-var-share-alt; }
 .#{$fa-css-prefix}-share-alt-square:before { content: $fa-var-share-alt-square; }
 .#{$fa-css-prefix}-bomb:before { content: $fa-var-bomb; }
 .#{$fa-css-prefix}-soccer-ball-o:before,
@@ -548,7 +549,6 @@
 .#{$fa-css-prefix}-bell-slash-o:before { content: $fa-var-bell-slash-o; }
 .#{$fa-css-prefix}-trash:before { content: $fa-var-trash; }
 .#{$fa-css-prefix}-copyright:before { content: $fa-var-copyright; }
-.#{$fa-css-prefix}-at:before { content: $fa-var-at; }
 .#{$fa-css-prefix}-eyedropper:before { content: $fa-var-eyedropper; }
 .#{$fa-css-prefix}-paint-brush:before { content: $fa-var-paint-brush; }
 .#{$fa-css-prefix}-birthday-cake:before { content: $fa-var-birthday-cake; }

@@ -26,63 +26,65 @@
   Drupal.behaviors.healthMatchHeight = {
     attach: function (context, settings) {
 
-      // Match the related topics height
-      $('.region-content-bottom .pane-related-content', context).matchHeight();
-      $('.region-content-bottom .pane-title', context).matchHeight();
+      if (typeof $.fn.matchHeight !== 'undefined') {
+        // Match the related topics height
+        $('.region-content-bottom .pane-related-content', context).matchHeight();
+        $('.region-content-bottom .pane-title', context).matchHeight();
 
-      // Match the categories height
-      $('.view-categories .views-row .au-card', context).matchHeight();
-      $('.view-categories .views-row .au-card h3', context).matchHeight();
+        // Match the categories height
+        $('.view-categories .views-row .au-card', context).matchHeight();
+        $('.view-categories .views-row .au-card h3', context).matchHeight();
 
-      // Home page highlighted
-      $('.region-highlighted .au-card .bean-title', context).matchHeight({byRow: false});
-      $('.region-highlighted .au-card', context).matchHeight();
+        // Home page highlighted
+        $('.region-highlighted .au-card .bean-title', context).matchHeight({byRow: false});
+        $('.region-highlighted .au-card', context).matchHeight();
 
-      // Listing page selector cards.
-      $('.selector-card', context).matchHeight();
+        // Listing page selector cards.
+        $('.selector-card', context).matchHeight();
 
-      // Title section match height.
-      $('.au-sub-header > .container > .row > div', context).matchHeight();
+        // Title section match height.
+        $('.au-sub-header > .container > .row > div', context).matchHeight();
 
-      // Lifestage on topic page
-      $('.page-node-1021 .field-name-field-related-term', context).matchHeight();
+        // Lifestage on topic page
+        $('.page-node-1021 .field-name-field-related-term', context).matchHeight();
 
-      // Front page task accelerator.
-      $('.front .paragraphs-item-para-block.para-container.block__count--5 .bean-block-content a', context).matchHeight();
+        // Front page task accelerator.
+        $('.front .paragraphs-item-para-block.para-container.block__count--5 .bean-block-content a', context).matchHeight();
 
-      // Front page feedback band.
-      $('.feedback-col', context).matchHeight();
+        // Front page feedback band.
+        $('.feedback-col', context).matchHeight();
 
-      // Statistics
-      $('.group-statistic .field-name-field-statistic-value-text', context).matchHeight();
-      $('.group-trend', context).matchHeight();
+        // Statistics
+        $('.group-statistic .field-name-field-statistic-value-text', context).matchHeight();
+        $('.group-trend', context).matchHeight();
 
-      // About us boxes
-      $('#block-bean-homepage-healthcare-system .group-left, #block-bean-homepage-healthcare-system .group-right', context).matchHeight();
+        // About us boxes
+        $('#block-bean-homepage-healthcare-system .group-left, #block-bean-homepage-healthcare-system .group-right', context).matchHeight();
 
-      // Vertical static text para cols
-      $('.paragraphs-item-para-static-vertical-text .col-match-height', context).matchHeight();
+        // Vertical static text para cols
+        $('.paragraphs-item-para-static-vertical-text .col-match-height', context).matchHeight();
 
-      // Immunisation more on immunisation band
-      $('.paragraphs-item-para-block.block-id__more-services-card .bean-image-and-text a', context).matchHeight();
+        // Immunisation more on immunisation band
+        $('.paragraphs-item-para-block.block-id__more-services-card .bean-image-and-text a', context).matchHeight();
 
-      // Front page feedback band.
-      $('.view-mode-view_selector .bean-block-content a', context).matchHeight();
+        // Front page feedback band.
+        $('.view-mode-view_selector .bean-block-content a', context).matchHeight();
 
-      // Bean block - solid colour card.
-      $('.view-mode-solid_full_card .bean-block-content a', context).matchHeight();
+        // Bean block - solid colour card.
+        $('.view-mode-solid_full_card .bean-block-content a', context).matchHeight();
 
-      // au-card.
-      $('.au-card-list--matchheight .au-card', context).matchHeight();
+        // au-card.
+        $('.au-card-list--matchheight .au-card', context).matchHeight();
 
-      // Featured contact.
-      $('.view-mode-hotline_bar .hotline', context).matchHeight();
+        // Featured contact.
+        $('.view-mode-hotline_bar .hotline', context).matchHeight();
 
-      // Inline statistics
-      $('.paragraphs-item-reference-statistic .stat__card').matchHeight();
+        // Inline statistics
+        $('.paragraphs-item-reference-statistic .stat__card').matchHeight();
 
-      // Home page - Resources
-      $('.paragraphs-view-latest_rsources .views-row').matchHeight();
+        // Home page - Resources
+        $('.paragraphs-view-latest_rsources .views-row').matchHeight();
+      }
     }
   };
 
@@ -118,6 +120,23 @@
       else {
         $('.view__top span', context).after(' results');
       }
+    }
+  };
+
+  Drupal.behaviors.healthPrint = {
+    attach: function (context, settings) {
+      $('#health-toolbar__print').click(function (e) {
+        e.preventDefault();
+        window.print();
+      });
+    }
+  };
+
+  Drupal.behaviors.healthShare = {
+    attach: function (context, settings) {
+      $("#health-toolbar__share").click(function (e) {
+        e.preventDefault();
+      });
     }
   };
 

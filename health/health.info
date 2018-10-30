@@ -50,7 +50,6 @@ stylesheets[all][] = node.css
 stylesheets[all][] = superfish.css
 stylesheets[print][] = css/print.css
 
-
 ; This section lists the regions defined in Zen's default page.tpl.php and
 ; maintenance-page.tpl.php files. The name in brackets is the machine name of
 ; the region. The text after the equals sign is a descriptive text used on the

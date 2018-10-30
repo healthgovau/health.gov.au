@@ -55,15 +55,6 @@ function health_preprocess_ds_table_of_content(array &$variables) {
       '#theme' => 'toc',
     ];
 
-    $render_array['#attached']['js'][] = [
-      'data' => drupal_get_path('theme', 'health') . '/js/libraries/anchorific.min.js',
-      'type' => 'file',
-    ];
-    $render_array['#attached']['js'][] = [
-      'data' => drupal_get_path('theme', 'health') . '/js/dist/health.toc.min.js',
-      'type' => 'file',
-    ];
-
     // Add full width indicator.
     $render_array['#full_width'] = FALSE;
     if (theme_get_setting('full_content_types')[$variables['type']] !== 0) {

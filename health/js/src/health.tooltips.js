@@ -13,6 +13,19 @@
           interactive: true,
           animateFill: false,
         });
+
+        // Share menu.
+        tippy('#health-toolbar__share', {
+          arrow: false,
+          theme: 'health-tooltip',
+          performance: true,
+          allowTitleHTML: true,
+          interactive: true,
+          animateFill: false,
+          html: document.getElementById("health-share-menu"),
+          trigger: 'click',
+          appendTo: $("#health-toolbar__share").parent('li')[0]
+        });
       }
     }
   }

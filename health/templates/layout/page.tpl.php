@@ -84,8 +84,6 @@ endif;
                 <p class="au-introduction au-introduction--dark"><?php print $summary; ?></p>
               <?php endif; ?>
 
-              <?php print $readspeaker; ?>
-
             </div>
 
             <?php if (count($page['title_supp']) > 0 || isset($header_image)): ?>
@@ -94,6 +92,42 @@ endif;
                 <?php print isset($header_image) ? $header_image : ''; ?>
               </div>
             <?php endif; ?>
+          </div>
+        </div>
+      </div>
+
+      <div class="health-toolbar rs_skip">
+        <div class="container">
+          <div class="row">
+            <ul class="col-xs-12 health-toolbar__items au-link-list au-link-list--inline">
+              <li>
+                <?php print $readspeaker; ?>
+              </li>
+              <li class="rs_preserve">
+                <a href="#" id="health-toolbar__print"><i class="fa fa-print fa-inline"></i><span>Print</span></a>
+              </li>
+              <li class="rs_preserve">
+                <a href="#" id="health-toolbar__share" >
+                  <i class="fa fa-share-alt fa-inline"></i><span>Share</span>
+                </a>
+                <div id="health-share-menu">
+                  <ul class="au-link-list">
+                    <li>
+                      <i class="fa fa-twitter"></i>
+                      <?php global $base_url;?>
+                      <a href="https://twitter.com/share?text=<?php print $title?>&amp;url=<?php print $base_url . '/' . drupal_get_path_alias()?>">Twitter</a>
+                    </li>
+                    <li>
+                      <i class="fa fa-facebook"></i>
+                      <a href="https://facebook.com/sharer.php?u=<?php print $base_url . '/' . drupal_get_path_alias()?>">Facebook</a>
+                    </li>
+                    <li>
+                      <i class="fa fa-envelope-o"></i>
+                      <a href="mailto:?subject=<?php print $title?>&amp;body=<?php print $base_url . '/' . drupal_get_path_alias()?>" title="Share via email">Email</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

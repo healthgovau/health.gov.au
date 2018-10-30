@@ -1,14 +1,14 @@
 window.onload = new function() {
   // Load a compatible jQuery version.
 
-  // Don't lazy load on IE8.
-  var images = document.getElementsByTagName('img');
-  for (var i = 0; i < images.length; i++) {
-    if (images[i].hasAttribute('data-src')) {
-      images[i].setAttribute('src', images[i].getAttribute('data-src'));
-      images[i].removeAttribute('data-src', '');
+  $('img').each(function() {
+    if ($(this).attr('data-src')) {
+      $(this).attr('src', $(this).attr('data-src'));
+      $(this).attr('data-src', null);
     }
-  }
+  });
+
+  // Don't lazy load on IE8.
 
   // Remove bottom padding on lazy loaded images.
   var imageWrappers = document.querySelectorAll('.image-wrapper');

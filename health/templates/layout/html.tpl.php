@@ -34,8 +34,6 @@
   <?php endif; ?>
 
   <?php print $styles; ?>
-
-
   <?php print $scripts; ?>
 </head>
 
@@ -49,15 +47,26 @@
   <?php print $page_top; ?>
   <?php print $page; ?>
 
+  <!--[if gt IE 8]><!-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--<![endif]-->
+
   <!--[if IE 8]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
   <script src="/<?php print path_to_theme(); ?>/js/dist/script-ie8.min.js"></script>
   <![endif]-->
 
+  <?php print $page_bottom; ?>
+
   <!--[if gt IE 8]><!-->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.6.0/lazyload.min.js"></script>
+  <script type="text/javascript" src="/<?php print path_to_theme(); ?>/js/dist/health.lazyload.min.js"></script>
+  <script type="text/javascript" src="/<?php print path_to_theme(); ?>/js/libraries/anchorific.min.js"></script>
+  <script type="text/javascript" src="/<?php print path_to_theme(); ?>/js/dist/health.toc.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/tippy.js@2.5.2/dist/tippy.all.min.js"></script>
+  <script type="text/javascript" src="/<?php print path_to_theme(); ?>/js/dist/health.tooltips.min.js"></script>
+  <script type="text/javascript" src="/<?php print path_to_theme(); ?>/js/dist/health.accordion.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
   <!--<![endif]-->
-
-  <?php print $page_bottom; ?>
 </body>
 </html>
