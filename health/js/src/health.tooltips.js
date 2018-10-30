@@ -23,7 +23,8 @@
           interactive: true,
           animateFill: false,
           html: document.getElementById("health-share-menu"),
-          trigger: 'click'
+          trigger: 'click',
+          appendTo: $("#health-toolbar__share").parent('li')[0]
         });
       }
     }

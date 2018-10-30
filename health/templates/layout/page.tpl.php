@@ -103,7 +103,7 @@ endif;
       <div class="health-toolbar rs_skip">
         <div class="container">
           <div class="row">
-            <ul class="col-xs-12 au-link-list au-link-list--inline">
+            <ul class="col-xs-12 health-toolbar__items au-link-list au-link-list--inline">
               <li>
                 <?php print $readspeaker; ?>
               </li>
@@ -111,7 +111,7 @@ endif;
                 <a href="#" id="health-toolbar__print"><i class="fa fa-print fa-inline"></i><span>Print</span></a>
               </li>
               <li class="rs_preserve">
-                <a href="#health-share-menu" id="health-toolbar__share" >
+                <a href="#" id="health-toolbar__share" >
                   <i class="fa fa-share-alt fa-inline"></i><span>Share</span>
                 </a>
                 <div id="health-share-menu">

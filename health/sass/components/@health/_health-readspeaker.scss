@@ -44,25 +44,22 @@
 
     // When expanded.
     &.rsexpanded {
-      width: 325px !important;
+      width: 355px !important;
 
       .rsbtn_left {
-        margin-left: 10px;
-        i {
-          display: none;
-        }
+        margin-left: 40px;
       }
 
 
       .rsbtn_play {
-        border: 1px solid $AU-color-foreground-action;
+        border: 1px solid #CCC;
         border-right: none;
       }
 
       // Right side tools.
       .rsbtn_exp {
         .rsbtn_exp_inner {
-          border: 1px solid $AU-color-foreground-action;
+          border: 1px solid #CCC;
           border-left: none;
           border-radius: 0;
           background: transparent;

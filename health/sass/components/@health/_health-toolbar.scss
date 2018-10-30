@@ -5,9 +5,12 @@
 
   border-bottom: $health-borderize--very-thin;
 
-  .au-link-list {
+  &__items {
     > li {
-      @include AU-space(margin-right, 2unit);
+      @include AU-space(margin-right, 1.1unit);
+      @include AU-media(sm) {
+        @include AU-space(margin-right, 2unit);
+      }
       float: left;
       display: block;
     }
@@ -19,6 +22,11 @@
 
   #health-share-menu {
     display: none;
+  }
+  .health-tooltip-theme {
+    #health-share-menu {
+      display: block;
+    }
   }
 
 }
