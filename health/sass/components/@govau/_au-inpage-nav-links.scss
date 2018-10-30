@@ -1,0 +1,8 @@
+.au-inpage-nav-links {
+  @media print {
+    display: none;
+    & + h2 {
+      margin-top: 0;
+    }
+  }
+}

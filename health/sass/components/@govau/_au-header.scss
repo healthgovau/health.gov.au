@@ -1,5 +1,5 @@
 // Health variation on the au-header.
-.au-header {
+header.au-header {
 
   margin-bottom: 0;
 
@@ -10,7 +10,7 @@
   @include AU-media(md){
     @include AU-space('padding', 1.5unit 0);
   }
-  &__logo {
+  .au-header__logo {
     display: block;
     margin: auto;
     @include AU-space('padding', .75unit);
@@ -21,6 +21,9 @@
     @include AU-media(md) {
       float: left;
       padding: 0;
+    }
+    @media print {
+      width: 30%;
     }
     &-image {
       display: block;

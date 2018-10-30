@@ -194,7 +194,7 @@ function health_preprocess_ds_para_rendered_blocks(array $variables) {
  */
 function health_preprocess_ds_download_image_link(array &$variables) {
   $link_title = t("View text version and larger image of \"!title\" graphic", ['!title' => $variables['title']]);
-  return l($link_title, 'node/' . $variables['nid'], ['html' => TRUE]);
+  return l($link_title, 'node/' . $variables['nid'], ['html' => TRUE, 'attributes' => ['class' => ['print--hide']]]);
 }
 
 /**

@@ -8,6 +8,9 @@
     @include AU-media(sm ) {
       @include AU-space(margin-top, 3unit);
     }
+    @media print {
+      @include AU-space(margin-top, 1unit);
+    }
     .container {
       width: auto;
       clear: both;
