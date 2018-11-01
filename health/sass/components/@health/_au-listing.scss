@@ -1,10 +1,21 @@
 .au-listing {
 
+  * + & {
+    .view__content {
+      h2:first-child {
+        @include AU-space(margin-top, 3unit);
+      }
+      h3:first-child {
+        @include AU-space(margin-top, 1.5unit);
+      }
+    }
+  }
+
   // Yes this should only be __, however drupal sometimes converts __ into -- when adding classes.
   // https://www.drupal.org/project/views/issues/1371118
   // https://www.drupal.org/project/drupal/issues/2009584
   &--item, &__item {
-    border-bottom: $health-borderize--thin;
+    border-bottom: $health-borderize--very-thin;
     @include AU-space(padding-bottom, 2unit);
 
     // Add spacing between items.
@@ -31,22 +42,6 @@
         display: inline-block;
         @include  AU-space(margin-right, 1unit);
       }
-    }
-
-    // Fix the inline display of the icon.
-    .fa {
-      /*display: inline;
-      font-size: 0.8em;
-      padding-left: 0.5em;
-      &:before {
-        position: relative;
-        margin-left: 0;
-      }
-      bottom: -3px;
-      margin-left: 0;
-      @media print {
-        display: none;
-      }*/
     }
 
     .clear-all {

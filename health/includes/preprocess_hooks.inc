@@ -653,16 +653,6 @@ function health_preprocess_field(&$variables) {
     }
   }
 
-  // Add title and organisation to postal address field.
-  if ($variables['element']['#field_name'] == 'field_contact_postal_address') {
-    $variables['title'] = $variables['element']['#object']->title;
-    $variables['organisation'] = '';
-
-    if (isset($variables['element']['#object']->field_contact_organisation[LANGUAGE_NONE])) {
-      $variables['organisation'] = $variables['element']['#object']->field_contact_organisation[LANGUAGE_NONE][0]['value'];
-    }
-  }
-
   // Token replacement (node) for all labels.
   $variables['label'] = token_replace($variables['label'], array('node' => $variables['element']['#object']));
 
@@ -710,9 +700,7 @@ function health_preprocess_field(&$variables) {
           break;
         // Minister.
         case 311:
-          if ($variables['element']['#view_mode'] != 'full') {
-            $variables['classes_array'][] = 'image--circle';
-          }
+          $variables['classes_array'][] = 'image--circle';
           break;
         // Organisation.
         case 2251:

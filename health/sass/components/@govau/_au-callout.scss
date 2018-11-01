@@ -19,13 +19,27 @@
     &.view-mode-inline {
       width: 100%;
       
-      // On mobile, add a gap above the columns now that they are on top of each other.
-      // @todo Should this be applied to all columns when they stack?
-      div[class*=col-] + div[class*=col-] {
+      // On mobile, add a gap above the columns if they stack on top.
+      div[class*=col-] + div[class*=col-]
+      {
         margin-top: 12px;
         @include AU-media(sm) {
           margin-top: 0;
         }
+      }
+      div[class*=col-] + div[class*=col-xs-1],
+      div[class*=col-] + div[class*=col-xs-2],
+      div[class*=col-] + div[class*=col-xs-3],
+      div[class*=col-] + div[class*=col-xs-4],
+      div[class*=col-] + div[class*=col-xs-5],
+      div[class*=col-] + div[class*=col-xs-6],
+      div[class*=col-] + div[class*=col-xs-7],
+      div[class*=col-] + div[class*=col-xs-8],
+      div[class*=col-] + div[class*=col-xs-9],
+      div[class*=col-] + div[class*=col-xs-10],
+      div[class*=col-] + div[class*=col-xs-11]
+      {
+        margin-top: 0;
       }
     }
   }
