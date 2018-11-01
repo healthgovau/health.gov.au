@@ -34,6 +34,9 @@
             font-size: 16px;
             font-family: $AU-font;
             font-weight: normal;
+            text-decoration: underline;
+            display: inline-block;
+            margin-left: -5px;
           }
           .rsbtn_label {
             line-height: 24px;
@@ -91,10 +94,9 @@
     &.rs_mobile {
       .rsbtn_play {
         .rsbtn_left {
-          margin-left: 32px;
+          margin-left: 0;
         }
       }
     }
   }
-
 }
