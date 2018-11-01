@@ -5,12 +5,7 @@
 // Vertical static text para.
 // @todo This should be a card variation.
 .paragraphs-item-para-static-vertical-text {
-  .col-sm-7 {
-    @include AU-media(sm) {
-      padding-right: 0;
-    }
-  }
-  .col-text {
+  .static-vertical-wrapper {
     @include AU-space(padding-top, 1.5unit);
     @include AU-media(sm) {
       background: white;
@@ -18,3 +13,4 @@
     }
   }
 }
+

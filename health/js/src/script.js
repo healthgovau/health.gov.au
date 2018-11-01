@@ -62,7 +62,7 @@
         $('#block-bean-homepage-healthcare-system .group-left, #block-bean-homepage-healthcare-system .group-right', context).matchHeight();
 
         // Vertical static text para cols
-        $('.paragraphs-item-para-static-vertical-text .col-match-height', context).matchHeight();
+        $('.paragraphs-item-para-static-vertical-text .col-sm-7, .paragraphs-item-para-static-vertical-text .static-vertical-wrapper', context).matchHeight();
 
         // Immunisation more on immunisation band
         $('.paragraphs-item-para-block.block-id__more-services-card .bean-image-and-text a', context).matchHeight();
