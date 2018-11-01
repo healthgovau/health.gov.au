@@ -72,12 +72,14 @@
 
       &__input {
         border-color: $AU-color-foreground-text;
+        width: 100%;
         @include AU-media(sm) {
           width: 20em;
         }
         &-wrapper {
           width: 100%;
           padding-right: 45px;
+          margin-bottom: 12px;
         }
       }
 

@@ -171,12 +171,8 @@
     &--main-menu {
       text-align: left;
       .mobile-toggle__label {
-        @extend %baseicon;
-        margin-left: 28px;
-        &:before {
-          font-size: 22px;
-          content: "\f0c9";
-          margin-left: -1.2em !important;
+        .fa-times {
+          display: none;
         }
       }
     }
@@ -185,11 +181,8 @@
     &--search {
       text-align: right;
       .mobile-toggle__label {
-        @extend %baseicon;
-        &:before {
-          font-size: 22px;
-          content: "\f002";
-          margin-left: -1.2em !important;
+        .fa-times {
+          display: none;
         }
       }
     }
@@ -197,8 +190,11 @@
     // When expanded.
     &.active {
       .mobile-toggle__label {
-        &:before {
-          content: "\f00d";
+        .fa-times {
+          display: inline;
+        }
+        .fa-bars, .fa-search {
+          display: none;
         }
       }
     }

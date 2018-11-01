@@ -13,18 +13,18 @@
     <div class="container">
       <div class="row">
 
-        <button
+        <a
           class="au-main-nav__mobile-toggle au-main-nav__mobile-toggle--main-menu col-xs-6"
-          aria-controls="block-superfish-1" role="tab">
-          <span class="mobile-toggle__label">Menu</span>
-        </button>
+          aria-controls="block-superfish-1">
+          <span class="mobile-toggle__label"><i class="fa fa-bars"></i><i class="fa fa-times"></i>Menu</span>
+        </a>
 
-        <button
+        <a
           class="au-main-nav__mobile-toggle au-main-nav__mobile-toggle--search col-xs-6"
           aria-controls="block-search-api-page-default-search--2"
           role="tab">
-          <span class="mobile-toggle__label">Search</span>
-        </button>
+          <span class="mobile-toggle__label"><i class="fa fa-search"></i><i class="fa fa-times"></i>Search</span>
+        </a>
       </div>
       <div class="row">
         <?php print $content; ?>
