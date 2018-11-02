@@ -145,10 +145,9 @@
       // Hide the left column if it is empty (no image)
       if (!$(".node-contact.view-mode-full .group-left img").length) {
         $(".node-contact.view-mode-full .group-left").removeClass('col-sm-3');
-        $(".node-contact.view-mode-full .group-right").removeClass('col-sm-9').addClass("col-sm-12");
+        $(".node-contact.view-mode-full .group-right").removeClass('col-sm-8').removeClass('col-sm-offset-1').addClass("col-sm-12");
       }
     }
   };
 
 })(jQuery, Drupal, this, this.document);
-
