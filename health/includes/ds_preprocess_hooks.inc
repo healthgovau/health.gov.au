@@ -497,15 +497,15 @@ function health_preprocess_ds_google_maps_static(array &$variables) {
  *   HTML output.
  */
 function health_preprocess_ds_google_maps_interactive(array &$variables) {
-  $gmaps_api = theme_get_setting('google_maps_api');
-  if ($gmaps_api) {
+  $gmaps_client = theme_get_setting('google_maps_client');
+  if ($gmaps_client) {
 
     if (isset($variables['field_location_latitude']) && isset($variables['field_location_longitude'])) {
 
       $lat = $variables['field_location_latitude'][0]['value'];
       $long = $variables['field_location_longitude'][0]['value'];
 
-      drupal_add_js('https://maps.googleapis.com/maps/api/js?key=' . $gmaps_api . '&callback=initGoogleMaps',
+      drupal_add_js('https://maps.googleapis.com/maps/api/js?client=' . $gmaps_client . '&callback=initGoogleMaps',
         ['type' => 'external', 'defer' => 'defer', 'async' => 'async']
       );
 

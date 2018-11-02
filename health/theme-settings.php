@@ -59,9 +59,10 @@ function health_form_system_theme_settings_alter(&$form, $form_state, $form_id =
     '#type'          => 'fieldset',
     '#title'         => t('Mapping'),
   );
-  $form['mapping']['google_maps_api'] = array(
+
+  $form['mapping']['google_maps_client'] = array(
     '#type' => 'textfield',
-    '#title' => t('Google Maps API'),
-    '#default_value' => theme_get_setting('google_maps_api'),
+    '#title' => t('Google Maps client ID'),
+    '#default_value' => theme_get_setting('google_maps_client'),
   );
 }
