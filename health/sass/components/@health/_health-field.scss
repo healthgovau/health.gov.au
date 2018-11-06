@@ -1,13 +1,14 @@
 // Fields
 .field {
 
-  // Generic field after field
-  .field + &,
-  h2 + & {
+  // Provide margin on top.
+  * + & {
     @include AU-space(margin-top, 1.5unit);
   }
 
-  .field + &.field-label-hidden {
+  .field + &.field-label-hidden,
+  .metadata + &.field-label-hidden
+  {
     @include AU-space(margin-top, .5unit);
   }
 
@@ -71,7 +72,7 @@
 
 // Document accessibility
 .document-accessibility-form {
-  @include AU-space('padding', 1.5unit 0);
+  @include AU-space(margin-top, 1.5unit);
   color: $colour-minorText;
   a {
     color: $colour-minorText;
@@ -101,10 +102,6 @@ p.summary, .field-name-field-summary {
 
 %minor-text {
   font-size: 13px;
-}
-
-.page-accessibility-link {
-  @include AU-space(padding-bottom, 1unit);
 }
 
 .field-name-field-resource-file-summary {

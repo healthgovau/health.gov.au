@@ -14,16 +14,6 @@
       @include AU-space('padding-bottom', 2.5unit);
     }
 
-    // Variation with less padding at the top and bottom.
-    &--short {
-      @include AU-space('padding-top', 1unit);
-      @include AU-space('padding-bottom', 1unit);
-      @include AU-media(md) {
-        @include AU-space('padding-top', 1unit);
-        @include AU-space('padding-bottom', 1unit);
-      }
-    }
-
     // Title.
     .au-band__title {
       @include health-fontgrid('xl');

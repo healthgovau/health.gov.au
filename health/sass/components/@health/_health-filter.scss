@@ -9,12 +9,6 @@
     @include AU-media(sm) {
       display: none;
     }
-    i {
-      &:before {
-        position: relative;
-        margin-left: -1em;
-      }
-    }
 
     @include AU-media(sm) {
       display: block;

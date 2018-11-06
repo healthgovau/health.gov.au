@@ -222,7 +222,7 @@ endif;
   <div class="container">
     <div class="au-footer__navigation row">
       <?php print render($page['footer_top']); ?>
-      <div class="col-sm-3">
+      <div class="col-sm-3 standard-gap--mobile-only">
         <h3>Help us improve</h3>
         <p>We are always looking for ways to improve our website.</p>
         <?php print l(t('Provide feedback'), 'node/21',

@@ -3,6 +3,8 @@
 // We all know what a footer is.
 .au-footer {
 
+  @include AU-space('margin-top', 2unit);
+
   &.au-body.au-body--dark.au-footer--dark {
     @extend %colour-Primary-background;
   }

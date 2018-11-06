@@ -32,10 +32,26 @@ function health_preprocess_ds_content_type(array &$variables) {
   $field_variables['items'] = [['#markup' => $name]];
 
   if ($field_variables['settings']['content_type']['label'] == 'inline') {
-    $field_variables['classes'] .= ' field--inline--aligned';
+
+    $field_variables['ds-config'] = [
+      'ow' => TRUE,
+      'ow-el' => 'div',
+      'ow-cl' => 'field row',
+      'lb-cl' => 'field__label col-sm-3 col-md-2',
+      'fi' => TRUE,
+      'fi-cl' => 'field__item col-sm-9 col-md-10',
+      'fi-el' => 'div'
+    ];
+    $field_variables['element'] = [
+      '#label_display' => 'inline',
+      '#entity_type' => 'node',
+      '#object' => new stdClass(),
+    ];
+    return theme_ds_field_expert($field_variables);
   }
 
   return theme_field($field_variables);
+
 }
 
 /**
@@ -420,8 +436,22 @@ function health_preprocess_ds_start_end_date_friendly(array &$variables) {
   if ($start['ago'] == FALSE) {
     $field_variables['label'] = 'Opens in';
     $field_variables['items'] = [['#markup' => $start['text']]];
-    if ($field_variables['settings']['start_end_date_friendly']['label'] == 'inline') {
-      $field_variables['classes'] .= ' field--inline--aligned';
+      if ($field_variables['settings']['content_type']['label'] == 'inline') {
+        $field_variables['ds-config'] = [
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'field row',
+          'lb-cl' => 'field__label col-sm-3 col-md-2',
+          'fi' => TRUE,
+          'fi-cl' => 'field__item col-sm-9 col-md-10',
+          'fi-el' => 'div'
+        ];
+        $field_variables['element'] = [
+          '#label_display' => 'inline',
+          '#entity_type' => 'node',
+          '#object' => new stdClass(),
+        ];
+        return theme_ds_field_expert($field_variables);
     }
     return theme_field($field_variables);
   }
@@ -431,7 +461,21 @@ function health_preprocess_ds_start_end_date_friendly(array &$variables) {
     $field_variables['label'] = 'Time remaining';
     $field_variables['items'] = [['#markup' => $end['text']]];
     if ($field_variables['settings']['start_end_date_friendly']['label'] == 'inline') {
-      $field_variables['classes'] .= ' field--inline--aligned';
+      $field_variables['ds-config'] = [
+        'ow' => TRUE,
+        'ow-el' => 'div',
+        'ow-cl' => 'field row',
+        'lb-cl' => 'field__label col-sm-3 col-md-2',
+        'fi' => TRUE,
+        'fi-cl' => 'field__item col-sm-9 col-md-10',
+        'fi-el' => 'div'
+      ];
+      $field_variables['element'] = [
+        '#label_display' => 'inline',
+        '#entity_type' => 'node',
+        '#object' => new stdClass(),
+      ];
+      return theme_ds_field_expert($field_variables);
     }
     return theme_field($field_variables);
   }
