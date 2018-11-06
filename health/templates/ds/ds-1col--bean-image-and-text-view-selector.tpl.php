@@ -28,7 +28,7 @@
  * @see template_process()
  */
 ?>
-<a class="au-card au-card--selector au-card--centered" href=" <?php print $wrapper_link_url; ?>">
+<a class="au-card au-card--selector au-card--centered <?php print $classes?>" href=" <?php print $wrapper_link_url; ?>">
   <div class="au-card__image">
     <?php print render($content['field_image']); ?>
   </div>

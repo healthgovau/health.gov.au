@@ -514,7 +514,7 @@ function health_preprocess_entity(array &$variables) {
         if (isset($bean->field_link_internal[LANGUAGE_NONE][0])) {
           $block_link = $bean->field_link_internal[LANGUAGE_NONE][0]['url'];
           if ($current_url == drupal_get_normal_path($block_link)) {
-            $variables['classes_array'][] = 'active';
+            $variables['classes_array'][] = 'au-card--active';
           }
         }
       }
