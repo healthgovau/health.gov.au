@@ -916,6 +916,62 @@ function health_preprocess_field(&$variables) {
     $classes = _health_grid_class(count($variables['items']), $classes);
     $variables['ds-config']['fi-cl'] = implode(' ', $classes);
   }
+
+
+  // App folder path.
+  if ($variables['element']['#field_name'] == 'field_app_folder_path') {
+
+    // Read the file in, make sure users cannot get access to files outside the health/apps folder!
+    $path = str_replace('../', '', $variables['items'][0]['#markup']);
+    $location = path_to_theme() . '/apps/' . $path;
+    $index_file = $variables['element']['#object']->field_app_index_file[LANGUAGE_NONE][0]['value'];
+
+    if ($real_path = realpath($location . '/' . $index_file)) {
+      if ($html = file_get_contents($real_path)) {
+
+        // Get all the scripts, include them in our page.
+        $dom = new DOMDocument;
+        $dom->loadHTML($html);
+        $scripts = $dom->getElementsByTagName('script');
+        foreach ($scripts as $script) {
+          if ($src = $script->getAttribute('src')) {
+            drupal_add_js('/' . $location . $src, 'external');
+          }
+          else {
+            drupal_add_js($script->textContent, 'inline');
+          }
+        }
+
+        // Get all the links, include them in our page.
+        $links = $dom->getElementsByTagName('link');
+        foreach ($links as $link) {
+          if ($link->getAttribute('rel') == 'stylesheet') {
+            // If the href is local, add our path to it
+            $href = $link->getAttribute('href');
+            if (strpos($href, 'http') === FALSE) {
+              drupal_add_css('/' . $location . $link->getAttribute('href'), 'external');
+            }
+            // If it is external, just go with it.
+            else {
+              drupal_add_css($link->getAttribute('href'), 'external');
+            }
+          }
+        }
+
+        // Grab all the html under body excluding styles and scripts
+        $bodies = $dom->getElementsByTagName('body');
+        $variables['tool_markup'] = '';
+        foreach ($bodies as $body) {
+          foreach ($body->childNodes as $child) {
+            if ($child->nodeName !== 'script') {
+              $variables['tool_markup'] .= $dom->saveXML($child);
+            }
+          }
+        }
+      }
+    }
+
+  }
 }
 
 /**
