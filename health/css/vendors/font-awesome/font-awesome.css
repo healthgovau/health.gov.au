@@ -551,7 +551,6 @@ $fa-var-save: "\f0c7";
 $fa-var-scissors: "\f0c4";
 $fa-var-scribd: "\f28a";=
 $fa-var-search-minus: "\f010";
-$fa-var-search-plus: "\f00e";
 $fa-var-sellsy: "\f213";
 $fa-var-send: "\f1d8";
 $fa-var-send-o: "\f1d9";
@@ -881,6 +880,9 @@ $fa-var-youtube-play: "\f16a";
 .fa-filter:before {
   content: ""; }
 
+.fa-search-plus:before {
+  content: ""; }
+
 /*
 .fa-times-circle-o:before { content: $fa-var-times-circle-o; }
 .fa-glass:before { content: $fa-var-glass; }
@@ -897,7 +899,6 @@ $fa-var-youtube-play: "\f16a";
 .fa-check:before { content: $fa-var-check; }
 .fa-remove:before,
 .fa-close:before,
-.fa-search-plus:before { content: $fa-var-search-plus; }
 .fa-search-minus:before { content: $fa-var-search-minus; }
 .fa-power-off:before { content: $fa-var-power-off; }
 .fa-signal:before { content: $fa-var-signal; }
