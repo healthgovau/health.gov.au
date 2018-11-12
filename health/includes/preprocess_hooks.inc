@@ -727,6 +727,34 @@ function health_preprocess_field(&$variables) {
       }
 
     }
+
+
+    // Publication.
+    if (property_exists($variables['element']['#object'], 'type') && $variables['element']['#object']->type == 'publication') {
+      // Inline display mode.
+      if ($variables['element']['#view_mode'] == 'inline_large') {
+        // Infographic.
+        if ($variables['element']['#object']->field_publication_type[LANGUAGE_NONE][0]['tid'] == 2176) {
+          $variables['items'][0]['#path']['options']['attributes'] = ['data-fancybox' => ''];
+          drupal_add_js('https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.js', 'external');
+          drupal_add_css('https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.css', 'external');
+        }
+      }
+    }
+
+  }
+
+  // Image.
+  if ($variables['element']['#field_name'] == 'field_image') {
+    if (property_exists($variables['element']['#object'], 'bundle') && $variables['element']['#object']->bundle == 'para_content_image') {
+      if (empty($variables['element']['#object']->field_image_zoomable)) {
+        unset($variables['items'][0]['#path']);
+      } else {
+        $variables['items'][0]['#path']['options']['attributes'] = ['data-fancybox' => ''];
+        drupal_add_js('https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.js', 'external');
+        drupal_add_css('https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.css', 'external');
+      }
+    }
   }
 
   // Related term field.

@@ -18,6 +18,23 @@ figure {
     margin: 0;
   }
 
+  a {
+    display: block;
+    @extend %baseicon;
+    &[href]:before {
+      position: absolute;
+      font-size: 1.5em;
+      right: -10px;
+      left: inherit;
+      content: "\f00e";
+      background: white;
+      @include AU-space(padding, .5unit);
+      top: inherit;
+      bottom: 0;
+      border: $health-borderize--very-thin;
+    }
+  }
+
   &.au-accordion {
     border: 0;
     .au-accordion__title {
@@ -27,5 +44,4 @@ figure {
     .au-accordion__body {
     }
   }
-
 }
