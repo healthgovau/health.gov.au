@@ -11,14 +11,8 @@
     border: $health-borderize--thin;
     padding: 1rem;
   }
-}
-figure {
-  margin: 0;
-  img {
-    margin: 0;
-  }
 
-  a {
+  &__image-link {
     display: block;
     @extend %baseicon;
     &[href]:before {
@@ -33,6 +27,13 @@ figure {
       bottom: 0;
       border: $health-borderize--very-thin;
     }
+  }
+}
+
+figure {
+  margin: 0;
+  img {
+    margin: 0;
   }
 
   &.au-accordion {
