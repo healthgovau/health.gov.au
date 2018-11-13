@@ -50,7 +50,7 @@
   <?php endif; ?>
   <div class="field-items"<?php print $content_attributes; ?>>
     <?php foreach ($items as $delta => $item): ?>
-      <?php if ($element['#view_mode'] == 'full' || $element['#view_mode'] == 'feature' || $element['#view_mode'] == 'listing_horizontal'): ?>
+      <?php if ($element['#view_mode'] == 'full' || $element['#view_mode'] == 'feature' || $element['#view_mode'] == 'inline'): ?>
         <div class="field-item "<?php print $item_attributes[$delta]; ?>>
           <a class="au-video__preview__link" href="#" title="Play video" data-youtubeid="<?php print $youtube_code; ?>">
             <div class="au-responsive-media-img">

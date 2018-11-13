@@ -205,6 +205,20 @@ function health_preprocess_ds_download_image_link(array &$variables) {
 }
 
 /**
+ * DS - Download image link.
+ *
+ * @param array $variables
+ *   Variables from preprocess.
+ *
+ * @return string
+ *   HTML output.
+ */
+function health_preprocess_ds_view_video_link(array &$variables) {
+  $link_title = t("More information about the video '!title'", ['!title' => $variables['title']]);
+  return '<p>' . l($link_title, 'node/' . $variables['nid'], ['html' => TRUE, 'attributes' => ['class' => ['print--hide']]]) . '</p>';
+}
+
+/**
  * DS - Public HP switcher.
  *
  * @param array $variables

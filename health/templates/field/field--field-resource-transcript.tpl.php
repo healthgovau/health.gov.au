@@ -44,7 +44,7 @@
  * @ingroup themeable
  */
 ?>
-<section class="au-accordion">
+<section class="au-accordion<?php print $element['#view_mode']=='inline' ? ' au-accordion--small' : '';?>">
   <a href="<?php print '#accordion-' . $element['#object']->nid?>"
      class="au-accordion__title js-au-accordion au-accordion--closed"
      aria-controls="<?php print '#accordion-' . $element['#object']->nid?>"
