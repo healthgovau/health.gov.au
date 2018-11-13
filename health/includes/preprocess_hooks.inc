@@ -1020,6 +1020,11 @@ function health_preprocess_html(array &$variables, $hook) {
       }
     }
   }
+
+  // Deny access to taxonomy term listing pages
+  if (arg(0) == 'taxonomy' && arg(1) == 'term') {
+    drupal_not_found();
+  }
 }
 
 /**
