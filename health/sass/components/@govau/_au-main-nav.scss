@@ -1,242 +1,70 @@
 //--------------------------------------------------------------
-// Site nav
-// The main navigation element on the site
-//
+// Main nav
 //--------------------------------------------------------------
 
 .au-main-nav {
+  border-bottom-color: $colour-light-dark;
+  a {
+    @include AU-media(sm) {
+      font-weight: bold;
+    }
+    color: $AU-color-foreground-text;
 
-  background: white;
-  box-shadow: 0 -8px $colour-light-dark inset;
-  @include AU-space(margin-top, 1unit);
-  padding: 0;
-  position: absolute;
-  width: 100%;
-
-  margin-top: -8px; // Keyline fix for mobile.
-
-  // Hide on mobile initially.
-  display: none;
-  &.active {
-    display: block;
+    @include AU-media(sm) {
+      &:hover, &:focus {
+        border-bottom: .5rem solid $colour-Secondary-hover;
+        margin-bottom: -.5rem;
+      }
+    }
   }
 
-  // Mobile first
-  ul {
-    list-style: none;
-    padding: 0 0 8px 0 !important;
-    margin: 0;
-    li {
-      margin: 0;
-      border-bottom: $health-borderize--very-thin;
+  .au-link-list {
+    > li {
 
-      &:first-child {
-        border-top: $health-borderize--very-thin;
-      }
-
-      border-left: 6px solid transparent;
-
-      &.active-trail {
-        border-left: 6px solid $colour-Secondary;
+      &.active {
         a {
           font-weight: bold;
-        }
-      }
-
-      a {
-        @include AU-space(padding, .75unit 1unit);
-        display: block;
-        border: 0;
-        text-decoration: none;
-        color: black;
-
-      }
-
-    }
-  }
-
-  // Tablet upwards.
-  @include AU-media(sm) {
-
-    display: block;
-    padding: 0;
-    margin-top: 0;
-    font-weight: 700;
-
-    position: relative;
-    border-bottom: 0;
-    background: transparent;
-    height: auto;
-
-    margin-bottom: -6px;
-
-    // Hide menu links appended after Resources.
-    .sf-item-6,
-    .sf-item-7,
-    .sf-item-8,
-    .sf-item-9 {
-      display: none;
-    }
-
-    ul {
-      border-bottom: 0;
-      li {
-        float: left;
-        padding: 0;
-
-        @include AU-space('margin', 0 .4unit);
-        font-size: 0.9em;
-
-        border: 0;
-        &:first-child {
-          border-top: 0;
-        }
-
-        @include AU-media(md) {
-          @include AU-space('margin', 0 .8unit);
-          font-size: 1em;
-        }
-
-        @include AU-media(lg) {
-          @include AU-space('margin', 0 1.5unit);
-        }
-
-        &:first-child {
-          margin-left: 12px;
-        }
-
-        a {
-          display: block;
-          @include AU-space(padding, 1unit 0);
-
-          border-bottom: 8px solid transparent;
-
-          &:hover,
-          &:active {
-            border-bottom: 8px solid $colour-Secondary;
-            background-color: transparent;
-            transition: none;
-            color: $AU-color-foreground-text;
-          }
-        }
-
-        &.active-trail {
-          border-left: 0;
-          a {
-            border-bottom: 8px solid $colour-Secondary;
-            background-color: transparent;
-            transition: none;
-            color: $AU-color-foreground-text;
+          @include AU-media(sm) {
+            border-bottom: .5rem solid $colour-Secondary;
+            margin-bottom: -.5rem;
+            padding: 1rem;
           }
         }
       }
-    }
 
-    @include AU-clearfix;
-  }
-}
-
-// Mobile menu toggle
-.au-body {
-  .au-main-nav__mobile-toggle {
-    // Only display on mobile
-    @include AU-media(sm) {
-      display: none;
-    }
-
-    border-radius: 0;
-    padding: 12px;
-    font-size: 18px;
-    font-weight: 700;
-    display: block;
-    border-bottom: 0;
-    background-color: white;
-    color: black !important;
-    margin: 0 0 8px 0;
-    position: relative;
-    z-index: 500;
-
-    &:hover,
-    &:active {
-      background-color: white;
-      color: $colour-foreground-text--dark;
-      outline-offset: -1px;
-    }
-
-    &:after {
-      background: none;
-    }
-
-    // Main menu.
-    &--main-menu {
-      text-align: left;
-      .mobile-toggle__label {
-        .fa-times {
-          display: none;
-        }
+      // Hide menu links appended after Resources.
+      &.menu-mlid-130106,
+      &.menu-mlid-130111,
+      &.menu-mlid-130116,
+      &.menu-mlid-130121 {
+        display: none;
       }
     }
+  }
 
-    // Search.
+  .au-main-nav__toggle {
+    color: $AU-color-foreground-text;
+    font-weight: bold;
+    font-size: 1.25rem;
+    @include AU-space(padding, .5unit .5unit .5unit 0);
+    &:before {
+      content: ""
+    }
+    i {
+      font-size: 1rem;
+    }
+
     &--search {
-      text-align: right;
-      .mobile-toggle__label {
-        .fa-times {
-          display: none;
-        }
-      }
-    }
-
-    // When expanded.
-    &.active {
-      .mobile-toggle__label {
-        .fa-times {
-          display: inline;
-        }
-        .fa-bars, .fa-search {
-          display: none;
-        }
-      }
+      float: right;
     }
   }
-}
 
-// Overlay.
-.au-main-nav__overlay {
-  position: fixed;
-  top: -9999px;
-  left: -9999px;
-  background: transparent;
-  opacity: 0.7;
-  width: 100%;
-  height: 150%;
-  z-index: 499;
-  &.active {
-    background: black;
-    top:0;
-    left: 0;
-  }
-
-  // Hide on tablet +
-  @include AU-media(sm) {
-    display: none;
+  @at-root .js & .au-main-nav__menu {
+    z-index: 600;
   }
 }
 
-// Elements that should be above the overlay.
-.au-main-nav__above-overlay {
-  position: relative;
-  z-index: 500;
-}
-
-// Keyline across nav items.
-.au-main-nav__wrapper {
-  position: relative;
-  z-index: 500;
-  box-shadow: 0 -8px #e5e5e5 inset;
-}
-
-// Sub menu above search
+// SHAME! Sub menu above search
 #block-menu-menu-sub-menu {
   ul {
     float: right;
