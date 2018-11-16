@@ -20,6 +20,11 @@
       font-weight: normal;
     }
   }
+
+  // Special case of multiple addresses in one field.
+  .health-maps--google + .field__label {
+    @include AU-space(margin-top, 1.5unit);
+  }
 }
 
 // Metadata, such as dates and types, used mainly in listings.
@@ -51,7 +56,6 @@
 
 .health-separator {
   border-top: $health-borderize--very-thin;
-  @include AU-space('padding-top', 2unit);
   @include AU-space('margin-top', 1unit);
   @include AU-media(sm){
     @include AU-space('margin-top', 2unit);
