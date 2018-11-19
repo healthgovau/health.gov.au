@@ -17,15 +17,18 @@
     @extend %baseicon;
     &[href]:before {
       position: absolute;
-      font-size: 1.5em;
-      right: -10px;
-      left: inherit;
-      content: "\f00e";
+      font-size: 1.75em;
+      left: 4px;
       background: white;
       @include AU-space(padding, .5unit);
-      top: inherit;
-      bottom: 0;
+      top: 20px;
       border: $health-borderize--very-thin;
+    }
+
+    &:hover, &:focus {
+      &[href]:before {
+        content: "\f00e";
+      }
     }
   }
 }
@@ -44,5 +47,12 @@ figure {
     }
     .au-accordion__body {
     }
+  }
+}
+
+.fancybox-button {
+  width: 46px;
+  i:before {
+    margin-right: 0;
   }
 }
