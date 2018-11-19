@@ -213,7 +213,7 @@ function health_adminimal_form_alter(&$form, &$form_state, $form_id) {
 function _health_adminimal_optgroup($machine_name) {
   $vocabulary = taxonomy_vocabulary_machine_name_load($machine_name);
   $terms = entity_load('taxonomy_term', FALSE, array('vid' => $vocabulary->vid));
-  $new_options = array();
+  $new_options = [];
   foreach ($terms as $options_key => $options_value) {
     if (is_numeric($options_key)) {
       $parents = taxonomy_get_parents($options_key);
@@ -222,6 +222,7 @@ function _health_adminimal_optgroup($machine_name) {
       }
     }
   }
+  array_unshift($new_options, ['None' => ['_none' => '- Select a value -']]);
   return $new_options;
 }
 

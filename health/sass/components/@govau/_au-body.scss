@@ -119,4 +119,9 @@
     }
   }
 
+  // IE 11.
+  main, aside {
+    display: block;
+  }
+
 }

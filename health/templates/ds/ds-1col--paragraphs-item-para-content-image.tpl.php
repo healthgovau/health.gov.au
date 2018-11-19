@@ -31,7 +31,7 @@
 
 <div class="health-figure standard-gap <?php print array_key_exists('field_image_caption', $content) ? 'health-figure--border' : '' ?>">
   <p class="au-display-sm"><?php print render($content['field_title'][0]); ?></p>
-  <figure role="group" class="standard-gap <?php print array_key_exists('field_image_caption', $content) ? 'au-accordion' : '' ?>">
+  <figure role="group" class="standard-gap <?php print array_key_exists('field_image_caption', $content) ? 'au-accordion au-accordion--small' : '' ?>">
     <?php print render($content['field_image']);?>
 
     <div class="text--minor standard-gap"><?php print render($content['field_table_source'][0])?></div>

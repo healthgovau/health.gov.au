@@ -1,10 +1,5 @@
 // Video
 //
-// Display of inline video.
-//
-// video--left - Video on the left
-// video--right - Video on the right
-//
 // Markup: video.twig
 //
 // Style guide: components.video
@@ -12,6 +7,11 @@
 .au-video {
 
   &__preview {
+
+    * + & {
+      @include AU-space(margin-top, 1.5unit);
+    }
+
     position: relative;
     line-height: 0;
 
@@ -72,6 +72,15 @@
           bottom: 3px;
         }
       }
+    }
+  }
+
+  &--inline {
+    border: $health-borderize--thin;
+    @include AU-space(padding, 1unit);
+
+    * + & {
+      @include AU-space(margin-top, 1.5unit);
     }
   }
 

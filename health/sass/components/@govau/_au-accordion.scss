@@ -1,0 +1,11 @@
+.au-accordion {
+
+  // Small variation on the accordion.
+  &.au-accordion--small {
+    border: 0;
+    .au-accordion__title {
+      font-weight: 400;
+      font-size: inherit;
+    }
+  }
+}
