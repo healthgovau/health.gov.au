@@ -37,7 +37,9 @@
       &.menu-mlid-130111,
       &.menu-mlid-130116,
       &.menu-mlid-130121 {
-        display: none;
+        @include AU-media(sm) {
+          display: none;
+        }
       }
     }
   }
