@@ -20,6 +20,9 @@
               onClick="return AU.mainNav.Toggle( this )">
               <i class="fa fa-bars"></i> Menu
             </button>
+            <button class="au-main-nav__toggle au-main-nav__toggle--search au-main-nav__toggle--open">
+              <i class="fa fa-search"></i> Search
+            </button>
             <div class="au-main-nav__menu">
               <div class="au-main-nav__menu-inner">
                 <div class="au-main-nav__focus-trap-top"></div>
@@ -33,9 +36,7 @@
                 <div class="au-main-nav__focus-trap-bottom"></div>
               </div>
             </div>
-            <button class="au-main-nav__toggle au-main-nav__toggle--search au-main-nav__toggle--open">
-              <i class="fa fa-search"></i> Search
-            </button>
+
             <div
               class="au-main-nav__overlay"
               aria-controls="main-nav-default"

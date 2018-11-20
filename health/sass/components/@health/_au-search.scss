@@ -10,8 +10,6 @@
 
     position: relative;
 
-    display: none;
-
     @media print {
       display: none;
     }
@@ -19,31 +17,16 @@
 
     // Global search for desktop
     &--global-desktop {
+      display: none;
+      margin-top: .5rem;
       @include AU-media(sm) {
         display: block;
-      }
-    }
-
-    // Global search for mobile.
-    &--global-mobile {
-      background-color: white;
-      margin-top: -8px;
-      padding-top: 1rem;
-      position: absolute;
-      width: 100%;
-
-      // Mobile show hide.
-      &.active {
-        display: block;
-        @include AU-media(sm) {
-          display: none;
-        }
+        margin-top: 0;
       }
     }
 
     // Listing search
     &--listing {
-      display: block;
       width: auto;
 
       @media print {
@@ -74,6 +57,9 @@
         border-color: $AU-color-foreground-text;
         width: 100%;
         @include AU-media(sm) {
+          width: 15em;
+        }
+        @include AU-media(md) {
           width: 20em;
         }
         &-wrapper {

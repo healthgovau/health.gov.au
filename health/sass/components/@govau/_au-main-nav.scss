@@ -5,15 +5,15 @@
 .au-main-nav {
   border-bottom-color: $colour-light-dark;
   a {
-    @include AU-media(sm) {
+    @include AU-media($AU-main-nav-breakpoint) {
       font-weight: bold;
     }
     color: $AU-color-foreground-text;
 
-    @include AU-media(sm) {
+    @include AU-media($AU-main-nav-breakpoint) {
       &:hover, &:focus {
         border-bottom: .5rem solid $colour-Secondary-hover;
-        margin-bottom: -.5rem;
+        @include AU-space(margin-bottom, -.5unit);
       }
     }
   }
@@ -21,13 +21,13 @@
   .au-link-list {
     > li {
 
-      &.active {
+      &.active, &.active-trail {
         a {
           font-weight: bold;
-          @include AU-media(sm) {
+          @include AU-media($AU-main-nav-breakpoint) {
             border-bottom: .5rem solid $colour-Secondary;
-            margin-bottom: -.5rem;
-            padding: 1rem;
+            @include AU-space(margin-bottom, -.5unit);
+            @include AU-space(padding, 1unit);
           }
         }
       }
@@ -37,7 +37,7 @@
       &.menu-mlid-130111,
       &.menu-mlid-130116,
       &.menu-mlid-130121 {
-        @include AU-media(sm) {
+        @include AU-media($AU-main-nav-breakpoint) {
           display: none;
         }
       }
@@ -48,7 +48,7 @@
     color: $AU-color-foreground-text;
     font-weight: bold;
     font-size: 1.25rem;
-    @include AU-space(padding, .5unit .5unit .5unit 0);
+    @include AU-space(padding, .5unit 0);
     &:before {
       content: ""
     }
@@ -58,12 +58,12 @@
 
     &--search {
       float: right;
+      @include AU-media($AU-main-nav-breakpoint) {
+        display: none;
+      }
     }
   }
 
-  @at-root .js & .au-main-nav__menu {
-    z-index: 600;
-  }
 }
 
 // SHAME! Sub menu above search
@@ -72,7 +72,7 @@
     float: right;
   }
   display: none;
-  @include AU-media(sm) {
+  @include AU-media($AU-main-nav-breakpoint) {
     display: block;
   }
 }
