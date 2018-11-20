@@ -11,10 +11,38 @@
     border: $health-borderize--thin;
     padding: 1rem;
   }
+
+  &__image-link {
+    display: block;
+    @extend %baseicon;
+    &[href]:before {
+      position: absolute;
+      font-size: 1.75em;
+      left: 4px;
+      background: white;
+      @include AU-space(padding, .5unit);
+      top: 20px;
+      border: $health-borderize--very-thin;
+    }
+
+    &:hover, &:focus {
+      &[href]:before {
+        content: "\f00e";
+      }
+    }
+  }
 }
+
 figure {
   margin: 0;
   img {
     margin: 0;
+  }
+}
+
+.fancybox-button {
+  width: 46px;
+  i:before {
+    margin-right: 0;
   }
 }

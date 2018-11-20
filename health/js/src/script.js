@@ -177,4 +177,21 @@
     }
   };
 
+  Drupal.behaviors.healthLightbox = {
+    attach: function (context, settings) {
+      if (typeof fancybox !== 'undefined') {
+        $('a[data-fancybox="fancy"]').fancybox({
+          btnTpl: {
+            zoom: '<button data-fancybox-zoom class="fancybox-button fancybox-button--zoom" title="{{ZOOM}}">' +
+            '<i class="fa fa-search-plus"></i> Zoom' +
+            "</button>",
+            close: '<button data-fancybox-close class="fancybox-button fancybox-button--close" title="{{CLOSE}}">' +
+            '<i class="fa fa-times"></i> Close' +
+            "</button>",
+          }
+        });
+      }
+    }
+  };
+
 })(jQuery, Drupal, this, this.document);

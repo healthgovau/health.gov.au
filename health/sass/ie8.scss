@@ -1,5 +1,3 @@
-@import 'vendors/uikit';
-@import 'themes/health/colors';
 .ie8 {
 
   // Everything is bunched up, so give it some space.
@@ -82,7 +80,7 @@
     }
 
     .footer__logo img {
-      background-color: $colour-Primary;
+      //background-color: $colour-Primary;
       padding: 10px;
     }
 
