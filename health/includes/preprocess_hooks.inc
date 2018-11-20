@@ -1276,6 +1276,52 @@ function health_preprocess_node(array &$variables) {
       }
     }
   }
+
+  if ($node->title == 'Check that migration of document to documents worked') {
+    $error = FALSE;
+    $data = db_select('node', 'n')
+      ->fields('n', ['nid'])
+      ->condition('type', 'publication')
+      ->execute()
+      ->fetchAll();
+    foreach($data as $result) {
+      $node = node_load($result->nid);
+
+      // Go through every publication.
+      if ($node->field_publication_files) {
+        $docs = $node->field_publication_files[$node->language];
+        foreach ($docs as $doc) {
+          $entities = entity_load('paragraphs_item', [$doc['value']]);
+          if (!empty($entities)) {
+            $para_documents = array_pop($entities);
+
+            if (!$para_documents->field_file) {
+              if ($para_documents->field_resource_document) {
+                $count = 0;
+                foreach ($para_documents->field_resource_document[LANGUAGE_NONE] as $resource_document) {
+                  $entities = entity_load('paragraphs_item', [$resource_document['value']]);
+                  if (!empty($entities)) {
+                    $para_document = array_pop($entities);
+                    if ($para_document->bundle == 'document') {
+                      $count++;
+                    }
+                  }
+                }
+                if ($count != count($para_documents->field_file[LANGUAGE_NONE])) {
+                  drupal_set_message('Broken: <a href="/node/' . $node->nid . '"></a>');
+                  $error = TRUE;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    if (!$error) {
+      drupal_set_message('All good in the hood');
+    }
+  }
 }
 
 /**
