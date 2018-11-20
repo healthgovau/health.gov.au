@@ -304,11 +304,11 @@ function health_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
     $form['search_api_views_fulltext']['#attributes']['placeholder'] = t('Enter your search term');
 
     // Add classes.
-    $form['search_api_views_fulltext']['#attributes']['class'][] = 'au-search__form__input au-text-input';
-    $form['search_api_views_fulltext']['#prefix'] = '<div class="au-search__form__input-wrapper">';
+    $form['search_api_views_fulltext']['#attributes']['class'][] = 'health-search__form__input au-text-input';
+    $form['search_api_views_fulltext']['#prefix'] = '<div class="health-search__form__input-wrapper">';
     $form['search_api_views_fulltext']['#suffix'] = '</div>';
-    $form['submit']['#attributes']['class'][] = 'au-search__form__submit au-btn';
-    $form['#attributes']['class'] = 'au-search au-search--listing au-search__form col-md-9 col-xs-12';
+    $form['submit']['#attributes']['class'][] = 'health-search__form__submit au-btn';
+    $form['#attributes']['class'] = 'health-search health-search--listing health-search__form col-md-9 col-xs-12';
 
     // Append selected filters.
     $query_string = drupal_get_query_parameters();
@@ -432,21 +432,21 @@ function health_form_search_api_page_search_form_alter(&$form, &$form_state) {
 
   if (array_key_exists('keys_1', $form)) {
     $form['keys_1']['#attributes']['placeholder'] = t('Enter your search terms');
-    $form['keys_1']['#attributes']['class'][] = 'au-search__form__input au-text-input';
-    $form['keys_1']['#prefix'] = '<div class="au-search__form__input-wrapper">';
+    $form['keys_1']['#attributes']['class'][] = 'health-search__form__input au-text-input';
+    $form['keys_1']['#prefix'] = '<div class="health-search__form__input-wrapper">';
     $form['keys_1']['#suffix'] = '</div>';
     $form['keys_1']['#attributes']['size'] = 30;
-    $form['submit_1']['#attributes']['class'][] = 'au-search__form__submit au-btn';
+    $form['submit_1']['#attributes']['class'][] = 'health-search__form__submit au-btn';
   }
   elseif (array_key_exists('form', $form)) {
     $form['form']['keys_1']['#attributes']['placeholder'] = t('Enter your search terms');
-    $form['form']['keys_1']['#attributes']['class'][] = 'au-search__form__input au-text-input';
-    $form['form']['keys_1']['#prefix'] = '<div class="au-search__form__input-wrapper">';
+    $form['form']['keys_1']['#attributes']['class'][] = 'health-search__form__input au-text-input';
+    $form['form']['keys_1']['#prefix'] = '<div class="health-search__form__input-wrapper">';
     $form['form']['keys_1']['#suffix'] = '</div>';
-    $form['form']['submit_1']['#attributes']['class'][] = 'au-search__form__submit au-btn';
+    $form['form']['submit_1']['#attributes']['class'][] = 'health-search__form__submit au-btn';
   }
 
-  $form['#attributes']['class'] = 'au-search__form';
+  $form['#attributes']['class'] = 'health-search__form';
 }
 
 /**

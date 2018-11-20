@@ -1,12 +1,12 @@
 .au-grid {
   
-  .au-header .au-search {
+  .au-header .health-search {
     @include AU-media(sm) {
       float: right;
     }
   }
 
-  .au-search {
+  .health-search {
 
     position: relative;
 
@@ -16,7 +16,7 @@
 
 
     // Global search for desktop
-    &--global-desktop {
+    &--global {
       display: none;
       margin-top: .5rem;
       @include AU-media(sm) {
@@ -90,8 +90,8 @@
   }
 }
 
-form[class*='col-'].au-search__form {
-  .au-search__form__submit {
+form[class*='col-'].health-search__form {
+  .health-search__form__submit {
     right: 12px;
   }
 }
@@ -99,7 +99,7 @@ form[class*='col-'].au-search__form {
 // In-page/view search
 .au-grid {
   .page-content {
-    .au-search__form {
+    .health-search__form {
       &__input {
         border-color: $colour-dark;
       }

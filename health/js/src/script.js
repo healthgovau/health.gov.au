@@ -156,9 +156,10 @@
 
       function resizeFunction() {
         if ($(window).width() > 769) {
-          $('.au-search--global-desktop').insertAfter('#block-menu-menu-sub-menu');
+          $('.health-search--global').insertAfter('#block-menu-menu-sub-menu').show();
         } else {
-          $('.au-search--global-desktop').insertAfter('#main-nav-default');
+          $('.health-search--global').insertAfter('#main-nav-default').hide();
+          $('.au-main-nav__toggle--search i').addClass('fa-search').removeClass('fa-times');
         }
       };
 
@@ -171,7 +172,7 @@
       resizeFunction();
 
       $('.au-main-nav__toggle--search').click(function() {
-        $('.au-search--global-desktop').toggle().find('.au-search__form__input').focus();
+        $('.health-search--global').toggle().find('.health-search__form__input').focus();
         $(this).find('i').toggleClass('fa-search').toggleClass('fa-times');
       });
     }

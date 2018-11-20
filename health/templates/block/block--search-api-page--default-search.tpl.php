@@ -9,7 +9,7 @@
  */
 ?>
 <div
-  class="au-search <?php print $classes; ?> "<?php print $attributes; ?>
+  class="health-search <?php print $classes; ?> "<?php print $attributes; ?>
   id="<?php print $block_html_id; ?>">
   <?php print $content; ?>
 </div>

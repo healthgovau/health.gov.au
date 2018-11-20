@@ -123,12 +123,7 @@ function health_preprocess_block(array &$variables, $hook) {
 
   // Search forms.
   if ($variables['block']->module == 'search_api_page') {
-    if ($variables['block']->context == 'global__mobile') {
-      $variables['classes_array'][] = 'au-search--global-mobile';
-    }
-    else {
-      $variables['classes_array'][] = 'au-search--global-desktop';
-    }
+    $variables['classes_array'][] = 'health-search--global';
   }
 }
 
