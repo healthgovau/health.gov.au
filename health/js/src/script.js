@@ -150,6 +150,33 @@
     }
   };
 
+  Drupal.behaviors.healthMobileSearch = {
+    attach: function (context, settings) {
+      var resizeTimer; // Set resizeTimer to empty so it resets on page load
+
+      function resizeFunction() {
+        if ($(window).width() > 769) {
+          $('.au-search--global-desktop').insertAfter('#block-menu-menu-sub-menu');
+        } else {
+          $('.au-search--global-desktop').insertAfter('#main-nav-default');
+        }
+      };
+
+      // On resize, run the function and reset the timeout
+      $(window).resize(function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(resizeFunction, 250);
+      });
+
+      resizeFunction();
+
+      $('.au-main-nav__toggle--search').click(function() {
+        $('.au-search--global-desktop').toggle().find('.au-search__form__input').focus();
+        $(this).find('i').toggleClass('fa-search').toggleClass('fa-times');
+      });
+    }
+  };
+
   Drupal.behaviors.healthLightbox = {
     attach: function (context, settings) {
       if (typeof fancybox !== 'undefined') {

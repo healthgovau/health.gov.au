@@ -44,6 +44,7 @@
     "@gov.au/inpage-nav": "^3.0.2",
     "@gov.au/keyword-list": "^3.0.2",
     "@gov.au/link-list": "^3.0.0",
+    "@gov.au/main-nav": "^0.2.0",
     "@gov.au/page-alerts": "^2.0.1",
     "@gov.au/pancake": "^1.0.6",
     "@gov.au/pancake-js": "^1.0.9",

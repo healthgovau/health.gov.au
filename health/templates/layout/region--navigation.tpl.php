@@ -9,25 +9,41 @@
  */
 ?>
 <?php if ($content): ?>
-  <nav id="nav" role="navigation" class="au-main-nav__wrapper <?php print $classes; ?>">
+  <nav class="au-main-nav" aria-label="main navigation">
     <div class="container">
       <div class="row">
+        <div class="col-md-12">
+          <div id="main-nav-default" class="au-main-nav__content">
+            <button
+              aria-controls="main-nav-default"
+              class="au-main-nav__toggle au-main-nav__toggle--open"
+              onClick="return AU.mainNav.Toggle( this )">
+              <i class="fa fa-bars"></i> Menu
+            </button>
+            <button class="au-main-nav__toggle au-main-nav__toggle--search au-main-nav__toggle--open">
+              <i class="fa fa-search"></i> Search
+            </button>
+            <div class="au-main-nav__menu">
+              <div class="au-main-nav__menu-inner">
+                <div class="au-main-nav__focus-trap-top"></div>
+                <button
+                  aria-controls="main-nav-default"
+                  class="au-main-nav__toggle au-main-nav__toggle--close"
+                  onClick="return AU.mainNav.Toggle( this )">
+                  <i class="fa fa-times"></i> Close
+                </button>
+                <?php print $content?>
+                <div class="au-main-nav__focus-trap-bottom"></div>
+              </div>
+            </div>
 
-        <a
-          class="au-main-nav__mobile-toggle au-main-nav__mobile-toggle--main-menu col-xs-6"
-          aria-controls="block-superfish-1">
-          <span class="mobile-toggle__label"><i class="fa fa-bars"></i><i class="fa fa-times"></i>Menu</span>
-        </a>
-
-        <a
-          class="au-main-nav__mobile-toggle au-main-nav__mobile-toggle--search col-xs-6"
-          aria-controls="block-search-api-page-default-search--2"
-          role="tab">
-          <span class="mobile-toggle__label"><i class="fa fa-search"></i><i class="fa fa-times"></i>Search</span>
-        </a>
-      </div>
-      <div class="row">
-        <?php print $content; ?>
+            <div
+              class="au-main-nav__overlay"
+              aria-controls="main-nav-default"
+              onClick="return AU.mainNav.Toggle( this )">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
