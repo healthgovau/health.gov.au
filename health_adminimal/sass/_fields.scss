@@ -49,4 +49,23 @@ body.adminimal-skin-material {
     }
     margin-bottom: 20px !important;
   }
+
+
+  // File field - multivalue
+  .field-name-field-file {
+    .remove,
+    .tabledrag-changed-warning,
+    .form-type-media label,
+    table thead {
+      display: none !important;
+    }
+  }
+
+  // Prevent authors from being able to edit files.
+  // Files are not version controlled and have no workflow, so to safeguard accidentally editing live versions when
+  // creating a new draft of content, we are removing the edit ability all together.
+  .field-widget-media-generic .button.edit,
+  .form-item-files-replace-upload {
+    display: none;
+  }
 }
